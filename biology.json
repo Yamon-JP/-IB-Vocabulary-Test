@@ -5316,4 +5316,221 @@
     "legal protection",
     "conservation"
   ]
+},
+
+{
+  "term": "digestive system",
+  "definition": "The organ system responsible for breaking down food and absorbing nutrients.",
+  "japanese": "消化系",
+  "topic": "6.1 Digestion and Absorption",
+  "definition_question": "Define digestive system.",
+  "paper1": {
+    "question": "The digestive system is responsible for:",
+    "options": [
+      "Breaking down food and absorbing nutrients",
+      "Producing hormones only",
+      "Transporting oxygen only",
+      "Removing carbon dioxide only"
+    ],
+    "answer": "Breaking down food and absorbing nutrients"
+  },
+  "key_terms": [
+    "digestion",
+    "absorption"
+  ]
+},
+
+{
+  "term": "ingestion",
+  "definition": "The process of taking food into the body through the mouth.",
+  "japanese": "摂取",
+  "topic": "6.1 Digestion and Absorption",
+  "definition_question": "Define ingestion.",
+  "paper1": {
+    "question": "Ingestion means:",
+    "options": [
+      "Taking food into the body",
+      "Breaking down nutrients",
+      "Absorbing nutrients",
+      "Removing waste"
+    ],
+    "answer": "Taking food into the body"
+  },
+  "key_terms": [
+    "food intake"
+  ]
+},
+
+{
+  "term": "digestion",
+  "definition": "The breakdown of large food molecules into smaller molecules that can be absorbed.",
+  "japanese": "消化",
+  "topic": "6.1 Digestion and Absorption",
+  "definition_question": "Define digestion.",
+  "paper1": {
+    "question": "Digestion produces:",
+    "options": [
+      "Small molecules for absorption",
+      "Larger molecules",
+      "Only energy",
+      "DNA molecules"
+    ],
+    "answer": "Small molecules for absorption"
+  },
+  "key_terms": [
+    "breakdown",
+    "small molecules"
+  ]
+},
+
+{
+  "term": "absorption",
+  "definition": "The movement of digested nutrients from the intestine into the blood or lymph.",
+  "japanese": "吸収",
+  "topic": "6.1 Digestion and Absorption",
+  "definition_question": "Define absorption.",
+  "paper1": {
+    "question": "Absorption occurs when nutrients move into:",
+    "options": [
+      "Blood or lymph",
+      "The stomach only",
+      "The mouth",
+      "The large intestine only"
+    ],
+    "answer": "Blood or lymph"
+  },
+  "key_terms": [
+    "nutrient movement",
+    "blood"
+  ]
+},
+
+{
+  "term": "assimilation",
+  "definition": "The use of absorbed nutrients by cells for growth, repair or energy.",
+  "japanese": "同化",
+  "topic": "6.1 Digestion and Absorption",
+  "definition_question": "Define assimilation.",
+  "paper1": {
+    "question": "Assimilation involves:",
+    "options": [
+      "Cells using absorbed nutrients",
+      "Food entering the mouth",
+      "Waste removal",
+      "Food digestion only"
+    ],
+    "answer": "Cells using absorbed nutrients"
+  },
+  "key_terms": [
+    "cell use",
+    "growth"
+  ]
+},
+
+{
+  "term": "egestion",
+  "definition": "The removal of undigested material from the digestive system.",
+  "japanese": "排出",
+  "topic": "6.1 Digestion and Absorption",
+  "definition_question": "Define egestion.",
+  "paper1": {
+    "question": "Egestion removes:",
+    "options": [
+      "Undigested material",
+      "Oxygen",
+      "Glucose from blood",
+      "Hormones"
+    ],
+    "answer": "Undigested material"
+  },
+  "key_terms": [
+    "waste removal"
+  ]
+},
+
+{
+  "term": "mechanical digestion",
+  "definition": "The physical breakdown of food into smaller pieces without changing its chemical composition.",
+  "japanese": "機械的消化",
+  "topic": "6.1 Digestion and Absorption",
+  "definition_question": "Define mechanical digestion.",
+  "paper1": {
+    "question": "Mechanical digestion involves:",
+    "options": [
+      "Physical breakdown of food",
+      "Enzyme action only",
+      "DNA replication",
+      "Protein synthesis"
+    ],
+    "answer": "Physical breakdown of food"
+  },
+  "key_terms": [
+    "physical breakdown"
+  ]
+},
+
+{
+  "term": "chemical digestion",
+  "definition": "The breakdown of food molecules using enzymes.",
+  "japanese": "化学的消化",
+  "topic": "6.1 Digestion and Absorption",
+  "definition_question": "Define chemical digestion.",
+  "paper1": {
+    "question": "Chemical digestion requires:",
+    "options": [
+      "Enzymes",
+      "Only movement",
+      "Only water",
+      "Only oxygen"
+    ],
+    "answer": "Enzymes"
+  },
+  "key_terms": [
+    "enzymes",
+    "hydrolysis"
+  ]
+},
+
+{
+  "term": "digestive enzyme",
+  "definition": "An enzyme that breaks down food molecules into smaller molecules.",
+  "japanese": "消化酵素",
+  "topic": "6.1 Digestion and Absorption",
+  "definition_question": "Define digestive enzyme.",
+  "paper1": {
+    "question": "Digestive enzymes break down:",
+    "options": [
+      "Food molecules",
+      "DNA only",
+      "Blood cells",
+      "Minerals only"
+    ],
+    "answer": "Food molecules"
+  },
+  "key_terms": [
+    "enzyme",
+    "digestion"
+  ]
+},
+
+{
+  "term": "villi",
+  "definition": "Finger-like projections in the small intestine that increase surface area for absorption.",
+  "japanese": "絨毛",
+  "topic": "6.1 Digestion and Absorption",
+  "definition_question": "Define villi.",
+  "paper1": {
+    "question": "Villi increase:",
+    "options": [
+      "Surface area for absorption",
+      "Food production",
+      "DNA replication",
+      "Blood pressure"
+    ],
+    "answer": "Surface area for absorption"
+  },
+  "key_terms": [
+    "surface area",
+    "small intestine"
+  ]
 }]
