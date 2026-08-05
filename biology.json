@@ -2472,4 +2472,224 @@
     "active site",
     "enzyme activity"
   ]
+},
+
+{
+  "term": "gene",
+  "definition": "A heritable factor that consists of a length of DNA and influences a specific characteristic.",
+  "japanese": "遺伝子",
+  "topic": "3.1 Genes",
+  "definition_question": "Define gene.",
+  "paper1": {
+    "question": "A gene is:",
+    "options": [
+      "A length of DNA that influences a characteristic",
+      "A type of protein",
+      "A cell organelle",
+      "A carbohydrate molecule"
+    ],
+    "answer": "A length of DNA that influences a characteristic"
+  },
+  "key_terms": [
+    "DNA",
+    "heritable factor",
+    "characteristic"
+  ]
+},
+
+{
+  "term": "genome",
+  "definition": "The complete set of genetic material present in an organism.",
+  "japanese": "ゲノム",
+  "topic": "3.1 Genes",
+  "definition_question": "Define genome.",
+  "paper1": {
+    "question": "The genome contains:",
+    "options": [
+      "All genetic material of an organism",
+      "Only proteins",
+      "Only one gene",
+      "Only RNA"
+    ],
+    "answer": "All genetic material of an organism"
+  },
+  "key_terms": [
+    "complete genetic material"
+  ]
+},
+
+{
+  "term": "allele",
+  "definition": "A specific version of a gene.",
+  "japanese": "対立遺伝子",
+  "topic": "3.1 Genes",
+  "definition_question": "Define allele.",
+  "paper1": {
+    "question": "An allele is:",
+    "options": [
+      "A version of a gene",
+      "A type of chromosome",
+      "A protein molecule",
+      "A cell organelle"
+    ],
+    "answer": "A version of a gene"
+  },
+  "key_terms": [
+    "gene variant",
+    "different forms"
+  ]
+},
+
+{
+  "term": "locus",
+  "definition": "The specific position of a gene on a chromosome.",
+  "japanese": "遺伝子座",
+  "topic": "3.1 Genes",
+  "definition_question": "Define locus.",
+  "paper1": {
+    "question": "A locus refers to:",
+    "options": [
+      "The position of a gene on a chromosome",
+      "The shape of a protein",
+      "A DNA mutation",
+      "The process of cell division"
+    ],
+    "answer": "The position of a gene on a chromosome"
+  },
+  "key_terms": [
+    "gene position",
+    "chromosome"
+  ]
+},
+
+{
+  "term": "genotype",
+  "definition": "The genetic combination of alleles possessed by an organism.",
+  "japanese": "遺伝子型",
+  "topic": "3.1 Genes",
+  "definition_question": "Define genotype.",
+  "paper1": {
+    "question": "Genotype refers to:",
+    "options": [
+      "The alleles an organism possesses",
+      "The physical appearance of an organism",
+      "The environment only",
+      "A protein structure"
+    ],
+    "answer": "The alleles an organism possesses"
+  },
+  "key_terms": [
+    "alleles",
+    "genetic combination"
+  ]
+},
+
+{
+  "term": "phenotype",
+  "definition": "The observable characteristics of an organism resulting from its genotype and environment.",
+  "japanese": "表現型",
+  "topic": "3.1 Genes",
+  "definition_question": "Define phenotype.",
+  "paper1": {
+    "question": "Phenotype is influenced by:",
+    "options": [
+      "Genotype and environment",
+      "Genes only",
+      "Environment only",
+      "DNA replication only"
+    ],
+    "answer": "Genotype and environment"
+  },
+  "key_terms": [
+    "observable characteristics",
+    "environment"
+  ]
+},
+
+{
+  "term": "dominant allele",
+  "definition": "An allele that is expressed in the phenotype when present in either homozygous or heterozygous form.",
+  "japanese": "優性対立遺伝子",
+  "topic": "3.1 Genes",
+  "definition_question": "Define dominant allele.",
+  "paper1": {
+    "question": "A dominant allele is expressed when:",
+    "options": [
+      "At least one copy is present",
+      "Two recessive alleles are present",
+      "No allele exists",
+      "DNA is absent"
+    ],
+    "answer": "At least one copy is present"
+  },
+  "key_terms": [
+    "expressed",
+    "dominant"
+  ]
+},
+
+{
+  "term": "recessive allele",
+  "definition": "An allele that is expressed only when two copies are present in a homozygous organism.",
+  "japanese": "劣性対立遺伝子",
+  "topic": "3.1 Genes",
+  "definition_question": "Define recessive allele.",
+  "paper1": {
+    "question": "A recessive allele is expressed when:",
+    "options": [
+      "Two copies are present",
+      "One copy is present",
+      "No DNA exists",
+      "The allele is dominant"
+    ],
+    "answer": "Two copies are present"
+  },
+  "key_terms": [
+    "homozygous",
+    "two copies"
+  ]
+},
+
+{
+  "term": "chromosome",
+  "definition": "A structure consisting of DNA and proteins that carries genes.",
+  "japanese": "染色体",
+  "topic": "3.1 Genes",
+  "definition_question": "Define chromosome.",
+  "paper1": {
+    "question": "Chromosomes contain:",
+    "options": [
+      "Genes made of DNA",
+      "Only carbohydrates",
+      "Only lipids",
+      "Only enzymes"
+    ],
+    "answer": "Genes made of DNA"
+  },
+  "key_terms": [
+    "DNA",
+    "genes"
+  ]
+},
+
+{
+  "term": "homologous chromosome",
+  "definition": "A pair of chromosomes that have the same genes at the same loci but may contain different alleles.",
+  "japanese": "相同染色体",
+  "topic": "3.1 Genes",
+  "definition_question": "Define homologous chromosome.",
+  "paper1": {
+    "question": "Homologous chromosomes have:",
+    "options": [
+      "The same genes at the same loci",
+      "Exactly identical DNA sequences always",
+      "No genes",
+      "Only one chromosome"
+    ],
+    "answer": "The same genes at the same loci"
+  },
+  "key_terms": [
+    "same loci",
+    "different alleles"
+  ]
 }]
