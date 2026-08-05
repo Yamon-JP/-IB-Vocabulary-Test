@@ -1,88 +1,210 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IB Vocabulary Test</title>
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IB Master Trainer</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
 <header>
-    <h1>IB Vocabulary Test</h1>
-    <p>English B HL Vocabulary Beta v0.1</p>
+
+<h1>IB Master Trainer</h1>
+
+<p>
+IB English B / Biology SL Beta
+</p>
+
+
+<select id="subject" onchange="changeSubject()">
+
+<option value="english">
+English B HL
+</option>
+
+<option value="biology">
+Biology SL
+</option>
+
+</select>
+
+
 </header>
+
 
 
 <main>
 
+
 <section class="card-area">
 
-    <div id="card" class="card">
-        <div id="word">
-            Loading...
-        </div>
 
-        <div id="meaning" class="hidden">
-        </div>
-    </div>
+<h2 id="mode">
+English B HL
+</h2>
 
-    <button onclick="flipCard()">
-        表裏切替
-    </button>
+
+<div id="card" class="card">
+
+
+<div id="word">
+Loading...
+</div>
+
+
+<div id="meaning" class="hidden">
+</div>
+
+
+</div>
+
+
+
+<button onclick="flipCard()">
+Definition / Meaning 表示
+</button>
+
 
 </section>
 
 
+
+
+
 <section class="test-area">
 
-<h2>4択テスト</h2>
+
+<h2>
+Paper 1 Practice
+</h2>
+
 
 <p id="question">
 問題読み込み中...
 </p>
 
 
+
 <div id="choices">
+
 </div>
 
 
-<p id="result"></p>
+
+<p id="result">
+
+</p>
+
+
 
 <button onclick="nextQuestion()">
-次の問題
+
+Next Question
+
 </button>
 
+
 </section>
+
+
+
+
+
+
+<section class="definition-area">
+
+
+<h2>
+Definition Writing Practice
+</h2>
+
+
+<p id="definition-question">
+
+</p>
+
+
+<button onclick="showAnswer()">
+
+Show Model Answer
+
+</button>
+
+
+<p id="definition-answer">
+
+</p>
+
+
+</section>
+
+
+
+
 
 
 <section class="status">
 
-<h2>学習状況</h2>
+
+<h2>
+Progress
+</h2>
+
 
 <p>
-正解数：
-<span id="correct">0</span>
+
+Correct:
+<span id="correct">
+0
+</span>
+
 </p>
 
-<p>
-問題数：
-<span id="total">0</span>
-</p>
 
 <p>
-正答率：
-<span id="accuracy">0%</span>
+
+Questions:
+<span id="total">
+0
+</span>
+
 </p>
+
+
+
+<p>
+
+Accuracy:
+<span id="accuracy">
+0%
+</span>
+
+</p>
+
+
 
 </section>
+
 
 
 </main>
 
 
+
+
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
