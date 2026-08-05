@@ -5753,4 +5753,398 @@
     "pulmonary circulation",
     "systemic circulation"
   ]
+},
+
+{
+  "term": "pathogen",
+  "definition": "An organism or agent that causes disease.",
+  "japanese": "病原体",
+  "topic": "6.3 Defence Against Infectious Disease",
+  "definition_question": "Define pathogen.",
+  "paper1": {
+    "question": "A pathogen causes:",
+    "options": [
+      "Disease",
+      "Oxygen transport",
+      "Digestion",
+      "Photosynthesis"
+    ],
+    "answer": "Disease"
+  },
+  "key_terms": [
+    "disease-causing",
+    "microorganism"
+  ]
+},
+
+{
+  "term": "infectious disease",
+  "definition": "A disease caused by a pathogen that can spread between organisms.",
+  "japanese": "感染症",
+  "topic": "6.3 Defence Against Infectious Disease",
+  "definition_question": "Define infectious disease.",
+  "paper1": {
+    "question": "An infectious disease is caused by:",
+    "options": [
+      "A pathogen",
+      "A vitamin",
+      "A hormone",
+      "A nutrient"
+    ],
+    "answer": "A pathogen"
+  },
+  "key_terms": [
+    "pathogen",
+    "transmission"
+  ]
+},
+
+{
+  "term": "antigen",
+  "definition": "A molecule on the surface of a pathogen that is recognized by the immune system.",
+  "japanese": "抗原",
+  "topic": "6.3 Defence Against Infectious Disease",
+  "definition_question": "Define antigen.",
+  "paper1": {
+    "question": "Antigens are recognized by:",
+    "options": [
+      "The immune system",
+      "Red blood cells",
+      "Digestive enzymes",
+      "Platelets"
+    ],
+    "answer": "The immune system"
+  },
+  "key_terms": [
+    "foreign molecule",
+    "immune recognition"
+  ]
+},
+
+{
+  "term": "antibody",
+  "definition": "A protein produced by lymphocytes that binds specifically to an antigen.",
+  "japanese": "抗体",
+  "topic": "6.3 Defence Against Infectious Disease",
+  "definition_question": "Define antibody.",
+  "paper1": {
+    "question": "Antibodies bind to:",
+    "options": [
+      "Specific antigens",
+      "Oxygen",
+      "Glucose",
+      "Lipids"
+    ],
+    "answer": "Specific antigens"
+  },
+  "key_terms": [
+    "specific binding",
+    "immune response"
+  ]
+},
+
+{
+  "term": "immune response",
+  "definition": "The body's response to the presence of pathogens or foreign substances.",
+  "japanese": "免疫反応",
+  "topic": "6.3 Defence Against Infectious Disease",
+  "definition_question": "Define immune response.",
+  "paper1": {
+    "question": "The immune response protects against:",
+    "options": [
+      "Pathogens",
+      "Oxygen",
+      "Water",
+      "Glucose"
+    ],
+    "answer": "Pathogens"
+  },
+  "key_terms": [
+    "defence",
+    "pathogens"
+  ]
+},
+
+{
+  "term": "phagocytosis",
+  "definition": "The process where white blood cells engulf and digest pathogens.",
+  "japanese": "食作用",
+  "topic": "6.3 Defence Against Infectious Disease",
+  "definition_question": "Define phagocytosis.",
+  "paper1": {
+    "question": "Phagocytosis involves:",
+    "options": [
+      "Engulfing pathogens",
+      "Producing oxygen",
+      "Making antibodies only",
+      "Transporting glucose"
+    ],
+    "answer": "Engulfing pathogens"
+  },
+  "key_terms": [
+    "white blood cell",
+    "engulf"
+  ]
+},
+
+{
+  "term": "lymphocyte",
+  "definition": "A type of white blood cell involved in specific immune responses.",
+  "japanese": "リンパ球",
+  "topic": "6.3 Defence Against Infectious Disease",
+  "definition_question": "Define lymphocyte.",
+  "paper1": {
+    "question": "Lymphocytes produce:",
+    "options": [
+      "Antibodies",
+      "Haemoglobin",
+      "Digestive enzymes",
+      "Platelets"
+    ],
+    "answer": "Antibodies"
+  },
+  "key_terms": [
+    "white blood cell",
+    "specific immunity"
+  ]
+},
+
+{
+  "term": "vaccination",
+  "definition": "The introduction of antigens to stimulate immunity against a pathogen.",
+  "japanese": "予防接種",
+  "topic": "6.3 Defence Against Infectious Disease",
+  "definition_question": "Define vaccination.",
+  "paper1": {
+    "question": "Vaccination provides:",
+    "options": [
+      "Immunity",
+      "Disease only",
+      "Reduced oxygen",
+      "More pathogens"
+    ],
+    "answer": "Immunity"
+  },
+  "key_terms": [
+    "memory cells",
+    "immune protection"
+  ]
+},
+
+{
+  "term": "immunity",
+  "definition": "The ability of an organism to resist a particular infection.",
+  "japanese": "免疫",
+  "topic": "6.3 Defence Against Infectious Disease",
+  "definition_question": "Define immunity.",
+  "paper1": {
+    "question": "Immunity allows organisms to:",
+    "options": [
+      "Resist infection",
+      "Increase pathogens",
+      "Stop respiration",
+      "Lose antibodies"
+    ],
+    "answer": "Resist infection"
+  },
+  "key_terms": [
+    "resistance",
+    "protection"
+  ]
+},
+
+{
+  "term": "antibiotic",
+  "definition": "A substance that kills bacteria or prevents bacterial growth.",
+  "japanese": "抗生物質",
+  "topic": "6.3 Defence Against Infectious Disease",
+  "definition_question": "Define antibiotic.",
+  "paper1": {
+    "question": "Antibiotics are effective against:",
+    "options": [
+      "Bacteria",
+      "Viruses only",
+      "All pathogens",
+      "Human cells"
+    ],
+    "answer": "Bacteria"
+  },
+  "key_terms": [
+    "bacteria",
+    "treatment"
+  ]
+},
+
+{
+  "term": "gas exchange",
+  "definition": "The movement of oxygen and carbon dioxide between an organism and its environment.",
+  "japanese": "ガス交換",
+  "topic": "6.4 Gas Exchange",
+  "definition_question": "Define gas exchange.",
+  "paper1": {
+    "question": "Gas exchange involves:",
+    "options": [
+      "Oxygen and carbon dioxide movement",
+      "Blood clotting",
+      "Digestion",
+      "Hormone production"
+    ],
+    "answer": "Oxygen and carbon dioxide movement"
+  },
+  "key_terms": [
+    "oxygen",
+    "carbon dioxide"
+  ]
+},
+
+{
+  "term": "alveoli",
+  "definition": "Small air sacs in the lungs where gas exchange occurs.",
+  "japanese": "肺胞",
+  "topic": "6.4 Gas Exchange",
+  "definition_question": "Define alveoli.",
+  "paper1": {
+    "question": "Gas exchange occurs in:",
+    "options": [
+      "Alveoli",
+      "Stomach",
+      "Heart",
+      "Kidney"
+    ],
+    "answer": "Alveoli"
+  },
+  "key_terms": [
+    "large surface area",
+    "lungs"
+  ]
+},
+
+{
+  "term": "ventilation",
+  "definition": "The movement of air into and out of the lungs.",
+  "japanese": "換気",
+  "topic": "6.4 Gas Exchange",
+  "definition_question": "Define ventilation.",
+  "paper1": {
+    "question": "Ventilation moves:",
+    "options": [
+      "Air in and out of lungs",
+      "Blood around body",
+      "Food through intestine",
+      "Hormones"
+    ],
+    "answer": "Air in and out of lungs"
+  },
+  "key_terms": [
+    "breathing",
+    "lungs"
+  ]
+},
+
+{
+  "term": "diffusion",
+  "definition": "The net movement of particles from high concentration to low concentration.",
+  "japanese": "拡散",
+  "topic": "6.4 Gas Exchange",
+  "definition_question": "Define diffusion.",
+  "paper1": {
+    "question": "Diffusion occurs down a:",
+    "options": [
+      "Concentration gradient",
+      "Pressure increase only",
+      "Temperature gradient only",
+      "Energy pathway"
+    ],
+    "answer": "Concentration gradient"
+  },
+  "key_terms": [
+    "high to low concentration",
+    "passive transport"
+  ]
+},
+
+{
+  "term": "concentration gradient",
+  "definition": "A difference in concentration between two areas.",
+  "japanese": "濃度勾配",
+  "topic": "6.4 Gas Exchange",
+  "definition_question": "Define concentration gradient.",
+  "paper1": {
+    "question": "Diffusion depends on:",
+    "options": [
+      "A concentration gradient",
+      "ATP production",
+      "Blood clotting",
+      "Enzyme activity"
+    ],
+    "answer": "A concentration gradient"
+  },
+  "key_terms": [
+    "difference in concentration"
+  ]
+},
+
+{
+  "term": "respiratory surface",
+  "definition": "A surface where gases are exchanged between an organism and the environment.",
+  "japanese": "呼吸表面",
+  "topic": "6.4 Gas Exchange",
+  "definition_question": "Define respiratory surface.",
+  "paper1": {
+    "question": "A respiratory surface allows:",
+    "options": [
+      "Gas exchange",
+      "Digestion",
+      "Blood production",
+      "Hormone release"
+    ],
+    "answer": "Gas exchange"
+  },
+  "key_terms": [
+    "exchange surface"
+  ]
+},
+
+{
+  "term": "bronchiole",
+  "definition": "A small airway that carries air to the alveoli.",
+  "japanese": "細気管支",
+  "topic": "6.4 Gas Exchange",
+  "definition_question": "Define bronchiole.",
+  "paper1": {
+    "question": "Bronchioles carry air to:",
+    "options": [
+      "Alveoli",
+      "Heart",
+      "Stomach",
+      "Kidneys"
+    ],
+    "answer": "Alveoli"
+  },
+  "key_terms": [
+    "airway",
+    "lungs"
+  ]
+},
+
+{
+  "term": "trachea",
+  "definition": "The airway that connects the mouth and nose to the bronchi.",
+  "japanese": "気管",
+  "topic": "6.4 Gas Exchange",
+  "definition_question": "Define trachea.",
+  "paper1": {
+    "question": "The trachea carries:",
+    "options": [
+      "Air",
+      "Blood",
+      "Food",
+      "Hormones"
+    ],
+    "answer": "Air"
+  },
+  "key_terms": [
+    "air passage",
+    "respiration"
+  ]
 }]
