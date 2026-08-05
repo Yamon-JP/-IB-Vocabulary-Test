@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IB Vocabulary Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>IB Vocabulary Test</h1>
+    <p>English B HL Vocabulary Beta v0.1</p>
+</header>
+
+
+<main>
+
+<section class="card-area">
+
+    <div id="card" class="card">
+        <div id="word">
+            Loading...
+        </div>
+
+        <div id="meaning" class="hidden">
+        </div>
+    </div>
+
+    <button onclick="flipCard()">
+        表裏切替
+    </button>
+
+</section>
+
+
+<section class="test-area">
+
+<h2>4択テスト</h2>
+
+<p id="question">
+問題読み込み中...
+</p>
+
+
+<div id="choices">
+</div>
+
+
+<p id="result"></p>
+
+<button onclick="nextQuestion()">
+次の問題
+</button>
+
+</section>
+
+
+<section class="status">
+
+<h2>学習状況</h2>
+
+<p>
+正解数：
+<span id="correct">0</span>
+</p>
+
+<p>
+問題数：
+<span id="total">0</span>
+</p>
+
+<p>
+正答率：
+<span id="accuracy">0%</span>
+</p>
+
+</section>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
