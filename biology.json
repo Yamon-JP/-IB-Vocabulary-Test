@@ -11123,4 +11123,224 @@
     "shared ancestry",
     "evolution"
   ]
+},
+
+{
+  "term": "fossil",
+  "definition": "The preserved remains or traces of organisms from the past.",
+  "japanese": "化石",
+  "topic": "16.2 Evolution Evidence",
+  "definition_question": "Define fossil.",
+  "paper1": {
+    "question": "Fossils provide evidence about:",
+    "options": [
+      "Past organisms",
+      "Future mutations only",
+      "Cell respiration only",
+      "Hormone production"
+    ],
+    "answer": "Past organisms"
+  },
+  "key_terms": [
+    "preserved remains",
+    "past life"
+  ]
+},
+
+{
+  "term": "fossil record",
+  "definition": "The collection of fossils showing changes in organisms through geological time.",
+  "japanese": "化石記録",
+  "topic": "16.2 Evolution Evidence",
+  "definition_question": "Define fossil record.",
+  "paper1": {
+    "question": "The fossil record shows:",
+    "options": [
+      "Evolutionary changes over time",
+      "Only current species",
+      "Only DNA sequences",
+      "Only ecosystems"
+    ],
+    "answer": "Evolutionary changes over time"
+  },
+  "key_terms": [
+    "geological time",
+    "evolution"
+  ]
+},
+
+{
+  "term": "homologous structure",
+  "definition": "A structure with a similar underlying anatomy due to common ancestry.",
+  "japanese": "相同構造",
+  "topic": "16.2 Evolution Evidence",
+  "definition_question": "Define homologous structure.",
+  "paper1": {
+    "question": "Homologous structures indicate:",
+    "options": [
+      "Common ancestry",
+      "Identical functions always",
+      "No evolutionary relationship",
+      "Different DNA origins"
+    ],
+    "answer": "Common ancestry"
+  },
+  "key_terms": [
+    "shared ancestry",
+    "similar structure"
+  ]
+},
+
+{
+  "term": "analogous structure",
+  "definition": "A structure with a similar function but different evolutionary origin.",
+  "japanese": "相似構造",
+  "topic": "16.2 Evolution Evidence",
+  "definition_question": "Define analogous structure.",
+  "paper1": {
+    "question": "Analogous structures have:",
+    "options": [
+      "Similar functions",
+      "The same ancestry",
+      "Identical anatomy",
+      "The same genes"
+    ],
+    "answer": "Similar functions"
+  },
+  "key_terms": [
+    "similar function",
+    "different origin"
+  ]
+},
+
+{
+  "term": "divergent evolution",
+  "definition": "Evolution where related species become increasingly different over time.",
+  "japanese": "分岐進化",
+  "topic": "16.2 Evolution Evidence",
+  "definition_question": "Define divergent evolution.",
+  "paper1": {
+    "question": "Divergent evolution produces:",
+    "options": [
+      "Different species from a common ancestor",
+      "Identical species",
+      "No variation",
+      "Only mutations"
+    ],
+    "answer": "Different species from a common ancestor"
+  },
+  "key_terms": [
+    "common ancestor",
+    "diversification"
+  ]
+},
+
+{
+  "term": "convergent evolution",
+  "definition": "Evolution where unrelated species develop similar adaptations.",
+  "japanese": "収斂進化",
+  "topic": "16.2 Evolution Evidence",
+  "definition_question": "Define convergent evolution.",
+  "paper1": {
+    "question": "Convergent evolution occurs between:",
+    "options": [
+      "Unrelated species",
+      "Only identical species",
+      "Only ancestors",
+      "Only populations"
+    ],
+    "answer": "Unrelated species"
+  },
+  "key_terms": [
+    "similar adaptation",
+    "different ancestry"
+  ]
+},
+
+{
+  "term": "artificial selection",
+  "definition": "The selection of desired traits by humans through controlled breeding.",
+  "japanese": "人工選択",
+  "topic": "16.2 Evolution Evidence",
+  "definition_question": "Define artificial selection.",
+  "paper1": {
+    "question": "Artificial selection is controlled by:",
+    "options": [
+      "Humans",
+      "Natural environment only",
+      "Random mutation only",
+      "Climate only"
+    ],
+    "answer": "Humans"
+  },
+  "key_terms": [
+    "selective breeding",
+    "human choice"
+  ]
+},
+
+{
+  "term": "antibiotic resistance",
+  "definition": "The ability of bacteria to survive exposure to antibiotics.",
+  "japanese": "抗生物質耐性",
+  "topic": "16.2 Evolution Evidence",
+  "definition_question": "Define antibiotic resistance.",
+  "paper1": {
+    "question": "Antibiotic resistance is an example of:",
+    "options": [
+      "Natural selection",
+      "Photosynthesis",
+      "Cell division only",
+      "Protein digestion"
+    ],
+    "answer": "Natural selection"
+  },
+  "key_terms": [
+    "bacteria",
+    "selection pressure"
+  ]
+},
+
+{
+  "term": "gene pool",
+  "definition": "The complete set of alleles present in a population.",
+  "japanese": "遺伝子プール",
+  "topic": "16.2 Evolution Evidence",
+  "definition_question": "Define gene pool.",
+  "paper1": {
+    "question": "A gene pool contains:",
+    "options": [
+      "All alleles in a population",
+      "All cells in an organism",
+      "Only dominant genes",
+      "Only mutations"
+    ],
+    "answer": "All alleles in a population"
+  },
+  "key_terms": [
+    "population genetics",
+    "alleles"
+  ]
+},
+
+{
+  "term": "allele frequency",
+  "definition": "The proportion of a specific allele within a population.",
+  "japanese": "対立遺伝子頻度",
+  "topic": "16.2 Evolution Evidence",
+  "definition_question": "Define allele frequency.",
+  "paper1": {
+    "question": "Allele frequency describes:",
+    "options": [
+      "The proportion of an allele in a population",
+      "The size of an organism",
+      "The number of cells",
+      "The amount of protein"
+    ],
+    "answer": "The proportion of an allele in a population"
+  },
+  "key_terms": [
+    "allele",
+    "population"
+  ]
 }]
