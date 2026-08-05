@@ -219,5 +219,137 @@
     "image size",
     "actual size"
   ]
+},
+{
+  "term": "electron microscope",
+  "definition": "A microscope that uses a beam of electrons to produce images with higher magnification and resolution than a light microscope.",
+  "japanese": "電子顕微鏡",
+  "topic": "1.2 Ultrastructure of Cells",
+  "definition_question": "Define electron microscope.",
+  "paper1": {
+    "question": "Why are electron microscopes used to study cell ultrastructure?",
+    "options": [
+      "They have higher resolution than light microscopes",
+      "They allow living cells to be observed easily",
+      "They do not require any preparation",
+      "They use visible light only"
+    ],
+    "answer": "They have higher resolution than light microscopes"
+  },
+  "key_terms": [
+    "electron beam",
+    "high resolution",
+    "ultrastructure"
+  ]
+},
+
+{
+  "term": "light microscope",
+  "definition": "A microscope that uses visible light and glass lenses to magnify objects.",
+  "japanese": "光学顕微鏡",
+  "topic": "1.2 Ultrastructure of Cells",
+  "definition_question": "Define light microscope.",
+  "paper1": {
+    "question": "What type of radiation is used by a light microscope?",
+    "options": [
+      "Visible light",
+      "Electrons",
+      "X-rays",
+      "Ultraviolet radiation"
+    ],
+    "answer": "Visible light"
+  },
+  "key_terms": [
+    "visible light",
+    "glass lenses"
+  ]
+},
+
+{
+  "term": "resolution",
+  "definition": "The ability to distinguish two separate points as distinct.",
+  "japanese": "分解能",
+  "topic": "1.2 Ultrastructure of Cells",
+  "definition_question": "Define resolution.",
+  "paper1": {
+    "question": "What does resolution describe?",
+    "options": [
+      "The ability to distinguish two separate points",
+      "The size of the microscope",
+      "The weight of the specimen",
+      "The number of cells observed"
+    ],
+    "answer": "The ability to distinguish two separate points"
+  },
+  "key_terms": [
+    "distinguish",
+    "separate points"
+  ]
+},
+
+{
+  "term": "ribosome",
+  "definition": "A structure where proteins are synthesized by linking amino acids together.",
+  "japanese": "リボソーム",
+  "topic": "1.2 Ultrastructure of Cells",
+  "definition_question": "Define ribosome.",
+  "paper1": {
+    "question": "What is the function of ribosomes?",
+    "options": [
+      "Protein synthesis",
+      "ATP production",
+      "DNA storage",
+      "Photosynthesis"
+    ],
+    "answer": "Protein synthesis"
+  },
+  "key_terms": [
+    "protein synthesis",
+    "amino acids"
+  ]
+},
+
+{
+  "term": "mitochondrion",
+  "definition": "A membrane-bound organelle where aerobic respiration occurs and ATP is produced.",
+  "japanese": "ミトコンドリア",
+  "topic": "1.2 Ultrastructure of Cells",
+  "definition_question": "Define mitochondrion.",
+  "paper1": {
+    "question": "What occurs in mitochondria?",
+    "options": [
+      "Aerobic respiration",
+      "Protein synthesis",
+      "DNA replication only",
+      "Photosynthesis"
+    ],
+    "answer": "Aerobic respiration"
+  },
+  "key_terms": [
+    "aerobic respiration",
+    "ATP production"
+  ]
+},
+
+{
+  "term": "chloroplast",
+  "definition": "A membrane-bound organelle containing chlorophyll where photosynthesis occurs.",
+  "japanese": "葉緑体",
+  "topic": "1.2 Ultrastructure of Cells",
+  "definition_question": "Define chloroplast.",
+  "paper1": {
+    "question": "What is the function of chloroplasts?",
+    "options": [
+      "Photosynthesis",
+      "Protein synthesis",
+      "Cell division",
+      "DNA storage"
+    ],
+    "answer": "Photosynthesis"
+  },
+  "key_terms": [
+    "chlorophyll",
+    "photosynthesis"
+  ]
 }
 ]
