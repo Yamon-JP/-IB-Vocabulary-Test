@@ -1696,4 +1696,336 @@
     "temperature regulation",
     "stability"
   ]
+},
+
+{
+  "term": "carbohydrate",
+  "definition": "An organic molecule made of carbon, hydrogen and oxygen that is used as an energy source or structural material.",
+  "japanese": "炭水化物",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define carbohydrate.",
+  "paper1": {
+    "question": "Carbohydrates contain which elements?",
+    "options": [
+      "Carbon, hydrogen and oxygen",
+      "Carbon, nitrogen and phosphorus",
+      "Only carbon",
+      "Protein and lipids"
+    ],
+    "answer": "Carbon, hydrogen and oxygen"
+  },
+  "key_terms": [
+    "organic molecule",
+    "energy source"
+  ]
+},
+
+{
+  "term": "monosaccharide",
+  "definition": "A single sugar molecule that is the simplest form of carbohydrate.",
+  "japanese": "単糖",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define monosaccharide.",
+  "paper1": {
+    "question": "Which is an example of a monosaccharide?",
+    "options": [
+      "Glucose",
+      "Starch",
+      "Glycogen",
+      "Cellulose"
+    ],
+    "answer": "Glucose"
+  },
+  "key_terms": [
+    "single sugar",
+    "simple carbohydrate"
+  ]
+},
+
+{
+  "term": "disaccharide",
+  "definition": "A carbohydrate molecule formed by joining two monosaccharides together.",
+  "japanese": "二糖",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define disaccharide.",
+  "paper1": {
+    "question": "A disaccharide is formed from:",
+    "options": [
+      "Two monosaccharides",
+      "Many amino acids",
+      "Three fatty acids",
+      "Two proteins"
+    ],
+    "answer": "Two monosaccharides"
+  },
+  "key_terms": [
+    "two sugars",
+    "monosaccharides"
+  ]
+},
+
+{
+  "term": "polysaccharide",
+  "definition": "A carbohydrate made of many monosaccharides joined together.",
+  "japanese": "多糖",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define polysaccharide.",
+  "paper1": {
+    "question": "Polysaccharides are made from:",
+    "options": [
+      "Many monosaccharides",
+      "Fatty acids only",
+      "DNA molecules",
+      "Proteins"
+    ],
+    "answer": "Many monosaccharides"
+  },
+  "key_terms": [
+    "many sugar units",
+    "large carbohydrate"
+  ]
+},
+
+{
+  "term": "glycosidic bond",
+  "definition": "A covalent bond that joins monosaccharides together.",
+  "japanese": "グリコシド結合",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define glycosidic bond.",
+  "paper1": {
+    "question": "What type of bond joins monosaccharides?",
+    "options": [
+      "Glycosidic bond",
+      "Peptide bond",
+      "Hydrogen bond",
+      "Ester bond"
+    ],
+    "answer": "Glycosidic bond"
+  },
+  "key_terms": [
+    "covalent bond",
+    "monosaccharides"
+  ]
+},
+
+{
+  "term": "starch",
+  "definition": "A polysaccharide made of glucose molecules used as an energy storage molecule in plants.",
+  "japanese": "デンプン",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define starch.",
+  "paper1": {
+    "question": "Starch is mainly used for storage in:",
+    "options": [
+      "Plants",
+      "Animals",
+      "Bacteria only",
+      "Viruses"
+    ],
+    "answer": "Plants"
+  },
+  "key_terms": [
+    "glucose polymer",
+    "plant storage"
+  ]
+},
+
+{
+  "term": "glycogen",
+  "definition": "A polysaccharide made of glucose molecules used as an energy storage molecule in animals.",
+  "japanese": "グリコーゲン",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define glycogen.",
+  "paper1": {
+    "question": "Glycogen is stored mainly in:",
+    "options": [
+      "Animals",
+      "Plant cell walls",
+      "Chloroplasts",
+      "Cell membranes"
+    ],
+    "answer": "Animals"
+  },
+  "key_terms": [
+    "animal storage",
+    "glucose polymer"
+  ]
+},
+
+{
+  "term": "cellulose",
+  "definition": "A polysaccharide made of glucose that forms the cell walls of plants.",
+  "japanese": "セルロース",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define cellulose.",
+  "paper1": {
+    "question": "What is the function of cellulose?",
+    "options": [
+      "Provides structural support in plant cell walls",
+      "Stores energy in animals",
+      "Produces ATP",
+      "Carries genetic information"
+    ],
+    "answer": "Provides structural support in plant cell walls"
+  },
+  "key_terms": [
+    "plant cell wall",
+    "structural support"
+  ]
+},
+
+{
+  "term": "lipid",
+  "definition": "A biological molecule that includes fats and oils and is insoluble in water.",
+  "japanese": "脂質",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define lipid.",
+  "paper1": {
+    "question": "Lipids are generally:",
+    "options": [
+      "Insoluble in water",
+      "Made of amino acids",
+      "Always proteins",
+      "Stored as DNA"
+    ],
+    "answer": "Insoluble in water"
+  },
+  "key_terms": [
+    "fat",
+    "oil",
+    "insoluble"
+  ]
+},
+
+{
+  "term": "triglyceride",
+  "definition": "A lipid molecule made from one glycerol molecule and three fatty acid molecules.",
+  "japanese": "中性脂肪",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define triglyceride.",
+  "paper1": {
+    "question": "A triglyceride consists of:",
+    "options": [
+      "One glycerol and three fatty acids",
+      "Three glycerol molecules",
+      "Amino acids only",
+      "Glucose molecules only"
+    ],
+    "answer": "One glycerol and three fatty acids"
+  },
+  "key_terms": [
+    "glycerol",
+    "three fatty acids"
+  ]
+},
+
+{
+  "term": "glycerol",
+  "definition": "An alcohol molecule that combines with fatty acids to form triglycerides.",
+  "japanese": "グリセロール",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define glycerol.",
+  "paper1": {
+    "question": "Glycerol is a component of:",
+    "options": [
+      "Triglycerides",
+      "Proteins",
+      "DNA",
+      "Cellulose"
+    ],
+    "answer": "Triglycerides"
+  },
+  "key_terms": [
+    "alcohol molecule",
+    "lipid"
+  ]
+},
+
+{
+  "term": "fatty acid",
+  "definition": "A molecule containing a carboxyl group and hydrocarbon chain that forms part of lipids.",
+  "japanese": "脂肪酸",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define fatty acid.",
+  "paper1": {
+    "question": "Fatty acids are components of:",
+    "options": [
+      "Lipids",
+      "Proteins only",
+      "DNA only",
+      "Carbohydrates only"
+    ],
+    "answer": "Lipids"
+  },
+  "key_terms": [
+    "hydrocarbon chain",
+    "lipid component"
+  ]
+},
+
+{
+  "term": "saturated fatty acid",
+  "definition": "A fatty acid containing only single bonds between carbon atoms.",
+  "japanese": "飽和脂肪酸",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define saturated fatty acid.",
+  "paper1": {
+    "question": "A saturated fatty acid contains:",
+    "options": [
+      "No carbon-carbon double bonds",
+      "Many double bonds",
+      "No carbon atoms",
+      "Amino groups"
+    ],
+    "answer": "No carbon-carbon double bonds"
+  },
+  "key_terms": [
+    "single bonds",
+    "no double bonds"
+  ]
+},
+
+{
+  "term": "unsaturated fatty acid",
+  "definition": "A fatty acid containing one or more carbon-carbon double bonds.",
+  "japanese": "不飽和脂肪酸",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define unsaturated fatty acid.",
+  "paper1": {
+    "question": "An unsaturated fatty acid contains:",
+    "options": [
+      "One or more carbon-carbon double bonds",
+      "Only single bonds",
+      "No carbon",
+      "No hydrogen"
+    ],
+    "answer": "One or more carbon-carbon double bonds"
+  },
+  "key_terms": [
+    "double bonds",
+    "carbon chain"
+  ]
+},
+
+{
+  "term": "ester bond",
+  "definition": "A covalent bond formed between glycerol and fatty acids in a triglyceride.",
+  "japanese": "エステル結合",
+  "topic": "2.3 Carbohydrates and Lipids",
+  "definition_question": "Define ester bond.",
+  "paper1": {
+    "question": "Ester bonds form between:",
+    "options": [
+      "Glycerol and fatty acids",
+      "Amino acids",
+      "DNA bases",
+      "Monosaccharides"
+    ],
+    "answer": "Glycerol and fatty acids"
+  },
+  "key_terms": [
+    "glycerol",
+    "fatty acids",
+    "triglyceride"
+  ]
 }]
