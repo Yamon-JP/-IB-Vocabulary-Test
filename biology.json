@@ -9585,4 +9585,224 @@
     "delivery",
     "reproduction"
   ]
+},
+
+{
+  "term": "pathogen",
+  "definition": "A microorganism or agent that causes disease.",
+  "japanese": "病原体",
+  "topic": "13.1 Immune System",
+  "definition_question": "Define pathogen.",
+  "paper1": {
+    "question": "A pathogen causes:",
+    "options": [
+      "Disease",
+      "Photosynthesis",
+      "Cell division",
+      "Protein synthesis"
+    ],
+    "answer": "Disease"
+  },
+  "key_terms": [
+    "disease-causing organism",
+    "infection"
+  ]
+},
+
+{
+  "term": "antigen",
+  "definition": "A molecule recognized by the immune system that triggers an immune response.",
+  "japanese": "抗原",
+  "topic": "13.1 Immune System",
+  "definition_question": "Define antigen.",
+  "paper1": {
+    "question": "An antigen triggers:",
+    "options": [
+      "An immune response",
+      "Photosynthesis",
+      "Respiration",
+      "DNA replication"
+    ],
+    "answer": "An immune response"
+  },
+  "key_terms": [
+    "immune recognition",
+    "foreign molecule"
+  ]
+},
+
+{
+  "term": "antibody",
+  "definition": "A protein produced by lymphocytes that binds specifically to an antigen.",
+  "japanese": "抗体",
+  "topic": "13.1 Immune System",
+  "definition_question": "Define antibody.",
+  "paper1": {
+    "question": "Antibodies bind to:",
+    "options": [
+      "Specific antigens",
+      "Glucose",
+      "DNA bases",
+      "Oxygen"
+    ],
+    "answer": "Specific antigens"
+  },
+  "key_terms": [
+    "specific immunity",
+    "protein"
+  ]
+},
+
+{
+  "term": "immune response",
+  "definition": "The body's reaction to foreign substances or pathogens.",
+  "japanese": "免疫応答",
+  "topic": "13.1 Immune System",
+  "definition_question": "Define immune response.",
+  "paper1": {
+    "question": "An immune response protects against:",
+    "options": [
+      "Pathogens",
+      "ATP",
+      "Glucose",
+      "Water"
+    ],
+    "answer": "Pathogens"
+  },
+  "key_terms": [
+    "defence",
+    "immune system"
+  ]
+},
+
+{
+  "term": "phagocytosis",
+  "definition": "The process where cells engulf and digest pathogens or particles.",
+  "japanese": "食作用",
+  "topic": "13.1 Immune System",
+  "definition_question": "Define phagocytosis.",
+  "paper1": {
+    "question": "Phagocytosis involves:",
+    "options": [
+      "Engulfing pathogens",
+      "Producing glucose",
+      "Copying DNA",
+      "Making hormones"
+    ],
+    "answer": "Engulfing pathogens"
+  },
+  "key_terms": [
+    "engulf",
+    "digestion"
+  ]
+},
+
+{
+  "term": "phagocyte",
+  "definition": "A type of immune cell that carries out phagocytosis.",
+  "japanese": "食細胞",
+  "topic": "13.1 Immune System",
+  "definition_question": "Define phagocyte.",
+  "paper1": {
+    "question": "Phagocytes perform:",
+    "options": [
+      "Phagocytosis",
+      "Photosynthesis",
+      "Respiration",
+      "Translation"
+    ],
+    "answer": "Phagocytosis"
+  },
+  "key_terms": [
+    "immune cell",
+    "engulf pathogens"
+  ]
+},
+
+{
+  "term": "lymphocyte",
+  "definition": "A type of white blood cell involved in specific immune responses.",
+  "japanese": "リンパ球",
+  "topic": "13.1 Immune System",
+  "definition_question": "Define lymphocyte.",
+  "paper1": {
+    "question": "Lymphocytes are involved in:",
+    "options": [
+      "Specific immunity",
+      "Photosynthesis",
+      "Digestion",
+      "Respiration"
+    ],
+    "answer": "Specific immunity"
+  },
+  "key_terms": [
+    "white blood cell",
+    "immune response"
+  ]
+},
+
+{
+  "term": "B cell",
+  "definition": "A lymphocyte that produces antibodies during an immune response.",
+  "japanese": "B細胞",
+  "topic": "13.1 Immune System",
+  "definition_question": "Define B cell.",
+  "paper1": {
+    "question": "B cells produce:",
+    "options": [
+      "Antibodies",
+      "Glucose",
+      "ATP",
+      "Hormones"
+    ],
+    "answer": "Antibodies"
+  },
+  "key_terms": [
+    "antibody production",
+    "lymphocyte"
+  ]
+},
+
+{
+  "term": "T cell",
+  "definition": "A lymphocyte involved in cell-mediated immune responses.",
+  "japanese": "T細胞",
+  "topic": "13.1 Immune System",
+  "definition_question": "Define T cell.",
+  "paper1": {
+    "question": "T cells are involved in:",
+    "options": [
+      "Cell-mediated immunity",
+      "Photosynthesis",
+      "Glucose transport",
+      "Protein digestion"
+    ],
+    "answer": "Cell-mediated immunity"
+  },
+  "key_terms": [
+    "lymphocyte",
+    "immune response"
+  ]
+},
+
+{
+  "term": "antibody production",
+  "definition": "The process of producing antibodies by activated B cells.",
+  "japanese": "抗体産生",
+  "topic": "13.1 Immune System",
+  "definition_question": "Define antibody production.",
+  "paper1": {
+    "question": "Antibody production is carried out by:",
+    "options": [
+      "B cells",
+      "Red blood cells",
+      "Neurons",
+      "Plant cells"
+    ],
+    "answer": "B cells"
+  },
+  "key_terms": [
+    "B cell",
+    "specific immunity"
+  ]
 }]
