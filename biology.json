@@ -11343,4 +11343,224 @@
     "allele",
     "population"
   ]
+},
+
+{
+  "term": "gene",
+  "definition": "A section of DNA that contains information for producing a functional product.",
+  "japanese": "遺伝子",
+  "topic": "17.1 Basic Genetics",
+  "definition_question": "Define gene.",
+  "paper1": {
+    "question": "A gene is a section of:",
+    "options": [
+      "DNA",
+      "Protein",
+      "Cell membrane",
+      "Carbohydrate"
+    ],
+    "answer": "DNA"
+  },
+  "key_terms": [
+    "DNA sequence",
+    "genetic information"
+  ]
+},
+
+{
+  "term": "allele",
+  "definition": "A specific version of a gene.",
+  "japanese": "対立遺伝子",
+  "topic": "17.1 Basic Genetics",
+  "definition_question": "Define allele.",
+  "paper1": {
+    "question": "An allele is:",
+    "options": [
+      "A version of a gene",
+      "A type of protein",
+      "A chromosome",
+      "A cell organelle"
+    ],
+    "answer": "A version of a gene"
+  },
+  "key_terms": [
+    "gene variant",
+    "genetic variation"
+  ]
+},
+
+{
+  "term": "dominant allele",
+  "definition": "An allele that is expressed when at least one copy is present.",
+  "japanese": "優性対立遺伝子",
+  "topic": "17.1 Basic Genetics",
+  "definition_question": "Define dominant allele.",
+  "paper1": {
+    "question": "A dominant allele is expressed in:",
+    "options": [
+      "Homozygous and heterozygous conditions",
+      "Only recessive organisms",
+      "Only mutations",
+      "Only gametes"
+    ],
+    "answer": "Homozygous and heterozygous conditions"
+  },
+  "key_terms": [
+    "expressed trait",
+    "dominance"
+  ]
+},
+
+{
+  "term": "recessive allele",
+  "definition": "An allele that is expressed only when two copies are present.",
+  "japanese": "劣性対立遺伝子",
+  "topic": "17.1 Basic Genetics",
+  "definition_question": "Define recessive allele.",
+  "paper1": {
+    "question": "A recessive allele is expressed when:",
+    "options": [
+      "Two copies are present",
+      "One copy is present",
+      "No DNA exists",
+      "Only proteins exist"
+    ],
+    "answer": "Two copies are present"
+  },
+  "key_terms": [
+    "hidden trait",
+    "homozygous"
+  ]
+},
+
+{
+  "term": "genotype",
+  "definition": "The genetic combination of alleles possessed by an organism.",
+  "japanese": "遺伝子型",
+  "topic": "17.1 Basic Genetics",
+  "definition_question": "Define genotype.",
+  "paper1": {
+    "question": "Genotype refers to:",
+    "options": [
+      "Allele combination",
+      "Physical appearance",
+      "Environmental factors",
+      "Body size"
+    ],
+    "answer": "Allele combination"
+  },
+  "key_terms": [
+    "genetic makeup",
+    "alleles"
+  ]
+},
+
+{
+  "term": "phenotype",
+  "definition": "The observable characteristics of an organism.",
+  "japanese": "表現型",
+  "topic": "17.1 Basic Genetics",
+  "definition_question": "Define phenotype.",
+  "paper1": {
+    "question": "Phenotype describes:",
+    "options": [
+      "Observable characteristics",
+      "DNA sequence only",
+      "Alleles only",
+      "Chromosome number only"
+    ],
+    "answer": "Observable characteristics"
+  },
+  "key_terms": [
+    "visible traits",
+    "environmental influence"
+  ]
+},
+
+{
+  "term": "homozygous",
+  "definition": "Having two identical alleles for a gene.",
+  "japanese": "ホモ接合",
+  "topic": "17.1 Basic Genetics",
+  "definition_question": "Define homozygous.",
+  "paper1": {
+    "question": "A homozygous organism has:",
+    "options": [
+      "Two identical alleles",
+      "Two different alleles",
+      "No alleles",
+      "Extra chromosomes"
+    ],
+    "answer": "Two identical alleles"
+  },
+  "key_terms": [
+    "same alleles",
+    "genotype"
+  ]
+},
+
+{
+  "term": "heterozygous",
+  "definition": "Having two different alleles for a gene.",
+  "japanese": "ヘテロ接合",
+  "topic": "17.1 Basic Genetics",
+  "definition_question": "Define heterozygous.",
+  "paper1": {
+    "question": "A heterozygous organism has:",
+    "options": [
+      "Two different alleles",
+      "Two identical alleles",
+      "No genes",
+      "No chromosomes"
+    ],
+    "answer": "Two different alleles"
+  },
+  "key_terms": [
+    "different alleles",
+    "genotype"
+  ]
+},
+
+{
+  "term": "chromosome",
+  "definition": "A structure containing DNA and genes inside a cell nucleus.",
+  "japanese": "染色体",
+  "topic": "17.1 Basic Genetics",
+  "definition_question": "Define chromosome.",
+  "paper1": {
+    "question": "Chromosomes contain:",
+    "options": [
+      "DNA",
+      "Only proteins",
+      "Only lipids",
+      "Only carbohydrates"
+    ],
+    "answer": "DNA"
+  },
+  "key_terms": [
+    "DNA carrier",
+    "nucleus"
+  ]
+},
+
+{
+  "term": "genome",
+  "definition": "The complete set of genetic material in an organism.",
+  "japanese": "ゲノム",
+  "topic": "17.1 Basic Genetics",
+  "definition_question": "Define genome.",
+  "paper1": {
+    "question": "A genome contains:",
+    "options": [
+      "All genetic material",
+      "Only one gene",
+      "Only proteins",
+      "Only chromosomes"
+    ],
+    "answer": "All genetic material"
+  },
+  "key_terms": [
+    "complete DNA",
+    "genetic information"
+  ]
 }]
