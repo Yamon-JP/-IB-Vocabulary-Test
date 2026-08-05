@@ -3531,4 +3531,224 @@
     "modified DNA",
     "biotechnology"
   ]
+},
+
+{
+  "term": "species",
+  "definition": "A group of organisms that can interbreed and produce fertile offspring.",
+  "japanese": "種",
+  "topic": "4.1 Species, Communities and Ecosystems",
+  "definition_question": "Define species.",
+  "paper1": {
+    "question": "A species is defined as organisms that can:",
+    "options": [
+      "Interbreed and produce fertile offspring",
+      "Live in the same habitat only",
+      "Have identical DNA always",
+      "Eat the same food only"
+    ],
+    "answer": "Interbreed and produce fertile offspring"
+  },
+  "key_terms": [
+    "interbreed",
+    "fertile offspring"
+  ]
+},
+
+{
+  "term": "habitat",
+  "definition": "The environment in which an organism or population normally lives.",
+  "japanese": "生息地",
+  "topic": "4.1 Species, Communities and Ecosystems",
+  "definition_question": "Define habitat.",
+  "paper1": {
+    "question": "A habitat is:",
+    "options": [
+      "The place where an organism lives",
+      "A group of different species",
+      "A feeding relationship",
+      "A genetic change"
+    ],
+    "answer": "The place where an organism lives"
+  },
+  "key_terms": [
+    "environment",
+    "place of living"
+  ]
+},
+
+{
+  "term": "population",
+  "definition": "A group of organisms of the same species living in the same area at the same time.",
+  "japanese": "個体群",
+  "topic": "4.1 Species, Communities and Ecosystems",
+  "definition_question": "Define population.",
+  "paper1": {
+    "question": "A population consists of:",
+    "options": [
+      "Individuals of the same species",
+      "All organisms in an ecosystem",
+      "Different ecosystems",
+      "Only plants"
+    ],
+    "answer": "Individuals of the same species"
+  },
+  "key_terms": [
+    "same species",
+    "same area"
+  ]
+},
+
+{
+  "term": "community",
+  "definition": "All the populations of different species living and interacting in an area.",
+  "japanese": "群集",
+  "topic": "4.1 Species, Communities and Ecosystems",
+  "definition_question": "Define community.",
+  "paper1": {
+    "question": "A community includes:",
+    "options": [
+      "Different populations living together",
+      "One individual organism",
+      "Only abiotic factors",
+      "Only one species"
+    ],
+    "answer": "Different populations living together"
+  },
+  "key_terms": [
+    "different species",
+    "interactions"
+  ]
+},
+
+{
+  "term": "ecosystem",
+  "definition": "A community of organisms interacting with each other and with their physical environment.",
+  "japanese": "生態系",
+  "topic": "4.1 Species, Communities and Ecosystems",
+  "definition_question": "Define ecosystem.",
+  "paper1": {
+    "question": "An ecosystem includes:",
+    "options": [
+      "Living organisms and abiotic factors",
+      "Only animals",
+      "Only plants",
+      "Only climate"
+    ],
+    "answer": "Living organisms and abiotic factors"
+  },
+  "key_terms": [
+    "biotic factors",
+    "abiotic factors"
+  ]
+},
+
+{
+  "term": "abiotic factor",
+  "definition": "A non-living physical or chemical factor that affects organisms in an ecosystem.",
+  "japanese": "非生物的要因",
+  "topic": "4.1 Species, Communities and Ecosystems",
+  "definition_question": "Define abiotic factor.",
+  "paper1": {
+    "question": "Which is an abiotic factor?",
+    "options": [
+      "Temperature",
+      "Predation",
+      "Competition",
+      "Disease"
+    ],
+    "answer": "Temperature"
+  },
+  "key_terms": [
+    "non-living",
+    "physical environment"
+  ]
+},
+
+{
+  "term": "biotic factor",
+  "definition": "A living component that affects organisms in an ecosystem.",
+  "japanese": "生物的要因",
+  "topic": "4.1 Species, Communities and Ecosystems",
+  "definition_question": "Define biotic factor.",
+  "paper1": {
+    "question": "Which is a biotic factor?",
+    "options": [
+      "Predation",
+      "Temperature",
+      "Light intensity",
+      "pH"
+    ],
+    "answer": "Predation"
+  },
+  "key_terms": [
+    "living component",
+    "interaction"
+  ]
+},
+
+{
+  "term": "niche",
+  "definition": "The role and position of a species within an ecosystem, including its interactions and resource use.",
+  "japanese": "生態的地位",
+  "topic": "4.1 Species, Communities and Ecosystems",
+  "definition_question": "Define niche.",
+  "paper1": {
+    "question": "A niche describes:",
+    "options": [
+      "The role of a species in an ecosystem",
+      "Only where an organism lives",
+      "The DNA sequence of an organism",
+      "The size of a population"
+    ],
+    "answer": "The role of a species in an ecosystem"
+  },
+  "key_terms": [
+    "role",
+    "resource use"
+  ]
+},
+
+{
+  "term": "biodiversity",
+  "definition": "The variety of living organisms within an ecosystem or on Earth.",
+  "japanese": "生物多様性",
+  "topic": "4.1 Species, Communities and Ecosystems",
+  "definition_question": "Define biodiversity.",
+  "paper1": {
+    "question": "High biodiversity means:",
+    "options": [
+      "A large variety of species",
+      "Only one species exists",
+      "No organisms are present",
+      "Only abiotic factors exist"
+    ],
+    "answer": "A large variety of species"
+  },
+  "key_terms": [
+    "variety of organisms",
+    "species diversity"
+  ]
+},
+
+{
+  "term": "limiting factor",
+  "definition": "A factor that restricts the growth, distribution or size of a population.",
+  "japanese": "制限要因",
+  "topic": "4.1 Species, Communities and Ecosystems",
+  "definition_question": "Define limiting factor.",
+  "paper1": {
+    "question": "A limiting factor affects:",
+    "options": [
+      "Population growth",
+      "DNA structure only",
+      "Protein formation only",
+      "Cell division only"
+    ],
+    "answer": "Population growth"
+  },
+  "key_terms": [
+    "population limit",
+    "growth restriction"
+  ]
 }]
