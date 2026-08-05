@@ -109,5 +109,115 @@
       "no membrane-bound organelles",
       "nucleoid"
     ]
-  }
+  },
+
+{
+  "term": "eukaryote",
+  "definition": "An organism whose cells contain a nucleus and membrane-bound organelles.",
+  "japanese": "真核生物",
+  "topic": "1.1 Introduction to Cells",
+  "definition_question": "Define eukaryote.",
+  "paper1": {
+    "question": "Which feature is characteristic of eukaryotic cells?",
+    "options": [
+      "No nucleus",
+      "DNA only in a nucleoid region",
+      "A nucleus containing genetic material",
+      "No membrane-bound organelles"
+    ],
+    "answer": "A nucleus containing genetic material"
+  },
+  "key_terms": [
+    "nucleus",
+    "membrane-bound organelles"
+  ]
+},
+
+{
+  "term": "cell membrane",
+  "definition": "A selectively permeable barrier surrounding the cell that controls the movement of substances into and out of the cell.",
+  "japanese": "細胞膜",
+  "topic": "1.1 Introduction to Cells",
+  "definition_question": "Define cell membrane.",
+  "paper1": {
+    "question": "What is the function of the cell membrane?",
+    "options": [
+      "Controls movement of substances into and out of the cell",
+      "Produces ATP",
+      "Stores genetic information",
+      "Controls cell division"
+    ],
+    "answer": "Controls movement of substances into and out of the cell"
+  },
+  "key_terms": [
+    "selectively permeable",
+    "movement of substances"
+  ]
+},
+
+{
+  "term": "cytoplasm",
+  "definition": "The fluid inside a cell where metabolic reactions occur.",
+  "japanese": "細胞質",
+  "topic": "1.1 Introduction to Cells",
+  "definition_question": "Define cytoplasm.",
+  "paper1": {
+    "question": "Where do many metabolic reactions occur in a cell?",
+    "options": [
+      "Cytoplasm",
+      "Nucleus",
+      "Cell membrane",
+      "Cell wall"
+    ],
+    "answer": "Cytoplasm"
+  },
+  "key_terms": [
+    "fluid",
+    "metabolic reactions"
+  ]
+},
+
+{
+  "term": "nucleus",
+  "definition": "A membrane-bound organelle that contains the genetic material of a eukaryotic cell.",
+  "japanese": "核",
+  "topic": "1.1 Introduction to Cells",
+  "definition_question": "Define nucleus.",
+  "paper1": {
+    "question": "What is stored inside the nucleus?",
+    "options": [
+      "ATP",
+      "Genetic material",
+      "Cell membrane",
+      "Cell wall"
+    ],
+    "answer": "Genetic material"
+  },
+  "key_terms": [
+    "membrane-bound organelle",
+    "genetic material"
+  ]
+},
+
+{
+  "term": "magnification",
+  "definition": "The number of times larger an image appears compared with the actual size of the object.",
+  "japanese": "倍率",
+  "topic": "1.1 Introduction to Cells",
+  "definition_question": "Define magnification.",
+  "paper1": {
+    "question": "What does magnification describe?",
+    "options": [
+      "The increase in image size compared with actual size",
+      "The number of cells in a sample",
+      "The resolution of a microscope",
+      "The thickness of a specimen"
+    ],
+    "answer": "The increase in image size compared with actual size"
+  },
+  "key_terms": [
+    "image size",
+    "actual size"
+  ]
+}
 ]
