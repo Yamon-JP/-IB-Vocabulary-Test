@@ -10244,4 +10244,223 @@
     "electrical signal",
     "nerve impulse"
   ]
+},
+{
+  "term": "hormone",
+  "definition": "A chemical messenger transported in the blood that affects target cells.",
+  "japanese": "ホルモン",
+  "topic": "14.2 Hormonal Regulation",
+  "definition_question": "Define hormone.",
+  "paper1": {
+    "question": "Hormones are chemical messengers transported by:",
+    "options": [
+      "Blood",
+      "DNA",
+      "Ribosomes",
+      "Bones"
+    ],
+    "answer": "Blood"
+  },
+  "key_terms": [
+    "chemical messenger",
+    "target cell"
+  ]
+},
+
+{
+  "term": "endocrine gland",
+  "definition": "A gland that releases hormones directly into the bloodstream.",
+  "japanese": "内分泌腺",
+  "topic": "14.2 Hormonal Regulation",
+  "definition_question": "Define endocrine gland.",
+  "paper1": {
+    "question": "Endocrine glands release hormones into:",
+    "options": [
+      "Blood",
+      "The digestive tract",
+      "The nucleus",
+      "The cell membrane"
+    ],
+    "answer": "Blood"
+  },
+  "key_terms": [
+    "hormone secretion",
+    "bloodstream"
+  ]
+},
+
+{
+  "term": "insulin",
+  "definition": "A hormone produced by the pancreas that lowers blood glucose concentration.",
+  "japanese": "インスリン",
+  "topic": "14.2 Hormonal Regulation",
+  "definition_question": "Define insulin.",
+  "paper1": {
+    "question": "Insulin decreases:",
+    "options": [
+      "Blood glucose concentration",
+      "Body temperature",
+      "DNA replication",
+      "Oxygen concentration"
+    ],
+    "answer": "Blood glucose concentration"
+  },
+  "key_terms": [
+    "pancreas",
+    "glucose regulation"
+  ]
+},
+
+{
+  "term": "glucagon",
+  "definition": "A hormone produced by the pancreas that increases blood glucose concentration.",
+  "japanese": "グルカゴン",
+  "topic": "14.2 Hormonal Regulation",
+  "definition_question": "Define glucagon.",
+  "paper1": {
+    "question": "Glucagon increases:",
+    "options": [
+      "Blood glucose concentration",
+      "Protein digestion",
+      "Body temperature",
+      "DNA mutation"
+    ],
+    "answer": "Blood glucose concentration"
+  },
+  "key_terms": [
+    "pancreas",
+    "glycogen breakdown"
+  ]
+},
+
+{
+  "term": "pancreas",
+  "definition": "An organ that produces digestive enzymes and hormones including insulin and glucagon.",
+  "japanese": "膵臓",
+  "topic": "14.2 Hormonal Regulation",
+  "definition_question": "Define pancreas.",
+  "paper1": {
+    "question": "The pancreas produces:",
+    "options": [
+      "Insulin and glucagon",
+      "Neurotransmitters only",
+      "Red blood cells",
+      "DNA"
+    ],
+    "answer": "Insulin and glucagon"
+  },
+  "key_terms": [
+    "endocrine organ",
+    "blood glucose"
+  ]
+},
+
+{
+  "term": "negative feedback",
+  "definition": "A control mechanism where a change triggers responses that reverse the original change.",
+  "japanese": "負のフィードバック",
+  "topic": "14.2 Hormonal Regulation",
+  "definition_question": "Define negative feedback.",
+  "paper1": {
+    "question": "Negative feedback maintains:",
+    "options": [
+      "Stability",
+      "Continuous change",
+      "Random variation",
+      "Cell death"
+    ],
+    "answer": "Stability"
+  },
+  "key_terms": [
+    "regulation",
+    "homeostasis"
+  ]
+},
+
+{
+  "term": "homeostasis",
+  "definition": "The maintenance of a stable internal environment.",
+  "japanese": "恒常性",
+  "topic": "14.2 Hormonal Regulation",
+  "definition_question": "Define homeostasis.",
+  "paper1": {
+    "question": "Homeostasis maintains:",
+    "options": [
+      "A stable internal environment",
+      "DNA sequence changes",
+      "Cell division only",
+      "External temperature"
+    ],
+    "answer": "A stable internal environment"
+  },
+  "key_terms": [
+    "internal balance",
+    "regulation"
+  ]
+},
+
+{
+  "term": "target cell",
+  "definition": "A cell that has specific receptors for a particular hormone.",
+  "japanese": "標的細胞",
+  "topic": "14.2 Hormonal Regulation",
+  "definition_question": "Define target cell.",
+  "paper1": {
+    "question": "A target cell responds to a hormone because it has:",
+    "options": [
+      "Specific receptors",
+      "Extra DNA",
+      "More mitochondria",
+      "No membrane"
+    ],
+    "answer": "Specific receptors"
+  },
+  "key_terms": [
+    "receptor",
+    "hormone response"
+  ]
+},
+
+{
+  "term": "diabetes",
+  "definition": "A disease involving problems with blood glucose regulation.",
+  "japanese": "糖尿病",
+  "topic": "14.2 Hormonal Regulation",
+  "definition_question": "Define diabetes.",
+  "paper1": {
+    "question": "Diabetes affects regulation of:",
+    "options": [
+      "Blood glucose",
+      "DNA structure",
+      "Bone growth",
+      "Nerve impulses only"
+    ],
+    "answer": "Blood glucose"
+  },
+  "key_terms": [
+    "insulin",
+    "glucose control"
+  ]
+},
+
+{
+  "term": "adrenaline",
+  "definition": "A hormone released during stress that prepares the body for rapid action.",
+  "japanese": "アドレナリン",
+  "topic": "14.2 Hormonal Regulation",
+  "definition_question": "Define adrenaline.",
+  "paper1": {
+    "question": "Adrenaline prepares the body for:",
+    "options": [
+      "Rapid action",
+      "Photosynthesis",
+      "Protein digestion",
+      "Cell division"
+    ],
+    "answer": "Rapid action"
+  },
+  "key_terms": [
+    "stress response",
+    "fight-or-flight"
+  ]
 }]
