@@ -1100,4 +1100,203 @@
     "differentiate",
     "specialised cells"
   ]
+},
+
+{
+  "term": "cell cycle",
+  "definition": "The sequence of events in which a cell grows, copies its DNA, and divides into two daughter cells.",
+  "japanese": "細胞周期",
+  "topic": "1.6 Cell Division",
+  "definition_question": "Define cell cycle.",
+  "paper1": {
+    "question": "What happens during the cell cycle?",
+    "options": [
+      "A cell grows, copies DNA and divides",
+      "A cell loses all genetic material",
+      "A cell stops metabolism permanently",
+      "A cell becomes a protein"
+    ],
+    "answer": "A cell grows, copies DNA and divides"
+  },
+  "key_terms": [
+    "growth",
+    "DNA replication",
+    "cell division"
+  ]
+},
+
+{
+  "term": "interphase",
+  "definition": "The stage of the cell cycle when the cell grows, carries out normal functions and replicates DNA.",
+  "japanese": "間期",
+  "topic": "1.6 Cell Division",
+  "definition_question": "Define interphase.",
+  "paper1": {
+    "question": "What occurs during interphase?",
+    "options": [
+      "DNA replication",
+      "Chromosome separation only",
+      "Cytoplasm division only",
+      "Cell death"
+    ],
+    "answer": "DNA replication"
+  },
+  "key_terms": [
+    "growth",
+    "DNA replication"
+  ]
+},
+
+{
+  "term": "DNA replication",
+  "definition": "The process of making an identical copy of DNA before cell division.",
+  "japanese": "DNA複製",
+  "topic": "1.6 Cell Division",
+  "definition_question": "Define DNA replication.",
+  "paper1": {
+    "question": "Why does DNA replicate before cell division?",
+    "options": [
+      "To ensure each daughter cell receives genetic information",
+      "To remove chromosomes",
+      "To stop cell growth",
+      "To produce ATP"
+    ],
+    "answer": "To ensure each daughter cell receives genetic information"
+  },
+  "key_terms": [
+    "identical copy",
+    "genetic information"
+  ]
+},
+
+{
+  "term": "chromosome",
+  "definition": "A structure made of DNA and proteins that carries genetic information.",
+  "japanese": "染色体",
+  "topic": "1.6 Cell Division",
+  "definition_question": "Define chromosome.",
+  "paper1": {
+    "question": "What is the function of chromosomes?",
+    "options": [
+      "Carry genetic information",
+      "Produce ATP",
+      "Digest substances",
+      "Transport oxygen"
+    ],
+    "answer": "Carry genetic information"
+  },
+  "key_terms": [
+    "DNA",
+    "genetic information"
+  ]
+},
+
+{
+  "term": "chromatid",
+  "definition": "One of the two identical copies of a replicated chromosome.",
+  "japanese": "染色分体",
+  "topic": "1.6 Cell Division",
+  "definition_question": "Define chromatid.",
+  "paper1": {
+    "question": "After DNA replication, a chromosome consists of:",
+    "options": [
+      "Two identical chromatids",
+      "Two different cells",
+      "No DNA",
+      "Only proteins"
+    ],
+    "answer": "Two identical chromatids"
+  },
+  "key_terms": [
+    "identical copies",
+    "replicated chromosome"
+  ]
+},
+
+{
+  "term": "mitosis",
+  "definition": "A type of cell division that produces two genetically identical daughter cells.",
+  "japanese": "有糸分裂",
+  "topic": "1.6 Cell Division",
+  "definition_question": "Define mitosis.",
+  "paper1": {
+    "question": "What is produced by mitosis?",
+    "options": [
+      "Two genetically identical daughter cells",
+      "Four genetically different cells",
+      "Only DNA molecules",
+      "Only proteins"
+    ],
+    "answer": "Two genetically identical daughter cells"
+  },
+  "key_terms": [
+    "identical cells",
+    "cell division"
+  ]
+},
+
+{
+  "term": "cytokinesis",
+  "definition": "The division of the cytoplasm to form two separate daughter cells.",
+  "japanese": "細胞質分裂",
+  "topic": "1.6 Cell Division",
+  "definition_question": "Define cytokinesis.",
+  "paper1": {
+    "question": "What happens during cytokinesis?",
+    "options": [
+      "The cytoplasm divides",
+      "DNA is copied",
+      "Proteins are produced",
+      "Chromosomes disappear"
+    ],
+    "answer": "The cytoplasm divides"
+  },
+  "key_terms": [
+    "cytoplasm",
+    "daughter cells"
+  ]
+},
+
+{
+  "term": "binary fission",
+  "definition": "A form of cell division in prokaryotes where one cell divides into two genetically identical cells.",
+  "japanese": "二分裂",
+  "topic": "1.6 Cell Division",
+  "definition_question": "Define binary fission.",
+  "paper1": {
+    "question": "Binary fission occurs in:",
+    "options": [
+      "Prokaryotes",
+      "Only plant cells",
+      "Only animal cells",
+      "Viruses"
+    ],
+    "answer": "Prokaryotes"
+  },
+  "key_terms": [
+    "prokaryote",
+    "cell division"
+  ]
+},
+
+{
+  "term": "differentiation",
+  "definition": "The process by which a cell becomes specialised for a specific function.",
+  "japanese": "分化",
+  "topic": "1.6 Cell Division",
+  "definition_question": "Define differentiation.",
+  "paper1": {
+    "question": "What happens during differentiation?",
+    "options": [
+      "Cells become specialised",
+      "DNA disappears",
+      "Cells stop dividing forever",
+      "All cells become identical"
+    ],
+    "answer": "Cells become specialised"
+  },
+  "key_terms": [
+    "specialised cells",
+    "specific function"
+  ]
 }]
