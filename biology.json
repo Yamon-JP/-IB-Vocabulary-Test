@@ -7239,4 +7239,223 @@
   "key_terms": [
     "enzyme activity"
   ]
+},
+
+{
+  "term": "cellular respiration",
+  "definition": "A series of metabolic reactions that release energy from glucose.",
+  "japanese": "細胞呼吸",
+  "topic": "8.2 Cellular Respiration",
+  "definition_question": "Define cellular respiration.",
+  "paper1": {
+    "question": "Cellular respiration releases energy from:",
+    "options": [
+      "Glucose",
+      "DNA",
+      "Protein only",
+      "Water"
+    ],
+    "answer": "Glucose"
+  },
+  "key_terms": [
+    "energy release",
+    "ATP"
+  ]
+},
+
+{
+  "term": "aerobic respiration",
+  "definition": "Respiration that uses oxygen to release energy from glucose.",
+  "japanese": "好気呼吸",
+  "topic": "8.2 Cellular Respiration",
+  "definition_question": "Define aerobic respiration.",
+  "paper1": {
+    "question": "Aerobic respiration requires:",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Antibodies",
+      "Hormones"
+    ],
+    "answer": "Oxygen"
+  },
+  "key_terms": [
+    "oxygen",
+    "mitochondria"
+  ]
+},
+
+{
+  "term": "anaerobic respiration",
+  "definition": "Respiration that releases energy without using oxygen.",
+  "japanese": "嫌気呼吸",
+  "topic": "8.2 Cellular Respiration",
+  "definition_question": "Define anaerobic respiration.",
+  "paper1": {
+    "question": "Anaerobic respiration occurs without:",
+    "options": [
+      "Oxygen",
+      "Glucose",
+      "Enzymes",
+      "Cells"
+    ],
+    "answer": "Oxygen"
+  },
+  "key_terms": [
+    "no oxygen",
+    "energy release"
+  ]
+},
+
+{
+  "term": "glycolysis",
+  "definition": "The breakdown of glucose into pyruvate during the first stage of respiration.",
+  "japanese": "解糖系",
+  "topic": "8.2 Cellular Respiration",
+  "definition_question": "Define glycolysis.",
+  "paper1": {
+    "question": "Glycolysis breaks down:",
+    "options": [
+      "Glucose",
+      "Protein",
+      "DNA",
+      "Fatty acids only"
+    ],
+    "answer": "Glucose"
+  },
+  "key_terms": [
+    "glucose breakdown",
+    "pyruvate"
+  ]
+},
+
+{
+  "term": "glucose",
+  "definition": "A simple sugar used as a main energy source in cellular respiration.",
+  "japanese": "グルコース",
+  "topic": "8.2 Cellular Respiration",
+  "definition_question": "Define glucose.",
+  "paper1": {
+    "question": "Glucose is used to produce:",
+    "options": [
+      "ATP",
+      "DNA",
+      "Antibodies",
+      "Enzymes only"
+    ],
+    "answer": "ATP"
+  },
+  "key_terms": [
+    "sugar",
+    "energy source"
+  ]
+},
+
+{
+  "term": "pyruvate",
+  "definition": "The three-carbon molecule produced from glucose during glycolysis.",
+  "japanese": "ピルビン酸",
+  "topic": "8.2 Cellular Respiration",
+  "definition_question": "Define pyruvate.",
+  "paper1": {
+    "question": "Pyruvate is produced during:",
+    "options": [
+      "Glycolysis",
+      "Translation",
+      "DNA replication",
+      "Photosynthesis only"
+    ],
+    "answer": "Glycolysis"
+  },
+  "key_terms": [
+    "three-carbon molecule"
+  ]
+},
+
+{
+  "term": "mitochondrion",
+  "definition": "An organelle where aerobic respiration occurs and ATP is produced.",
+  "japanese": "ミトコンドリア",
+  "topic": "8.2 Cellular Respiration",
+  "definition_question": "Define mitochondrion.",
+  "paper1": {
+    "question": "Aerobic respiration occurs mainly in:",
+    "options": [
+      "Mitochondria",
+      "Ribosomes",
+      "Nucleus",
+      "Golgi apparatus"
+    ],
+    "answer": "Mitochondria"
+  },
+  "key_terms": [
+    "organelle",
+    "ATP production"
+  ]
+},
+
+{
+  "term": "ATP",
+  "definition": "A molecule that provides energy for cellular processes.",
+  "japanese": "ATP（アデノシン三リン酸）",
+  "topic": "8.2 Cellular Respiration",
+  "definition_question": "Define ATP.",
+  "paper1": {
+    "question": "ATP provides:",
+    "options": [
+      "Energy for cells",
+      "Genetic information",
+      "Antibodies",
+      "Oxygen"
+    ],
+    "answer": "Energy for cells"
+  },
+  "key_terms": [
+    "energy currency",
+    "cellular energy"
+  ]
+},
+
+{
+  "term": "oxygen",
+  "definition": "A gas required for aerobic respiration.",
+  "japanese": "酸素",
+  "topic": "8.2 Cellular Respiration",
+  "definition_question": "Define oxygen.",
+  "paper1": {
+    "question": "Oxygen is used in:",
+    "options": [
+      "Aerobic respiration",
+      "Translation only",
+      "DNA replication only",
+      "Fermentation only"
+    ],
+    "answer": "Aerobic respiration"
+  },
+  "key_terms": [
+    "aerobic",
+    "respiration"
+  ]
+},
+
+{
+  "term": "fermentation",
+  "definition": "An anaerobic process that releases energy from glucose without oxygen.",
+  "japanese": "発酵",
+  "topic": "8.2 Cellular Respiration",
+  "definition_question": "Define fermentation.",
+  "paper1": {
+    "question": "Fermentation occurs when:",
+    "options": [
+      "Oxygen is unavailable",
+      "ATP is absent",
+      "DNA is copied",
+      "Proteins are digested"
+    ],
+    "answer": "Oxygen is unavailable"
+  },
+  "key_terms": [
+    "anaerobic",
+    "glucose"
+  ]
 }]
