@@ -1,0 +1,68 @@
+[
+  {
+    "term": "cell theory",
+    "definition": "The theory that all living organisms are composed of cells, cells are the smallest unit of life, and new cells are produced from existing cells.",
+    "japanese": "細胞説",
+    "topic": "1.1 Introduction to Cells",
+    "definition_question": "Define cell theory.",
+    "paper1": {
+      "question": "Which statement is part of cell theory?",
+      "options": [
+        "All cells contain a nucleus",
+        "Cells are the smallest unit of life",
+        "All organisms are multicellular",
+        "Cells are produced from non-living matter"
+      ],
+      "answer": "Cells are the smallest unit of life"
+    },
+    "key_terms": [
+      "living organisms",
+      "smallest unit of life",
+      "existing cells"
+    ]
+  },
+
+  {
+    "term": "unicellular organism",
+    "definition": "An organism that consists of only one cell.",
+    "japanese": "単細胞生物",
+    "topic": "1.1 Introduction to Cells",
+    "definition_question": "Define unicellular organism.",
+    "paper1": {
+      "question": "What describes a unicellular organism?",
+      "options": [
+        "An organism made of many cells",
+        "An organism consisting of one cell",
+        "A cell without DNA",
+        "A cell with many nuclei"
+      ],
+      "answer": "An organism consisting of one cell"
+    },
+    "key_terms": [
+      "one cell"
+    ]
+  },
+
+  {
+    "term": "multicellular organism",
+    "definition": "An organism that consists of many cells that are specialized to perform different functions.",
+    "japanese": "多細胞生物",
+    "topic": "1.1 Introduction to Cells",
+    "definition_question": "Define multicellular organism.",
+    "paper1": {
+      "question": "Why do multicellular organisms have specialized cells?",
+      "options": [
+        "To perform different functions",
+        "To remove all DNA",
+        "To avoid cell division",
+        "To become unicellular"
+      ],
+      "answer": "To perform different functions"
+    },
+    "key_terms": [
+      "many cells",
+      "specialized",
+      "different functions"
+    ]
+  }
+]
