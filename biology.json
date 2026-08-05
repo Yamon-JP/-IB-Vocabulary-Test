@@ -11563,4 +11563,224 @@
     "complete DNA",
     "genetic information"
   ]
+},
+
+{
+  "term": "DNA replication",
+  "definition": "The process of copying DNA to produce an identical DNA molecule.",
+  "japanese": "DNA複製",
+  "topic": "17.2 Genetic Processes",
+  "definition_question": "Define DNA replication.",
+  "paper1": {
+    "question": "DNA replication produces:",
+    "options": [
+      "An identical DNA copy",
+      "A protein",
+      "A lipid",
+      "A hormone"
+    ],
+    "answer": "An identical DNA copy"
+  },
+  "key_terms": [
+    "copying DNA",
+    "cell division"
+  ]
+},
+
+{
+  "term": "transcription",
+  "definition": "The process of producing mRNA from a DNA template.",
+  "japanese": "転写",
+  "topic": "17.2 Genetic Processes",
+  "definition_question": "Define transcription.",
+  "paper1": {
+    "question": "Transcription produces:",
+    "options": [
+      "mRNA",
+      "DNA",
+      "ATP",
+      "Lipids"
+    ],
+    "answer": "mRNA"
+  },
+  "key_terms": [
+    "DNA template",
+    "mRNA"
+  ]
+},
+
+{
+  "term": "translation",
+  "definition": "The process of producing a polypeptide using information carried by mRNA.",
+  "japanese": "翻訳",
+  "topic": "17.2 Genetic Processes",
+  "definition_question": "Define translation.",
+  "paper1": {
+    "question": "Translation produces:",
+    "options": [
+      "A polypeptide",
+      "DNA",
+      "RNA only",
+      "Glucose"
+    ],
+    "answer": "A polypeptide"
+  },
+  "key_terms": [
+    "ribosome",
+    "protein synthesis"
+  ]
+},
+
+{
+  "term": "codon",
+  "definition": "A sequence of three nucleotides on mRNA that specifies an amino acid.",
+  "japanese": "コドン",
+  "topic": "17.2 Genetic Processes",
+  "definition_question": "Define codon.",
+  "paper1": {
+    "question": "A codon contains:",
+    "options": [
+      "Three nucleotides",
+      "One amino acid",
+      "One chromosome",
+      "One protein"
+    ],
+    "answer": "Three nucleotides"
+  },
+  "key_terms": [
+    "mRNA",
+    "genetic code"
+  ]
+},
+
+{
+  "term": "mutation",
+  "definition": "A change in the nucleotide sequence of DNA.",
+  "japanese": "突然変異",
+  "topic": "17.2 Genetic Processes",
+  "definition_question": "Define mutation.",
+  "paper1": {
+    "question": "A mutation is a change in:",
+    "options": [
+      "DNA sequence",
+      "Cell location",
+      "Body temperature",
+      "Organ size only"
+    ],
+    "answer": "DNA sequence"
+  },
+  "key_terms": [
+    "DNA change",
+    "genetic variation"
+  ]
+},
+
+{
+  "term": "genetic engineering",
+  "definition": "The deliberate modification of an organism's genetic material.",
+  "japanese": "遺伝子工学",
+  "topic": "17.2 Genetic Processes",
+  "definition_question": "Define genetic engineering.",
+  "paper1": {
+    "question": "Genetic engineering involves changing:",
+    "options": [
+      "Genetic material",
+      "Body temperature",
+      "Cell size only",
+      "Food intake"
+    ],
+    "answer": "Genetic material"
+  },
+  "key_terms": [
+    "DNA modification",
+    "biotechnology"
+  ]
+},
+
+{
+  "term": "plasmid",
+  "definition": "A small circular DNA molecule commonly found in bacteria.",
+  "japanese": "プラスミド",
+  "topic": "17.2 Genetic Processes",
+  "definition_question": "Define plasmid.",
+  "paper1": {
+    "question": "Plasmids are commonly found in:",
+    "options": [
+      "Bacteria",
+      "Animal chromosomes only",
+      "Viruses only",
+      "Plant cells only"
+    ],
+    "answer": "Bacteria"
+  },
+  "key_terms": [
+    "circular DNA",
+    "vector"
+  ]
+},
+
+{
+  "term": "PCR",
+  "definition": "A technique used to make many copies of a specific DNA sequence.",
+  "japanese": "PCR（ポリメラーゼ連鎖反応）",
+  "topic": "17.2 Genetic Processes",
+  "definition_question": "Define PCR.",
+  "paper1": {
+    "question": "PCR is used to:",
+    "options": [
+      "Amplify DNA",
+      "Destroy proteins",
+      "Produce hormones",
+      "Digest cells"
+    ],
+    "answer": "Amplify DNA"
+  },
+  "key_terms": [
+    "DNA amplification",
+    "laboratory technique"
+  ]
+},
+
+{
+  "term": "gel electrophoresis",
+  "definition": "A technique used to separate DNA fragments based on size.",
+  "japanese": "ゲル電気泳動",
+  "topic": "17.2 Genetic Processes",
+  "definition_question": "Define gel electrophoresis.",
+  "paper1": {
+    "question": "Gel electrophoresis separates:",
+    "options": [
+      "DNA fragments",
+      "Whole organisms",
+      "Hormones",
+      "Cell membranes"
+    ],
+    "answer": "DNA fragments"
+  },
+  "key_terms": [
+    "DNA analysis",
+    "fragment size"
+  ]
+},
+
+{
+  "term": "genetic modification",
+  "definition": "The alteration of an organism's DNA to introduce desired characteristics.",
+  "japanese": "遺伝子改変",
+  "topic": "17.2 Genetic Processes",
+  "definition_question": "Define genetic modification.",
+  "paper1": {
+    "question": "Genetic modification changes:",
+    "options": [
+      "DNA",
+      "Only behavior",
+      "Only environment",
+      "Only body size"
+    ],
+    "answer": "DNA"
+  },
+  "key_terms": [
+    "modified organism",
+    "gene transfer"
+  ]
 }]
