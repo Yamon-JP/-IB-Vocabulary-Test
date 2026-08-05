@@ -4214,4 +4214,224 @@
     "infrared radiation",
     "greenhouse effect"
   ]
+},
+
+{
+  "term": "greenhouse effect",
+  "definition": "The warming of Earth's surface caused by greenhouse gases absorbing and re-emitting infrared radiation.",
+  "japanese": "温室効果",
+  "topic": "4.4 Climate Change",
+  "definition_question": "Define greenhouse effect.",
+  "paper1": {
+    "question": "The greenhouse effect is caused by:",
+    "options": [
+      "Greenhouse gases absorbing infrared radiation",
+      "Plants stopping photosynthesis",
+      "Oxygen blocking sunlight",
+      "DNA changes"
+    ],
+    "answer": "Greenhouse gases absorbing infrared radiation"
+  },
+  "key_terms": [
+    "infrared radiation",
+    "greenhouse gases"
+  ]
+},
+
+{
+  "term": "greenhouse gas",
+  "definition": "A gas that absorbs infrared radiation and contributes to warming of the atmosphere.",
+  "japanese": "温室効果ガス",
+  "topic": "4.4 Climate Change",
+  "definition_question": "Define greenhouse gas.",
+  "paper1": {
+    "question": "Which is a greenhouse gas?",
+    "options": [
+      "Carbon dioxide",
+      "Oxygen only",
+      "Nitrogen only",
+      "Helium only"
+    ],
+    "answer": "Carbon dioxide"
+  },
+  "key_terms": [
+    "CO₂",
+    "infrared absorption"
+  ]
+},
+
+{
+  "term": "global warming",
+  "definition": "The long-term increase in Earth's average temperature.",
+  "japanese": "地球温暖化",
+  "topic": "4.4 Climate Change",
+  "definition_question": "Define global warming.",
+  "paper1": {
+    "question": "Global warming refers to:",
+    "options": [
+      "An increase in average global temperature",
+      "A decrease in all temperatures",
+      "Only daily weather changes",
+      "The extinction of one species"
+    ],
+    "answer": "An increase in average global temperature"
+  },
+  "key_terms": [
+    "temperature increase",
+    "long-term change"
+  ]
+},
+
+{
+  "term": "climate change",
+  "definition": "Long-term changes in climate patterns, including temperature and precipitation.",
+  "japanese": "気候変動",
+  "topic": "4.4 Climate Change",
+  "definition_question": "Define climate change.",
+  "paper1": {
+    "question": "Climate change involves:",
+    "options": [
+      "Long-term changes in climate patterns",
+      "Only daily weather",
+      "Only seasonal changes",
+      "Only ocean movement"
+    ],
+    "answer": "Long-term changes in climate patterns"
+  },
+  "key_terms": [
+    "long-term climate patterns",
+    "precipitation"
+  ]
+},
+
+{
+  "term": "carbon emissions",
+  "definition": "The release of carbon-containing gases, especially carbon dioxide, into the atmosphere.",
+  "japanese": "炭素排出",
+  "topic": "4.4 Climate Change",
+  "definition_question": "Define carbon emissions.",
+  "paper1": {
+    "question": "Carbon emissions mainly increase atmospheric:",
+    "options": [
+      "Carbon dioxide",
+      "Oxygen",
+      "Nitrogen",
+      "Water only"
+    ],
+    "answer": "Carbon dioxide"
+  },
+  "key_terms": [
+    "CO₂ release",
+    "human activities"
+  ]
+},
+
+{
+  "term": "fossil fuel combustion",
+  "definition": "The burning of fossil fuels that releases stored carbon dioxide into the atmosphere.",
+  "japanese": "化石燃料燃焼",
+  "topic": "4.4 Climate Change",
+  "definition_question": "Define fossil fuel combustion.",
+  "paper1": {
+    "question": "Fossil fuel combustion causes:",
+    "options": [
+      "Increased CO₂ emissions",
+      "Reduced carbon dioxide",
+      "No atmospheric changes",
+      "Only oxygen production"
+    ],
+    "answer": "Increased CO₂ emissions"
+  },
+  "key_terms": [
+    "burning fuels",
+    "CO₂ release"
+  ]
+},
+
+{
+  "term": "climate feedback",
+  "definition": "A process where a change in climate causes effects that influence further climate change.",
+  "japanese": "気候フィードバック",
+  "topic": "4.4 Climate Change",
+  "definition_question": "Define climate feedback.",
+  "paper1": {
+    "question": "Climate feedback describes:",
+    "options": [
+      "Effects that influence future climate changes",
+      "Only temperature measurement",
+      "DNA regulation",
+      "Cell division"
+    ],
+    "answer": "Effects that influence future climate changes"
+  },
+  "key_terms": [
+    "climate response",
+    "further change"
+  ]
+},
+
+{
+  "term": "positive feedback",
+  "definition": "A feedback process that amplifies or increases an initial change.",
+  "japanese": "正のフィードバック",
+  "topic": "4.4 Climate Change",
+  "definition_question": "Define positive feedback.",
+  "paper1": {
+    "question": "Positive feedback causes a change to:",
+    "options": [
+      "Increase further",
+      "Stop immediately",
+      "Reverse completely",
+      "Remain unchanged"
+    ],
+    "answer": "Increase further"
+  },
+  "key_terms": [
+    "amplification",
+    "increase"
+  ]
+},
+
+{
+  "term": "climate model",
+  "definition": "A scientific model used to simulate and predict climate patterns.",
+  "japanese": "気候モデル",
+  "topic": "4.4 Climate Change",
+  "definition_question": "Define climate model.",
+  "paper1": {
+    "question": "Climate models are used to:",
+    "options": [
+      "Predict climate changes",
+      "Change DNA",
+      "Produce proteins",
+      "Measure cell size"
+    ],
+    "answer": "Predict climate changes"
+  },
+  "key_terms": [
+    "prediction",
+    "simulation"
+  ]
+},
+
+{
+  "term": "mitigation",
+  "definition": "Actions taken to reduce or prevent the causes of climate change.",
+  "japanese": "緩和策",
+  "topic": "4.4 Climate Change",
+  "definition_question": "Define mitigation.",
+  "paper1": {
+    "question": "Climate mitigation aims to:",
+    "options": [
+      "Reduce greenhouse gas emissions",
+      "Increase fossil fuel use",
+      "Increase deforestation",
+      "Remove all ecosystems"
+    ],
+    "answer": "Reduce greenhouse gas emissions"
+  },
+  "key_terms": [
+    "emission reduction",
+    "climate action"
+  ]
 }]
