@@ -1089,3 +1089,107 @@ function updateStatus(){
 }
 
 }
+// ==========================
+// All Topics
+// ==========================
+
+function startAllTopics(){
+
+    testMode = "all";
+
+    filteredVocabulary = vocabulary;
+
+    nextQuestion();
+
+}
+
+
+
+// ==========================
+// Weak Words
+// ==========================
+
+function startWeakWords(){
+
+    testMode = "weak";
+
+
+    filteredVocabulary =
+    vocabulary.filter(item=>{
+
+
+        let data =
+        historyData[item.term];
+
+
+        if(!data){
+            return false;
+        }
+
+
+        let accuracy =
+        data.correct /
+        data.attempts *
+        100;
+
+
+        return accuracy < 70;
+
+
+    });
+
+
+
+    if(filteredVocabulary.length===0){
+
+        alert("No weak words yet!");
+
+        return;
+
+    }
+
+
+    nextQuestion();
+
+}
+
+
+
+
+
+// ==========================
+// Wrong Answers
+// ==========================
+
+function startWrongAnswers(){
+
+    testMode="wrong";
+
+
+    filteredVocabulary =
+    vocabulary.filter(item=>{
+
+
+        let data =
+        historyData[item.term];
+
+
+        return data && data.wrong > 0;
+
+
+    });
+
+
+
+    if(filteredVocabulary.length===0){
+
+        alert("No wrong answers yet!");
+
+        return;
+
+    }
+
+
+    nextQuestion();
+
+}
