@@ -486,4 +486,117 @@
     "support",
     "protection"
   ]
+},
+  
+  {
+  "term": "phospholipid bilayer",
+  "definition": "A double layer of phospholipids that forms the basic structure of the cell membrane.",
+  "japanese": "リン脂質二重層",
+  "topic": "1.3 Membrane Structure",
+  "definition_question": "Define phospholipid bilayer.",
+  "paper1": {
+    "question": "What is the basic structure of the cell membrane?",
+    "options": [
+      "A phospholipid bilayer",
+      "A protein layer only",
+      "A cellulose layer",
+      "A DNA layer"
+    ],
+    "answer": "A phospholipid bilayer"
+  },
+  "key_terms": [
+    "double layer",
+    "phospholipids",
+    "cell membrane"
+  ]
+},
+
+{
+  "term": "hydrophilic",
+  "definition": "A substance that is attracted to water.",
+  "japanese": "親水性",
+  "topic": "1.3 Membrane Structure",
+  "definition_question": "Define hydrophilic.",
+  "paper1": {
+    "question": "Which part of a phospholipid is hydrophilic?",
+    "options": [
+      "The phosphate head",
+      "The fatty acid tails",
+      "The protein channel",
+      "The cholesterol molecule"
+    ],
+    "answer": "The phosphate head"
+  },
+  "key_terms": [
+    "water-attracting",
+    "polar"
+  ]
+},
+
+{
+  "term": "hydrophobic",
+  "definition": "A substance that is repelled by water.",
+  "japanese": "疎水性",
+  "topic": "1.3 Membrane Structure",
+  "definition_question": "Define hydrophobic.",
+  "paper1": {
+    "question": "Which part of a phospholipid is hydrophobic?",
+    "options": [
+      "Fatty acid tails",
+      "Phosphate head",
+      "Carbohydrate chain",
+      "Protein receptor"
+    ],
+    "answer": "Fatty acid tails"
+  },
+  "key_terms": [
+    "water-repelling",
+    "non-polar"
+  ]
+},
+
+{
+  "term": "fluid mosaic model",
+  "definition": "The model describing the cell membrane as a flexible phospholipid bilayer with proteins embedded within it.",
+  "japanese": "流動モザイクモデル",
+  "topic": "1.3 Membrane Structure",
+  "definition_question": "Define fluid mosaic model.",
+  "paper1": {
+    "question": "Why is the cell membrane described as fluid?",
+    "options": [
+      "Phospholipids can move within the layer",
+      "The membrane contains water only",
+      "Proteins cannot move",
+      "The membrane is rigid"
+    ],
+    "answer": "Phospholipids can move within the layer"
+  },
+  "key_terms": [
+    "flexible",
+    "phospholipid bilayer",
+    "embedded proteins"
+  ]
+},
+
+{
+  "term": "membrane protein",
+  "definition": "A protein embedded in or attached to the cell membrane that performs functions such as transport or cell signalling.",
+  "japanese": "膜タンパク質",
+  "topic": "1.3 Membrane Structure",
+  "definition_question": "Define membrane protein.",
+  "paper1": {
+    "question": "What is one function of membrane proteins?",
+    "options": [
+      "Transport substances across the membrane",
+      "Store DNA",
+      "Produce glucose",
+      "Make the cell wall"
+    ],
+    "answer": "Transport substances across the membrane"
+  },
+  "key_terms": [
+    "transport",
+    "cell signalling",
+    "embedded"
+  ]
 }]
