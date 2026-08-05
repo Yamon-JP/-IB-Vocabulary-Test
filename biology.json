@@ -9805,4 +9805,224 @@
     "B cell",
     "specific immunity"
   ]
+},
+
+  {
+  "term": "vaccination",
+  "definition": "The process of introducing antigens to stimulate an immune response and create memory cells.",
+  "japanese": "予防接種",
+  "topic": "13.2 Immunity and Disease",
+  "definition_question": "Define vaccination.",
+  "paper1": {
+    "question": "Vaccination stimulates:",
+    "options": [
+      "An immune response",
+      "Disease development",
+      "DNA destruction",
+      "Protein digestion"
+    ],
+    "answer": "An immune response"
+  },
+  "key_terms": [
+    "memory cells",
+    "immunity"
+  ]
+},
+
+{
+  "term": "immunity",
+  "definition": "The ability of an organism to resist a particular disease.",
+  "japanese": "免疫",
+  "topic": "13.2 Immunity and Disease",
+  "definition_question": "Define immunity.",
+  "paper1": {
+    "question": "Immunity provides protection against:",
+    "options": [
+      "Disease",
+      "Photosynthesis",
+      "Respiration",
+      "Cell division"
+    ],
+    "answer": "Disease"
+  },
+  "key_terms": [
+    "protection",
+    "immune system"
+  ]
+},
+
+{
+  "term": "active immunity",
+  "definition": "Immunity produced when the body's own immune system responds to an antigen.",
+  "japanese": "能動免疫",
+  "topic": "13.2 Immunity and Disease",
+  "definition_question": "Define active immunity.",
+  "paper1": {
+    "question": "Active immunity involves:",
+    "options": [
+      "Production of own antibodies",
+      "Receiving ready-made antibodies",
+      "No immune response",
+      "Only physical barriers"
+    ],
+    "answer": "Production of own antibodies"
+  },
+  "key_terms": [
+    "memory cells",
+    "vaccination"
+  ]
+},
+
+{
+  "term": "passive immunity",
+  "definition": "Immunity gained by receiving antibodies produced by another organism.",
+  "japanese": "受動免疫",
+  "topic": "13.2 Immunity and Disease",
+  "definition_question": "Define passive immunity.",
+  "paper1": {
+    "question": "Passive immunity involves receiving:",
+    "options": [
+      "Antibodies",
+      "Antigens only",
+      "DNA",
+      "Red blood cells"
+    ],
+    "answer": "Antibodies"
+  },
+  "key_terms": [
+    "temporary protection",
+    "antibody transfer"
+  ]
+},
+
+{
+  "term": "inflammation",
+  "definition": "A local immune response involving swelling, redness, heat, and increased blood flow.",
+  "japanese": "炎症",
+  "topic": "13.2 Immunity and Disease",
+  "definition_question": "Define inflammation.",
+  "paper1": {
+    "question": "Inflammation is part of:",
+    "options": [
+      "Immune defence",
+      "Photosynthesis",
+      "DNA replication",
+      "Protein synthesis"
+    ],
+    "answer": "Immune defence"
+  },
+  "key_terms": [
+    "innate immunity",
+    "immune response"
+  ]
+},
+
+{
+  "term": "fever",
+  "definition": "An increase in body temperature that can help limit pathogen growth.",
+  "japanese": "発熱",
+  "topic": "13.2 Immunity and Disease",
+  "definition_question": "Define fever.",
+  "paper1": {
+    "question": "A fever increases:",
+    "options": [
+      "Body temperature",
+      "DNA amount",
+      "Blood glucose only",
+      "Number of chromosomes"
+    ],
+    "answer": "Body temperature"
+  },
+  "key_terms": [
+    "immune response",
+    "temperature"
+  ]
+},
+
+{
+  "term": "antibiotic",
+  "definition": "A substance that kills bacteria or prevents bacterial growth.",
+  "japanese": "抗生物質",
+  "topic": "13.2 Immunity and Disease",
+  "definition_question": "Define antibiotic.",
+  "paper1": {
+    "question": "Antibiotics are effective against:",
+    "options": [
+      "Bacteria",
+      "Viruses only",
+      "Plant cells",
+      "Human DNA"
+    ],
+    "answer": "Bacteria"
+  },
+  "key_terms": [
+    "bacterial infection",
+    "treatment"
+  ]
+},
+
+{
+  "term": "antibiotic resistance",
+  "definition": "The ability of bacteria to survive exposure to antibiotics.",
+  "japanese": "抗生物質耐性",
+  "topic": "13.2 Immunity and Disease",
+  "definition_question": "Define antibiotic resistance.",
+  "paper1": {
+    "question": "Antibiotic resistance occurs in:",
+    "options": [
+      "Bacteria",
+      "Viruses",
+      "Human cells",
+      "Plants only"
+    ],
+    "answer": "Bacteria"
+  },
+  "key_terms": [
+    "natural selection",
+    "mutation"
+  ]
+},
+
+{
+  "term": "HIV",
+  "definition": "A virus that attacks immune cells, especially helper T cells.",
+  "japanese": "HIV（ヒト免疫不全ウイルス）",
+  "topic": "13.2 Immunity and Disease",
+  "definition_question": "Define HIV.",
+  "paper1": {
+    "question": "HIV affects:",
+    "options": [
+      "Immune cells",
+      "Plant cells",
+      "Red blood cells only",
+      "Bones"
+    ],
+    "answer": "Immune cells"
+  },
+  "key_terms": [
+    "virus",
+    "T cells"
+  ]
+},
+
+{
+  "term": "autoimmune disease",
+  "definition": "A disease where the immune system attacks the body's own cells.",
+  "japanese": "自己免疫疾患",
+  "topic": "13.2 Immunity and Disease",
+  "definition_question": "Define autoimmune disease.",
+  "paper1": {
+    "question": "Autoimmune disease involves the immune system attacking:",
+    "options": [
+      "The body's own cells",
+      "Only bacteria",
+      "Only viruses",
+      "Only food"
+    ],
+    "answer": "The body's own cells"
+  },
+  "key_terms": [
+    "immune malfunction",
+    "self-antigen"
+  ]
 }]
