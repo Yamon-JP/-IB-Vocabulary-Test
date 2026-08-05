@@ -735,4 +735,118 @@
     "transport",
     "specific substances"
   ]
+},
+
+{
+  "term": "diffusion",
+  "definition": "The net movement of particles from a region of higher concentration to a region of lower concentration due to random motion.",
+  "japanese": "拡散",
+  "topic": "1.4 Membrane Transport",
+  "definition_question": "Define diffusion.",
+  "paper1": {
+    "question": "In which direction do molecules move during diffusion?",
+    "options": [
+      "From high concentration to low concentration",
+      "From low concentration to high concentration",
+      "Only into the nucleus",
+      "Only using ATP"
+    ],
+    "answer": "From high concentration to low concentration"
+  },
+  "key_terms": [
+    "net movement",
+    "higher concentration",
+    "lower concentration",
+    "random motion"
+  ]
+},
+
+{
+  "term": "concentration gradient",
+  "definition": "A difference in concentration of a substance between two regions.",
+  "japanese": "濃度勾配",
+  "topic": "1.4 Membrane Transport",
+  "definition_question": "Define concentration gradient.",
+  "paper1": {
+    "question": "What provides the driving force for diffusion?",
+    "options": [
+      "A concentration gradient",
+      "ATP production",
+      "Cell division",
+      "Protein synthesis"
+    ],
+    "answer": "A concentration gradient"
+  },
+  "key_terms": [
+    "difference in concentration",
+    "two regions"
+  ]
+},
+
+{
+  "term": "facilitated diffusion",
+  "definition": "The passive movement of substances across a membrane through transport proteins from high concentration to low concentration.",
+  "japanese": "促進拡散",
+  "topic": "1.4 Membrane Transport",
+  "definition_question": "Define facilitated diffusion.",
+  "paper1": {
+    "question": "What is required for facilitated diffusion?",
+    "options": [
+      "Transport proteins",
+      "ATP energy",
+      "Cell wall formation",
+      "DNA replication"
+    ],
+    "answer": "Transport proteins"
+  },
+  "key_terms": [
+    "passive transport",
+    "transport proteins",
+    "no ATP"
+  ]
+},
+
+{
+  "term": "osmosis",
+  "definition": "The movement of water molecules across a selectively permeable membrane from higher water potential to lower water potential.",
+  "japanese": "浸透",
+  "topic": "1.4 Membrane Transport",
+  "definition_question": "Define osmosis.",
+  "paper1": {
+    "question": "What moves during osmosis?",
+    "options": [
+      "Water molecules",
+      "Proteins",
+      "DNA molecules",
+      "ATP molecules"
+    ],
+    "answer": "Water molecules"
+  },
+  "key_terms": [
+    "water molecules",
+    "selectively permeable membrane",
+    "water potential"
+  ]
+},
+
+{
+  "term": "water potential",
+  "definition": "A measure of the tendency of water to move from one region to another.",
+  "japanese": "水ポテンシャル",
+  "topic": "1.4 Membrane Transport",
+  "definition_question": "Define water potential.",
+  "paper1": {
+    "question": "Water moves by osmosis from:",
+    "options": [
+      "Higher water potential to lower water potential",
+      "Lower water potential to higher water potential",
+      "High solute concentration only",
+      "Low pressure to high pressure only"
+    ],
+    "answer": "Higher water potential to lower water potential"
+  },
+  "key_terms": [
+    "movement of water",
+    "water concentration"
+  ]
 }]
