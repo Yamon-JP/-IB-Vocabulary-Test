@@ -8050,4 +8050,223 @@
     "cell division",
     "plant growth"
   ]
+},
+
+{
+  "term": "auxin",
+  "definition": "A plant hormone that regulates growth by controlling cell elongation.",
+  "japanese": "オーキシン",
+  "topic": "9.2 Plant Growth and Reproduction",
+  "definition_question": "Define auxin.",
+  "paper1": {
+    "question": "Auxin is a:",
+    "options": [
+      "Plant hormone",
+      "Mineral ion",
+      "Protein",
+      "Sugar"
+    ],
+    "answer": "Plant hormone"
+  },
+  "key_terms": [
+    "growth hormone",
+    "cell elongation"
+  ]
+},
+
+{
+  "term": "tropism",
+  "definition": "A directional growth response of a plant to an environmental stimulus.",
+  "japanese": "屈性",
+  "topic": "9.2 Plant Growth and Reproduction",
+  "definition_question": "Define tropism.",
+  "paper1": {
+    "question": "Tropism is a response involving:",
+    "options": [
+      "Directional growth",
+      "Animal movement",
+      "Protein digestion",
+      "Cell death"
+    ],
+    "answer": "Directional growth"
+  },
+  "key_terms": [
+    "plant response",
+    "stimulus"
+  ]
+},
+
+{
+  "term": "phototropism",
+  "definition": "The growth response of a plant toward or away from light.",
+  "japanese": "光屈性",
+  "topic": "9.2 Plant Growth and Reproduction",
+  "definition_question": "Define phototropism.",
+  "paper1": {
+    "question": "Phototropism responds to:",
+    "options": [
+      "Light",
+      "Gravity",
+      "Water only",
+      "Temperature only"
+    ],
+    "answer": "Light"
+  },
+  "key_terms": [
+    "light response",
+    "auxin"
+  ]
+},
+
+{
+  "term": "gravitropism",
+  "definition": "The growth response of a plant to gravity.",
+  "japanese": "重力屈性",
+  "topic": "9.2 Plant Growth and Reproduction",
+  "definition_question": "Define gravitropism.",
+  "paper1": {
+    "question": "Gravitropism responds to:",
+    "options": [
+      "Gravity",
+      "Light only",
+      "Oxygen",
+      "Carbon dioxide"
+    ],
+    "answer": "Gravity"
+  },
+  "key_terms": [
+    "gravity response",
+    "root growth"
+  ]
+},
+
+{
+  "term": "pollen",
+  "definition": "A structure containing the male gametes of seed plants.",
+  "japanese": "花粉",
+  "topic": "9.2 Plant Growth and Reproduction",
+  "definition_question": "Define pollen.",
+  "paper1": {
+    "question": "Pollen contains:",
+    "options": [
+      "Male gametes",
+      "Roots",
+      "Seeds",
+      "Leaves"
+    ],
+    "answer": "Male gametes"
+  },
+  "key_terms": [
+    "male gamete",
+    "fertilization"
+  ]
+},
+
+{
+  "term": "ovule",
+  "definition": "A structure in the ovary that develops into a seed after fertilization.",
+  "japanese": "胚珠",
+  "topic": "9.2 Plant Growth and Reproduction",
+  "definition_question": "Define ovule.",
+  "paper1": {
+    "question": "An ovule develops into:",
+    "options": [
+      "A seed",
+      "A leaf",
+      "A root",
+      "A pollen grain"
+    ],
+    "answer": "A seed"
+  },
+  "key_terms": [
+    "female structure",
+    "seed formation"
+  ]
+},
+
+{
+  "term": "seed",
+  "definition": "A structure containing an embryo that can develop into a new plant.",
+  "japanese": "種子",
+  "topic": "9.2 Plant Growth and Reproduction",
+  "definition_question": "Define seed.",
+  "paper1": {
+    "question": "A seed contains:",
+    "options": [
+      "An embryo",
+      "Only water",
+      "Only glucose",
+      "A root only"
+    ],
+    "answer": "An embryo"
+  },
+  "key_terms": [
+    "plant reproduction",
+    "embryo"
+  ]
+},
+
+{
+  "term": "germination",
+  "definition": "The process by which a seed begins to grow into a new plant.",
+  "japanese": "発芽",
+  "topic": "9.2 Plant Growth and Reproduction",
+  "definition_question": "Define germination.",
+  "paper1": {
+    "question": "Germination begins when:",
+    "options": [
+      "A seed starts growing",
+      "A flower forms",
+      "Photosynthesis stops",
+      "Roots die"
+    ],
+    "answer": "A seed starts growing"
+  },
+  "key_terms": [
+    "seed growth",
+    "embryo"
+  ]
+},
+
+{
+  "term": "embryo",
+  "definition": "The young developing plant inside a seed.",
+  "japanese": "胚",
+  "topic": "9.2 Plant Growth and Reproduction",
+  "definition_question": "Define embryo.",
+  "paper1": {
+    "question": "The embryo is found inside:",
+    "options": [
+      "A seed",
+      "A stomata",
+      "A chloroplast",
+      "A xylem vessel"
+    ],
+    "answer": "A seed"
+  },
+  "key_terms": [
+    "developing plant"
+  ]
+},
+
+{
+  "term": "fruit",
+  "definition": "A structure that develops from the ovary and contains seeds.",
+  "japanese": "果実",
+  "topic": "9.2 Plant Growth and Reproduction",
+  "definition_question": "Define fruit.",
+  "paper1": {
+    "question": "Fruit develops from:",
+    "options": [
+      "The ovary",
+      "The root",
+      "The leaf",
+      "The xylem"
+    ],
+    "answer": "The ovary"
+  },
+  "key_terms": [
+    "seed protection",
+    "plant reproduction"
+  ]
 }]
