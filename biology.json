@@ -6582,4 +6582,225 @@
     "gametes",
     "zygote"
   ]
+},
+
+{
+  "term": "nucleotide",
+  "definition": "The basic unit that makes up DNA and RNA, consisting of a sugar, phosphate and nitrogenous base.",
+  "japanese": "ヌクレオチド",
+  "topic": "7.1 DNA Structure and Replication",
+  "definition_question": "Define nucleotide.",
+  "paper1": {
+    "question": "A nucleotide consists of:",
+    "options": [
+      "Sugar, phosphate and nitrogenous base",
+      "Amino acid only",
+      "Fatty acid and glycerol",
+      "Glucose only"
+    ],
+    "answer": "Sugar, phosphate and nitrogenous base"
+  },
+  "key_terms": [
+    "DNA unit",
+    "phosphate",
+    "base"
+  ]
+},
+
+{
+  "term": "DNA",
+  "definition": "A molecule that stores genetic information in living organisms.",
+  "japanese": "DNA",
+  "topic": "7.1 DNA Structure and Replication",
+  "definition_question": "Define DNA.",
+  "paper1": {
+    "question": "DNA stores:",
+    "options": [
+      "Genetic information",
+      "Energy only",
+      "Oxygen",
+      "Hormones"
+    ],
+    "answer": "Genetic information"
+  },
+  "key_terms": [
+    "genetic information",
+    "nucleic acid"
+  ]
+},
+
+{
+  "term": "RNA",
+  "definition": "A nucleic acid involved in transferring and using genetic information during protein synthesis.",
+  "japanese": "RNA",
+  "topic": "7.1 DNA Structure and Replication",
+  "definition_question": "Define RNA.",
+  "paper1": {
+    "question": "RNA is involved in:",
+    "options": [
+      "Protein synthesis",
+      "Blood clotting",
+      "Gas exchange",
+      "Digestion"
+    ],
+    "answer": "Protein synthesis"
+  },
+  "key_terms": [
+    "nucleic acid",
+    "protein synthesis"
+  ]
+},
+
+{
+  "term": "double helix",
+  "definition": "The twisted structure formed by two strands of DNA.",
+  "japanese": "二重らせん",
+  "topic": "7.1 DNA Structure and Replication",
+  "definition_question": "Define double helix.",
+  "paper1": {
+    "question": "DNA has a:",
+    "options": [
+      "Double helix structure",
+      "Single protein structure",
+      "Circular enzyme structure",
+      "Lipid structure"
+    ],
+    "answer": "Double helix structure"
+  },
+  "key_terms": [
+    "two strands",
+    "DNA structure"
+  ]
+},
+
+{
+  "term": "complementary base pairing",
+  "definition": "The specific pairing of bases in DNA: adenine with thymine and cytosine with guanine.",
+  "japanese": "相補的塩基対",
+  "topic": "7.1 DNA Structure and Replication",
+  "definition_question": "Define complementary base pairing.",
+  "paper1": {
+    "question": "In DNA, adenine pairs with:",
+    "options": [
+      "Thymine",
+      "Cytosine",
+      "Guanine",
+      "Uracil"
+    ],
+    "answer": "Thymine"
+  },
+  "key_terms": [
+    "A-T",
+    "C-G"
+  ]
+},
+
+{
+  "term": "hydrogen bond",
+  "definition": "A weak bond that holds complementary DNA bases together between two strands.",
+  "japanese": "水素結合",
+  "topic": "7.1 DNA Structure and Replication",
+  "definition_question": "Define hydrogen bond.",
+  "paper1": {
+    "question": "Hydrogen bonds in DNA occur between:",
+    "options": [
+      "Complementary bases",
+      "Amino acids",
+      "Lipids",
+      "Sugars only"
+    ],
+    "answer": "Complementary bases"
+  },
+  "key_terms": [
+    "base pairing",
+    "DNA strands"
+  ]
+},
+
+{
+  "term": "DNA replication",
+  "definition": "The process of producing an identical copy of DNA.",
+  "japanese": "DNA複製",
+  "topic": "7.1 DNA Structure and Replication",
+  "definition_question": "Define DNA replication.",
+  "paper1": {
+    "question": "DNA replication produces:",
+    "options": [
+      "An identical DNA copy",
+      "A protein",
+      "A hormone",
+      "A lipid"
+    ],
+    "answer": "An identical DNA copy"
+  },
+  "key_terms": [
+    "copying DNA",
+    "cell division"
+  ]
+},
+
+{
+  "term": "helicase",
+  "definition": "An enzyme that separates the two strands of DNA during replication.",
+  "japanese": "ヘリカーゼ",
+  "topic": "7.1 DNA Structure and Replication",
+  "definition_question": "Define helicase.",
+  "paper1": {
+    "question": "Helicase separates:",
+    "options": [
+      "DNA strands",
+      "Proteins",
+      "Cell membranes",
+      "Amino acids"
+    ],
+    "answer": "DNA strands"
+  },
+  "key_terms": [
+    "enzyme",
+    "DNA separation"
+  ]
+},
+
+{
+  "term": "DNA polymerase",
+  "definition": "An enzyme that adds nucleotides to form a new DNA strand.",
+  "japanese": "DNAポリメラーゼ",
+  "topic": "7.1 DNA Structure and Replication",
+  "definition_question": "Define DNA polymerase.",
+  "paper1": {
+    "question": "DNA polymerase adds:",
+    "options": [
+      "Nucleotides",
+      "Amino acids",
+      "Lipids",
+      "Hormones"
+    ],
+    "answer": "Nucleotides"
+  },
+  "key_terms": [
+    "enzyme",
+    "new strand"
+  ]
+},
+
+{
+  "term": "semi-conservative replication",
+  "definition": "A method of DNA replication where each new DNA molecule contains one original strand and one new strand.",
+  "japanese": "半保存的複製",
+  "topic": "7.1 DNA Structure and Replication",
+  "definition_question": "Define semi-conservative replication.",
+  "paper1": {
+    "question": "Semi-conservative replication produces DNA with:",
+    "options": [
+      "One original and one new strand",
+      "Two completely new strands",
+      "Only one strand",
+      "No bases"
+    ],
+    "answer": "One original and one new strand"
+  },
+  "key_terms": [
+    "original strand",
+    "new strand"
+  ]
 }]
