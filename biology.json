@@ -5533,4 +5533,224 @@
     "surface area",
     "small intestine"
   ]
+},
+
+{
+  "term": "blood system",
+  "definition": "The system responsible for transporting substances around the body using blood vessels.",
+  "japanese": "血液循環系",
+  "topic": "6.2 The Blood System",
+  "definition_question": "Define blood system.",
+  "paper1": {
+    "question": "The blood system transports:",
+    "options": [
+      "Substances around the body",
+      "Only DNA",
+      "Only hormones",
+      "Only waste"
+    ],
+    "answer": "Substances around the body"
+  },
+  "key_terms": [
+    "transport",
+    "blood vessels"
+  ]
+},
+
+{
+  "term": "plasma",
+  "definition": "The liquid component of blood that transports dissolved substances.",
+  "japanese": "血しょう",
+  "topic": "6.2 The Blood System",
+  "definition_question": "Define plasma.",
+  "paper1": {
+    "question": "Plasma transports:",
+    "options": [
+      "Dissolved substances",
+      "Only oxygen",
+      "Only antibodies",
+      "Only cells"
+    ],
+    "answer": "Dissolved substances"
+  },
+  "key_terms": [
+    "liquid component",
+    "transport"
+  ]
+},
+
+{
+  "term": "red blood cell",
+  "definition": "A blood cell containing haemoglobin that transports oxygen.",
+  "japanese": "赤血球",
+  "topic": "6.2 The Blood System",
+  "definition_question": "Define red blood cell.",
+  "paper1": {
+    "question": "Red blood cells transport:",
+    "options": [
+      "Oxygen",
+      "Antibodies only",
+      "Hormones only",
+      "Digestive enzymes"
+    ],
+    "answer": "Oxygen"
+  },
+  "key_terms": [
+    "haemoglobin",
+    "oxygen transport"
+  ]
+},
+
+{
+  "term": "haemoglobin",
+  "definition": "A protein in red blood cells that binds with oxygen.",
+  "japanese": "ヘモグロビン",
+  "topic": "6.2 The Blood System",
+  "definition_question": "Define haemoglobin.",
+  "paper1": {
+    "question": "Haemoglobin binds with:",
+    "options": [
+      "Oxygen",
+      "Glucose",
+      "DNA",
+      "Lipids"
+    ],
+    "answer": "Oxygen"
+  },
+  "key_terms": [
+    "oxygen carrier",
+    "protein"
+  ]
+},
+
+{
+  "term": "white blood cell",
+  "definition": "A blood cell involved in immune responses and defense against pathogens.",
+  "japanese": "白血球",
+  "topic": "6.2 The Blood System",
+  "definition_question": "Define white blood cell.",
+  "paper1": {
+    "question": "White blood cells help defend against:",
+    "options": [
+      "Pathogens",
+      "Oxygen loss",
+      "Food digestion",
+      "Bone growth"
+    ],
+    "answer": "Pathogens"
+  },
+  "key_terms": [
+    "immune response",
+    "defense"
+  ]
+},
+
+{
+  "term": "platelet",
+  "definition": "A cell fragment involved in blood clotting.",
+  "japanese": "血小板",
+  "topic": "6.2 The Blood System",
+  "definition_question": "Define platelet.",
+  "paper1": {
+    "question": "Platelets are involved in:",
+    "options": [
+      "Blood clotting",
+      "Oxygen transport",
+      "Antibody production only",
+      "Digestion"
+    ],
+    "answer": "Blood clotting"
+  },
+  "key_terms": [
+    "clotting",
+    "wound repair"
+  ]
+},
+
+{
+  "term": "artery",
+  "definition": "A blood vessel that carries blood away from the heart.",
+  "japanese": "動脈",
+  "topic": "6.2 The Blood System",
+  "definition_question": "Define artery.",
+  "paper1": {
+    "question": "Arteries carry blood:",
+    "options": [
+      "Away from the heart",
+      "Towards the heart",
+      "Only to lungs",
+      "Only to cells"
+    ],
+    "answer": "Away from the heart"
+  },
+  "key_terms": [
+    "away from heart",
+    "high pressure"
+  ]
+},
+
+{
+  "term": "vein",
+  "definition": "A blood vessel that carries blood towards the heart.",
+  "japanese": "静脈",
+  "topic": "6.2 The Blood System",
+  "definition_question": "Define vein.",
+  "paper1": {
+    "question": "Veins carry blood:",
+    "options": [
+      "Towards the heart",
+      "Away from the heart",
+      "Only to tissues",
+      "Only to lungs"
+    ],
+    "answer": "Towards the heart"
+  },
+  "key_terms": [
+    "towards heart",
+    "valves"
+  ]
+},
+
+{
+  "term": "capillary",
+  "definition": "A small blood vessel where exchange of substances occurs between blood and tissues.",
+  "japanese": "毛細血管",
+  "topic": "6.2 The Blood System",
+  "definition_question": "Define capillary.",
+  "paper1": {
+    "question": "Capillaries are important for:",
+    "options": [
+      "Exchange of substances",
+      "Pumping blood",
+      "Producing hormones",
+      "Digesting food"
+    ],
+    "answer": "Exchange of substances"
+  },
+  "key_terms": [
+    "exchange",
+    "thin wall"
+  ]
+},
+
+{
+  "term": "double circulation",
+  "definition": "A circulatory system where blood passes through the heart twice during one complete circuit.",
+  "japanese": "二重循環",
+  "topic": "6.2 The Blood System",
+  "definition_question": "Define double circulation.",
+  "paper1": {
+    "question": "In double circulation, blood passes through the heart:",
+    "options": [
+      "Twice per circuit",
+      "Never",
+      "Only once",
+      "Three times"
+    ],
+    "answer": "Twice per circuit"
+  },
+  "key_terms": [
+    "pulmonary circulation",
+    "systemic circulation"
+  ]
 }]
