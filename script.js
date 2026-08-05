@@ -8,43 +8,37 @@ let total = 0;
 let currentSubject = "english";
 
 
-
 // 初期読み込み
-
 loadData("english");
 
 
-
 // データ読み込み
-
-function loadData(subject){
+function loadData(subject) {
 
     currentSubject = subject;
 
+    let file;
 
-    let file = "";
-
-
-    if(subject === "biology"){
-
+    if (subject === "biology") {
         file = "biology.json";
-
-    }
-
-    else{
-
+    } else {
         file = "vocabulary.json";
-
     }
 
 
+    fetch(file + "?v=" + Date.now())
 
-    fetch(file)
+    .then(response => {
 
-    .then(response => response.json())
+        if (!response.ok) {
+            throw new Error("File not found");
+        }
+
+        return response.json();
+
+    })
 
     .then(data => {
-
 
         vocabulary = data;
 
@@ -55,23 +49,17 @@ function loadData(subject){
         : "English B HL";
 
 
-
-        showCard();
-
-        createQuestion();
+        nextQuestion();
 
 
     })
 
     .catch(error => {
 
-
         console.log(error);
 
-
         document.getElementById("word").innerHTML =
-        "Data loading error";
-
+        "Loading Error";
 
     });
 
@@ -80,8 +68,7 @@ function loadData(subject){
 
 
 // 科目変更
-
-function changeSubject(){
+function changeSubject() {
 
 
     let subject =
@@ -89,9 +76,7 @@ function changeSubject(){
 
 
     correct = 0;
-
     total = 0;
-
 
     updateStatus();
 
@@ -105,28 +90,43 @@ function changeSubject(){
 
 
 
-// カード表示
+// 新しい問題
+function nextQuestion() {
 
-function showCard(){
 
-
-    if(vocabulary.length === 0){
+    if (vocabulary.length === 0) {
         return;
     }
 
 
-
     currentItem =
     vocabulary[
-        Math.floor(Math.random()*vocabulary.length)
+        Math.floor(Math.random() * vocabulary.length)
     ];
 
 
 
-    document.getElementById("word").innerHTML =
+    showCard();
+
+    createQuestion();
+
+    showDefinition();
+
+
+}
+
+
+
+
+
+
+// カード表示
+function showCard() {
+
+
+    let term =
     currentItem.term ||
     currentItem.word;
-
 
 
     let meaning =
@@ -135,19 +135,13 @@ function showCard(){
 
 
 
+    document.getElementById("word").innerHTML =
+    term;
+
+
+
     document.getElementById("meaning").innerHTML =
     meaning;
-
-
-
-    document.getElementById("definition-question").innerHTML =
-    currentItem.definition_question ||
-    "";
-
-
-
-    document.getElementById("definition-answer").innerHTML =
-    "";
 
 
 
@@ -158,9 +152,8 @@ function showCard(){
 
 
 
-// カード裏表示
-
-function flipCard(){
+// カード裏返し
+function flipCard() {
 
 
     document
@@ -176,33 +169,26 @@ function flipCard(){
 
 
 
-
-// Paper 1作成
-
-function createQuestion(){
+// Paper 1問題作成
+function createQuestion() {
 
 
-    if(vocabulary.length === 0){
-        return;
-    }
+    let question =
+    document.getElementById("question");
 
 
-
-    currentItem =
-    vocabulary[
-        Math.floor(Math.random()*vocabulary.length)
-    ];
+    let choices =
+    document.getElementById("choices");
 
 
 
-    let questionData =
-    currentItem.paper1;
+    choices.innerHTML = "";
 
 
+    if (!currentItem.paper1) {
 
-    if(!questionData){
 
-        document.getElementById("question").innerHTML =
+        question.innerHTML =
         "No Paper 1 question available";
 
 
@@ -212,43 +198,34 @@ function createQuestion(){
 
 
 
-    document.getElementById("question").innerHTML =
-    questionData.question;
+    question.innerHTML =
+    currentItem.paper1.question;
 
 
 
-    let choices =
-    document.getElementById("choices");
-
-
-    choices.innerHTML = "";
-
-
-
-    questionData.options.forEach(option=>{
+    currentItem.paper1.options.forEach(option => {
 
 
         let button =
         document.createElement("button");
 
 
-
         button.innerHTML = option;
 
 
 
-        button.onclick=function(){
+        button.onclick = function(){
 
             checkAnswer(option);
 
         };
 
 
-
         choices.appendChild(button);
 
 
     });
+
 
 
 }
@@ -258,21 +235,17 @@ function createQuestion(){
 
 
 
-
 // 答え確認
-
-function checkAnswer(answer){
+function checkAnswer(answer) {
 
 
     total++;
 
 
-
-    if(answer === currentItem.paper1.answer){
+    if(answer === currentItem.paper1.answer) {
 
 
         correct++;
-
 
         document.getElementById("result").innerHTML =
         "⭕ Correct";
@@ -280,17 +253,16 @@ function checkAnswer(answer){
 
     }
 
-    else{
+    else {
 
 
         document.getElementById("result").innerHTML =
-        "❌ Answer: "
+        "❌ Correct answer: "
         +
         currentItem.paper1.answer;
 
 
     }
-
 
 
     updateStatus();
@@ -303,18 +275,41 @@ function checkAnswer(answer){
 
 
 
-// 次の問題
-
-function nextQuestion(){
-
-
-    document.getElementById("result").innerHTML="";
+// Definition Writing表示
+function showDefinition() {
 
 
-    showCard();
+    let question =
+    document.getElementById("definition-question");
 
 
-    createQuestion();
+    let answer =
+    document.getElementById("definition-answer");
+
+
+
+    if(currentItem.definition_question) {
+
+
+        question.innerHTML =
+        currentItem.definition_question;
+
+
+    }
+
+    else {
+
+
+        question.innerHTML =
+        "No definition question";
+
+
+    }
+
+
+
+    answer.innerHTML = "";
+
 
 
 }
@@ -324,25 +319,29 @@ function nextQuestion(){
 
 
 
-// Definition回答表示
-
-function showAnswer(){
-
-
-    if(currentItem.definition){
+// 模範解答表示
+function showAnswer() {
 
 
-        document.getElementById("definition-answer").innerHTML =
+    let answer =
+    document.getElementById("definition-answer");
+
+
+
+    if(currentItem.definition) {
+
+
+        answer.innerHTML =
         currentItem.definition;
 
 
     }
 
-    else{
+    else {
 
 
-        document.getElementById("definition-answer").innerHTML =
-        "No answer available";
+        answer.innerHTML =
+        "No answer";
 
 
     }
@@ -355,15 +354,12 @@ function showAnswer(){
 
 
 
-
-// 成績更新
-
-function updateStatus(){
+// 成績表示
+function updateStatus() {
 
 
     document.getElementById("correct").innerHTML =
     correct;
-
 
 
     document.getElementById("total").innerHTML =
