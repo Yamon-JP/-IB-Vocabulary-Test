@@ -10903,4 +10903,224 @@
     "nitrogen fixation",
     "nutrient cycle"
   ]
+},
+
+{
+  "term": "evolution",
+  "definition": "The change in inherited characteristics of populations over generations.",
+  "japanese": "進化",
+  "topic": "16.1 Evolution Mechanisms",
+  "definition_question": "Define evolution.",
+  "paper1": {
+    "question": "Evolution occurs in:",
+    "options": [
+      "Populations over generations",
+      "Individual cells during one day",
+      "Non-living materials",
+      "Only artificial systems"
+    ],
+    "answer": "Populations over generations"
+  },
+  "key_terms": [
+    "population change",
+    "generations"
+  ]
+},
+
+{
+  "term": "natural selection",
+  "definition": "The process where individuals with advantageous traits survive and reproduce more successfully.",
+  "japanese": "自然選択",
+  "topic": "16.1 Evolution Mechanisms",
+  "definition_question": "Define natural selection.",
+  "paper1": {
+    "question": "Natural selection favors organisms with:",
+    "options": [
+      "Advantageous inherited traits",
+      "Random traits only",
+      "No variation",
+      "No reproduction"
+    ],
+    "answer": "Advantageous inherited traits"
+  },
+  "key_terms": [
+    "survival",
+    "reproduction"
+  ]
+},
+
+{
+  "term": "variation",
+  "definition": "Differences in characteristics between individuals of the same species.",
+  "japanese": "変異",
+  "topic": "16.1 Evolution Mechanisms",
+  "definition_question": "Define variation.",
+  "paper1": {
+    "question": "Variation occurs between:",
+    "options": [
+      "Individuals of the same species",
+      "Only different kingdoms",
+      "Only ecosystems",
+      "Only cells"
+    ],
+    "answer": "Individuals of the same species"
+  },
+  "key_terms": [
+    "differences",
+    "characteristics"
+  ]
+},
+
+{
+  "term": "mutation",
+  "definition": "A change in the DNA sequence that can create new genetic variation.",
+  "japanese": "突然変異",
+  "topic": "16.1 Evolution Mechanisms",
+  "definition_question": "Define mutation.",
+  "paper1": {
+    "question": "Mutations affect:",
+    "options": [
+      "DNA sequences",
+      "Only body temperature",
+      "Only behavior",
+      "Only ecosystems"
+    ],
+    "answer": "DNA sequences"
+  },
+  "key_terms": [
+    "DNA change",
+    "genetic variation"
+  ]
+},
+
+{
+  "term": "adaptation",
+  "definition": "An inherited characteristic that improves survival and reproduction in an environment.",
+  "japanese": "適応",
+  "topic": "16.1 Evolution Mechanisms",
+  "definition_question": "Define adaptation.",
+  "paper1": {
+    "question": "An adaptation increases:",
+    "options": [
+      "Survival and reproduction success",
+      "DNA destruction",
+      "Cell death",
+      "Energy loss"
+    ],
+    "answer": "Survival and reproduction success"
+  },
+  "key_terms": [
+    "inherited trait",
+    "environment"
+  ]
+},
+
+{
+  "term": "selective pressure",
+  "definition": "An environmental factor that affects which individuals survive and reproduce.",
+  "japanese": "選択圧",
+  "topic": "16.1 Evolution Mechanisms",
+  "definition_question": "Define selective pressure.",
+  "paper1": {
+    "question": "Selective pressure influences:",
+    "options": [
+      "Survival and reproduction",
+      "DNA replication speed only",
+      "Cell size only",
+      "Protein digestion"
+    ],
+    "answer": "Survival and reproduction"
+  },
+  "key_terms": [
+    "environmental factor",
+    "selection"
+  ]
+},
+
+{
+  "term": "survival advantage",
+  "definition": "A trait that increases the likelihood of surviving in a particular environment.",
+  "japanese": "生存上の優位性",
+  "topic": "16.1 Evolution Mechanisms",
+  "definition_question": "Define survival advantage.",
+  "paper1": {
+    "question": "A survival advantage helps an organism:",
+    "options": [
+      "Survive and reproduce",
+      "Stop all mutations",
+      "Avoid DNA",
+      "Lose variation"
+    ],
+    "answer": "Survive and reproduce"
+  },
+  "key_terms": [
+    "adaptation",
+    "fitness"
+  ]
+},
+
+{
+  "term": "fitness",
+  "definition": "The ability of an organism to survive and produce viable offspring.",
+  "japanese": "適応度",
+  "topic": "16.1 Evolution Mechanisms",
+  "definition_question": "Define fitness.",
+  "paper1": {
+    "question": "Biological fitness is related to:",
+    "options": [
+      "Reproductive success",
+      "Body size only",
+      "Age only",
+      "Intelligence only"
+    ],
+    "answer": "Reproductive success"
+  },
+  "key_terms": [
+    "offspring",
+    "survival"
+  ]
+},
+
+{
+  "term": "speciation",
+  "definition": "The formation of new species through evolutionary processes.",
+  "japanese": "種分化",
+  "topic": "16.1 Evolution Mechanisms",
+  "definition_question": "Define speciation.",
+  "paper1": {
+    "question": "Speciation results in the formation of:",
+    "options": [
+      "New species",
+      "New cells",
+      "New proteins only",
+      "New ecosystems only"
+    ],
+    "answer": "New species"
+  },
+  "key_terms": [
+    "reproductive isolation",
+    "evolution"
+  ]
+},
+
+{
+  "term": "common ancestor",
+  "definition": "A shared ancestral organism from which different species evolved.",
+  "japanese": "共通祖先",
+  "topic": "16.1 Evolution Mechanisms",
+  "definition_question": "Define common ancestor.",
+  "paper1": {
+    "question": "Species with a common ancestor share:",
+    "options": [
+      "Evolutionary history",
+      "The same habitat always",
+      "The same appearance always",
+      "The same genes completely"
+    ],
+    "answer": "Evolutionary history"
+  },
+  "key_terms": [
+    "shared ancestry",
+    "evolution"
+  ]
 }]
