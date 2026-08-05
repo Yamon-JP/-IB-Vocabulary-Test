@@ -12223,4 +12223,224 @@
     "cell specialization",
     "gene expression"
   ]
+},
+
+{
+  "term": "respiration",
+  "definition": "A series of metabolic reactions that release energy from organic molecules.",
+  "japanese": "呼吸",
+  "topic": "19.1 Cell Respiration",
+  "definition_question": "Define respiration.",
+  "paper1": {
+    "question": "Respiration releases energy from:",
+    "options": [
+      "Organic molecules",
+      "DNA only",
+      "Water only",
+      "Minerals only"
+    ],
+    "answer": "Organic molecules"
+  },
+  "key_terms": [
+    "energy release",
+    "metabolism"
+  ]
+},
+
+{
+  "term": "aerobic respiration",
+  "definition": "Respiration that uses oxygen to release energy from glucose.",
+  "japanese": "好気呼吸",
+  "topic": "19.1 Cell Respiration",
+  "definition_question": "Define aerobic respiration.",
+  "paper1": {
+    "question": "Aerobic respiration requires:",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon dioxide only",
+      "No reactants"
+    ],
+    "answer": "Oxygen"
+  },
+  "key_terms": [
+    "oxygen",
+    "ATP production"
+  ]
+},
+
+{
+  "term": "anaerobic respiration",
+  "definition": "Respiration that releases energy without using oxygen.",
+  "japanese": "嫌気呼吸",
+  "topic": "19.1 Cell Respiration",
+  "definition_question": "Define anaerobic respiration.",
+  "paper1": {
+    "question": "Anaerobic respiration occurs without:",
+    "options": [
+      "Oxygen",
+      "Glucose",
+      "Enzymes",
+      "Cells"
+    ],
+    "answer": "Oxygen"
+  },
+  "key_terms": [
+    "no oxygen",
+    "limited ATP"
+  ]
+},
+
+{
+  "term": "glycolysis",
+  "definition": "The breakdown of glucose into pyruvate in the cytoplasm.",
+  "japanese": "解糖系",
+  "topic": "19.1 Cell Respiration",
+  "definition_question": "Define glycolysis.",
+  "paper1": {
+    "question": "Glycolysis occurs in the:",
+    "options": [
+      "Cytoplasm",
+      "Nucleus",
+      "Chloroplast",
+      "Golgi apparatus"
+    ],
+    "answer": "Cytoplasm"
+  },
+  "key_terms": [
+    "glucose breakdown",
+    "pyruvate"
+  ]
+},
+
+{
+  "term": "mitochondrion",
+  "definition": "An organelle where aerobic respiration occurs.",
+  "japanese": "ミトコンドリア",
+  "topic": "19.1 Cell Respiration",
+  "definition_question": "Define mitochondrion.",
+  "paper1": {
+    "question": "The mitochondrion is the site of:",
+    "options": [
+      "Aerobic respiration",
+      "Photosynthesis",
+      "Protein synthesis only",
+      "DNA storage only"
+    ],
+    "answer": "Aerobic respiration"
+  },
+  "key_terms": [
+    "organelle",
+    "ATP production"
+  ]
+},
+
+{
+  "term": "ATP",
+  "definition": "A molecule that stores and transfers energy within cells.",
+  "japanese": "ATP（アデノシン三リン酸）",
+  "topic": "19.1 Cell Respiration",
+  "definition_question": "Define ATP.",
+  "paper1": {
+    "question": "ATP is used for:",
+    "options": [
+      "Energy transfer",
+      "Storing genetic information",
+      "Producing DNA only",
+      "Breaking chromosomes"
+    ],
+    "answer": "Energy transfer"
+  },
+  "key_terms": [
+    "energy currency",
+    "cellular energy"
+  ]
+},
+
+{
+  "term": "glucose",
+  "definition": "A simple sugar used as a major energy source in respiration.",
+  "japanese": "グルコース",
+  "topic": "19.1 Cell Respiration",
+  "definition_question": "Define glucose.",
+  "paper1": {
+    "question": "Glucose is used in:",
+    "options": [
+      "Respiration",
+      "DNA storage",
+      "Protein folding only",
+      "Cell division only"
+    ],
+    "answer": "Respiration"
+  },
+  "key_terms": [
+    "carbohydrate",
+    "energy source"
+  ]
+},
+
+{
+  "term": "pyruvate",
+  "definition": "The product of glycolysis that can enter further stages of respiration.",
+  "japanese": "ピルビン酸",
+  "topic": "19.1 Cell Respiration",
+  "definition_question": "Define pyruvate.",
+  "paper1": {
+    "question": "Pyruvate is produced during:",
+    "options": [
+      "Glycolysis",
+      "Photosynthesis only",
+      "DNA replication",
+      "Translation"
+    ],
+    "answer": "Glycolysis"
+  },
+  "key_terms": [
+    "glycolysis product",
+    "respiration"
+  ]
+},
+
+{
+  "term": "Krebs cycle",
+  "definition": "A stage of aerobic respiration that produces reduced carriers and releases carbon dioxide.",
+  "japanese": "クエン酸回路",
+  "topic": "19.1 Cell Respiration",
+  "definition_question": "Define Krebs cycle.",
+  "paper1": {
+    "question": "The Krebs cycle occurs in the:",
+    "options": [
+      "Mitochondrion",
+      "Cytoplasm",
+      "Nucleus",
+      "Chloroplast"
+    ],
+    "answer": "Mitochondrion"
+  },
+  "key_terms": [
+    "carbon dioxide",
+    "aerobic respiration"
+  ]
+},
+
+{
+  "term": "electron transport chain",
+  "definition": "A series of membrane proteins involved in ATP production during respiration.",
+  "japanese": "電子伝達系",
+  "topic": "19.1 Cell Respiration",
+  "definition_question": "Define electron transport chain.",
+  "paper1": {
+    "question": "The electron transport chain produces:",
+    "options": [
+      "ATP",
+      "DNA",
+      "Glucose",
+      "Proteins"
+    ],
+    "answer": "ATP"
+  },
+  "key_terms": [
+    "oxidative phosphorylation",
+    "inner mitochondrial membrane"
+  ]
 }]
