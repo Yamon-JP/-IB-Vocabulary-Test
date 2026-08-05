@@ -2028,4 +2028,226 @@
     "fatty acids",
     "triglyceride"
   ]
+},
+
+{
+  "term": "amino acid",
+  "definition": "An organic molecule that is the basic unit of proteins.",
+  "japanese": "アミノ酸",
+  "topic": "2.4 Proteins",
+  "definition_question": "Define amino acid.",
+  "paper1": {
+    "question": "Amino acids are the building blocks of:",
+    "options": [
+      "Proteins",
+      "Lipids",
+      "Carbohydrates",
+      "DNA only"
+    ],
+    "answer": "Proteins"
+  },
+  "key_terms": [
+    "protein building block",
+    "organic molecule"
+  ]
+},
+
+{
+  "term": "peptide bond",
+  "definition": "A covalent bond formed between two amino acids during protein formation.",
+  "japanese": "ペプチド結合",
+  "topic": "2.4 Proteins",
+  "definition_question": "Define peptide bond.",
+  "paper1": {
+    "question": "Peptide bonds join:",
+    "options": [
+      "Amino acids",
+      "Fatty acids",
+      "Monosaccharides",
+      "Nucleotides"
+    ],
+    "answer": "Amino acids"
+  },
+  "key_terms": [
+    "covalent bond",
+    "amino acids"
+  ]
+},
+
+{
+  "term": "polypeptide",
+  "definition": "A chain of amino acids joined together by peptide bonds.",
+  "japanese": "ポリペプチド",
+  "topic": "2.4 Proteins",
+  "definition_question": "Define polypeptide.",
+  "paper1": {
+    "question": "A polypeptide is made of:",
+    "options": [
+      "Amino acids linked by peptide bonds",
+      "Fatty acids and glycerol",
+      "Glucose molecules",
+      "DNA bases"
+    ],
+    "answer": "Amino acids linked by peptide bonds"
+  },
+  "key_terms": [
+    "amino acid chain",
+    "peptide bonds"
+  ]
+},
+
+{
+  "term": "protein",
+  "definition": "A biological molecule made of one or more polypeptide chains with a specific function.",
+  "japanese": "タンパク質",
+  "topic": "2.4 Proteins",
+  "definition_question": "Define protein.",
+  "paper1": {
+    "question": "Proteins are made from:",
+    "options": [
+      "Polypeptide chains",
+      "Triglycerides",
+      "Polysaccharides",
+      "Nucleic acids"
+    ],
+    "answer": "Polypeptide chains"
+  },
+  "key_terms": [
+    "polypeptide",
+    "specific function"
+  ]
+},
+
+{
+  "term": "primary structure",
+  "definition": "The specific sequence of amino acids in a polypeptide chain.",
+  "japanese": "一次構造",
+  "topic": "2.4 Proteins",
+  "definition_question": "Define primary structure.",
+  "paper1": {
+    "question": "The primary structure of a protein refers to:",
+    "options": [
+      "The amino acid sequence",
+      "The final 3D shape",
+      "Multiple protein subunits",
+      "Hydrogen bonds only"
+    ],
+    "answer": "The amino acid sequence"
+  },
+  "key_terms": [
+    "amino acid sequence",
+    "polypeptide"
+  ]
+},
+
+{
+  "term": "secondary structure",
+  "definition": "The local folding of a polypeptide chain into structures such as alpha helices and beta sheets.",
+  "japanese": "二次構造",
+  "topic": "2.4 Proteins",
+  "definition_question": "Define secondary structure.",
+  "paper1": {
+    "question": "Secondary structure is stabilized mainly by:",
+    "options": [
+      "Hydrogen bonds",
+      "Peptide bonds only",
+      "Ester bonds",
+      "Glycosidic bonds"
+    ],
+    "answer": "Hydrogen bonds"
+  },
+  "key_terms": [
+    "alpha helix",
+    "beta sheet",
+    "hydrogen bonds"
+  ]
+},
+
+{
+  "term": "tertiary structure",
+  "definition": "The overall three-dimensional shape of a single polypeptide chain.",
+  "japanese": "三次構造",
+  "topic": "2.4 Proteins",
+  "definition_question": "Define tertiary structure.",
+  "paper1": {
+    "question": "Tertiary structure describes:",
+    "options": [
+      "The 3D shape of one polypeptide",
+      "The amino acid sequence only",
+      "DNA arrangement",
+      "Carbohydrate structure"
+    ],
+    "answer": "The 3D shape of one polypeptide"
+  },
+  "key_terms": [
+    "three-dimensional shape",
+    "single polypeptide"
+  ]
+},
+
+{
+  "term": "quaternary structure",
+  "definition": "The arrangement of two or more polypeptide chains forming a functional protein.",
+  "japanese": "四次構造",
+  "topic": "2.4 Proteins",
+  "definition_question": "Define quaternary structure.",
+  "paper1": {
+    "question": "Quaternary structure involves:",
+    "options": [
+      "Multiple polypeptide chains",
+      "Only one amino acid",
+      "DNA replication",
+      "One monosaccharide"
+    ],
+    "answer": "Multiple polypeptide chains"
+  },
+  "key_terms": [
+    "multiple polypeptides",
+    "functional protein"
+  ]
+},
+
+{
+  "term": "hydrogen bond in proteins",
+  "definition": "A weak interaction that helps maintain protein structure by stabilising folding.",
+  "japanese": "タンパク質中の水素結合",
+  "topic": "2.4 Proteins",
+  "definition_question": "Explain the role of hydrogen bonds in proteins.",
+  "paper1": {
+    "question": "Hydrogen bonds help proteins by:",
+    "options": [
+      "Maintaining their structure",
+      "Breaking peptide bonds",
+      "Producing glucose",
+      "Copying DNA"
+    ],
+    "answer": "Maintaining their structure"
+  },
+  "key_terms": [
+    "protein folding",
+    "stability"
+  ]
+},
+
+{
+  "term": "disulfide bond",
+  "definition": "A strong covalent bond between sulfur-containing amino acids that stabilises protein structure.",
+  "japanese": "ジスルフィド結合",
+  "topic": "2.4 Proteins",
+  "definition_question": "Define disulfide bond.",
+  "paper1": {
+    "question": "Disulfide bonds are important because they:",
+    "options": [
+      "Stabilise protein structure",
+      "Join glucose molecules",
+      "Copy DNA",
+      "Break down lipids"
+    ],
+    "answer": "Stabilise protein structure"
+  },
+  "key_terms": [
+    "sulfur",
+    "covalent bond",
+    "protein stability"
+  ]
 }]
