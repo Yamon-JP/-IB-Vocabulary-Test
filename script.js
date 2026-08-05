@@ -1,10 +1,19 @@
+// =====================================
+// IB Master Trainer Beta 2 Final
+// Part 1
+// =====================================
+
+
 let vocabulary = [];
+
 let filteredVocabulary = [];
 
 let currentItem = {};
 
 let correct = 0;
+
 let total = 0;
+
 
 let currentSubject = "english";
 
@@ -13,9 +22,12 @@ let currentTopic = "all";
 let testMode = "all";
 
 
-// ==========================
-// Local Storage
-// ==========================
+
+
+// =====================================
+// Learning History
+// =====================================
+
 
 let historyData =
 JSON.parse(
@@ -27,22 +39,28 @@ JSON.parse(
 
 
 
-// ==========================
-// 初期読み込み
-// ==========================
+
+// =====================================
+// Initial Load
+// =====================================
+
 
 loadData("english");
 
 
 
 
-// ==========================
-// データ読み込み
-// ==========================
+
+// =====================================
+// Load JSON
+// =====================================
+
 
 function loadData(subject){
 
+
     currentSubject = subject;
+
 
     let file;
 
@@ -60,17 +78,25 @@ function loadData(subject){
 
 
 
-    fetch(file + "?v=" + Date.now())
+    fetch(
+        file + "?v=" + Date.now()
+    )
+
 
     .then(response=>{
 
+
         if(!response.ok){
 
-            throw new Error("File not found");
+            throw new Error(
+                "File not found"
+            );
 
         }
 
+
         return response.json();
+
 
     })
 
@@ -80,10 +106,15 @@ function loadData(subject){
 
         vocabulary = data;
 
-        filteredVocabulary = data;
+
+        filteredVocabulary =
+        vocabulary;
 
 
-        document.getElementById("mode").innerHTML =
+
+        document.getElementById("mode")
+        .innerHTML =
+
         subject === "biology"
         ?
         "Biology SL"
@@ -92,14 +123,18 @@ function loadData(subject){
 
 
 
-        if(subject === "biology"){
+
+        if(subject==="biology"){
+
 
             document.getElementById(
                 "biology-dashboard"
-            ).style.display="block";
+            )
+            .style.display="block";
 
 
             showAchievements();
+
 
         }
         else{
@@ -107,10 +142,12 @@ function loadData(subject){
 
             document.getElementById(
                 "biology-dashboard"
-            ).style.display="none";
+            )
+            .style.display="none";
 
 
         }
+
 
 
 
@@ -127,7 +164,8 @@ function loadData(subject){
         console.log(error);
 
 
-        document.getElementById("word").innerHTML =
+        document.getElementById("word")
+        .innerHTML =
         "Loading Error";
 
 
@@ -141,15 +179,20 @@ function loadData(subject){
 
 
 
-// ==========================
-// 科目変更
-// ==========================
+
+
+
+// =====================================
+// Subject Change
+// =====================================
+
 
 function changeSubject(){
 
 
     let subject =
-    document.getElementById("subject").value;
+    document.getElementById("subject")
+    .value;
 
 
 
@@ -161,6 +204,7 @@ function changeSubject(){
     updateStatus();
 
 
+
     currentTopic="all";
 
     testMode="all";
@@ -169,6 +213,7 @@ function changeSubject(){
     loadData(subject);
 
 
+
 }
 
 
@@ -176,22 +221,23 @@ function changeSubject(){
 
 
 
-// ==========================
-// Topic指定
-// ==========================
+// =====================================
+// Topic Select
+// =====================================
+
 
 function selectTopic(topic){
 
 
     currentTopic = topic;
 
-    testMode="topic";
-
 
     filteredVocabulary =
     vocabulary.filter(item=>{
 
+
         return item.topic === topic;
+
 
     });
 
@@ -199,6 +245,8 @@ function selectTopic(topic){
 
     nextQuestion();
 
+
+
 }
 
 
@@ -206,14 +254,17 @@ function selectTopic(topic){
 
 
 
-// ==========================
+
+// =====================================
 // All Topics
-// ==========================
+// =====================================
+
 
 function startAllTopics(){
 
 
     testMode="all";
+
 
     filteredVocabulary =
     vocabulary;
@@ -229,14 +280,17 @@ function startAllTopics(){
 
 
 
-// ==========================
-// 問題作成
-// ==========================
+// =====================================
+// Question
+// =====================================
+
 
 function nextQuestion(){
 
 
-    if(filteredVocabulary.length===0){
+    if(
+        filteredVocabulary.length===0
+    ){
 
         return;
 
@@ -251,7 +305,9 @@ function nextQuestion(){
 
     showCard();
 
+
     createQuestion();
+
 
     showDefinition();
 
@@ -262,16 +318,21 @@ function nextQuestion(){
 
 
 
-// ==========================
-// 問題選択
-// ==========================
+
+
+// =====================================
+// Select Question
+// =====================================
+
 
 function chooseQuestion(){
 
 
-    // Biology以外は普通ランダム
 
-    if(currentSubject !== "biology"){
+    if(
+        currentSubject !== "biology"
+    ){
+
 
         return filteredVocabulary[
             Math.floor(
@@ -281,404 +342,14 @@ function chooseQuestion(){
             )
         ];
 
+
     }
 
 
 
-    // 苦手単語優先
 
     let weakWords =
     filteredVocabulary.filter(item=>{
-
-
-        let data =
-        historyData[item.term];
-
-
-        if(!data){
-
-            return false;
-
-        }
-
-
-        let accuracy =
-        data.correct /
-        data.attempts *
-        100;
-
-
-        return accuracy < 70;
-
-
-    });
-
-
-
-    if(
-        weakWords.length>0 &&
-        Math.random()<0.7
-    ){
-
-        return weakWords[
-            Math.floor(
-                Math.random()
-                *
-                weakWords.length
-            )
-        ];
-
-    }
-
-
-
-    return filteredVocabulary[
-        Math.floor(
-            Math.random()
-            *
-            filteredVocabulary.length
-        )
-    ];
-
-
-}
-
-
-
-
-
-
-// ==========================
-// カード表示
-// ==========================
-
-function showCard(){
-
-
-    let term =
-    currentItem.term ||
-    currentItem.word;
-
-
-
-    let meaning =
-    currentItem.japanese ||
-    currentItem.meaning;
-
-
-
-    document.getElementById("word")
-    .innerHTML =
-    term;
-
-
-
-    document.getElementById("meaning")
-    .innerHTML =
-    meaning;
-
-    }
-
-// ==========================
-// カード反転
-// ==========================
-
-function flipCard(){
-
-    document
-    .getElementById("meaning")
-    .classList
-    .toggle("hidden");
-
-}
-
-
-
-
-
-// ==========================
-// Paper 1問題作成
-// ==========================
-
-function createQuestion(){
-
-
-    let question =
-    document.getElementById("question");
-
-
-    let choices =
-    document.getElementById("choices");
-
-
-
-    choices.innerHTML="";
-
-
-
-    if(!currentItem.paper1){
-
-
-        question.innerHTML =
-        "No Paper 1 question available";
-
-
-        return;
-
-    }
-
-
-
-    question.innerHTML =
-    currentItem.paper1.question;
-
-
-
-    currentItem.paper1.options.forEach(option=>{
-
-
-        let button =
-        document.createElement("button");
-
-
-
-        button.innerHTML =
-        option;
-
-
-
-        button.onclick=function(){
-
-
-            checkAnswer(option);
-
-
-        };
-
-
-
-        choices.appendChild(button);
-
-
-    });
-
-
-}
-
-
-
-
-
-
-// ==========================
-// 答え確認
-// ==========================
-
-function checkAnswer(answer){
-
-
-    total++;
-
-
-    let isCorrect =
-    answer === currentItem.paper1.answer;
-
-
-
-    if(isCorrect){
-
-
-        correct++;
-
-
-        document.getElementById("result")
-        .innerHTML =
-        "⭕ Correct";
-
-
-    }
-    else{
-
-
-        document.getElementById("result")
-        .innerHTML =
-        "❌ Correct answer: "
-        +
-        currentItem.paper1.answer;
-
-
-    }
-
-
-
-    saveResult(
-        currentItem.term,
-        isCorrect
-    );
-
-
-
-    updateStatus();
-
-
-    if(currentSubject==="biology"){
-
-        showAchievements();
-
-    }
-
-
-}
-
-
-
-
-
-
-// ==========================
-// 学習履歴保存
-// ==========================
-
-function saveResult(term,result){
-
-
-    if(!historyData[term]){
-
-
-        historyData[term]={
-
-            attempts:0,
-
-            correct:0,
-
-            wrong:0
-
-        };
-
-
-    }
-
-
-
-    historyData[term].attempts++;
-
-
-
-    if(result){
-
-
-        historyData[term].correct++;
-
-
-    }
-    else{
-
-
-        historyData[term].wrong++;
-
-
-    }
-
-
-
-    localStorage.setItem(
-        "ibHistory",
-        JSON.stringify(historyData)
-    );
-
-
-}
-
-
-
-
-
-
-
-// ==========================
-// Definition表示
-// ==========================
-
-function showDefinition(){
-
-
-    let question =
-    document.getElementById(
-        "definition-question"
-    );
-
-
-    let answer =
-    document.getElementById(
-        "definition-answer"
-    );
-
-
-
-    if(currentItem.definition_question){
-
-
-        question.innerHTML =
-        currentItem.definition_question;
-
-
-    }
-    else{
-
-
-        question.innerHTML =
-        "No definition question";
-
-
-    }
-
-
-
-    answer.innerHTML="";
-
-
-}
-
-
-
-
-
-
-function showAnswer(){
-
-
-    let answer =
-    document.getElementById(
-        "definition-answer"
-    );
-
-
-
-    answer.innerHTML =
-    currentItem.definition ||
-    "No answer";
-
-
-}
-
-
-
-
-
-
-
-// ==========================
-// Weak Words
-// ==========================
-
-function startWeakWords(){
-
-
-    testMode="weak";
-
-
-    filteredVocabulary =
-    vocabulary.filter(item=>{
 
 
         let data =
@@ -705,21 +376,169 @@ function startWeakWords(){
 
 
 
-    if(filteredVocabulary.length===0){
+
+    if(
+        weakWords.length > 0
+        &&
+        Math.random()<0.7
+    ){
 
 
-        alert(
-        "No weak words yet!"
-        );
+        return weakWords[
+            Math.floor(
+                Math.random()
+                *
+                weakWords.length
+            )
+        ];
 
-
-        return;
 
     }
 
 
 
-    nextQuestion();
+
+    return filteredVocabulary[
+        Math.floor(
+            Math.random()
+            *
+            filteredVocabulary.length
+        )
+    ];
+
+
+
+}
+
+
+
+
+
+
+// =====================================
+// Word Card
+// =====================================
+
+
+function showCard(){
+
+
+    let term =
+    currentItem.term ||
+    currentItem.word;
+
+
+
+    let meaning =
+    currentItem.japanese ||
+    currentItem.meaning;
+
+
+
+    document.getElementById("word")
+    .innerHTML =
+    term;
+
+
+
+    document.getElementById("meaning")
+    .innerHTML =
+    meaning;
+
+
+}
+
+// =====================================
+// Card Flip
+// =====================================
+
+
+function flipCard(){
+
+
+    document
+    .getElementById("meaning")
+    .classList
+    .toggle("hidden");
+
+
+}
+
+
+
+
+
+
+// =====================================
+// Paper 1 Question
+// =====================================
+
+
+function createQuestion(){
+
+
+    let question =
+    document.getElementById("question");
+
+
+    let choices =
+    document.getElementById("choices");
+
+
+
+    choices.innerHTML = "";
+
+
+
+    if(!currentItem.paper1){
+
+
+        question.innerHTML =
+        "No Paper 1 question available";
+
+
+        return;
+
+
+    }
+
+
+
+    question.innerHTML =
+    currentItem.paper1.question;
+
+
+
+
+    currentItem.paper1.options.forEach(option=>{
+
+
+        let button =
+        document.createElement("button");
+
+
+
+        button.innerHTML =
+        option;
+
+
+
+        button.onclick = function(){
+
+
+            checkAnswer(option);
+
+
+        };
+
+
+
+        choices.appendChild(button);
+
+
+
+    });
+
 
 
 }
@@ -730,17 +549,254 @@ function startWeakWords(){
 
 
 
-// ==========================
-// Wrong Answers
-// ==========================
 
-function startWrongAnswers(){
+// =====================================
+// Answer Check
+// =====================================
 
 
-    testMode="wrong";
+function checkAnswer(answer){
+
+
+    total++;
+
+
+
+    let result =
+    answer === currentItem.paper1.answer;
+
+
+
+
+    if(result){
+
+
+        correct++;
+
+
+        document.getElementById("result")
+        .innerHTML =
+        "⭕ Correct";
+
+
+    }
+    else{
+
+
+        document.getElementById("result")
+        .innerHTML =
+
+        "❌ Correct answer: "
+        +
+        currentItem.paper1.answer;
+
+
+    }
+
+
+
+    saveResult(
+        currentItem.term,
+        result
+    );
+
+
+
+    updateStatus();
+
+
+
+    if(currentSubject==="biology"){
+
+
+        showAchievements();
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+// =====================================
+// Save Result
+// =====================================
+
+
+function saveResult(term,result){
+
+
+
+    if(!historyData[term]){
+
+
+        historyData[term] = {
+
+
+            attempts:0,
+
+
+            correct:0,
+
+
+            wrong:0
+
+
+        };
+
+
+    }
+
+
+
+
+    historyData[term].attempts++;
+
+
+
+
+
+    if(result){
+
+
+        historyData[term].correct++;
+
+
+    }
+    else{
+
+
+        historyData[term].wrong++;
+
+
+    }
+
+
+
+
+
+    localStorage.setItem(
+
+        "ibHistory",
+
+        JSON.stringify(historyData)
+
+    );
+
+
+
+}
+
+
+
+
+
+
+
+
+// =====================================
+// Definition Writing
+// =====================================
+
+
+function showDefinition(){
+
+
+    let question =
+    document.getElementById(
+        "definition-question"
+    );
+
+
+
+    let answer =
+    document.getElementById(
+        "definition-answer"
+    );
+
+
+
+
+    if(currentItem.definition_question){
+
+
+        question.innerHTML =
+        currentItem.definition_question;
+
+
+    }
+    else{
+
+
+        question.innerHTML =
+        "No definition question";
+
+
+    }
+
+
+
+    answer.innerHTML = "";
+
+
+
+}
+
+
+
+
+
+
+
+function showAnswer(){
+
+
+    let answer =
+    document.getElementById(
+        "definition-answer"
+    );
+
+
+
+    answer.innerHTML =
+
+    currentItem.definition
+    ||
+    "No answer";
+
+
+
+}
+
+
+
+
+
+
+
+
+// =====================================
+// Weak Words
+// =====================================
+
+
+function startWeakWords(){
+
+
+
+    testMode="weak";
+
 
 
     filteredVocabulary =
+
     vocabulary.filter(item=>{
 
 
@@ -748,10 +804,31 @@ function startWrongAnswers(){
         historyData[item.term];
 
 
-        return data && data.wrong>0;
+
+        if(!data){
+
+            return false;
+
+        }
+
+
+
+
+        let rate =
+
+        data.correct /
+        data.attempts *
+        100;
+
+
+
+        return rate < 70;
+
 
 
     });
+
+
 
 
 
@@ -759,17 +836,20 @@ function startWrongAnswers(){
 
 
         alert(
-        "No wrong answers yet!"
+            "No weak words yet!"
         );
 
 
         return;
 
+
     }
 
 
 
+
     nextQuestion();
+
 
 
 }
@@ -780,9 +860,65 @@ function startWrongAnswers(){
 
 
 
-// ==========================
-// Achievement表示
-// ==========================
+
+// =====================================
+// Wrong Answers
+// =====================================
+
+
+function startWrongAnswers(){
+
+
+    testMode="wrong";
+
+
+
+    filteredVocabulary =
+
+    vocabulary.filter(item=>{
+
+
+        let data =
+        historyData[item.term];
+
+
+
+        return data && data.wrong>0;
+
+
+
+    });
+
+
+
+
+
+    if(filteredVocabulary.length===0){
+
+
+        alert(
+            "No wrong answers yet!"
+        );
+
+
+        return;
+
+
+    }
+
+
+
+
+    nextQuestion();
+
+
+
+}
+
+// =====================================
+// Achievement System
+// =====================================
+
 
 function showAchievements(){
 
@@ -793,6 +929,7 @@ function showAchievements(){
     );
 
 
+
     if(!area){
 
         return;
@@ -801,11 +938,15 @@ function showAchievements(){
 
 
 
-    area.innerHTML="";
+
+    area.innerHTML = "";
+
+
 
 
 
     let topics =
+
     [
         ...new Set(
             vocabulary.map(
@@ -816,19 +957,30 @@ function showAchievements(){
 
 
 
+
+
     topics.forEach(topic=>{
 
 
+
         let items =
-        vocabulary.filter(
-            item=>item.topic===topic
-        );
+
+        vocabulary.filter(item=>{
+
+            return item.topic === topic;
+
+        });
 
 
 
-        let sum=0;
 
-        let count=0;
+
+        let totalRate = 0;
+
+        let count = 0;
+
+
+
 
 
 
@@ -839,13 +991,16 @@ function showAchievements(){
             historyData[item.term];
 
 
+
             if(data && data.attempts>0){
 
 
-                sum +=
+                totalRate +=
+
                 data.correct /
                 data.attempts *
                 100;
+
 
 
                 count++;
@@ -854,18 +1009,30 @@ function showAchievements(){
             }
 
 
+
         });
 
 
 
+
+
+
         let accuracy =
+
         count===0
+
         ?
+
         0
+
         :
+
         Math.round(
-            sum/count
+            totalRate / count
         );
+
+
+
 
 
 
@@ -874,19 +1041,25 @@ function showAchievements(){
 
 
 
-        let div =
+
+        let card =
         document.createElement("div");
 
 
 
-        div.className =
+
+        card.className =
+
         "topic-card "
         +
         getRankClass(accuracy);
 
 
 
-        div.innerHTML =
+
+
+
+        card.innerHTML =
 
         `
         <span class="badge">
@@ -910,7 +1083,9 @@ function showAchievements(){
 
 
 
-        area.appendChild(div);
+
+        area.appendChild(card);
+
 
 
 
@@ -926,11 +1101,15 @@ function showAchievements(){
 
 
 
-// ==========================
-// Badge判定
-// ==========================
+
+
+// =====================================
+// Badge
+// =====================================
+
 
 function getBadge(rate){
+
 
 
     if(rate>=100){
@@ -948,6 +1127,10 @@ function getBadge(rate){
     }
 
 
+
+
+
+
     if(rate>=95){
 
 
@@ -961,6 +1144,9 @@ function getBadge(rate){
 
 
     }
+
+
+
 
 
 
@@ -980,6 +1166,9 @@ function getBadge(rate){
 
 
 
+
+
+
     if(rate>=80){
 
 
@@ -996,55 +1185,95 @@ function getBadge(rate){
 
 
 
+
+
+
+
     return {
+
 
         icon:"🌱",
 
         name:"Rookie"
 
+
     };
+
 
 
 }
 
 
 
+
+
+
+
+
+// =====================================
+// Rank CSS Class
+// =====================================
 
 
 function getRankClass(rate){
 
 
+
     if(rate>=100){
+
 
         return "rank-master";
 
+
     }
+
+
+
 
 
     if(rate>=95){
 
+
         return "rank-expert";
 
+
     }
+
+
+
+
 
 
     if(rate>=90){
 
+
         return "rank-explorer";
 
+
     }
+
+
+
+
 
 
     if(rate>=80){
 
+
         return "rank-learner";
 
+
     }
+
+
+
+
 
 
     return "rank-rookie";
 
 
+
 }
 
 
@@ -1053,143 +1282,63 @@ function getRankClass(rate){
 
 
 
-// ==========================
-// 成績表示
-// ==========================
+
+// =====================================
+// Status
+// =====================================
+
 
 function updateStatus(){
 
 
+
     document.getElementById("correct")
     .innerHTML =
+
     correct;
+
+
 
 
 
     document.getElementById("total")
     .innerHTML =
+
     total;
 
 
 
+
+
+
+
     let rate =
+
     total===0
+
     ?
+
     0
+
     :
+
     Math.round(
-        correct/total*100
+        correct /
+        total *
+        100
     );
+
+
+
+
 
 
 
     document.getElementById("accuracy")
     .innerHTML =
-    rate+"%";
+
+    rate + "%";
 
 
-}
-// ==========================
-// All Topics
-// ==========================
-
-function startAllTopics(){
-
-    testMode = "all";
-
-    filteredVocabulary = vocabulary;
-
-    nextQuestion();
-
-}
-
-
-
-// ==========================
-// Weak Words
-// ==========================
-
-function startWeakWords(){
-
-    testMode = "weak";
-
-
-    filteredVocabulary =
-    vocabulary.filter(item=>{
-
-
-        let data =
-        historyData[item.term];
-
-
-        if(!data){
-            return false;
-        }
-
-
-        let accuracy =
-        data.correct /
-        data.attempts *
-        100;
-
-
-        return accuracy < 70;
-
-
-    });
-
-
-
-    if(filteredVocabulary.length===0){
-
-        alert("No weak words yet!");
-
-        return;
-
-    }
-
-
-    nextQuestion();
-
-}
-
-
-
-
-
-// ==========================
-// Wrong Answers
-// ==========================
-
-function startWrongAnswers(){
-
-    testMode="wrong";
-
-
-    filteredVocabulary =
-    vocabulary.filter(item=>{
-
-
-        let data =
-        historyData[item.term];
-
-
-        return data && data.wrong > 0;
-
-
-    });
-
-
-
-    if(filteredVocabulary.length===0){
-
-        alert("No wrong answers yet!");
-
-        return;
-
-    }
-
-
-    nextQuestion();
 
 }
