@@ -9365,4 +9365,224 @@
     "development",
     "early stage"
   ]
+},
+
+{
+  "term": "menstrual cycle",
+  "definition": "A repeating cycle involving preparation of the uterus for possible pregnancy.",
+  "japanese": "月経周期",
+  "topic": "12.2 Development and Regulation",
+  "definition_question": "Define menstrual cycle.",
+  "paper1": {
+    "question": "The menstrual cycle prepares the:",
+    "options": [
+      "Uterus for pregnancy",
+      "Lungs for respiration",
+      "Kidney for filtration",
+      "Brain for signals"
+    ],
+    "answer": "Uterus for pregnancy"
+  },
+  "key_terms": [
+    "female reproductive cycle",
+    "hormones"
+  ]
+},
+
+{
+  "term": "ovulation",
+  "definition": "The release of an egg cell from an ovary.",
+  "japanese": "排卵",
+  "topic": "12.2 Development and Regulation",
+  "definition_question": "Define ovulation.",
+  "paper1": {
+    "question": "Ovulation releases:",
+    "options": [
+      "An egg cell",
+      "A sperm cell",
+      "A hormone",
+      "A zygote"
+    ],
+    "answer": "An egg cell"
+  },
+  "key_terms": [
+    "ovary",
+    "egg release"
+  ]
+},
+
+{
+  "term": "implantation",
+  "definition": "The attachment of an embryo to the lining of the uterus.",
+  "japanese": "着床",
+  "topic": "12.2 Development and Regulation",
+  "definition_question": "Define implantation.",
+  "paper1": {
+    "question": "Implantation occurs in the:",
+    "options": [
+      "Uterus",
+      "Ovary",
+      "Testis",
+      "Kidney"
+    ],
+    "answer": "Uterus"
+  },
+  "key_terms": [
+    "embryo",
+    "uterine lining"
+  ]
+},
+
+{
+  "term": "placenta",
+  "definition": "An organ that allows exchange of nutrients, gases, and wastes between mother and fetus.",
+  "japanese": "胎盤",
+  "topic": "12.2 Development and Regulation",
+  "definition_question": "Define placenta.",
+  "paper1": {
+    "question": "The placenta allows exchange between:",
+    "options": [
+      "Mother and fetus",
+      "Two neurons",
+      "Two plants",
+      "Two bacteria"
+    ],
+    "answer": "Mother and fetus"
+  },
+  "key_terms": [
+    "nutrient exchange",
+    "pregnancy"
+  ]
+},
+
+{
+  "term": "fetus",
+  "definition": "The developing organism during later stages of pregnancy.",
+  "japanese": "胎児",
+  "topic": "12.2 Development and Regulation",
+  "definition_question": "Define fetus.",
+  "paper1": {
+    "question": "A fetus develops during:",
+    "options": [
+      "Pregnancy",
+      "Photosynthesis",
+      "Meiosis",
+      "Digestion"
+    ],
+    "answer": "Pregnancy"
+  },
+  "key_terms": [
+    "development",
+    "pregnancy"
+  ]
+},
+
+{
+  "term": "pregnancy",
+  "definition": "The period during which an embryo or fetus develops inside the uterus.",
+  "japanese": "妊娠",
+  "topic": "12.2 Development and Regulation",
+  "definition_question": "Define pregnancy.",
+  "paper1": {
+    "question": "Pregnancy involves development inside the:",
+    "options": [
+      "Uterus",
+      "Liver",
+      "Kidney",
+      "Heart"
+    ],
+    "answer": "Uterus"
+  },
+  "key_terms": [
+    "fetus",
+    "development"
+  ]
+},
+
+{
+  "term": "testosterone",
+  "definition": "A male sex hormone involved in sperm production and male characteristics.",
+  "japanese": "テストステロン",
+  "topic": "12.2 Development and Regulation",
+  "definition_question": "Define testosterone.",
+  "paper1": {
+    "question": "Testosterone is mainly produced in:",
+    "options": [
+      "Testes",
+      "Ovaries",
+      "Kidneys",
+      "Pancreas"
+    ],
+    "answer": "Testes"
+  },
+  "key_terms": [
+    "male hormone",
+    "sperm production"
+  ]
+},
+
+{
+  "term": "estrogen",
+  "definition": "A female sex hormone involved in development of female characteristics and the menstrual cycle.",
+  "japanese": "エストロゲン",
+  "topic": "12.2 Development and Regulation",
+  "definition_question": "Define estrogen.",
+  "paper1": {
+    "question": "Estrogen is involved in:",
+    "options": [
+      "Female reproductive regulation",
+      "DNA replication only",
+      "Protein digestion",
+      "Oxygen transport"
+    ],
+    "answer": "Female reproductive regulation"
+  },
+  "key_terms": [
+    "ovary",
+    "menstrual cycle"
+  ]
+},
+
+{
+  "term": "progesterone",
+  "definition": "A hormone that maintains the uterus lining during the menstrual cycle and pregnancy.",
+  "japanese": "プロゲステロン",
+  "topic": "12.2 Development and Regulation",
+  "definition_question": "Define progesterone.",
+  "paper1": {
+    "question": "Progesterone helps maintain:",
+    "options": [
+      "The uterus lining",
+      "Blood glucose",
+      "Body temperature only",
+      "DNA sequence"
+    ],
+    "answer": "The uterus lining"
+  },
+  "key_terms": [
+    "pregnancy",
+    "uterus"
+  ]
+},
+
+{
+  "term": "birth",
+  "definition": "The process in which a baby is delivered after pregnancy.",
+  "japanese": "出産",
+  "topic": "12.2 Development and Regulation",
+  "definition_question": "Define birth.",
+  "paper1": {
+    "question": "Birth occurs after:",
+    "options": [
+      "Pregnancy",
+      "Photosynthesis",
+      "Meiosis only",
+      "Transcription"
+    ],
+    "answer": "Pregnancy"
+  },
+  "key_terms": [
+    "delivery",
+    "reproduction"
+  ]
 }]
