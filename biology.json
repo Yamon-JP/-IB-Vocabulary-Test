@@ -6803,4 +6803,223 @@
     "original strand",
     "new strand"
   ]
+},
+
+{
+  "term": "transcription",
+  "definition": "The process of making mRNA from a DNA template.",
+  "japanese": "転写",
+  "topic": "7.2 Transcription and Translation",
+  "definition_question": "Define transcription.",
+  "paper1": {
+    "question": "Transcription produces:",
+    "options": [
+      "mRNA",
+      "DNA",
+      "ATP",
+      "Lipids"
+    ],
+    "answer": "mRNA"
+  },
+  "key_terms": [
+    "DNA template",
+    "mRNA production"
+  ]
+},
+
+{
+  "term": "translation",
+  "definition": "The process of using mRNA information to build a polypeptide.",
+  "japanese": "翻訳",
+  "topic": "7.2 Transcription and Translation",
+  "definition_question": "Define translation.",
+  "paper1": {
+    "question": "Translation produces:",
+    "options": [
+      "A polypeptide",
+      "DNA",
+      "RNA only",
+      "Glucose"
+    ],
+    "answer": "A polypeptide"
+  },
+  "key_terms": [
+    "protein synthesis",
+    "ribosome"
+  ]
+},
+
+{
+  "term": "messenger RNA (mRNA)",
+  "definition": "A type of RNA that carries genetic information from DNA to ribosomes.",
+  "japanese": "メッセンジャーRNA",
+  "topic": "7.2 Transcription and Translation",
+  "definition_question": "Define mRNA.",
+  "paper1": {
+    "question": "mRNA carries information from:",
+    "options": [
+      "DNA to ribosomes",
+      "Ribosomes to DNA",
+      "Blood to cells",
+      "Cells to blood"
+    ],
+    "answer": "DNA to ribosomes"
+  },
+  "key_terms": [
+    "genetic message",
+    "RNA"
+  ]
+},
+
+{
+  "term": "transfer RNA (tRNA)",
+  "definition": "A type of RNA that carries amino acids to the ribosome during translation.",
+  "japanese": "転移RNA",
+  "topic": "7.2 Transcription and Translation",
+  "definition_question": "Define tRNA.",
+  "paper1": {
+    "question": "tRNA carries:",
+    "options": [
+      "Amino acids",
+      "DNA strands",
+      "Glucose",
+      "Oxygen"
+    ],
+    "answer": "Amino acids"
+  },
+  "key_terms": [
+    "amino acid carrier",
+    "translation"
+  ]
+},
+
+{
+  "term": "ribosome",
+  "definition": "The structure where translation occurs and proteins are assembled.",
+  "japanese": "リボソーム",
+  "topic": "7.2 Transcription and Translation",
+  "definition_question": "Define ribosome.",
+  "paper1": {
+    "question": "Translation occurs at:",
+    "options": [
+      "Ribosomes",
+      "Mitochondria only",
+      "Nucleus only",
+      "Cell membrane"
+    ],
+    "answer": "Ribosomes"
+  },
+  "key_terms": [
+    "protein synthesis",
+    "translation"
+  ]
+},
+
+{
+  "term": "codon",
+  "definition": "A sequence of three bases on mRNA that codes for an amino acid.",
+  "japanese": "コドン",
+  "topic": "7.2 Transcription and Translation",
+  "definition_question": "Define codon.",
+  "paper1": {
+    "question": "A codon contains:",
+    "options": [
+      "Three bases",
+      "One amino acid",
+      "Two DNA strands",
+      "One protein"
+    ],
+    "answer": "Three bases"
+  },
+  "key_terms": [
+    "triplet",
+    "mRNA"
+  ]
+},
+
+{
+  "term": "anticodon",
+  "definition": "A sequence of three bases on tRNA that pairs with a codon.",
+  "japanese": "アンチコドン",
+  "topic": "7.2 Transcription and Translation",
+  "definition_question": "Define anticodon.",
+  "paper1": {
+    "question": "Anticodons are found on:",
+    "options": [
+      "tRNA",
+      "mRNA",
+      "DNA",
+      "Ribosomes"
+    ],
+    "answer": "tRNA"
+  },
+  "key_terms": [
+    "complementary sequence",
+    "tRNA"
+  ]
+},
+
+{
+  "term": "amino acid",
+  "definition": "A molecule that joins with other amino acids to form proteins.",
+  "japanese": "アミノ酸",
+  "topic": "7.2 Transcription and Translation",
+  "definition_question": "Define amino acid.",
+  "paper1": {
+    "question": "Proteins are made from:",
+    "options": [
+      "Amino acids",
+      "Nucleotides",
+      "Fatty acids only",
+      "Glucose"
+    ],
+    "answer": "Amino acids"
+  },
+  "key_terms": [
+    "protein building block"
+  ]
+},
+
+{
+  "term": "genetic code",
+  "definition": "The set of rules that determines how nucleotide sequences specify amino acids.",
+  "japanese": "遺伝暗号",
+  "topic": "7.2 Transcription and Translation",
+  "definition_question": "Define genetic code.",
+  "paper1": {
+    "question": "The genetic code determines:",
+    "options": [
+      "Amino acid sequences",
+      "Blood type only",
+      "Cell size",
+      "Energy production"
+    ],
+    "answer": "Amino acid sequences"
+  },
+  "key_terms": [
+    "codons",
+    "amino acids"
+  ]
+},
+
+{
+  "term": "peptide bond",
+  "definition": "A bond that joins amino acids together in a polypeptide chain.",
+  "japanese": "ペプチド結合",
+  "topic": "7.2 Transcription and Translation",
+  "definition_question": "Define peptide bond.",
+  "paper1": {
+    "question": "Peptide bonds join:",
+    "options": [
+      "Amino acids",
+      "Nucleotides",
+      "DNA strands",
+      "Fatty acids"
+    ],
+    "answer": "Amino acids"
+  },
+  "key_terms": [
+    "protein formation",
+    "polypeptide"
+  ]
 }]
