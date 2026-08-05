@@ -4434,4 +4434,225 @@
     "emission reduction",
     "climate action"
   ]
+},]
+
+{
+  "term": "evolution",
+  "definition": "The change in heritable characteristics of populations over generations.",
+  "japanese": "進化",
+  "topic": "5.1 Evidence for Evolution",
+  "definition_question": "Define evolution.",
+  "paper1": {
+    "question": "Evolution is a change in:",
+    "options": [
+      "Heritable characteristics of populations",
+      "The size of individual organisms",
+      "The environment only",
+      "Daily behaviour only"
+    ],
+    "answer": "Heritable characteristics of populations"
+  },
+  "key_terms": [
+    "population",
+    "generations",
+    "heritable traits"
+  ]
+},
+
+{
+  "term": "natural selection",
+  "definition": "The process where individuals with advantageous heritable traits survive and reproduce more successfully.",
+  "japanese": "自然選択",
+  "topic": "5.1 Evidence for Evolution",
+  "definition_question": "Define natural selection.",
+  "paper1": {
+    "question": "Natural selection results in:",
+    "options": [
+      "Advantageous traits becoming more common",
+      "All organisms becoming identical",
+      "No genetic changes",
+      "The strongest individual always surviving"
+    ],
+    "answer": "Advantageous traits becoming more common"
+  },
+  "key_terms": [
+    "selection pressure",
+    "reproduction success"
+  ]
+},
+
+{
+  "term": "variation",
+  "definition": "Differences in characteristics among individuals of the same species.",
+  "japanese": "変異",
+  "topic": "5.1 Evidence for Evolution",
+  "definition_question": "Define variation.",
+  "paper1": {
+    "question": "Variation refers to differences between:",
+    "options": [
+      "Individuals of the same species",
+      "Different ecosystems only",
+      "Only cells",
+      "Only proteins"
+    ],
+    "answer": "Individuals of the same species"
+  },
+  "key_terms": [
+    "differences",
+    "individuals"
+  ]
+},
+
+{
+  "term": "mutation",
+  "definition": "A change in the DNA sequence that can create new genetic variation.",
+  "japanese": "突然変異",
+  "topic": "5.1 Evidence for Evolution",
+  "definition_question": "Define mutation.",
+  "paper1": {
+    "question": "Mutations can produce:",
+    "options": [
+      "New genetic variation",
+      "Only identical DNA",
+      "No genetic changes",
+      "Only environmental changes"
+    ],
+    "answer": "New genetic variation"
+  },
+  "key_terms": [
+    "DNA change",
+    "genetic variation"
+  ]
+},
+
+{
+  "term": "adaptation",
+  "definition": "An inherited characteristic that increases survival or reproductive success in a particular environment.",
+  "japanese": "適応",
+  "topic": "5.1 Evidence for Evolution",
+  "definition_question": "Define adaptation.",
+  "paper1": {
+    "question": "An adaptation improves:",
+    "options": [
+      "Survival and reproduction",
+      "Only body size",
+      "Only behaviour",
+      "Only lifespan"
+    ],
+    "answer": "Survival and reproduction"
+  },
+  "key_terms": [
+    "inherited characteristic",
+    "environment"
+  ]
+},
+
+{
+  "term": "selective pressure",
+  "definition": "An environmental factor that affects which individuals survive and reproduce.",
+  "japanese": "選択圧",
+  "topic": "5.1 Evidence for Evolution",
+  "definition_question": "Define selective pressure.",
+  "paper1": {
+    "question": "Selective pressure influences:",
+    "options": [
+      "Survival and reproduction",
+      "DNA replication only",
+      "Cell size only",
+      "Protein folding"
+    ],
+    "answer": "Survival and reproduction"
+  },
+  "key_terms": [
+    "environmental factor",
+    "selection"
+  ]
+},
+
+{
+  "term": "fossil evidence",
+  "definition": "Evidence from preserved remains or traces of organisms from the past.",
+  "japanese": "化石証拠",
+  "topic": "5.1 Evidence for Evolution",
+  "definition_question": "Define fossil evidence.",
+  "paper1": {
+    "question": "Fossils provide evidence of:",
+    "options": [
+      "Past organisms and evolutionary change",
+      "Only current species",
+      "Protein structures",
+      "Cell respiration"
+    ],
+    "answer": "Past organisms and evolutionary change"
+  },
+  "key_terms": [
+    "past life",
+    "preserved remains"
+  ]
+},
+
+{
+  "term": "homologous structures",
+  "definition": "Structures with similar underlying anatomy due to inheritance from a common ancestor.",
+  "japanese": "相同器官",
+  "topic": "5.1 Evidence for Evolution",
+  "definition_question": "Define homologous structures.",
+  "paper1": {
+    "question": "Homologous structures suggest:",
+    "options": [
+      "A common ancestor",
+      "No evolutionary relationship",
+      "Identical environments",
+      "Same species"
+    ],
+    "answer": "A common ancestor"
+  },
+  "key_terms": [
+    "common ancestry",
+    "similar structure"
+  ]
+},
+
+{
+  "term": "molecular evidence",
+  "definition": "Evidence for evolution obtained by comparing DNA or protein sequences between organisms.",
+  "japanese": "分子証拠",
+  "topic": "5.1 Evidence for Evolution",
+  "definition_question": "Define molecular evidence.",
+  "paper1": {
+    "question": "Molecular evidence compares:",
+    "options": [
+      "DNA or protein sequences",
+      "Only body size",
+      "Only habitats",
+      "Only behaviour"
+    ],
+    "answer": "DNA or protein sequences"
+  },
+  "key_terms": [
+    "DNA comparison",
+    "protein sequences"
+  ]
+},
+
+{
+  "term": "common ancestor",
+  "definition": "A species from which two or more different species evolved.",
+  "japanese": "共通祖先",
+  "topic": "5.1 Evidence for Evolution",
+  "definition_question": "Define common ancestor.",
+  "paper1": {
+    "question": "Species with a common ancestor share:",
+    "options": [
+      "Evolutionary history",
+      "Exactly the same DNA",
+      "The same habitat",
+      "The same phenotype"
+    ],
+    "answer": "Evolutionary history"
+  },
+  "key_terms": [
+    "shared ancestry",
+    "evolution"
+  ]
 }]
