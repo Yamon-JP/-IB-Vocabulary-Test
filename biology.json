@@ -12663,4 +12663,224 @@
     "gas exchange",
     "leaf structure"
   ]
+},
+
+{
+  "term": "biodiversity",
+  "definition": "The variety of living organisms within an ecosystem or on Earth.",
+  "japanese": "生物多様性",
+  "topic": "20.1 Ecology Advanced",
+  "definition_question": "Define biodiversity.",
+  "paper1": {
+    "question": "Biodiversity refers to:",
+    "options": [
+      "Variety of living organisms",
+      "Amount of sunlight",
+      "DNA replication rate",
+      "Population size only"
+    ],
+    "answer": "Variety of living organisms"
+  },
+  "key_terms": [
+    "species variety",
+    "ecosystem health"
+  ]
+},
+
+{
+  "term": "species richness",
+  "definition": "The number of different species present in an area.",
+  "japanese": "種数",
+  "topic": "20.1 Ecology Advanced",
+  "definition_question": "Define species richness.",
+  "paper1": {
+    "question": "Species richness measures:",
+    "options": [
+      "Number of species",
+      "Body size",
+      "Energy production",
+      "DNA amount"
+    ],
+    "answer": "Number of species"
+  },
+  "key_terms": [
+    "species number",
+    "biodiversity"
+  ]
+},
+
+{
+  "term": "ecosystem stability",
+  "definition": "The ability of an ecosystem to maintain function after disturbance.",
+  "japanese": "生態系の安定性",
+  "topic": "20.1 Ecology Advanced",
+  "definition_question": "Define ecosystem stability.",
+  "paper1": {
+    "question": "A stable ecosystem can:",
+    "options": [
+      "Recover from disturbance",
+      "Stop all changes",
+      "Have no organisms",
+      "Avoid energy flow"
+    ],
+    "answer": "Recover from disturbance"
+  },
+  "key_terms": [
+    "resilience",
+    "ecosystem function"
+  ]
+},
+
+{
+  "term": "succession",
+  "definition": "The gradual change in species composition of an ecosystem over time.",
+  "japanese": "遷移",
+  "topic": "20.1 Ecology Advanced",
+  "definition_question": "Define succession.",
+  "paper1": {
+    "question": "Succession describes changes in:",
+    "options": [
+      "Species composition over time",
+      "DNA sequence only",
+      "Cell structure only",
+      "Individual lifespan"
+    ],
+    "answer": "Species composition over time"
+  },
+  "key_terms": [
+    "ecosystem change",
+    "community development"
+  ]
+},
+
+{
+  "term": "pioneer species",
+  "definition": "The first species to colonize a newly available or disturbed environment.",
+  "japanese": "先駆種",
+  "topic": "20.1 Ecology Advanced",
+  "definition_question": "Define pioneer species.",
+  "paper1": {
+    "question": "Pioneer species are the first to:",
+    "options": [
+      "Colonize an area",
+      "Become extinct",
+      "Stop succession",
+      "Consume all resources"
+    ],
+    "answer": "Colonize an area"
+  },
+  "key_terms": [
+    "early succession",
+    "colonization"
+  ]
+},
+
+{
+  "term": "climax community",
+  "definition": "A stable final community formed after ecological succession.",
+  "japanese": "極相群集",
+  "topic": "20.1 Ecology Advanced",
+  "definition_question": "Define climax community.",
+  "paper1": {
+    "question": "A climax community is:",
+    "options": [
+      "A relatively stable community",
+      "The first colonizing species",
+      "A single organism",
+      "A disturbed ecosystem"
+    ],
+    "answer": "A relatively stable community"
+  },
+  "key_terms": [
+    "late succession",
+    "stability"
+  ]
+},
+
+{
+  "term": "ecological niche",
+  "definition": "The role and position of a species within an ecosystem.",
+  "japanese": "生態的地位",
+  "topic": "20.1 Ecology Advanced",
+  "definition_question": "Define ecological niche.",
+  "paper1": {
+    "question": "A niche describes a species':",
+    "options": [
+      "Role in an ecosystem",
+      "DNA sequence",
+      "Chromosome number",
+      "Body temperature only"
+    ],
+    "answer": "Role in an ecosystem"
+  },
+  "key_terms": [
+    "role",
+    "interactions"
+  ]
+},
+
+{
+  "term": "keystone species",
+  "definition": "A species that has a large effect on ecosystem structure despite its abundance.",
+  "japanese": "キーストーン種",
+  "topic": "20.1 Ecology Advanced",
+  "definition_question": "Define keystone species.",
+  "paper1": {
+    "question": "A keystone species has:",
+    "options": [
+      "A major ecological effect",
+      "No effect",
+      "Only a large population",
+      "Only economic value"
+    ],
+    "answer": "A major ecological effect"
+  },
+  "key_terms": [
+    "ecosystem balance",
+    "species interaction"
+  ]
+},
+
+{
+  "term": "predator-prey relationship",
+  "definition": "An interaction where one organism hunts and consumes another.",
+  "japanese": "捕食者と被食者の関係",
+  "topic": "20.1 Ecology Advanced",
+  "definition_question": "Define predator-prey relationship.",
+  "paper1": {
+    "question": "A predator-prey relationship involves:",
+    "options": [
+      "Hunting and consumption",
+      "Photosynthesis",
+      "DNA replication",
+      "Cell division"
+    ],
+    "answer": "Hunting and consumption"
+  },
+  "key_terms": [
+    "predator",
+    "prey"
+  ]
+},
+
+{
+  "term": "symbiosis",
+  "definition": "A close relationship between organisms of different species.",
+  "japanese": "共生",
+  "topic": "20.1 Ecology Advanced",
+  "definition_question": "Define symbiosis.",
+  "paper1": {
+    "question": "Symbiosis occurs between:",
+    "options": [
+      "Different species",
+      "Only identical cells",
+      "Only abiotic factors",
+      "Only plants"
+    ],
+    "answer": "Different species"
+  },
+  "key_terms": [
+    "species interaction",
+    "mutual relationship"
+  ]
 }]
