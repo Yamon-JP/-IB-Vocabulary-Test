@@ -3751,4 +3751,245 @@
     "population limit",
     "growth restriction"
   ]
+},
+
+{
+  "term": "producer",
+  "definition": "An organism that produces organic molecules using energy from the environment, usually by photosynthesis.",
+  "japanese": "生産者",
+  "topic": "4.2 Energy Flow",
+  "definition_question": "Define producer.",
+  "paper1": {
+    "question": "A producer obtains energy mainly by:",
+    "options": [
+      "Photosynthesis",
+      "Eating other organisms",
+      "Breaking down waste",
+      "Absorbing proteins"
+    ],
+    "answer": "Photosynthesis"
+  },
+  "key_terms": [
+    "photosynthesis",
+    "autotroph"
+  ]
+},
+
+{
+  "term": "consumer",
+  "definition": "An organism that obtains energy by feeding on other organisms.",
+  "japanese": "消費者",
+  "topic": "4.2 Energy Flow",
+  "definition_question": "Define consumer.",
+  "paper1": {
+    "question": "Consumers obtain energy by:",
+    "options": [
+      "Eating other organisms",
+      "Producing glucose",
+      "Using sunlight directly",
+      "Creating minerals"
+    ],
+    "answer": "Eating other organisms"
+  },
+  "key_terms": [
+    "heterotroph",
+    "feeding"
+  ]
+},
+
+{
+  "term": "herbivore",
+  "definition": "A consumer that feeds mainly on plants or other producers.",
+  "japanese": "草食動物",
+  "topic": "4.2 Energy Flow",
+  "definition_question": "Define herbivore.",
+  "paper1": {
+    "question": "A herbivore eats:",
+    "options": [
+      "Plants",
+      "Only animals",
+      "Only fungi",
+      "Only bacteria"
+    ],
+    "answer": "Plants"
+  },
+  "key_terms": [
+    "plant consumer",
+    "primary consumer"
+  ]
+},
+
+{
+  "term": "carnivore",
+  "definition": "A consumer that feeds mainly on other animals.",
+  "japanese": "肉食動物",
+  "topic": "4.2 Energy Flow",
+  "definition_question": "Define carnivore.",
+  "paper1": {
+    "question": "A carnivore obtains energy by eating:",
+    "options": [
+      "Other animals",
+      "Plants only",
+      "Sunlight",
+      "Minerals"
+    ],
+    "answer": "Other animals"
+  },
+  "key_terms": [
+    "animal consumer"
+  ]
+},
+
+{
+  "term": "omnivore",
+  "definition": "A consumer that feeds on both plants and animals.",
+  "japanese": "雑食動物",
+  "topic": "4.2 Energy Flow",
+  "definition_question": "Define omnivore.",
+  "paper1": {
+    "question": "An omnivore eats:",
+    "options": [
+      "Plants and animals",
+      "Only plants",
+      "Only animals",
+      "Only decomposed material"
+    ],
+    "answer": "Plants and animals"
+  },
+  "key_terms": [
+    "mixed diet",
+    "plant and animal"
+  ]
+},
+
+{
+  "term": "decomposer",
+  "definition": "An organism that breaks down dead organic matter and releases nutrients.",
+  "japanese": "分解者",
+  "topic": "4.2 Energy Flow",
+  "definition_question": "Define decomposer.",
+  "paper1": {
+    "question": "Decomposers are important because they:",
+    "options": [
+      "Recycle nutrients",
+      "Produce sunlight",
+      "Stop respiration",
+      "Remove all organisms"
+    ],
+    "answer": "Recycle nutrients"
+  },
+  "key_terms": [
+    "dead organic matter",
+    "nutrient recycling"
+  ]
+},
+
+{
+  "term": "trophic level",
+  "definition": "A feeding position occupied by an organism in a food chain or food web.",
+  "japanese": "栄養段階",
+  "topic": "4.2 Energy Flow",
+  "definition_question": "Define trophic level.",
+  "paper1": {
+    "question": "A trophic level represents:",
+    "options": [
+      "A feeding position in a food chain",
+      "A type of cell",
+      "A genetic mutation",
+      "A habitat type"
+    ],
+    "answer": "A feeding position in a food chain"
+  },
+  "key_terms": [
+    "feeding position",
+    "food chain"
+  ]
+},
+
+{
+  "term": "food chain",
+  "definition": "A sequence showing the transfer of energy through feeding relationships.",
+  "japanese": "食物連鎖",
+  "topic": "4.2 Energy Flow",
+  "definition_question": "Define food chain.",
+  "paper1": {
+    "question": "A food chain shows:",
+    "options": [
+      "Energy transfer between organisms",
+      "DNA sequences",
+      "Cell structures",
+      "Protein synthesis"
+    ],
+    "answer": "Energy transfer between organisms"
+  },
+  "key_terms": [
+    "energy transfer",
+    "feeding relationship"
+  ]
+},
+
+{
+  "term": "food web",
+  "definition": "A network of interconnected food chains within an ecosystem.",
+  "japanese": "食物網",
+  "topic": "4.2 Energy Flow",
+  "definition_question": "Define food web.",
+  "paper1": {
+    "question": "A food web contains:",
+    "options": [
+      "Multiple connected food chains",
+      "Only one organism",
+      "Only producers",
+      "Only decomposers"
+    ],
+    "answer": "Multiple connected food chains"
+  },
+  "key_terms": [
+    "multiple food chains",
+    "ecosystem"
+  ]
+},
+
+{
+  "term": "energy transfer",
+  "definition": "The movement of energy from one organism to another through feeding.",
+  "japanese": "エネルギー移動",
+  "topic": "4.2 Energy Flow",
+  "definition_question": "Define energy transfer.",
+  "paper1": {
+    "question": "Energy transfer occurs through:",
+    "options": [
+      "Feeding relationships",
+      "DNA replication",
+      "Cell division",
+      "Protein folding"
+    ],
+    "answer": "Feeding relationships"
+  },
+  "key_terms": [
+    "feeding",
+    "energy movement"
+  ]
+},
+
+{
+  "term": "biomass",
+  "definition": "The total mass of living material in a given area or trophic level.",
+  "japanese": "生物量",
+  "topic": "4.2 Energy Flow",
+  "definition_question": "Define biomass.",
+  "paper1": {
+    "question": "Biomass represents:",
+    "options": [
+      "The mass of living organisms",
+      "The amount of sunlight",
+      "The number of genes",
+      "The amount of water"
+    ],
+    "answer": "The mass of living organisms"
+  },
+  "key_terms": [
+    "living material",
+    "trophic level"
+  ]
 }]
