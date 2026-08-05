@@ -29,12 +29,12 @@
     "topic": "1.1 Introduction to Cells",
     "definition_question": "Define unicellular organism.",
     "paper1": {
-      "question": "What describes a unicellular organism?",
+      "question": "What is a unicellular organism?",
       "options": [
-        "An organism made of many cells",
         "An organism consisting of one cell",
-        "A cell without DNA",
-        "A cell with many nuclei"
+        "An organism with many specialized cells",
+        "A cell without genetic material",
+        "A group of different species"
       ],
       "answer": "An organism consisting of one cell"
     },
@@ -54,7 +54,7 @@
       "options": [
         "To perform different functions",
         "To remove all DNA",
-        "To avoid cell division",
+        "To stop cell division",
         "To become unicellular"
       ],
       "answer": "To perform different functions"
@@ -63,6 +63,51 @@
       "many cells",
       "specialized",
       "different functions"
+    ]
+  },
+
+  {
+    "term": "organelle",
+    "definition": "A specialized structure within a cell that performs a specific function.",
+    "japanese": "細胞小器官",
+    "topic": "1.1 Introduction to Cells",
+    "definition_question": "Define organelle.",
+    "paper1": {
+      "question": "What is an organelle?",
+      "options": [
+        "A specialized structure inside a cell",
+        "A complete organism",
+        "A type of tissue",
+        "A chemical reaction"
+      ],
+      "answer": "A specialized structure inside a cell"
+    },
+    "key_terms": [
+      "specialized structure",
+      "specific function"
+    ]
+  },
+
+  {
+    "term": "prokaryote",
+    "definition": "An organism whose cells do not contain a nucleus or membrane-bound organelles.",
+    "japanese": "原核生物",
+    "topic": "1.1 Introduction to Cells",
+    "definition_question": "Define prokaryote.",
+    "paper1": {
+      "question": "Which feature is found in prokaryotic cells?",
+      "options": [
+        "A nucleus surrounded by a membrane",
+        "Membrane-bound organelles",
+        "DNA located in a nucleoid region",
+        "A large vacuole"
+      ],
+      "answer": "DNA located in a nucleoid region"
+    },
+    "key_terms": [
+      "no nucleus",
+      "no membrane-bound organelles",
+      "nucleoid"
     ]
   }
 ]
