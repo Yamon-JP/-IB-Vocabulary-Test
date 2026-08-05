@@ -351,5 +351,139 @@
     "chlorophyll",
     "photosynthesis"
   ]
-}
-]
+},
+{
+  "term": "rough endoplasmic reticulum (RER)",
+  "definition": "A membrane system with attached ribosomes that synthesizes and transports proteins within the cell.",
+  "japanese": "粗面小胞体",
+  "topic": "1.2 Ultrastructure of Cells",
+  "definition_question": "Define rough endoplasmic reticulum.",
+  "paper1": {
+    "question": "Why is the rough endoplasmic reticulum covered with ribosomes?",
+    "options": [
+      "To allow protein synthesis",
+      "To produce ATP",
+      "To carry out photosynthesis",
+      "To store DNA"
+    ],
+    "answer": "To allow protein synthesis"
+  },
+  "key_terms": [
+    "ribosomes",
+    "protein synthesis",
+    "transport"
+  ]
+},
+
+{
+  "term": "Golgi apparatus",
+  "definition": "An organelle that modifies, sorts and packages proteins into vesicles for transport.",
+  "japanese": "ゴルジ体",
+  "topic": "1.2 Ultrastructure of Cells",
+  "definition_question": "Define Golgi apparatus.",
+  "paper1": {
+    "question": "What is a function of the Golgi apparatus?",
+    "options": [
+      "Modifies and packages proteins",
+      "Produces ATP",
+      "Stores genetic material",
+      "Carries out respiration"
+    ],
+    "answer": "Modifies and packages proteins"
+  },
+  "key_terms": [
+    "modify",
+    "sort",
+    "package",
+    "vesicles"
+  ]
+},
+
+{
+  "term": "lysosome",
+  "definition": "A vesicle containing hydrolytic enzymes that digest unwanted materials inside the cell.",
+  "japanese": "リソソーム",
+  "topic": "1.2 Ultrastructure of Cells",
+  "definition_question": "Define lysosome.",
+  "paper1": {
+    "question": "What is the function of lysosomes?",
+    "options": [
+      "Break down materials using enzymes",
+      "Produce glucose",
+      "Synthesize DNA",
+      "Store oxygen"
+    ],
+    "answer": "Break down materials using enzymes"
+  },
+  "key_terms": [
+    "hydrolytic enzymes",
+    "digestion"
+  ]
+},
+
+{
+  "term": "vesicle",
+  "definition": "A small membrane-bound sac used to transport substances within or out of a cell.",
+  "japanese": "小胞",
+  "topic": "1.2 Ultrastructure of Cells",
+  "definition_question": "Define vesicle.",
+  "paper1": {
+    "question": "What is the function of vesicles?",
+    "options": [
+      "Transport substances",
+      "Produce ATP",
+      "Store DNA",
+      "Control cell division"
+    ],
+    "answer": "Transport substances"
+  },
+  "key_terms": [
+    "membrane-bound sac",
+    "transport"
+  ]
+},
+
+{
+  "term": "vacuole",
+  "definition": "A membrane-bound structure containing cell sap that helps maintain pressure in plant cells.",
+  "japanese": "液胞",
+  "topic": "1.2 Ultrastructure of Cells",
+  "definition_question": "Define vacuole.",
+  "paper1": {
+    "question": "What is the role of the plant cell vacuole?",
+    "options": [
+      "Maintain turgor pressure",
+      "Produce proteins",
+      "Carry out respiration",
+      "Store chromosomes"
+    ],
+    "answer": "Maintain turgor pressure"
+  },
+  "key_terms": [
+    "cell sap",
+    "turgor pressure"
+  ]
+},
+
+{
+  "term": "cell wall",
+  "definition": "A rigid layer outside the cell membrane that provides support and protection.",
+  "japanese": "細胞壁",
+  "topic": "1.2 Ultrastructure of Cells",
+  "definition_question": "Define cell wall.",
+  "paper1": {
+    "question": "What is the function of the cell wall in plant cells?",
+    "options": [
+      "Provide support and protection",
+      "Control genetic information",
+      "Produce ATP",
+      "Make proteins"
+    ],
+    "answer": "Provide support and protection"
+  },
+  "key_terms": [
+    "rigid layer",
+    "support",
+    "protection"
+  ]
+}]
