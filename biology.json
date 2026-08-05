@@ -2692,4 +2692,179 @@
     "same loci",
     "different alleles"
   ]
+},
+
+{
+  "term": "diploid",
+  "definition": "A cell containing two complete sets of chromosomes, one set inherited from each parent.",
+  "japanese": "二倍体",
+  "topic": "3.2 Chromosomes",
+  "definition_question": "Define diploid.",
+  "paper1": {
+    "question": "A diploid cell contains:",
+    "options": [
+      "Two sets of chromosomes",
+      "One set of chromosomes",
+      "No chromosomes",
+      "Only DNA fragments"
+    ],
+    "answer": "Two sets of chromosomes"
+  },
+  "key_terms": [
+    "two chromosome sets",
+    "parental chromosomes"
+  ]
+},
+
+{
+  "term": "haploid",
+  "definition": "A cell containing one complete set of chromosomes.",
+  "japanese": "一倍体",
+  "topic": "3.2 Chromosomes",
+  "definition_question": "Define haploid.",
+  "paper1": {
+    "question": "Human gametes are haploid because they contain:",
+    "options": [
+      "One set of chromosomes",
+      "Two sets of chromosomes",
+      "No genetic material",
+      "Only proteins"
+    ],
+    "answer": "One set of chromosomes"
+  },
+  "key_terms": [
+    "one chromosome set",
+    "gamete"
+  ]
+},
+
+{
+  "term": "sister chromatids",
+  "definition": "Two identical copies of a chromosome produced during DNA replication and joined together.",
+  "japanese": "姉妹染色分体",
+  "topic": "3.2 Chromosomes",
+  "definition_question": "Define sister chromatids.",
+  "paper1": {
+    "question": "Sister chromatids are:",
+    "options": [
+      "Identical copies of one chromosome",
+      "Different chromosomes from parents",
+      "Two different genes",
+      "RNA molecules"
+    ],
+    "answer": "Identical copies of one chromosome"
+  },
+  "key_terms": [
+    "identical copies",
+    "DNA replication"
+  ]
+},
+
+{
+  "term": "chromosome number",
+  "definition": "The total number of chromosomes present in a cell.",
+  "japanese": "染色体数",
+  "topic": "3.2 Chromosomes",
+  "definition_question": "Define chromosome number.",
+  "paper1": {
+    "question": "Chromosome number describes:",
+    "options": [
+      "The total number of chromosomes in a cell",
+      "The number of proteins",
+      "The length of DNA only",
+      "The number of genes only"
+    ],
+    "answer": "The total number of chromosomes in a cell"
+  },
+  "key_terms": [
+    "total chromosomes",
+    "cell"
+  ]
+},
+
+{
+  "term": "karyotype",
+  "definition": "A visual representation of chromosomes arranged according to size and structure.",
+  "japanese": "核型",
+  "topic": "3.2 Chromosomes",
+  "definition_question": "Define karyotype.",
+  "paper1": {
+    "question": "A karyotype is used to:",
+    "options": [
+      "Display and analyse chromosomes",
+      "Measure enzyme activity",
+      "Copy DNA",
+      "Produce proteins"
+    ],
+    "answer": "Display and analyse chromosomes"
+  },
+  "key_terms": [
+    "chromosome arrangement",
+    "visual representation"
+  ]
+},
+
+{
+  "term": "autosome",
+  "definition": "A chromosome that is not involved in determining biological sex.",
+  "japanese": "常染色体",
+  "topic": "3.2 Chromosomes",
+  "definition_question": "Define autosome.",
+  "paper1": {
+    "question": "Autosomes are:",
+    "options": [
+      "Non-sex chromosomes",
+      "Only X chromosomes",
+      "Only Y chromosomes",
+      "DNA mutations"
+    ],
+    "answer": "Non-sex chromosomes"
+  },
+  "key_terms": [
+    "non-sex chromosome"
+  ]
+},
+
+{
+  "term": "sex chromosome",
+  "definition": "A chromosome involved in determining biological sex.",
+  "japanese": "性染色体",
+  "topic": "3.2 Chromosomes",
+  "definition_question": "Define sex chromosome.",
+  "paper1": {
+    "question": "Sex chromosomes determine:",
+    "options": [
+      "Biological sex",
+      "All body functions",
+      "Protein synthesis only",
+      "Energy production"
+    ],
+    "answer": "Biological sex"
+  },
+  "key_terms": [
+    "X chromosome",
+    "Y chromosome"
+  ]
+},
+
+{
+  "term": "homologous chromosomes",
+  "definition": "A pair of chromosomes with the same genes at the same loci, but possibly different alleles.",
+  "japanese": "相同染色体",
+  "topic": "3.2 Chromosomes",
+  "definition_question": "Define homologous chromosomes.",
+  "paper1": {
+    "question": "Homologous chromosomes contain:",
+    "options": [
+      "The same genes at the same loci",
+      "Identical chromatids only",
+      "No genetic information",
+      "Only sex genes"
+    ],
+    "answer": "The same genes at the same loci"
+  },
+  "key_terms": [
+    "same loci",
+    "different alleles"
+  ]
 }]
