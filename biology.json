@@ -4655,4 +4655,224 @@
     "shared ancestry",
     "evolution"
   ]
+},
+
+{
+  "term": "survival of the fittest",
+  "definition": "The idea that organisms with advantageous adaptations are more likely to survive and reproduce.",
+  "japanese": "適者生存",
+  "topic": "5.2 Natural Selection",
+  "definition_question": "Define survival of the fittest.",
+  "paper1": {
+    "question": "Survival of the fittest means:",
+    "options": [
+      "Better adapted organisms reproduce more successfully",
+      "The largest organism always survives",
+      "The strongest individual always wins",
+      "All organisms survive equally"
+    ],
+    "answer": "Better adapted organisms reproduce more successfully"
+  },
+  "key_terms": [
+    "adaptation",
+    "reproductive success"
+  ]
+},
+
+{
+  "term": "differential reproduction",
+  "definition": "The process where some individuals produce more offspring than others due to advantageous traits.",
+  "japanese": "繁殖成功度の差",
+  "topic": "5.2 Natural Selection",
+  "definition_question": "Define differential reproduction.",
+  "paper1": {
+    "question": "Differential reproduction is based on differences in:",
+    "options": [
+      "Reproductive success",
+      "Cell size",
+      "DNA amount only",
+      "Age only"
+    ],
+    "answer": "Reproductive success"
+  },
+  "key_terms": [
+    "offspring",
+    "fitness"
+  ]
+},
+
+{
+  "term": "antibiotic resistance",
+  "definition": "The ability of bacteria to survive exposure to antibiotics due to resistant traits.",
+  "japanese": "抗生物質耐性",
+  "topic": "5.2 Natural Selection",
+  "definition_question": "Define antibiotic resistance.",
+  "paper1": {
+    "question": "Antibiotic resistance increases because:",
+    "options": [
+      "Resistant bacteria survive and reproduce",
+      "Antibiotics create useful mutations",
+      "All bacteria become identical",
+      "Bacteria stop reproducing"
+    ],
+    "answer": "Resistant bacteria survive and reproduce"
+  },
+  "key_terms": [
+    "bacteria",
+    "selection pressure"
+  ]
+},
+
+{
+  "term": "pesticide resistance",
+  "definition": "The ability of organisms such as insects to survive pesticide exposure.",
+  "japanese": "殺虫剤耐性",
+  "topic": "5.2 Natural Selection",
+  "definition_question": "Define pesticide resistance.",
+  "paper1": {
+    "question": "Pesticide resistance develops through:",
+    "options": [
+      "Natural selection",
+      "No genetic variation",
+      "Removal of all mutations",
+      "Stopping reproduction"
+    ],
+    "answer": "Natural selection"
+  },
+  "key_terms": [
+    "selection pressure",
+    "resistant individuals"
+  ]
+},
+
+{
+  "term": "artificial selection",
+  "definition": "The selective breeding of organisms by humans for desired characteristics.",
+  "japanese": "人工選択",
+  "topic": "5.2 Natural Selection",
+  "definition_question": "Define artificial selection.",
+  "paper1": {
+    "question": "Artificial selection is controlled by:",
+    "options": [
+      "Humans",
+      "The climate only",
+      "Random chance only",
+      "Predators"
+    ],
+    "answer": "Humans"
+  },
+  "key_terms": [
+    "human selection",
+    "breeding"
+  ]
+},
+
+{
+  "term": "selective breeding",
+  "definition": "The process of choosing organisms with desired traits to reproduce.",
+  "japanese": "選択育種",
+  "topic": "5.2 Natural Selection",
+  "definition_question": "Define selective breeding.",
+  "paper1": {
+    "question": "Selective breeding aims to:",
+    "options": [
+      "Increase desired characteristics",
+      "Remove all variation",
+      "Prevent reproduction",
+      "Stop evolution"
+    ],
+    "answer": "Increase desired characteristics"
+  },
+  "key_terms": [
+    "desired traits",
+    "breeding"
+  ]
+},
+
+{
+  "term": "directional selection",
+  "definition": "A type of selection that favors one extreme phenotype.",
+  "japanese": "方向性選択",
+  "topic": "5.2 Natural Selection",
+  "definition_question": "Define directional selection.",
+  "paper1": {
+    "question": "Directional selection favors:",
+    "options": [
+      "One extreme phenotype",
+      "The average phenotype only",
+      "All phenotypes equally",
+      "No phenotype"
+    ],
+    "answer": "One extreme phenotype"
+  },
+  "key_terms": [
+    "extreme phenotype",
+    "change in population"
+  ]
+},
+
+{
+  "term": "stabilizing selection",
+  "definition": "A type of selection that favors intermediate phenotypes and reduces extremes.",
+  "japanese": "安定化選択",
+  "topic": "5.2 Natural Selection",
+  "definition_question": "Define stabilizing selection.",
+  "paper1": {
+    "question": "Stabilizing selection favors:",
+    "options": [
+      "Intermediate phenotypes",
+      "Extreme phenotypes only",
+      "New mutations only",
+      "No traits"
+    ],
+    "answer": "Intermediate phenotypes"
+  },
+  "key_terms": [
+    "average phenotype",
+    "reduced extremes"
+  ]
+},
+
+{
+  "term": "disruptive selection",
+  "definition": "A type of selection that favors both extreme phenotypes over the intermediate phenotype.",
+  "japanese": "分断選択",
+  "topic": "5.2 Natural Selection",
+  "definition_question": "Define disruptive selection.",
+  "paper1": {
+    "question": "Disruptive selection favors:",
+    "options": [
+      "Both extreme phenotypes",
+      "Only intermediate traits",
+      "No variation",
+      "Only one organism"
+    ],
+    "answer": "Both extreme phenotypes"
+  },
+  "key_terms": [
+    "two extremes",
+    "variation"
+  ]
+},
+
+{
+  "term": "speciation",
+  "definition": "The formation of new species through evolutionary processes.",
+  "japanese": "種分化",
+  "topic": "5.2 Natural Selection",
+  "definition_question": "Define speciation.",
+  "paper1": {
+    "question": "Speciation results in:",
+    "options": [
+      "Formation of new species",
+      "Loss of all variation",
+      "No genetic change",
+      "Only individual growth"
+    ],
+    "answer": "Formation of new species"
+  },
+  "key_terms": [
+    "new species",
+    "evolution"
+  ]
 }]
