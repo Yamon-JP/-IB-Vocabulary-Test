@@ -963,4 +963,141 @@
     "transport",
     "membrane-bound"
   ]
+},
+
+{
+  "term": "spontaneous generation",
+  "definition": "The incorrect idea that living organisms can arise from non-living matter.",
+  "japanese": "自然発生説",
+  "topic": "1.5 The Origin of Cells",
+  "definition_question": "Define spontaneous generation.",
+  "paper1": {
+    "question": "What did spontaneous generation suggest?",
+    "options": [
+      "Life could arise from non-living matter",
+      "Cells come only from existing cells",
+      "DNA controls inheritance",
+      "Cells contain organelles"
+    ],
+    "answer": "Life could arise from non-living matter"
+  },
+  "key_terms": [
+    "non-living matter",
+    "incorrect theory"
+  ]
+},
+
+{
+  "term": "endosymbiotic theory",
+  "definition": "The theory that mitochondria and chloroplasts originated from free-living prokaryotic cells that were engulfed by another cell.",
+  "japanese": "細胞内共生説",
+  "topic": "1.5 The Origin of Cells",
+  "definition_question": "Define endosymbiotic theory.",
+  "paper1": {
+    "question": "According to the endosymbiotic theory, mitochondria originated from:",
+    "options": [
+      "Free-living prokaryotes",
+      "The nucleus",
+      "Cell membranes",
+      "Viruses"
+    ],
+    "answer": "Free-living prokaryotes"
+  },
+  "key_terms": [
+    "prokaryote",
+    "engulfed",
+    "symbiosis"
+  ]
+},
+
+{
+  "term": "aerobic respiration",
+  "definition": "The process of producing ATP by breaking down organic molecules using oxygen.",
+  "japanese": "好気呼吸",
+  "topic": "1.5 The Origin of Cells",
+  "definition_question": "Define aerobic respiration.",
+  "paper1": {
+    "question": "Which organelle is associated with aerobic respiration?",
+    "options": [
+      "Mitochondrion",
+      "Ribosome",
+      "Golgi apparatus",
+      "Lysosome"
+    ],
+    "answer": "Mitochondrion"
+  },
+  "key_terms": [
+    "oxygen",
+    "ATP production",
+    "organic molecules"
+  ]
+},
+
+{
+  "term": "chloroplast origin",
+  "definition": "The origin of chloroplasts from photosynthetic prokaryotes through endosymbiosis.",
+  "japanese": "葉緑体の起源",
+  "topic": "1.5 The Origin of Cells",
+  "definition_question": "Explain the origin of chloroplasts.",
+  "paper1": {
+    "question": "Chloroplasts are believed to have originated from:",
+    "options": [
+      "Photosynthetic prokaryotes",
+      "Animal cells",
+      "The nucleus",
+      "Ribosomes"
+    ],
+    "answer": "Photosynthetic prokaryotes"
+  },
+  "key_terms": [
+    "photosynthesis",
+    "prokaryote",
+    "endosymbiosis"
+  ]
+},
+
+{
+  "term": "mitochondrion origin",
+  "definition": "The origin of mitochondria from aerobic prokaryotes that formed a symbiotic relationship with early eukaryotic cells.",
+  "japanese": "ミトコンドリアの起源",
+  "topic": "1.5 The Origin of Cells",
+  "definition_question": "Explain the origin of mitochondria.",
+  "paper1": {
+    "question": "Mitochondria are thought to have originated from:",
+    "options": [
+      "Aerobic prokaryotes",
+      "Cell walls",
+      "DNA molecules",
+      "Chlorophyll"
+    ],
+    "answer": "Aerobic prokaryotes"
+  },
+  "key_terms": [
+    "aerobic",
+    "prokaryote",
+    "symbiosis"
+  ]
+},
+
+{
+  "term": "stem cell",
+  "definition": "An undifferentiated cell that can divide and develop into different specialised cell types.",
+  "japanese": "幹細胞",
+  "topic": "1.5 The Origin of Cells",
+  "definition_question": "Define stem cell.",
+  "paper1": {
+    "question": "What is a characteristic of stem cells?",
+    "options": [
+      "They can differentiate into specialised cells",
+      "They cannot divide",
+      "They only produce ATP",
+      "They contain no DNA"
+    ],
+    "answer": "They can differentiate into specialised cells"
+  },
+  "key_terms": [
+    "undifferentiated",
+    "differentiate",
+    "specialised cells"
+  ]
 }]
