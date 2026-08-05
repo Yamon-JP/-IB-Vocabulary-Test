@@ -12003,4 +12003,224 @@
     "maternal-fetal exchange",
     "fetus"
   ]
+},
+
+{
+  "term": "puberty",
+  "definition": "The stage of development when the body becomes sexually mature.",
+  "japanese": "思春期",
+  "topic": "18.2 Development and Regulation",
+  "definition_question": "Define puberty.",
+  "paper1": {
+    "question": "Puberty involves:",
+    "options": [
+      "Sexual maturation",
+      "DNA destruction",
+      "Cell death",
+      "Photosynthesis"
+    ],
+    "answer": "Sexual maturation"
+  },
+  "key_terms": [
+    "maturity",
+    "hormonal changes"
+  ]
+},
+
+{
+  "term": "testosterone",
+  "definition": "A male sex hormone involved in sperm production and male development.",
+  "japanese": "テストステロン",
+  "topic": "18.2 Development and Regulation",
+  "definition_question": "Define testosterone.",
+  "paper1": {
+    "question": "Testosterone is mainly associated with:",
+    "options": [
+      "Male development",
+      "Blood glucose control",
+      "Immune response",
+      "Digestion"
+    ],
+    "answer": "Male development"
+  },
+  "key_terms": [
+    "male hormone",
+    "testis"
+  ]
+},
+
+{
+  "term": "oestrogen",
+  "definition": "A female sex hormone involved in development of female characteristics and the menstrual cycle.",
+  "japanese": "エストロゲン",
+  "topic": "18.2 Development and Regulation",
+  "definition_question": "Define oestrogen.",
+  "paper1": {
+    "question": "Oestrogen is involved in:",
+    "options": [
+      "Female reproductive development",
+      "Protein digestion",
+      "DNA replication only",
+      "Immune defence only"
+    ],
+    "answer": "Female reproductive development"
+  },
+  "key_terms": [
+    "female hormone",
+    "ovary"
+  ]
+},
+
+{
+  "term": "progesterone",
+  "definition": "A hormone that helps maintain the uterus lining during pregnancy.",
+  "japanese": "プロゲステロン",
+  "topic": "18.2 Development and Regulation",
+  "definition_question": "Define progesterone.",
+  "paper1": {
+    "question": "Progesterone helps maintain:",
+    "options": [
+      "The uterus lining",
+      "Blood glucose",
+      "Bone structure",
+      "DNA sequence"
+    ],
+    "answer": "The uterus lining"
+  },
+  "key_terms": [
+    "pregnancy",
+    "uterus"
+  ]
+},
+
+{
+  "term": "menstrual cycle",
+  "definition": "A monthly cycle involving changes in the reproductive system preparing for pregnancy.",
+  "japanese": "月経周期",
+  "topic": "18.2 Development and Regulation",
+  "definition_question": "Define menstrual cycle.",
+  "paper1": {
+    "question": "The menstrual cycle prepares the body for:",
+    "options": [
+      "Pregnancy",
+      "Photosynthesis",
+      "Muscle growth only",
+      "Digestion"
+    ],
+    "answer": "Pregnancy"
+  },
+  "key_terms": [
+    "ovulation",
+    "hormone regulation"
+  ]
+},
+
+{
+  "term": "ovulation",
+  "definition": "The release of an egg cell from an ovary.",
+  "japanese": "排卵",
+  "topic": "18.2 Development and Regulation",
+  "definition_question": "Define ovulation.",
+  "paper1": {
+    "question": "Ovulation releases:",
+    "options": [
+      "An egg cell",
+      "A sperm cell",
+      "A hormone only",
+      "A chromosome"
+    ],
+    "answer": "An egg cell"
+  },
+  "key_terms": [
+    "ovary",
+    "egg release"
+  ]
+},
+
+{
+  "term": "pregnancy",
+  "definition": "The period of development of an embryo or fetus inside the uterus.",
+  "japanese": "妊娠",
+  "topic": "18.2 Development and Regulation",
+  "definition_question": "Define pregnancy.",
+  "paper1": {
+    "question": "Pregnancy involves development inside the:",
+    "options": [
+      "Uterus",
+      "Ovary",
+      "Testis",
+      "Pancreas"
+    ],
+    "answer": "Uterus"
+  },
+  "key_terms": [
+    "embryo",
+    "fetus"
+  ]
+},
+
+{
+  "term": "birth",
+  "definition": "The process in which a baby is delivered after pregnancy.",
+  "japanese": "出産",
+  "topic": "18.2 Development and Regulation",
+  "definition_question": "Define birth.",
+  "paper1": {
+    "question": "Birth occurs after:",
+    "options": [
+      "Pregnancy",
+      "Photosynthesis",
+      "Meiosis only",
+      "Transcription"
+    ],
+    "answer": "Pregnancy"
+  },
+  "key_terms": [
+    "delivery",
+    "reproduction"
+  ]
+},
+
+{
+  "term": "stem cell",
+  "definition": "An undifferentiated cell that can develop into different specialized cell types.",
+  "japanese": "幹細胞",
+  "topic": "18.2 Development and Regulation",
+  "definition_question": "Define stem cell.",
+  "paper1": {
+    "question": "Stem cells can:",
+    "options": [
+      "Differentiate into specialized cells",
+      "Only produce hormones",
+      "Only replicate DNA",
+      "Only digest nutrients"
+    ],
+    "answer": "Differentiate into specialized cells"
+  },
+  "key_terms": [
+    "undifferentiated cell",
+    "specialization"
+  ]
+},
+
+{
+  "term": "differentiation",
+  "definition": "The process by which unspecialized cells become specialized cells.",
+  "japanese": "分化",
+  "topic": "18.2 Development and Regulation",
+  "definition_question": "Define differentiation.",
+  "paper1": {
+    "question": "Differentiation produces:",
+    "options": [
+      "Specialized cells",
+      "Identical cells only",
+      "DNA mutations",
+      "Hormones only"
+    ],
+    "answer": "Specialized cells"
+  },
+  "key_terms": [
+    "cell specialization",
+    "gene expression"
+  ]
 }]
