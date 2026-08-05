@@ -8927,4 +8927,224 @@
     "automatic response",
     "nervous pathway"
   ]
+},
+
+{
+  "term": "hormone",
+  "definition": "A chemical messenger produced by glands that regulates activities in the body.",
+  "japanese": "ホルモン",
+  "topic": "11.2 Hormones and Homeostasis",
+  "definition_question": "Define hormone.",
+  "paper1": {
+    "question": "Hormones are:",
+    "options": [
+      "Chemical messengers",
+      "DNA molecules",
+      "Cell organelles",
+      "Sugars"
+    ],
+    "answer": "Chemical messengers"
+  },
+  "key_terms": [
+    "chemical signal",
+    "regulation"
+  ]
+},
+
+{
+  "term": "endocrine gland",
+  "definition": "A gland that secretes hormones directly into the bloodstream.",
+  "japanese": "内分泌腺",
+  "topic": "11.2 Hormones and Homeostasis",
+  "definition_question": "Define endocrine gland.",
+  "paper1": {
+    "question": "Endocrine glands release:",
+    "options": [
+      "Hormones",
+      "DNA",
+      "Neurons",
+      "Enzymes only"
+    ],
+    "answer": "Hormones"
+  },
+  "key_terms": [
+    "bloodstream",
+    "hormone secretion"
+  ]
+},
+
+{
+  "term": "insulin",
+  "definition": "A hormone that lowers blood glucose concentration by promoting glucose uptake.",
+  "japanese": "インスリン",
+  "topic": "11.2 Hormones and Homeostasis",
+  "definition_question": "Define insulin.",
+  "paper1": {
+    "question": "Insulin decreases:",
+    "options": [
+      "Blood glucose concentration",
+      "Body temperature",
+      "Oxygen levels",
+      "DNA replication"
+    ],
+    "answer": "Blood glucose concentration"
+  },
+  "key_terms": [
+    "pancreas",
+    "glucose uptake"
+  ]
+},
+
+{
+  "term": "glucagon",
+  "definition": "A hormone that increases blood glucose concentration by stimulating glucose release.",
+  "japanese": "グルカゴン",
+  "topic": "11.2 Hormones and Homeostasis",
+  "definition_question": "Define glucagon.",
+  "paper1": {
+    "question": "Glucagon increases:",
+    "options": [
+      "Blood glucose concentration",
+      "Protein synthesis only",
+      "Water loss",
+      "Body temperature"
+    ],
+    "answer": "Blood glucose concentration"
+  },
+  "key_terms": [
+    "pancreas",
+    "glucose release"
+  ]
+},
+
+{
+  "term": "negative feedback",
+  "definition": "A control mechanism where a change triggers responses that reverse the change.",
+  "japanese": "負のフィードバック",
+  "topic": "11.2 Hormones and Homeostasis",
+  "definition_question": "Define negative feedback.",
+  "paper1": {
+    "question": "Negative feedback:",
+    "options": [
+      "Reverses a change",
+      "Amplifies every change",
+      "Stops all reactions",
+      "Destroys hormones"
+    ],
+    "answer": "Reverses a change"
+  },
+  "key_terms": [
+    "homeostasis",
+    "regulation"
+  ]
+},
+
+{
+  "term": "homeostasis",
+  "definition": "The maintenance of a stable internal environment.",
+  "japanese": "恒常性",
+  "topic": "11.2 Hormones and Homeostasis",
+  "definition_question": "Define homeostasis.",
+  "paper1": {
+    "question": "Homeostasis maintains:",
+    "options": [
+      "A stable internal environment",
+      "Constant DNA sequence",
+      "Only body size",
+      "Only temperature"
+    ],
+    "answer": "A stable internal environment"
+  },
+  "key_terms": [
+    "internal balance",
+    "regulation"
+  ]
+},
+
+{
+  "term": "thermoregulation",
+  "definition": "The control of body temperature within a suitable range.",
+  "japanese": "体温調節",
+  "topic": "11.2 Hormones and Homeostasis",
+  "definition_question": "Define thermoregulation.",
+  "paper1": {
+    "question": "Thermoregulation controls:",
+    "options": [
+      "Body temperature",
+      "DNA replication",
+      "Protein sequence",
+      "Blood type"
+    ],
+    "answer": "Body temperature"
+  },
+  "key_terms": [
+    "temperature control",
+    "homeostasis"
+  ]
+},
+
+{
+  "term": "kidney",
+  "definition": "An organ responsible for removing waste and regulating water balance in the body.",
+  "japanese": "腎臓",
+  "topic": "11.2 Hormones and Homeostasis",
+  "definition_question": "Define kidney.",
+  "paper1": {
+    "question": "The kidney regulates:",
+    "options": [
+      "Water balance",
+      "DNA structure",
+      "Photosynthesis",
+      "Protein sequence"
+    ],
+    "answer": "Water balance"
+  },
+  "key_terms": [
+    "excretion",
+    "osmoregulation"
+  ]
+},
+
+{
+  "term": "osmoregulation",
+  "definition": "The control of water and solute balance in an organism.",
+  "japanese": "浸透圧調節",
+  "topic": "11.2 Hormones and Homeostasis",
+  "definition_question": "Define osmoregulation.",
+  "paper1": {
+    "question": "Osmoregulation controls:",
+    "options": [
+      "Water and solute balance",
+      "DNA replication",
+      "Muscle contraction only",
+      "Protein production"
+    ],
+    "answer": "Water and solute balance"
+  },
+  "key_terms": [
+    "water balance",
+    "kidney"
+  ]
+},
+
+{
+  "term": "ADH",
+  "definition": "A hormone that increases water reabsorption by the kidneys.",
+  "japanese": "抗利尿ホルモン",
+  "topic": "11.2 Hormones and Homeostasis",
+  "definition_question": "Define ADH.",
+  "paper1": {
+    "question": "ADH increases:",
+    "options": [
+      "Water reabsorption",
+      "Glucose production",
+      "Protein digestion",
+      "Oxygen transport"
+    ],
+    "answer": "Water reabsorption"
+  },
+  "key_terms": [
+    "kidney",
+    "water balance"
+  ]
 }]
