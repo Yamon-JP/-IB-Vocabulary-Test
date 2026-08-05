@@ -3311,4 +3311,224 @@
     "two recessive alleles",
     "homozygous"
   ]
+},
+
+{
+  "term": "genetic modification",
+  "definition": "The alteration of an organism's genetic material by introducing, removing or changing genes.",
+  "japanese": "遺伝子改変",
+  "topic": "3.5 Genetic Modification and Biotechnology",
+  "definition_question": "Define genetic modification.",
+  "paper1": {
+    "question": "Genetic modification involves:",
+    "options": [
+      "Changing an organism's genetic material",
+      "Changing only the environment",
+      "Removing all DNA",
+      "Stopping cell division"
+    ],
+    "answer": "Changing an organism's genetic material"
+  },
+  "key_terms": [
+    "alter genetic material",
+    "gene change"
+  ]
+},
+
+{
+  "term": "recombinant DNA",
+  "definition": "DNA molecules formed by combining genetic material from different sources.",
+  "japanese": "組換えDNA",
+  "topic": "3.5 Genetic Modification and Biotechnology",
+  "definition_question": "Define recombinant DNA.",
+  "paper1": {
+    "question": "Recombinant DNA contains:",
+    "options": [
+      "DNA from different sources",
+      "Only protein molecules",
+      "Only carbohydrates",
+      "No genetic material"
+    ],
+    "answer": "DNA from different sources"
+  },
+  "key_terms": [
+    "combined DNA",
+    "different sources"
+  ]
+},
+
+{
+  "term": "plasmid",
+  "definition": "A small circular DNA molecule found in bacteria that can be used as a vector for gene transfer.",
+  "japanese": "プラスミド",
+  "topic": "3.5 Genetic Modification and Biotechnology",
+  "definition_question": "Define plasmid.",
+  "paper1": {
+    "question": "A plasmid is commonly used as:",
+    "options": [
+      "A vector to transfer genes",
+      "A protein enzyme",
+      "A chromosome in animals",
+      "A carbohydrate molecule"
+    ],
+    "answer": "A vector to transfer genes"
+  },
+  "key_terms": [
+    "circular DNA",
+    "vector"
+  ]
+},
+
+{
+  "term": "restriction enzyme",
+  "definition": "An enzyme that cuts DNA at specific recognition sequences.",
+  "japanese": "制限酵素",
+  "topic": "3.5 Genetic Modification and Biotechnology",
+  "definition_question": "Define restriction enzyme.",
+  "paper1": {
+    "question": "Restriction enzymes are used to:",
+    "options": [
+      "Cut DNA at specific sequences",
+      "Join DNA fragments",
+      "Produce ATP",
+      "Make proteins"
+    ],
+    "answer": "Cut DNA at specific sequences"
+  },
+  "key_terms": [
+    "DNA cutting",
+    "recognition sequence"
+  ]
+},
+
+{
+  "term": "DNA ligase",
+  "definition": "An enzyme that joins DNA fragments together by forming phosphodiester bonds.",
+  "japanese": "DNAリガーゼ",
+  "topic": "3.5 Genetic Modification and Biotechnology",
+  "definition_question": "Define DNA ligase.",
+  "paper1": {
+    "question": "DNA ligase is used to:",
+    "options": [
+      "Join DNA fragments",
+      "Cut DNA",
+      "Copy proteins",
+      "Break down lipids"
+    ],
+    "answer": "Join DNA fragments"
+  },
+  "key_terms": [
+    "joining DNA",
+    "phosphodiester bonds"
+  ]
+},
+
+{
+  "term": "polymerase chain reaction (PCR)",
+  "definition": "A technique used to produce many copies of a specific DNA sequence.",
+  "japanese": "ポリメラーゼ連鎖反応",
+  "topic": "3.5 Genetic Modification and Biotechnology",
+  "definition_question": "Define PCR.",
+  "paper1": {
+    "question": "PCR is used to:",
+    "options": [
+      "Amplify DNA",
+      "Cut proteins",
+      "Destroy chromosomes",
+      "Create lipids"
+    ],
+    "answer": "Amplify DNA"
+  },
+  "key_terms": [
+    "DNA amplification",
+    "many copies"
+  ]
+},
+
+{
+  "term": "gel electrophoresis",
+  "definition": "A technique used to separate DNA fragments according to their size using an electric field.",
+  "japanese": "ゲル電気泳動",
+  "topic": "3.5 Genetic Modification and Biotechnology",
+  "definition_question": "Define gel electrophoresis.",
+  "paper1": {
+    "question": "Gel electrophoresis separates DNA fragments based on:",
+    "options": [
+      "Size",
+      "Colour",
+      "Protein content",
+      "Cell type"
+    ],
+    "answer": "Size"
+  },
+  "key_terms": [
+    "DNA separation",
+    "electric field"
+  ]
+},
+
+{
+  "term": "gene transfer",
+  "definition": "The movement of a gene from one organism or DNA source into another organism.",
+  "japanese": "遺伝子導入",
+  "topic": "3.5 Genetic Modification and Biotechnology",
+  "definition_question": "Define gene transfer.",
+  "paper1": {
+    "question": "Gene transfer involves:",
+    "options": [
+      "Moving genes between organisms",
+      "Removing all DNA",
+      "Stopping reproduction",
+      "Changing proteins only"
+    ],
+    "answer": "Moving genes between organisms"
+  },
+  "key_terms": [
+    "introduced gene",
+    "DNA movement"
+  ]
+},
+
+{
+  "term": "biotechnology",
+  "definition": "The use of biological systems or organisms to develop products or processes.",
+  "japanese": "バイオテクノロジー",
+  "topic": "3.5 Genetic Modification and Biotechnology",
+  "definition_question": "Define biotechnology.",
+  "paper1": {
+    "question": "Biotechnology uses:",
+    "options": [
+      "Biological systems for practical applications",
+      "Only mechanical systems",
+      "Only chemical reactions",
+      "No living organisms"
+    ],
+    "answer": "Biological systems for practical applications"
+  },
+  "key_terms": [
+    "biological systems",
+    "applications"
+  ]
+},
+
+{
+  "term": "genetically modified organism (GMO)",
+  "definition": "An organism whose genetic material has been altered using biotechnology.",
+  "japanese": "遺伝子組換え生物",
+  "topic": "3.5 Genetic Modification and Biotechnology",
+  "definition_question": "Define genetically modified organism.",
+  "paper1": {
+    "question": "A GMO is an organism that:",
+    "options": [
+      "Has altered genetic material",
+      "Has no DNA",
+      "Cannot reproduce",
+      "Has no genes"
+    ],
+    "answer": "Has altered genetic material"
+  },
+  "key_terms": [
+    "modified DNA",
+    "biotechnology"
+  ]
 }]
