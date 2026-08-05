@@ -8487,4 +8487,224 @@
   "key_terms": [
     "different alleles"
   ]
+},
+
+{
+  "term": "mutation",
+  "definition": "A change in the DNA sequence of an organism.",
+  "japanese": "突然変異",
+  "topic": "10.2 Inheritance",
+  "definition_question": "Define mutation.",
+  "paper1": {
+    "question": "A mutation is a change in:",
+    "options": [
+      "DNA sequence",
+      "Cell membrane only",
+      "Protein shape only",
+      "Body temperature"
+    ],
+    "answer": "DNA sequence"
+  },
+  "key_terms": [
+    "DNA change",
+    "genetic variation"
+  ]
+},
+
+{
+  "term": "genetic variation",
+  "definition": "Differences in genetic information between individuals of the same species.",
+  "japanese": "遺伝的多様性",
+  "topic": "10.2 Inheritance",
+  "definition_question": "Define genetic variation.",
+  "paper1": {
+    "question": "Genetic variation refers to differences in:",
+    "options": [
+      "Genetic information",
+      "Water content",
+      "Cell size only",
+      "Temperature"
+    ],
+    "answer": "Genetic information"
+  },
+  "key_terms": [
+    "variation",
+    "DNA differences"
+  ]
+},
+
+{
+  "term": "meiosis",
+  "definition": "A type of cell division that produces haploid gametes with half the chromosome number.",
+  "japanese": "減数分裂",
+  "topic": "10.2 Inheritance",
+  "definition_question": "Define meiosis.",
+  "paper1": {
+    "question": "Meiosis produces:",
+    "options": [
+      "Haploid gametes",
+      "Identical body cells",
+      "Proteins",
+      "DNA only"
+    ],
+    "answer": "Haploid gametes"
+  },
+  "key_terms": [
+    "cell division",
+    "haploid"
+  ]
+},
+
+{
+  "term": "gamete",
+  "definition": "A reproductive cell containing a haploid set of chromosomes.",
+  "japanese": "配偶子",
+  "topic": "10.2 Inheritance",
+  "definition_question": "Define gamete.",
+  "paper1": {
+    "question": "Gametes contain:",
+    "options": [
+      "One set of chromosomes",
+      "Two complete sets",
+      "No DNA",
+      "Only proteins"
+    ],
+    "answer": "One set of chromosomes"
+  },
+  "key_terms": [
+    "haploid",
+    "reproduction"
+  ]
+},
+
+{
+  "term": "fertilization",
+  "definition": "The fusion of male and female gametes to form a zygote.",
+  "japanese": "受精",
+  "topic": "10.2 Inheritance",
+  "definition_question": "Define fertilization.",
+  "paper1": {
+    "question": "Fertilization involves the fusion of:",
+    "options": [
+      "Gametes",
+      "Proteins",
+      "Chromosomes only",
+      "Enzymes"
+    ],
+    "answer": "Gametes"
+  },
+  "key_terms": [
+    "zygote",
+    "sexual reproduction"
+  ]
+},
+
+{
+  "term": "Punnett square",
+  "definition": "A diagram used to predict possible genetic combinations from parental alleles.",
+  "japanese": "パネット方眼",
+  "topic": "10.2 Inheritance",
+  "definition_question": "Define Punnett square.",
+  "paper1": {
+    "question": "A Punnett square predicts:",
+    "options": [
+      "Genetic combinations",
+      "Cell respiration rate",
+      "Enzyme activity",
+      "DNA structure"
+    ],
+    "answer": "Genetic combinations"
+  },
+  "key_terms": [
+    "inheritance",
+    "probability"
+  ]
+},
+
+{
+  "term": "probability",
+  "definition": "The likelihood that a particular outcome will occur.",
+  "japanese": "確率",
+  "topic": "10.2 Inheritance",
+  "definition_question": "Define probability.",
+  "paper1": {
+    "question": "Probability describes:",
+    "options": [
+      "Likelihood of an outcome",
+      "DNA structure",
+      "Protein shape",
+      "Cell size"
+    ],
+    "answer": "Likelihood of an outcome"
+  },
+  "key_terms": [
+    "prediction",
+    "chance"
+  ]
+},
+
+{
+  "term": "pedigree",
+  "definition": "A diagram showing inheritance patterns of traits through generations.",
+  "japanese": "家系図",
+  "topic": "10.2 Inheritance",
+  "definition_question": "Define pedigree.",
+  "paper1": {
+    "question": "A pedigree shows:",
+    "options": [
+      "Inheritance patterns",
+      "Cell structure",
+      "Photosynthesis",
+      "Metabolism"
+    ],
+    "answer": "Inheritance patterns"
+  },
+  "key_terms": [
+    "family history",
+    "traits"
+  ]
+},
+
+{
+  "term": "natural selection",
+  "definition": "The process where individuals with advantageous traits are more likely to survive and reproduce.",
+  "japanese": "自然選択",
+  "topic": "10.2 Inheritance",
+  "definition_question": "Define natural selection.",
+  "paper1": {
+    "question": "Natural selection favors:",
+    "options": [
+      "Advantageous traits",
+      "All mutations equally",
+      "No variation",
+      "Random survival only"
+    ],
+    "answer": "Advantageous traits"
+  },
+  "key_terms": [
+    "survival",
+    "reproduction"
+  ]
+},
+
+{
+  "term": "adaptation",
+  "definition": "An inherited characteristic that increases an organism's ability to survive and reproduce.",
+  "japanese": "適応",
+  "topic": "10.2 Inheritance",
+  "definition_question": "Define adaptation.",
+  "paper1": {
+    "question": "An adaptation improves:",
+    "options": [
+      "Survival and reproduction",
+      "Only body size",
+      "Only metabolism",
+      "DNA destruction"
+    ],
+    "answer": "Survival and reproduction"
+  },
+  "key_terms": [
+    "evolution",
+    "advantageous trait"
+  ]
 }]
