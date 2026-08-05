@@ -2867,4 +2867,227 @@
     "same loci",
     "different alleles"
   ]
+},
+
+{
+  "term": "meiosis",
+  "definition": "A type of cell division that produces four genetically different haploid cells from one diploid cell.",
+  "japanese": "減数分裂",
+  "topic": "3.3 Meiosis",
+  "definition_question": "Define meiosis.",
+  "paper1": {
+    "question": "The main function of meiosis is to:",
+    "options": [
+      "Produce haploid cells for sexual reproduction",
+      "Produce identical body cells",
+      "Repair damaged tissues",
+      "Increase chromosome number"
+    ],
+    "answer": "Produce haploid cells for sexual reproduction"
+  },
+  "key_terms": [
+    "haploid cells",
+    "genetic variation",
+    "sexual reproduction"
+  ]
+},
+
+{
+  "term": "meiosis I",
+  "definition": "The first division of meiosis in which homologous chromosomes separate.",
+  "japanese": "第一減数分裂",
+  "topic": "3.3 Meiosis",
+  "definition_question": "Define meiosis I.",
+  "paper1": {
+    "question": "During meiosis I:",
+    "options": [
+      "Homologous chromosomes separate",
+      "Sister chromatids separate",
+      "DNA is destroyed",
+      "Proteins are produced"
+    ],
+    "answer": "Homologous chromosomes separate"
+  },
+  "key_terms": [
+    "homologous chromosomes",
+    "separation"
+  ]
+},
+
+{
+  "term": "meiosis II",
+  "definition": "The second division of meiosis in which sister chromatids separate.",
+  "japanese": "第二減数分裂",
+  "topic": "3.3 Meiosis",
+  "definition_question": "Define meiosis II.",
+  "paper1": {
+    "question": "During meiosis II:",
+    "options": [
+      "Sister chromatids separate",
+      "Homologous chromosomes pair",
+      "DNA replicates",
+      "Chromosome number doubles"
+    ],
+    "answer": "Sister chromatids separate"
+  },
+  "key_terms": [
+    "sister chromatids",
+    "separation"
+  ]
+},
+
+{
+  "term": "reduction division",
+  "definition": "The process in meiosis where the chromosome number is reduced from diploid to haploid.",
+  "japanese": "染色体数の半減",
+  "topic": "3.3 Meiosis",
+  "definition_question": "Define reduction division.",
+  "paper1": {
+    "question": "Why is meiosis called reduction division?",
+    "options": [
+      "Because chromosome number is halved",
+      "Because cells become larger",
+      "Because DNA disappears",
+      "Because proteins decrease"
+    ],
+    "answer": "Because chromosome number is halved"
+  },
+  "key_terms": [
+    "diploid",
+    "haploid",
+    "half chromosome number"
+  ]
+},
+
+{
+  "term": "gamete",
+  "definition": "A haploid reproductive cell that fuses with another gamete during fertilisation.",
+  "japanese": "配偶子",
+  "topic": "3.3 Meiosis",
+  "definition_question": "Define gamete.",
+  "paper1": {
+    "question": "Gametes are:",
+    "options": [
+      "Haploid reproductive cells",
+      "Diploid body cells",
+      "Protein molecules",
+      "Chromosomes"
+    ],
+    "answer": "Haploid reproductive cells"
+  },
+  "key_terms": [
+    "haploid",
+    "reproduction"
+  ]
+},
+
+{
+  "term": "crossing over",
+  "definition": "The exchange of genetic material between homologous chromosomes during meiosis.",
+  "japanese": "乗換え",
+  "topic": "3.3 Meiosis",
+  "definition_question": "Define crossing over.",
+  "paper1": {
+    "question": "Crossing over increases:",
+    "options": [
+      "Genetic variation",
+      "Chromosome number",
+      "Cell size",
+      "Protein production"
+    ],
+    "answer": "Genetic variation"
+  },
+  "key_terms": [
+    "genetic exchange",
+    "homologous chromosomes"
+  ]
+},
+
+{
+  "term": "chiasma",
+  "definition": "The point where crossing over occurs between homologous chromosomes.",
+  "japanese": "交叉点",
+  "topic": "3.3 Meiosis",
+  "definition_question": "Define chiasma.",
+  "paper1": {
+    "question": "A chiasma is associated with:",
+    "options": [
+      "Crossing over",
+      "DNA replication",
+      "Protein synthesis",
+      "Cell respiration"
+    ],
+    "answer": "Crossing over"
+  },
+  "key_terms": [
+    "crossing over site",
+    "homologous chromosomes"
+  ]
+},
+
+{
+  "term": "independent assortment",
+  "definition": "The random arrangement and separation of homologous chromosome pairs during meiosis.",
+  "japanese": "独立の法則",
+  "topic": "3.3 Meiosis",
+  "definition_question": "Define independent assortment.",
+  "paper1": {
+    "question": "Independent assortment contributes to:",
+    "options": [
+      "Genetic variation",
+      "DNA destruction",
+      "Protein breakdown",
+      "Cell death"
+    ],
+    "answer": "Genetic variation"
+  },
+  "key_terms": [
+    "random chromosome arrangement",
+    "variation"
+  ]
+},
+
+{
+  "term": "genetic variation",
+  "definition": "Differences in genetic information between individuals of the same species.",
+  "japanese": "遺伝的多様性",
+  "topic": "3.3 Meiosis",
+  "definition_question": "Define genetic variation.",
+  "paper1": {
+    "question": "Genetic variation can result from:",
+    "options": [
+      "Crossing over and independent assortment",
+      "Only mitosis",
+      "Protein synthesis only",
+      "Cell respiration"
+    ],
+    "answer": "Crossing over and independent assortment"
+  },
+  "key_terms": [
+    "genetic differences",
+    "variation"
+  ]
+},
+
+{
+  "term": "fertilisation",
+  "definition": "The fusion of two haploid gametes to form a diploid zygote.",
+  "japanese": "受精",
+  "topic": "3.3 Meiosis",
+  "definition_question": "Define fertilisation.",
+  "paper1": {
+    "question": "Fertilisation produces:",
+    "options": [
+      "A diploid zygote",
+      "A haploid gamete",
+      "A protein molecule",
+      "A chromosome"
+    ],
+    "answer": "A diploid zygote"
+  },
+  "key_terms": [
+    "gamete fusion",
+    "zygote",
+    "diploid"
+  ]
 }]
