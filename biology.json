@@ -1299,4 +1299,225 @@
     "specialised cells",
     "specific function"
   ]
+},
+
+{
+  "term": "metabolism",
+  "definition": "The complete set of chemical reactions that occur within a living organism.",
+  "japanese": "代謝",
+  "topic": "2.1 Molecules to Metabolism",
+  "definition_question": "Define metabolism.",
+  "paper1": {
+    "question": "What is metabolism?",
+    "options": [
+      "The complete set of chemical reactions in an organism",
+      "The movement of water across a membrane",
+      "The copying of DNA only",
+      "The division of cells only"
+    ],
+    "answer": "The complete set of chemical reactions in an organism"
+  },
+  "key_terms": [
+    "chemical reactions",
+    "living organism"
+  ]
+},
+
+{
+  "term": "anabolic reaction",
+  "definition": "A metabolic reaction that builds larger molecules from smaller molecules and requires energy.",
+  "japanese": "同化反応",
+  "topic": "2.1 Molecules to Metabolism",
+  "definition_question": "Define anabolic reaction.",
+  "paper1": {
+    "question": "Anabolic reactions usually:",
+    "options": [
+      "Build larger molecules and require energy",
+      "Break down molecules and release energy",
+      "Destroy enzymes",
+      "Stop metabolism"
+    ],
+    "answer": "Build larger molecules and require energy"
+  },
+  "key_terms": [
+    "build molecules",
+    "requires energy"
+  ]
+},
+
+{
+  "term": "catabolic reaction",
+  "definition": "A metabolic reaction that breaks larger molecules into smaller molecules and releases energy.",
+  "japanese": "異化反応",
+  "topic": "2.1 Molecules to Metabolism",
+  "definition_question": "Define catabolic reaction.",
+  "paper1": {
+    "question": "Catabolic reactions:",
+    "options": [
+      "Break down molecules and release energy",
+      "Build proteins only",
+      "Require no enzymes",
+      "Create larger molecules"
+    ],
+    "answer": "Break down molecules and release energy"
+  },
+  "key_terms": [
+    "break down molecules",
+    "release energy"
+  ]
+},
+
+{
+  "term": "enzyme",
+  "definition": "A biological catalyst that increases the rate of a chemical reaction without being used up.",
+  "japanese": "酵素",
+  "topic": "2.1 Molecules to Metabolism",
+  "definition_question": "Define enzyme.",
+  "paper1": {
+    "question": "What is the role of an enzyme?",
+    "options": [
+      "Increase the rate of a chemical reaction",
+      "Provide genetic information",
+      "Store energy permanently",
+      "Form cell walls"
+    ],
+    "answer": "Increase the rate of a chemical reaction"
+  },
+  "key_terms": [
+    "biological catalyst",
+    "reaction rate",
+    "not used up"
+  ]
+},
+
+{
+  "term": "activation energy",
+  "definition": "The minimum energy required to start a chemical reaction.",
+  "japanese": "活性化エネルギー",
+  "topic": "2.1 Molecules to Metabolism",
+  "definition_question": "Define activation energy.",
+  "paper1": {
+    "question": "Enzymes speed up reactions by:",
+    "options": [
+      "Lowering activation energy",
+      "Increasing temperature permanently",
+      "Being consumed",
+      "Stopping molecules moving"
+    ],
+    "answer": "Lowering activation energy"
+  },
+  "key_terms": [
+    "minimum energy",
+    "start reaction"
+  ]
+},
+
+{
+  "term": "active site",
+  "definition": "The specific region of an enzyme where the substrate binds.",
+  "japanese": "活性部位",
+  "topic": "2.1 Molecules to Metabolism",
+  "definition_question": "Define active site.",
+  "paper1": {
+    "question": "Where does the substrate bind?",
+    "options": [
+      "The active site of an enzyme",
+      "The nucleus",
+      "The cell wall",
+      "The chromosome"
+    ],
+    "answer": "The active site of an enzyme"
+  },
+  "key_terms": [
+    "enzyme region",
+    "substrate binding"
+  ]
+},
+
+{
+  "term": "substrate",
+  "definition": "The molecule that an enzyme acts on during a chemical reaction.",
+  "japanese": "基質",
+  "topic": "2.1 Molecules to Metabolism",
+  "definition_question": "Define substrate.",
+  "paper1": {
+    "question": "A substrate binds to:",
+    "options": [
+      "An enzyme active site",
+      "A chromosome",
+      "A ribosome",
+      "A cell wall"
+    ],
+    "answer": "An enzyme active site"
+  },
+  "key_terms": [
+    "enzyme",
+    "reactant molecule"
+  ]
+},
+
+{
+  "term": "enzyme-substrate complex",
+  "definition": "The temporary structure formed when a substrate binds to the active site of an enzyme.",
+  "japanese": "酵素基質複合体",
+  "topic": "2.1 Molecules to Metabolism",
+  "definition_question": "Define enzyme-substrate complex.",
+  "paper1": {
+    "question": "An enzyme-substrate complex forms when:",
+    "options": [
+      "A substrate binds to an enzyme",
+      "DNA is copied",
+      "A cell divides",
+      "ATP is produced"
+    ],
+    "answer": "A substrate binds to an enzyme"
+  },
+  "key_terms": [
+    "temporary structure",
+    "substrate binding"
+  ]
+},
+
+{
+  "term": "denaturation",
+  "definition": "A change in the structure of a protein causing it to lose its function.",
+  "japanese": "変性",
+  "topic": "2.1 Molecules to Metabolism",
+  "definition_question": "Define denaturation.",
+  "paper1": {
+    "question": "What can cause enzyme denaturation?",
+    "options": [
+      "Extreme temperature or pH",
+      "Low substrate concentration only",
+      "DNA replication",
+      "Cell division"
+    ],
+    "answer": "Extreme temperature or pH"
+  },
+  "key_terms": [
+    "protein structure",
+    "loss of function"
+  ]
+},
+
+{
+  "term": "cofactor",
+  "definition": "A non-protein component required for an enzyme to function correctly.",
+  "japanese": "補因子",
+  "topic": "2.1 Molecules to Metabolism",
+  "definition_question": "Define cofactor.",
+  "paper1": {
+    "question": "What is the role of a cofactor?",
+    "options": [
+      "Help an enzyme function",
+      "Replace DNA",
+      "Destroy proteins",
+      "Stop reactions"
+    ],
+    "answer": "Help an enzyme function"
+  },
+  "key_terms": [
+    "non-protein component",
+    "enzyme function"
+  ]
 }]
