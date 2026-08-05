@@ -8707,4 +8707,224 @@
     "evolution",
     "advantageous trait"
   ]
+},
+
+{
+  "term": "neuron",
+  "definition": "A specialized cell that transmits electrical signals in the nervous system.",
+  "japanese": "ニューロン（神経細胞）",
+  "topic": "11.1 Nervous System",
+  "definition_question": "Define neuron.",
+  "paper1": {
+    "question": "A neuron transmits:",
+    "options": [
+      "Electrical signals",
+      "Glucose",
+      "Hormones only",
+      "DNA"
+    ],
+    "answer": "Electrical signals"
+  },
+  "key_terms": [
+    "nerve cell",
+    "signal transmission"
+  ]
+},
+
+{
+  "term": "nerve impulse",
+  "definition": "An electrical signal that travels along a neuron.",
+  "japanese": "神経インパルス",
+  "topic": "11.1 Nervous System",
+  "definition_question": "Define nerve impulse.",
+  "paper1": {
+    "question": "A nerve impulse is:",
+    "options": [
+      "An electrical signal",
+      "A protein",
+      "A hormone",
+      "A chromosome"
+    ],
+    "answer": "An electrical signal"
+  },
+  "key_terms": [
+    "electrical signal",
+    "neuron"
+  ]
+},
+
+{
+  "term": "synapse",
+  "definition": "The junction between two neurons where signals are transmitted.",
+  "japanese": "シナプス",
+  "topic": "11.1 Nervous System",
+  "definition_question": "Define synapse.",
+  "paper1": {
+    "question": "Signals pass between neurons at the:",
+    "options": [
+      "Synapse",
+      "Nucleus",
+      "Mitochondrion",
+      "Ribosome"
+    ],
+    "answer": "Synapse"
+  },
+  "key_terms": [
+    "neuron connection",
+    "signal transfer"
+  ]
+},
+
+{
+  "term": "neurotransmitter",
+  "definition": "A chemical messenger released by neurons to transmit signals across a synapse.",
+  "japanese": "神経伝達物質",
+  "topic": "11.1 Nervous System",
+  "definition_question": "Define neurotransmitter.",
+  "paper1": {
+    "question": "Neurotransmitters are:",
+    "options": [
+      "Chemical messengers",
+      "DNA molecules",
+      "Cell organelles",
+      "Sugars"
+    ],
+    "answer": "Chemical messengers"
+  },
+  "key_terms": [
+    "chemical signal",
+    "synapse"
+  ]
+},
+
+{
+  "term": "receptor",
+  "definition": "A protein or structure that detects a specific stimulus or chemical signal.",
+  "japanese": "受容体",
+  "topic": "11.1 Nervous System",
+  "definition_question": "Define receptor.",
+  "paper1": {
+    "question": "A receptor detects:",
+    "options": [
+      "Specific signals",
+      "Only glucose",
+      "DNA replication",
+      "Proteins only"
+    ],
+    "answer": "Specific signals"
+  },
+  "key_terms": [
+    "stimulus detection",
+    "response"
+  ]
+},
+
+{
+  "term": "stimulus",
+  "definition": "A change in the internal or external environment detected by an organism.",
+  "japanese": "刺激",
+  "topic": "11.1 Nervous System",
+  "definition_question": "Define stimulus.",
+  "paper1": {
+    "question": "A stimulus is:",
+    "options": [
+      "A detectable change",
+      "A type of cell",
+      "A hormone",
+      "A protein"
+    ],
+    "answer": "A detectable change"
+  },
+  "key_terms": [
+    "environmental change",
+    "response"
+  ]
+},
+
+{
+  "term": "sensory neuron",
+  "definition": "A neuron that carries impulses from receptors to the central nervous system.",
+  "japanese": "感覚ニューロン",
+  "topic": "11.1 Nervous System",
+  "definition_question": "Define sensory neuron.",
+  "paper1": {
+    "question": "Sensory neurons carry signals from:",
+    "options": [
+      "Receptors",
+      "Muscles only",
+      "Glands only",
+      "Bones"
+    ],
+    "answer": "Receptors"
+  },
+  "key_terms": [
+    "input pathway",
+    "CNS"
+  ]
+},
+
+{
+  "term": "motor neuron",
+  "definition": "A neuron that carries impulses from the central nervous system to effectors.",
+  "japanese": "運動ニューロン",
+  "topic": "11.1 Nervous System",
+  "definition_question": "Define motor neuron.",
+  "paper1": {
+    "question": "Motor neurons carry signals to:",
+    "options": [
+      "Effectors",
+      "Receptors",
+      "DNA",
+      "Blood cells"
+    ],
+    "answer": "Effectors"
+  },
+  "key_terms": [
+    "muscle",
+    "response"
+  ]
+},
+
+{
+  "term": "relay neuron",
+  "definition": "A neuron that connects sensory neurons and motor neurons within the central nervous system.",
+  "japanese": "中継ニューロン",
+  "topic": "11.1 Nervous System",
+  "definition_question": "Define relay neuron.",
+  "paper1": {
+    "question": "Relay neurons are found mainly in:",
+    "options": [
+      "The central nervous system",
+      "Muscles",
+      "Skin only",
+      "Blood"
+    ],
+    "answer": "The central nervous system"
+  },
+  "key_terms": [
+    "connection neuron",
+    "CNS"
+  ]
+},
+
+{
+  "term": "reflex arc",
+  "definition": "The pathway followed by nerve impulses during a rapid automatic response.",
+  "japanese": "反射弓",
+  "topic": "11.1 Nervous System",
+  "definition_question": "Define reflex arc.",
+  "paper1": {
+    "question": "A reflex arc produces:",
+    "options": [
+      "A rapid automatic response",
+      "Protein synthesis",
+      "DNA replication",
+      "Hormone production"
+    ],
+    "answer": "A rapid automatic response"
+  },
+  "key_terms": [
+    "automatic response",
+    "nervous pathway"
+  ]
 }]
