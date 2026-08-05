@@ -7676,4 +7676,158 @@
     "chloroplast",
     "Calvin cycle"
   ]
+},
+
+{
+  "term": "ATP",
+  "definition": "A molecule that stores and transfers energy used in cellular processes.",
+  "japanese": "ATP（アデノシン三リン酸）",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define ATP in photosynthesis.",
+  "paper1": {
+    "question": "ATP produced in the light-dependent reaction is used for:",
+    "options": [
+      "The Calvin cycle",
+      "DNA replication only",
+      "Protein digestion",
+      "Gas exchange"
+    ],
+    "answer": "The Calvin cycle"
+  },
+  "key_terms": [
+    "energy carrier",
+    "light-dependent reaction"
+  ]
+},
+
+{
+  "term": "NADPH",
+  "definition": "A molecule that carries high-energy electrons and hydrogen used in the Calvin cycle.",
+  "japanese": "NADPH",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define NADPH.",
+  "paper1": {
+    "question": "NADPH carries:",
+    "options": [
+      "High-energy electrons",
+      "Glucose molecules",
+      "DNA bases",
+      "Oxygen"
+    ],
+    "answer": "High-energy electrons"
+  },
+  "key_terms": [
+    "electron carrier",
+    "Calvin cycle"
+  ]
+},
+
+{
+  "term": "electron transport chain",
+  "definition": "A series of proteins that transfer electrons and produce ATP.",
+  "japanese": "電子伝達系",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define electron transport chain.",
+  "paper1": {
+    "question": "The electron transport chain transfers:",
+    "options": [
+      "Electrons",
+      "DNA",
+      "Glucose",
+      "Amino acids"
+    ],
+    "answer": "Electrons"
+  },
+  "key_terms": [
+    "electron transfer",
+    "ATP production"
+  ]
+},
+
+{
+  "term": "photolysis",
+  "definition": "The splitting of water molecules using light energy during photosynthesis.",
+  "japanese": "光分解",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define photolysis.",
+  "paper1": {
+    "question": "Photolysis splits:",
+    "options": [
+      "Water molecules",
+      "Glucose molecules",
+      "DNA molecules",
+      "Proteins"
+    ],
+    "answer": "Water molecules"
+  },
+  "key_terms": [
+    "water splitting",
+    "light energy"
+  ]
+},
+
+{
+  "term": "carbon fixation",
+  "definition": "The process of incorporating carbon dioxide into organic molecules.",
+  "japanese": "炭素固定",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define carbon fixation.",
+  "paper1": {
+    "question": "Carbon fixation uses:",
+    "options": [
+      "Carbon dioxide",
+      "Oxygen",
+      "Nitrogen",
+      "ATP only"
+    ],
+    "answer": "Carbon dioxide"
+  },
+  "key_terms": [
+    "Calvin cycle",
+    "carbon dioxide"
+  ]
+},
+
+{
+  "term": "reduction",
+  "definition": "A chemical process involving the gain of electrons or hydrogen.",
+  "japanese": "還元",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define reduction.",
+  "paper1": {
+    "question": "Reduction involves:",
+    "options": [
+      "Gain of electrons",
+      "Loss of electrons",
+      "Breaking DNA",
+      "Producing oxygen only"
+    ],
+    "answer": "Gain of electrons"
+  },
+  "key_terms": [
+    "electron gain",
+    "Calvin cycle"
+  ]
+},
+
+{
+  "term": "regeneration",
+  "definition": "The stage of the Calvin cycle where RuBP is recreated.",
+  "japanese": "再生",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define regeneration in the Calvin cycle.",
+  "paper1": {
+    "question": "Regeneration produces:",
+    "options": [
+      "RuBP",
+      "Glucose only",
+      "Oxygen",
+      "ATP only"
+    ],
+    "answer": "RuBP"
+  },
+  "key_terms": [
+    "Calvin cycle",
+    "RuBP"
+  ]
 }]
