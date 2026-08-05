@@ -12443,4 +12443,224 @@
     "oxidative phosphorylation",
     "inner mitochondrial membrane"
   ]
+},
+
+{
+  "term": "photosynthesis",
+  "definition": "The process by which plants produce glucose using light energy, carbon dioxide, and water.",
+  "japanese": "光合成",
+  "topic": "19.2 Photosynthesis",
+  "definition_question": "Define photosynthesis.",
+  "paper1": {
+    "question": "Photosynthesis produces:",
+    "options": [
+      "Glucose",
+      "ATP only",
+      "Proteins only",
+      "DNA"
+    ],
+    "answer": "Glucose"
+  },
+  "key_terms": [
+    "light energy",
+    "carbon dioxide"
+  ]
+},
+
+{
+  "term": "chloroplast",
+  "definition": "The organelle where photosynthesis occurs in plant cells.",
+  "japanese": "葉緑体",
+  "topic": "19.2 Photosynthesis",
+  "definition_question": "Define chloroplast.",
+  "paper1": {
+    "question": "Photosynthesis occurs in:",
+    "options": [
+      "Chloroplasts",
+      "Mitochondria",
+      "Nuclei",
+      "Ribosomes"
+    ],
+    "answer": "Chloroplasts"
+  },
+  "key_terms": [
+    "plant cell",
+    "photosynthesis"
+  ]
+},
+
+{
+  "term": "chlorophyll",
+  "definition": "A pigment that absorbs light energy for photosynthesis.",
+  "japanese": "クロロフィル",
+  "topic": "19.2 Photosynthesis",
+  "definition_question": "Define chlorophyll.",
+  "paper1": {
+    "question": "Chlorophyll absorbs:",
+    "options": [
+      "Light energy",
+      "DNA",
+      "Proteins",
+      "Minerals only"
+    ],
+    "answer": "Light energy"
+  },
+  "key_terms": [
+    "pigment",
+    "light absorption"
+  ]
+},
+
+{
+  "term": "light-dependent reaction",
+  "definition": "The stage of photosynthesis that uses light energy to produce ATP and reduced NADP.",
+  "japanese": "光依存反応",
+  "topic": "19.2 Photosynthesis",
+  "definition_question": "Define light-dependent reaction.",
+  "paper1": {
+    "question": "Light-dependent reactions require:",
+    "options": [
+      "Light",
+      "No energy source",
+      "Only oxygen",
+      "Only glucose"
+    ],
+    "answer": "Light"
+  },
+  "key_terms": [
+    "light energy",
+    "ATP"
+  ]
+},
+
+{
+  "term": "light-independent reaction",
+  "definition": "The stage of photosynthesis that uses carbon dioxide to produce carbohydrates.",
+  "japanese": "光非依存反応",
+  "topic": "19.2 Photosynthesis",
+  "definition_question": "Define light-independent reaction.",
+  "paper1": {
+    "question": "Light-independent reactions use:",
+    "options": [
+      "Carbon dioxide",
+      "Light directly",
+      "Oxygen only",
+      "DNA"
+    ],
+    "answer": "Carbon dioxide"
+  },
+  "key_terms": [
+    "Calvin cycle",
+    "carbon fixation"
+  ]
+},
+
+{
+  "term": "carbon fixation",
+  "definition": "The process of incorporating carbon dioxide into organic molecules.",
+  "japanese": "炭素固定",
+  "topic": "19.2 Photosynthesis",
+  "definition_question": "Define carbon fixation.",
+  "paper1": {
+    "question": "Carbon fixation involves:",
+    "options": [
+      "Carbon dioxide incorporation",
+      "Oxygen production only",
+      "DNA replication",
+      "Protein digestion"
+    ],
+    "answer": "Carbon dioxide incorporation"
+  },
+  "key_terms": [
+    "carbon dioxide",
+    "organic molecules"
+  ]
+},
+
+{
+  "term": "Calvin cycle",
+  "definition": "A series of reactions in photosynthesis that produces carbohydrates using carbon dioxide.",
+  "japanese": "カルビン回路",
+  "topic": "19.2 Photosynthesis",
+  "definition_question": "Define Calvin cycle.",
+  "paper1": {
+    "question": "The Calvin cycle occurs in the:",
+    "options": [
+      "Chloroplast",
+      "Mitochondrion",
+      "Nucleus",
+      "Cytoplasm"
+    ],
+    "answer": "Chloroplast"
+  },
+  "key_terms": [
+    "carbon fixation",
+    "glucose production"
+  ]
+},
+
+{
+  "term": "glucose production",
+  "definition": "The formation of glucose during photosynthesis.",
+  "japanese": "グルコース生成",
+  "topic": "19.2 Photosynthesis",
+  "definition_question": "Define glucose production.",
+  "paper1": {
+    "question": "Photosynthesis results in production of:",
+    "options": [
+      "Glucose",
+      "DNA",
+      "Protein only",
+      "ATP only"
+    ],
+    "answer": "Glucose"
+  },
+  "key_terms": [
+    "carbohydrate",
+    "photosynthesis"
+  ]
+},
+
+{
+  "term": "limiting factor",
+  "definition": "A factor that restricts the rate of photosynthesis.",
+  "japanese": "制限要因",
+  "topic": "19.2 Photosynthesis",
+  "definition_question": "Define limiting factor.",
+  "paper1": {
+    "question": "A limiting factor affects the rate of:",
+    "options": [
+      "Photosynthesis",
+      "DNA replication only",
+      "Protein digestion only",
+      "Cell division only"
+    ],
+    "answer": "Photosynthesis"
+  },
+  "key_terms": [
+    "light intensity",
+    "carbon dioxide concentration"
+  ]
+},
+
+{
+  "term": "stomata",
+  "definition": "Small openings in leaves that allow gas exchange.",
+  "japanese": "気孔",
+  "topic": "19.2 Photosynthesis",
+  "definition_question": "Define stomata.",
+  "paper1": {
+    "question": "Stomata allow exchange of:",
+    "options": [
+      "Gases",
+      "DNA",
+      "Proteins",
+      "Chromosomes"
+    ],
+    "answer": "Gases"
+  },
+  "key_terms": [
+    "gas exchange",
+    "leaf structure"
+  ]
 }]
