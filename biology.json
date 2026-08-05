@@ -3090,4 +3090,225 @@
     "zygote",
     "diploid"
   ]
+},
+
+{
+  "term": "inheritance",
+  "definition": "The transmission of genetic information from parents to offspring.",
+  "japanese": "遺伝",
+  "topic": "3.4 Inheritance",
+  "definition_question": "Define inheritance.",
+  "paper1": {
+    "question": "Inheritance involves the transfer of:",
+    "options": [
+      "Genetic information from parents to offspring",
+      "Proteins between cells",
+      "Energy between organisms",
+      "Water between tissues"
+    ],
+    "answer": "Genetic information from parents to offspring"
+  },
+  "key_terms": [
+    "parents",
+    "offspring",
+    "genetic information"
+  ]
+},
+
+{
+  "term": "homozygous",
+  "definition": "Having two identical alleles for a particular gene.",
+  "japanese": "ホモ接合",
+  "topic": "3.4 Inheritance",
+  "definition_question": "Define homozygous.",
+  "paper1": {
+    "question": "An organism with two identical alleles is:",
+    "options": [
+      "Homozygous",
+      "Heterozygous",
+      "Diploid only",
+      "A carrier only"
+    ],
+    "answer": "Homozygous"
+  },
+  "key_terms": [
+    "same alleles",
+    "identical alleles"
+  ]
+},
+
+{
+  "term": "heterozygous",
+  "definition": "Having two different alleles for a particular gene.",
+  "japanese": "ヘテロ接合",
+  "topic": "3.4 Inheritance",
+  "definition_question": "Define heterozygous.",
+  "paper1": {
+    "question": "An organism with two different alleles is:",
+    "options": [
+      "Heterozygous",
+      "Homozygous",
+      "Haploid",
+      "Mutated"
+    ],
+    "answer": "Heterozygous"
+  },
+  "key_terms": [
+    "different alleles",
+    "gene pair"
+  ]
+},
+
+{
+  "term": "carrier",
+  "definition": "An individual who has one copy of a recessive allele but does not show the recessive phenotype.",
+  "japanese": "保因者",
+  "topic": "3.4 Inheritance",
+  "definition_question": "Define carrier.",
+  "paper1": {
+    "question": "A carrier of a recessive disorder is usually:",
+    "options": [
+      "Heterozygous",
+      "Homozygous dominant",
+      "Haploid",
+      "Without DNA"
+    ],
+    "answer": "Heterozygous"
+  },
+  "key_terms": [
+    "recessive allele",
+    "heterozygous"
+  ]
+},
+
+{
+  "term": "monohybrid cross",
+  "definition": "A genetic cross involving one gene with two alleles.",
+  "japanese": "一遺伝子交雑",
+  "topic": "3.4 Inheritance",
+  "definition_question": "Define monohybrid cross.",
+  "paper1": {
+    "question": "A monohybrid cross studies:",
+    "options": [
+      "One gene",
+      "All genes in an organism",
+      "Only proteins",
+      "Only chromosomes"
+    ],
+    "answer": "One gene"
+  },
+  "key_terms": [
+    "one gene",
+    "two alleles"
+  ]
+},
+
+{
+  "term": "Punnett square",
+  "definition": "A diagram used to predict possible genetic combinations of offspring.",
+  "japanese": "パネット方眼",
+  "topic": "3.4 Inheritance",
+  "definition_question": "Define Punnett square.",
+  "paper1": {
+    "question": "A Punnett square is used to predict:",
+    "options": [
+      "Possible offspring genotypes",
+      "Protein structures",
+      "Cell size",
+      "Enzyme activity"
+    ],
+    "answer": "Possible offspring genotypes"
+  },
+  "key_terms": [
+    "genetic prediction",
+    "offspring"
+  ]
+},
+
+{
+  "term": "genotype ratio",
+  "definition": "The ratio of different genetic combinations among offspring.",
+  "japanese": "遺伝子型比",
+  "topic": "3.4 Inheritance",
+  "definition_question": "Define genotype ratio.",
+  "paper1": {
+    "question": "A genotype ratio compares:",
+    "options": [
+      "Different allele combinations",
+      "Physical characteristics only",
+      "Protein amounts",
+      "Cell numbers"
+    ],
+    "answer": "Different allele combinations"
+  },
+  "key_terms": [
+    "allele combinations",
+    "offspring"
+  ]
+},
+
+{
+  "term": "phenotype ratio",
+  "definition": "The ratio of observable characteristics among offspring.",
+  "japanese": "表現型比",
+  "topic": "3.4 Inheritance",
+  "definition_question": "Define phenotype ratio.",
+  "paper1": {
+    "question": "A phenotype ratio describes:",
+    "options": [
+      "Observable characteristics",
+      "DNA sequences",
+      "Chromosome numbers",
+      "Protein bonds"
+    ],
+    "answer": "Observable characteristics"
+  },
+  "key_terms": [
+    "observable traits",
+    "characteristics"
+  ]
+},
+
+{
+  "term": "dominant inheritance",
+  "definition": "A pattern of inheritance where a dominant allele determines the phenotype when present.",
+  "japanese": "優性遺伝",
+  "topic": "3.4 Inheritance",
+  "definition_question": "Define dominant inheritance.",
+  "paper1": {
+    "question": "A dominant allele is expressed when:",
+    "options": [
+      "At least one copy is present",
+      "Two recessive alleles are present",
+      "No allele exists",
+      "The organism is haploid"
+    ],
+    "answer": "At least one copy is present"
+  },
+  "key_terms": [
+    "dominant allele",
+    "expression"
+  ]
+},
+
+{
+  "term": "recessive inheritance",
+  "definition": "A pattern of inheritance where a phenotype appears only when two recessive alleles are present.",
+  "japanese": "劣性遺伝",
+  "topic": "3.4 Inheritance",
+  "definition_question": "Define recessive inheritance.",
+  "paper1": {
+    "question": "A recessive phenotype appears when:",
+    "options": [
+      "Two recessive alleles are present",
+      "One dominant allele is present",
+      "DNA is absent",
+      "Only one chromosome exists"
+    ],
+    "answer": "Two recessive alleles are present"
+  },
+  "key_terms": [
+    "two recessive alleles",
+    "homozygous"
+  ]
 }]
