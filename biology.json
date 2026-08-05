@@ -9147,4 +9147,222 @@
     "kidney",
     "water balance"
   ]
+},
+
+{
+  "term": "sexual reproduction",
+  "definition": "A type of reproduction involving the fusion of male and female gametes.",
+  "japanese": "有性生殖",
+  "topic": "12.1 Reproductive Systems",
+  "definition_question": "Define sexual reproduction.",
+  "paper1": {
+    "question": "Sexual reproduction involves:",
+    "options": [
+      "Fusion of gametes",
+      "Only one parent",
+      "DNA replication only",
+      "Cell division only"
+    ],
+    "answer": "Fusion of gametes"
+  },
+  "key_terms": [
+    "gametes",
+    "fertilization"
+  ]
+},
+
+{
+  "term": "asexual reproduction",
+  "definition": "A type of reproduction involving a single parent and no fusion of gametes.",
+  "japanese": "無性生殖",
+  "topic": "12.1 Reproductive Systems",
+  "definition_question": "Define asexual reproduction.",
+  "paper1": {
+    "question": "Asexual reproduction involves:",
+    "options": [
+      "One parent",
+      "Fusion of gametes",
+      "Two different individuals",
+      "Meiosis only"
+    ],
+    "answer": "One parent"
+  },
+  "key_terms": [
+    "single parent",
+    "cloning"
+  ]
+},
+
+{
+  "term": "gametogenesis",
+  "definition": "The process of producing gametes through meiosis.",
+  "japanese": "配偶子形成",
+  "topic": "12.1 Reproductive Systems",
+  "definition_question": "Define gametogenesis.",
+  "paper1": {
+    "question": "Gametogenesis produces:",
+    "options": [
+      "Gametes",
+      "Proteins",
+      "Hormones",
+      "Body cells"
+    ],
+    "answer": "Gametes"
+  },
+  "key_terms": [
+    "meiosis",
+    "gamete production"
+  ]
+},
+
+{
+  "term": "sperm",
+  "definition": "The male gamete involved in sexual reproduction.",
+  "japanese": "精子",
+  "topic": "12.1 Reproductive Systems",
+  "definition_question": "Define sperm.",
+  "paper1": {
+    "question": "Sperm is the:",
+    "options": [
+      "Male gamete",
+      "Female gamete",
+      "Hormone",
+      "Embryo"
+    ],
+    "answer": "Male gamete"
+  },
+  "key_terms": [
+    "male reproductive cell"
+  ]
+},
+
+{
+  "term": "egg cell",
+  "definition": "The female gamete involved in sexual reproduction.",
+  "japanese": "卵細胞",
+  "topic": "12.1 Reproductive Systems",
+  "definition_question": "Define egg cell.",
+  "paper1": {
+    "question": "Egg cell is the:",
+    "options": [
+      "Female gamete",
+      "Male gamete",
+      "Hormone",
+      "Chromosome"
+    ],
+    "answer": "Female gamete"
+  },
+  "key_terms": [
+    "female reproductive cell"
+  ]
+},
+
+{
+  "term": "ovary",
+  "definition": "The female reproductive organ that produces egg cells and hormones.",
+  "japanese": "卵巣",
+  "topic": "12.1 Reproductive Systems",
+  "definition_question": "Define ovary.",
+  "paper1": {
+    "question": "The ovary produces:",
+    "options": [
+      "Egg cells",
+      "Sperm",
+      "Insulin",
+      "DNA"
+    ],
+    "answer": "Egg cells"
+  },
+  "key_terms": [
+    "female reproductive system",
+    "oestrogen"
+  ]
+},
+
+{
+  "term": "testis",
+  "definition": "The male reproductive organ that produces sperm and testosterone.",
+  "japanese": "精巣",
+  "topic": "12.1 Reproductive Systems",
+  "definition_question": "Define testis.",
+  "paper1": {
+    "question": "The testis produces:",
+    "options": [
+      "Sperm",
+      "Egg cells",
+      "Insulin",
+      "Glucose"
+    ],
+    "answer": "Sperm"
+  },
+  "key_terms": [
+    "male reproductive system",
+    "testosterone"
+  ]
+},
+
+{
+  "term": "fertilization",
+  "definition": "The fusion of male and female gametes to form a zygote.",
+  "japanese": "受精",
+  "topic": "12.1 Reproductive Systems",
+  "definition_question": "Define fertilization.",
+  "paper1": {
+    "question": "Fertilization forms:",
+    "options": [
+      "A zygote",
+      "A gamete",
+      "A hormone",
+      "A chromosome"
+    ],
+    "answer": "A zygote"
+  },
+  "key_terms": [
+    "gamete fusion",
+    "zygote"
+  ]
+},
+
+{
+  "term": "zygote",
+  "definition": "The cell formed when two gametes fuse during fertilization.",
+  "japanese": "受精卵",
+  "topic": "12.1 Reproductive Systems",
+  "definition_question": "Define zygote.",
+  "paper1": {
+    "question": "A zygote forms after:",
+    "options": [
+      "Fertilization",
+      "Photosynthesis",
+      "Respiration",
+      "Transcription"
+    ],
+    "answer": "Fertilization"
+  },
+  "key_terms": [
+    "fertilized cell",
+    "diploid"
+  ]
+},
+
+{
+  "term": "embryo",
+  "definition": "An early developing organism after fertilization.",
+  "japanese": "胚",
+  "topic": "12.1 Reproductive Systems",
+  "definition_question": "Define embryo.",
+  "paper1": {
+    "question": "An embryo develops from:",
+    "options": [
+      "A zygote",
+      "A sperm only",
+      "An egg cell only",
+      "A hormone"
+    ],
+    "answer": "A zygote"
+  },
+  "key_terms": [
+    "development",
+    "early stage"
+  ]
 }]
