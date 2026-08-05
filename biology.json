@@ -10683,4 +10683,224 @@
     "S-shaped curve",
     "carrying capacity"
   ]
+},
+
+{
+  "term": "food chain",
+  "definition": "A sequence showing the transfer of energy through feeding relationships.",
+  "japanese": "食物連鎖",
+  "topic": "15.2 Ecosystem Processes",
+  "definition_question": "Define food chain.",
+  "paper1": {
+    "question": "A food chain shows:",
+    "options": [
+      "Energy transfer between organisms",
+      "DNA replication",
+      "Cell division",
+      "Hormone production"
+    ],
+    "answer": "Energy transfer between organisms"
+  },
+  "key_terms": [
+    "feeding relationship",
+    "energy transfer"
+  ]
+},
+
+{
+  "term": "food web",
+  "definition": "A network of interconnected food chains in an ecosystem.",
+  "japanese": "食物網",
+  "topic": "15.2 Ecosystem Processes",
+  "definition_question": "Define food web.",
+  "paper1": {
+    "question": "A food web contains:",
+    "options": [
+      "Multiple food chains",
+      "Only one organism",
+      "Only abiotic factors",
+      "Only producers"
+    ],
+    "answer": "Multiple food chains"
+  },
+  "key_terms": [
+    "interconnected chains",
+    "ecosystem"
+  ]
+},
+
+{
+  "term": "trophic level",
+  "definition": "The position an organism occupies in a food chain based on energy transfer.",
+  "japanese": "栄養段階",
+  "topic": "15.2 Ecosystem Processes",
+  "definition_question": "Define trophic level.",
+  "paper1": {
+    "question": "A trophic level describes an organism's position in:",
+    "options": [
+      "A food chain",
+      "DNA structure",
+      "A cell membrane",
+      "A chromosome"
+    ],
+    "answer": "A food chain"
+  },
+  "key_terms": [
+    "feeding position",
+    "energy transfer"
+  ]
+},
+
+{
+  "term": "producer",
+  "definition": "An organism that produces organic compounds using energy, usually through photosynthesis.",
+  "japanese": "生産者",
+  "topic": "15.2 Ecosystem Processes",
+  "definition_question": "Define producer.",
+  "paper1": {
+    "question": "Producers usually obtain energy through:",
+    "options": [
+      "Photosynthesis",
+      "Eating other organisms",
+      "Decomposition",
+      "Fermentation only"
+    ],
+    "answer": "Photosynthesis"
+  },
+  "key_terms": [
+    "autotroph",
+    "photosynthesis"
+  ]
+},
+
+{
+  "term": "consumer",
+  "definition": "An organism that obtains energy by feeding on other organisms.",
+  "japanese": "消費者",
+  "topic": "15.2 Ecosystem Processes",
+  "definition_question": "Define consumer.",
+  "paper1": {
+    "question": "Consumers obtain energy by:",
+    "options": [
+      "Eating other organisms",
+      "Producing glucose",
+      "Absorbing sunlight",
+      "Fixing nitrogen"
+    ],
+    "answer": "Eating other organisms"
+  },
+  "key_terms": [
+    "heterotroph",
+    "feeding"
+  ]
+},
+
+{
+  "term": "decomposer",
+  "definition": "An organism that breaks down dead organic matter and releases nutrients.",
+  "japanese": "分解者",
+  "topic": "15.2 Ecosystem Processes",
+  "definition_question": "Define decomposer.",
+  "paper1": {
+    "question": "Decomposers break down:",
+    "options": [
+      "Dead organic matter",
+      "Sunlight",
+      "DNA only",
+      "Oxygen only"
+    ],
+    "answer": "Dead organic matter"
+  },
+  "key_terms": [
+    "nutrient recycling",
+    "bacteria and fungi"
+  ]
+},
+
+{
+  "term": "biomass",
+  "definition": "The total mass of living material in an organism or trophic level.",
+  "japanese": "生物量",
+  "topic": "15.2 Ecosystem Processes",
+  "definition_question": "Define biomass.",
+  "paper1": {
+    "question": "Biomass refers to:",
+    "options": [
+      "Mass of living material",
+      "Number of chromosomes",
+      "Amount of DNA",
+      "Body temperature"
+    ],
+    "answer": "Mass of living material"
+  },
+  "key_terms": [
+    "living material",
+    "energy storage"
+  ]
+},
+
+{
+  "term": "energy flow",
+  "definition": "The movement of energy through an ecosystem between trophic levels.",
+  "japanese": "エネルギー流",
+  "topic": "15.2 Ecosystem Processes",
+  "definition_question": "Define energy flow.",
+  "paper1": {
+    "question": "Energy flows through:",
+    "options": [
+      "Trophic levels",
+      "DNA sequences",
+      "Cell nuclei",
+      "Hormones"
+    ],
+    "answer": "Trophic levels"
+  },
+  "key_terms": [
+    "ecosystem",
+    "food chain"
+  ]
+},
+
+{
+  "term": "carbon cycle",
+  "definition": "The movement of carbon between organisms, atmosphere, and the environment.",
+  "japanese": "炭素循環",
+  "topic": "15.2 Ecosystem Processes",
+  "definition_question": "Define carbon cycle.",
+  "paper1": {
+    "question": "The carbon cycle involves movement of:",
+    "options": [
+      "Carbon",
+      "Oxygen only",
+      "DNA",
+      "Proteins"
+    ],
+    "answer": "Carbon"
+  },
+  "key_terms": [
+    "carbon dioxide",
+    "photosynthesis"
+  ]
+},
+
+{
+  "term": "nitrogen cycle",
+  "definition": "The movement of nitrogen through organisms and the environment.",
+  "japanese": "窒素循環",
+  "topic": "15.2 Ecosystem Processes",
+  "definition_question": "Define nitrogen cycle.",
+  "paper1": {
+    "question": "The nitrogen cycle involves movement of:",
+    "options": [
+      "Nitrogen",
+      "Glucose",
+      "ATP",
+      "Water only"
+    ],
+    "answer": "Nitrogen"
+  },
+  "key_terms": [
+    "nitrogen fixation",
+    "nutrient cycle"
+  ]
 }]
