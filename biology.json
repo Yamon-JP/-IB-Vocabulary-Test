@@ -1520,4 +1520,180 @@
     "non-protein component",
     "enzyme function"
   ]
+},
+
+{
+  "term": "polarity",
+  "definition": "The uneven distribution of electrical charge in a molecule caused by differences in electronegativity.",
+  "japanese": "極性",
+  "topic": "2.2 Water",
+  "definition_question": "Define polarity.",
+  "paper1": {
+    "question": "Why is water a polar molecule?",
+    "options": [
+      "Because oxygen and hydrogen have different charges",
+      "Because it contains carbon",
+      "Because it has no bonds",
+      "Because it is a lipid"
+    ],
+    "answer": "Because oxygen and hydrogen have different charges"
+  },
+  "key_terms": [
+    "uneven charge distribution",
+    "electronegativity"
+  ]
+},
+
+{
+  "term": "hydrogen bond",
+  "definition": "A weak attraction between a slightly positive hydrogen atom and a slightly negative atom in another molecule.",
+  "japanese": "水素結合",
+  "topic": "2.2 Water",
+  "definition_question": "Define hydrogen bond.",
+  "paper1": {
+    "question": "Hydrogen bonds form between water molecules because:",
+    "options": [
+      "Water is polar",
+      "Water contains carbon",
+      "Water is a protein",
+      "Water has no charge differences"
+    ],
+    "answer": "Water is polar"
+  },
+  "key_terms": [
+    "weak attraction",
+    "polar molecule"
+  ]
+},
+
+{
+  "term": "cohesion",
+  "definition": "The attraction between molecules of the same substance.",
+  "japanese": "凝集",
+  "topic": "2.2 Water",
+  "definition_question": "Define cohesion.",
+  "paper1": {
+    "question": "Cohesion in water is caused by:",
+    "options": [
+      "Hydrogen bonds between water molecules",
+      "Peptide bonds",
+      "DNA bonds",
+      "Ionic bonds only"
+    ],
+    "answer": "Hydrogen bonds between water molecules"
+  },
+  "key_terms": [
+    "same substance",
+    "water molecules"
+  ]
+},
+
+{
+  "term": "adhesion",
+  "definition": "The attraction between molecules of different substances.",
+  "japanese": "付着",
+  "topic": "2.2 Water",
+  "definition_question": "Define adhesion.",
+  "paper1": {
+    "question": "Adhesion allows water to:",
+    "options": [
+      "Stick to other surfaces",
+      "Break DNA",
+      "Form proteins",
+      "Produce ATP"
+    ],
+    "answer": "Stick to other surfaces"
+  },
+  "key_terms": [
+    "different substances",
+    "surface attraction"
+  ]
+},
+
+{
+  "term": "surface tension",
+  "definition": "The strong attraction between water molecules at the surface caused by cohesion.",
+  "japanese": "表面張力",
+  "topic": "2.2 Water",
+  "definition_question": "Define surface tension.",
+  "paper1": {
+    "question": "Surface tension is mainly caused by:",
+    "options": [
+      "Cohesion between water molecules",
+      "Protein synthesis",
+      "DNA replication",
+      "Cell division"
+    ],
+    "answer": "Cohesion between water molecules"
+  },
+  "key_terms": [
+    "surface",
+    "cohesion"
+  ]
+},
+
+{
+  "term": "solvent",
+  "definition": "A substance that dissolves another substance to form a solution.",
+  "japanese": "溶媒",
+  "topic": "2.2 Water",
+  "definition_question": "Define solvent.",
+  "paper1": {
+    "question": "Why is water an important solvent?",
+    "options": [
+      "It can dissolve many substances",
+      "It contains DNA",
+      "It produces proteins",
+      "It prevents all reactions"
+    ],
+    "answer": "It can dissolve many substances"
+  },
+  "key_terms": [
+    "dissolve substances",
+    "solution"
+  ]
+},
+
+{
+  "term": "specific heat capacity",
+  "definition": "The amount of energy required to increase the temperature of a substance by a given amount.",
+  "japanese": "比熱容量",
+  "topic": "2.2 Water",
+  "definition_question": "Define specific heat capacity.",
+  "paper1": {
+    "question": "Water has a high specific heat capacity because:",
+    "options": [
+      "Hydrogen bonds require energy to break",
+      "It has no molecular bonds",
+      "It contains proteins",
+      "It is non-polar"
+    ],
+    "answer": "Hydrogen bonds require energy to break"
+  },
+  "key_terms": [
+    "energy required",
+    "temperature change"
+  ]
+},
+
+{
+  "term": "thermal stability",
+  "definition": "The ability of water to resist rapid changes in temperature.",
+  "japanese": "熱安定性",
+  "topic": "2.2 Water",
+  "definition_question": "Define thermal stability.",
+  "paper1": {
+    "question": "Thermal stability of water helps organisms by:",
+    "options": [
+      "Maintaining stable internal temperatures",
+      "Stopping metabolism",
+      "Destroying enzymes",
+      "Removing DNA"
+    ],
+    "answer": "Maintaining stable internal temperatures"
+  },
+  "key_terms": [
+    "temperature regulation",
+    "stability"
+  ]
 }]
