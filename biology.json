@@ -11783,4 +11783,224 @@
     "modified organism",
     "gene transfer"
   ]
+},
+
+{
+  "term": "gamete",
+  "definition": "A reproductive cell containing half the normal number of chromosomes.",
+  "japanese": "配偶子",
+  "topic": "18.1 Reproductive System",
+  "definition_question": "Define gamete.",
+  "paper1": {
+    "question": "Gametes contain:",
+    "options": [
+      "Half the normal chromosome number",
+      "Double the chromosome number",
+      "No genetic material",
+      "Only proteins"
+    ],
+    "answer": "Half the normal chromosome number"
+  },
+  "key_terms": [
+    "haploid",
+    "reproductive cell"
+  ]
+},
+
+{
+  "term": "sperm",
+  "definition": "The male gamete that carries genetic information to the egg cell.",
+  "japanese": "精子",
+  "topic": "18.1 Reproductive System",
+  "definition_question": "Define sperm.",
+  "paper1": {
+    "question": "Sperm is the:",
+    "options": [
+      "Male gamete",
+      "Female gamete",
+      "Embryo",
+      "Hormone"
+    ],
+    "answer": "Male gamete"
+  },
+  "key_terms": [
+    "male reproduction",
+    "haploid cell"
+  ]
+},
+
+{
+  "term": "egg cell",
+  "definition": "The female gamete that contains genetic information and nutrients for early development.",
+  "japanese": "卵細胞",
+  "topic": "18.1 Reproductive System",
+  "definition_question": "Define egg cell.",
+  "paper1": {
+    "question": "An egg cell is the:",
+    "options": [
+      "Female gamete",
+      "Male gamete",
+      "Hormone",
+      "Chromosome"
+    ],
+    "answer": "Female gamete"
+  },
+  "key_terms": [
+    "female reproduction",
+    "ovum"
+  ]
+},
+
+{
+  "term": "ovary",
+  "definition": "The female reproductive organ that produces eggs and hormones.",
+  "japanese": "卵巣",
+  "topic": "18.1 Reproductive System",
+  "definition_question": "Define ovary.",
+  "paper1": {
+    "question": "The ovary produces:",
+    "options": [
+      "Egg cells and hormones",
+      "Sperm only",
+      "DNA only",
+      "Digestive enzymes"
+    ],
+    "answer": "Egg cells and hormones"
+  },
+  "key_terms": [
+    "egg production",
+    "oestrogen"
+  ]
+},
+
+{
+  "term": "testis",
+  "definition": "The male reproductive organ that produces sperm and testosterone.",
+  "japanese": "精巣",
+  "topic": "18.1 Reproductive System",
+  "definition_question": "Define testis.",
+  "paper1": {
+    "question": "The testis produces:",
+    "options": [
+      "Sperm and testosterone",
+      "Egg cells",
+      "Insulin",
+      "Progesterone"
+    ],
+    "answer": "Sperm and testosterone"
+  },
+  "key_terms": [
+    "male reproduction",
+    "testosterone"
+  ]
+},
+
+{
+  "term": "fertilisation",
+  "definition": "The fusion of male and female gametes to form a zygote.",
+  "japanese": "受精",
+  "topic": "18.1 Reproductive System",
+  "definition_question": "Define fertilisation.",
+  "paper1": {
+    "question": "Fertilisation produces:",
+    "options": [
+      "A zygote",
+      "A hormone",
+      "A sperm cell",
+      "A placenta"
+    ],
+    "answer": "A zygote"
+  },
+  "key_terms": [
+    "gamete fusion",
+    "zygote formation"
+  ]
+},
+
+{
+  "term": "zygote",
+  "definition": "The cell formed when two gametes fuse during fertilisation.",
+  "japanese": "受精卵",
+  "topic": "18.1 Reproductive System",
+  "definition_question": "Define zygote.",
+  "paper1": {
+    "question": "A zygote is formed by:",
+    "options": [
+      "Fusion of gametes",
+      "Cell respiration",
+      "Photosynthesis",
+      "DNA mutation only"
+    ],
+    "answer": "Fusion of gametes"
+  },
+  "key_terms": [
+    "fertilisation",
+    "diploid cell"
+  ]
+},
+
+{
+  "term": "embryo",
+  "definition": "An early developing organism after fertilisation.",
+  "japanese": "胚",
+  "topic": "18.1 Reproductive System",
+  "definition_question": "Define embryo.",
+  "paper1": {
+    "question": "An embryo develops after:",
+    "options": [
+      "Fertilisation",
+      "Photosynthesis",
+      "Meiosis only",
+      "Digestion"
+    ],
+    "answer": "Fertilisation"
+  },
+  "key_terms": [
+    "development",
+    "early growth"
+  ]
+},
+
+{
+  "term": "implantation",
+  "definition": "The attachment of an embryo to the lining of the uterus.",
+  "japanese": "着床",
+  "topic": "18.1 Reproductive System",
+  "definition_question": "Define implantation.",
+  "paper1": {
+    "question": "Implantation occurs in the:",
+    "options": [
+      "Uterus lining",
+      "Ovary",
+      "Testis",
+      "Blood vessel"
+    ],
+    "answer": "Uterus lining"
+  },
+  "key_terms": [
+    "uterus",
+    "embryo attachment"
+  ]
+},
+
+{
+  "term": "placenta",
+  "definition": "An organ that allows exchange of nutrients, gases, and wastes between mother and fetus.",
+  "japanese": "胎盤",
+  "topic": "18.1 Reproductive System",
+  "definition_question": "Define placenta.",
+  "paper1": {
+    "question": "The placenta allows exchange of:",
+    "options": [
+      "Nutrients and gases",
+      "DNA only",
+      "Chromosomes only",
+      "Muscle cells"
+    ],
+    "answer": "Nutrients and gases"
+  },
+  "key_terms": [
+    "maternal-fetal exchange",
+    "fetus"
+  ]
 }]
