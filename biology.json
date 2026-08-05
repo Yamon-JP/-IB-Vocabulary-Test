@@ -12883,4 +12883,224 @@
     "species interaction",
     "mutual relationship"
   ]
+},
+
+{
+  "term": "conservation",
+  "definition": "The protection and management of species, habitats, and ecosystems.",
+  "japanese": "保全",
+  "topic": "20.2 Conservation Biology",
+  "definition_question": "Define conservation.",
+  "paper1": {
+    "question": "Conservation aims to protect:",
+    "options": [
+      "Species and ecosystems",
+      "Only individual cells",
+      "Only DNA sequences",
+      "Only human populations"
+    ],
+    "answer": "Species and ecosystems"
+  },
+  "key_terms": [
+    "protection",
+    "biodiversity"
+  ]
+},
+
+{
+  "term": "endangered species",
+  "definition": "A species at high risk of extinction.",
+  "japanese": "絶滅危惧種",
+  "topic": "20.2 Conservation Biology",
+  "definition_question": "Define endangered species.",
+  "paper1": {
+    "question": "An endangered species has:",
+    "options": [
+      "A high risk of extinction",
+      "Unlimited population growth",
+      "No environmental threats",
+      "No genetic variation"
+    ],
+    "answer": "A high risk of extinction"
+  },
+  "key_terms": [
+    "population decline",
+    "threatened species"
+  ]
+},
+
+{
+  "term": "extinction",
+  "definition": "The complete disappearance of a species from Earth.",
+  "japanese": "絶滅",
+  "topic": "20.2 Conservation Biology",
+  "definition_question": "Define extinction.",
+  "paper1": {
+    "question": "Extinction means:",
+    "options": [
+      "A species no longer exists",
+      "A population increases",
+      "A habitat changes",
+      "A mutation occurs"
+    ],
+    "answer": "A species no longer exists"
+  },
+  "key_terms": [
+    "species loss",
+    "biodiversity decline"
+  ]
+},
+
+{
+  "term": "habitat destruction",
+  "definition": "The loss or damage of environments where organisms live.",
+  "japanese": "生息地破壊",
+  "topic": "20.2 Conservation Biology",
+  "definition_question": "Define habitat destruction.",
+  "paper1": {
+    "question": "Habitat destruction affects:",
+    "options": [
+      "Organism survival",
+      "DNA replication only",
+      "Protein synthesis only",
+      "Cell division only"
+    ],
+    "answer": "Organism survival"
+  },
+  "key_terms": [
+    "habitat loss",
+    "human activity"
+  ]
+},
+
+{
+  "term": "invasive species",
+  "definition": "A non-native species that spreads and negatively affects ecosystems.",
+  "japanese": "外来種",
+  "topic": "20.2 Conservation Biology",
+  "definition_question": "Define invasive species.",
+  "paper1": {
+    "question": "An invasive species is:",
+    "options": [
+      "A harmful introduced species",
+      "A native species only",
+      "A decomposer only",
+      "A producer only"
+    ],
+    "answer": "A harmful introduced species"
+  },
+  "key_terms": [
+    "non-native species",
+    "ecosystem disruption"
+  ]
+},
+
+{
+  "term": "sustainable development",
+  "definition": "Development that meets current needs without reducing future resources.",
+  "japanese": "持続可能な発展",
+  "topic": "20.2 Conservation Biology",
+  "definition_question": "Define sustainable development.",
+  "paper1": {
+    "question": "Sustainable development considers:",
+    "options": [
+      "Future resource availability",
+      "Only immediate profit",
+      "Only population increase",
+      "Only technology"
+    ],
+    "answer": "Future resource availability"
+  },
+  "key_terms": [
+    "future generations",
+    "resource management"
+  ]
+},
+
+{
+  "term": "protected area",
+  "definition": "A region managed to conserve biodiversity and ecosystems.",
+  "japanese": "保護地域",
+  "topic": "20.2 Conservation Biology",
+  "definition_question": "Define protected area.",
+  "paper1": {
+    "question": "Protected areas are created to:",
+    "options": [
+      "Conserve ecosystems",
+      "Increase pollution",
+      "Remove biodiversity",
+      "Stop evolution"
+    ],
+    "answer": "Conserve ecosystems"
+  },
+  "key_terms": [
+    "conservation",
+    "habitat protection"
+  ]
+},
+
+{
+  "term": "renewable resource",
+  "definition": "A resource that can be naturally replaced over time.",
+  "japanese": "再生可能資源",
+  "topic": "20.2 Conservation Biology",
+  "definition_question": "Define renewable resource.",
+  "paper1": {
+    "question": "A renewable resource can:",
+    "options": [
+      "Be naturally replaced",
+      "Never return",
+      "Only be manufactured",
+      "Destroy ecosystems"
+    ],
+    "answer": "Be naturally replaced"
+  },
+  "key_terms": [
+    "sustainable use",
+    "natural replacement"
+  ]
+},
+
+{
+  "term": "ecological footprint",
+  "definition": "A measure of the environmental impact caused by human activities.",
+  "japanese": "エコロジカルフットプリント",
+  "topic": "20.2 Conservation Biology",
+  "definition_question": "Define ecological footprint.",
+  "paper1": {
+    "question": "Ecological footprint measures:",
+    "options": [
+      "Human environmental impact",
+      "DNA changes",
+      "Cell size",
+      "Species age"
+    ],
+    "answer": "Human environmental impact"
+  },
+  "key_terms": [
+    "resource consumption",
+    "environmental impact"
+  ]
+},
+
+{
+  "term": "restoration ecology",
+  "definition": "The science of repairing damaged ecosystems.",
+  "japanese": "生態系復元学",
+  "topic": "20.2 Conservation Biology",
+  "definition_question": "Define restoration ecology.",
+  "paper1": {
+    "question": "Restoration ecology focuses on:",
+    "options": [
+      "Repairing ecosystems",
+      "Destroying habitats",
+      "Increasing pollution",
+      "Stopping succession"
+    ],
+    "answer": "Repairing ecosystems"
+  },
+  "key_terms": [
+    "ecosystem recovery",
+    "habitat restoration"
+  ]
 }]
