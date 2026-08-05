@@ -4875,4 +4875,224 @@
     "new species",
     "evolution"
   ]
+},
+
+{
+  "term": "taxonomy",
+  "definition": "The science of naming and classifying organisms.",
+  "japanese": "分類学",
+  "topic": "5.3 Classification",
+  "definition_question": "Define taxonomy.",
+  "paper1": {
+    "question": "Taxonomy involves:",
+    "options": [
+      "Naming and classifying organisms",
+      "Changing DNA sequences",
+      "Producing energy",
+      "Breaking down nutrients"
+    ],
+    "answer": "Naming and classifying organisms"
+  },
+  "key_terms": [
+    "classification",
+    "naming organisms"
+  ]
+},
+
+{
+  "term": "classification",
+  "definition": "The organization of organisms into groups based on shared characteristics.",
+  "japanese": "分類",
+  "topic": "5.3 Classification",
+  "definition_question": "Define classification.",
+  "paper1": {
+    "question": "Classification groups organisms based on:",
+    "options": [
+      "Shared characteristics",
+      "Only body size",
+      "Only habitat",
+      "Only colour"
+    ],
+    "answer": "Shared characteristics"
+  },
+  "key_terms": [
+    "groups",
+    "similar features"
+  ]
+},
+
+{
+  "term": "domain",
+  "definition": "The highest level of biological classification.",
+  "japanese": "ドメイン",
+  "topic": "5.3 Classification",
+  "definition_question": "Define domain.",
+  "paper1": {
+    "question": "Domain is:",
+    "options": [
+      "The highest classification level",
+      "The smallest classification level",
+      "A type of protein",
+      "A cell organelle"
+    ],
+    "answer": "The highest classification level"
+  },
+  "key_terms": [
+    "highest rank",
+    "classification"
+  ]
+},
+
+{
+  "term": "kingdom",
+  "definition": "A major group within biological classification below domain.",
+  "japanese": "界",
+  "topic": "5.3 Classification",
+  "definition_question": "Define kingdom.",
+  "paper1": {
+    "question": "Kingdom is a classification level below:",
+    "options": [
+      "Domain",
+      "Species",
+      "Genus",
+      "Cell"
+    ],
+    "answer": "Domain"
+  },
+  "key_terms": [
+    "classification level",
+    "major group"
+  ]
+},
+
+{
+  "term": "genus",
+  "definition": "A classification group containing closely related species.",
+  "japanese": "属",
+  "topic": "5.3 Classification",
+  "definition_question": "Define genus.",
+  "paper1": {
+    "question": "A genus contains:",
+    "options": [
+      "Closely related species",
+      "Only one organism",
+      "Different domains",
+      "Only cells"
+    ],
+    "answer": "Closely related species"
+  },
+  "key_terms": [
+    "related species",
+    "classification"
+  ]
+},
+
+{
+  "term": "species",
+  "definition": "A group of organisms that can interbreed and produce fertile offspring.",
+  "japanese": "種",
+  "topic": "5.3 Classification",
+  "definition_question": "Define species.",
+  "paper1": {
+    "question": "Species are organisms that can:",
+    "options": [
+      "Interbreed and produce fertile offspring",
+      "Always look identical",
+      "Live in the same ecosystem only",
+      "Have the same size"
+    ],
+    "answer": "Interbreed and produce fertile offspring"
+  },
+  "key_terms": [
+    "fertile offspring",
+    "interbreeding"
+  ]
+},
+
+{
+  "term": "binomial nomenclature",
+  "definition": "A system of naming organisms using two Latin words: genus and species.",
+  "japanese": "二名法",
+  "topic": "5.3 Classification",
+  "definition_question": "Define binomial nomenclature.",
+  "paper1": {
+    "question": "Binomial nomenclature uses:",
+    "options": [
+      "Genus and species names",
+      "Only kingdom names",
+      "DNA sequences only",
+      "Common names only"
+    ],
+    "answer": "Genus and species names"
+  },
+  "key_terms": [
+    "genus",
+    "species"
+  ]
+},
+
+{
+  "term": "phylogenetic tree",
+  "definition": "A diagram showing evolutionary relationships between organisms.",
+  "japanese": "系統樹",
+  "topic": "5.3 Classification",
+  "definition_question": "Define phylogenetic tree.",
+  "paper1": {
+    "question": "A phylogenetic tree shows:",
+    "options": [
+      "Evolutionary relationships",
+      "Only habitats",
+      "Only body size",
+      "Energy flow"
+    ],
+    "answer": "Evolutionary relationships"
+  },
+  "key_terms": [
+    "evolution",
+    "relationship"
+  ]
+},
+
+{
+  "term": "clade",
+  "definition": "A group of organisms that includes a common ancestor and all its descendants.",
+  "japanese": "クレード",
+  "topic": "5.3 Classification",
+  "definition_question": "Define clade.",
+  "paper1": {
+    "question": "A clade includes:",
+    "options": [
+      "A common ancestor and descendants",
+      "Only unrelated organisms",
+      "Only one species",
+      "Only extinct organisms"
+    ],
+    "answer": "A common ancestor and descendants"
+  },
+  "key_terms": [
+    "common ancestor",
+    "descendants"
+  ]
+},
+
+{
+  "term": "evolutionary relationship",
+  "definition": "The relationship between organisms based on their shared evolutionary history.",
+  "japanese": "進化的関係",
+  "topic": "5.3 Classification",
+  "definition_question": "Define evolutionary relationship.",
+  "paper1": {
+    "question": "Evolutionary relationships are determined using:",
+    "options": [
+      "Shared ancestry and evidence",
+      "Only appearance",
+      "Only habitat",
+      "Only size"
+    ],
+    "answer": "Shared ancestry and evidence"
+  },
+  "key_terms": [
+    "shared ancestry",
+    "evolution"
+  ]
 }]
