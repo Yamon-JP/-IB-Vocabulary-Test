@@ -6364,4 +6364,222 @@
     "response",
     "muscle"
   ]
+},
+
+{
+  "term": "hormone",
+  "definition": "A chemical messenger produced by glands and transported in the blood.",
+  "japanese": "ホルモン",
+  "topic": "6.6 Hormones, Homeostasis and Reproduction",
+  "definition_question": "Define hormone.",
+  "paper1": {
+    "question": "Hormones are chemical:",
+    "options": [
+      "Messengers",
+      "Enzymes",
+      "Antibodies",
+      "Nutrients"
+    ],
+    "answer": "Messengers"
+  },
+  "key_terms": [
+    "chemical messenger",
+    "blood transport"
+  ]
+},
+
+{
+  "term": "endocrine gland",
+  "definition": "A gland that secretes hormones directly into the bloodstream.",
+  "japanese": "内分泌腺",
+  "topic": "6.6 Hormones, Homeostasis and Reproduction",
+  "definition_question": "Define endocrine gland.",
+  "paper1": {
+    "question": "Endocrine glands release hormones into:",
+    "options": [
+      "The bloodstream",
+      "The digestive system",
+      "The lungs",
+      "The nervous system"
+    ],
+    "answer": "The bloodstream"
+  },
+  "key_terms": [
+    "hormone secretion"
+  ]
+},
+
+{
+  "term": "homeostasis",
+  "definition": "The maintenance of a stable internal environment.",
+  "japanese": "恒常性",
+  "topic": "6.6 Hormones, Homeostasis and Reproduction",
+  "definition_question": "Define homeostasis.",
+  "paper1": {
+    "question": "Homeostasis maintains:",
+    "options": [
+      "A stable internal environment",
+      "A changing environment",
+      "Only body temperature",
+      "Only hormone levels"
+    ],
+    "answer": "A stable internal environment"
+  },
+  "key_terms": [
+    "internal balance",
+    "regulation"
+  ]
+},
+
+{
+  "term": "negative feedback",
+  "definition": "A control mechanism where a change causes responses that reverse the original change.",
+  "japanese": "負のフィードバック",
+  "topic": "6.6 Hormones, Homeostasis and Reproduction",
+  "definition_question": "Define negative feedback.",
+  "paper1": {
+    "question": "Negative feedback:",
+    "options": [
+      "Reverses a change",
+      "Increases all changes",
+      "Stops regulation",
+      "Creates mutations"
+    ],
+    "answer": "Reverses a change"
+  },
+  "key_terms": [
+    "regulation",
+    "balance"
+  ]
+},
+
+{
+  "term": "insulin",
+  "definition": "A hormone that lowers blood glucose concentration.",
+  "japanese": "インスリン",
+  "topic": "6.6 Hormones, Homeostasis and Reproduction",
+  "definition_question": "Define insulin.",
+  "paper1": {
+    "question": "Insulin decreases:",
+    "options": [
+      "Blood glucose concentration",
+      "Oxygen concentration",
+      "Body temperature",
+      "Heart rate"
+    ],
+    "answer": "Blood glucose concentration"
+  },
+  "key_terms": [
+    "pancreas",
+    "glucose regulation"
+  ]
+},
+
+{
+  "term": "glucagon",
+  "definition": "A hormone that increases blood glucose concentration.",
+  "japanese": "グルカゴン",
+  "topic": "6.6 Hormones, Homeostasis and Reproduction",
+  "definition_question": "Define glucagon.",
+  "paper1": {
+    "question": "Glucagon increases:",
+    "options": [
+      "Blood glucose concentration",
+      "Antibody production",
+      "Oxygen binding",
+      "Digestion"
+    ],
+    "answer": "Blood glucose concentration"
+  },
+  "key_terms": [
+    "blood glucose",
+    "pancreas"
+  ]
+},
+
+{
+  "term": "pancreas",
+  "definition": "An organ that produces digestive enzymes and hormones such as insulin and glucagon.",
+  "japanese": "すい臓",
+  "topic": "6.6 Hormones, Homeostasis and Reproduction",
+  "definition_question": "Define pancreas.",
+  "paper1": {
+    "question": "The pancreas produces:",
+    "options": [
+      "Insulin and glucagon",
+      "Haemoglobin",
+      "Antibodies only",
+      "Neurotransmitters"
+    ],
+    "answer": "Insulin and glucagon"
+  },
+  "key_terms": [
+    "hormone production"
+  ]
+},
+
+{
+  "term": "reproductive hormone",
+  "definition": "A hormone involved in controlling reproductive processes.",
+  "japanese": "生殖ホルモン",
+  "topic": "6.6 Hormones, Homeostasis and Reproduction",
+  "definition_question": "Define reproductive hormone.",
+  "paper1": {
+    "question": "Reproductive hormones control:",
+    "options": [
+      "Reproductive processes",
+      "Blood clotting",
+      "Gas exchange",
+      "Digestion"
+    ],
+    "answer": "Reproductive processes"
+  },
+  "key_terms": [
+    "reproduction",
+    "hormone"
+  ]
+},
+
+{
+  "term": "menstrual cycle",
+  "definition": "The monthly cycle involving changes in the ovaries and uterus.",
+  "japanese": "月経周期",
+  "topic": "6.6 Hormones, Homeostasis and Reproduction",
+  "definition_question": "Define menstrual cycle.",
+  "paper1": {
+    "question": "The menstrual cycle involves changes in:",
+    "options": [
+      "Ovaries and uterus",
+      "Lungs only",
+      "Blood cells",
+      "Digestive enzymes"
+    ],
+    "answer": "Ovaries and uterus"
+  },
+  "key_terms": [
+    "ovary",
+    "uterus"
+  ]
+},
+
+{
+  "term": "fertilization",
+  "definition": "The fusion of male and female gametes to form a zygote.",
+  "japanese": "受精",
+  "topic": "6.6 Hormones, Homeostasis and Reproduction",
+  "definition_question": "Define fertilization.",
+  "paper1": {
+    "question": "Fertilization produces:",
+    "options": [
+      "A zygote",
+      "An antibody",
+      "A hormone",
+      "A red blood cell"
+    ],
+    "answer": "A zygote"
+  },
+  "key_terms": [
+    "gametes",
+    "zygote"
+  ]
 }]
