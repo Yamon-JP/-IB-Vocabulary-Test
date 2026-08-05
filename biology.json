@@ -7022,4 +7022,221 @@
     "protein formation",
     "polypeptide"
   ]
+},
+
+{
+  "term": "metabolism",
+  "definition": "The total of all chemical reactions occurring within a living organism.",
+  "japanese": "代謝",
+  "topic": "8.1 Metabolism",
+  "definition_question": "Define metabolism.",
+  "paper1": {
+    "question": "Metabolism includes:",
+    "options": [
+      "All chemical reactions in an organism",
+      "Only digestion",
+      "Only respiration",
+      "Only photosynthesis"
+    ],
+    "answer": "All chemical reactions in an organism"
+  },
+  "key_terms": [
+    "chemical reactions",
+    "living organism"
+  ]
+},
+
+{
+  "term": "anabolic reaction",
+  "definition": "A reaction that builds larger molecules from smaller molecules.",
+  "japanese": "同化反応",
+  "topic": "8.1 Metabolism",
+  "definition_question": "Define anabolic reaction.",
+  "paper1": {
+    "question": "Anabolic reactions:",
+    "options": [
+      "Build larger molecules",
+      "Break down molecules",
+      "Release only heat",
+      "Destroy enzymes"
+    ],
+    "answer": "Build larger molecules"
+  },
+  "key_terms": [
+    "synthesis",
+    "building"
+  ]
+},
+
+{
+  "term": "catabolic reaction",
+  "definition": "A reaction that breaks larger molecules into smaller molecules.",
+  "japanese": "異化反応",
+  "topic": "8.1 Metabolism",
+  "definition_question": "Define catabolic reaction.",
+  "paper1": {
+    "question": "Catabolic reactions:",
+    "options": [
+      "Break down molecules",
+      "Build proteins only",
+      "Create DNA",
+      "Stop metabolism"
+    ],
+    "answer": "Break down molecules"
+  },
+  "key_terms": [
+    "breakdown",
+    "energy release"
+  ]
+},
+
+{
+  "term": "enzyme",
+  "definition": "A biological catalyst that speeds up chemical reactions.",
+  "japanese": "酵素",
+  "topic": "8.1 Metabolism",
+  "definition_question": "Define enzyme.",
+  "paper1": {
+    "question": "Enzymes act as:",
+    "options": [
+      "Biological catalysts",
+      "Hormones",
+      "Antibodies",
+      "Lipids"
+    ],
+    "answer": "Biological catalysts"
+  },
+  "key_terms": [
+    "catalyst",
+    "reaction rate"
+  ]
+},
+
+{
+  "term": "active site",
+  "definition": "The region of an enzyme where the substrate binds.",
+  "japanese": "活性部位",
+  "topic": "8.1 Metabolism",
+  "definition_question": "Define active site.",
+  "paper1": {
+    "question": "A substrate binds to the:",
+    "options": [
+      "Active site",
+      "Nucleus",
+      "Cell membrane",
+      "Ribosome"
+    ],
+    "answer": "Active site"
+  },
+  "key_terms": [
+    "enzyme binding",
+    "substrate"
+  ]
+},
+
+{
+  "term": "substrate",
+  "definition": "The molecule that an enzyme acts upon.",
+  "japanese": "基質",
+  "topic": "8.1 Metabolism",
+  "definition_question": "Define substrate.",
+  "paper1": {
+    "question": "The enzyme acts on the:",
+    "options": [
+      "Substrate",
+      "Antibody",
+      "Hormone",
+      "Nucleotide"
+    ],
+    "answer": "Substrate"
+  },
+  "key_terms": [
+    "enzyme reaction"
+  ]
+},
+
+{
+  "term": "enzyme-substrate complex",
+  "definition": "A temporary structure formed when a substrate binds to an enzyme.",
+  "japanese": "酵素基質複合体",
+  "topic": "8.1 Metabolism",
+  "definition_question": "Define enzyme-substrate complex.",
+  "paper1": {
+    "question": "An enzyme-substrate complex forms when:",
+    "options": [
+      "A substrate binds to an enzyme",
+      "DNA replicates",
+      "Cells divide",
+      "ATP breaks down"
+    ],
+    "answer": "A substrate binds to an enzyme"
+  },
+  "key_terms": [
+    "enzyme",
+    "substrate"
+  ]
+},
+
+{
+  "term": "activation energy",
+  "definition": "The minimum energy required for a chemical reaction to occur.",
+  "japanese": "活性化エネルギー",
+  "topic": "8.1 Metabolism",
+  "definition_question": "Define activation energy.",
+  "paper1": {
+    "question": "Enzymes reduce:",
+    "options": [
+      "Activation energy",
+      "Temperature",
+      "Substrate amount",
+      "DNA quantity"
+    ],
+    "answer": "Activation energy"
+  },
+  "key_terms": [
+    "reaction energy"
+  ]
+},
+
+{
+  "term": "denaturation",
+  "definition": "A change in the structure of an enzyme causing loss of function.",
+  "japanese": "変性",
+  "topic": "8.1 Metabolism",
+  "definition_question": "Define denaturation.",
+  "paper1": {
+    "question": "Denaturation causes enzymes to:",
+    "options": [
+      "Lose their function",
+      "Multiply",
+      "Produce ATP",
+      "Become DNA"
+    ],
+    "answer": "Lose their function"
+  },
+  "key_terms": [
+    "enzyme shape",
+    "temperature"
+  ]
+},
+
+{
+  "term": "optimum temperature",
+  "definition": "The temperature at which an enzyme works most effectively.",
+  "japanese": "最適温度",
+  "topic": "8.1 Metabolism",
+  "definition_question": "Define optimum temperature.",
+  "paper1": {
+    "question": "Enzymes have an:",
+    "options": [
+      "Optimum temperature",
+      "Optimum DNA",
+      "Optimum antibody",
+      "Optimum lipid"
+    ],
+    "answer": "Optimum temperature"
+  },
+  "key_terms": [
+    "enzyme activity"
+  ]
 }]
