@@ -8269,4 +8269,222 @@
     "seed protection",
     "plant reproduction"
   ]
+},
+
+{
+  "term": "gene",
+  "definition": "A sequence of DNA that contains information for producing a functional product such as a protein.",
+  "japanese": "遺伝子",
+  "topic": "10.1 Genetics",
+  "definition_question": "Define gene.",
+  "paper1": {
+    "question": "A gene is a sequence of:",
+    "options": [
+      "DNA",
+      "Protein",
+      "Lipids",
+      "Carbohydrates"
+    ],
+    "answer": "DNA"
+  },
+  "key_terms": [
+    "DNA sequence",
+    "genetic information"
+  ]
+},
+
+{
+  "term": "allele",
+  "definition": "A different version of a gene.",
+  "japanese": "対立遺伝子",
+  "topic": "10.1 Genetics",
+  "definition_question": "Define allele.",
+  "paper1": {
+    "question": "An allele is:",
+    "options": [
+      "A version of a gene",
+      "A type of protein",
+      "A chromosome",
+      "A cell organelle"
+    ],
+    "answer": "A version of a gene"
+  },
+  "key_terms": [
+    "gene variant",
+    "inheritance"
+  ]
+},
+
+{
+  "term": "chromosome",
+  "definition": "A structure made of DNA and proteins that carries genes.",
+  "japanese": "染色体",
+  "topic": "10.1 Genetics",
+  "definition_question": "Define chromosome.",
+  "paper1": {
+    "question": "Chromosomes contain:",
+    "options": [
+      "Genes",
+      "Only glucose",
+      "Only lipids",
+      "Water"
+    ],
+    "answer": "Genes"
+  },
+  "key_terms": [
+    "DNA",
+    "genetic material"
+  ]
+},
+
+{
+  "term": "homologous chromosome",
+  "definition": "A pair of chromosomes with the same genes at the same locations.",
+  "japanese": "相同染色体",
+  "topic": "10.1 Genetics",
+  "definition_question": "Define homologous chromosome.",
+  "paper1": {
+    "question": "Homologous chromosomes have:",
+    "options": [
+      "The same genes in the same positions",
+      "Completely different DNA",
+      "No genes",
+      "Only RNA"
+    ],
+    "answer": "The same genes in the same positions"
+  },
+  "key_terms": [
+    "chromosome pair",
+    "same loci"
+  ]
+},
+
+{
+  "term": "genotype",
+  "definition": "The genetic makeup of an organism.",
+  "japanese": "遺伝子型",
+  "topic": "10.1 Genetics",
+  "definition_question": "Define genotype.",
+  "paper1": {
+    "question": "Genotype refers to:",
+    "options": [
+      "Genetic makeup",
+      "Physical appearance",
+      "Environment",
+      "Cell structure"
+    ],
+    "answer": "Genetic makeup"
+  },
+  "key_terms": [
+    "alleles",
+    "genes"
+  ]
+},
+
+{
+  "term": "phenotype",
+  "definition": "The observable characteristics of an organism.",
+  "japanese": "表現型",
+  "topic": "10.1 Genetics",
+  "definition_question": "Define phenotype.",
+  "paper1": {
+    "question": "Phenotype refers to:",
+    "options": [
+      "Observable characteristics",
+      "DNA sequence only",
+      "Chromosome number only",
+      "Cell organelles"
+    ],
+    "answer": "Observable characteristics"
+  },
+  "key_terms": [
+    "appearance",
+    "traits"
+  ]
+},
+
+{
+  "term": "dominant allele",
+  "definition": "An allele that is expressed when present in a heterozygous organism.",
+  "japanese": "優性対立遺伝子",
+  "topic": "10.1 Genetics",
+  "definition_question": "Define dominant allele.",
+  "paper1": {
+    "question": "A dominant allele is expressed in:",
+    "options": [
+      "Heterozygous individuals",
+      "No individuals",
+      "Only homozygous recessive individuals",
+      "RNA molecules"
+    ],
+    "answer": "Heterozygous individuals"
+  },
+  "key_terms": [
+    "dominance",
+    "expression"
+  ]
+},
+
+{
+  "term": "recessive allele",
+  "definition": "An allele that is expressed only when two copies are present in a homozygous organism.",
+  "japanese": "劣性対立遺伝子",
+  "topic": "10.1 Genetics",
+  "definition_question": "Define recessive allele.",
+  "paper1": {
+    "question": "A recessive allele is expressed when:",
+    "options": [
+      "Two copies are present",
+      "One copy is present",
+      "No DNA exists",
+      "Only RNA exists"
+    ],
+    "answer": "Two copies are present"
+  },
+  "key_terms": [
+    "homozygous",
+    "inheritance"
+  ]
+},
+
+{
+  "term": "homozygous",
+  "definition": "Having two identical alleles for a gene.",
+  "japanese": "ホモ接合",
+  "topic": "10.1 Genetics",
+  "definition_question": "Define homozygous.",
+  "paper1": {
+    "question": "A homozygous organism has:",
+    "options": [
+      "Two identical alleles",
+      "Two different alleles",
+      "No alleles",
+      "Only one chromosome"
+    ],
+    "answer": "Two identical alleles"
+  },
+  "key_terms": [
+    "same alleles"
+  ]
+},
+
+{
+  "term": "heterozygous",
+  "definition": "Having two different alleles for a gene.",
+  "japanese": "ヘテロ接合",
+  "topic": "10.1 Genetics",
+  "definition_question": "Define heterozygous.",
+  "paper1": {
+    "question": "A heterozygous organism has:",
+    "options": [
+      "Two different alleles",
+      "Two identical alleles",
+      "No genes",
+      "No chromosomes"
+    ],
+    "answer": "Two different alleles"
+  },
+  "key_terms": [
+    "different alleles"
+  ]
 }]
