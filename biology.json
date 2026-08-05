@@ -3992,4 +3992,226 @@
     "living material",
     "trophic level"
   ]
+},
+
+{
+  "term": "carbon cycle",
+  "definition": "The movement of carbon between living organisms, the atmosphere, oceans, and the Earth.",
+  "japanese": "炭素循環",
+  "topic": "4.3 Carbon Cycling",
+  "definition_question": "Define carbon cycle.",
+  "paper1": {
+    "question": "The carbon cycle describes the movement of:",
+    "options": [
+      "Carbon through ecosystems and the environment",
+      "Only oxygen in cells",
+      "Only water molecules",
+      "Only genetic material"
+    ],
+    "answer": "Carbon through ecosystems and the environment"
+  },
+  "key_terms": [
+    "carbon movement",
+    "ecosystem"
+  ]
+},
+
+{
+  "term": "carbon dioxide (CO₂)",
+  "definition": "A gas containing carbon and oxygen that is involved in photosynthesis and respiration.",
+  "japanese": "二酸化炭素",
+  "topic": "4.3 Carbon Cycling",
+  "definition_question": "Define carbon dioxide.",
+  "paper1": {
+    "question": "Carbon dioxide is used by plants during:",
+    "options": [
+      "Photosynthesis",
+      "Respiration only",
+      "Protein digestion",
+      "DNA replication"
+    ],
+    "answer": "Photosynthesis"
+  },
+  "key_terms": [
+    "CO₂",
+    "carbon"
+  ]
+},
+
+{
+  "term": "photosynthesis",
+  "definition": "The process by which plants produce glucose using light energy, carbon dioxide and water.",
+  "japanese": "光合成",
+  "topic": "4.3 Carbon Cycling",
+  "definition_question": "Define photosynthesis.",
+  "paper1": {
+    "question": "Photosynthesis removes which gas from the atmosphere?",
+    "options": [
+      "Carbon dioxide",
+      "Nitrogen",
+      "Methane",
+      "Oxygen"
+    ],
+    "answer": "Carbon dioxide"
+  },
+  "key_terms": [
+    "light energy",
+    "glucose",
+    "CO₂"
+  ]
+},
+
+{
+  "term": "cellular respiration",
+  "definition": "The process by which cells break down glucose to release energy.",
+  "japanese": "細胞呼吸",
+  "topic": "4.3 Carbon Cycling",
+  "definition_question": "Define cellular respiration.",
+  "paper1": {
+    "question": "Cellular respiration releases:",
+    "options": [
+      "Carbon dioxide and energy",
+      "Only oxygen",
+      "Only glucose",
+      "Only water"
+    ],
+    "answer": "Carbon dioxide and energy"
+  },
+  "key_terms": [
+    "glucose breakdown",
+    "energy release"
+  ]
+},
+
+{
+  "term": "combustion",
+  "definition": "The burning of organic material using oxygen, releasing carbon dioxide.",
+  "japanese": "燃焼",
+  "topic": "4.3 Carbon Cycling",
+  "definition_question": "Define combustion.",
+  "paper1": {
+    "question": "Combustion releases:",
+    "options": [
+      "Carbon dioxide",
+      "Glucose",
+      "DNA",
+      "Proteins"
+    ],
+    "answer": "Carbon dioxide"
+  },
+  "key_terms": [
+    "burning",
+    "CO₂ release"
+  ]
+},
+
+{
+  "term": "decomposition",
+  "definition": "The breakdown of dead organic matter by decomposers.",
+  "japanese": "分解",
+  "topic": "4.3 Carbon Cycling",
+  "definition_question": "Define decomposition.",
+  "paper1": {
+    "question": "Decomposition returns carbon to:",
+    "options": [
+      "The environment",
+      "Only animals",
+      "Only plants",
+      "Only DNA"
+    ],
+    "answer": "The environment"
+  },
+  "key_terms": [
+    "dead organic matter",
+    "decomposers"
+  ]
+},
+
+{
+  "term": "fossil fuels",
+  "definition": "Fuels formed from ancient organic matter that release carbon dioxide when burned.",
+  "japanese": "化石燃料",
+  "topic": "4.3 Carbon Cycling",
+  "definition_question": "Define fossil fuels.",
+  "paper1": {
+    "question": "Burning fossil fuels increases:",
+    "options": [
+      "Atmospheric carbon dioxide",
+      "Genetic variation",
+      "Photosynthesis only",
+      "Biodiversity"
+    ],
+    "answer": "Atmospheric carbon dioxide"
+  },
+  "key_terms": [
+    "coal",
+    "oil",
+    "natural gas"
+  ]
+},
+
+{
+  "term": "carbon sink",
+  "definition": "A system that absorbs more carbon than it releases.",
+  "japanese": "炭素吸収源",
+  "topic": "4.3 Carbon Cycling",
+  "definition_question": "Define carbon sink.",
+  "paper1": {
+    "question": "A carbon sink:",
+    "options": [
+      "Absorbs carbon from the environment",
+      "Only releases carbon",
+      "Destroys carbon atoms",
+      "Stops photosynthesis"
+    ],
+    "answer": "Absorbs carbon from the environment"
+  },
+  "key_terms": [
+    "carbon absorption",
+    "storage"
+  ]
+},
+
+{
+  "term": "carbon reservoir",
+  "definition": "A place where carbon is stored for a period of time.",
+  "japanese": "炭素貯蔵庫",
+  "topic": "4.3 Carbon Cycling",
+  "definition_question": "Define carbon reservoir.",
+  "paper1": {
+    "question": "A carbon reservoir stores:",
+    "options": [
+      "Carbon",
+      "Only oxygen",
+      "Only energy",
+      "Only proteins"
+    ],
+    "answer": "Carbon"
+  },
+  "key_terms": [
+    "carbon storage",
+    "carbon pool"
+  ]
+},
+
+{
+  "term": "greenhouse gas",
+  "definition": "A gas that absorbs infrared radiation and contributes to the greenhouse effect.",
+  "japanese": "温室効果ガス",
+  "topic": "4.3 Carbon Cycling",
+  "definition_question": "Define greenhouse gas.",
+  "paper1": {
+    "question": "Which is a greenhouse gas?",
+    "options": [
+      "Carbon dioxide",
+      "Helium only",
+      "Hydrogen only",
+      "Nitrogen only"
+    ],
+    "answer": "Carbon dioxide"
+  },
+  "key_terms": [
+    "infrared radiation",
+    "greenhouse effect"
+  ]
 }]
