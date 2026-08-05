@@ -849,4 +849,118 @@
     "movement of water",
     "water concentration"
   ]
+},
+
+{
+  "term": "active transport",
+  "definition": "The movement of substances across a membrane from lower concentration to higher concentration using energy from ATP.",
+  "japanese": "能動輸送",
+  "topic": "1.4 Membrane Transport",
+  "definition_question": "Define active transport.",
+  "paper1": {
+    "question": "What is required for active transport?",
+    "options": [
+      "ATP energy and transport proteins",
+      "Only a concentration gradient",
+      "No membrane proteins",
+      "Only water molecules"
+    ],
+    "answer": "ATP energy and transport proteins"
+  },
+  "key_terms": [
+    "ATP",
+    "against concentration gradient",
+    "transport proteins"
+  ]
+},
+
+{
+  "term": "sodium-potassium pump",
+  "definition": "A membrane protein that uses ATP to move sodium ions out of cells and potassium ions into cells against their concentration gradients.",
+  "japanese": "ナトリウム・カリウムポンプ",
+  "topic": "1.4 Membrane Transport",
+  "definition_question": "Define sodium-potassium pump.",
+  "paper1": {
+    "question": "The sodium-potassium pump uses energy from ATP to transport ions:",
+    "options": [
+      "Against their concentration gradients",
+      "Only by diffusion",
+      "Without membrane proteins",
+      "Only through the cell wall"
+    ],
+    "answer": "Against their concentration gradients"
+  },
+  "key_terms": [
+    "ATP",
+    "sodium ions",
+    "potassium ions"
+  ]
+},
+
+{
+  "term": "endocytosis",
+  "definition": "The process by which a cell takes in substances by forming a vesicle from the cell membrane.",
+  "japanese": "エンドサイトーシス",
+  "topic": "1.4 Membrane Transport",
+  "definition_question": "Define endocytosis.",
+  "paper1": {
+    "question": "What happens during endocytosis?",
+    "options": [
+      "The cell membrane surrounds and takes in material",
+      "The cell releases material outside",
+      "ATP is produced",
+      "DNA is copied"
+    ],
+    "answer": "The cell membrane surrounds and takes in material"
+  },
+  "key_terms": [
+    "cell membrane",
+    "vesicle",
+    "taking in substances"
+  ]
+},
+
+{
+  "term": "exocytosis",
+  "definition": "The process by which a cell releases substances when vesicles fuse with the cell membrane.",
+  "japanese": "エキソサイトーシス",
+  "topic": "1.4 Membrane Transport",
+  "definition_question": "Define exocytosis.",
+  "paper1": {
+    "question": "What occurs during exocytosis?",
+    "options": [
+      "Vesicles fuse with the cell membrane to release substances",
+      "Water moves by osmosis",
+      "Proteins are broken down",
+      "DNA enters the nucleus"
+    ],
+    "answer": "Vesicles fuse with the cell membrane to release substances"
+  },
+  "key_terms": [
+    "vesicle fusion",
+    "release substances"
+  ]
+},
+
+{
+  "term": "vesicle transport",
+  "definition": "The movement of substances inside cells using membrane-bound vesicles.",
+  "japanese": "小胞輸送",
+  "topic": "1.4 Membrane Transport",
+  "definition_question": "Define vesicle transport.",
+  "paper1": {
+    "question": "What structure is used in vesicle transport?",
+    "options": [
+      "Membrane-bound vesicles",
+      "Ribosomes",
+      "Chromosomes",
+      "Cell walls"
+    ],
+    "answer": "Membrane-bound vesicles"
+  },
+  "key_terms": [
+    "vesicles",
+    "transport",
+    "membrane-bound"
+  ]
 }]
