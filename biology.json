@@ -7830,4 +7830,224 @@
     "Calvin cycle",
     "RuBP"
   ]
+},
+
+{
+  "term": "vascular tissue",
+  "definition": "Specialized plant tissue responsible for transporting substances through the plant.",
+  "japanese": "維管束組織",
+  "topic": "9.1 Plant Structure and Transport",
+  "definition_question": "Define vascular tissue.",
+  "paper1": {
+    "question": "Vascular tissue transports substances in:",
+    "options": [
+      "Plants",
+      "Animals only",
+      "Bacteria only",
+      "Viruses"
+    ],
+    "answer": "Plants"
+  },
+  "key_terms": [
+    "transport",
+    "plant tissue"
+  ]
+},
+
+{
+  "term": "xylem",
+  "definition": "A vascular tissue that transports water and mineral ions from roots to leaves.",
+  "japanese": "木部",
+  "topic": "9.1 Plant Structure and Transport",
+  "definition_question": "Define xylem.",
+  "paper1": {
+    "question": "Xylem transports:",
+    "options": [
+      "Water and mineral ions",
+      "Sugars only",
+      "Proteins",
+      "Oxygen"
+    ],
+    "answer": "Water and mineral ions"
+  },
+  "key_terms": [
+    "water transport",
+    "roots"
+  ]
+},
+
+{
+  "term": "phloem",
+  "definition": "A vascular tissue that transports organic compounds such as sucrose through the plant.",
+  "japanese": "師部",
+  "topic": "9.1 Plant Structure and Transport",
+  "definition_question": "Define phloem.",
+  "paper1": {
+    "question": "Phloem transports:",
+    "options": [
+      "Sugars",
+      "Water only",
+      "Mineral ions only",
+      "Oxygen"
+    ],
+    "answer": "Sugars"
+  },
+  "key_terms": [
+    "sucrose transport",
+    "organic compounds"
+  ]
+},
+
+{
+  "term": "transpiration",
+  "definition": "The loss of water vapour from plant leaves through stomata.",
+  "japanese": "蒸散",
+  "topic": "9.1 Plant Structure and Transport",
+  "definition_question": "Define transpiration.",
+  "paper1": {
+    "question": "Transpiration involves the loss of:",
+    "options": [
+      "Water vapour",
+      "Glucose",
+      "DNA",
+      "Protein"
+    ],
+    "answer": "Water vapour"
+  },
+  "key_terms": [
+    "water loss",
+    "stomata"
+  ]
+},
+
+{
+  "term": "cohesion",
+  "definition": "The attraction between water molecules caused by hydrogen bonding.",
+  "japanese": "凝集力",
+  "topic": "9.1 Plant Structure and Transport",
+  "definition_question": "Define cohesion.",
+  "paper1": {
+    "question": "Cohesion occurs between:",
+    "options": [
+      "Water molecules",
+      "Plant cells only",
+      "Proteins",
+      "DNA bases"
+    ],
+    "answer": "Water molecules"
+  },
+  "key_terms": [
+    "hydrogen bond",
+    "water movement"
+  ]
+},
+
+{
+  "term": "adhesion",
+  "definition": "The attraction between water molecules and other surfaces such as xylem walls.",
+  "japanese": "付着力",
+  "topic": "9.1 Plant Structure and Transport",
+  "definition_question": "Define adhesion.",
+  "paper1": {
+    "question": "Adhesion helps water stick to:",
+    "options": [
+      "Xylem walls",
+      "DNA molecules",
+      "Ribosomes",
+      "Proteins"
+    ],
+    "answer": "Xylem walls"
+  },
+  "key_terms": [
+    "water transport",
+    "xylem"
+  ]
+},
+
+{
+  "term": "stomata",
+  "definition": "Small openings in leaves that allow gas exchange and water loss.",
+  "japanese": "気孔",
+  "topic": "9.1 Plant Structure and Transport",
+  "definition_question": "Define stomata.",
+  "paper1": {
+    "question": "Stomata allow:",
+    "options": [
+      "Gas exchange",
+      "DNA replication",
+      "Protein synthesis",
+      "Cell division only"
+    ],
+    "answer": "Gas exchange"
+  },
+  "key_terms": [
+    "leaf",
+    "gas exchange"
+  ]
+},
+
+{
+  "term": "guard cell",
+  "definition": "A specialized cell that controls the opening and closing of stomata.",
+  "japanese": "孔辺細胞",
+  "topic": "9.1 Plant Structure and Transport",
+  "definition_question": "Define guard cell.",
+  "paper1": {
+    "question": "Guard cells control:",
+    "options": [
+      "Stomatal opening",
+      "Root growth only",
+      "Seed formation",
+      "Protein synthesis"
+    ],
+    "answer": "Stomatal opening"
+  },
+  "key_terms": [
+    "stomata",
+    "water regulation"
+  ]
+},
+
+{
+  "term": "root hair cell",
+  "definition": "A specialized root cell that increases surface area for absorption of water and minerals.",
+  "japanese": "根毛細胞",
+  "topic": "9.1 Plant Structure and Transport",
+  "definition_question": "Define root hair cell.",
+  "paper1": {
+    "question": "Root hair cells absorb:",
+    "options": [
+      "Water and mineral ions",
+      "Oxygen only",
+      "Glucose only",
+      "Proteins"
+    ],
+    "answer": "Water and mineral ions"
+  },
+  "key_terms": [
+    "absorption",
+    "root"
+  ]
+},
+
+{
+  "term": "meristem",
+  "definition": "A region of actively dividing plant cells responsible for growth.",
+  "japanese": "分裂組織",
+  "topic": "9.1 Plant Structure and Transport",
+  "definition_question": "Define meristem.",
+  "paper1": {
+    "question": "Meristems contain cells that:",
+    "options": [
+      "Divide actively",
+      "Stop growing",
+      "Produce antibodies",
+      "Transport oxygen"
+    ],
+    "answer": "Divide actively"
+  },
+  "key_terms": [
+    "cell division",
+    "plant growth"
+  ]
 }]
