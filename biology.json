@@ -6147,4 +6147,221 @@
     "air passage",
     "respiration"
   ]
+},
+
+{
+  "term": "neuron",
+  "definition": "A specialized cell that transmits electrical signals in the nervous system.",
+  "japanese": "ニューロン（神経細胞）",
+  "topic": "6.5 Neurons and Synapses",
+  "definition_question": "Define neuron.",
+  "paper1": {
+    "question": "Neurons transmit:",
+    "options": [
+      "Electrical signals",
+      "Digestive enzymes",
+      "Oxygen",
+      "Hormones only"
+    ],
+    "answer": "Electrical signals"
+  },
+  "key_terms": [
+    "nervous system",
+    "signal transmission"
+  ]
+},
+
+{
+  "term": "sensory neuron",
+  "definition": "A neuron that carries impulses from receptors to the central nervous system.",
+  "japanese": "感覚ニューロン",
+  "topic": "6.5 Neurons and Synapses",
+  "definition_question": "Define sensory neuron.",
+  "paper1": {
+    "question": "Sensory neurons carry impulses from:",
+    "options": [
+      "Receptors",
+      "Muscles",
+      "Glands",
+      "Bones"
+    ],
+    "answer": "Receptors"
+  },
+  "key_terms": [
+    "receptor",
+    "central nervous system"
+  ]
+},
+
+{
+  "term": "motor neuron",
+  "definition": "A neuron that carries impulses from the central nervous system to effectors.",
+  "japanese": "運動ニューロン",
+  "topic": "6.5 Neurons and Synapses",
+  "definition_question": "Define motor neuron.",
+  "paper1": {
+    "question": "Motor neurons carry impulses to:",
+    "options": [
+      "Effectors",
+      "Receptors",
+      "Sensory organs",
+      "Blood cells"
+    ],
+    "answer": "Effectors"
+  },
+  "key_terms": [
+    "muscle",
+    "gland"
+  ]
+},
+
+{
+  "term": "relay neuron",
+  "definition": "A neuron that connects sensory neurons and motor neurons within the central nervous system.",
+  "japanese": "中継ニューロン",
+  "topic": "6.5 Neurons and Synapses",
+  "definition_question": "Define relay neuron.",
+  "paper1": {
+    "question": "Relay neurons are found mainly in:",
+    "options": [
+      "The central nervous system",
+      "The stomach",
+      "The lungs",
+      "The blood"
+    ],
+    "answer": "The central nervous system"
+  },
+  "key_terms": [
+    "connection",
+    "CNS"
+  ]
+},
+
+{
+  "term": "synapse",
+  "definition": "The junction between two neurons where signals are transmitted.",
+  "japanese": "シナプス",
+  "topic": "6.5 Neurons and Synapses",
+  "definition_question": "Define synapse.",
+  "paper1": {
+    "question": "Signals cross a synapse using:",
+    "options": [
+      "Neurotransmitters",
+      "Red blood cells",
+      "Glucose",
+      "Oxygen"
+    ],
+    "answer": "Neurotransmitters"
+  },
+  "key_terms": [
+    "junction",
+    "signal transfer"
+  ]
+},
+
+{
+  "term": "neurotransmitter",
+  "definition": "A chemical substance released at synapses to transmit signals between neurons.",
+  "japanese": "神経伝達物質",
+  "topic": "6.5 Neurons and Synapses",
+  "definition_question": "Define neurotransmitter.",
+  "paper1": {
+    "question": "Neurotransmitters are released at:",
+    "options": [
+      "Synapses",
+      "Alveoli",
+      "Capillaries",
+      "Villi"
+    ],
+    "answer": "Synapses"
+  },
+  "key_terms": [
+    "chemical signal"
+  ]
+},
+
+{
+  "term": "nerve impulse",
+  "definition": "An electrical signal that travels along a neuron.",
+  "japanese": "神経インパルス",
+  "topic": "6.5 Neurons and Synapses",
+  "definition_question": "Define nerve impulse.",
+  "paper1": {
+    "question": "A nerve impulse is:",
+    "options": [
+      "An electrical signal",
+      "A hormone",
+      "An enzyme",
+      "A blood cell"
+    ],
+    "answer": "An electrical signal"
+  },
+  "key_terms": [
+    "electrical signal"
+  ]
+},
+
+{
+  "term": "reflex arc",
+  "definition": "A rapid response pathway involving sensory neurons, relay neurons and motor neurons.",
+  "japanese": "反射弓",
+  "topic": "6.5 Neurons and Synapses",
+  "definition_question": "Define reflex arc.",
+  "paper1": {
+    "question": "A reflex arc produces:",
+    "options": [
+      "A rapid response",
+      "Digestion",
+      "Hormone production",
+      "Blood clotting"
+    ],
+    "answer": "A rapid response"
+  },
+  "key_terms": [
+    "rapid response",
+    "stimulus"
+  ]
+},
+
+{
+  "term": "receptor",
+  "definition": "A cell or structure that detects a stimulus.",
+  "japanese": "受容器",
+  "topic": "6.5 Neurons and Synapses",
+  "definition_question": "Define receptor.",
+  "paper1": {
+    "question": "Receptors detect:",
+    "options": [
+      "Stimuli",
+      "Antibodies",
+      "Enzymes",
+      "Nutrients"
+    ],
+    "answer": "Stimuli"
+  },
+  "key_terms": [
+    "stimulus detection"
+  ]
+},
+
+{
+  "term": "effector",
+  "definition": "A muscle or gland that produces a response.",
+  "japanese": "効果器",
+  "topic": "6.5 Neurons and Synapses",
+  "definition_question": "Define effector.",
+  "paper1": {
+    "question": "Effectors include:",
+    "options": [
+      "Muscles and glands",
+      "Red blood cells",
+      "Neurons only",
+      "Bones only"
+    ],
+    "answer": "Muscles and glands"
+  },
+  "key_terms": [
+    "response",
+    "muscle"
+  ]
 }]
