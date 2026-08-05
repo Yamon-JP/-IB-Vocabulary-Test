@@ -10463,4 +10463,224 @@
     "stress response",
     "fight-or-flight"
   ]
+},
+
+{
+  "term": "population",
+  "definition": "A group of organisms of the same species living in the same area.",
+  "japanese": "個体群",
+  "topic": "15.1 Population Ecology",
+  "definition_question": "Define population.",
+  "paper1": {
+    "question": "A population consists of organisms from:",
+    "options": [
+      "The same species",
+      "Different ecosystems",
+      "Different kingdoms",
+      "Only plants"
+    ],
+    "answer": "The same species"
+  },
+  "key_terms": [
+    "same species",
+    "same area"
+  ]
+},
+
+{
+  "term": "community",
+  "definition": "All the populations of different species living and interacting in an area.",
+  "japanese": "群集",
+  "topic": "15.1 Population Ecology",
+  "definition_question": "Define community.",
+  "paper1": {
+    "question": "A community contains:",
+    "options": [
+      "Different populations",
+      "One organism only",
+      "Only one species",
+      "Only abiotic factors"
+    ],
+    "answer": "Different populations"
+  },
+  "key_terms": [
+    "multiple species",
+    "interaction"
+  ]
+},
+
+{
+  "term": "ecosystem",
+  "definition": "A community of organisms and their physical environment interacting together.",
+  "japanese": "生態系",
+  "topic": "15.1 Population Ecology",
+  "definition_question": "Define ecosystem.",
+  "paper1": {
+    "question": "An ecosystem includes:",
+    "options": [
+      "Living organisms and abiotic factors",
+      "Only animals",
+      "Only plants",
+      "Only bacteria"
+    ],
+    "answer": "Living organisms and abiotic factors"
+  },
+  "key_terms": [
+    "biotic factors",
+    "abiotic factors"
+  ]
+},
+
+{
+  "term": "habitat",
+  "definition": "The place where an organism lives.",
+  "japanese": "生息地",
+  "topic": "15.1 Population Ecology",
+  "definition_question": "Define habitat.",
+  "paper1": {
+    "question": "A habitat is:",
+    "options": [
+      "The place an organism lives",
+      "A food relationship",
+      "A genetic mutation",
+      "A hormone"
+    ],
+    "answer": "The place an organism lives"
+  },
+  "key_terms": [
+    "environment",
+    "location"
+  ]
+},
+
+{
+  "term": "niche",
+  "definition": "The role and position of an organism within an ecosystem.",
+  "japanese": "生態的地位",
+  "topic": "15.1 Population Ecology",
+  "definition_question": "Define niche.",
+  "paper1": {
+    "question": "A niche describes an organism's:",
+    "options": [
+      "Role in an ecosystem",
+      "DNA sequence",
+      "Body temperature",
+      "Cell structure"
+    ],
+    "answer": "Role in an ecosystem"
+  },
+  "key_terms": [
+    "role",
+    "ecosystem"
+  ]
+},
+
+{
+  "term": "carrying capacity",
+  "definition": "The maximum population size that an environment can support.",
+  "japanese": "環境収容力",
+  "topic": "15.1 Population Ecology",
+  "definition_question": "Define carrying capacity.",
+  "paper1": {
+    "question": "Carrying capacity limits:",
+    "options": [
+      "Population size",
+      "DNA replication",
+      "Cell size",
+      "Mutation rate"
+    ],
+    "answer": "Population size"
+  },
+  "key_terms": [
+    "resources",
+    "environmental limit"
+  ]
+},
+
+{
+  "term": "limiting factor",
+  "definition": "A factor that restricts population growth.",
+  "japanese": "制限要因",
+  "topic": "15.1 Population Ecology",
+  "definition_question": "Define limiting factor.",
+  "paper1": {
+    "question": "A limiting factor affects:",
+    "options": [
+      "Population growth",
+      "DNA structure",
+      "Protein synthesis only",
+      "Cell respiration only"
+    ],
+    "answer": "Population growth"
+  },
+  "key_terms": [
+    "population control",
+    "environment"
+  ]
+},
+
+{
+  "term": "population density",
+  "definition": "The number of individuals of a species per unit area or volume.",
+  "japanese": "個体群密度",
+  "topic": "15.1 Population Ecology",
+  "definition_question": "Define population density.",
+  "paper1": {
+    "question": "Population density measures:",
+    "options": [
+      "Individuals per area",
+      "Energy per cell",
+      "DNA per organism",
+      "Hormones per blood volume"
+    ],
+    "answer": "Individuals per area"
+  },
+  "key_terms": [
+    "number of organisms",
+    "area"
+  ]
+},
+
+{
+  "term": "exponential growth",
+  "definition": "Rapid population increase when resources are unlimited.",
+  "japanese": "指数増加",
+  "topic": "15.1 Population Ecology",
+  "definition_question": "Define exponential growth.",
+  "paper1": {
+    "question": "Exponential growth occurs when:",
+    "options": [
+      "Resources are unlimited",
+      "Resources are absent",
+      "Population cannot reproduce",
+      "Predators increase greatly"
+    ],
+    "answer": "Resources are unlimited"
+  },
+  "key_terms": [
+    "J-shaped curve",
+    "rapid increase"
+  ]
+},
+
+{
+  "term": "logistic growth",
+  "definition": "Population growth that slows as it approaches carrying capacity.",
+  "japanese": "ロジスティック増加",
+  "topic": "15.1 Population Ecology",
+  "definition_question": "Define logistic growth.",
+  "paper1": {
+    "question": "Logistic growth slows because of:",
+    "options": [
+      "Environmental limits",
+      "Unlimited resources",
+      "No competition",
+      "No population"
+    ],
+    "answer": "Environmental limits"
+  },
+  "key_terms": [
+    "S-shaped curve",
+    "carrying capacity"
+  ]
 }]
