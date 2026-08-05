@@ -1,99 +1,460 @@
-body {
-    font-family: Arial, "Noto Sans JP", sans-serif;
-    background: #f4f6f8;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+* {
+    box-sizing: border-box;
 }
+
+
+body {
+
+    font-family:
+    "Segoe UI",
+    "Noto Sans JP",
+    sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef8ff,
+        #f8fff0
+    );
+
+    margin: 0;
+
+    padding: 0;
+
+    color: #333;
+
+}
+
 
 
 header {
-    background: #1e3a8a;
-    color: white;
+
+    text-align: center;
+
     padding: 20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #5cc8ff,
+        #8ee7a8
+    );
+
+    color:white;
+
+    border-radius:0 0 25px 25px;
+
 }
 
 
-h1 {
-    margin: 0;
+
+header h1 {
+
+    margin:5px;
+
+    font-size:32px;
+
 }
+
+
+
+select {
+
+    padding:10px;
+
+    border-radius:12px;
+
+    border:none;
+
+    font-size:16px;
+
+}
+
+
 
 
 main {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 10px;
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px;
+
 }
 
 
-.card-area,
-.test-area,
-.status {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+section {
+
+    background:white;
+
+    margin-bottom:20px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.1);
+
 }
 
 
-.card {
-    min-height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 2px solid #1e3a8a;
-    border-radius: 15px;
-    font-size: 28px;
-    cursor: pointer;
-    padding: 20px;
+
+
+h2 {
+
+    color:#2b7a78;
+
 }
 
 
-#meaning {
-    margin-top: 20px;
-    font-size: 20px;
-    color: #333;
-}
-
-
-.hidden {
-    display: none;
-}
 
 
 button {
-    background: #1e3a8a;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    margin: 10px;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
+
+    background:#4caf50;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    margin:5px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:0.3s;
+
 }
+
 
 
 button:hover {
-    opacity: 0.8;
+
+    transform:scale(1.05);
+
+    opacity:0.9;
+
 }
+
+
+
+
+/* Word Card */
+
+.card {
+
+    min-height:120px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#ffffff;
+
+    border:3px solid #8ee7a8;
+
+    border-radius:20px;
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.hidden {
+
+    display:none;
+
+}
+
+
+
+
+/* Achievement Area */
+
+
+#topic-buttons {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+
+
+
+#achievement-list {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:15px;
+
+    margin-top:15px;
+
+}
+
+
+
+
+.topic-card {
+
+    padding:15px;
+
+    border-radius:20px;
+
+    background:#f5ffff;
+
+    border:2px solid #bde0fe;
+
+    text-align:center;
+
+    position:relative;
+
+}
+
+
+
+/* Rank colors */
+
+
+.rank-rookie {
+
+    opacity:0.7;
+
+}
+
+
+
+.rank-learner {
+
+    background:
+    linear-gradient(
+    135deg,
+    #eaffea,
+    #ffffff
+    );
+
+}
+
+
+
+.rank-explorer {
+
+    background:
+    linear-gradient(
+    135deg,
+    #e8f4ff,
+    #ffffff
+    );
+
+}
+
+
+
+.rank-expert {
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff5cc,
+    #ffffff
+    );
+
+    animation:
+    glowGold 2s infinite;
+
+}
+
+
+
+.rank-master {
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff0ff,
+    #ffffff
+    );
+
+    animation:
+    glowRainbow 2s infinite;
+
+}
+
+
+
+/* Gold sparkle */
+
+
+@keyframes glowGold {
+
+    0% {
+
+        box-shadow:
+        0 0 5px gold;
+
+    }
+
+
+    50% {
+
+        box-shadow:
+        0 0 25px gold;
+
+    }
+
+
+    100% {
+
+        box-shadow:
+        0 0 5px gold;
+
+    }
+
+}
+
+
+
+/* Master sparkle */
+
+
+@keyframes glowRainbow {
+
+    0% {
+
+        box-shadow:
+        0 0 10px #ffccff;
+
+    }
+
+
+    50% {
+
+        box-shadow:
+        0 0 35px #ffd700;
+
+    }
+
+
+    100% {
+
+        box-shadow:
+        0 0 10px #ffccff;
+
+    }
+
+}
+
+
+
+
+/* Achievement message */
+
+
+#achievement-message {
+
+    text-align:center;
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Question area */
 
 
 #choices button {
-    display: block;
-    width: 90%;
-    margin: 10px auto;
-    background: #2563eb;
+
+    display:block;
+
+    width:90%;
+
+    margin:10px auto;
+
 }
+
 
 
 #result {
-    font-size: 20px;
-    font-weight: bold;
+
+    font-size:20px;
+
+    font-weight:bold;
+
 }
 
 
-.status {
-    font-size: 18px;
+
+/* Progress */
+
+
+.status span {
+
+    font-weight:bold;
+
+    color:#2b7a78;
+
+}
+
+
+
+/* Mobile */
+
+
+@media(max-width:600px){
+
+
+    header h1 {
+
+        font-size:24px;
+
+    }
+
+
+    main {
+
+        padding:10px;
+
+    }
+
+
+    section {
+
+        padding:15px;
+
+    }
+
+
+    button {
+
+        width:90%;
+
+    }
+
+
 }
