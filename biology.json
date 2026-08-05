@@ -2250,4 +2250,226 @@
     "covalent bond",
     "protein stability"
   ]
+},
+
+{
+  "term": "enzyme activity",
+  "definition": "The rate at which an enzyme converts substrate into product during a chemical reaction.",
+  "japanese": "酵素活性",
+  "topic": "2.5 Enzymes",
+  "definition_question": "Define enzyme activity.",
+  "paper1": {
+    "question": "Enzyme activity refers to:",
+    "options": [
+      "The rate of product formation",
+      "The amount of DNA produced",
+      "The size of an enzyme",
+      "The number of cells"
+    ],
+    "answer": "The rate of product formation"
+  },
+  "key_terms": [
+    "reaction rate",
+    "substrate",
+    "product"
+  ]
+},
+
+{
+  "term": "enzyme specificity",
+  "definition": "The ability of an enzyme to catalyse a specific reaction because its active site has a complementary shape to its substrate.",
+  "japanese": "酵素特異性",
+  "topic": "2.5 Enzymes",
+  "definition_question": "Define enzyme specificity.",
+  "paper1": {
+    "question": "Why are enzymes specific?",
+    "options": [
+      "Their active site matches a specific substrate",
+      "All enzymes have the same shape",
+      "They contain DNA",
+      "They do not bind molecules"
+    ],
+    "answer": "Their active site matches a specific substrate"
+  },
+  "key_terms": [
+    "specific substrate",
+    "active site"
+  ]
+},
+
+{
+  "term": "lock-and-key model",
+  "definition": "A model suggesting that an enzyme active site has a fixed shape that exactly matches its substrate.",
+  "japanese": "鍵と鍵穴モデル",
+  "topic": "2.5 Enzymes",
+  "definition_question": "Define lock-and-key model.",
+  "paper1": {
+    "question": "The lock-and-key model explains:",
+    "options": [
+      "Specific binding between enzyme and substrate",
+      "DNA replication",
+      "Cell division",
+      "Protein synthesis only"
+    ],
+    "answer": "Specific binding between enzyme and substrate"
+  },
+  "key_terms": [
+    "fixed shape",
+    "enzyme-substrate binding"
+  ]
+},
+
+{
+  "term": "induced-fit model",
+  "definition": "A model explaining that an enzyme changes shape slightly when the substrate binds to the active site.",
+  "japanese": "誘導適合モデル",
+  "topic": "2.5 Enzymes",
+  "definition_question": "Define induced-fit model.",
+  "paper1": {
+    "question": "In the induced-fit model:",
+    "options": [
+      "The enzyme changes shape when the substrate binds",
+      "The substrate changes into DNA",
+      "The enzyme is destroyed",
+      "The active site disappears"
+    ],
+    "answer": "The enzyme changes shape when the substrate binds"
+  },
+  "key_terms": [
+    "shape change",
+    "active site"
+  ]
+},
+
+{
+  "term": "competitive inhibitor",
+  "definition": "A molecule that reduces enzyme activity by competing with the substrate for the active site.",
+  "japanese": "競合阻害剤",
+  "topic": "2.5 Enzymes",
+  "definition_question": "Define competitive inhibitor.",
+  "paper1": {
+    "question": "A competitive inhibitor binds to:",
+    "options": [
+      "The enzyme active site",
+      "DNA",
+      "The cell membrane",
+      "A ribosome"
+    ],
+    "answer": "The enzyme active site"
+  },
+  "key_terms": [
+    "competes with substrate",
+    "active site"
+  ]
+},
+
+{
+  "term": "non-competitive inhibitor",
+  "definition": "A molecule that reduces enzyme activity by binding to a site other than the active site and changing enzyme shape.",
+  "japanese": "非競合阻害剤",
+  "topic": "2.5 Enzymes",
+  "definition_question": "Define non-competitive inhibitor.",
+  "paper1": {
+    "question": "A non-competitive inhibitor affects an enzyme by:",
+    "options": [
+      "Changing the shape of the enzyme",
+      "Blocking DNA replication",
+      "Providing energy",
+      "Increasing substrate concentration"
+    ],
+    "answer": "Changing the shape of the enzyme"
+  },
+  "key_terms": [
+    "changes enzyme shape",
+    "binding site"
+  ]
+},
+
+{
+  "term": "enzyme concentration",
+  "definition": "The amount of enzyme present in a reaction mixture.",
+  "japanese": "酵素濃度",
+  "topic": "2.5 Enzymes",
+  "definition_question": "Define enzyme concentration.",
+  "paper1": {
+    "question": "Increasing enzyme concentration usually increases reaction rate when:",
+    "options": [
+      "Enough substrate is available",
+      "No substrate exists",
+      "The enzyme is denatured",
+      "Temperature is zero"
+    ],
+    "answer": "Enough substrate is available"
+  },
+  "key_terms": [
+    "amount of enzyme",
+    "reaction rate"
+  ]
+},
+
+{
+  "term": "substrate concentration",
+  "definition": "The amount of substrate available for enzyme reactions.",
+  "japanese": "基質濃度",
+  "topic": "2.5 Enzymes",
+  "definition_question": "Define substrate concentration.",
+  "paper1": {
+    "question": "Increasing substrate concentration increases enzyme activity until:",
+    "options": [
+      "All active sites are occupied",
+      "All enzymes disappear",
+      "DNA is destroyed",
+      "The cell divides"
+    ],
+    "answer": "All active sites are occupied"
+  },
+  "key_terms": [
+    "substrate amount",
+    "active sites"
+  ]
+},
+
+{
+  "term": "optimum temperature",
+  "definition": "The temperature at which an enzyme works at its maximum rate.",
+  "japanese": "最適温度",
+  "topic": "2.5 Enzymes",
+  "definition_question": "Define optimum temperature.",
+  "paper1": {
+    "question": "At temperatures above the optimum, enzyme activity often decreases because:",
+    "options": [
+      "The enzyme may denature",
+      "More ATP is produced",
+      "Substrates disappear",
+      "The active site becomes larger"
+    ],
+    "answer": "The enzyme may denature"
+  },
+  "key_terms": [
+    "maximum activity",
+    "denaturation"
+  ]
+},
+
+{
+  "term": "optimum pH",
+  "definition": "The pH at which an enzyme works at its maximum rate.",
+  "japanese": "最適pH",
+  "topic": "2.5 Enzymes",
+  "definition_question": "Define optimum pH.",
+  "paper1": {
+    "question": "A change in pH can affect enzymes by:",
+    "options": [
+      "Changing the shape of the active site",
+      "Changing DNA into protein",
+      "Removing all substrates",
+      "Creating new cells"
+    ],
+    "answer": "Changing the shape of the active site"
+  },
+  "key_terms": [
+    "pH",
+    "active site",
+    "enzyme activity"
+  ]
 }]
