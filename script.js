@@ -522,3 +522,272 @@ function updateStatus(){
 
 
 }
+// =====================================
+// Beta 2 Feature 1
+// Learning History System
+// =====================================
+
+
+
+// History読み込み
+function loadHistory(){
+
+    historyData =
+    JSON.parse(
+        localStorage.getItem("ibHistory")
+    )
+    ||
+    {};
+
+}
+
+
+
+// History保存
+function saveHistory(){
+
+
+    localStorage.setItem(
+
+        "ibHistory",
+
+        JSON.stringify(historyData)
+
+    );
+
+
+}
+
+
+
+
+
+
+// =====================================
+// Answer Record
+// =====================================
+
+
+function recordAnswer(
+    term,
+    isCorrect
+){
+
+
+
+    if(!historyData[term]){
+
+
+        historyData[term]={
+
+            attempts:0,
+
+            correct:0,
+
+            wrong:0
+
+        };
+
+
+    }
+
+
+
+
+
+    historyData[term].attempts++;
+
+
+
+
+    if(isCorrect){
+
+
+        historyData[term].correct++;
+
+
+    }
+    else{
+
+
+        historyData[term].wrong++;
+
+
+    }
+
+
+
+
+
+    saveHistory();
+
+
+
+}
+
+
+
+
+
+
+
+
+// =====================================
+// Replace Answer Check
+// =====================================
+
+
+let oldCheckAnswer =
+checkAnswer;
+
+
+
+checkAnswer = function(answer){
+
+
+
+    total++;
+
+
+
+    let result =
+
+    answer === currentItem.paper1.answer;
+
+
+
+
+
+    if(result){
+
+
+        correct++;
+
+
+        document.getElementById("result")
+        .innerHTML =
+        "⭕ Correct";
+
+
+    }
+    else{
+
+
+        document.getElementById("result")
+        .innerHTML =
+
+        "❌ Correct answer: "
+        +
+        currentItem.paper1.answer;
+
+
+
+    }
+
+
+
+
+
+    recordAnswer(
+
+        currentItem.term ||
+        currentItem.word,
+
+        result
+
+    );
+
+
+
+
+
+    updateStatus();
+
+
+
+};
+
+
+
+
+
+
+
+
+
+// =====================================
+// Weak Words Mode
+// =====================================
+
+
+function startWeakWords(){
+
+
+
+    filteredVocabulary =
+
+    vocabulary.filter(item=>{
+
+
+        let data =
+
+        historyData[
+            item.term ||
+            item.word
+        ];
+
+
+
+
+        if(!data){
+
+            return false;
+
+        }
+
+
+
+
+
+        let rate =
+
+        data.correct /
+        data.attempts *
+        100;
+
+
+
+
+
+        return rate < 70;
+
+
+
+    });
+
+
+
+
+
+
+    if(filteredVocabulary.length===0){
+
+
+        alert(
+            "No weak words yet!"
+        );
+
+
+        return;
+
+
+    }
+
+
+
+
+    nextQuestion();
+
+
+
+}
