@@ -7458,4 +7458,222 @@
     "anaerobic",
     "glucose"
   ]
+},
+
+{
+  "term": "photosynthesis",
+  "definition": "The process by which plants produce glucose using light energy, carbon dioxide and water.",
+  "japanese": "光合成",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define photosynthesis.",
+  "paper1": {
+    "question": "Photosynthesis produces:",
+    "options": [
+      "Glucose",
+      "Oxygen only",
+      "Protein",
+      "ATP only"
+    ],
+    "answer": "Glucose"
+  },
+  "key_terms": [
+    "light energy",
+    "glucose production"
+  ]
+},
+
+{
+  "term": "chloroplast",
+  "definition": "An organelle where photosynthesis occurs in plant cells.",
+  "japanese": "葉緑体",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define chloroplast.",
+  "paper1": {
+    "question": "Photosynthesis occurs in:",
+    "options": [
+      "Chloroplasts",
+      "Mitochondria",
+      "Ribosomes",
+      "Nuclei"
+    ],
+    "answer": "Chloroplasts"
+  },
+  "key_terms": [
+    "organelle",
+    "plant cell"
+  ]
+},
+
+{
+  "term": "chlorophyll",
+  "definition": "A green pigment that absorbs light energy for photosynthesis.",
+  "japanese": "クロロフィル",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define chlorophyll.",
+  "paper1": {
+    "question": "Chlorophyll absorbs:",
+    "options": [
+      "Light energy",
+      "Oxygen",
+      "Glucose",
+      "DNA"
+    ],
+    "answer": "Light energy"
+  },
+  "key_terms": [
+    "pigment",
+    "light absorption"
+  ]
+},
+
+{
+  "term": "light-dependent reaction",
+  "definition": "The stage of photosynthesis that requires light energy and produces ATP and NADPH.",
+  "japanese": "光依存反応",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define light-dependent reaction.",
+  "paper1": {
+    "question": "Light-dependent reactions produce:",
+    "options": [
+      "ATP and NADPH",
+      "Glucose only",
+      "Carbon dioxide",
+      "Protein"
+    ],
+    "answer": "ATP and NADPH"
+  },
+  "key_terms": [
+    "light energy",
+    "thylakoid"
+  ]
+},
+
+{
+  "term": "light-independent reaction",
+  "definition": "The stage of photosynthesis that uses ATP and NADPH to produce carbohydrates.",
+  "japanese": "光非依存反応",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define light-independent reaction.",
+  "paper1": {
+    "question": "Light-independent reactions use:",
+    "options": [
+      "ATP and NADPH",
+      "Only oxygen",
+      "Only water",
+      "DNA"
+    ],
+    "answer": "ATP and NADPH"
+  },
+  "key_terms": [
+    "Calvin cycle",
+    "stroma"
+  ]
+},
+
+{
+  "term": "Calvin cycle",
+  "definition": "A series of reactions in the stroma that converts carbon dioxide into carbohydrates.",
+  "japanese": "カルビン回路",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define Calvin cycle.",
+  "paper1": {
+    "question": "The Calvin cycle occurs in:",
+    "options": [
+      "Stroma",
+      "Thylakoid",
+      "Mitochondria",
+      "Nucleus"
+    ],
+    "answer": "Stroma"
+  },
+  "key_terms": [
+    "carbon fixation",
+    "glucose production"
+  ]
+},
+
+{
+  "term": "carbon dioxide",
+  "definition": "A gas used as a carbon source during photosynthesis.",
+  "japanese": "二酸化炭素",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define carbon dioxide.",
+  "paper1": {
+    "question": "Plants use carbon dioxide to produce:",
+    "options": [
+      "Glucose",
+      "Protein only",
+      "Oxygen only",
+      "DNA"
+    ],
+    "answer": "Glucose"
+  },
+  "key_terms": [
+    "carbon source"
+  ]
+},
+
+{
+  "term": "thylakoid",
+  "definition": "A membrane structure in chloroplasts where light-dependent reactions occur.",
+  "japanese": "チラコイド",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define thylakoid.",
+  "paper1": {
+    "question": "Light-dependent reactions occur in:",
+    "options": [
+      "Thylakoids",
+      "Stroma",
+      "Nucleus",
+      "Cytoplasm"
+    ],
+    "answer": "Thylakoids"
+  },
+  "key_terms": [
+    "chloroplast",
+    "membrane"
+  ]
+},
+
+{
+  "term": "granum",
+  "definition": "A stack of thylakoids inside a chloroplast.",
+  "japanese": "グラナ",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define granum.",
+  "paper1": {
+    "question": "A granum is made of:",
+    "options": [
+      "Stacks of thylakoids",
+      "Stacks of mitochondria",
+      "DNA molecules",
+      "Proteins"
+    ],
+    "answer": "Stacks of thylakoids"
+  },
+  "key_terms": [
+    "thylakoid stack"
+  ]
+},
+
+{
+  "term": "stroma",
+  "definition": "The fluid-filled region of chloroplasts where the Calvin cycle occurs.",
+  "japanese": "ストロマ",
+  "topic": "8.3 Photosynthesis",
+  "definition_question": "Define stroma.",
+  "paper1": {
+    "question": "The Calvin cycle occurs in:",
+    "options": [
+      "Stroma",
+      "Granum",
+      "Nucleus",
+      "Mitochondria"
+    ],
+    "answer": "Stroma"
+  },
+  "key_terms": [
+    "chloroplast",
+    "Calvin cycle"
+  ]
 }]
