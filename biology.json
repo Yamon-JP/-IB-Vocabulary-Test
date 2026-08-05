@@ -5095,4 +5095,225 @@
     "shared ancestry",
     "evolution"
   ]
+},
+
+{
+  "term": "biodiversity",
+  "definition": "The variety of life within an ecosystem, including genetic, species and ecosystem diversity.",
+  "japanese": "生物多様性",
+  "topic": "5.4 Biodiversity and Conservation",
+  "definition_question": "Define biodiversity.",
+  "paper1": {
+    "question": "Biodiversity includes:",
+    "options": [
+      "Genetic, species and ecosystem diversity",
+      "Only animal numbers",
+      "Only plant species",
+      "Only habitat size"
+    ],
+    "answer": "Genetic, species and ecosystem diversity"
+  },
+  "key_terms": [
+    "genetic diversity",
+    "species diversity",
+    "ecosystem diversity"
+  ]
+},
+
+{
+  "term": "species richness",
+  "definition": "The number of different species present in an area.",
+  "japanese": "種の豊富さ",
+  "topic": "5.4 Biodiversity and Conservation",
+  "definition_question": "Define species richness.",
+  "paper1": {
+    "question": "Species richness measures:",
+    "options": [
+      "The number of species",
+      "The size of organisms",
+      "The amount of DNA",
+      "The energy level"
+    ],
+    "answer": "The number of species"
+  },
+  "key_terms": [
+    "number of species",
+    "diversity"
+  ]
+},
+
+{
+  "term": "genetic diversity",
+  "definition": "The variety of genes within a population or species.",
+  "japanese": "遺伝的多様性",
+  "topic": "5.4 Biodiversity and Conservation",
+  "definition_question": "Define genetic diversity.",
+  "paper1": {
+    "question": "Genetic diversity refers to variation in:",
+    "options": [
+      "Genes within a species",
+      "Different ecosystems only",
+      "Climate conditions",
+      "Food chains"
+    ],
+    "answer": "Genes within a species"
+  },
+  "key_terms": [
+    "genes",
+    "variation"
+  ]
+},
+
+{
+  "term": "ecosystem diversity",
+  "definition": "The variety of ecosystems found within a region.",
+  "japanese": "生態系多様性",
+  "topic": "5.4 Biodiversity and Conservation",
+  "definition_question": "Define ecosystem diversity.",
+  "paper1": {
+    "question": "Ecosystem diversity refers to:",
+    "options": [
+      "Different types of ecosystems",
+      "Different genes only",
+      "Different proteins",
+      "Different cells"
+    ],
+    "answer": "Different types of ecosystems"
+  },
+  "key_terms": [
+    "ecosystem variety",
+    "habitats"
+  ]
+},
+
+{
+  "term": "endangered species",
+  "definition": "A species at high risk of extinction.",
+  "japanese": "絶滅危惧種",
+  "topic": "5.4 Biodiversity and Conservation",
+  "definition_question": "Define endangered species.",
+  "paper1": {
+    "question": "An endangered species is:",
+    "options": [
+      "At high risk of extinction",
+      "A newly discovered species",
+      "A species with no DNA",
+      "A common species"
+    ],
+    "answer": "At high risk of extinction"
+  },
+  "key_terms": [
+    "extinction risk",
+    "declining population"
+  ]
+},
+
+{
+  "term": "extinction",
+  "definition": "The complete loss of a species from Earth.",
+  "japanese": "絶滅",
+  "topic": "5.4 Biodiversity and Conservation",
+  "definition_question": "Define extinction.",
+  "paper1": {
+    "question": "Extinction means:",
+    "options": [
+      "A species no longer exists",
+      "A species increases in number",
+      "A species changes habitat",
+      "A species reproduces faster"
+    ],
+    "answer": "A species no longer exists"
+  },
+  "key_terms": [
+    "species loss",
+    "no surviving individuals"
+  ]
+},
+
+{
+  "term": "habitat loss",
+  "definition": "The reduction or destruction of natural environments where organisms live.",
+  "japanese": "生息地の喪失",
+  "topic": "5.4 Biodiversity and Conservation",
+  "definition_question": "Define habitat loss.",
+  "paper1": {
+    "question": "Habitat loss can cause:",
+    "options": [
+      "Reduced biodiversity",
+      "Increased genetic similarity only",
+      "More ecosystems",
+      "More available habitats"
+    ],
+    "answer": "Reduced biodiversity"
+  },
+  "key_terms": [
+    "destruction",
+    "habitat reduction"
+  ]
+},
+
+{
+  "term": "invasive species",
+  "definition": "A non-native species that spreads and negatively affects native organisms.",
+  "japanese": "侵略的外来種",
+  "topic": "5.4 Biodiversity and Conservation",
+  "definition_question": "Define invasive species.",
+  "paper1": {
+    "question": "An invasive species may:",
+    "options": [
+      "Reduce native species populations",
+      "Always increase biodiversity",
+      "Remove all ecosystems",
+      "Stop evolution"
+    ],
+    "answer": "Reduce native species populations"
+  },
+  "key_terms": [
+    "non-native",
+    "competition"
+  ]
+},
+
+{
+  "term": "conservation",
+  "definition": "The protection and management of biodiversity and natural resources.",
+  "japanese": "保全",
+  "topic": "5.4 Biodiversity and Conservation",
+  "definition_question": "Define conservation.",
+  "paper1": {
+    "question": "Conservation aims to:",
+    "options": [
+      "Protect biodiversity",
+      "Increase extinction",
+      "Destroy habitats",
+      "Remove species"
+    ],
+    "answer": "Protect biodiversity"
+  },
+  "key_terms": [
+    "protection",
+    "management"
+  ]
+},
+
+{
+  "term": "protected area",
+  "definition": "A region where ecosystems and species are legally protected.",
+  "japanese": "保護地域",
+  "topic": "5.4 Biodiversity and Conservation",
+  "definition_question": "Define protected area.",
+  "paper1": {
+    "question": "Protected areas help to:",
+    "options": [
+      "Conserve species and habitats",
+      "Increase habitat destruction",
+      "Remove biodiversity",
+      "Stop all ecological processes"
+    ],
+    "answer": "Conserve species and habitats"
+  },
+  "key_terms": [
+    "legal protection",
+    "conservation"
+  ]
 }]
