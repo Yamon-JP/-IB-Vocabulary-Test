@@ -599,4 +599,140 @@
     "cell signalling",
     "embedded"
   ]
+},
+
+{
+  "term": "cholesterol",
+  "definition": "A lipid molecule in the cell membrane that helps maintain membrane stability and fluidity.",
+  "japanese": "コレステロール",
+  "topic": "1.3 Membrane Structure",
+  "definition_question": "Define cholesterol in the cell membrane.",
+  "paper1": {
+    "question": "What is the role of cholesterol in the cell membrane?",
+    "options": [
+      "Maintains membrane stability and fluidity",
+      "Produces proteins",
+      "Stores genetic information",
+      "Breaks down glucose"
+    ],
+    "answer": "Maintains membrane stability and fluidity"
+  },
+  "key_terms": [
+    "lipid",
+    "stability",
+    "fluidity"
+  ]
+},
+
+{
+  "term": "glycoprotein",
+  "definition": "A membrane protein with a carbohydrate chain attached that functions in cell recognition and signalling.",
+  "japanese": "糖タンパク質",
+  "topic": "1.3 Membrane Structure",
+  "definition_question": "Define glycoprotein.",
+  "paper1": {
+    "question": "What is a function of glycoproteins?",
+    "options": [
+      "Cell recognition",
+      "ATP production",
+      "DNA replication",
+      "Photosynthesis"
+    ],
+    "answer": "Cell recognition"
+  },
+  "key_terms": [
+    "protein",
+    "carbohydrate chain",
+    "recognition"
+  ]
+},
+
+{
+  "term": "glycolipid",
+  "definition": "A lipid molecule with a carbohydrate chain attached that is involved in cell recognition.",
+  "japanese": "糖脂質",
+  "topic": "1.3 Membrane Structure",
+  "definition_question": "Define glycolipid.",
+  "paper1": {
+    "question": "What is attached to a glycolipid?",
+    "options": [
+      "A carbohydrate chain",
+      "A DNA molecule",
+      "An amino acid chain only",
+      "A phosphate group only"
+    ],
+    "answer": "A carbohydrate chain"
+  },
+  "key_terms": [
+    "lipid",
+    "carbohydrate",
+    "cell recognition"
+  ]
+},
+
+{
+  "term": "selectively permeable membrane",
+  "definition": "A membrane that allows certain substances to pass through while restricting others.",
+  "japanese": "選択的透過性膜",
+  "topic": "1.3 Membrane Structure",
+  "definition_question": "Define selectively permeable membrane.",
+  "paper1": {
+    "question": "What does selectively permeable mean?",
+    "options": [
+      "Only certain substances can cross the membrane",
+      "All substances can freely cross",
+      "No substances can cross",
+      "Only proteins can cross"
+    ],
+    "answer": "Only certain substances can cross the membrane"
+  },
+  "key_terms": [
+    "certain substances",
+    "restricted movement"
+  ]
+},
+
+{
+  "term": "channel protein",
+  "definition": "A membrane protein that forms a hydrophilic channel allowing specific substances to cross the membrane.",
+  "japanese": "チャネルタンパク質",
+  "topic": "1.3 Membrane Structure",
+  "definition_question": "Define channel protein.",
+  "paper1": {
+    "question": "What is the function of channel proteins?",
+    "options": [
+      "Allow specific substances to pass through the membrane",
+      "Produce ATP",
+      "Store carbohydrates",
+      "Synthesize DNA"
+    ],
+    "answer": "Allow specific substances to pass through the membrane"
+  },
+  "key_terms": [
+    "hydrophilic channel",
+    "specific substances"
+  ]
+},
+
+{
+  "term": "carrier protein",
+  "definition": "A membrane protein that changes shape to transport specific substances across the membrane.",
+  "japanese": "キャリアタンパク質",
+  "topic": "1.3 Membrane Structure",
+  "definition_question": "Define carrier protein.",
+  "paper1": {
+    "question": "How do carrier proteins transport substances?",
+    "options": [
+      "By changing shape",
+      "By producing energy",
+      "By breaking DNA",
+      "By forming cell walls"
+    ],
+    "answer": "By changing shape"
+  },
+  "key_terms": [
+    "change shape",
+    "transport",
+    "specific substances"
+  ]
 }]
