@@ -10,22 +10,24 @@
 </head>
 <body>
 <main id="app">
-<header class="hero">
-<h1>🧬 IB Master Trainer</h1>
-<p>IB Diploma Daily Training System</p>
-<small>Version 1.0</small>
-</header>
-<section id="home-page" class="page"><section class="progress-panel"><h2>Today's Progress</h2><p>Questions: <span id="questions">0</span></p><p>Accuracy: <span id="accuracy">0%</span></p><p>XP: <span id="xp">0</span></p></section></section>
+<header class="hero"><h1>🧬 IB Master Trainer</h1><p>IB Diploma Daily Training System</p><small>Version 1.0</small></header>
+<section id="home-page" class="page">
+<section class="card-grid">
+<article class="subject-card"><h2>English B HL</h2><p>Vocabulary / Paper 1 Practice</p></article>
+<article class="subject-card"><h2>Biology SL</h2><p>Concept Review / Practice</p></article>
+<article class="subject-card"><h2>ESS HL</h2><p>Environmental Systems</p></article>
+<article class="subject-card"><h2>Math AI SL</h2><p>Problem Practice</p></article>
+</section>
+<section class="progress-panel"><h2>Today's Progress</h2><p>Questions: <span id="questions">0</span></p><p>Accuracy: <span id="accuracy">0%</span></p><p>XP: <span id="xp">0</span></p></section>
+</section>
 <section id="practice-page" class="page">
 <h2>Practice</h2>
 <section class="progress-panel"><h3>Practice Progress</h3><p>Questions: <span id="practice-questions">0</span></p><p>Accuracy: <span id="practice-accuracy">0%</span></p></section>
-<h3>Vocabulary Flashcard</h3>
-<div id="flashcard"><h2 id="flashcard-word">Loading...</h2><p id="flashcard-meaning"></p><button onclick="Flashcard.toggleMeaning()">Show Meaning</button><button onclick="Flashcard.next()">Next</button></div>
+<h3>Vocabulary Flashcard</h3><div id="flashcard"><h2 id="flashcard-word">Loading...</h2><p id="flashcard-meaning"></p><button onclick="Flashcard.next()">Next Word</button></div>
 <section id="quiz-area"><h3>Vocabulary Quiz</h3><p id="quiz-question">Loading Quiz...</p><div id="quiz-choices"></div><button onclick="Quiz.submit()">Check Answer</button><p id="quiz-result"></p><button onclick="Quiz.next()">Next Question</button></section>
 </section>
 <section id="statistics-page" class="page"><h2>Statistics</h2></section><section id="achievements-page" class="page"><h2>Achievements</h2></section><section id="settings-page" class="page"><h2>Settings</h2></section>
 <nav class="navigation"><button onclick="Pages.show('home')">Home</button><button onclick="Pages.show('practice')">Practice</button><button onclick="Pages.show('statistics')">Statistics</button><button onclick="Pages.show('achievements')">Achievements</button><button onclick="Pages.show('settings')">Settings</button></nav>
 </main>
 <script src="js/storage.js"></script><script src="js/ui.js"></script><script src="js/utils.js"></script><script src="js/vocabulary.js"></script><script src="js/flashcard.js"></script><script src="js/progress.js"></script><script src="js/quiz.js"></script><script src="js/pages.js"></script><script src="js/app.js"></script>
-</body>
-</html>
+</body></html>
