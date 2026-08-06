@@ -11,23 +11,16 @@ const App = {
   init() {
     this.loadState();
     console.log('IB Master Trainer Version 1.0 initialized');
-    console.log('Vocabulary Engine initialized');
 
     if (typeof Vocabulary !== 'undefined') {
       Vocabulary.load().then(() => {
-        const status = document.getElementById('vocabulary-status');
-        if (status) {
-          status.innerHTML =
-            'Loaded words: ' + Vocabulary.count() +
-            '<br>Status: Ready';
-        }
-
         if (typeof Flashcard !== 'undefined') {
           Flashcard.init();
         }
+        if (typeof Quiz !== 'undefined') {
+          Quiz.init();
+        }
       });
-    } else {
-      console.warn('Vocabulary module not loaded');
     }
 
     if (typeof Pages !== 'undefined') {
