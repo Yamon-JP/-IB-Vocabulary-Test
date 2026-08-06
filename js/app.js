@@ -11,7 +11,6 @@ const App = {
   init() {
     this.loadState();
     console.log('IB Master Trainer Version 1.0 initialized');
-
     console.log('Vocabulary Engine initialized');
 
     if (typeof Vocabulary !== 'undefined') {
@@ -21,6 +20,10 @@ const App = {
           status.innerHTML =
             'Loaded words: ' + Vocabulary.count() +
             '<br>Status: Ready';
+        }
+
+        if (typeof Flashcard !== 'undefined') {
+          Flashcard.init();
         }
       });
     } else {
