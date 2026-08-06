@@ -2,6 +2,7 @@ const App = {
   state: {
     currentPage: 'home',
     subject: null,
+    practiceWord: null,
     user: {
       xp: 0,
       streak: 0
@@ -18,9 +19,15 @@ const App = {
 
     if (typeof Vocabulary !== 'undefined') {
       Vocabulary.load().then(() => {
+        if (!this.state.practiceWord && Vocabulary.words.length) {
+          this.state.practiceWord = Vocabulary.words[0];
+        }
+
         if (typeof Flashcard !== 'undefined') {
           Flashcard.init();
+          Flashcard.setWord(this.state.practiceWord);
         }
+
         if (typeof Quiz !== 'undefined') {
           Quiz.init();
         }
@@ -30,6 +37,15 @@ const App = {
     if (typeof Pages !== 'undefined') {
       Pages.init();
     }
+  },
+
+  getPracticeWord() {
+    return this.state.practiceWord;
+  },
+
+  setPracticeWord(word) {
+    this.state.practiceWord = word;
+    this.saveState();
   },
 
   navigate(page) {
