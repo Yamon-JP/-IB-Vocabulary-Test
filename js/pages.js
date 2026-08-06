@@ -10,6 +10,11 @@ const Pages = {
     if (target) {
       target.style.display = 'block';
       this.current = page;
+
+      // Refresh progress display after page becomes visible
+      if (typeof Progress !== 'undefined') {
+        Progress.render();
+      }
     }
   },
 
