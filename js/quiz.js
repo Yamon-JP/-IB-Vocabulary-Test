@@ -7,20 +7,13 @@ const Quiz = {
   init() {
     if (!Vocabulary || !Vocabulary.words || Vocabulary.words.length === 0) return;
     this.questions = Vocabulary.words;
-    this.syncWithFlashcard();
+    this.syncWithPracticeWord();
   },
 
-  syncWithFlashcard() {
-    if (typeof Flashcard !== 'undefined' && Flashcard.current()) {
-      this.current = Flashcard.current();
-    } else {
-      this.current = this.questions[0];
+  syncWithPracticeWord() {
+    if (typeof App !== 'undefined' && App.getPracticeWord()) {
+      this.current = App.getPracticeWord();
     }
-
-    if (typeof Flashcard !== 'undefined' && this.current) {
-      Flashcard.setWord(this.current);
-    }
-
     this.render();
   },
 
@@ -74,7 +67,13 @@ const Quiz = {
   nextQuestion() {
     if (!this.questions.length) return;
 
-    const nextWord = this.questions[Math.floor(Math.random() * this.questions.length)];
+    const currentIndex = this.questions.indexOf(this.current);
+    const nextWord = this.questions[(currentIndex + 1) % this.questions.length];
+
+    if (typeof App !== 'undefined') {
+      App.setPracticeWord(nextWord);
+    }
+
     this.current = nextWord;
 
     if (typeof Flashcard !== 'undefined') {
