@@ -12,6 +12,8 @@ const App = {
     this.loadState();
     console.log('IB Master Trainer Version 1.0 initialized');
 
+    console.log('Vocabulary Engine initialized');
+
     if (typeof Vocabulary !== 'undefined') {
       Vocabulary.load().then(() => {
         const status = document.getElementById('vocabulary-status');
@@ -21,6 +23,8 @@ const App = {
             '<br>Status: Ready';
         }
       });
+    } else {
+      console.warn('Vocabulary module not loaded');
     }
 
     if (typeof Pages !== 'undefined') {
