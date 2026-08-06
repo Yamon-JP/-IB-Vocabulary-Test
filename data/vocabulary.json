@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": 1,
+    "subject": "English B HL",
+    "word": "sustainable",
+    "meaning": "able to continue without causing damage",
+    "topic": "Environment",
+    "level": "HL"
+  },
+  {
+    "id": 2,
+    "subject": "English B HL",
+    "word": "biodiversity",
+    "meaning": "the variety of living organisms in an ecosystem",
+    "topic": "Environment",
+    "level": "HL"
+  },
+  {
+    "id": 3,
+    "subject": "Biology SL",
+    "word": "homeostasis",
+    "meaning": "maintenance of a stable internal environment",
+    "topic": "Cell Biology",
+    "level": "SL"
+  }
+]
