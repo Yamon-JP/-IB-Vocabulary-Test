@@ -1,9 +1,9 @@
 const Flashcard = {
-  index: 0,
+  currentIndex: 0,
   showMeaning: false,
 
   init() {
-    this.index = 0;
+    this.currentIndex = 0;
     this.showMeaning = false;
     this.render();
     this.bindAudioButton();
@@ -11,7 +11,7 @@ const Flashcard = {
 
   current() {
     if (!Vocabulary || !Vocabulary.words.length) return null;
-    return Vocabulary.words[this.index];
+    return Vocabulary.words[this.currentIndex];
   },
 
   toggleMeaning() {
