@@ -25,11 +25,13 @@ const Progress = {
   },
 
   render() {
+    const xp = this.data.correct * 10;
     const values = {
       questions: this.data.questions,
       'practice-questions': this.data.questions,
       accuracy: this.accuracy() + '%',
-      'practice-accuracy': this.accuracy() + '%'
+      'practice-accuracy': this.accuracy() + '%',
+      xp: xp
     };
 
     Object.entries(values).forEach(([id, value]) => {
