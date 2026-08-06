@@ -1,1 +1,24 @@
-/* Version 1.0 component styles */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.subject-card,
+.progress-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 16px;
+  cursor: pointer;
+}
