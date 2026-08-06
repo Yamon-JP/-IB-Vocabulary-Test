@@ -10,9 +10,47 @@
 </head>
 <body>
   <main id="app">
-    <h1>IB Master Trainer</h1>
-    <p>Version 1.0 Foundation</p>
+    <header class="hero">
+      <h1>🧬 IB Master Trainer</h1>
+      <p>IB Diploma Daily Training System</p>
+      <small>Version 1.0</small>
+    </header>
+
+    <section class="card-grid">
+      <article class="subject-card">
+        <h2>English B HL</h2>
+        <p>Vocabulary / Paper 1 Practice</p>
+      </article>
+      <article class="subject-card">
+        <h2>Biology SL</h2>
+        <p>Concept Review / Practice</p>
+      </article>
+      <article class="subject-card">
+        <h2>ESS HL</h2>
+        <p>Environmental Systems</p>
+      </article>
+      <article class="subject-card">
+        <h2>Math AI SL</h2>
+        <p>Problem Practice</p>
+      </article>
+    </section>
+
+    <section class="progress-panel">
+      <h2>Today's Progress</h2>
+      <p>Questions: <span id="questions">0</span></p>
+      <p>Accuracy: <span id="accuracy">0%</span></p>
+      <p>XP: <span id="xp">0</span></p>
+    </section>
+
+    <nav class="navigation">
+      <button>Home</button>
+      <button>Practice</button>
+      <button>Statistics</button>
+      <button>Achievements</button>
+      <button>Settings</button>
+    </nav>
   </main>
+
   <script src="js/storage.js"></script>
   <script src="js/ui.js"></script>
   <script src="js/utils.js"></script>
