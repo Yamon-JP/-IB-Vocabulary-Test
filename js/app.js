@@ -11,13 +11,17 @@ const App = {
   init() {
     this.loadState();
     console.log('IB Master Trainer Version 1.0 initialized');
-    UI.render(`Current Page: ${this.state.currentPage}`);
+    if (typeof Pages !== 'undefined') {
+      Pages.init();
+    }
   },
 
   navigate(page) {
     this.state.currentPage = page;
     this.saveState();
-    UI.render(`Navigate: ${page}`);
+    if (typeof Pages !== 'undefined') {
+      Pages.show(page);
+    }
   },
 
   loadState() {
