@@ -4,16 +4,18 @@ const Quiz = {
   selected: null,
 
   init() {
-    if (!Vocabulary || Vocabulary.words.length === 0) return;
+    if (!Vocabulary || !Vocabulary.words || Vocabulary.words.length === 0) return;
     this.questions = Vocabulary.words;
     this.next();
   },
 
   render() {
+    if (!this.current) return;
+
     const q = document.getElementById('quiz-question');
     const choices = document.getElementById('quiz-choices');
     const result = document.getElementById('quiz-result');
-    if (!q || !choices) return;
+    if (!q || !choices || !result) return;
 
     q.textContent = `What does "${this.current.word}" mean?`;
     choices.innerHTML = '';
@@ -35,20 +37,25 @@ const Quiz = {
 
   submit() {
     const result = document.getElementById('quiz-result');
+    if (!result) return;
+
     if (!this.selected) {
       result.textContent = 'Please select an answer.';
       return;
     }
+
     result.textContent = this.check(this.selected) ? 'Correct!' : 'Incorrect';
   },
 
   next() {
+    if (!this.questions || this.questions.length === 0) return;
+
     const index = Math.floor(Math.random() * this.questions.length);
     this.current = this.questions[index];
     this.render();
   },
 
   check(answer) {
-    return answer === this.current.meaning;
+    return this.current && answer === this.current.meaning;
   }
 };
