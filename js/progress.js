@@ -14,21 +14,31 @@ const Progress = {
     this.render();
   },
 
+  reset() {
+    this.data = { questions: 0, correct: 0 };
+    Storage.save('ib_progress', this.data);
+    this.render();
+  },
+
   accuracy() {
     return this.data.questions === 0 ? 0 : Math.round((this.data.correct / this.data.questions) * 100);
   },
 
   render() {
-    const accuracy = this.accuracy() + '%';
-    const ids = {
+    const values = {
       questions: this.data.questions,
       'practice-questions': this.data.questions,
-      accuracy: accuracy,
-      'practice-accuracy': accuracy
+      accuracy: this.accuracy() + '%',
+      'practice-accuracy': this.accuracy() + '%'
     };
-    Object.keys(ids).forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.textContent = ids[id];
+
+    Object.entries(values).forEach(([id, value]) => {
+      const element = document.getElementById(id);
+      if (element) element.textContent = value;
     });
   }
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof Progress !== 'undefined') Progress.load();
+});
