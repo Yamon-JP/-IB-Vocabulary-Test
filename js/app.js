@@ -44,8 +44,18 @@ const App = {
   },
 
   setPracticeWord(word) {
+    if (!word) return;
+
     this.state.practiceWord = word;
     this.saveState();
+
+    if (typeof Flashcard !== 'undefined' && Flashcard.currentWord !== word) {
+      Flashcard.setWord(word);
+    }
+
+    if (typeof Quiz !== 'undefined' && Quiz.current !== word) {
+      Quiz.current = word;
+    }
   },
 
   navigate(page) {
