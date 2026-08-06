@@ -1,8 +1,5 @@
 const Progress = {
-  data: {
-    questions: 0,
-    correct: 0
-  },
+  data: { questions: 0, correct: 0 },
 
   load() {
     const saved = Storage.load('ib_progress');
@@ -18,14 +15,20 @@ const Progress = {
   },
 
   accuracy() {
-    if (this.data.questions === 0) return 0;
-    return Math.round((this.data.correct / this.data.questions) * 100);
+    return this.data.questions === 0 ? 0 : Math.round((this.data.correct / this.data.questions) * 100);
   },
 
   render() {
-    const q = document.getElementById('questions');
-    const a = document.getElementById('accuracy');
-    if (q) q.textContent = this.data.questions;
-    if (a) a.textContent = this.accuracy() + '%';
+    const accuracy = this.accuracy() + '%';
+    const ids = {
+      questions: this.data.questions,
+      'practice-questions': this.data.questions,
+      accuracy: accuracy,
+      'practice-accuracy': accuracy
+    };
+    Object.keys(ids).forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = ids[id];
+    });
   }
 };
