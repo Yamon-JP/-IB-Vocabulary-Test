@@ -43,3 +43,25 @@ body {
   margin: 6px;
   padding: 10px 16px;
 }
+
+#quiz-choices button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#quiz-choices button.selected {
+  border: 2px solid #2563eb;
+  background: #dbeafe;
+}
+
+#quiz-result.correct {
+  color: green;
+}
+
+#quiz-result.incorrect {
+  color: red;
+}
