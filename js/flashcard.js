@@ -1,17 +1,28 @@
 const Flashcard = {
   currentIndex: 0,
+  currentWord: null,
   showMeaning: false,
 
   init() {
     this.currentIndex = 0;
+    this.currentWord = null;
     this.showMeaning = false;
     this.render();
     this.bindAudioButton();
   },
 
   current() {
+    if (this.currentWord) return this.currentWord;
     if (!Vocabulary || !Vocabulary.words.length) return null;
     return Vocabulary.words[this.currentIndex];
+  },
+
+  setWord(word) {
+    if (!word) return;
+
+    this.currentWord = word;
+    this.showMeaning = false;
+    this.render();
   },
 
   toggleMeaning() {
