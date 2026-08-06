@@ -6,6 +6,7 @@ const Flashcard = {
     this.index = 0;
     this.showMeaning = false;
     this.render();
+    this.bindAudioButton();
   },
 
   current() {
@@ -18,11 +19,20 @@ const Flashcard = {
     this.render();
   },
 
-  next() {
-    if (!Vocabulary || !Vocabulary.words.length) return;
-    this.index = (this.index + 1) % Vocabulary.words.length;
-    this.showMeaning = false;
-    this.render();
+  speak() {
+    const current = this.current();
+    if (!current || !window.speechSynthesis) return;
+
+    const utterance = new SpeechSynthesisUtterance(current.word);
+    utterance.lang = 'en-US';
+    window.speechSynthesis.speak(utterance);
+  },
+
+  bindAudioButton() {
+    const button = document.getElementById('flashcard-audio');
+    if (!button) return;
+
+    button.onclick = () => this.speak();
   },
 
   render() {
