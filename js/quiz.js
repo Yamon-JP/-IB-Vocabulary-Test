@@ -14,7 +14,7 @@ const Quiz = {
     if (typeof Flashcard !== 'undefined' && Flashcard.current()) {
       this.current = Flashcard.current();
     } else {
-      this.current = this.questions[Math.floor(Math.random() * this.questions.length)];
+      this.current = this.questions[0];
     }
     this.render();
   },
@@ -68,7 +68,14 @@ const Quiz = {
 
   nextQuestion() {
     if (!this.questions.length) return;
-    this.current = this.questions[Math.floor(Math.random() * this.questions.length)];
+
+    const nextWord = this.questions[Math.floor(Math.random() * this.questions.length)];
+    this.current = nextWord;
+
+    if (typeof Flashcard !== 'undefined') {
+      Flashcard.setWord(nextWord);
+    }
+
     this.render();
   },
 
