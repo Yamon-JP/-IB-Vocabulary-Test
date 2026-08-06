@@ -16,6 +16,11 @@ const Quiz = {
     } else {
       this.current = this.questions[0];
     }
+
+    if (typeof Flashcard !== 'undefined' && this.current) {
+      Flashcard.setWord(this.current);
+    }
+
     this.render();
   },
 
