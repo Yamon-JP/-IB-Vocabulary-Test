@@ -12,6 +12,10 @@ const App = {
     this.loadState();
     console.log('IB Master Trainer Version 1.0 initialized');
 
+    if (typeof Progress !== 'undefined') {
+      Progress.load();
+    }
+
     if (typeof Vocabulary !== 'undefined') {
       Vocabulary.load().then(() => {
         if (typeof Flashcard !== 'undefined') {
