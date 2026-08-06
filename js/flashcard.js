@@ -1,10 +1,8 @@
 const Flashcard = {
-  currentIndex: 0,
   currentWord: null,
   showMeaning: false,
 
   init() {
-    this.currentIndex = 0;
     this.currentWord = null;
     this.showMeaning = false;
     this.render();
@@ -12,9 +10,10 @@ const Flashcard = {
   },
 
   current() {
-    if (this.currentWord) return this.currentWord;
-    if (!Vocabulary || !Vocabulary.words.length) return null;
-    return Vocabulary.words[this.currentIndex];
+    if (typeof App !== 'undefined' && App.getPracticeWord()) {
+      return App.getPracticeWord();
+    }
+    return this.currentWord;
   },
 
   setWord(word) {
@@ -49,16 +48,11 @@ const Flashcard = {
   render() {
     const word = document.getElementById('flashcard-word');
     const meaning = document.getElementById('flashcard-meaning');
-
     const current = this.current();
+
     if (!current) return;
 
-    if (word) {
-      word.textContent = current.word;
-    }
-
-    if (meaning) {
-      meaning.textContent = this.showMeaning ? current.meaning : '';
-    }
+    if (word) word.textContent = current.word;
+    if (meaning) meaning.textContent = this.showMeaning ? current.meaning : '';
   }
 };
