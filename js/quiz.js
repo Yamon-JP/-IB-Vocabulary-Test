@@ -12,7 +12,6 @@ const Quiz = {
 
   render() {
     if (!this.current) return;
-
     const q = document.getElementById('quiz-question');
     const choices = document.getElementById('quiz-choices');
     const result = document.getElementById('quiz-result');
@@ -21,16 +20,17 @@ const Quiz = {
     q.textContent = `What does "${this.current.word}" mean?`;
     choices.innerHTML = '';
     result.textContent = '';
+    result.className = '';
     this.selected = null;
     this.answered = false;
 
-    const answers = this.questions.map(w => w.meaning);
-    answers.sort(() => Math.random() - 0.5);
+    const answers = this.questions.map(w => w.meaning).sort(() => Math.random() - 0.5);
 
     answers.forEach(answer => {
       const button = document.createElement('button');
       button.textContent = answer;
       button.onclick = () => {
+        if (this.answered) return;
         this.selected = answer;
         [...choices.children].forEach(b => b.classList.remove('selected'));
         button.classList.add('selected');
@@ -42,27 +42,22 @@ const Quiz = {
   submit() {
     const result = document.getElementById('quiz-result');
     if (!result || this.answered) return;
-
     if (!this.selected) {
       result.textContent = 'Please select an answer.';
       return;
     }
 
     const correct = this.check(this.selected);
-    result.textContent = correct ? 'Correct!' : 'Incorrect';
+    result.textContent = correct ? '🟢 Correct!' : `🔴 Incorrect. Answer: ${this.current.meaning}`;
+    result.className = correct ? 'correct' : 'incorrect';
 
-    if (typeof Progress !== 'undefined') {
-      Progress.record(correct);
-    }
-
+    if (typeof Progress !== 'undefined') Progress.record(correct);
     this.answered = true;
   },
 
   next() {
-    if (!this.questions || this.questions.length === 0) return;
-
-    const index = Math.floor(Math.random() * this.questions.length);
-    this.current = this.questions[index];
+    if (!this.questions.length) return;
+    this.current = this.questions[Math.floor(Math.random() * this.questions.length)];
     this.render();
   },
 
