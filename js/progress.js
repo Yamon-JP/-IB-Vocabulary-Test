@@ -11,6 +11,10 @@ const Progress = {
       };
     }
     this.render();
+
+    if (typeof Achievements !== 'undefined') {
+      Achievements.check(this.data);
+    }
   },
 
   record(correct) {
@@ -22,6 +26,10 @@ const Progress = {
 
     Storage.save('ib_progress', this.data);
     this.render();
+
+    if (typeof Achievements !== 'undefined') {
+      Achievements.check(this.data);
+    }
   },
 
   reset() {
