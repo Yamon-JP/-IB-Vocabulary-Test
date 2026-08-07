@@ -3,7 +3,8 @@
     "id": 1,
     "subject": "English B HL",
     "word": "sustainable",
-    "meaning": "able to continue without causing damage",
+    "definition": "able to continue without causing damage",
+    "japanese": "持続可能な",
     "topic": "Environment",
     "level": "HL"
   },
@@ -11,7 +12,8 @@
     "id": 2,
     "subject": "English B HL",
     "word": "biodiversity",
-    "meaning": "the variety of living organisms in an ecosystem",
+    "definition": "the variety of living organisms in an ecosystem",
+    "japanese": "生物多様性",
     "topic": "Environment",
     "level": "HL"
   },
@@ -19,7 +21,8 @@
     "id": 3,
     "subject": "Biology SL",
     "word": "homeostasis",
-    "meaning": "maintenance of a stable internal environment",
+    "definition": "maintenance of a stable internal environment",
+    "japanese": "恒常性",
     "topic": "Cell Biology",
     "level": "SL"
   }
