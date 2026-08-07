@@ -35,6 +35,20 @@ const Flashcard = {
 
     const utterance = new SpeechSynthesisUtterance(current.word);
     utterance.lang = 'en-US';
+    utterance.rate = 0.9;
+
+    const voices = window.speechSynthesis.getVoices();
+    const englishVoice = voices.find(voice =>
+      voice.lang === 'en-US' || voice.lang.startsWith('en-US')
+    ) || voices.find(voice =>
+      voice.lang.startsWith('en')
+    );
+
+    if (englishVoice) {
+      utterance.voice = englishVoice;
+    }
+
+    window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utterance);
   },
 
