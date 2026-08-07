@@ -68,6 +68,10 @@ const Quiz = {
     }
 
     this.answered = true;
+
+    setTimeout(() => {
+      this.nextQuestion();
+    }, 800);
   },
 
   nextQuestion() {
