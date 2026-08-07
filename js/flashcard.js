@@ -67,6 +67,13 @@ const Flashcard = {
     if (!current) return;
 
     if (word) word.textContent = current.word;
-    if (meaning) meaning.textContent = this.showMeaning ? current.meaning : '';
+
+    if (meaning) {
+      if (this.showMeaning) {
+        meaning.innerHTML = `Definition<br>${current.definition || ''}<br><br>Japanese<br>${current.japanese || 'Not available'}`;
+      } else {
+        meaning.innerHTML = '';
+      }
+    }
   }
 };
