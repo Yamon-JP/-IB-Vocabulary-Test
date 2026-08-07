@@ -66,11 +66,15 @@ const Flashcard = {
 
     if (!current) return;
 
-    if (word) word.textContent = current.word;
+    const definitionMode = typeof Quiz !== 'undefined' && Quiz.mode === 'definition-word';
+
+    if (word) {
+      word.textContent = definitionMode ? current.definition : current.word;
+    }
 
     if (meaning) {
       if (this.showMeaning) {
-        meaning.innerHTML = `Definition<br>${current.definition || ''}<br><br>Japanese<br>${current.japanese || 'Not available'}`;
+        meaning.innerHTML = `Word<br>${current.word}<br><br>Definition<br>${current.definition || ''}<br><br>Japanese<br>${current.japanese || 'Not available'}`;
       } else {
         meaning.innerHTML = '';
       }
