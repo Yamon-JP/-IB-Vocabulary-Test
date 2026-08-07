@@ -60,8 +60,6 @@ const Flashcard = {
     const definitionMode = typeof Quiz !== 'undefined' && Quiz.mode === 'definition-word';
     if (word) word.textContent = definitionMode ? current.definition : current.word;
 
-    if (meaning && !this.answerMode) {
-      meaning.innerHTML = '';
-    }
+    if (meaning && !this.answerMode) meaning.innerHTML = '';
   }
 };
