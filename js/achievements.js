@@ -78,12 +78,21 @@ const Achievements = {
   },
 
   render() {
-    const area=document.getElementById('achievement-list');
-    if(!area)return;
-    area.innerHTML=Object.entries(this.definitions).map(([key,item])=>{
+    const areas = [
+      document.getElementById('achievement-list'),
+      document.getElementById('practice-achievement-list')
+    ].filter(Boolean);
+
+    if (!areas.length) return;
+
+    const html = Object.entries(this.definitions).map(([key,item])=>{
       const unlocked=this.data[key];
       return `<article class="achievement-card ${unlocked?'unlocked':'locked'}"><h3>${unlocked?'🏆':'🔒'} ${item.title}</h3><p>${item.description}</p><small>${unlocked?'Unlocked':'Locked'}</small></article>`;
     }).join('');
+
+    areas.forEach(area => {
+      area.innerHTML = html;
+    });
   }
 };
 
