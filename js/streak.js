@@ -37,7 +37,8 @@ const Streak = {
   render() {
     const element = document.getElementById('streak');
     if (element) {
-      element.textContent = this.data.count;
+      const days = this.data.count;
+      element.textContent = days === 1 ? `${days} day` : `${days} days`;
     }
   }
 };
