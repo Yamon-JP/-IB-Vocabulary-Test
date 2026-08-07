@@ -3,21 +3,27 @@ const Achievements = {
     firstPractice: false,
     xp10: false,
     xp100: false,
-    questions100: false
+    questions100: false,
+    streak3: false,
+    streak7: false,
+    streak30: false
   },
 
   definitions: {
     firstPractice: { title: 'First Practice', description: 'Complete your first practice question' },
     xp10: { title: '10 XP Master', description: 'Earn your first 10 XP' },
     xp100: { title: '100 XP Learner', description: 'Reach 100 XP' },
-    questions100: { title: '100 Questions', description: 'Complete 100 practice questions' }
+    questions100: { title: '100 Questions', description: 'Complete 100 practice questions' },
+    streak3: { title: '🔥 First Streak', description: 'Study for 3 consecutive days' },
+    streak7: { title: '🔥 Weekly Warrior', description: 'Study for 7 consecutive days' },
+    streak30: { title: '🔥 Monthly Master', description: 'Study for 30 consecutive days' }
   },
 
   newlyUnlocked: [],
 
   load() {
     const saved = Storage.load('ib_achievements');
-    if (saved) this.data = saved;
+    if (saved) this.data = { ...this.data, ...saved };
     this.render();
   },
 
@@ -28,6 +34,11 @@ const Achievements = {
     this.data.xp10 ||= progress.xp >= 10;
     this.data.xp100 ||= progress.xp >= 100;
     this.data.questions100 ||= progress.questions >= 100;
+
+    const streak = typeof Streak !== 'undefined' ? Streak.data.count : 0;
+    this.data.streak3 ||= streak >= 3;
+    this.data.streak7 ||= streak >= 7;
+    this.data.streak30 ||= streak >= 30;
 
     this.newlyUnlocked = Object.keys(this.data).filter(
       key => this.data[key] && !before[key]
