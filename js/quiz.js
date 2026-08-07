@@ -44,12 +44,6 @@ const Quiz = {
         [...choices.children].forEach(b => b.classList.remove('selected'));
         button.classList.add('selected');
       };
-      button.onclick = () => {
-        if (this.answered) return;
-        this.selected = answer;
-        [...choices.children].forEach(b => b.classList.remove('selected'));
-        button.classList.add('selected');
-      };
       choices.appendChild(button);
     });
   },
@@ -63,12 +57,16 @@ const Quiz = {
     }
 
     const correct = this.check(this.selected);
-    console.log('XP debug:', { correct, Progress: typeof Progress !== 'undefined' });
 
     result.textContent = correct ? '🟢 Correct!' : `🔴 Incorrect. Answer: ${this.current.meaning}`;
     result.className = correct ? 'correct' : 'incorrect';
 
     if (typeof Progress !== 'undefined') Progress.record(correct);
+
+    if (typeof DailyChallenge !== 'undefined') {
+      DailyChallenge.recordQuestion();
+    }
+
     this.answered = true;
   },
 
