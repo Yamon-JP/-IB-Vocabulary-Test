@@ -76,7 +76,6 @@ body {
   color: red;
 }
 
-/* Flashcard answer review */
 .answer-card {
   width: 100%;
   padding: 16px;
@@ -132,4 +131,52 @@ body {
 .answer-card .label {
   font-weight: bold;
   margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  #app {
+    padding: 10px;
+  }
+
+  #flashcard {
+    margin-top: 12px;
+    padding: 12px;
+    min-height: auto;
+  }
+
+  #flashcard-word {
+    margin: 8px 0;
+  }
+
+  .answer-card {
+    padding: 12px;
+    margin-top: 6px;
+  }
+
+  .answer-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .answer-card strong {
+    font-size: 1.15rem;
+  }
+
+  .answer-card span {
+    line-height: 1.35;
+    margin-bottom: 4px;
+  }
+
+  #quiz-choices button {
+    margin: 5px 0;
+    padding: 10px;
+  }
+
+  #flashcard button,
+  #check-answer,
+  #next-question {
+    min-width: 0;
+    width: 48%;
+    margin: 4px 1%;
+    padding: 10px 4px;
+  }
 }
