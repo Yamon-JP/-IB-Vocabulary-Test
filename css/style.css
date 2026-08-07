@@ -75,3 +75,39 @@ body {
 #quiz-result.incorrect {
   color: red;
 }
+
+/* Flashcard answer review */
+.answer-card {
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.answer-card h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.answer-card.correct {
+  background: #dcfce7;
+  border: 3px solid #16a34a;
+}
+
+.answer-card.incorrect {
+  background: #fee2e2;
+  border: 3px solid #dc2626;
+}
+
+.answer-card .correct-answer {
+  background: #fef3c7;
+  border-radius: 8px;
+  padding: 8px;
+  font-weight: bold;
+}
+
+.answer-card .label {
+  font-weight: bold;
+  margin-top: 10px;
+}
