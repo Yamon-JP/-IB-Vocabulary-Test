@@ -45,7 +45,29 @@ const Achievements = {
       .map(key => this.definitions[key]?.title)
       .join(', ');
 
-    alert(`🏆 Achievement Unlocked!\n${names}`);
+    let toast = document.getElementById('achievement-toast');
+
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'achievement-toast';
+      toast.style.position = 'fixed';
+      toast.style.top = '20px';
+      toast.style.right = '20px';
+      toast.style.padding = '15px';
+      toast.style.borderRadius = '8px';
+      toast.style.background = '#222';
+      toast.style.color = '#fff';
+      toast.style.zIndex = '9999';
+      document.body.appendChild(toast);
+    }
+
+    toast.innerHTML = `🏆 Achievement Unlocked!<br>${names}`;
+    toast.style.display = 'block';
+
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, 3000);
+
     this.newlyUnlocked = [];
   },
 
