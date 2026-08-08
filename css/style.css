@@ -331,6 +331,59 @@ button:focus-visible {
   color: var(--muted);
 }
 
+.achievement-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.achievement-progress-header h3 {
+  margin: 0;
+}
+
+.achievement-progress-header strong {
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.achievement-progress-track {
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 7px;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.achievement-progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.achievement-progress-card.unlocked .achievement-progress-header strong {
+  color: var(--gold);
+}
+
+.achievement-progress-card.unlocked .achievement-progress-track span {
+  background: var(--gold);
+}
+
+.achievement-progress-card small {
+  display: block;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 #achievement-toast {
   position: fixed;
   top: 16px;
@@ -400,42 +453,22 @@ button:focus-visible {
     margin: 8px 0;
   }
 
-  .answer-card {
-    padding: 10px;
-    margin-top: 6px;
-  }
-
-  .answer-card h3 {
-    font-size: 1.05rem;
-  }
-
-  .answer-card strong {
-    font-size: 1.1rem;
-  }
-
-  .answer-card span {
-    line-height: 1.4;
-    margin-bottom: 4px;
-  }
-
   #achievement-list,
   #practice-achievement-list {
     grid-template-columns: 1fr;
+  }
+
+  .achievement-progress-card small {
+    white-space: normal;
+  }
+
+  .navigation {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
 
-  .achievement-card {
-    padding: 10px;
-  }
-
-  #quiz-mode-control label {
-    display: flex;
-    margin-right: 0;
-  }
-
-  #achievement-toast {
-    top: 10px;
-    right: 10px;
-    width: calc(100vw - 20px);
+  .navigation button:last-child {
+    grid-column: 1 / -1;
   }
 }
