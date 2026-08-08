@@ -450,3 +450,224 @@
   .chapter-achievement small,
   .chapter-achievement .achievement-progress-track { grid-column: 1/-1; }
 }
+
+
+/* UI Refresh v1.1: playful surfaces outside Focus Mode */
+.mission-deck {
+  position: relative;
+  z-index: 1;
+  margin-top: 24px;
+}
+.mission-deck-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 11px;
+}
+.mission-deck-heading strong,
+.mission-deck-heading span { display: block; }
+.mission-deck-heading strong { font-size: 1rem; }
+.mission-deck-heading > div > span { margin-top: 2px; color: rgba(255,255,255,.72); font-size: .78rem; }
+.mission-reset-note {
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 999px;
+  background: rgba(255,255,255,.09);
+  color: rgba(255,255,255,.72);
+  font-size: .68rem;
+  font-weight: 800;
+}
+.daily-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 9px;
+}
+.daily-mission-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 15px;
+  background: rgba(255,255,255,.10);
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+.daily-mission-card::after {
+  content: "";
+  position: absolute;
+  right: -28px;
+  bottom: -36px;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  pointer-events: none;
+}
+.daily-mission-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  border-radius: 11px;
+  background: rgba(255,255,255,.14);
+  font-size: 1.05rem;
+}
+.daily-mission-copy { min-width: 0; flex: 1; }
+.daily-mission-title { display: flex; align-items: baseline; justify-content: space-between; gap: 7px; }
+.daily-mission-title strong { min-width: 0; font-size: .82rem; overflow-wrap: anywhere; }
+.daily-mission-title span { flex: 0 0 auto; color: rgba(255,255,255,.88); font-size: .72rem; font-weight: 900; }
+.daily-mission-copy small { display: block; margin-top: 2px; color: rgba(255,255,255,.62); font-size: .68rem; }
+.daily-mission-track {
+  overflow: hidden;
+  height: 5px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.15);
+}
+.daily-mission-track span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg,#ffffff,#c7d2fe);
+  transition: width .28s ease;
+}
+.daily-mission-card.complete {
+  border-color: rgba(255,255,255,.32);
+  background: rgba(255,255,255,.18);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+}
+.daily-mission-card.complete .daily-mission-icon { background: rgba(255,255,255,.24); }
+.daily-mission-card.complete .daily-mission-track span { background: linear-gradient(90deg,#fde68a,#fbbf24); }
+.home-dashboard.missions-complete {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.10), transparent 35%),
+    linear-gradient(135deg,#2d328f 0%,#4f46e5 45%,#7c3aed 100%);
+}
+
+/* Subject cards get a clear personality without changing subject logic. */
+#subject-list .subject-card::after {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  font-size: .72rem;
+  font-weight: 950;
+  letter-spacing: -.02em;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.65);
+}
+#subject-list .subject-card:nth-child(1)::after { content: "Aa"; color: #6d28d9; background: #f3e8ff; }
+#subject-list .subject-card:nth-child(2)::after { content: "BIO"; color: #047857; background: #d1fae5; }
+#subject-list .subject-card:nth-child(3)::after { content: "ESS"; color: #0e7490; background: #cffafe; }
+#subject-list .subject-card:hover::after { transform: rotate(-4deg) scale(1.05); }
+#subject-list .subject-card::after { transition: transform .16s ease; }
+
+/* Chapter setup gets a tiny rewarding response when selected. */
+.chapter-option:has(input:checked)::after {
+  content: "✓";
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  border-radius: 8px;
+  background: #ddd9ff;
+  color: #4338ca;
+  font-size: .75rem;
+  font-weight: 950;
+}
+
+/* Progress: warmer, less administrative cards. */
+#statistics-page .chapter-progress-subject {
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid #8b5cf6;
+}
+#statistics-page .chapter-progress-subject::after {
+  content: "↗";
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: #f5f3ff;
+  color: #6d28d9;
+  font-weight: 900;
+}
+#statistics-page .chapter-progress-row {
+  margin-top: 2px;
+  padding: 12px 8px;
+  border-radius: 11px;
+}
+#statistics-page .chapter-progress-row:hover { background: #fafaff; }
+#statistics-page .chapter-progress-row strong {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: .82rem;
+}
+
+/* Trophy Room: collectible feel, still restrained. */
+#achievements-page .achievement-card {
+  position: relative;
+  overflow: hidden;
+}
+#achievements-page .achievement-card::after {
+  content: "";
+  position: absolute;
+  right: -26px;
+  bottom: -32px;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: rgba(148,163,184,.07);
+}
+#achievements-page .achievement-card.unlocked {
+  border-color: #e5c469;
+  background: linear-gradient(145deg,#fffef9 0%,#fff8df 100%);
+  box-shadow: 0 10px 22px rgba(183,121,31,.10);
+}
+#achievements-page .achievement-card.unlocked::before {
+  content: "✦";
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  color: #d69e2e;
+  font-size: .9rem;
+}
+#achievements-page .achievement-card:hover { transform: translateY(-2px); }
+.trophy-rank-icon {
+  position: relative;
+  background: linear-gradient(145deg,#fff,#f5f3ff);
+  box-shadow: inset 0 0 0 1px #ddd6fe, 0 8px 18px rgba(79,70,229,.10);
+}
+.trophy-rank-icon::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed rgba(124,58,237,.16);
+  border-radius: 14px;
+}
+.trophy-summary { background: linear-gradient(160deg,#fff,#fafaff); }
+
+@media (max-width: 760px) {
+  .daily-mission-grid { grid-template-columns: 1fr; }
+  .daily-mission-card { align-items: center; }
+}
+
+@media (max-width: 600px) {
+  .mission-deck-heading { align-items: flex-start; }
+  .mission-reset-note { display: none; }
+  .daily-mission-card { padding: 10px 11px; }
+  .daily-mission-title strong { font-size: .8rem; }
+}
