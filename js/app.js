@@ -64,8 +64,33 @@ const App = {
       Pages.show('home');
       return;
     }
+
     this.renderChapterSelector();
     this.updatePracticeHeader();
+
+    // Always rebuild the practice question set from the selected subject.
+    // This prevents a previous subject's question from appearing here.
+    if (this.state.practiceType === 'vocabulary' && typeof Vocabulary !== 'undefined') {
+      const words = Vocabulary.filter(
+        this.state.subject,
+        this.state.practiceScope === 'selected' ? this.state.selectedChapters : []
+      );
+
+      if (words.length) {
+        const currentIsValid = this.state.practiceWord && words.some(word => word.id === this.state.practiceWord.id);
+        if (!currentIsValid) {
+          this.state.practiceWord = words[0];
+          this.saveState();
+        }
+        if (typeof Quiz !== 'undefined') {
+          Quiz.questions = words;
+          Quiz.current = this.state.practiceWord;
+          Quiz.render();
+        }
+        if (typeof Flashcard !== 'undefined') Flashcard.setWord(this.state.practiceWord);
+      }
+    }
+
     Pages.show('practice');
   },
 
@@ -179,7 +204,7 @@ const App = {
     if (!this.state.subject) return;
     const words = Vocabulary.filter(this.state.subject, this.state.selectedChapters || []);
     if (words.length) {
-      this.state.practiceWord = this.state.practiceWord && words.includes(this.state.practiceWord)
+      this.state.practiceWord = this.state.practiceWord && words.some(word => word.id === this.state.practiceWord.id)
         ? this.state.practiceWord
         : words[0];
       if (typeof Quiz !== 'undefined') Quiz.questions = words;
