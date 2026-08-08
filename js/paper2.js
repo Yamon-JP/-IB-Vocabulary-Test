@@ -4,15 +4,27 @@ const Paper2 = {
   current: null,
 
   async init() {
-    try {
-      const response = await fetch('data/paper2.json');
-      if (!response.ok) throw new Error('Paper 2 data not found');
-      const data = await response.json();
-      this.allQuestions = Array.isArray(data) ? data : [];
-    } catch (error) {
-      console.warn('Paper 2 data is not available yet.', error);
-      this.allQuestions = [];
-    }
+    const sources = [
+      'data/paper2.json',
+      'data/paper2/biology-theme-a.json',
+      'data/paper2/biology-theme-b.json',
+      'data/paper2/biology-theme-c.json',
+      'data/paper2/biology-theme-d.json'
+    ];
+
+    const datasets = await Promise.all(sources.map(async source => {
+      try {
+        const response = await fetch(source);
+        if (!response.ok) throw new Error(`Paper 2 data not found: ${source}`);
+        const data = await response.json();
+        return Array.isArray(data) ? data : [];
+      } catch (error) {
+        console.warn(`Paper 2 data is not available: ${source}`, error);
+        return [];
+      }
+    }));
+
+    this.allQuestions = datasets.flat();
     this.renderEmptyState();
   },
 
