@@ -7,6 +7,7 @@
     "commandTerm": "Deduce",
     "marks": 4,
     "difficulty": "standard",
+    "assessmentTarget": "paper1b",
     "stimulus": {
       "type": "table",
       "title": "DNA sequence differences among four species",
@@ -39,6 +40,7 @@
     "commandTerm": "Analyse",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper1b",
     "stimulus": {
       "type": "table",
       "title": "Ventilation and oxygen uptake during exercise",
@@ -73,6 +75,7 @@
     "commandTerm": "Analyse",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper1b",
     "stimulus": {
       "type": "lineGraph",
       "title": "Effect of temperature on enzyme activity",
@@ -112,6 +115,7 @@
     "commandTerm": "Estimate",
     "marks": 5,
     "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
     "stimulus": {
       "type": "table",
       "title": "Change in potato tissue mass in sucrose solutions",
