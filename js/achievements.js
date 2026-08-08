@@ -14,17 +14,17 @@ const Achievements = {
   },
 
   definitions: {
-    firstPractice: { title: 'First Practice', description: 'Complete your first practice question' },
-    xp10: { title: '10 XP Master', description: 'Earn your first 10 XP' },
-    xp100: { title: '100 XP Learner', description: 'Reach 100 XP' },
-    questions100: { title: '100 Questions', description: 'Complete 100 practice questions' },
-    streak3: { title: '🔥 First Streak', description: 'Study for 3 consecutive days' },
-    streak7: { title: '🔥 Weekly Warrior', description: 'Study for 7 consecutive days' },
-    streak30: { title: '🔥 Monthly Master', description: 'Study for 30 consecutive days' },
-    accuracy10: { title: '🎯 Sharp Learner', description: '10 correct answers in a row' },
-    accuracy50: { title: '🎯 Precision Student', description: '50 correct answers in a row' },
-    accuracy100: { title: '🎯 IB Accuracy Master', description: '100 correct answers in a row' },
-    accuracy200: { title: '👑 Perfect Streak', description: '200 correct answers in a row' }
+    firstPractice: { title: 'First Practice', description: 'Complete your first practice question', target: 1, type: 'questions' },
+    xp10: { title: '10 XP Master', description: 'Earn your first 10 XP', target: 10, type: 'xp' },
+    xp100: { title: '100 XP Learner', description: 'Reach 100 XP', target: 100, type: 'xp' },
+    questions100: { title: '100 Questions', description: 'Complete 100 practice questions', target: 100, type: 'questions' },
+    streak3: { title: 'First Streak', description: 'Study for 3 consecutive days', target: 3, type: 'streak' },
+    streak7: { title: 'Weekly Warrior', description: 'Study for 7 consecutive days', target: 7, type: 'streak' },
+    streak30: { title: 'Monthly Master', description: 'Study for 30 consecutive days', target: 30, type: 'streak' },
+    accuracy10: { title: 'Sharp Learner', description: '10 correct answers in a row', target: 10, type: 'correctStreak' },
+    accuracy50: { title: 'Precision Student', description: '50 correct answers in a row', target: 50, type: 'correctStreak' },
+    accuracy100: { title: 'IB Accuracy Master', description: '100 correct answers in a row', target: 100, type: 'correctStreak' },
+    accuracy200: { title: 'Perfect Streak', description: '200 correct answers in a row', target: 200, type: 'correctStreak' }
   },
 
   newlyUnlocked: [],
@@ -62,6 +62,16 @@ const Achievements = {
     this.showNotification();
   },
 
+  getProgress(item, progress) {
+    const current = {
+      questions: progress?.questions || 0,
+      xp: progress?.xp || 0,
+      streak: typeof Streak !== 'undefined' ? (Streak.data.count || 0) : 0,
+      correctStreak: progress?.correctStreak || 0
+    };
+    return Math.min(current[item.type] || 0, item.target);
+  },
+
   showNotification() {
     if (!this.newlyUnlocked.length) return;
 
@@ -92,14 +102,11 @@ const Achievements = {
   },
 
   render() {
-    const areas = [
-      document.getElementById('achievement-list'),
-      document.getElementById('practice-achievement-list')
-    ].filter(Boolean);
+    const progress = typeof Progress !== 'undefined' ? Progress.data : {};
+    const fullArea = document.getElementById('achievement-list');
+    const practiceArea = document.getElementById('practice-achievement-list');
 
-    if (!areas.length) return;
-
-    const html = Object.entries(this.definitions).map(([key, item]) => {
+    const fullHtml = Object.entries(this.definitions).map(([key, item]) => {
       const unlocked = Boolean(this.data[key]);
       return `
         <article class="achievement-card ${unlocked ? 'unlocked' : 'locked'}">
@@ -109,9 +116,25 @@ const Achievements = {
         </article>`;
     }).join('');
 
-    areas.forEach(area => {
-      area.innerHTML = html;
-    });
+    const practiceHtml = Object.entries(this.definitions).map(([key, item]) => {
+      const unlocked = Boolean(this.data[key]);
+      const current = this.getProgress(item, progress);
+      const percent = Math.round((current / item.target) * 100);
+      return `
+        <article class="achievement-card achievement-progress-card ${unlocked ? 'unlocked' : 'locked'}">
+          <div class="achievement-progress-header">
+            <h3>${item.title}</h3>
+            <strong>${current}/${item.target}</strong>
+          </div>
+          <div class="achievement-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="${item.target}" aria-valuenow="${current}">
+            <span style="width:${percent}%"></span>
+          </div>
+          <small>${unlocked ? 'Completed' : item.description}</small>
+        </article>`;
+    }).join('');
+
+    if (fullArea) fullArea.innerHTML = fullHtml;
+    if (practiceArea) practiceArea.innerHTML = practiceHtml;
   }
 };
 
