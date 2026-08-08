@@ -28,6 +28,7 @@ const Achievements = {
   },
 
   newlyUnlocked: [],
+  notificationTimer: null,
 
   load() {
     const saved = Storage.load('ib_achievements');
@@ -37,6 +38,7 @@ const Achievements = {
 
   check(progress) {
     const before = { ...this.data };
+
     this.data.firstPractice ||= progress.questions > 0;
     this.data.xp10 ||= progress.xp >= 10;
     this.data.xp100 ||= progress.xp >= 100;
@@ -54,6 +56,7 @@ const Achievements = {
     this.data.accuracy200 ||= correctStreak >= 200;
 
     this.newlyUnlocked = Object.keys(this.data).filter(key => this.data[key] && !before[key]);
+
     Storage.save('ib_achievements', this.data);
     this.render();
     this.showNotification();
@@ -61,20 +64,31 @@ const Achievements = {
 
   showNotification() {
     if (!this.newlyUnlocked.length) return;
-    const names = this.newlyUnlocked.map(key => this.definitions[key]?.title).join(', ');
+
+    const names = this.newlyUnlocked
+      .map(key => this.definitions[key]?.title)
+      .filter(Boolean)
+      .join(' · ');
+
     let toast = document.getElementById('achievement-toast');
     if (!toast) {
       toast = document.createElement('div');
       toast.id = 'achievement-toast';
-      toast.style.position='fixed'; toast.style.top='20px'; toast.style.right='20px';
-      toast.style.padding='15px'; toast.style.borderRadius='8px';
-      toast.style.background='#222'; toast.style.color='#fff'; toast.style.zIndex='9999';
+      toast.setAttribute('role', 'status');
+      toast.setAttribute('aria-live', 'polite');
       document.body.appendChild(toast);
     }
-    toast.innerHTML=`🏆 Achievement Unlocked!<br>${names}`;
-    toast.style.display='block';
-    setTimeout(()=>toast.style.display='none',3000);
-    this.newlyUnlocked=[];
+
+    toast.innerHTML = `🏆 Achievement Unlocked!<br><span>${names}</span>`;
+    toast.style.display = 'block';
+
+    if (this.notificationTimer) clearTimeout(this.notificationTimer);
+    this.notificationTimer = setTimeout(() => {
+      toast.style.display = 'none';
+      this.notificationTimer = null;
+    }, 3000);
+
+    this.newlyUnlocked = [];
   },
 
   render() {
@@ -85,9 +99,14 @@ const Achievements = {
 
     if (!areas.length) return;
 
-    const html = Object.entries(this.definitions).map(([key,item])=>{
-      const unlocked=this.data[key];
-      return `<article class="achievement-card ${unlocked?'unlocked':'locked'}"><h3>${unlocked?'🏆':'🔒'} ${item.title}</h3><p>${item.description}</p><small>${unlocked?'Unlocked':'Locked'}</small></article>`;
+    const html = Object.entries(this.definitions).map(([key, item]) => {
+      const unlocked = Boolean(this.data[key]);
+      return `
+        <article class="achievement-card ${unlocked ? 'unlocked' : 'locked'}">
+          <h3>${unlocked ? '🏆' : '🔒'} ${item.title}</h3>
+          <p>${item.description}</p>
+          <small>${unlocked ? 'Unlocked' : 'Locked'}</small>
+        </article>`;
     }).join('');
 
     areas.forEach(area => {
@@ -96,4 +115,6 @@ const Achievements = {
   }
 };
 
-document.addEventListener('DOMContentLoaded',()=>{if(typeof Achievements!=='undefined')Achievements.load();});
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof Achievements !== 'undefined') Achievements.load();
+});
