@@ -1,0 +1,141 @@
+[
+  {
+    "id": "BIO-P2-DATA-A3-001",
+    "subject": "Biology SL",
+    "chapter": "A3 Organisms",
+    "unit": "A3.1 Diversity of organisms",
+    "commandTerm": "Deduce",
+    "marks": 4,
+    "difficulty": "standard",
+    "stimulus": {
+      "type": "table",
+      "title": "DNA sequence differences among four species",
+      "description": "Researchers compared the same 1000-base DNA region between pairs of species. The table shows the number of nucleotide differences.",
+      "columns": ["Species pair", "Nucleotide differences per 1000 bases"],
+      "rows": [["A-B", 12], ["A-C", 48], ["A-D", 76], ["B-C", 45], ["B-D", 73], ["C-D", 39]],
+      "note": "All comparisons used the same DNA region and alignment method."
+    },
+    "question": "Using the data, deduce which pair of species is most closely related and explain how DNA sequence differences can be used to infer evolutionary relationships.",
+    "markscheme": [
+      "Species A and B are the most closely related because they have the fewest nucleotide differences (12 per 1000 bases).",
+      "DNA sequences accumulate differences through mutation over evolutionary time.",
+      "Fewer sequence differences generally indicate a more recent common ancestor.",
+      "The same DNA region and method must be compared across species so that the difference values are comparable."
+    ],
+    "markschemeJa": [
+      "AとBの組み合わせは1000塩基あたりの違いが12と最も少ないため、最も近縁だと判断できる。",
+      "DNA配列には進化の過程で突然変異による違いが蓄積していく。",
+      "配列の違いが少ないほど、一般にはより最近の共通祖先をもつと考えられる。",
+      "種どうしを公平に比較するには、同じDNA領域を同じ方法で比較する必要がある。"
+    ],
+    "modelAnswer": "Species A and B are the most closely related because their sequences differ at only 12 positions per 1000 bases, the smallest value in the table. Mutations cause DNA sequences to diverge over evolutionary time, so species that share a more recent common ancestor generally have fewer sequence differences. The comparison is meaningful because the same DNA region and method were used for all species pairs.",
+    "modelAnswerJa": "AとBは、1000塩基あたりの違いが12と表の中で最も少ないため、最も近縁な組み合わせだと判断できます。DNA配列には進化の過程で突然変異による違いが蓄積するため、より最近の共通祖先をもつ種どうしほど、一般に配列の違いが少なくなります。また、すべての組み合わせで同じDNA領域を同じ方法で比較しているため、数値を公平に比べることができます。"
+  },
+  {
+    "id": "BIO-P2-DATA-B3-001",
+    "subject": "Biology SL",
+    "chapter": "B3 Organisms",
+    "unit": "B3.1 Gas exchange",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "stimulus": {
+      "type": "table",
+      "title": "Ventilation and oxygen uptake during exercise",
+      "description": "A student exercised on a cycle ergometer at increasing workloads. Mean values after three minutes at each workload are shown.",
+      "columns": ["Workload (W)", "Ventilation rate (L min⁻¹)", "Oxygen uptake (L min⁻¹)"],
+      "rows": [[0, 8, 0.3], [50, 18, 0.9], [100, 31, 1.6], [150, 47, 2.3], [200, 68, 3.0]],
+      "note": "The same student and equipment were used at every workload."
+    },
+    "question": "Analyse the relationship between exercise workload, ventilation rate and oxygen uptake, and explain why ventilation increases as workload rises.",
+    "markscheme": [
+      "Ventilation rate increases as workload increases, from 8 L min⁻¹ at rest to 68 L min⁻¹ at 200 W.",
+      "Oxygen uptake also increases with workload, from 0.3 L min⁻¹ to 3.0 L min⁻¹.",
+      "The increases in ventilation and oxygen uptake are positively associated across the data set.",
+      "Working muscles require more ATP and therefore increase the rate of aerobic respiration as workload rises.",
+      "Higher ventilation supplies more oxygen for aerobic respiration and helps remove the additional carbon dioxide produced."
+    ],
+    "markschemeJa": [
+      "運動負荷が大きくなるほど換気量は増え、0 Wで8 L min⁻¹だったものが200 Wでは68 L min⁻¹になっている。",
+      "酸素摂取量も運動負荷とともに増え、0.3 L min⁻¹から3.0 L min⁻¹へ上昇している。",
+      "データ全体では、換気量の増加と酸素摂取量の増加に正の関係が見られる。",
+      "運動負荷が上がると筋肉で必要なATPが増えるため、好気呼吸の速度が高くなる。",
+      "換気量を増やすことで好気呼吸に必要な酸素をより多く取り込み、同時に増加した二酸化炭素を排出できる。"
+    ],
+    "modelAnswer": "Both ventilation rate and oxygen uptake increase as exercise workload rises. Ventilation increases from 8 L min⁻¹ at 0 W to 68 L min⁻¹ at 200 W, while oxygen uptake rises from 0.3 to 3.0 L min⁻¹. This positive relationship reflects the greater ATP demand of working muscles. More aerobic respiration requires a larger oxygen supply and produces more carbon dioxide, so ventilation increases to support gas exchange.",
+    "modelAnswerJa": "運動負荷が大きくなるにつれて、換気量と酸素摂取量の両方が増加しています。換気量は0 Wの8 L min⁻¹から200 Wでは68 L min⁻¹へ増え、酸素摂取量も0.3 L min⁻¹から3.0 L min⁻¹へ増えています。これは、運動中の筋肉でATPの必要量が増えるためです。好気呼吸が活発になると、より多くの酸素が必要になり、二酸化炭素の産生も増えるため、ガス交換を支えるために換気量が増加します。"
+  },
+  {
+    "id": "BIO-P2-DATA-C1-001",
+    "subject": "Biology SL",
+    "chapter": "C1 Molecules",
+    "unit": "C1.1 Enzymes and metabolism",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "stimulus": {
+      "type": "lineGraph",
+      "title": "Effect of temperature on enzyme activity",
+      "description": "An enzyme-catalysed reaction was measured at six temperatures while pH and substrate concentration were kept constant.",
+      "xLabel": "Temperature (°C)",
+      "yLabel": "Reaction rate (arbitrary units)",
+      "xMin": 10,
+      "xMax": 60,
+      "yMin": 0,
+      "yMax": 6,
+      "points": [{"x": 10, "y": 1.1}, {"x": 20, "y": 2.3}, {"x": 30, "y": 4.0}, {"x": 40, "y": 5.5}, {"x": 50, "y": 3.2}, {"x": 60, "y": 0.7}],
+      "note": "Each point is the mean of repeated measurements."
+    },
+    "question": "Analyse the data and explain the effect of temperature on the enzyme-catalysed reaction.",
+    "markscheme": [
+      "The reaction rate increases from 1.1 units at 10 °C to a maximum of about 5.5 units at 40 °C.",
+      "The data indicate an optimum temperature of approximately 40 °C under these conditions.",
+      "Below the optimum, increasing temperature increases molecular kinetic energy and the frequency of successful enzyme-substrate collisions.",
+      "Above the optimum, the reaction rate decreases sharply, falling to 0.7 units at 60 °C.",
+      "High temperature disrupts interactions that maintain enzyme structure, altering the active site and reducing successful substrate binding."
+    ],
+    "markschemeJa": [
+      "反応速度は10 °Cで1.1から上昇し、40 °Cで約5.5と最大になっている。",
+      "この条件では最適温度はおよそ40 °Cだと判断できる。",
+      "最適温度までは、温度上昇によって分子の運動エネルギーが増え、酵素と基質が適切に衝突する回数が増える。",
+      "最適温度を超えると反応速度は急激に低下し、60 °Cでは0.7まで下がっている。",
+      "高温によって酵素の立体構造を保つ結合や相互作用が崩れ、活性部位の形が変化して基質が結合しにくくなる。"
+    ],
+    "modelAnswer": "The reaction rate rises from 1.1 units at 10 °C to a maximum of about 5.5 units at 40 °C, so the optimum temperature in this experiment is approximately 40 °C. Below the optimum, increasing temperature raises kinetic energy and increases successful enzyme-substrate collisions. Above 40 °C the rate falls sharply, reaching 0.7 units at 60 °C. At high temperatures, interactions maintaining enzyme structure are disrupted, changing the active site and reducing successful substrate binding.",
+    "modelAnswerJa": "反応速度は10 °Cの1.1から上昇し、40 °Cで約5.5と最大になっています。したがって、この実験条件での最適温度はおよそ40 °Cです。最適温度までは、温度が上がることで分子の運動エネルギーが増え、酵素と基質が適切に衝突する回数が増えるため、反応速度が上がります。しかし40 °Cを超えると反応速度は急激に低下し、60 °Cでは0.7まで下がります。高温では酵素の立体構造を保つ結合や相互作用が崩れ、活性部位の形が変わって基質が結合しにくくなるためです。"
+  },
+  {
+    "id": "BIO-P2-DATA-D2-001",
+    "subject": "Biology SL",
+    "chapter": "D2 Cells",
+    "unit": "D2.3 Water potential",
+    "commandTerm": "Estimate",
+    "marks": 5,
+    "difficulty": "challenging",
+    "stimulus": {
+      "type": "table",
+      "title": "Change in potato tissue mass in sucrose solutions",
+      "description": "Equal-sized potato cylinders were placed in sucrose solutions for one hour. The mean percentage change in mass is shown.",
+      "columns": ["Sucrose concentration (mol dm⁻³)", "Mean mass change (%)"],
+      "rows": [[0.0, "+18"], [0.2, "+10"], [0.4, "+3"], [0.6, "-5"], [0.8, "-12"]],
+      "note": "A positive value means the potato cylinders gained mass."
+    },
+    "question": "Estimate the sucrose concentration at which there would be no net change in potato mass, and explain the pattern in the data in terms of water movement.",
+    "markscheme": [
+      "The concentration for no net mass change is approximately 0.48 mol dm⁻³; accept a reasonable estimate between about 0.47 and 0.50 mol dm⁻³.",
+      "At lower sucrose concentrations the potato gains mass, indicating net movement of water into the potato cells.",
+      "At higher sucrose concentrations the potato loses mass, indicating net movement of water out of the potato cells.",
+      "Water moves by osmosis across partially permeable cell membranes from higher water potential to lower water potential.",
+      "At the concentration giving no net mass change, the water potentials of the tissue and external solution are approximately equal, so there is no net water movement."
+    ],
+    "markschemeJa": [
+      "質量変化が0になる濃度は約0.48 mol dm⁻³と推定できる。およそ0.47〜0.50 mol dm⁻³の妥当な推定を認める。",
+      "低いスクロース濃度ではジャガイモの質量が増えているため、水が正味で細胞内へ移動したと考えられる。",
+      "高いスクロース濃度では質量が減っているため、水が正味で細胞外へ移動したと考えられる。",
+      "水は部分透過性の細胞膜を通り、水ポテンシャルの高い方から低い方へ浸透によって移動する。",
+      "質量変化が0になる濃度では、組織と外液の水ポテンシャルがほぼ等しく、正味の水移動が起こらない。"
+    ],
+    "modelAnswer": "The zero-mass-change concentration lies between 0.4 mol dm⁻³ (+3%) and 0.6 mol dm⁻³ (-5%), giving an estimate of about 0.48 mol dm⁻³. In dilute sucrose solutions, the potato gains mass because water enters the cells by osmosis. In more concentrated solutions, water leaves the cells and the tissue loses mass. Water moves from higher to lower water potential across partially permeable membranes. Near 0.48 mol dm⁻³, the tissue and solution have similar water potentials, so there is no net water movement.",
+    "modelAnswerJa": "質量変化が0になる濃度は、0.4 mol dm⁻³で+3%、0.6 mol dm⁻³で-5%の間にあるため、約0.48 mol dm⁻³と推定できます。薄いスクロース溶液では水が浸透によって細胞内へ入り、ジャガイモの質量が増えます。濃い溶液では反対に水が細胞外へ出るため、質量が減ります。水は部分透過性の膜を通って、水ポテンシャルの高い方から低い方へ移動します。約0.48 mol dm⁻³では組織と溶液の水ポテンシャルがほぼ等しくなるため、正味の水移動が起こらないと考えられます。"
+  }
+]
