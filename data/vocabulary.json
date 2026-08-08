@@ -18,12 +18,57 @@
     "level": "HL"
   },
   {
+    "id": "ENG-C2-A",
+    "subject": "English B HL",
+    "chapter": "Chapter 2",
+    "word": "migration",
+    "definition": "the movement of people from one place to another",
+    "japanese": "移住・移動",
+    "level": "HL"
+  },
+  {
+    "id": "ENG-C2-B",
+    "subject": "English B HL",
+    "chapter": "Chapter 2",
+    "word": "inequality",
+    "definition": "a lack of equality between people or groups",
+    "japanese": "不平等",
+    "level": "HL"
+  },
+  {
     "id": "BIO-C1-A",
     "subject": "Biology SL",
     "chapter": "Chapter 1",
     "word": "homeostasis",
     "definition": "maintenance of a stable internal environment",
     "japanese": "恒常性",
+    "level": "SL"
+  },
+  {
+    "id": "BIO-C1-B",
+    "subject": "Biology SL",
+    "chapter": "Chapter 1",
+    "word": "metabolism",
+    "definition": "the sum of chemical reactions occurring in a living organism",
+    "japanese": "代謝",
+    "level": "SL"
+  },
+  {
+    "id": "BIO-C2-A",
+    "subject": "Biology SL",
+    "chapter": "Chapter 2",
+    "word": "enzyme",
+    "definition": "a biological catalyst that speeds up a chemical reaction",
+    "japanese": "酵素",
+    "level": "SL"
+  },
+  {
+    "id": "BIO-C2-B",
+    "subject": "Biology SL",
+    "chapter": "Chapter 2",
+    "word": "diffusion",
+    "definition": "the net movement of particles from a region of higher concentration to lower concentration",
+    "japanese": "拡散",
     "level": "SL"
   }
 ]
