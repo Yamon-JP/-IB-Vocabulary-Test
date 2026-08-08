@@ -6,10 +6,12 @@ const Quiz = {
   xpAwarded: false,
   correctStreak: 0,
   mode: 'word-definition',
+  questionIndex: 1,
 
   init() {
     if (typeof Vocabulary === 'undefined' || !Vocabulary.words || !Vocabulary.words.length) return;
     this.questions = Vocabulary.words;
+    this.questionIndex = 1;
     this.syncModeSelector();
     this.bindModeSelector();
     this.syncWithPracticeWord();
@@ -50,6 +52,16 @@ const Quiz = {
     this.render();
   },
 
+  updateProgressDisplay() {
+    const progress = document.getElementById('quiz-progress-question');
+    const chapter = document.getElementById('quiz-progress-chapter');
+    if (progress) progress.textContent = `Question ${this.questionIndex} / ${Math.max(this.questions.length, 1)}`;
+    if (chapter) {
+      const currentChapter = this.current && (this.current.chapter || this.current.topic);
+      chapter.textContent = currentChapter ? currentChapter : '';
+    }
+  },
+
   generateChoices(correct) {
     const pool = this.mode === 'definition-word'
       ? this.questions.map(word => word.word).filter(Boolean)
@@ -74,6 +86,8 @@ const Quiz = {
     const choices = document.getElementById('quiz-choices');
     const result = document.getElementById('quiz-result');
     if (!question || !choices || !result) return;
+
+    this.updateProgressDisplay();
 
     question.innerHTML = this.mode === 'definition-word'
       ? `Which word matches this definition?<br><br>${this.current.definition}`
@@ -137,6 +151,7 @@ const Quiz = {
   nextQuestion() {
     if (!this.answered || !this.questions.length) return;
     this.current = this.questions[Math.floor(Math.random() * this.questions.length)];
+    this.questionIndex = this.questionIndex >= this.questions.length ? 1 : this.questionIndex + 1;
     if (typeof App !== 'undefined') App.setPracticeWord(this.current);
     this.render();
   },
