@@ -11,9 +11,9 @@ const Pages = {
       target.style.display = 'block';
       this.current = page;
 
-      // Practice has its own Back button, so hide the global bottom navigation
-      // while the learner is answering a question.
-      document.body.classList.toggle('practice-active', page === 'practice');
+      // Keep the global bottom navigation visible on every page,
+      // including Practice. Practice also has its dedicated Back button.
+      document.body.classList.remove('practice-active');
 
       // Refresh progress display after page becomes visible
       if (typeof Progress !== 'undefined') {
