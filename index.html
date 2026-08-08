@@ -37,6 +37,20 @@
       <p class="muted">Selected Subject</p>
       <h2 id="selection-subject">Subject</h2>
 
+      <div class="practice-type-control">
+        <h3>Practice Type</h3>
+        <div class="practice-type-grid">
+          <button type="button" id="type-vocabulary" class="practice-type-card active" onclick="App.setPracticeType('vocabulary')">
+            <strong>Vocabulary</strong>
+            <small>Words, definitions and 4-choice practice</small>
+          </button>
+          <button type="button" id="type-paper2" class="practice-type-card" onclick="App.setPracticeType('paper2')">
+            <strong>Paper 2 Practice</strong>
+            <small>IB-style questions, written answers and markscheme</small>
+          </button>
+        </div>
+      </div>
+
       <div class="scope-control">
         <h3>Practice Scope</h3>
         <label><input type="radio" name="practice-scope" value="all" checked onchange="App.setPracticeScope('all')"> All Chapters</label>
@@ -58,25 +72,46 @@
   <section id="practice-page" class="page">
     <h2>Practice</h2>
     <p class="practice-scope-label"><span id="selection-subject-practice"></span></p>
-    <section id="flashcard">
-      <h2 id="flashcard-word"></h2>
-      <div id="flashcard-meaning"></div>
-      <button id="flashcard-audio">🔊 Pronounce</button>
+
+    <section id="vocabulary-practice-panel">
+      <section id="flashcard">
+        <h2 id="flashcard-word"></h2>
+        <div id="flashcard-meaning"></div>
+        <button id="flashcard-audio">🔊 Pronounce</button>
+      </section>
+
+      <section id="quiz-area">
+        <p id="quiz-question">Loading Quiz...</p>
+        <div id="quiz-choices"></div>
+        <div id="quiz-actions">
+          <button onclick="Quiz.submit()">Check Answer</button>
+          <button onclick="Quiz.nextQuestion()">Next Question</button>
+        </div>
+        <p id="quiz-result"></p>
+        <div id="quiz-mode-control">
+          <h4>Quiz Mode</h4>
+          <label><input type="radio" name="quiz-mode" value="word-definition" checked> Word → Meaning</label>
+          <label><input type="radio" name="quiz-mode" value="definition-word"> Meaning → Word</label>
+        </div>
+      </section>
     </section>
 
-    <section id="quiz-area">
-      <p id="quiz-question">Loading Quiz...</p>
-      <div id="quiz-choices"></div>
-      <div id="quiz-actions">
-        <button onclick="Quiz.submit()">Check Answer</button>
-        <button onclick="Quiz.nextQuestion()">Next Question</button>
+    <section id="paper2-practice-panel" style="display:none">
+      <div class="paper2-header">
+        <span>Paper 2 Practice</span>
+        <span>Marks: <strong id="paper2-marks">—</strong></span>
       </div>
-      <p id="quiz-result"></p>
-      <div id="quiz-mode-control">
-        <h4>Quiz Mode</h4>
-        <label><input type="radio" name="quiz-mode" value="word-definition" checked> Word → Meaning</label>
-        <label><input type="radio" name="quiz-mode" value="definition-word"> Meaning → Word</label>
+      <div class="paper2-meta">
+        <span>Command term: <strong id="paper2-command">—</strong></span>
       </div>
+      <section id="paper2-question" class="paper2-question-card"></section>
+      <label class="paper2-answer-label" for="paper2-answer">Your Answer</label>
+      <textarea id="paper2-answer" rows="10" placeholder="Write your answer here..."></textarea>
+      <div class="paper2-actions">
+        <button onclick="Paper2.submit()">Check Answer</button>
+        <button onclick="Paper2.next()">Next Question</button>
+      </div>
+      <section id="paper2-feedback"></section>
     </section>
 
     <section id="practice-achievements">
@@ -106,6 +141,7 @@
 <script src="js/progress.js"></script>
 <script src="js/flashcard.js"></script>
 <script src="js/quiz.js"></script>
+<script src="js/paper2.js"></script>
 <script src="js/pages.js"></script>
 <script src="js/app.js"></script>
 </body>
