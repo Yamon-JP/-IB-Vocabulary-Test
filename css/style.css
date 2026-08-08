@@ -112,10 +112,11 @@ button:focus-visible { outline: 3px solid rgba(37, 99, 235, 0.25); outline-offse
   border-width: 1px;
   box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
 }
-#check-answer { background: #1d4ed8; border-color: #1d4ed8; }
-#next-question { background: #15803d; border-color: #15803d; }
-#check-answer:hover { background: #1e40af; }
-#next-question:hover { background: #166534; }
+/* The action buttons in index.html do not have IDs, so target them by position. */
+#quiz-actions button:first-child { background: #1d4ed8; border-color: #1d4ed8; }
+#quiz-actions button:last-child { background: #15803d; border-color: #15803d; }
+#quiz-actions button:first-child:hover { background: #1e40af; }
+#quiz-actions button:last-child:hover { background: #166534; }
 #quiz-actions button:disabled { opacity: 0.55; cursor: not-allowed; box-shadow: none; }
 #quiz-mode-control { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
 #quiz-mode-control h4 { margin: 0 0 7px; }
@@ -170,13 +171,13 @@ button:focus-visible { outline: 3px solid rgba(37, 99, 235, 0.25); outline-offse
 }
 .navigation button { min-height: 42px; }
 
-/* The practice page has a dedicated Back button in its header. */
-body.practice-active #app { padding-bottom: 20px; }
-body.practice-active .navigation { display: none; }
+/* Keep the global bottom navigation visible on Practice. */
+body.practice-active #app { padding-bottom: 86px; }
+body.practice-active .navigation { display: grid; }
 
 @media (max-width: 600px) {
   #app { padding: 10px; padding-bottom: 78px; }
-  body.practice-active #app { padding-bottom: 10px; }
+  body.practice-active #app { padding-bottom: 78px; }
   .hero h1 { font-size: 1.55rem; }
   .progress-panel, #flashcard, #quiz-area, #practice-achievements { padding: 12px; }
   #quiz-question { font-size: 1.1rem; margin-bottom: 10px; }
