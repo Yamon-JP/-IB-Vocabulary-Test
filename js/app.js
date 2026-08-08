@@ -23,6 +23,7 @@ const App = {
         this.applyPracticeTypeUI();
         if (typeof Quiz !== 'undefined') Quiz.init();
         if (typeof Paper2 !== 'undefined') Paper2.init();
+        this.updatePracticeHeader();
       });
     }
 
@@ -53,6 +54,26 @@ const App = {
     this.state.selectedChapters = [];
     this.state.practiceWord = null;
     this.saveState();
+    this.renderChapterSelector();
+    this.applyPracticeTypeUI();
+    Pages.show('selection');
+  },
+
+  openPractice() {
+    if (!this.state.subject) {
+      Pages.show('home');
+      return;
+    }
+    this.renderChapterSelector();
+    this.updatePracticeHeader();
+    Pages.show('practice');
+  },
+
+  backToSelection() {
+    if (!this.state.subject) {
+      Pages.show('home');
+      return;
+    }
     this.renderChapterSelector();
     this.applyPracticeTypeUI();
     Pages.show('selection');
@@ -113,7 +134,7 @@ const App = {
     this.saveState();
 
     if (this.state.practiceType === 'paper2') {
-      if (typeof Paper2 !== 'undefined') Paper2.setQuestions([]);
+      if (typeof Paper2 !== 'undefined') Paper2.loadForSelection(this.state.subject, chapters);
       this.updatePracticeHeader();
       Pages.show('practice');
       return;
@@ -142,7 +163,10 @@ const App = {
   updatePracticeHeader() {
     const subject = document.getElementById('selection-subject-practice');
     if (subject) {
-      subject.textContent = `${this.state.subject || ''} · ${this.state.practiceType === 'paper2' ? 'Paper 2' : 'Vocabulary'}`;
+      const scope = this.state.practiceScope === 'selected' && this.state.selectedChapters.length
+        ? this.state.selectedChapters.join(', ')
+        : 'All Chapters';
+      subject.textContent = `${this.state.subject || ''} · ${this.state.practiceType === 'paper2' ? 'Paper 2' : 'Vocabulary'} · ${scope}`;
     }
 
     const vocabularyPanel = document.getElementById('vocabulary-practice-panel');
