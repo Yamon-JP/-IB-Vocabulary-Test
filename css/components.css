@@ -24,24 +24,15 @@
   gap: 5px;
 }
 
-.subject-card strong {
-  font-size: 1.05rem;
-}
+.subject-card strong { font-size: 1.05rem; }
 
 .subject-card small,
 .muted,
-.practice-scope-label {
-  color: #64748b;
-}
+.practice-scope-label { color: #64748b; }
 
-.subject-card-disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
+.subject-card-disabled { opacity: 0.55; cursor: not-allowed; }
 
-.selection-panel {
-  border: 1px solid #dbe2ea;
-}
+.selection-panel { border: 1px solid #dbe2ea; }
 
 .practice-type-control,
 .scope-control,
@@ -53,418 +44,121 @@
 
 .practice-type-control h3,
 .scope-control h3,
-.chapter-options h3 {
-  margin: 0 0 10px;
-}
+.chapter-options h3 { margin: 0 0 10px; }
 
-.practice-type-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
+.practice-type-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 
-.practice-type-card {
-  min-height: 88px;
-  padding: 13px;
-  text-align: left;
-}
-
+.practice-type-card { min-height: 88px; padding: 13px; text-align: left; }
 .practice-type-card strong,
-.practice-type-card small {
-  display: block;
-}
+.practice-type-card small { display: block; }
+.practice-type-card small { margin-top: 5px; color: #64748b; font-weight: 400; line-height: 1.4; }
+.practice-type-card.active { border: 2px solid #2563eb; background: #eff6ff; }
+.scope-control label { display: block; margin: 8px 0; }
+.chapter-option { display: flex; align-items: center; gap: 8px; padding: 9px 0; }
+.selection-actions { display: flex; gap: 10px; margin-top: 20px; }
+.selection-actions button { flex: 1; }
+.primary-action { border-color: #2563eb; font-weight: 700; }
+.navigation { display: flex; flex-wrap: wrap; gap: 10px; }
+button { padding: 10px 16px; cursor: pointer; }
 
-.practice-type-card small {
-  margin-top: 5px;
-  color: #64748b;
-  font-weight: 400;
-  line-height: 1.4;
-}
-
-.practice-type-card.active {
-  border: 2px solid #2563eb;
-  background: #eff6ff;
-}
-
-.scope-control label {
-  display: block;
-  margin: 8px 0;
-}
-
-.chapter-option {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 0;
-}
-
-.selection-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.selection-actions button {
-  flex: 1;
-}
-
-.primary-action {
-  border-color: #2563eb;
-  font-weight: 700;
-}
-
-.navigation {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-button {
-  padding: 10px 16px;
-  cursor: pointer;
-}
-
-.paper2-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  padding: 13px 15px;
-  border-bottom: 1px solid #dbe2ea;
-  background: #f8fafc;
-  font-weight: 700;
-}
-
-.paper2-meta {
-  padding: 10px 15px;
-  color: #475569;
-  border-bottom: 1px solid #dbe2ea;
-  font-size: 0.92rem;
-}
-
-.paper2-question-card {
-  margin: 14px 0;
-  padding: 18px;
-  min-height: 130px;
-  border: 1px solid #dbe2ea;
-  border-radius: 10px;
-  background: #fff;
-  line-height: 1.7;
-}
-
-.paper2-answer-label {
-  display: block;
-  margin: 14px 0 7px;
-  font-weight: 700;
-}
-
-#paper2-answer {
-  display: block;
-  width: 100%;
-  min-height: 180px;
-  padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  font: inherit;
-  line-height: 1.6;
-  resize: vertical;
-}
-
-.paper2-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.paper2-actions button {
-  flex: 1;
-}
-
-.paper2-feedback-card {
-  margin-top: 12px;
-  padding: 13px;
-  border-radius: 8px;
-  background: #f8fafc;
-  border: 1px solid #dbe2ea;
-}
-
-.paper2-feedback-card p {
-  margin-bottom: 0;
-  color: #475569;
-}
+.paper2-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 13px 15px; border-bottom: 1px solid #dbe2ea; background: #f8fafc; font-weight: 700; }
+.paper2-meta { padding: 10px 15px; color: #475569; border-bottom: 1px solid #dbe2ea; font-size: 0.92rem; }
+.paper2-question-card { margin: 14px 0; padding: 18px; min-height: 130px; border: 1px solid #dbe2ea; border-radius: 10px; background: #fff; line-height: 1.7; }
+.paper2-answer-label { display: block; margin: 14px 0 7px; font-weight: 700; }
+#paper2-answer { display: block; width: 100%; min-height: 180px; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font: inherit; line-height: 1.6; resize: vertical; }
+.paper2-actions { display: flex; gap: 10px; margin-top: 10px; }
+.paper2-actions button { flex: 1; }
+.paper2-feedback-card { margin-top: 12px; padding: 13px; border-radius: 8px; background: #f8fafc; border: 1px solid #dbe2ea; }
+.paper2-feedback-card p { margin-bottom: 0; color: #475569; }
 
 /* Trophy Room */
-.trophy-room-header {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 18px;
-  margin-bottom: 16px;
-}
-
-.trophy-room-header h2 {
-  margin: 4px 0 6px;
-}
-
-.eyebrow {
-  margin: 0;
-  color: #64748b;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-}
-
-.trophy-summary {
-  min-width: 180px;
-  padding: 16px;
-  border: 1px solid #dbe2ea;
-  border-radius: 14px;
-  background: #fff;
-  text-align: center;
-}
-
+.trophy-room-header { display: flex; align-items: stretch; justify-content: space-between; gap: 18px; margin-bottom: 16px; }
+.trophy-room-header h2 { margin: 4px 0 6px; }
+.eyebrow { margin: 0; color: #64748b; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; }
+.trophy-summary { min-width: 180px; padding: 16px; border: 1px solid #dbe2ea; border-radius: 14px; background: #fff; text-align: center; }
 .trophy-summary strong,
 .trophy-summary span,
-.trophy-summary small {
-  display: block;
+.trophy-summary small { display: block; }
+.trophy-summary strong { font-size: 1.45rem; }
+.trophy-summary span { margin-top: 2px; color: #64748b; font-size: 0.85rem; }
+.trophy-summary small { margin-top: 6px; color: #475569; font-weight: 700; }
+.trophy-summary-track,
+.achievement-progress-track { overflow: hidden; height: 7px; margin-top: 9px; border-radius: 999px; background: #e2e8f0; }
+.trophy-summary-track span,
+.achievement-progress-track span { display: block; height: 100%; border-radius: inherit; background: #93c5fd; }
+.trophy-rank-card { display: flex; align-items: center; gap: 14px; padding: 18px; margin-bottom: 22px; border: 1px solid #dbe2ea; border-radius: 14px; background: linear-gradient(135deg, #f8fafc, #fff); }
+.trophy-rank-icon { display: grid; place-items: center; width: 58px; height: 58px; flex: 0 0 58px; border-radius: 50%; background: #f1f5f9; font-size: 1.8rem; }
+.trophy-rank-card h3 { margin: 2px 0 4px; }
+.trophy-rank-card p { margin: 0; color: #64748b; }
+.trophy-section { margin-top: 22px; }
+.trophy-section > h3 { margin-bottom: 12px; }
+.trophy-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.achievement-card { min-height: 130px; padding: 16px; border: 1px solid #dbe2ea; border-radius: 12px; background: #fff; }
+.achievement-card h3 { margin: 0 0 8px; font-size: 1rem; }
+.achievement-card p { margin: 0 0 10px; color: #475569; line-height: 1.5; }
+.achievement-card small { color: #64748b; }
+.achievement-card.unlocked { border-color: #bfdbfe; background: #f8fbff; }
+.achievement-card.locked { background: #f8fafc; }
+
+.trophy-subject-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px 10px;
+  margin-bottom: 4px;
+  scrollbar-width: thin;
 }
 
-.trophy-summary strong {
-  font-size: 1.45rem;
-}
-
-.trophy-summary span {
-  margin-top: 2px;
-  color: #64748b;
-  font-size: 0.85rem;
-}
-
-.trophy-summary small {
-  margin-top: 6px;
+.trophy-subject-tab {
+  flex: 0 0 auto;
+  min-height: 42px;
+  padding: 9px 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #fff;
   color: #475569;
   font-weight: 700;
+  white-space: nowrap;
 }
 
-.trophy-summary-track,
-.achievement-progress-track {
-  overflow: hidden;
-  height: 7px;
-  margin-top: 9px;
-  border-radius: 999px;
-  background: #e2e8f0;
-}
+.trophy-subject-tab:hover { background: #f8fafc; }
+.trophy-subject-tab.active { border-color: #93c5fd; background: #eff6ff; color: #1e40af; }
+.trophy-subject-tab:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
 
-.trophy-summary-track span,
-.achievement-progress-track span {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: #93c5fd;
-}
-
-.trophy-rank-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 18px;
-  margin-bottom: 22px;
-  border: 1px solid #dbe2ea;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #f8fafc, #fff);
-}
-
-.trophy-rank-icon {
-  display: grid;
-  place-items: center;
-  width: 58px;
-  height: 58px;
-  flex: 0 0 58px;
-  border-radius: 50%;
-  background: #f1f5f9;
-  font-size: 1.8rem;
-}
-
-.trophy-rank-card h3 {
-  margin: 2px 0 4px;
-}
-
-.trophy-rank-card p {
-  margin: 0;
-  color: #64748b;
-}
-
-.trophy-section {
-  margin-top: 22px;
-}
-
-.trophy-section > h3 {
-  margin-bottom: 12px;
-}
-
-.trophy-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.achievement-card {
-  min-height: 130px;
-  padding: 16px;
-  border: 1px solid #dbe2ea;
-  border-radius: 12px;
-  background: #fff;
-}
-
-.achievement-card h3 {
-  margin: 0 0 8px;
-  font-size: 1rem;
-}
-
-.achievement-card p {
-  margin: 0 0 10px;
-  color: #475569;
-  line-height: 1.5;
-}
-
-.achievement-card small {
-  color: #64748b;
-}
-
-.achievement-card.unlocked {
-  border-color: #bfdbfe;
-  background: #f8fbff;
-}
-
-.achievement-card.locked {
-  background: #f8fafc;
-}
-
-#trophy-chapter-list {
-  display: grid;
-  gap: 16px;
-}
-
-.chapter-progress-subject {
-  padding: 14px;
-  border: 1px solid #dbe2ea;
-  border-radius: 14px;
-  background: #fff;
-}
-
-.chapter-progress-subject > h3 {
-  margin: 0 0 12px;
-}
-
-.chapter-progress-card {
-  padding: 14px 0;
-  border-top: 1px solid #e2e8f0;
-}
-
-.chapter-progress-card:first-of-type {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.chapter-progress-card h4 {
-  margin: 0 0 5px;
-}
-
-.chapter-progress-card > p {
-  margin: 0 0 10px;
-  color: #64748b;
-}
-
-.chapter-achievement {
-  display: grid;
-  grid-template-columns: minmax(140px, 1fr) auto;
-  gap: 3px 12px;
-  padding: 10px 12px;
-  margin-top: 7px;
-  border: 1px solid #e2e8f0;
-  border-radius: 9px;
-  background: #f8fafc;
-}
-
-.chapter-achievement strong {
-  grid-column: 1;
-}
-
-.chapter-achievement > span {
-  grid-column: 2;
-  grid-row: 1;
-  color: #475569;
-  font-size: 0.85rem;
-  text-align: right;
-}
-
-.chapter-achievement small {
-  grid-column: 1 / -1;
-  color: #64748b;
-}
-
-.chapter-achievement .achievement-progress-track {
-  grid-column: 1 / -1;
-}
-
-.chapter-achievement.unlocked {
-  border-color: #bfdbfe;
-  background: #f8fbff;
-}
-
-.chapter-achievement.locked {
-  opacity: 0.9;
-}
+#trophy-chapter-list { display: grid; gap: 16px; }
+.chapter-progress-subject { padding: 14px; border: 1px solid #dbe2ea; border-radius: 14px; background: #fff; }
+.chapter-progress-subject > h3 { margin: 0 0 12px; }
+.chapter-progress-card { padding: 14px 0; border-top: 1px solid #e2e8f0; }
+.chapter-progress-card:first-of-type { border-top: 0; padding-top: 0; }
+.chapter-progress-card h4 { margin: 0 0 5px; }
+.chapter-progress-card > p { margin: 0 0 10px; color: #64748b; }
+.chapter-achievement { display: grid; grid-template-columns: minmax(140px, 1fr) auto; gap: 3px 12px; padding: 10px 12px; margin-top: 7px; border: 1px solid #e2e8f0; border-radius: 9px; background: #f8fafc; }
+.chapter-achievement strong { grid-column: 1; }
+.chapter-achievement > span { grid-column: 2; grid-row: 1; color: #475569; font-size: 0.85rem; text-align: right; }
+.chapter-achievement small { grid-column: 1 / -1; color: #64748b; }
+.chapter-achievement .achievement-progress-track { grid-column: 1 / -1; }
+.chapter-achievement.unlocked { border-color: #bfdbfe; background: #f8fbff; }
+.chapter-achievement.locked { opacity: 0.9; }
 
 @media (max-width: 800px) {
-  .trophy-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  .trophy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 600px) {
   .subject-card,
   .progress-panel,
   .selection-panel,
-  .subject-section {
-    padding: 14px;
-  }
-
-  .card-grid {
-    gap: 10px;
-  }
-
-  .practice-type-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .subject-section { padding: 14px; }
+  .card-grid { gap: 10px; }
+  .practice-type-grid { grid-template-columns: 1fr; }
   .selection-actions,
-  .paper2-actions {
-    gap: 8px;
-  }
-
-  .trophy-room-header {
-    flex-direction: column;
-  }
-
-  .trophy-summary {
-    min-width: 0;
-  }
-
-  .trophy-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .trophy-rank-card {
-    align-items: flex-start;
-  }
-
-  .chapter-achievement {
-    grid-template-columns: 1fr;
-  }
-
-  .chapter-achievement > span {
-    grid-column: 1;
-    grid-row: auto;
-    text-align: left;
-  }
+  .paper2-actions { gap: 8px; }
+  .trophy-room-header { flex-direction: column; }
+  .trophy-summary { min-width: 0; }
+  .trophy-grid { grid-template-columns: 1fr; }
+  .trophy-rank-card { align-items: flex-start; }
+  .trophy-subject-tabs { margin-right: -2px; padding-bottom: 8px; }
+  .trophy-subject-tab { min-height: 40px; padding: 8px 13px; font-size: 0.9rem; }
+  .chapter-achievement { grid-template-columns: 1fr; }
+  .chapter-achievement > span { grid-column: 1; grid-row: auto; text-align: left; }
 }
