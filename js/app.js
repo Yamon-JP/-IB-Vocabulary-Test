@@ -177,6 +177,7 @@ const App = {
     if (typeof Quiz !== 'undefined') {
       Quiz.questions = words;
       Quiz.current = this.state.practiceWord;
+      Quiz.questionIndex = 1;
       Quiz.render();
     }
     if (typeof Flashcard !== 'undefined') Flashcard.setWord(this.state.practiceWord);
