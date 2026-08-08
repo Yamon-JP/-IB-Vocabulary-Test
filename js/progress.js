@@ -71,6 +71,35 @@ const Progress = {
     return this.data.xp || 0;
   },
 
+  renderChapterProgress() {
+    const container = document.getElementById('chapter-progress-list');
+    if (!container) return;
+
+    const subjects = Object.entries(this.data.chapterStats || {});
+    if (!subjects.length) {
+      container.innerHTML = '<p class="muted">No chapter progress yet.</p>';
+      return;
+    }
+
+    container.innerHTML = subjects.map(([subject, chapters]) => {
+      const chapterEntries = Object.entries(chapters || {});
+      return `
+        <div class="chapter-progress-subject">
+          <h4>${subject}</h4>
+          ${chapterEntries.map(([chapter, stats]) => {
+            const questions = stats.questions || 0;
+            const correct = stats.correct || 0;
+            const accuracy = questions ? Math.round((correct / questions) * 100) : 0;
+            return `<div class="chapter-progress-row">
+              <span>${chapter}</span>
+              <strong>${accuracy}%</strong>
+              <small>${correct} / ${questions} correct</small>
+            </div>`;
+          }).join('')}
+        </div>`;
+    }).join('');
+  },
+
   render() {
     const values = {
       questions: this.data.questions,
@@ -85,6 +114,8 @@ const Progress = {
       const element = document.getElementById(id);
       if (element) element.textContent = value;
     });
+
+    this.renderChapterProgress();
   }
 };
 
