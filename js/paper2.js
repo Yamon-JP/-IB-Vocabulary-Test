@@ -320,7 +320,7 @@ const Paper2 = {
   },
 
   submit() {
-    if (!this.current) return;
+    if (!this.current || this.attemptSaved) return;
     const feedback = document.getElementById('paper2-feedback');
     const answer = document.getElementById('paper2-answer');
     if (!feedback || !answer) return;
