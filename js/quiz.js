@@ -130,8 +130,12 @@ const Quiz = {
     this.xpAwarded = true;
 
     document.querySelectorAll('.quiz-choice').forEach(button => {
+      button.disabled = true;
       if (button.textContent === this.getAnswer()) button.classList.add('correct');
       if (button.textContent === this.selected && !correct) button.classList.add('incorrect');
+      if (button.textContent !== this.getAnswer() && button.textContent !== this.selected) {
+        button.classList.add('answer-disabled');
+      }
     });
 
     const correctAnswer = this.getAnswer();
