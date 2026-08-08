@@ -1,0 +1,242 @@
+[
+  {
+    "id": "BIO-P1A-A1-001",
+    "subject": "Biology SL",
+    "chapter": "A1 Molecules",
+    "unit": "A1.1 Water",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "question": "A large lake changes temperature more slowly than the surrounding air. Which property of water contributes most directly to this effect?",
+    "options": [
+      {"id": "A", "text": "Water is non-polar."},
+      {"id": "B", "text": "Hydrogen bonds require energy to be disrupted."},
+      {"id": "C", "text": "Water contains oxygen atoms."},
+      {"id": "D", "text": "Water has a low density as a liquid."}
+    ],
+    "correctAnswer": "B",
+    "explanation": "Hydrogen bonding gives water a high specific heat capacity, so relatively large amounts of energy can be absorbed or released with only a small temperature change.",
+    "explanationJa": "水分子間の水素結合を崩すには多くのエネルギーが必要なため、水は比熱容量が大きくなります。そのため、周囲の気温が変化しても水温は急激に変化しにくくなります。"
+  },
+  {
+    "id": "BIO-P1A-A2-001",
+    "subject": "Biology SL",
+    "chapter": "A2 Cells",
+    "unit": "A2.1 Origins of cells",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "question": "Two geometrically similar cells differ only in size. The linear dimensions of cell Y are twice those of cell X. How does the surface area to volume ratio of Y compare with that of X?",
+    "options": [
+      {"id": "A", "text": "It is twice as large."},
+      {"id": "B", "text": "It is unchanged."},
+      {"id": "C", "text": "It is half as large."},
+      {"id": "D", "text": "It is one quarter as large."}
+    ],
+    "correctAnswer": "C",
+    "explanation": "Surface area scales with length squared while volume scales with length cubed. Doubling linear size therefore halves the surface area to volume ratio.",
+    "explanationJa": "表面積は長さの2乗、体積は長さの3乗に比例します。したがって相似な細胞の長さが2倍になると、表面積対体積比は元の2分の1になります。"
+  },
+  {
+    "id": "BIO-P1A-A3-001",
+    "subject": "Biology SL",
+    "chapter": "A3 Organisms",
+    "unit": "A3.1 Diversity of organisms",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "The same DNA region is compared among four species. Species P and Q differ at 8 nucleotide positions, P and R at 31, P and S at 45, and Q and R at 28. Which conclusion is best supported?",
+    "options": [
+      {"id": "A", "text": "P and Q probably share the most recent common ancestor."},
+      {"id": "B", "text": "P and S must belong to the same species."},
+      {"id": "C", "text": "Q evolved directly from P."},
+      {"id": "D", "text": "R and S are necessarily the most closely related pair."}
+    ],
+    "correctAnswer": "A",
+    "explanation": "When the same homologous DNA region is compared, fewer sequence differences generally support a more recent common ancestor. The data do not show direct ancestry or prove species identity.",
+    "explanationJa": "同じ相同DNA領域を比較した場合、塩基配列の違いが少ないほど一般により最近の共通祖先をもつと考えられます。直接の祖先・子孫関係や同一種であることまでは、このデータだけでは判断できません。"
+  },
+  {
+    "id": "BIO-P1A-B1-001",
+    "subject": "Biology SL",
+    "chapter": "B1 Molecules",
+    "unit": "B1.1 Carbohydrates and lipids",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "question": "Why are triglycerides particularly suitable for long-term energy storage in animals?",
+    "options": [
+      {"id": "A", "text": "They dissolve readily in water and circulate freely in blood."},
+      {"id": "B", "text": "They contain many energy-rich bonds and can be stored with little associated water."},
+      {"id": "C", "text": "They are polymers made from repeating glucose monomers."},
+      {"id": "D", "text": "They can be converted directly into ATP without respiration."}
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lipids contain many carbon-hydrogen bonds and are hydrophobic, allowing compact, water-free energy storage.",
+    "explanationJa": "脂質は炭素-水素結合を多く含み、酸化されると多くのエネルギーを放出できます。また疎水性なので大量の水を伴わずに蓄えられ、長期エネルギー貯蔵に適しています。"
+  },
+  {
+    "id": "BIO-P1A-B2-001",
+    "subject": "Biology SL",
+    "chapter": "B2 Cells",
+    "unit": "B2.1 Membranes and membrane transport",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "question": "A cell accumulates an ion to a concentration much higher than that outside the cell. Which mechanism most directly allows continued uptake of the ion?",
+    "options": [
+      {"id": "A", "text": "Simple diffusion through the phospholipid bilayer"},
+      {"id": "B", "text": "Osmosis through aquaporins"},
+      {"id": "C", "text": "Active transport using a membrane protein and an energy source"},
+      {"id": "D", "text": "Facilitated diffusion down the ion gradient"}
+    ],
+    "correctAnswer": "C",
+    "explanation": "Moving an ion into a region where its concentration is already higher requires transport against its electrochemical gradient and therefore an energy-dependent membrane transport mechanism.",
+    "explanationJa": "細胞内の濃度がすでに高い状態でさらにイオンを取り込むには、電気化学的勾配に逆らって輸送する必要があります。そのため、エネルギーを利用する能動輸送が必要です。"
+  },
+  {
+    "id": "BIO-P1A-B3-001",
+    "subject": "Biology SL",
+    "chapter": "B3 Organisms",
+    "unit": "B3.1 Gas exchange",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "question": "A disease destroys walls between neighboring alveoli, producing fewer, larger air spaces. What is the most direct effect on gas exchange?",
+    "options": [
+      {"id": "A", "text": "Diffusion distance becomes zero."},
+      {"id": "B", "text": "Total surface area for diffusion decreases."},
+      {"id": "C", "text": "Oxygen becomes more soluble in blood."},
+      {"id": "D", "text": "The concentration gradient for carbon dioxide always increases."}
+    ],
+    "correctAnswer": "B",
+    "explanation": "Combining many small alveoli into fewer larger spaces reduces the total surface area available for diffusion, lowering gas-exchange capacity.",
+    "explanationJa": "多数の小さな肺胞が少数の大きな空間になると、ガス交換に使える総表面積が減少します。そのため酸素や二酸化炭素の拡散効率が低下します。"
+  },
+  {
+    "id": "BIO-P1A-C1-001",
+    "subject": "Biology SL",
+    "chapter": "C1 Molecules",
+    "unit": "C1.1 Enzymes and metabolism",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "An enzyme-catalysed reaction has rates of 1.4, 2.8, 4.6, 5.1 and 2.0 arbitrary units at 15, 25, 35, 45 and 55 °C respectively. Which statement is best supported by the data?",
+    "options": [
+      {"id": "A", "text": "The enzyme is completely inactive below 25 °C."},
+      {"id": "B", "text": "The optimum temperature under these conditions is close to 45 °C."},
+      {"id": "C", "text": "Increasing temperature always increases reaction rate."},
+      {"id": "D", "text": "The enzyme must be denatured at 35 °C."}
+    ],
+    "correctAnswer": "B",
+    "explanation": "The highest measured rate occurs at 45 °C. The fall at 55 °C shows that the relationship is not a continuous increase.",
+    "explanationJa": "測定値の中で反応速度が最大なのは45 °Cです。55 °Cでは速度が低下しているため、温度を上げれば常に反応速度が上がるとはいえません。"
+  },
+  {
+    "id": "BIO-P1A-C2-001",
+    "subject": "Biology SL",
+    "chapter": "C2 Cells",
+    "unit": "C2.2 Neural signalling",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "A toxin prevents voltage-gated sodium channels in a neuron from opening. Which process is most directly impaired?",
+    "options": [
+      {"id": "A", "text": "Rapid depolarization of the membrane during an action potential"},
+      {"id": "B", "text": "Diffusion of neurotransmitter across the synaptic cleft"},
+      {"id": "C", "text": "Synthesis of acetylcholine in the cell body"},
+      {"id": "D", "text": "Formation of myelin by surrounding cells"}
+    ],
+    "correctAnswer": "A",
+    "explanation": "Opening of voltage-gated sodium channels allows sodium ions to enter the neuron and drives the rapid depolarizing phase of an action potential.",
+    "explanationJa": "電位依存性ナトリウムチャネルが開くとNa+が細胞内へ流入し、活動電位の急速な脱分極が起こります。チャネルが開かなければこの過程が直接妨げられます。"
+  },
+  {
+    "id": "BIO-P1A-C3-001",
+    "subject": "Biology SL",
+    "chapter": "C3 Organisms",
+    "unit": "C3.2 Defence against disease",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "question": "Why can vaccination lead to a faster response after later exposure to the same pathogen?",
+    "options": [
+      {"id": "A", "text": "All pathogens are permanently removed from the environment."},
+      {"id": "B", "text": "Memory lymphocytes remain after the primary immune response."},
+      {"id": "C", "text": "Innate immunity becomes specific for one antigen."},
+      {"id": "D", "text": "Red blood cells begin producing antibodies."}
+    ],
+    "correctAnswer": "B",
+    "explanation": "Specific immune responses can leave memory cells that respond more rapidly and strongly when the same antigen is encountered again.",
+    "explanationJa": "特異的免疫では記憶細胞が残るため、同じ抗原に再び出会ったときに、初回より速く強い二次応答を起こすことができます。"
+  },
+  {
+    "id": "BIO-P1A-D1-001",
+    "subject": "Biology SL",
+    "chapter": "D1 Molecules",
+    "unit": "D1.3 Mutations and gene editing",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "A single base substitution changes one codon in a protein-coding gene, but the amino acid sequence of the protein is unchanged. What best explains this result?",
+    "options": [
+      {"id": "A", "text": "DNA replication always corrects base substitutions before transcription."},
+      {"id": "B", "text": "More than one codon can specify the same amino acid."},
+      {"id": "C", "text": "Every mRNA codon binds to several different tRNAs at the same time."},
+      {"id": "D", "text": "Amino acids determine the sequence of bases in mRNA."}
+    ],
+    "correctAnswer": "B",
+    "explanation": "The genetic code is degenerate: several different codons can specify the same amino acid. Some base substitutions are therefore silent.",
+    "explanationJa": "遺伝暗号には縮重があり、複数の異なるコドンが同じアミノ酸を指定することがあります。そのため、塩基置換が起きてもアミノ酸配列が変化しないサイレント変異が起こり得ます。"
+  },
+  {
+    "id": "BIO-P1A-D2-001",
+    "subject": "Biology SL",
+    "chapter": "D2 Cells",
+    "unit": "D2.1 Cell and nuclear division",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "question": "Which event during meiosis contributes to genetic variation by distributing maternal and paternal homologous chromosomes independently?",
+    "options": [
+      {"id": "A", "text": "DNA replication in interphase"},
+      {"id": "B", "text": "Random orientation of homologous pairs at metaphase I"},
+      {"id": "C", "text": "Separation of sister chromatids in mitosis"},
+      {"id": "D", "text": "Cytokinesis after meiosis II"}
+    ],
+    "correctAnswer": "B",
+    "explanation": "Each homologous pair can orient independently at metaphase I, producing different combinations of maternal and paternal chromosomes in the resulting cells.",
+    "explanationJa": "減数分裂Iの中期では各相同染色体対が独立してランダムな向きに並びます。その結果、母由来と父由来の染色体がさまざまな組み合わせで分配されます。"
+  },
+  {
+    "id": "BIO-P1A-D4-001",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.1 Natural selection",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "A bacterial population contains a small proportion of antibiotic-resistant cells before treatment. After repeated antibiotic treatment, the proportion of resistant cells rises. Which explanation is most consistent with natural selection?",
+    "options": [
+      {"id": "A", "text": "The antibiotic causes every bacterium to develop the same resistance mutation."},
+      {"id": "B", "text": "Resistant bacteria survive and reproduce more successfully under antibiotic selection."},
+      {"id": "C", "text": "Susceptible bacteria deliberately change their DNA when exposed to the antibiotic."},
+      {"id": "D", "text": "Resistance increases because antibiotics stop all bacterial reproduction equally."}
+    ],
+    "correctAnswer": "B",
+    "explanation": "The antibiotic acts as a selection pressure. Resistant variants are more likely to survive and leave descendants, increasing the frequency of resistance-associated alleles over generations.",
+    "explanationJa": "抗生物質は選択圧として働きます。もともと耐性をもつ変異個体がより生き残りやすく増殖しやすいため、世代を重ねると集団内で耐性に関係する遺伝情報の割合が増加します。"
+  }
+]
