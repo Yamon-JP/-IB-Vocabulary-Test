@@ -8,9 +8,17 @@ const DailyChallenge = {
   goal: 10,
   bonusXP: 20,
 
+  today() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  },
+
   load() {
     const saved = Storage.load('ib_daily');
-    const today = new Date().toISOString().slice(0, 10);
+    const today = this.today();
 
     if (saved && saved.date === today) {
       this.data = saved;
@@ -33,6 +41,11 @@ const DailyChallenge = {
       this.data.bonusClaimed = true;
       Progress.data.xp += this.bonusXP;
       Storage.save('ib_progress', Progress.data);
+
+      if (typeof Achievements !== 'undefined') {
+        Achievements.check(Progress.data);
+      }
+
       this.showBonus();
     }
 
@@ -56,7 +69,7 @@ const DailyChallenge = {
   render() {
     const element = document.getElementById('daily-progress');
     if (element) {
-      element.textContent = `${this.data.questions}/${this.goal}`;
+      element.textContent = `${Math.min(this.data.questions, this.goal)}/${this.goal}`;
     }
   }
 };
