@@ -1,1 +1,178 @@
-[]
+[
+  {
+    "id": "BIO-P2-A1-001",
+    "subject": "Biology SL",
+    "chapter": "A1 Molecules",
+    "unit": "A1.1 Water",
+    "commandTerm": "Explain",
+    "marks": 4,
+    "difficulty": "standard",
+    "question": "Explain how properties of water make it suitable for transport in living organisms.",
+    "markscheme": [
+      "Water molecules are polar and can form hydrogen bonds.",
+      "Cohesion between water molecules helps maintain continuous columns of water.",
+      "Adhesion between water and hydrophilic surfaces can assist movement through narrow spaces.",
+      "Water dissolves many ions and other polar substances, allowing them to be transported in solution."
+    ],
+    "modelAnswer": "Water is polar, so water molecules form hydrogen bonds with one another. This produces cohesion, which helps maintain continuous columns of water, for example in plant vascular tissue. Water can also adhere to hydrophilic surfaces, helping movement through narrow tubes. Because water is a good solvent for ions and many polar molecules, dissolved substances can be carried through organisms in aqueous solutions."
+  },
+  {
+    "id": "BIO-P2-A1-002",
+    "subject": "Biology SL",
+    "chapter": "A1 Molecules",
+    "unit": "A1.2 Nucleic acids",
+    "commandTerm": "Compare and contrast",
+    "marks": 4,
+    "difficulty": "standard",
+    "question": "Compare and contrast the structures of DNA and RNA.",
+    "markscheme": [
+      "Both DNA and RNA are polymers made of nucleotides with sugar-phosphate backbones.",
+      "DNA contains deoxyribose whereas RNA contains ribose.",
+      "DNA uses thymine whereas RNA uses uracil; both can contain adenine, cytosine and guanine.",
+      "DNA is typically double-stranded whereas RNA is typically single-stranded."
+    ],
+    "modelAnswer": "DNA and RNA are both nucleic acids composed of nucleotide monomers joined into a sugar-phosphate backbone. DNA contains deoxyribose sugar, while RNA contains ribose. DNA contains the base thymine, whereas RNA contains uracil; both also contain adenine, cytosine and guanine. DNA is usually double-stranded, while RNA is usually single-stranded."
+  },
+  {
+    "id": "BIO-P2-A2-001",
+    "subject": "Biology SL",
+    "chapter": "A2 Cells",
+    "unit": "A2.2 Cell structure",
+    "commandTerm": "Compare and contrast",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Compare and contrast the structures of prokaryotic and eukaryotic cells.",
+    "markscheme": [
+      "Both cell types have a plasma membrane, cytoplasm, ribosomes and genetic material.",
+      "Eukaryotic cells contain a nucleus, whereas prokaryotic cells do not have a membrane-bound nucleus.",
+      "Eukaryotic cells contain membrane-bound organelles, whereas prokaryotic cells lack these organelles.",
+      "Prokaryotic cells generally have smaller ribosomes than eukaryotic cytoplasmic ribosomes.",
+      "Prokaryotic cells are generally smaller and structurally simpler than eukaryotic cells."
+    ],
+    "modelAnswer": "Both prokaryotic and eukaryotic cells have a plasma membrane, cytoplasm, ribosomes and genetic material. Eukaryotic cells contain DNA inside a membrane-bound nucleus and have membrane-bound organelles, while prokaryotic cells lack a nucleus and these organelles. Prokaryotic ribosomes are generally smaller than eukaryotic cytoplasmic ribosomes, and prokaryotic cells are usually smaller and structurally simpler overall."
+  },
+  {
+    "id": "BIO-P2-B1-001",
+    "subject": "Biology SL",
+    "chapter": "B1 Molecules",
+    "unit": "B1.1 Carbohydrates and lipids",
+    "commandTerm": "Explain",
+    "marks": 4,
+    "difficulty": "standard",
+    "question": "Explain why lipids are well suited for long-term energy storage in organisms.",
+    "markscheme": [
+      "Lipids contain many energy-rich carbon-hydrogen bonds and release a large amount of energy when oxidized.",
+      "Lipids are hydrophobic and can be stored without associated water.",
+      "Their water-free storage makes them compact and relatively low in mass for the amount of energy stored.",
+      "Stored lipids can be mobilized and used as respiratory substrates when energy is required."
+    ],
+    "modelAnswer": "Lipids contain many carbon-hydrogen bonds, so their oxidation can release a large amount of energy. Because lipids are hydrophobic, they can be stored without attracting large amounts of water. This makes lipid stores compact and relatively light compared with hydrated carbohydrate stores. When needed, stored lipids can be broken down and used as substrates for respiration."
+  },
+  {
+    "id": "BIO-P2-B2-001",
+    "subject": "Biology SL",
+    "chapter": "B2 Cells",
+    "unit": "B2.1 Membranes and membrane transport",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain the roles of membrane proteins in facilitated diffusion and active transport.",
+    "markscheme": [
+      "Facilitated diffusion uses specific channel or carrier proteins in the membrane.",
+      "Particles move by facilitated diffusion down their concentration or electrochemical gradient.",
+      "Facilitated diffusion does not require direct energy input from ATP.",
+      "Active transport uses specific carrier or pump proteins to move substances against a gradient.",
+      "Active transport requires energy, commonly supplied directly or indirectly by ATP."
+    ],
+    "modelAnswer": "In facilitated diffusion, channel or carrier proteins provide selective pathways for substances that cannot cross the lipid bilayer easily. The substances move down their concentration or electrochemical gradient, so no direct ATP input is required. In active transport, membrane pumps or carrier proteins move substances against a concentration or electrochemical gradient. This requires an energy input, commonly supplied directly or indirectly by ATP."
+  },
+  {
+    "id": "BIO-P2-B3-001",
+    "subject": "Biology SL",
+    "chapter": "B3 Organisms",
+    "unit": "B3.1 Gas exchange",
+    "commandTerm": "Explain",
+    "marks": 4,
+    "difficulty": "standard",
+    "question": "Explain how the structure of mammalian alveoli supports efficient gas exchange.",
+    "markscheme": [
+      "Many alveoli provide a large surface area for diffusion.",
+      "The alveolar and capillary walls are very thin, producing a short diffusion distance.",
+      "A dense capillary network maintains blood flow and helps preserve concentration gradients.",
+      "Ventilation continually replaces alveolar air and helps maintain steep oxygen and carbon dioxide gradients."
+    ],
+    "modelAnswer": "The large number of alveoli creates a very large surface area for gas exchange. Their walls and the adjacent capillary walls are extremely thin, so gases diffuse across a short distance. A dense capillary network rapidly carries oxygen away and brings carbon dioxide to the lungs. Ventilation refreshes the air in the alveoli, maintaining steep concentration gradients for both gases."
+  },
+  {
+    "id": "BIO-P2-C1-001",
+    "subject": "Biology SL",
+    "chapter": "C1 Molecules",
+    "unit": "C1.1 Enzymes and metabolism",
+    "commandTerm": "Explain",
+    "marks": 4,
+    "difficulty": "standard",
+    "question": "Explain the effect of increasing temperature on the rate of an enzyme-catalysed reaction from a low temperature to a temperature above the enzyme's optimum.",
+    "markscheme": [
+      "At low temperatures, increasing temperature raises molecular kinetic energy and collision frequency.",
+      "More successful enzyme-substrate collisions increase the reaction rate up to an optimum.",
+      "Above the optimum, heat disrupts interactions that maintain the enzyme's three-dimensional structure.",
+      "The active site's shape changes, reducing substrate binding and causing the reaction rate to fall."
+    ],
+    "modelAnswer": "At low temperatures, molecules have relatively little kinetic energy. As temperature rises, enzymes and substrates move faster and collide more frequently, so the reaction rate increases until an optimum is reached. Above the optimum, thermal motion disrupts interactions that maintain the enzyme's three-dimensional structure. The active site changes shape, fewer substrates bind successfully, and the reaction rate decreases."
+  },
+  {
+    "id": "BIO-P2-C3-001",
+    "subject": "Biology SL",
+    "chapter": "C3 Organisms",
+    "unit": "C3.2 Defence against disease",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "challenging",
+    "question": "Explain how a specific immune response can provide protection after exposure to a pathogen.",
+    "markscheme": [
+      "Antigens from the pathogen are recognized as foreign by specific lymphocytes.",
+      "Selected lymphocytes undergo clonal expansion.",
+      "Effector cells are produced, including cells that secrete specific antibodies where appropriate.",
+      "The response helps eliminate or control the pathogen through antigen-specific mechanisms.",
+      "Memory cells remain and enable a faster, stronger secondary response after later exposure to the same antigen."
+    ],
+    "modelAnswer": "A pathogen carries antigens that can be recognized by lymphocytes with complementary receptors. The appropriate lymphocytes are selected and divide by clonal expansion. Their descendants differentiate into effector cells, including antibody-producing cells in a humoral response, which help remove the pathogen. Some cells become long-lived memory cells. If the same antigen is encountered again, these memory cells produce a faster and stronger secondary response."
+  },
+  {
+    "id": "BIO-P2-D1-001",
+    "subject": "Biology SL",
+    "chapter": "D1 Molecules",
+    "unit": "D1.2 Protein synthesis",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "challenging",
+    "question": "Explain how the sequence of bases in mRNA determines the amino acid sequence of a polypeptide during translation.",
+    "markscheme": [
+      "The ribosome reads the mRNA in groups of three bases called codons.",
+      "Each codon specifies a particular amino acid or a translation signal according to the genetic code.",
+      "tRNA molecules carry specific amino acids and contain anticodons complementary to mRNA codons.",
+      "Complementary pairing between codons and anticodons positions the correct amino acids at the ribosome.",
+      "The ribosome forms peptide bonds in the order specified by the mRNA sequence."
+    ],
+    "modelAnswer": "During translation, a ribosome moves along the mRNA and reads its bases in three-base codons. Each codon corresponds to a particular amino acid or translation signal. tRNA molecules carry specific amino acids and have anticodons that pair with complementary codons on the mRNA. This pairing places the amino acids in the correct order, and the ribosome catalyses peptide-bond formation to build the polypeptide."
+  },
+  {
+    "id": "BIO-P2-D4-001",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.1 Natural selection",
+    "commandTerm": "Explain",
+    "marks": 6,
+    "difficulty": "challenging",
+    "question": "Explain how natural selection can lead to an increase in antibiotic resistance in a bacterial population.",
+    "markscheme": [
+      "Genetic variation exists in the bacterial population, for example because mutations can produce resistance.",
+      "Antibiotic treatment creates a selection pressure.",
+      "Susceptible bacteria are more likely to be killed or prevented from reproducing.",
+      "Resistant bacteria are more likely to survive and reproduce.",
+      "Resistance-associated genetic information is inherited by descendants of resistant bacteria.",
+      "Across generations, the frequency of resistance increases in the population."
+    ],
+    "modelAnswer": "A bacterial population contains genetic variation, and mutations can result in some bacteria being resistant to an antibiotic. When the antibiotic is applied, it acts as a selection pressure. Susceptible bacteria are more likely to die or fail to reproduce, while resistant bacteria are more likely to survive. The resistant survivors reproduce and pass resistance-associated genetic information to their descendants. Over generations, the frequency of resistance therefore increases in the population."
+  }
+]
