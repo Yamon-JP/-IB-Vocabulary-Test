@@ -1,5 +1,5 @@
 const Progress = {
-  data: { questions: 0, correct: 0, xp: 0, correctStreak: 0 },
+  data: { questions: 0, correct: 0, xp: 0, correctStreak: 0, chapterStats: {} },
 
   load() {
     const saved = Storage.load('ib_progress');
@@ -8,7 +8,8 @@ const Progress = {
         questions: saved.questions || 0,
         correct: saved.correct || 0,
         xp: saved.xp || ((saved.correct || 0) * 10),
-        correctStreak: saved.correctStreak || 0
+        correctStreak: saved.correctStreak || 0,
+        chapterStats: saved.chapterStats || {}
       };
     }
     this.render();
@@ -18,7 +19,7 @@ const Progress = {
     }
   },
 
-  record(correct) {
+  record(correct, word = null) {
     this.data.questions++;
 
     if (correct) {
@@ -27,6 +28,21 @@ const Progress = {
       this.data.correctStreak++;
     } else {
       this.data.correctStreak = 0;
+    }
+
+    // Keep the existing overall progress untouched while additionally
+    // recording chapter-level statistics when the question has metadata.
+    const subject = word && word.subject;
+    const chapter = word && (word.chapter || word.topic);
+    if (subject && chapter) {
+      if (!this.data.chapterStats[subject]) this.data.chapterStats[subject] = {};
+      if (!this.data.chapterStats[subject][chapter]) {
+        this.data.chapterStats[subject][chapter] = { questions: 0, correct: 0 };
+      }
+
+      const stats = this.data.chapterStats[subject][chapter];
+      stats.questions++;
+      if (correct) stats.correct++;
     }
 
     Storage.save('ib_progress', this.data);
@@ -38,7 +54,7 @@ const Progress = {
   },
 
   reset() {
-    this.data = { questions: 0, correct: 0, xp: 0, correctStreak: 0 };
+    this.data = { questions: 0, correct: 0, xp: 0, correctStreak: 0, chapterStats: {} };
     Storage.save('ib_progress', this.data);
     this.render();
 
