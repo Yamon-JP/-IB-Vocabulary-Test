@@ -1,9 +1,31 @@
 const Paper2 = {
+  allQuestions: [],
   questions: [],
   current: null,
 
-  init() {
+  async init() {
+    try {
+      const response = await fetch('data/paper2.json');
+      if (!response.ok) throw new Error('Paper 2 data not found');
+      this.allQuestions = await response.json();
+    } catch (error) {
+      console.warn('Paper 2 data is not available yet.');
+      this.allQuestions = [];
+    }
     this.renderEmptyState();
+  },
+
+  loadForSelection(subject, chapters = []) {
+    this.questions = this.allQuestions.filter(question => {
+      if (question.subject !== subject) return false;
+      if (!chapters.length) return true;
+      const chapter = question.chapter || question.topic;
+      return chapters.includes(chapter);
+    });
+    this.current = this.questions.length
+      ? this.questions[Math.floor(Math.random() * this.questions.length)]
+      : null;
+    this.render();
   },
 
   setQuestions(questions = []) {
