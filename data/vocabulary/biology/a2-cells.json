@@ -1,0 +1,36 @@
+{
+  "subject": "Biology SL",
+  "theme": "Theme A: Unity and diversity",
+  "chapter": "A2 Cells",
+  "chapterTitle": "Cells",
+  "level": "SL",
+  "units": [
+    {
+      "unit": "A2.2 Cell structure",
+      "words": [
+        {"id":"BIO-A2-2-001","word":"cell theory","priority":"core","theme":"Theme A: Unity and diversity","definition":"the theory that living organisms are composed of cells, cells are the basic units of life and cells arise from pre-existing cells","japanese":"細胞説","example":"Cell theory provides a unifying explanation for the organization of living organisms."},
+        {"id":"BIO-A2-2-002","word":"microscope","priority":"core","theme":"Theme A: Unity and diversity","definition":"an instrument that produces an enlarged image of objects too small to see clearly with the unaided eye","japanese":"顕微鏡","example":"A microscope allows biologists to examine cells and tissues."},
+        {"id":"BIO-A2-2-003","word":"light microscope","priority":"core","theme":"Theme A: Unity and diversity","definition":"a microscope that uses visible light and glass lenses to form an image","japanese":"光学顕微鏡","example":"A light microscope can be used to observe living cells."},
+        {"id":"BIO-A2-2-004","word":"electron microscope","priority":"core","theme":"Theme A: Unity and diversity","definition":"a microscope that uses a beam of electrons to produce images with very high resolution","japanese":"電子顕微鏡","example":"An electron microscope reveals cell ultrastructure in much greater detail than a light microscope."},
+        {"id":"BIO-A2-2-005","word":"magnification","priority":"core","theme":"Theme A: Unity and diversity","definition":"the ratio of image size to actual size","japanese":"倍率","example":"Magnification can be calculated by dividing image size by actual size."},
+        {"id":"BIO-A2-2-006","word":"resolution","priority":"core","theme":"Theme A: Unity and diversity","definition":"the ability to distinguish two nearby points as separate","japanese":"分解能","example":"Electron microscopes have higher resolution than light microscopes."},
+        {"id":"BIO-A2-2-007","word":"micrograph","priority":"core","theme":"Theme A: Unity and diversity","definition":"an image of a specimen produced using a microscope","japanese":"顕微鏡写真","example":"The micrograph shows mitochondria within a cell."},
+        {"id":"BIO-A2-2-008","word":"prokaryotic cell","priority":"core","theme":"Theme A: Unity and diversity","definition":"a cell lacking a nucleus and other membrane-bound organelles","japanese":"原核細胞","example":"Bacteria are made of prokaryotic cells."},
+        {"id":"BIO-A2-2-009","word":"eukaryotic cell","priority":"core","theme":"Theme A: Unity and diversity","definition":"a cell containing a nucleus and membrane-bound organelles","japanese":"真核細胞","example":"Animal and plant cells are eukaryotic."},
+        {"id":"BIO-A2-2-010","word":"cell wall","priority":"core","theme":"Theme A: Unity and diversity","definition":"a rigid layer outside the plasma membrane that supports and protects certain cells","japanese":"細胞壁","example":"Plant cell walls contain cellulose."},
+        {"id":"BIO-A2-2-011","word":"plasma membrane","priority":"core","theme":"Theme A: Unity and diversity","definition":"the selectively permeable membrane that surrounds the cytoplasm of a cell","japanese":"細胞膜","example":"The plasma membrane controls movement of substances into and out of the cell."},
+        {"id":"BIO-A2-2-012","word":"cytoplasm","priority":"core","theme":"Theme A: Unity and diversity","definition":"the internal cell material outside the nucleus, including cytosol and suspended structures","japanese":"細胞質","example":"Many metabolic reactions occur in the cytoplasm."},
+        {"id":"BIO-A2-2-013","word":"ribosome","priority":"core","theme":"Theme A: Unity and diversity","definition":"a cellular structure that carries out protein synthesis by translating mRNA","japanese":"リボソーム","example":"Ribosomes join amino acids into polypeptides."},
+        {"id":"BIO-A2-2-014","word":"nucleus","priority":"core","theme":"Theme A: Unity and diversity","definition":"a membrane-bound organelle in eukaryotic cells that contains most of the cell's DNA","japanese":"核","example":"The nucleus stores chromosomes in a eukaryotic cell."},
+        {"id":"BIO-A2-2-015","word":"mitochondrion","priority":"core","theme":"Theme A: Unity and diversity","definition":"a double-membrane organelle where most aerobic ATP production occurs in eukaryotic cells","japanese":"ミトコンドリア","example":"Mitochondria are abundant in cells with high energy demands."},
+        {"id":"BIO-A2-2-016","word":"rough endoplasmic reticulum","priority":"extended","theme":"Theme A: Unity and diversity","definition":"a membrane network studded with ribosomes that synthesizes and processes proteins for secretion or membranes","japanese":"粗面小胞体","example":"Secretory cells often contain extensive rough endoplasmic reticulum."},
+        {"id":"BIO-A2-2-017","word":"Golgi apparatus","priority":"extended","theme":"Theme A: Unity and diversity","definition":"a stack of membrane sacs that modifies, sorts and packages proteins and lipids","japanese":"ゴルジ体","example":"The Golgi apparatus packages proteins into vesicles."},
+        {"id":"BIO-A2-2-018","word":"vesicle","priority":"extended","theme":"Theme A: Unity and diversity","definition":"a small membrane-bound sac used for transport or storage within cells","japanese":"小胞","example":"Transport vesicles move proteins from the ER to the Golgi apparatus."},
+        {"id":"BIO-A2-2-019","word":"vacuole","priority":"extended","theme":"Theme A: Unity and diversity","definition":"a membrane-bound compartment used mainly for storage and water balance","japanese":"液胞","example":"A large central vacuole helps maintain turgor in plant cells."},
+        {"id":"BIO-A2-2-020","word":"lysosome","priority":"extended","theme":"Theme A: Unity and diversity","definition":"a membrane-bound organelle containing hydrolytic enzymes for intracellular digestion","japanese":"リソソーム","example":"Lysosomes break down damaged cell components and engulfed material."},
+        {"id":"BIO-A2-2-021","word":"cytoskeleton","priority":"extended","theme":"Theme A: Unity and diversity","definition":"a network of protein filaments that supports cell shape, organization and movement","japanese":"細胞骨格","example":"The cytoskeleton helps position organelles and move materials inside cells."},
+        {"id":"BIO-A2-2-022","word":"centriole","priority":"extended","theme":"Theme A: Unity and diversity","definition":"a cylindrical structure made of microtubules that helps organize the spindle in many animal cells","japanese":"中心小体","example":"Centrioles contribute to spindle organization during animal-cell division."}
+      ]
+    }
+  ]
+}
