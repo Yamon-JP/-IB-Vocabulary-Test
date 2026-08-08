@@ -2,6 +2,7 @@ const App = {
   state: {
     currentPage: 'home',
     subject: null,
+    practiceType: 'vocabulary',
     practiceScope: 'all',
     selectedChapters: [],
     practiceWord: null,
@@ -19,7 +20,9 @@ const App = {
         this.renderSubjectCards();
         this.renderChapterSelector();
         this.applySavedSelection();
+        this.applyPracticeTypeUI();
         if (typeof Quiz !== 'undefined') Quiz.init();
+        if (typeof Paper2 !== 'undefined') Paper2.init();
       });
     }
 
@@ -30,7 +33,7 @@ const App = {
     const container = document.getElementById('subject-list');
     if (!container || typeof Vocabulary === 'undefined') return;
 
-    const subjects = ['English B HL', 'Biology SL', 'ESS HL', 'Math AI SL'];
+    const subjects = ['English B HL', 'Biology SL', 'ESS HL'];
     const available = Vocabulary.subjects();
 
     container.innerHTML = subjects.map(subject => {
@@ -45,12 +48,27 @@ const App = {
 
   selectSubject(subject) {
     this.state.subject = subject;
+    this.state.practiceType = 'vocabulary';
     this.state.practiceScope = 'all';
     this.state.selectedChapters = [];
     this.state.practiceWord = null;
     this.saveState();
     this.renderChapterSelector();
+    this.applyPracticeTypeUI();
     Pages.show('selection');
+  },
+
+  setPracticeType(type) {
+    this.state.practiceType = type;
+    this.applyPracticeTypeUI();
+    this.saveState();
+  },
+
+  applyPracticeTypeUI() {
+    const vocabularyButton = document.getElementById('type-vocabulary');
+    const paper2Button = document.getElementById('type-paper2');
+    if (vocabularyButton) vocabularyButton.classList.toggle('active', this.state.practiceType === 'vocabulary');
+    if (paper2Button) paper2Button.classList.toggle('active', this.state.practiceType === 'paper2');
   },
 
   renderChapterSelector() {
@@ -62,7 +80,7 @@ const App = {
     const chapters = Vocabulary.chapters(this.state.subject);
 
     if (!chapters.length) {
-      list.innerHTML = '<p class="muted">No vocabulary data is available yet.</p>';
+      list.innerHTML = '<p class="muted">No chapter data is available yet.</p>';
       return;
     }
 
@@ -91,13 +109,22 @@ const App = {
       return;
     }
 
+    this.state.selectedChapters = chapters;
+    this.saveState();
+
+    if (this.state.practiceType === 'paper2') {
+      if (typeof Paper2 !== 'undefined') Paper2.setQuestions([]);
+      this.updatePracticeHeader();
+      Pages.show('practice');
+      return;
+    }
+
     const words = Vocabulary.filter(this.state.subject, chapters);
     if (!words.length) {
       alert('No vocabulary is available for this selection yet.');
       return;
     }
 
-    this.state.selectedChapters = chapters;
     this.state.practiceWord = words[Math.floor(Math.random() * words.length)];
     this.saveState();
 
@@ -108,7 +135,20 @@ const App = {
     }
     if (typeof Flashcard !== 'undefined') Flashcard.setWord(this.state.practiceWord);
 
+    this.updatePracticeHeader();
     Pages.show('practice');
+  },
+
+  updatePracticeHeader() {
+    const subject = document.getElementById('selection-subject-practice');
+    if (subject) {
+      subject.textContent = `${this.state.subject || ''} · ${this.state.practiceType === 'paper2' ? 'Paper 2' : 'Vocabulary'}`;
+    }
+
+    const vocabularyPanel = document.getElementById('vocabulary-practice-panel');
+    const paper2Panel = document.getElementById('paper2-practice-panel');
+    if (vocabularyPanel) vocabularyPanel.style.display = this.state.practiceType === 'vocabulary' ? 'block' : 'none';
+    if (paper2Panel) paper2Panel.style.display = this.state.practiceType === 'paper2' ? 'block' : 'none';
   },
 
   applySavedSelection() {
@@ -139,6 +179,7 @@ const App = {
     this.state.currentPage = page;
     this.saveState();
     if (typeof Pages !== 'undefined') Pages.show(page);
+    if (page === 'practice') this.updatePracticeHeader();
   },
 
   loadState() {
