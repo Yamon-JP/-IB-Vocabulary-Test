@@ -7,6 +7,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2b",
     "question": "Explain how the amino acid sequence of a polypeptide can determine the structure and function of a protein.",
     "markscheme": [
       "The primary structure is the specific sequence of amino acids in a polypeptide.",
@@ -33,6 +34,7 @@
     "commandTerm": "Compare and contrast",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "practice",
     "question": "Compare and contrast starch, glycogen and cellulose.",
     "markscheme": [
       "All three are polysaccharides made from glucose monomers.",
@@ -59,6 +61,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Explain how the structure of a phospholipid bilayer contributes to selective permeability of a cell membrane.",
     "markscheme": [
       "Phospholipids have hydrophilic heads and hydrophobic fatty-acid tails.",
@@ -85,6 +88,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
     "question": "Explain how compartmentalization increases the efficiency of processes in eukaryotic cells.",
     "markscheme": [
       "Membrane-bound organelles separate different chemical environments within the cell.",
@@ -111,6 +115,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "practice",
     "question": "Explain how xylem vessels are adapted for the transport of water through a plant.",
     "markscheme": [
       "Xylem vessels form long continuous tubes through the plant.",
@@ -137,6 +142,7 @@
     "commandTerm": "Compare and contrast",
     "marks": 6,
     "difficulty": "standard",
+    "assessmentTarget": "practice",
     "question": "Compare and contrast arteries, veins and capillaries in the mammalian circulatory system.",
     "markscheme": [
       "Arteries carry blood away from the heart, whereas veins carry blood toward the heart.",
@@ -165,6 +171,7 @@
     "commandTerm": "Explain",
     "marks": 4,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Explain why a species' realized niche can be smaller than its fundamental niche.",
     "markscheme": [
       "The fundamental niche is the full range of conditions and resources a species could use in the absence of biotic restrictions.",
@@ -189,6 +196,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "practice",
     "question": "Explain how xerophyte adaptations can reduce water loss in a dry environment.",
     "markscheme": [
       "A thick waxy cuticle reduces evaporation from the leaf surface.",
