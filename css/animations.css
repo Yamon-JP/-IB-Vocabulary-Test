@@ -1,4 +1,5 @@
 @import url("trophy-mobile.css");
+@import url("paper2-data.css");
 
 @keyframes page-enter {
   from { opacity: 0; transform: translateY(6px); }
