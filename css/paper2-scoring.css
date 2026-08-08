@@ -1,0 +1,114 @@
+.paper2-self-mark-list {
+  padding-left: 24px;
+}
+.paper2-self-mark-point {
+  margin: 9px 0;
+}
+.paper2-self-mark-point > label {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 10px 11px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fbfcfe;
+  cursor: pointer;
+}
+.paper2-self-mark-point > label:has(input:checked) {
+  border-color: #a7d7c2;
+  background: #f0fdf7;
+}
+.paper2-self-mark-point input {
+  width: 19px;
+  height: 19px;
+  margin-top: 2px;
+  accent-color: #059669;
+}
+.paper2-self-mark-copy,
+.paper2-self-mark-copy > span {
+  display: block;
+  min-width: 0;
+}
+.paper2-self-mark-copy .paper2-markscheme-ja {
+  margin-top: 5px;
+  color: #667085;
+  font-size: .84rem;
+  line-height: 1.55;
+}
+.paper2-self-mark-panel {
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid #d9def8;
+  border-radius: 14px;
+  background: #f8f8ff;
+}
+.paper2-self-mark-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+.paper2-self-mark-heading strong,
+.paper2-self-mark-heading small {
+  display: block;
+}
+.paper2-self-mark-heading small {
+  margin-top: 4px;
+  color: #667085;
+  font-size: .78rem;
+  line-height: 1.45;
+}
+#paper2-self-score {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.paper2-self-mark-save {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+#paper2-save-score {
+  min-height: 42px;
+  padding: 9px 14px;
+  border-color: #4f46e5;
+  background: #4f46e5;
+  color: #fff;
+}
+#paper2-save-score:disabled {
+  border-color: #cbd5e1;
+  background: #e2e8f0;
+  color: #64748b;
+  cursor: default;
+}
+#paper2-save-status {
+  color: #667085;
+  font-size: .78rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .paper2-self-mark-list {
+    padding-left: 20px;
+  }
+  .paper2-self-mark-point > label {
+    padding: 9px;
+  }
+  .paper2-self-mark-heading {
+    flex-direction: column;
+    gap: 9px;
+  }
+  .paper2-self-mark-save {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  #paper2-save-score {
+    width: 100%;
+  }
+}
