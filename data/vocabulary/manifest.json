@@ -26,6 +26,18 @@
       "data/vocabulary/biology/d3-organisms.json",
       "data/vocabulary/biology/d4-ecosystems.json"
     ],
-    "ESS HL": []
+    "ESS HL": [
+      "data/vocabulary/ess/topic-1.json",
+      "data/vocabulary/ess/topic-2.json",
+      "data/vocabulary/ess/topic-3.json",
+      "data/vocabulary/ess/topic-4.json",
+      "data/vocabulary/ess/topic-5.json",
+      "data/vocabulary/ess/topic-6.json",
+      "data/vocabulary/ess/topic-7.json",
+      "data/vocabulary/ess/topic-8.json",
+      "data/vocabulary/ess/hl-environmental-law.json",
+      "data/vocabulary/ess/hl-environmental-economics.json",
+      "data/vocabulary/ess/hl-environmental-ethics.json"
+    ]
   }
 }
