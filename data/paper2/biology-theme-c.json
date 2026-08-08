@@ -1,0 +1,210 @@
+[
+  {
+    "id": "BIO-P2-C1-002",
+    "subject": "Biology SL",
+    "chapter": "C1 Molecules",
+    "unit": "C1.2 Cell respiration",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain why cellular respiration is essential for energy transfer in living cells.",
+    "markscheme": [
+      "Organic molecules such as glucose contain chemical energy.",
+      "Cellular respiration transfers energy from organic molecules through a series of controlled reactions.",
+      "Part of the transferred energy is used to produce ATP.",
+      "ATP can release usable energy when it is hydrolysed and can couple energy-releasing and energy-requiring reactions.",
+      "ATP supplies energy for cellular processes such as active transport, biosynthesis and movement."
+    ],
+    "markschemeJa": [
+      "グルコースなどの有機分子には化学エネルギーが蓄えられている。",
+      "細胞呼吸では、一連の制御された反応によって有機分子からエネルギーが移される。",
+      "移されたエネルギーの一部はATPの生成に使われる。",
+      "ATPは加水分解されると利用可能なエネルギーを放出し、エネルギーを放出する反応と必要とする反応を結びつけることができる。",
+      "ATPは能動輸送、物質合成、運動などの細胞活動にエネルギーを供給する。"
+    ],
+    "modelAnswer": "Organic molecules such as glucose store chemical energy, but cells need a transferable form of energy for many processes. Cellular respiration releases energy from organic molecules in controlled steps and uses part of that energy to make ATP. ATP can then be hydrolysed to provide energy for processes such as active transport, biosynthesis and movement. In this way respiration links energy stored in nutrients to the immediate energy needs of the cell.",
+    "modelAnswerJa": "グルコースなどの有機分子には化学エネルギーが蓄えられていますが、細胞はそのエネルギーをそのまま多くの反応に使うわけではありません。細胞呼吸では、有機分子からエネルギーを段階的に取り出し、その一部を使ってATPをつくります。ATPは必要な場所で加水分解され、能動輸送、物質の合成、細胞の運動などにエネルギーを供給します。つまり細胞呼吸は、栄養分に蓄えられたエネルギーを、細胞がすぐ利用できる形へ移す働きをしています。"
+  },
+  {
+    "id": "BIO-P2-C1-003",
+    "subject": "Biology SL",
+    "chapter": "C1 Molecules",
+    "unit": "C1.3 Photosynthesis",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain how light intensity, carbon dioxide concentration and temperature can limit the rate of photosynthesis.",
+    "markscheme": [
+      "At low light intensity, insufficient light energy limits the light-dependent processes of photosynthesis.",
+      "Increasing light intensity can increase the rate until another factor becomes limiting.",
+      "Low carbon dioxide concentration can limit carbon fixation and therefore restrict photosynthetic production of organic molecules.",
+      "Increasing carbon dioxide can raise the rate until another factor becomes limiting.",
+      "Temperature affects enzyme-controlled reactions, with low temperatures slowing reactions and excessively high temperatures reducing enzyme function."
+    ],
+    "markschemeJa": [
+      "光が弱いと、光合成の光に依存する過程に使える光エネルギーが不足し、反応速度が制限される。",
+      "光の強さを上げると、別の要因が制限要因になるまでは光合成速度が上がる。",
+      "二酸化炭素濃度が低いと炭素固定が制限され、有機物をつくる速度が低下する。",
+      "二酸化炭素濃度を上げると、別の要因が制限要因になるまでは光合成速度が上がる。",
+      "温度は酵素反応に影響し、低温では反応が遅くなり、高すぎる温度では酵素の働きが低下する。"
+    ],
+    "modelAnswer": "Photosynthesis can be limited by several environmental factors. Low light intensity provides too little energy for the light-dependent reactions, while low carbon dioxide limits carbon fixation. Increasing either factor raises the rate only until another factor becomes limiting. Temperature affects enzyme-controlled reactions: low temperature slows them, whereas temperatures above the optimum can reduce enzyme function. The actual rate therefore depends on whichever required factor is most limiting.",
+    "modelAnswerJa": "光合成の速さは、複数の環境要因によって制限されます。光が弱ければ、光に依存する反応に必要なエネルギーが不足します。二酸化炭素が少なければ、炭素固定が進みにくくなります。どちらも増やせば一定範囲では光合成速度が上がりますが、やがて別の要因が制限要因になります。また、温度は酵素反応の速さに影響し、低温では反応が遅く、高すぎると酵素の働きが低下します。その時点で最も不足している要因が、光合成速度を決めます。"
+  },
+  {
+    "id": "BIO-P2-C2-002",
+    "subject": "Biology SL",
+    "chapter": "C2 Cells",
+    "unit": "C2.2 Neural signalling",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "challenging",
+    "question": "Explain how changes in ion movement produce an action potential in a neuron.",
+    "markscheme": [
+      "A neuron at rest has an unequal distribution of ions across its membrane and a negative resting membrane potential.",
+      "At threshold, voltage-gated sodium channels open and sodium ions enter the neuron.",
+      "Sodium entry depolarizes the membrane and produces the rising phase of the action potential.",
+      "Voltage-gated potassium channels open and potassium ions leave the neuron, causing repolarization.",
+      "Ion gradients are re-established and the membrane returns toward the resting potential after the action potential."
+    ],
+    "markschemeJa": [
+      "静止時のニューロンでは膜の両側でイオン分布が異なり、細胞内側が負になる静止膜電位がある。",
+      "しきい値に達すると電位依存性ナトリウムチャネルが開き、ナトリウムイオンが細胞内へ流入する。",
+      "ナトリウムイオンの流入によって膜が脱分極し、活動電位の立ち上がりが起こる。",
+      "続いて電位依存性カリウムチャネルが開き、カリウムイオンが細胞外へ出ることで再分極が起こる。",
+      "活動電位の後にはイオン勾配が回復し、膜電位は静止状態へ戻っていく。"
+    ],
+    "modelAnswer": "A resting neuron has unequal ion concentrations across its membrane and a negative membrane potential. When threshold is reached, voltage-gated sodium channels open and sodium ions enter, causing rapid depolarization. Potassium channels then open and potassium ions leave, bringing the membrane potential back toward negative values. After the action potential, the original ion gradients are restored and the membrane returns toward its resting state.",
+    "modelAnswerJa": "静止しているニューロンでは、膜の内外でイオン濃度が異なり、細胞内側が外側より負になっています。刺激によって膜電位がしきい値に達すると、電位依存性ナトリウムチャネルが開き、ナトリウムイオンが流入して急速な脱分極が起こります。その後カリウムチャネルが開き、カリウムイオンが外へ出ることで再分極します。活動電位が終わった後はイオン勾配が回復し、膜電位は静止状態へ戻っていきます。"
+  },
+  {
+    "id": "BIO-P2-C2-003",
+    "subject": "Biology SL",
+    "chapter": "C2 Cells",
+    "unit": "C2.2 Neural signalling",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "challenging",
+    "question": "Explain how a signal is transmitted across a chemical synapse.",
+    "markscheme": [
+      "An action potential arriving at the presynaptic terminal causes calcium ions to enter through voltage-gated channels.",
+      "Calcium entry triggers synaptic vesicles to fuse with the presynaptic membrane.",
+      "Neurotransmitter is released into the synaptic cleft by exocytosis.",
+      "The neurotransmitter diffuses across the cleft and binds to specific receptors on the postsynaptic membrane.",
+      "Receptor activation changes ion movement in the postsynaptic cell and can alter the probability of an action potential."
+    ],
+    "markschemeJa": [
+      "活動電位がシナプス前終末に到達すると、電位依存性チャネルを通ってカルシウムイオンが細胞内へ入る。",
+      "カルシウムイオンの流入によって、神経伝達物質を含むシナプス小胞がシナプス前膜と融合する。",
+      "神経伝達物質はエキソサイトーシスによってシナプス間隙へ放出される。",
+      "神経伝達物質は間隙を拡散し、シナプス後膜の特定の受容体に結合する。",
+      "受容体が活性化されるとシナプス後細胞のイオン移動が変化し、活動電位が起こる可能性が変わる。"
+    ],
+    "modelAnswer": "When an action potential reaches a presynaptic terminal, voltage-gated calcium channels open and calcium ions enter. This triggers synaptic vesicles to fuse with the presynaptic membrane and release neurotransmitter by exocytosis. The neurotransmitter diffuses across the synaptic cleft and binds to specific receptors on the postsynaptic membrane. Receptor activation changes ion movement in the receiving cell and can make an action potential more or less likely.",
+    "modelAnswerJa": "活動電位がシナプス前終末に到達すると、電位依存性のカルシウムチャネルが開き、カルシウムイオンが細胞内へ入ります。これをきっかけにシナプス小胞が膜と融合し、神経伝達物質がエキソサイトーシスでシナプス間隙へ放出されます。神経伝達物質は間隙を拡散してシナプス後膜の受容体に結合します。その結果、受け手側の細胞でイオンの移動が変化し、次の活動電位が起こりやすくなったり、起こりにくくなったりします。"
+  },
+  {
+    "id": "BIO-P2-C3-002",
+    "subject": "Biology SL",
+    "chapter": "C3 Organisms",
+    "unit": "C3.1 Integration of body systems",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain how the respiratory and circulatory systems work together to supply oxygen to respiring tissues.",
+    "markscheme": [
+      "Ventilation brings oxygen-rich air to gas-exchange surfaces in the lungs.",
+      "Oxygen diffuses from alveoli into capillary blood down a partial-pressure or concentration gradient.",
+      "Blood transports oxygen from the lungs toward body tissues, much of it associated with hemoglobin in red blood cells.",
+      "At respiring tissues, oxygen leaves the blood and diffuses into cells where its concentration is lower.",
+      "Continuous ventilation and blood flow help maintain gradients that support diffusion at both the lungs and tissues."
+    ],
+    "markschemeJa": [
+      "換気によって、酸素を多く含む空気が肺のガス交換面へ運ばれる。",
+      "酸素は分圧または濃度の勾配に従って、肺胞から毛細血管の血液へ拡散する。",
+      "血液は酸素を肺から全身の組織へ運び、その多くは赤血球のヘモグロビンと結びついて運ばれる。",
+      "呼吸を行っている組織では酸素濃度が低いため、酸素は血液から細胞へ拡散する。",
+      "換気と血流が継続することで、肺と組織の両方で拡散を起こすための勾配が維持される。"
+    ],
+    "modelAnswer": "Ventilation continually supplies oxygen-rich air to the alveoli. Oxygen then diffuses into capillary blood because of the concentration or partial-pressure gradient. The circulatory system carries oxygen to body tissues, with much of it transported by hemoglobin in red blood cells. At tissues using oxygen in respiration, oxygen diffuses from the blood into cells. Continuous air flow and blood flow maintain the gradients needed for efficient exchange.",
+    "modelAnswerJa": "換気によって酸素を多く含む空気が肺胞へ送り込まれます。肺胞では濃度や分圧の勾配に従って酸素が毛細血管の血液へ拡散します。血液はその酸素を全身へ運び、多くは赤血球中のヘモグロビンと結びついて運ばれます。組織では細胞呼吸によって酸素が使われているため、酸素は血液から細胞へ拡散します。換気と血流が続くことで、肺でも組織でもガス交換に必要な勾配が保たれます。"
+  },
+  {
+    "id": "BIO-P2-C3-003",
+    "subject": "Biology SL",
+    "chapter": "C3 Organisms",
+    "unit": "C3.2 Defence against disease",
+    "commandTerm": "Compare and contrast",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Compare and contrast innate and specific immune responses.",
+    "markscheme": [
+      "Innate responses act rapidly and do not depend on recognition of one unique antigen.",
+      "Specific immune responses involve lymphocytes that recognize particular antigens.",
+      "Innate defences include physical barriers and non-specific cellular or chemical responses.",
+      "Specific responses can generate effector cells or antibodies directed against a particular antigen.",
+      "Specific responses can produce memory cells and therefore a faster secondary response, whereas innate responses do not provide antigen-specific immunological memory."
+    ],
+    "markschemeJa": [
+      "自然免疫は比較的速く働き、1つの特定の抗原だけを認識して反応する仕組みではない。",
+      "特異的免疫では、特定の抗原を認識するリンパ球が働く。",
+      "自然免疫には、物理的なバリアや非特異的な細胞・化学的防御が含まれる。",
+      "特異的免疫では、特定の抗原に向けたエフェクター細胞や抗体がつくられることがある。",
+      "特異的免疫では記憶細胞が生じ、再感染時により速い二次応答が起こるが、自然免疫には抗原特異的な免疫記憶はない。"
+    ],
+    "modelAnswer": "Innate immunity provides rapid, non-specific defence through barriers and general cellular or chemical responses. Specific immunity depends on lymphocytes that recognize particular antigens and can produce targeted effector cells or antibodies. A major difference is that specific responses can leave memory cells, allowing a faster and stronger response when the same antigen is encountered again. Both systems contribute to protection and interact during an immune response.",
+    "modelAnswerJa": "自然免疫は、皮膚などのバリアや非特異的な細胞・化学反応によって、比較的速く広い範囲の病原体に対応します。一方、特異的免疫では、ある特定の抗原を認識するリンパ球が働き、その抗原を狙ったエフェクター細胞や抗体がつくられます。大きな違いは、特異的免疫では記憶細胞が残り、同じ抗原に再び出会ったときにより速く強い反応を起こせることです。どちらも感染防御に重要で、実際の免疫反応では互いに連携します。"
+  },
+  {
+    "id": "BIO-P2-C4-002",
+    "subject": "Biology SL",
+    "chapter": "C4 Ecosystems",
+    "unit": "C4.1 Populations and communities",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain why a population may show sigmoid growth rather than continuing exponential growth.",
+    "markscheme": [
+      "When a population is small and resources are abundant, it may grow rapidly and approximately exponentially.",
+      "As population density increases, competition for limiting resources becomes stronger.",
+      "Density-dependent factors such as competition, disease or predation can increase mortality or reduce reproduction.",
+      "The population growth rate therefore slows as the population approaches carrying capacity.",
+      "Near carrying capacity, additions to the population are approximately balanced by losses, producing a plateau in population size."
+    ],
+    "markschemeJa": [
+      "個体数が少なく資源が十分にあるとき、個体群は急速に増え、指数関数的成長に近い増え方をすることがある。",
+      "個体群密度が高くなるにつれて、限られた資源をめぐる競争が強くなる。",
+      "競争、病気、捕食などの密度依存要因によって死亡率が上がったり繁殖率が下がったりする。",
+      "そのため、個体数が環境収容力に近づくほど成長速度は低下する。",
+      "環境収容力の近くでは個体群への増加と減少がおおよそ釣り合い、個体数がほぼ一定になる。"
+    ],
+    "modelAnswer": "A small population with abundant resources can initially grow almost exponentially. As its density rises, resources become limiting and density-dependent factors such as competition, disease and predation have greater effects. Birth rates may fall or death rates may rise, so population growth slows. When the population approaches the carrying capacity, gains and losses become approximately balanced and the growth curve levels off, producing a sigmoid pattern.",
+    "modelAnswerJa": "個体数が少なく資源が十分にある間は、個体群は指数関数的に近い速さで増えることがあります。しかし密度が高くなると、食物や空間などの資源が不足し、競争、病気、捕食などの密度依存要因の影響も強くなります。その結果、出生率が下がったり死亡率が上がったりして成長速度が低下します。個体数が環境収容力（carrying capacity）に近づくと、増える数と減る数がおおよそ釣り合い、S字型の成長曲線になります。"
+  },
+  {
+    "id": "BIO-P2-C4-003",
+    "subject": "Biology SL",
+    "chapter": "C4 Ecosystems",
+    "unit": "C4.2 Transfers of energy and matter",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain how photosynthesis, respiration, decomposition and combustion move carbon through the carbon cycle.",
+    "markscheme": [
+      "Photosynthesis removes carbon dioxide from the atmosphere or water and incorporates carbon into organic molecules.",
+      "Carbon is transferred between organisms when feeding occurs.",
+      "Cellular respiration releases carbon dioxide from organic molecules back to the atmosphere or water.",
+      "Decomposers break down dead organic matter and release carbon dioxide through respiration while returning carbon compounds to soils or sediments.",
+      "Combustion of biomass or fossil fuels rapidly releases stored carbon as carbon dioxide."
+    ],
+    "markschemeJa": [
+      "光合成は大気や水中の二酸化炭素を取り込み、その炭素を有機分子に組み込む。",
+      "生物が他の生物を食べることで、有機物中の炭素が生物間を移動する。",
+      "細胞呼吸では有機分子中の炭素が二酸化炭素として大気や水中へ戻される。",
+      "分解者は死んだ有機物を分解し、呼吸によって二酸化炭素を放出するとともに、炭素化合物を土壌や堆積物へ戻す。",
+      "バイオマスや化石燃料の燃焼は、蓄えられていた炭素を二酸化炭素として急速に放出する。"
+    ],
+    "modelAnswer": "Photosynthesis takes carbon dioxide from the atmosphere or water and fixes the carbon into organic molecules. Feeding transfers this organic carbon through food chains. Respiration by producers, consumers and decomposers returns carbon dioxide to the environment. Decomposition also transfers carbon from dead material into soils and sediments. Combustion of biomass and fossil fuels releases stored carbon rapidly as carbon dioxide, adding another major flux to the cycle.",
+    "modelAnswerJa": "光合成では、大気や水中の二酸化炭素が取り込まれ、炭素が有機物に組み込まれます。その有機物が食べられることで、炭素は食物連鎖を通して生物から生物へ移動します。生産者、消費者、分解者が細胞呼吸を行うと、炭素は二酸化炭素として環境へ戻ります。分解では死骸などの炭素の一部が土壌や堆積物にも移ります。さらに、バイオマスや化石燃料を燃やすと、長く蓄えられていた炭素が二酸化炭素として短時間で大気へ放出されます。"
+  }
+]
