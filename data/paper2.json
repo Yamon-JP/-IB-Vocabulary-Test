@@ -14,8 +14,14 @@
       "Adhesion between water and hydrophilic surfaces can assist movement through narrow spaces.",
       "Water dissolves many ions and other polar substances, allowing them to be transported in solution."
     ],
+    "markschemeJa": [
+      "水分子には極性があり、水分子どうしで水素結合をつくることができる。",
+      "水分子どうしが引き合う凝集力（cohesion）によって、水が途中で切れにくく、連続した水柱を保ちやすい。",
+      "水が親水性の表面に引きつけられる付着力（adhesion）は、細い管やすき間の中を水が移動するのに役立つ。",
+      "水は多くのイオンや極性物質を溶かせるため、それらを水溶液の形で運ぶことができる。"
+    ],
     "modelAnswer": "Water is polar, so water molecules form hydrogen bonds with one another. This produces cohesion, which helps maintain continuous columns of water, for example in plant vascular tissue. Water can also adhere to hydrophilic surfaces, helping movement through narrow tubes. Because water is a good solvent for ions and many polar molecules, dissolved substances can be carried through organisms in aqueous solutions.",
-    "modelAnswerJa": "水は極性を持つため、水分子同士で水素結合を形成します。その結果、凝集力が生じ、例えば植物の維管束では連続した水柱を保つのに役立ちます。また、水は親水性の表面に付着できるため、細い管の中での移動を助けます。さらに、水はイオンや多くの極性分子をよく溶かすので、それらの溶質を水溶液として生物体内で運ぶことができます。"
+    "modelAnswerJa": "水分子には極性があり、水分子どうしで水素結合をつくります。そのため水分子どうしが引き合う凝集力（cohesion）が生じ、植物の維管束などでは水が途中で切れず、連続した水柱を保ちやすくなります。また、水は親水性の表面に付着する性質（adhesion）もあるため、細い管の中を移動しやすくなります。さらに、水はイオンや多くの極性物質を溶かせるので、こうした物質を水溶液の形で生物体内に運ぶことができます。"
   },
   {
     "id": "BIO-P2-A1-002",
@@ -32,8 +38,14 @@
       "DNA uses thymine whereas RNA uses uracil; both can contain adenine, cytosine and guanine.",
       "DNA is typically double-stranded whereas RNA is typically single-stranded."
     ],
+    "markschemeJa": [
+      "DNAとRNAはどちらもヌクレオチドが多数つながった分子で、糖-リン酸骨格をもつ。",
+      "DNAの糖はデオキシリボース、RNAの糖はリボースである。",
+      "DNAはチミンを使うのに対しRNAはウラシルを使う。アデニン、シトシン、グアニンはどちらにも含まれる。",
+      "DNAは通常二本鎖であるのに対し、RNAは通常一本鎖である。"
+    ],
     "modelAnswer": "DNA and RNA are both nucleic acids composed of nucleotide monomers joined into a sugar-phosphate backbone. DNA contains deoxyribose sugar, while RNA contains ribose. DNA contains the base thymine, whereas RNA contains uracil; both also contain adenine, cytosine and guanine. DNA is usually double-stranded, while RNA is usually single-stranded.",
-    "modelAnswerJa": "DNAとRNAはいずれも、ヌクレオチドが連結して糖-リン酸骨格をつくる核酸です。DNAの糖はデオキシリボースですが、RNAではリボースです。DNAは塩基としてチミンを含むのに対し、RNAはウラシルを含みます。どちらもアデニン、シトシン、グアニンを含みます。DNAは通常二本鎖ですが、RNAは通常一本鎖です。"
+    "modelAnswerJa": "DNAとRNAはどちらも核酸で、ヌクレオチドがつながって糖-リン酸骨格をつくっています。ただし、DNAの糖はデオキシリボース、RNAの糖はリボースです。また、DNAではチミンを使いますが、RNAではその代わりにウラシルを使います。アデニン、シトシン、グアニンはどちらにも含まれます。構造としては、DNAは通常二本鎖、RNAは通常一本鎖です。"
   },
   {
     "id": "BIO-P2-A2-001",
@@ -51,8 +63,15 @@
       "Prokaryotic cells generally have smaller ribosomes than eukaryotic cytoplasmic ribosomes.",
       "Prokaryotic cells are generally smaller and structurally simpler than eukaryotic cells."
     ],
+    "markschemeJa": [
+      "原核細胞と真核細胞のどちらにも、細胞膜、細胞質、リボソーム、遺伝物質がある。",
+      "真核細胞には膜で囲まれた核があるが、原核細胞にはそのような核がない。",
+      "真核細胞には膜で囲まれた細胞小器官があるが、原核細胞にはない。",
+      "原核細胞のリボソームは、一般に真核細胞の細胞質にあるリボソームより小さい。",
+      "原核細胞は一般に真核細胞より小さく、構造も単純である。"
+    ],
     "modelAnswer": "Both prokaryotic and eukaryotic cells have a plasma membrane, cytoplasm, ribosomes and genetic material. Eukaryotic cells contain DNA inside a membrane-bound nucleus and have membrane-bound organelles, while prokaryotic cells lack a nucleus and these organelles. Prokaryotic ribosomes are generally smaller than eukaryotic cytoplasmic ribosomes, and prokaryotic cells are usually smaller and structurally simpler overall.",
-    "modelAnswerJa": "原核細胞と真核細胞はどちらも、細胞膜、細胞質、リボソーム、遺伝物質を持っています。真核細胞ではDNAが膜で囲まれた核の中にあり、膜で囲まれた細胞小器官も存在します。一方、原核細胞には核やそのような膜小器官がありません。原核細胞のリボソームは一般に真核細胞の細胞質リボソームより小さく、原核細胞そのものも通常はより小さく、構造が単純です。"
+    "modelAnswerJa": "原核細胞と真核細胞には、細胞膜、細胞質、リボソーム、遺伝物質があるという共通点があります。一方、真核細胞ではDNAが膜で囲まれた核の中にあり、さらに膜で囲まれた細胞小器官もあります。原核細胞にはそのような核や膜小器官はありません。また、原核細胞のリボソームは一般に真核細胞の細胞質リボソームより小さく、細胞自体も通常はより小さく、構造が単純です。"
   },
   {
     "id": "BIO-P2-B1-001",
@@ -69,8 +88,14 @@
       "Their water-free storage makes them compact and relatively low in mass for the amount of energy stored.",
       "Stored lipids can be mobilized and used as respiratory substrates when energy is required."
     ],
+    "markschemeJa": [
+      "脂質にはエネルギーを多く含む炭素-水素結合が多く、酸化されると多くのエネルギーを放出できる。",
+      "脂質は疎水性なので、水を一緒に抱え込まずに貯蔵できる。",
+      "水を伴わずに貯蔵できるため、同じ量のエネルギーを比較的コンパクトで軽い形で蓄えられる。",
+      "必要なときには貯蔵された脂質を分解し、細胞呼吸の基質として利用できる。"
+    ],
     "modelAnswer": "Lipids contain many carbon-hydrogen bonds, so their oxidation can release a large amount of energy. Because lipids are hydrophobic, they can be stored without attracting large amounts of water. This makes lipid stores compact and relatively light compared with hydrated carbohydrate stores. When needed, stored lipids can be broken down and used as substrates for respiration.",
-    "modelAnswerJa": "脂質には多くの炭素-水素結合が含まれているため、酸化されると大量のエネルギーを放出できます。また、脂質は疎水性なので、多量の水と結びつかずに貯蔵できます。そのため、水を伴って貯蔵される炭水化物と比べて、同じエネルギー量をよりコンパクトかつ比較的軽い形で蓄えることができます。必要なときには脂質を分解し、呼吸の基質として利用できます。"
+    "modelAnswerJa": "脂質には炭素-水素結合が多く含まれているため、酸化されると多くのエネルギーを取り出すことができます。また、脂質は疎水性なので、貯蔵するときに大量の水を一緒に抱え込む必要がありません。そのため、水を伴って貯蔵される炭水化物と比べて、同じエネルギー量をよりコンパクトで軽い形で蓄えられます。必要になれば脂質を分解し、細胞呼吸の基質として利用できます。"
   },
   {
     "id": "BIO-P2-B2-001",
@@ -88,8 +113,15 @@
       "Active transport uses specific carrier or pump proteins to move substances against a gradient.",
       "Active transport requires energy, commonly supplied directly or indirectly by ATP."
     ],
+    "markschemeJa": [
+      "促進拡散では、膜にある特定のチャネルタンパク質や担体タンパク質を利用する。",
+      "促進拡散では、物質は濃度勾配または電気化学的勾配に従って移動する。",
+      "促進拡散ではATPから直接エネルギーを得る必要はない。",
+      "能動輸送では、特定の担体タンパク質やポンプを使って、物質を勾配に逆らって移動させる。",
+      "能動輸送にはエネルギーが必要で、一般にATPから直接または間接的に供給される。"
+    ],
     "modelAnswer": "In facilitated diffusion, channel or carrier proteins provide selective pathways for substances that cannot cross the lipid bilayer easily. The substances move down their concentration or electrochemical gradient, so no direct ATP input is required. In active transport, membrane pumps or carrier proteins move substances against a concentration or electrochemical gradient. This requires an energy input, commonly supplied directly or indirectly by ATP.",
-    "modelAnswerJa": "促進拡散では、チャネルタンパク質や担体タンパク質が、脂質二重層を通過しにくい物質のための選択的な通り道をつくります。物質は濃度勾配または電気化学的勾配に従って移動するため、ATPから直接エネルギーを受け取る必要はありません。一方、能動輸送では、膜のポンプや担体タンパク質が物質を濃度勾配または電気化学的勾配に逆らって移動させます。そのためエネルギーが必要で、通常はATPから直接または間接的に供給されます。"
+    "modelAnswerJa": "促進拡散では、脂質二重層をそのままでは通りにくい物質が、チャネルタンパク質や担体タンパク質を通って移動します。このとき物質は濃度勾配または電気化学的勾配に従って移動するため、ATPから直接エネルギーを受け取る必要はありません。一方、能動輸送では、膜のポンプや担体タンパク質を使って物質を勾配に逆らって移動させます。そのためエネルギーが必要で、一般にATPから直接または間接的に供給されます。"
   },
   {
     "id": "BIO-P2-B3-001",
@@ -106,8 +138,14 @@
       "A dense capillary network maintains blood flow and helps preserve concentration gradients.",
       "Ventilation continually replaces alveolar air and helps maintain steep oxygen and carbon dioxide gradients."
     ],
+    "markschemeJa": [
+      "多数の肺胞があるため、拡散に使える表面積が非常に大きい。",
+      "肺胞壁と毛細血管壁が非常に薄いため、気体が拡散する距離が短い。",
+      "毛細血管が密に分布して血流が保たれることで、酸素や二酸化炭素の濃度勾配を維持しやすい。",
+      "換気によって肺胞内の空気が絶えず入れ替わり、酸素と二酸化炭素の大きな濃度勾配が保たれる。"
+    ],
     "modelAnswer": "The large number of alveoli creates a very large surface area for gas exchange. Their walls and the adjacent capillary walls are extremely thin, so gases diffuse across a short distance. A dense capillary network rapidly carries oxygen away and brings carbon dioxide to the lungs. Ventilation refreshes the air in the alveoli, maintaining steep concentration gradients for both gases.",
-    "modelAnswerJa": "多数の肺胞があることで、ガス交換のための非常に大きな表面積が得られます。肺胞壁と隣接する毛細血管壁は非常に薄いため、気体が拡散する距離が短くなります。密な毛細血管網は酸素をすばやく運び去り、二酸化炭素を肺へ運ぶことで濃度勾配の維持に役立ちます。また、換気によって肺胞内の空気が絶えず入れ替わるため、酸素と二酸化炭素の急な濃度勾配が保たれます。"
+    "modelAnswerJa": "肺には多数の肺胞があるため、ガス交換に使える表面積が非常に大きくなります。また、肺胞壁とそのすぐ隣の毛細血管壁は非常に薄いので、酸素や二酸化炭素が拡散する距離が短くなります。毛細血管が密に分布していることで、取り込まれた酸素はすぐに運び去られ、二酸化炭素は肺へ運ばれてきます。さらに換気によって肺胞内の空気が常に入れ替わるため、両方の気体について大きな濃度勾配を保つことができます。"
   },
   {
     "id": "BIO-P2-C1-001",
@@ -124,8 +162,14 @@
       "Above the optimum, heat disrupts interactions that maintain the enzyme's three-dimensional structure.",
       "The active site's shape changes, reducing substrate binding and causing the reaction rate to fall."
     ],
+    "markschemeJa": [
+      "低温から温度を上げると、分子の運動エネルギーが増え、酵素と基質が衝突する回数も増える。",
+      "酵素と基質が適切に衝突する回数が増えるため、最適温度までは反応速度が上がる。",
+      "最適温度を超えると、熱によって酵素の立体構造を保っている結合や相互作用が崩れ始める。",
+      "その結果、活性部位の形が変わって基質が結合しにくくなり、反応速度が低下する。"
+    ],
     "modelAnswer": "At low temperatures, molecules have relatively little kinetic energy. As temperature rises, enzymes and substrates move faster and collide more frequently, so the reaction rate increases until an optimum is reached. Above the optimum, thermal motion disrupts interactions that maintain the enzyme's three-dimensional structure. The active site changes shape, fewer substrates bind successfully, and the reaction rate decreases.",
-    "modelAnswerJa": "低温では、分子の運動エネルギーは比較的小さい状態です。温度が上昇すると、酵素と基質の運動が速くなり、衝突する頻度が増えるため、最適温度に達するまでは反応速度が上昇します。最適温度を超えると、熱運動によって酵素の立体構造を維持している相互作用が乱されます。その結果、活性部位の形が変化し、基質が結合しにくくなるため、反応速度は低下します。"
+    "modelAnswerJa": "低温では分子の運動が遅く、酵素と基質が衝突する回数も少ない状態です。温度が上がると両者の運動が速くなり、適切に衝突する回数が増えるので、最適温度までは反応速度が上昇します。しかし最適温度を超えると、熱によって酵素の立体構造を保っている結合や相互作用が崩れ始めます。その結果、活性部位の形が変わり、基質が結合しにくくなるため、反応速度は低下します。"
   },
   {
     "id": "BIO-P2-C3-001",
@@ -143,8 +187,15 @@
       "The response helps eliminate or control the pathogen through antigen-specific mechanisms.",
       "Memory cells remain and enable a faster, stronger secondary response after later exposure to the same antigen."
     ],
+    "markschemeJa": [
+      "病原体の抗原が、対応する受容体をもつ特定のリンパ球によって異物として認識される。",
+      "選ばれたリンパ球は分裂して数を増やす（クローン増殖）。",
+      "増殖した細胞からエフェクター細胞がつくられ、必要に応じて特異的な抗体を分泌する細胞などが生じる。",
+      "抗原に特異的な働きによって、病原体を排除したり増殖を抑えたりする。",
+      "記憶細胞が残るため、同じ抗原に再び出会ったときには、より速く強い二次応答が起こる。"
+    ],
     "modelAnswer": "A pathogen carries antigens that can be recognized by lymphocytes with complementary receptors. The appropriate lymphocytes are selected and divide by clonal expansion. Their descendants differentiate into effector cells, including antibody-producing cells in a humoral response, which help remove the pathogen. Some cells become long-lived memory cells. If the same antigen is encountered again, these memory cells produce a faster and stronger secondary response.",
-    "modelAnswerJa": "病原体には抗原があり、それに相補的な受容体を持つリンパ球によって認識されます。適切なリンパ球が選択され、クローン増殖によって数を増やします。その子孫はエフェクター細胞へ分化し、体液性免疫では抗体を産生する細胞などが病原体の排除を助けます。一部の細胞は長期間生存する記憶細胞になります。同じ抗原に再び遭遇すると、これらの記憶細胞によって、より速く強い二次応答が起こります。"
+    "modelAnswerJa": "病原体には抗原があり、その抗原に合う形の受容体を持ったリンパ球が反応します。そのリンパ球が選択されると、クローン増殖によって数を増やし、子孫の一部はエフェクター細胞へ分化します。体液性免疫では、抗体をつくる細胞などが病原体の排除に働きます。また、一部は長く生きる記憶細胞になります。同じ抗原が再び体内に入ると、記憶細胞のおかげで最初のときより速く、強い免疫反応を起こすことができます。"
   },
   {
     "id": "BIO-P2-D1-001",
@@ -162,8 +213,15 @@
       "Complementary pairing between codons and anticodons positions the correct amino acids at the ribosome.",
       "The ribosome forms peptide bonds in the order specified by the mRNA sequence."
     ],
+    "markschemeJa": [
+      "リボソームはmRNAを3つの塩基からなるコドン単位で読み取る。",
+      "遺伝暗号により、各コドンは特定のアミノ酸または翻訳の開始・終止などのシグナルを指定する。",
+      "tRNAは特定のアミノ酸を運び、mRNAのコドンと相補的なアンチコドンをもつ。",
+      "コドンとアンチコドンが相補的に結合することで、正しいアミノ酸がリボソーム上に配置される。",
+      "リボソームはmRNAに示された順序に従ってアミノ酸どうしをペプチド結合でつなぐ。"
+    ],
     "modelAnswer": "During translation, a ribosome moves along the mRNA and reads its bases in three-base codons. Each codon corresponds to a particular amino acid or translation signal. tRNA molecules carry specific amino acids and have anticodons that pair with complementary codons on the mRNA. This pairing places the amino acids in the correct order, and the ribosome catalyses peptide-bond formation to build the polypeptide.",
-    "modelAnswerJa": "翻訳では、リボソームがmRNAに沿って移動し、その塩基配列を3塩基ずつのコドンとして読み取ります。各コドンは遺伝暗号に従って特定のアミノ酸、または翻訳に関するシグナルを指定します。tRNAは特定のアミノ酸を運び、mRNAのコドンと相補的に結合するアンチコドンを持っています。この相補的な結合によって正しいアミノ酸が順番に配置され、リボソームがペプチド結合の形成を触媒してポリペプチドをつくります。"
+    "modelAnswerJa": "翻訳では、リボソームがmRNAに沿って進み、塩基配列を3塩基ずつのコドンとして読み取ります。それぞれのコドンは、遺伝暗号に従って特定のアミノ酸や翻訳のシグナルを指定します。tRNAは特定のアミノ酸を運び、mRNAのコドンと相補的に結合するアンチコドンを持っています。この対応によってアミノ酸が正しい順番に並び、リボソームがアミノ酸どうしをペプチド結合でつないでポリペプチドをつくります。"
   },
   {
     "id": "BIO-P2-D4-001",
@@ -182,7 +240,15 @@
       "Resistance-associated genetic information is inherited by descendants of resistant bacteria.",
       "Across generations, the frequency of resistance increases in the population."
     ],
+    "markschemeJa": [
+      "細菌集団には遺伝的な変異があり、例えば突然変異によって抗生物質への耐性をもつ個体が生じることがある。",
+      "抗生物質を使うことで、細菌集団に選択圧がかかる。",
+      "耐性をもたない細菌は、抗生物質によって死ぬか、増殖できなくなる可能性が高い。",
+      "耐性をもつ細菌は生き残り、増殖する可能性が高い。",
+      "耐性に関係する遺伝情報は、生き残った細菌の子孫へ受け継がれる。",
+      "世代を重ねるにつれて、集団内で耐性をもつ細菌の割合が増えていく。"
+    ],
     "modelAnswer": "A bacterial population contains genetic variation, and mutations can result in some bacteria being resistant to an antibiotic. When the antibiotic is applied, it acts as a selection pressure. Susceptible bacteria are more likely to die or fail to reproduce, while resistant bacteria are more likely to survive. The resistant survivors reproduce and pass resistance-associated genetic information to their descendants. Over generations, the frequency of resistance therefore increases in the population.",
-    "modelAnswerJa": "細菌集団には遺伝的変異があり、突然変異によって抗生物質に耐性を持つ細菌が生じることがあります。抗生物質が使用されると、それが選択圧として働きます。感受性の高い細菌は死亡したり繁殖できなくなったりする可能性が高い一方、耐性を持つ細菌は生き残って繁殖しやすくなります。生き残った耐性菌は繁殖し、耐性に関わる遺伝情報を子孫へ受け継ぎます。その結果、世代を重ねるにつれて、集団内で耐性を持つ細菌の割合が増加します。"
+    "modelAnswerJa": "細菌の集団には遺伝的な違いがあり、突然変異によって抗生物質に耐性をもつ細菌が現れることがあります。抗生物質を使うと、それが選択圧として働き、耐性をもたない細菌は死んだり増殖できなくなったりします。一方、耐性をもつ細菌は生き残りやすく、その後も増殖できます。生き残った細菌が増殖すると、耐性に関係する遺伝情報が子孫へ受け継がれます。その結果、世代を重ねるにつれて集団内で耐性をもつ細菌の割合が高くなっていきます。"
   }
 ]
