@@ -144,7 +144,7 @@ const Quiz = {
       : `<div class="answer-card incorrect"><h3>❌ Incorrect</h3><p>Correct Answer</p><strong class="correct-answer">${correctAnswer}</strong><p>Word</p><strong>${this.current.word}</strong><p>Definition</p><span>${this.current.definition}</span><p>Japanese</p><span>${this.current.japanese || 'Not available'}</span></div>`;
 
     if (typeof Flashcard !== 'undefined' && Flashcard.showAnswer) Flashcard.showAnswer(resultHtml);
-    if (typeof Progress !== 'undefined') Progress.record(correct);
+    if (typeof Progress !== 'undefined') Progress.record(correct, this.current);
     if (typeof DailyChallenge !== 'undefined' && DailyChallenge.recordQuestion) DailyChallenge.recordQuestion();
     if (typeof Streak !== 'undefined' && Streak.updateStudyStatus) {
       Streak.updateStudyStatus();
