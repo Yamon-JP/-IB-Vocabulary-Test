@@ -53,3 +53,14 @@
 
 .daily-mission-card.just-completed { animation: mission-complete-pop .28s ease-out; }
 .chapter-option:has(input:checked)::after { animation: tiny-check-pop .16s ease-out; }
+
+/* Paper 2: make the secondary next action easy to find without competing with Check Answer. */
+.paper2-actions button:last-child {
+  border-color: #c7d2fe;
+  background: #eef2ff;
+  color: #3730a3;
+}
+.paper2-actions button:last-child:hover {
+  border-color: #a5b4fc;
+  background: #e0e7ff;
+}
