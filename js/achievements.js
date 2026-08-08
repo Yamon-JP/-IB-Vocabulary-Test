@@ -10,7 +10,8 @@ const Achievements = {
     accuracy10: false,
     accuracy50: false,
     accuracy100: false,
-    accuracy200: false
+    accuracy200: false,
+    chapterAchievements: {}
   },
 
   definitions: {
@@ -27,12 +28,25 @@ const Achievements = {
     accuracy200: { title: 'Perfect Streak', description: '200 correct answers in a row', target: 200, type: 'correctStreak' }
   },
 
+  chapterDefinitions: {
+    starter: { title: 'Chapter Starter', targetQuestions: 10, targetAccuracy: 0, description: 'Answer 10 questions in a chapter' },
+    learner: { title: 'Chapter Learner', targetQuestions: 30, targetAccuracy: 70, description: 'Answer 30 questions with at least 70% accuracy' },
+    master: { title: 'Chapter Master', targetQuestions: 50, targetAccuracy: 85, description: 'Answer 50 questions with at least 85% accuracy' },
+    expert: { title: 'Chapter Expert', targetQuestions: 100, targetAccuracy: 90, description: 'Answer 100 questions with at least 90% accuracy' }
+  },
+
   newlyUnlocked: [],
   notificationTimer: null,
 
   load() {
     const saved = Storage.load('ib_achievements');
-    if (saved) this.data = { ...this.data, ...saved };
+    if (saved) {
+      this.data = {
+        ...this.data,
+        ...saved,
+        chapterAchievements: saved.chapterAchievements || {}
+      };
+    }
     this.render();
   },
 
@@ -55,11 +69,45 @@ const Achievements = {
     this.data.accuracy100 ||= correctStreak >= 100;
     this.data.accuracy200 ||= correctStreak >= 200;
 
+    this.checkChapterAchievements(progress);
+
     this.newlyUnlocked = Object.keys(this.data).filter(key => this.data[key] && !before[key]);
 
     Storage.save('ib_achievements', this.data);
     this.render();
     this.showNotification();
+  },
+
+  checkChapterAchievements(progress) {
+    const chapterStats = progress?.chapterStats || {};
+
+    Object.entries(chapterStats).forEach(([subject, chapters]) => {
+      if (!this.data.chapterAchievements[subject]) this.data.chapterAchievements[subject] = {};
+
+      Object.entries(chapters).forEach(([chapter, stats]) => {
+        if (!this.data.chapterAchievements[subject][chapter]) {
+          this.data.chapterAchievements[subject][chapter] = {};
+        }
+
+        const questions = stats.questions || 0;
+        const accuracy = questions > 0 ? (stats.correct / questions) * 100 : 0;
+        const earned = this.data.chapterAchievements[subject][chapter];
+
+        Object.entries(this.chapterDefinitions).forEach(([key, definition]) => {
+          if (earned[key]) return;
+          const questionRequirementMet = questions >= definition.targetQuestions;
+          const accuracyRequirementMet = accuracy >= definition.targetAccuracy;
+          if (questionRequirementMet && accuracyRequirementMet) earned[key] = true;
+        });
+      });
+    });
+  },
+
+  getChapterProgress(subject, chapter, progress = Progress.data) {
+    const stats = progress?.chapterStats?.[subject]?.[chapter] || { questions: 0, correct: 0 };
+    const accuracy = stats.questions > 0 ? Math.round((stats.correct / stats.questions) * 100) : 0;
+    const achievements = this.data.chapterAchievements?.[subject]?.[chapter] || {};
+    return { ...stats, accuracy, achievements };
   },
 
   getProgress(item, progress) {
@@ -116,6 +164,22 @@ const Achievements = {
         </article>`;
     }).join('');
 
+    const chapterHtml = Object.entries(progress.chapterStats || {}).map(([subject, chapters]) => {
+      const chapterCards = Object.entries(chapters).map(([chapter, stats]) => {
+        const current = this.getChapterProgress(subject, chapter, progress);
+        const achievementCards = Object.entries(this.chapterDefinitions).map(([key, definition]) => {
+          const unlocked = Boolean(current.achievements[key]);
+          const questionProgress = Math.min(current.questions, definition.targetQuestions);
+          const percent = definition.targetAccuracy > 0
+            ? Math.min(100, Math.round(Math.min(current.questions / definition.targetQuestions, 1) * 50 + Math.min(current.accuracy / definition.targetAccuracy, 1) * 50))
+            : Math.min(100, Math.round((current.questions / definition.targetQuestions) * 100));
+          return `<div class="chapter-achievement ${unlocked ? 'unlocked' : 'locked'}"><strong>${unlocked ? '🏆' : '🔒'} ${definition.title}</strong><span>${current.questions}/${definition.targetQuestions} · ${current.accuracy}%</span><small>${definition.description}</small><div class="achievement-progress-track"><span style="width:${percent}%"></span></div></div>`;
+        }).join('');
+        return `<article class="chapter-progress-card"><h4>${subject} — ${chapter}</h4><p><strong>${current.accuracy}%</strong> · ${current.correct}/${current.questions} correct</p>${achievementCards}</article>`;
+      }).join('');
+      return `<section class="chapter-progress-subject"><h3>${subject}</h3>${chapterCards}</section>`;
+    }).join('');
+
     const practiceHtml = Object.entries(this.definitions).map(([key, item]) => {
       const unlocked = Boolean(this.data[key]);
       const current = this.getProgress(item, progress);
@@ -133,8 +197,11 @@ const Achievements = {
         </article>`;
     }).join('');
 
-    if (fullArea) fullArea.innerHTML = fullHtml;
+    if (fullArea) fullArea.innerHTML = fullHtml + (chapterHtml || '<p class="muted">No chapter achievements yet.</p>');
     if (practiceArea) practiceArea.innerHTML = practiceHtml;
+
+    const chapterProgressArea = document.getElementById('chapter-progress-list');
+    if (chapterProgressArea) chapterProgressArea.innerHTML = chapterHtml || '<p class="muted">No chapter progress yet.</p>';
   }
 };
 
