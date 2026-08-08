@@ -1,0 +1,22 @@
+/* Mobile-only Trophy Room subject tab fix.
+   Keep all three subject tabs visible without horizontal scrolling. */
+@media (max-width: 600px) {
+  #trophy-subject-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    overflow: visible;
+    padding: 2px 0 10px;
+  }
+
+  #trophy-subject-tabs .trophy-subject-tab {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 8px 6px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+    font-size: .78rem;
+  }
+}
