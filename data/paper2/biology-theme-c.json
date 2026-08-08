@@ -7,6 +7,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Explain why cellular respiration is essential for energy transfer in living cells.",
     "markscheme": [
       "Organic molecules such as glucose contain chemical energy.",
@@ -33,6 +34,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Explain how light intensity, carbon dioxide concentration and temperature can limit the rate of photosynthesis.",
     "markscheme": [
       "At low light intensity, insufficient light energy limits the light-dependent processes of photosynthesis.",
@@ -59,6 +61,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
     "question": "Explain how changes in ion movement produce an action potential in a neuron.",
     "markscheme": [
       "A neuron at rest has an unequal distribution of ions across its membrane and a negative resting membrane potential.",
@@ -85,6 +88,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
     "question": "Explain how a signal is transmitted across a chemical synapse.",
     "markscheme": [
       "An action potential arriving at the presynaptic terminal causes calcium ions to enter through voltage-gated channels.",
@@ -111,6 +115,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2b",
     "question": "Explain how the respiratory and circulatory systems work together to supply oxygen to respiring tissues.",
     "markscheme": [
       "Ventilation brings oxygen-rich air to gas-exchange surfaces in the lungs.",
@@ -137,6 +142,7 @@
     "commandTerm": "Compare and contrast",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Compare and contrast innate and specific immune responses.",
     "markscheme": [
       "Innate responses act rapidly and do not depend on recognition of one unique antigen.",
@@ -163,6 +169,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Explain why a population may show sigmoid growth rather than continuing exponential growth.",
     "markscheme": [
       "When a population is small and resources are abundant, it may grow rapidly and approximately exponentially.",
@@ -189,6 +196,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2b",
     "question": "Explain how photosynthesis, respiration, decomposition and combustion move carbon through the carbon cycle.",
     "markscheme": [
       "Photosynthesis removes carbon dioxide from the atmosphere or water and incorporates carbon into organic molecules.",
