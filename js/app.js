@@ -5,6 +5,7 @@ const App = {
     practiceType: 'vocabulary',
     practiceScope: 'all',
     selectedChapters: [],
+    biologyTheme: 'A',
     practiceWord: null,
     user: { xp: 0, streak: 0 }
   },
@@ -52,6 +53,7 @@ const App = {
     this.state.practiceType = 'vocabulary';
     this.state.practiceScope = 'all';
     this.state.selectedChapters = [];
+    this.state.biologyTheme = 'A';
     this.state.practiceWord = null;
     this.saveState();
     this.renderChapterSelector();
@@ -130,11 +132,74 @@ const App = {
       return;
     }
 
+    if (this.state.subject === 'Biology SL') {
+      const themeNames = {
+        A: 'Unity and diversity',
+        B: 'Form and function',
+        C: 'Interaction and interdependence',
+        D: 'Continuity and change'
+      };
+      const themes = ['A', 'B', 'C', 'D'].filter(theme =>
+        chapters.some(chapter => chapter.startsWith(theme))
+      );
+
+      if (!themes.includes(this.state.biologyTheme)) {
+        this.state.biologyTheme = themes[0] || 'A';
+      }
+
+      const activeTheme = this.state.biologyTheme;
+      const selected = new Set(this.state.selectedChapters || []);
+      const visibleChapters = chapters.filter(chapter => chapter.startsWith(activeTheme));
+
+      list.innerHTML = `
+        <div class="trophy-subject-tabs biology-theme-tabs" role="tablist" aria-label="Biology themes">
+          ${themes.map(theme => `
+            <button type="button"
+              class="trophy-subject-tab biology-theme-tab ${theme === activeTheme ? 'active' : ''}"
+              role="tab"
+              aria-selected="${theme === activeTheme}"
+              onclick="App.selectBiologyTheme('${theme}')">
+              Theme ${theme}
+            </button>
+          `).join('')}
+        </div>
+        <p class="muted"><strong>Theme ${activeTheme}: ${themeNames[activeTheme] || ''}</strong></p>
+        <div class="biology-chapter-list">
+          ${visibleChapters.map((chapter, index) => `
+            <label class="chapter-option">
+              <input type="checkbox"
+                value="${chapter.replace(/"/g, '&quot;')}"
+                data-chapter-index="${index}"
+                ${selected.has(chapter) ? 'checked' : ''}
+                onchange="App.toggleChapterSelection(this.value, this.checked)">
+              <span>${chapter}</span>
+            </label>
+          `).join('')}
+        </div>`;
+      return;
+    }
+
     list.innerHTML = chapters.map((chapter, index) => `
       <label class="chapter-option">
         <input type="checkbox" value="${chapter.replace(/"/g, '&quot;')}" data-chapter-index="${index}">
         <span>${chapter}</span>
       </label>`).join('');
+  },
+
+  selectBiologyTheme(theme) {
+    if (this.state.subject !== 'Biology SL') return;
+    this.state.biologyTheme = theme;
+    this.saveState();
+    this.renderChapterSelector();
+  },
+
+  toggleChapterSelection(chapter, checked) {
+    if (!chapter) return;
+    const selected = new Set(this.state.selectedChapters || []);
+    if (checked) selected.add(chapter);
+    else selected.delete(chapter);
+    this.state.selectedChapters = [...selected];
+    this.saveState();
   },
 
   setPracticeScope(scope) {
@@ -147,7 +212,9 @@ const App = {
     if (!this.state.subject || typeof Vocabulary === 'undefined') return;
 
     const chapters = this.state.practiceScope === 'selected'
-      ? [...document.querySelectorAll('#chapter-list input:checked')].map(input => input.value)
+      ? (this.state.subject === 'Biology SL'
+          ? [...(this.state.selectedChapters || [])]
+          : [...document.querySelectorAll('#chapter-list input:checked')].map(input => input.value))
       : [];
 
     if (this.state.practiceScope === 'selected' && !chapters.length) {
