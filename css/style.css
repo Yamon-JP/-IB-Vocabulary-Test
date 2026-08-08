@@ -107,16 +107,25 @@ button:focus-visible { outline: 3px solid rgba(37, 99, 235, 0.25); outline-offse
   min-width: 0;
   min-height: 46px;
   padding: 10px 12px;
-  color: #fff;
   font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25;
   border-width: 1px;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.10);
 }
-/* The action buttons in index.html do not have IDs, so target them by position. */
-#quiz-actions button:first-child { background: #1d4ed8; border-color: #1d4ed8; }
-#quiz-actions button:last-child { background: #15803d; border-color: #15803d; }
-#quiz-actions button:first-child:hover { background: #1e40af; }
-#quiz-actions button:last-child:hover { background: #166534; }
+#quiz-actions button:first-child {
+  background: #dbeafe;
+  border-color: #93c5fd;
+  color: #1e3a8a;
+}
+#quiz-actions button:last-child {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+}
+#quiz-actions button:first-child:hover { background: #bfdbfe; }
+#quiz-actions button:last-child:hover { background: #bbf7d0; }
+#quiz-actions button:active { transform: translateY(1px); }
 #quiz-actions button:disabled { opacity: 0.55; cursor: not-allowed; box-shadow: none; }
 #quiz-mode-control { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
 #quiz-mode-control h4 { margin: 0 0 7px; }
@@ -171,19 +180,19 @@ button:focus-visible { outline: 3px solid rgba(37, 99, 235, 0.25); outline-offse
 }
 .navigation button { min-height: 42px; }
 
-/* Keep the global bottom navigation visible on Practice. */
-body.practice-active #app { padding-bottom: 86px; }
-body.practice-active .navigation { display: grid; }
-
 @media (max-width: 600px) {
   #app { padding: 10px; padding-bottom: 78px; }
-  body.practice-active #app { padding-bottom: 78px; }
   .hero h1 { font-size: 1.55rem; }
   .progress-panel, #flashcard, #quiz-area, #practice-achievements { padding: 12px; }
   #quiz-question { font-size: 1.1rem; margin-bottom: 10px; }
   #quiz-choices button { min-height: 44px; font-size: 0.98rem; margin: 5px 0; padding: 9px 10px; }
   #quiz-actions { gap: 8px; }
-  #quiz-actions button { min-height: 44px; padding: 9px 5px; font-size: 0.92rem; }
+  #quiz-actions button {
+    min-height: 46px;
+    padding: 9px 8px;
+    font-size: 0.92rem;
+    line-height: 1.2;
+  }
   #flashcard { margin-top: 10px; min-height: 210px; }
   #flashcard-word { margin: 8px 0; }
   #achievement-list, #practice-achievement-list { grid-template-columns: 1fr; }
