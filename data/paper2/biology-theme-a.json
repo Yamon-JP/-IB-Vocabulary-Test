@@ -7,6 +7,7 @@
     "commandTerm": "Explain",
     "marks": 4,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Explain how hydrogen bonding gives water properties that help organisms resist rapid temperature change.",
     "markscheme": [
       "Hydrogen bonds form between neighboring water molecules.",
@@ -31,6 +32,7 @@
     "commandTerm": "Describe",
     "marks": 4,
     "difficulty": "standard",
+    "assessmentTarget": "practice",
     "question": "Describe four structural features of a typical eukaryotic cell and state one function of each.",
     "markscheme": [
       "The plasma membrane forms a selectively permeable boundary controlling exchange with the surroundings.",
@@ -55,6 +57,7 @@
     "commandTerm": "Compare and contrast",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "practice",
     "question": "Compare and contrast the structures of typical plant and animal cells.",
     "markscheme": [
       "Both are eukaryotic cells with a plasma membrane, cytoplasm, nucleus, ribosomes and mitochondria.",
@@ -81,6 +84,7 @@
     "commandTerm": "Compare and contrast",
     "marks": 4,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Compare and contrast the morphological species concept and the biological species concept.",
     "markscheme": [
       "The morphological species concept distinguishes species using observable structural characteristics.",
@@ -105,6 +109,7 @@
     "commandTerm": "Discuss",
     "marks": 5,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
     "question": "Discuss why defining a species can sometimes be difficult.",
     "markscheme": [
       "Individuals within one species can show substantial variation in morphology.",
@@ -131,6 +136,7 @@
     "commandTerm": "Compare and contrast",
     "marks": 6,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
     "question": "Compare and contrast in situ and ex situ conservation.",
     "markscheme": [
       "In situ conservation protects species within their natural habitats.",
@@ -159,6 +165,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2b",
     "question": "Explain how homologous structures and molecular sequence data provide evidence for common ancestry.",
     "markscheme": [
       "Homologous structures share an underlying structural pattern even when their functions differ.",
