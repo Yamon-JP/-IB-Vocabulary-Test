@@ -34,12 +34,20 @@ const Vocabulary = {
   },
 
   filter(subject, chapters = []) {
+    const selectedChapters = Array.isArray(chapters) ? chapters.filter(Boolean) : [];
+
     this.words = this.allWords.filter(word => {
+      // Subject is always applied first so vocabulary from another subject
+      // can never enter the active practice set.
       if (subject && word.subject !== subject) return false;
-      if (chapters.length === 0) return true;
+
+      // An empty chapter selection means all chapters for the selected subject.
+      if (selectedChapters.length === 0) return true;
+
       const chapter = word.chapter || word.topic;
-      return chapters.includes(chapter);
+      return Boolean(chapter) && selectedChapters.includes(chapter);
     });
+
     return this.words;
   },
 
