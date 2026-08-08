@@ -98,6 +98,9 @@ const Paper2 = {
     const modelAnswer = this.current.modelAnswer
       ? `<div class="paper2-model-answer"><h4>Model Answer</h4><p>${this.escapeHtml(this.current.modelAnswer)}</p></div>`
       : '';
+    const modelAnswerJa = this.current.modelAnswerJa
+      ? `<div class="paper2-model-answer paper2-model-answer-ja"><h4>日本語訳</h4><p>${this.escapeHtml(this.current.modelAnswerJa)}</p></div>`
+      : '';
 
     feedback.innerHTML = `
       <div class="paper2-feedback-card">
@@ -109,6 +112,7 @@ const Paper2 = {
         <h4>Markscheme</h4>
         ${markschemeHtml}
         ${modelAnswer}
+        ${modelAnswerJa}
       </div>`;
   },
 
