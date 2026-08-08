@@ -18,8 +18,10 @@ const Quiz = {
     document.querySelectorAll('input[name="quiz-mode"]').forEach(selector => {
       selector.onchange = () => {
         this.mode = selector.value;
-        this.current = this.questions[Math.floor(Math.random() * this.questions.length)];
-        if (typeof App !== 'undefined') App.setPracticeWord(this.current);
+        if (this.questions.length) {
+          this.current = this.questions[Math.floor(Math.random() * this.questions.length)];
+          if (typeof App !== 'undefined') App.setPracticeWord(this.current);
+        }
         this.render();
       };
     });
@@ -37,7 +39,10 @@ const Quiz = {
       ? this.questions.map(word => word.word)
       : this.questions.map(word => word.definition).filter(Boolean);
 
-    const choices = [correct, ...pool.filter(value => value !== correct).sort(() => Math.random() - 0.5)];
+    const uniqueWrongChoices = [...new Set(pool.filter(value => value !== correct))]
+      .sort(() => Math.random() - 0.5);
+
+    const choices = [correct, ...uniqueWrongChoices];
     while (choices.length < 4) choices.push('No option');
     return choices.slice(0, 4).sort(() => Math.random() - 0.5);
   },
@@ -85,9 +90,10 @@ const Quiz = {
       if (button.textContent === this.selected && !correct) button.classList.add('incorrect');
     });
 
+    const correctAnswer = this.getAnswer();
     const resultHtml = correct
       ? `<div class="answer-card correct"><h3>✅ Correct! +10 XP</h3><p>Word</p><strong>${this.current.word}</strong><p>Definition</p><span>${this.current.definition}</span><p>Japanese</p><span>${this.current.japanese || 'Not available'}</span></div>`
-      : `<div class="answer-card incorrect"><h3>❌ Incorrect</h3><p>Correct Answer</p><strong class="correct-answer">${this.current.word}</strong><p>Definition</p><span>${this.current.definition}</span><p>Japanese</p><span>${this.current.japanese || 'Not available'}</span></div>`;
+      : `<div class="answer-card incorrect"><h3>❌ Incorrect</h3><p>Correct Answer</p><strong class="correct-answer">${correctAnswer}</strong><p>Word</p><strong>${this.current.word}</strong><p>Definition</p><span>${this.current.definition}</span><p>Japanese</p><span>${this.current.japanese || 'Not available'}</span></div>`;
 
     if (typeof Flashcard !== 'undefined' && Flashcard.showAnswer) Flashcard.showAnswer(resultHtml);
     if (typeof Progress !== 'undefined') Progress.record(correct);
