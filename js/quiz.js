@@ -72,8 +72,6 @@ const Quiz = {
 
     const choices = [correct, ...uniqueWrongChoices].slice(0, 4);
 
-    // Keep the four-choice layout even when the database contains
-    // fewer than four real alternatives. Placeholder options are disabled.
     while (choices.length < 4) choices.push(null);
 
     return choices.sort(() => Math.random() - 0.5);
@@ -149,6 +147,12 @@ const Quiz = {
     if (typeof Streak !== 'undefined' && Streak.updateStudyStatus) {
       Streak.updateStudyStatus();
       Streak.render();
+    }
+
+    // Correct answers advance automatically. Incorrect answers remain visible
+    // so the learner can review the explanation before pressing Next Question.
+    if (correct) {
+      setTimeout(() => this.nextQuestion(), 700);
     }
   },
 
