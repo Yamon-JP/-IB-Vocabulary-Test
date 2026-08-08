@@ -1,0 +1,180 @@
+[
+  {
+    "id": "BIO-P2-A1-003",
+    "subject": "Biology SL",
+    "chapter": "A1 Molecules",
+    "unit": "A1.1 Water",
+    "commandTerm": "Explain",
+    "marks": 4,
+    "difficulty": "standard",
+    "question": "Explain how hydrogen bonding gives water properties that help organisms resist rapid temperature change.",
+    "markscheme": [
+      "Hydrogen bonds form between neighboring water molecules.",
+      "Energy is required to disrupt hydrogen bonds, so water has a high specific heat capacity.",
+      "Water can absorb or release relatively large amounts of energy with only a small change in temperature.",
+      "This helps stabilize the temperature of cells, body fluids or aquatic environments."
+    ],
+    "markschemeJa": [
+      "隣り合う水分子どうしの間には水素結合が形成される。",
+      "水素結合を崩すにはエネルギーが必要なため、水は比熱容量が大きい。",
+      "そのため、水は多くの熱エネルギーを吸収・放出しても温度が急激には変化しにくい。",
+      "この性質によって、細胞内や体液、あるいは水中環境の温度が安定しやすくなる。"
+    ],
+    "modelAnswer": "Hydrogen bonds form between water molecules. A relatively large amount of energy is needed to disrupt these interactions, so water has a high specific heat capacity. Water can therefore absorb or release considerable heat with only a small change in temperature. This buffers cells, body fluids and aquatic habitats against rapid temperature fluctuations.",
+    "modelAnswerJa": "水分子どうしの間には水素結合があります。この結合を崩すには比較的大きなエネルギーが必要なので、水は比熱容量が大きくなります。そのため、多くの熱を吸収したり放出したりしても、水の温度は急激には変化しません。この性質は、細胞内や体液、水中環境の温度変化をゆるやかにし、生物にとって安定した環境を保つのに役立ちます。"
+  },
+  {
+    "id": "BIO-P2-A2-002",
+    "subject": "Biology SL",
+    "chapter": "A2 Cells",
+    "unit": "A2.2 Cell structure",
+    "commandTerm": "Describe",
+    "marks": 4,
+    "difficulty": "standard",
+    "question": "Describe four structural features of a typical eukaryotic cell and state one function of each.",
+    "markscheme": [
+      "The plasma membrane forms a selectively permeable boundary controlling exchange with the surroundings.",
+      "The nucleus contains most of the cell's DNA and is involved in control of gene activity.",
+      "Ribosomes are sites of protein synthesis.",
+      "Mitochondria carry out aerobic respiration and are associated with ATP production."
+    ],
+    "markschemeJa": [
+      "細胞膜は選択的透過性をもつ境界で、細胞と周囲との物質交換を調節する。",
+      "核には細胞のDNAの大部分があり、遺伝子の働きの調節に関わる。",
+      "リボソームはタンパク質合成の場である。",
+      "ミトコンドリアでは好気呼吸が行われ、ATPの生成に関わる。"
+    ],
+    "modelAnswer": "A typical eukaryotic cell is surrounded by a plasma membrane that controls exchange with the environment. Its nucleus contains most of the DNA and helps regulate gene activity. Ribosomes synthesize proteins, while mitochondria carry out aerobic respiration and are important sites of ATP production.",
+    "modelAnswerJa": "典型的な真核細胞は細胞膜に囲まれており、周囲との物質の出入りを調節しています。核にはDNAの大部分があり、遺伝子の働きの調節に関わります。リボソームではタンパク質が合成され、ミトコンドリアでは好気呼吸が行われてATPの生成に関わります。"
+  },
+  {
+    "id": "BIO-P2-A2-003",
+    "subject": "Biology SL",
+    "chapter": "A2 Cells",
+    "unit": "A2.2 Cell structure",
+    "commandTerm": "Compare and contrast",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Compare and contrast the structures of typical plant and animal cells.",
+    "markscheme": [
+      "Both are eukaryotic cells with a plasma membrane, cytoplasm, nucleus, ribosomes and mitochondria.",
+      "Plant cells have a cellulose cell wall whereas animal cells do not.",
+      "Plant cells may contain chloroplasts for photosynthesis whereas animal cells do not.",
+      "Plant cells commonly have a large central vacuole whereas animal cells do not have an equivalent large central vacuole.",
+      "Animal cells are not constrained by a rigid cell wall and therefore commonly show a more variable shape."
+    ],
+    "markschemeJa": [
+      "植物細胞と動物細胞はどちらも真核細胞で、細胞膜、細胞質、核、リボソーム、ミトコンドリアなどをもつ。",
+      "植物細胞にはセルロースからなる細胞壁があるが、動物細胞にはない。",
+      "植物細胞には光合成を行う葉緑体が存在することがあるが、動物細胞にはない。",
+      "植物細胞には一般に大きな中央液胞があるが、動物細胞には同等の大きな中央液胞はない。",
+      "動物細胞は硬い細胞壁に形を制限されないため、植物細胞より形が多様になりやすい。"
+    ],
+    "modelAnswer": "Plant and animal cells are both eukaryotic and share structures such as a plasma membrane, cytoplasm, nucleus, ribosomes and mitochondria. Plant cells also have a cellulose cell wall, often contain chloroplasts, and commonly possess a large central vacuole. Animal cells lack a cellulose wall and chloroplasts and do not have an equivalent large central vacuole, so their shape is often more variable.",
+    "modelAnswerJa": "植物細胞と動物細胞はどちらも真核細胞で、細胞膜、細胞質、核、リボソーム、ミトコンドリアなどを共通して持っています。一方、植物細胞にはセルロースからなる細胞壁があり、光合成を行う細胞では葉緑体も見られます。また、大きな中央液胞を持つことが一般的です。動物細胞にはセルロースの細胞壁や葉緑体がなく、同じような大きな中央液胞もありません。そのため、動物細胞の方が形が多様になりやすいです。"
+  },
+  {
+    "id": "BIO-P2-A3-002",
+    "subject": "Biology SL",
+    "chapter": "A3 Organisms",
+    "unit": "A3.1 Diversity of organisms",
+    "commandTerm": "Compare and contrast",
+    "marks": 4,
+    "difficulty": "standard",
+    "question": "Compare and contrast the morphological species concept and the biological species concept.",
+    "markscheme": [
+      "The morphological species concept distinguishes species using observable structural characteristics.",
+      "The biological species concept defines species in terms of the ability to interbreed and produce fertile offspring.",
+      "Both concepts attempt to identify boundaries between species.",
+      "The biological species concept is difficult to apply to asexual organisms or fossils, whereas morphology can be used when reproductive information is unavailable."
+    ],
+    "markschemeJa": [
+      "形態学的種概念では、観察できる体の構造や形態の違いを使って種を区別する。",
+      "生物学的種概念では、互いに交配して繁殖可能な子孫を残せるかどうかで種を定義する。",
+      "どちらの考え方も、どこまでを同じ種とみなすかという種の境界を判断するために使われる。",
+      "生物学的種概念は無性生殖生物や化石には適用しにくいが、形態学的種概念は繁殖情報がない場合にも利用できる。"
+    ],
+    "modelAnswer": "The morphological species concept separates species according to observable structural differences. The biological species concept instead focuses on whether populations can interbreed and produce fertile offspring. Both are ways of defining species boundaries, but each has limitations. For example, the biological species concept cannot be applied easily to fossils or asexual organisms, while morphology can be misleading when different species look very similar or one species shows wide variation.",
+    "modelAnswerJa": "形態学的種概念は、見た目や体の構造の違いをもとに種を区別します。これに対して生物学的種概念は、集団どうしが交配し、繁殖可能な子孫を残せるかどうかを重視します。どちらも種の境界を決めるための考え方ですが、それぞれ限界があります。例えば、生物学的種概念は化石や無性生殖をする生物には使いにくく、形態だけで判断すると、よく似た別種や、同じ種の中の大きな個体差を見誤ることがあります。"
+  },
+  {
+    "id": "BIO-P2-A3-003",
+    "subject": "Biology SL",
+    "chapter": "A3 Organisms",
+    "unit": "A3.1 Diversity of organisms",
+    "commandTerm": "Discuss",
+    "marks": 5,
+    "difficulty": "challenging",
+    "question": "Discuss why defining a species can sometimes be difficult.",
+    "markscheme": [
+      "Individuals within one species can show substantial variation in morphology.",
+      "Different species can sometimes look very similar, so appearance alone may not reveal a species boundary.",
+      "Hybridization can occur between some distinct species, making reproductive boundaries less clear.",
+      "The biological species concept is difficult to apply to asexual organisms and extinct organisms known only from fossils.",
+      "Genetic, morphological and reproductive evidence may therefore need to be considered together."
+    ],
+    "markschemeJa": [
+      "同じ種の中でも、個体によって形態に大きな違いが見られることがある。",
+      "別の種どうしでも非常によく似ている場合があり、外見だけでは種の境界が分からないことがある。",
+      "異なる種の間で雑種が生じる場合もあり、生殖による境界が明確でないことがある。",
+      "生物学的種概念は、無性生殖をする生物や化石だけが残っている絶滅生物には適用しにくい。",
+      "そのため、遺伝的証拠、形態、生殖に関する情報などを組み合わせて判断する必要がある。"
+    ],
+    "modelAnswer": "Species are not always easy to define using a single rule. Members of one species may vary greatly in appearance, while different species can look very similar. Some distinct species can also hybridize, so reproductive boundaries are not always absolute. In addition, the biological species concept cannot be tested directly for asexual organisms or extinct species known only from fossils. For these reasons, scientists often combine morphological, genetic and reproductive evidence when deciding species boundaries.",
+    "modelAnswerJa": "種は、1つの基準だけでははっきり定義できないことがあります。同じ種でも個体によって外見が大きく異なることがあり、反対に別の種でも非常によく似ている場合があります。また、別種どうしで雑種が生じることもあるため、「交配できるかどうか」だけでも境界が明確にならない場合があります。さらに、無性生殖をする生物や化石しか残っていない絶滅生物には、生物学的種概念をそのまま適用できません。そのため実際には、形態、DNAなどの遺伝的証拠、生殖に関する情報を組み合わせて判断します。"
+  },
+  {
+    "id": "BIO-P2-A4-002",
+    "subject": "Biology SL",
+    "chapter": "A4 Ecosystems",
+    "unit": "A4.2 Conservation of biodiversity",
+    "commandTerm": "Compare and contrast",
+    "marks": 6,
+    "difficulty": "challenging",
+    "question": "Compare and contrast in situ and ex situ conservation.",
+    "markscheme": [
+      "In situ conservation protects species within their natural habitats.",
+      "Ex situ conservation protects species outside their natural habitats, for example in zoos, botanic gardens or seed banks.",
+      "In situ conservation can preserve ecological interactions and natural selection within an ecosystem.",
+      "Ex situ conservation can protect small threatened populations from immediate threats and allow managed breeding or propagation.",
+      "Both approaches aim to reduce extinction risk and preserve biodiversity or genetic diversity.",
+      "Ex situ populations may lose natural behaviours or genetic diversity, while in situ conservation may be difficult when the original habitat remains severely threatened."
+    ],
+    "markschemeJa": [
+      "生息域内保全（in situ）は、生物を本来の自然環境の中で保護する方法である。",
+      "生息域外保全（ex situ）は、動物園、植物園、シードバンクなど、本来の生息地の外で保護する方法である。",
+      "生息域内保全では、生物どうしの相互作用や自然選択を含む生態系全体を維持しやすい。",
+      "生息域外保全では、深刻な脅威から少数個体を守り、計画的な繁殖や増殖を行うことができる。",
+      "どちらも絶滅リスクを下げ、生物多様性や遺伝的多様性を守ることを目的としている。",
+      "生息域外では自然な行動や遺伝的多様性が失われる可能性があり、生息域内では生息地そのものが強く脅かされていると保全が難しい。"
+    ],
+    "modelAnswer": "In situ conservation keeps species in their natural habitats, allowing ecological interactions and natural selection to continue. Ex situ conservation removes organisms or genetic material from the natural habitat and protects them in places such as zoos, botanic gardens or seed banks. Ex situ methods can be valuable when a species faces an immediate threat and may allow controlled breeding. Both approaches aim to reduce extinction risk, but each has limitations, so they are often most effective when used together.",
+    "modelAnswerJa": "生息域内保全は、生物を本来の生息地で保護するため、生態系内の相互作用や自然選択を保ちやすい方法です。生息域外保全は、生物や遺伝資源を生息地の外へ移し、動物園、植物園、シードバンクなどで守ります。絶滅が目前に迫っている種を一時的に安全な場所で保護し、計画的に繁殖させられる点が利点です。どちらも絶滅リスクを下げることが目的ですが、それぞれ弱点があるため、実際には両方を組み合わせることが効果的です。"
+  },
+  {
+    "id": "BIO-P2-A4-003",
+    "subject": "Biology SL",
+    "chapter": "A4 Ecosystems",
+    "unit": "A4.1 Evolution and speciation",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain how homologous structures and molecular sequence data provide evidence for common ancestry.",
+    "markscheme": [
+      "Homologous structures share an underlying structural pattern even when their functions differ.",
+      "Similarity in the basic structure is consistent with inheritance from a common ancestral structure.",
+      "DNA or amino-acid sequences can be compared between species.",
+      "Greater sequence similarity generally indicates a closer evolutionary relationship.",
+      "Agreement between anatomical and molecular evidence strengthens an inference of common ancestry."
+    ],
+    "markschemeJa": [
+      "相同構造は、現在の働きが異なっていても、基本となる構造のつくりが共通している。",
+      "この基本構造の共通性は、共通祖先がもっていた構造を受け継いだと考えることで説明できる。",
+      "異なる種のDNA配列やアミノ酸配列を比較することができる。",
+      "一般に配列がよく似ているほど、進化上の関係が近いと考えられる。",
+      "解剖学的証拠と分子配列の証拠が同じ関係を示すと、共通祖先についての推論がより強く支持される。"
+    ],
+    "modelAnswer": "Homologous structures have the same basic structural plan in different species even if they perform different functions. This is consistent with the structures having been inherited from a common ancestor and modified during evolution. Scientists can also compare DNA or amino-acid sequences. Species with more similar sequences are generally inferred to be more closely related. When structural and molecular evidence support the same pattern, the case for common ancestry is strengthened.",
+    "modelAnswerJa": "相同構造とは、現在の働きが違っていても、基本的な構造のつくりが共通している器官などを指します。これは、共通祖先がもっていた構造を受け継ぎ、その後の進化でそれぞれ異なる働きに変化したと考えることで説明できます。また、DNAやアミノ酸の配列を種どうしで比較することもできます。一般に配列がよく似ているほど近縁だと考えられます。構造上の証拠と分子レベルの証拠が同じ進化関係を示せば、共通祖先をもつという考えがより強く支持されます。"
+  }
+]
