@@ -1,5 +1,5 @@
 const Progress = {
-  data: { questions: 0, correct: 0, xp: 0 },
+  data: { questions: 0, correct: 0, xp: 0, correctStreak: 0 },
 
   load() {
     const saved = Storage.load('ib_progress');
@@ -7,7 +7,8 @@ const Progress = {
       this.data = {
         questions: saved.questions || 0,
         correct: saved.correct || 0,
-        xp: saved.xp || ((saved.correct || 0) * 10)
+        xp: saved.xp || ((saved.correct || 0) * 10),
+        correctStreak: saved.correctStreak || 0
       };
     }
     this.render();
@@ -19,9 +20,13 @@ const Progress = {
 
   record(correct) {
     this.data.questions++;
+
     if (correct) {
       this.data.correct++;
       this.data.xp += 10;
+      this.data.correctStreak++;
+    } else {
+      this.data.correctStreak = 0;
     }
 
     Storage.save('ib_progress', this.data);
@@ -33,9 +38,13 @@ const Progress = {
   },
 
   reset() {
-    this.data = { questions: 0, correct: 0, xp: 0 };
+    this.data = { questions: 0, correct: 0, xp: 0, correctStreak: 0 };
     Storage.save('ib_progress', this.data);
     this.render();
+
+    if (typeof Achievements !== 'undefined') {
+      Achievements.check(this.data);
+    }
   },
 
   accuracy() {
