@@ -250,5 +250,179 @@
     ],
     "modelAnswer": "A bacterial population contains genetic variation, and mutations can result in some bacteria being resistant to an antibiotic. When the antibiotic is applied, it acts as a selection pressure. Susceptible bacteria are more likely to die or fail to reproduce, while resistant bacteria are more likely to survive. The resistant survivors reproduce and pass resistance-associated genetic information to their descendants. Over generations, the frequency of resistance therefore increases in the population.",
     "modelAnswerJa": "細菌の集団には遺伝的な違いがあり、突然変異によって抗生物質に耐性をもつ細菌が現れることがあります。抗生物質を使うと、それが選択圧として働き、耐性をもたない細菌は死んだり増殖できなくなったりします。一方、耐性をもつ細菌は生き残りやすく、その後も増殖できます。生き残った細菌が増殖すると、耐性に関係する遺伝情報が子孫へ受け継がれます。その結果、世代を重ねるにつれて集団内で耐性をもつ細菌の割合が高くなっていきます。"
+  },
+  {
+    "id": "BIO-P2-A3-001",
+    "subject": "Biology SL",
+    "chapter": "A3 Organisms",
+    "unit": "A3.1 Diversity of organisms",
+    "commandTerm": "Explain",
+    "marks": 4,
+    "difficulty": "standard",
+    "question": "Explain how whole-genome sequencing can provide evidence about evolutionary relationships between species.",
+    "markscheme": [
+      "Whole-genome sequencing determines the nucleotide sequence across most or all of an organism's genome.",
+      "Genome sequences from different species can be compared to identify similarities and differences.",
+      "Species with more similar DNA sequences are generally inferred to share a more recent common ancestor.",
+      "Using many regions of the genome provides broader evidence of relatedness than comparing a single gene or characteristic."
+    ],
+    "markschemeJa": [
+      "全ゲノムシーケンシングでは、生物のゲノムのほぼ全体について塩基配列を決定する。",
+      "異なる種のゲノム配列を比べることで、DNA配列の共通点や違いを調べることができる。",
+      "DNA配列がより似ている種どうしは、一般により最近の共通祖先をもつと考えられる。",
+      "1つの遺伝子や形質だけでなくゲノムの多くの領域を比べるため、種どうしの近縁関係をより幅広い証拠から判断できる。"
+    ],
+    "modelAnswer": "Whole-genome sequencing determines the nucleotide sequence across most or all of an organism's genome. The genome sequences of different species can then be compared. Species with fewer sequence differences are generally interpreted as being more closely related and as sharing a more recent common ancestor. Because the comparison includes many regions of the genome, it provides broader evidence of evolutionary relationships than a comparison based on only one gene or visible characteristic.",
+    "modelAnswerJa": "全ゲノムシーケンシングでは、生物がもつゲノムのほぼ全体について塩基配列を調べます。その後、異なる種どうしでDNA配列を比較します。配列の違いが少ないほど、一般には近縁で、より最近の共通祖先をもつと考えられます。1つの遺伝子や見た目の特徴だけではなく、ゲノムの多くの領域を比較できるため、進化上の関係をより幅広い証拠から判断できます。"
+  },
+  {
+    "id": "BIO-P2-A4-001",
+    "subject": "Biology SL",
+    "chapter": "A4 Ecosystems",
+    "unit": "A4.1 Evolution and speciation",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain how geographical isolation can lead to speciation.",
+    "markscheme": [
+      "A geographical barrier can separate one population into isolated populations.",
+      "Gene flow between the isolated populations is reduced or prevented.",
+      "Different mutations, genetic drift and selection pressures can cause the populations to diverge genetically.",
+      "Over many generations, differences can accumulate between the populations.",
+      "Reproductive isolation can eventually develop, so the populations can no longer interbreed successfully to produce fertile offspring."
+    ],
+    "markschemeJa": [
+      "山脈や海などの地理的な障壁によって、1つの個体群が互いに隔離された複数の個体群に分かれることがある。",
+      "隔離された個体群どうしでは、遺伝子流動（gene flow）が減少するか、ほとんど起こらなくなる。",
+      "突然変異、遺伝的浮動、異なる環境での選択圧などによって、それぞれの個体群の遺伝的特徴が別々に変化していく。",
+      "多くの世代を重ねるうちに、個体群どうしの違いが蓄積する。",
+      "最終的に生殖隔離が成立すると、互いに交配して繁殖可能な子孫をつくれなくなり、別の種として分化する。"
+    ],
+    "modelAnswer": "Geographical isolation can divide a population so that individuals in the separated groups no longer exchange genes freely. Once gene flow is reduced, mutations, genetic drift and different selection pressures can cause the populations to change independently. Genetic and phenotypic differences therefore accumulate over many generations. If these differences eventually prevent successful interbreeding and the production of fertile offspring, reproductive isolation has developed and the populations have become separate species.",
+    "modelAnswerJa": "地理的隔離が起こると、もともと1つだった個体群が分かれ、互いの間で遺伝子のやり取りが起こりにくくなります。遺伝子流動が減ると、それぞれの個体群で生じる突然変異や遺伝的浮動、さらに異なる環境で働く選択圧によって、別々に変化していきます。こうした遺伝的・形態的な違いが多くの世代にわたって蓄積し、最終的に互いに交配して繁殖可能な子孫を残せなくなると、生殖隔離が成立します。この段階で2つの個体群は別の種へと分化したと考えられます。"
+  },
+  {
+    "id": "BIO-P2-B4-001",
+    "subject": "Biology SL",
+    "chapter": "B4 Ecosystems",
+    "unit": "B4.1 Adaptation to environment",
+    "commandTerm": "Explain",
+    "marks": 4,
+    "difficulty": "standard",
+    "question": "Explain how abiotic factors can limit the distribution of a species.",
+    "markscheme": [
+      "Each species has a range of tolerance for abiotic factors such as temperature, salinity or water availability.",
+      "Outside this tolerance range, survival, growth or reproduction is reduced.",
+      "An abiotic factor that is outside or near the limit of tolerance can act as a limiting factor.",
+      "Species therefore tend to occur only in habitats where key abiotic conditions remain within their tolerance ranges."
+    ],
+    "markschemeJa": [
+      "それぞれの種には、温度、塩分濃度、水分量などの非生物的要因に対して生存できる耐性範囲がある。",
+      "環境条件がその耐性範囲から外れると、生存、成長、繁殖などがうまくできなくなる。",
+      "耐性範囲の外側、または限界に近い非生物的要因は、その種の分布を制限する要因になる。",
+      "そのため、種は重要な非生物的条件が自分の耐性範囲内にある生息地に主に分布する。"
+    ],
+    "modelAnswer": "A species can survive and reproduce only within certain ranges of abiotic conditions. For example, it may tolerate only a particular range of temperature, salinity or water availability. If conditions move outside that range, survival, growth or reproduction may decline, so that factor becomes limiting. As a result, the species is usually found only in habitats where the important abiotic conditions remain within its tolerance range.",
+    "modelAnswerJa": "生物の各種には、温度や塩分濃度、水分量などの環境条件について、生存や繁殖が可能な範囲があります。これを耐性範囲（range of tolerance）といいます。環境条件がその範囲から外れると、生存率が下がったり、成長や繁殖が難しくなったりします。その非生物的要因が制限要因（limiting factor）となるため、その種は必要な環境条件が耐性範囲内に保たれている場所に主に分布します。"
+  },
+  {
+    "id": "BIO-P2-C2-001",
+    "subject": "Biology SL",
+    "chapter": "C2 Cells",
+    "unit": "C2.2 Neural signalling",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain how the structure of a neuron is adapted for receiving and transmitting signals.",
+    "markscheme": [
+      "Branched dendrites provide a large surface area for receiving signals from other cells.",
+      "The cell body contains the nucleus and organelles needed to maintain the neuron's metabolism.",
+      "A long axon allows electrical signals to be conducted over long distances away from the cell body.",
+      "A myelin sheath insulates many axons and increases the speed of signal conduction.",
+      "Axon terminals form synapses where neurotransmitters can transfer signals to another neuron or an effector cell."
+    ],
+    "markschemeJa": [
+      "枝分かれした樹状突起（dendrites）は表面積を大きくし、他の細胞から多くの信号を受け取りやすくしている。",
+      "細胞体には核や細胞小器官があり、ニューロンの代謝や維持に必要な働きを行う。",
+      "長い軸索（axon）によって、電気的な信号を細胞体から離れた場所まで伝えることができる。",
+      "多くの軸索を包むミエリン鞘は電気的に絶縁し、信号の伝導速度を高める。",
+      "軸索末端ではシナプスを形成し、神経伝達物質によって次のニューロンや効果器細胞へ信号を伝えることができる。"
+    ],
+    "modelAnswer": "A neuron has branched dendrites that increase the surface area available for receiving signals from other cells. Its cell body contains the nucleus and organelles needed to maintain the cell. A long axon carries electrical signals away from the cell body over relatively long distances. In many neurons, a myelin sheath insulates the axon and increases conduction speed. At the end of the axon, terminals form synapses where neurotransmitters can pass the signal to another neuron or to an effector cell.",
+    "modelAnswerJa": "ニューロンには枝分かれした樹状突起があり、他の細胞から信号を受け取るための表面積を大きくしています。細胞体には核や細胞小器官があり、ニューロンを維持するための代謝を行います。長い軸索は、電気的な信号を細胞体から離れた場所まで伝えるのに適しています。また、多くのニューロンでは軸索がミエリン鞘に包まれており、電気的に絶縁されることで信号の伝導が速くなります。軸索の末端ではシナプスをつくり、神経伝達物質を使って次のニューロンや筋肉などの効果器細胞へ信号を伝えます。"
+  },
+  {
+    "id": "BIO-P2-C4-001",
+    "subject": "Biology SL",
+    "chapter": "C4 Ecosystems",
+    "unit": "C4.2 Transfers of energy and matter",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain why the amount of energy available decreases at successive trophic levels in an ecosystem.",
+    "markscheme": [
+      "Not all biomass at one trophic level is eaten by organisms at the next trophic level.",
+      "Some ingested material is not digested or absorbed and is lost in faeces or other waste.",
+      "Organisms use part of the assimilated energy in cellular respiration.",
+      "Respiration and other metabolic processes release energy to the surroundings as heat.",
+      "Only the energy stored in new biomass is available for transfer to the next trophic level."
+    ],
+    "markschemeJa": [
+      "ある栄養段階のバイオマスが、次の栄養段階の生物にすべて食べられるわけではない。",
+      "食べられた物質の一部は消化・吸収されず、ふんなどの排出物として失われる。",
+      "吸収されたエネルギーの一部は、細胞呼吸など生命活動のために使われる。",
+      "呼吸やその他の代謝過程では、エネルギーの一部が熱として周囲へ放出される。",
+      "次の栄養段階へ渡せるのは、新しくつくられたバイオマスに蓄えられたエネルギーだけである。"
+    ],
+    "modelAnswer": "Energy transfer between trophic levels is inefficient. Some organisms or parts of organisms at one trophic level are not eaten. Of the material that is eaten, some is not digested or absorbed and is lost as waste. Organisms also use much of the absorbed energy in respiration and other metabolic processes, with energy ultimately released as heat. Therefore only the fraction stored as new biomass can be transferred to organisms at the next trophic level.",
+    "modelAnswerJa": "栄養段階の間でエネルギーが移動するとき、そのすべてが次の段階へ渡るわけではありません。まず、ある栄養段階の生物やその体の一部がすべて食べられるわけではありません。また、食べられた物質の一部も消化・吸収されず、ふんなどとして排出されます。さらに、吸収されたエネルギーの多くは細胞呼吸やその他の生命活動に使われ、最終的には熱として周囲へ失われます。そのため、次の栄養段階へ渡せるのは、新しくつくられたバイオマスに蓄えられたエネルギーの一部だけです。"
+  },
+  {
+    "id": "BIO-P2-D2-001",
+    "subject": "Biology SL",
+    "chapter": "D2 Cells",
+    "unit": "D2.1 Cell and nuclear division",
+    "commandTerm": "Explain",
+    "marks": 4,
+    "difficulty": "challenging",
+    "question": "Explain how meiosis generates genetic variation in the gametes produced.",
+    "markscheme": [
+      "Homologous chromosomes pair during meiosis I and crossing over can exchange DNA between non-sister chromatids.",
+      "Crossing over produces new combinations of alleles on chromosomes.",
+      "Homologous chromosome pairs orient independently at metaphase I, so maternal and paternal chromosomes are distributed randomly.",
+      "These processes produce haploid gametes with different combinations of genetic information."
+    ],
+    "markschemeJa": [
+      "減数分裂Iでは相同染色体が対になり、非姉妹染色分体の間でDNAの一部が交換される交差（crossing over）が起こることがある。",
+      "交差によって、染色体上に新しい対立遺伝子の組み合わせが生じる。",
+      "中期Iでは相同染色体の対が互いに独立してランダムな向きに並ぶため、母由来と父由来の染色体がさまざまな組み合わせで分配される。",
+      "これらの過程によって、異なる遺伝情報の組み合わせをもつ半数体の配偶子がつくられる。"
+    ],
+    "modelAnswer": "During meiosis I, homologous chromosomes pair and crossing over can occur between non-sister chromatids. This exchanges DNA and creates new combinations of alleles on chromosomes. In addition, homologous pairs line up independently at metaphase I, so maternal and paternal chromosomes are separated into daughter cells in different combinations. As a result, meiosis produces haploid gametes that are genetically different from one another.",
+    "modelAnswerJa": "減数分裂Iでは相同染色体が対になり、非姉妹染色分体の間で交差（crossing over）が起こることがあります。交差ではDNAの一部が交換されるため、染色体上に新しい対立遺伝子の組み合わせが生まれます。さらに中期Iでは、それぞれの相同染色体の対が互いに独立してランダムな向きに並びます。そのため、母由来と父由来の染色体がさまざまな組み合わせで娘細胞へ分配されます。こうした仕組みにより、減数分裂でつくられる半数体の配偶子は互いに異なる遺伝情報を持ちます。"
+  },
+  {
+    "id": "BIO-P2-D3-001",
+    "subject": "Biology SL",
+    "chapter": "D3 Organisms",
+    "unit": "D3.2 Inheritance",
+    "commandTerm": "Explain",
+    "marks": 4,
+    "difficulty": "challenging",
+    "question": "Explain why an X-linked recessive disorder is often more common in males than in females.",
+    "markscheme": [
+      "Males typically have one X chromosome and one Y chromosome, whereas females typically have two X chromosomes.",
+      "A male with a recessive disease allele on his single X chromosome has no second allele on another X chromosome to mask its effect.",
+      "A female usually needs recessive disease alleles on both X chromosomes to express the disorder.",
+      "A female with one recessive disease allele and one normal dominant allele is usually a carrier without expressing the recessive disorder."
+    ],
+    "markschemeJa": [
+      "男性は通常X染色体を1本とY染色体を1本もち、女性は通常X染色体を2本もつ。",
+      "男性では、1本しかないX染色体に劣性の疾患対立遺伝子があると、その働きを隠す別のX染色体上の対立遺伝子がないため、疾患が表れやすい。",
+      "女性がその疾患を発症するには、通常は2本のX染色体の両方に劣性の疾患対立遺伝子をもつ必要がある。",
+      "女性が劣性の疾患対立遺伝子を1つだけもち、もう一方に正常な優性対立遺伝子をもつ場合は、通常は発症せず保因者になる。"
+    ],
+    "modelAnswer": "Males typically have only one X chromosome. Therefore, if that X chromosome carries a recessive disease allele, there is no second allele on another X chromosome that can mask its effect, so the disorder is expressed. Females typically have two X chromosomes and usually need the recessive disease allele on both copies to show the disorder. A female with only one recessive disease allele is usually a carrier because a normal dominant allele on the other X chromosome masks the recessive effect.",
+    "modelAnswerJa": "男性は通常X染色体を1本しか持ちません。そのため、そのX染色体に劣性の疾患対立遺伝子があると、その働きを隠すもう1つの対立遺伝子がなく、疾患が表れます。一方、女性は通常X染色体を2本持つため、劣性の疾患が表れるには多くの場合、両方のX染色体に疾患対立遺伝子が必要です。1本のX染色体にだけ疾患対立遺伝子がある女性は、もう一方のX染色体にある正常な優性対立遺伝子によって劣性の働きが隠されるため、通常は発症せず保因者になります。"
   }
 ]
