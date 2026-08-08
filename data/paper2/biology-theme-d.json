@@ -1,0 +1,212 @@
+[
+  {
+    "id": "BIO-P2-D1-002",
+    "subject": "Biology SL",
+    "chapter": "D1 Molecules",
+    "unit": "D1.1 DNA replication",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "challenging",
+    "question": "Explain the semi-conservative replication of DNA.",
+    "markscheme": [
+      "The two strands of the DNA double helix separate as hydrogen bonds between complementary bases are disrupted.",
+      "Each original strand acts as a template for synthesis of a new strand.",
+      "Free nucleotides pair with exposed bases by complementary base pairing.",
+      "DNA polymerase joins nucleotides to form the sugar-phosphate backbone of the new DNA strand.",
+      "Each daughter DNA molecule contains one original parental strand and one newly synthesized strand."
+    ],
+    "markschemeJa": [
+      "相補的な塩基間の水素結合が切れ、DNA二重らせんの2本の鎖が分かれる。",
+      "元のDNAの各鎖が、新しい鎖をつくるための鋳型として働く。",
+      "遊離ヌクレオチドが、露出した塩基に相補的塩基対形成によって結合する。",
+      "DNAポリメラーゼがヌクレオチドをつなぎ、新しいDNA鎖の糖-リン酸骨格を形成する。",
+      "複製後の各DNA分子には、元の親DNA由来の鎖が1本と、新しく合成された鎖が1本ずつ含まれる。"
+    ],
+    "modelAnswer": "During DNA replication, the two parental strands separate as the hydrogen bonds between complementary bases are disrupted. Each original strand then acts as a template. Free nucleotides pair with exposed bases according to complementary base pairing, and DNA polymerase joins the nucleotides into a new strand. The two resulting DNA molecules each contain one parental strand and one newly synthesized strand, which is why replication is described as semi-conservative.",
+    "modelAnswerJa": "DNA複製では、相補的な塩基どうしを結ぶ水素結合が切れ、2本のDNA鎖が分かれます。分かれたそれぞれの元の鎖が鋳型となり、遊離ヌクレオチドが相補的塩基対形成によって並びます。DNAポリメラーゼがそれらをつないで新しい鎖を合成します。できた2つのDNA分子には、それぞれ元のDNA由来の鎖が1本、新しくつくられた鎖が1本含まれるため、この複製を半保存的複製と呼びます。"
+  },
+  {
+    "id": "BIO-P2-D1-003",
+    "subject": "Biology SL",
+    "chapter": "D1 Molecules",
+    "unit": "D1.3 Mutations and gene editing",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "challenging",
+    "question": "Explain how a base substitution in a protein-coding gene can affect the structure and function of a protein.",
+    "markscheme": [
+      "A base substitution changes one nucleotide in the DNA sequence of a gene.",
+      "After transcription, the mutation can alter a codon in the mRNA.",
+      "The changed codon may specify a different amino acid, although some substitutions are silent.",
+      "A different amino acid can alter side-chain interactions and therefore the folding or shape of the protein.",
+      "A change in protein shape can alter an active site or binding site and therefore change protein function."
+    ],
+    "markschemeJa": [
+      "塩基置換では、遺伝子のDNA配列中の1つのヌクレオチドが別のものに変わる。",
+      "転写後、その変化によってmRNAのコドンが変わることがある。",
+      "変化したコドンが別のアミノ酸を指定する場合があるが、アミノ酸が変わらないサイレント変異の場合もある。",
+      "アミノ酸が変わると側鎖どうしの相互作用が変化し、タンパク質の折りたたみ方や形が変わることがある。",
+      "タンパク質の形が変わると活性部位や結合部位が変化し、機能が変わることがある。"
+    ],
+    "modelAnswer": "A base substitution changes one nucleotide in a gene. This can change the corresponding mRNA codon after transcription. Because the genetic code is redundant, some substitutions are silent, but others replace one amino acid with another. The new amino acid may have a different side chain and alter interactions that determine protein folding. If the three-dimensional structure or a functional site changes, the activity of the protein may also change.",
+    "modelAnswerJa": "塩基置換では、遺伝子のDNA配列中の1つの塩基が別の塩基に変わります。その結果、転写されたmRNAのコドンが変わることがあります。遺伝暗号には重複があるためアミノ酸が変わらない場合もありますが、別のアミノ酸に置き換わることもあります。アミノ酸が変われば側鎖の性質も変わるため、タンパク質の折りたたみ方や立体構造が変化する可能性があります。活性部位や結合部位の形まで変われば、タンパク質の機能も変化します。"
+  },
+  {
+    "id": "BIO-P2-D2-002",
+    "subject": "Biology SL",
+    "chapter": "D2 Cells",
+    "unit": "D2.1 Cell and nuclear division",
+    "commandTerm": "Compare and contrast",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Compare and contrast mitosis and meiosis.",
+    "markscheme": [
+      "Both involve chromosome replication before nuclear division and the movement of chromosomes by spindle microtubules.",
+      "Mitosis usually involves one nuclear division whereas meiosis involves two successive nuclear divisions.",
+      "Mitosis maintains chromosome number whereas meiosis reduces chromosome number from diploid to haploid.",
+      "Mitosis usually produces genetically similar daughter nuclei whereas meiosis produces genetically varied nuclei.",
+      "Homologous chromosome pairing and crossing over occur in meiosis I but not in normal mitosis."
+    ],
+    "markschemeJa": [
+      "どちらも核分裂の前にDNA複製が起こり、紡錘体微小管によって染色体が移動する。",
+      "有糸分裂は通常1回の核分裂であるのに対し、減数分裂では2回の核分裂が続けて起こる。",
+      "有糸分裂では染色体数が維持されるが、減数分裂では二倍体から半数体へ染色体数が半分になる。",
+      "有糸分裂では通常、遺伝的にほぼ同じ娘核ができるが、減数分裂では遺伝的に異なる核ができる。",
+      "相同染色体の対合や交差は減数分裂Iで起こるが、通常の有糸分裂では起こらない。"
+    ],
+    "modelAnswer": "Mitosis and meiosis both follow DNA replication and use spindle microtubules to separate chromosomes. Mitosis normally consists of one nuclear division and preserves chromosome number, producing genetically similar nuclei. Meiosis consists of two divisions and reduces chromosome number from diploid to haploid. Homologous chromosomes pair and can cross over during meiosis I, contributing to the genetic variation of the products.",
+    "modelAnswerJa": "有糸分裂と減数分裂はどちらも事前にDNA複製が起こり、紡錘体微小管によって染色体を分けます。ただし、有糸分裂は通常1回の核分裂で、染色体数を保ったまま遺伝的にほぼ同じ娘核をつくります。減数分裂は2回の核分裂からなり、染色体数を二倍体から半数体へ減らします。また、減数分裂Iでは相同染色体が対になって交差が起こることがあり、できる細胞の遺伝的多様性が高まります。"
+  },
+  {
+    "id": "BIO-P2-D2-003",
+    "subject": "Biology SL",
+    "chapter": "D2 Cells",
+    "unit": "D2.3 Water potential",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "challenging",
+    "question": "Explain how differences in water potential cause changes in plant-cell turgor.",
+    "markscheme": [
+      "Water moves across a selectively permeable membrane from higher water potential to lower water potential.",
+      "If the external solution has a higher water potential than the cell, water enters the plant cell by osmosis.",
+      "Water entry increases the volume of the vacuole and pushes the plasma membrane against the cell wall.",
+      "The cell wall resists further expansion, producing turgor pressure and a turgid cell.",
+      "If the external water potential is lower, water leaves the cell, reducing turgor and potentially causing plasmolysis."
+    ],
+    "markschemeJa": [
+      "水は選択的透過性膜を通って、水ポテンシャルの高い方から低い方へ移動する。",
+      "外液の水ポテンシャルが細胞内より高いと、水は浸透によって植物細胞内へ入る。",
+      "水が入ると液胞の体積が大きくなり、細胞膜が細胞壁へ押しつけられる。",
+      "細胞壁がそれ以上の膨張を抑えることで膨圧が生じ、細胞は張った状態になる。",
+      "外液の水ポテンシャルの方が低いと水は細胞外へ出て膨圧が低下し、場合によっては原形質分離が起こる。"
+    ],
+    "modelAnswer": "Water moves by osmosis from a region of higher water potential to one of lower water potential. If the solution outside a plant cell has a higher water potential than the cell, water enters and the vacuole expands. The contents press the plasma membrane against the cell wall, and resistance from the wall produces turgor pressure. If the external water potential is lower, water leaves, turgor falls and severe water loss can lead to plasmolysis.",
+    "modelAnswerJa": "水は浸透によって、水ポテンシャルが高い方から低い方へ移動します。植物細胞の外側の水ポテンシャルが細胞内より高ければ、水が細胞へ入り、液胞が大きくなります。細胞の内容物が細胞膜を細胞壁へ押しつけますが、細胞壁はそれ以上の膨張に抵抗するため膨圧が生じ、細胞は張った状態になります。反対に外側の水ポテンシャルが低ければ水が外へ出て膨圧が低下し、水を大きく失うと原形質分離が起こることがあります。"
+  },
+  {
+    "id": "BIO-P2-D3-002",
+    "subject": "Biology SL",
+    "chapter": "D3 Organisms",
+    "unit": "D3.1 Reproduction",
+    "commandTerm": "Explain",
+    "marks": 6,
+    "difficulty": "challenging",
+    "question": "Explain the hormonal control of ovulation in the human menstrual cycle.",
+    "markscheme": [
+      "FSH from the pituitary stimulates development of ovarian follicles.",
+      "Developing follicles secrete increasing amounts of oestrogen.",
+      "At moderate concentrations, oestrogen contributes to regulation of FSH and development of the uterine lining.",
+      "High oestrogen concentration near the middle of the cycle stimulates a surge in LH secretion.",
+      "The LH surge triggers ovulation and promotes formation of the corpus luteum.",
+      "After ovulation, the corpus luteum secretes progesterone, which helps maintain the uterine lining and influences further pituitary hormone secretion."
+    ],
+    "markschemeJa": [
+      "下垂体から分泌されるFSHは、卵巣の卵胞の発達を促す。",
+      "発達中の卵胞は、しだいに多くのエストロゲンを分泌する。",
+      "中程度のエストロゲン濃度はFSHの調節に関わり、子宮内膜の発達も促す。",
+      "周期の中頃にエストロゲン濃度が高くなると、LHが急増するLHサージが起こる。",
+      "LHサージが排卵を引き起こし、黄体の形成を促す。",
+      "排卵後は黄体がプロゲステロンを分泌し、子宮内膜の維持や下垂体ホルモンの調節に関わる。"
+    ],
+    "modelAnswer": "FSH from the pituitary promotes follicle development in the ovary. As a follicle develops, it secretes increasing amounts of oestrogen, which supports growth of the uterine lining and helps regulate pituitary hormones. When oestrogen becomes high near mid-cycle, it triggers a surge of LH. The LH surge causes ovulation and formation of the corpus luteum. The corpus luteum then secretes progesterone, which helps maintain the uterine lining and contributes to feedback control of the cycle.",
+    "modelAnswerJa": "下垂体から分泌されるFSHは卵巣の卵胞を発達させます。卵胞が成長するとエストロゲンの分泌量が増え、子宮内膜の発達を助けるとともに、下垂体ホルモンの分泌調節にも関わります。周期の中頃にエストロゲン濃度が高くなるとLHが急激に増えるLHサージが起こり、これが排卵を引き起こします。排卵後には黄体が形成され、プロゲステロンを分泌して子宮内膜を維持し、周期全体のフィードバック調節にも関わります。"
+  },
+  {
+    "id": "BIO-P2-D3-003",
+    "subject": "Biology SL",
+    "chapter": "D3 Organisms",
+    "unit": "D3.3 Homeostasis",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain how negative feedback helps maintain a stable internal condition in an organism.",
+    "markscheme": [
+      "A regulated variable is monitored by receptors or sensing cells.",
+      "A deviation from a set point or normal range is detected.",
+      "A control system activates effectors that produce a response opposing the original change.",
+      "As the variable returns toward the normal range, the stimulus for the corrective response is reduced.",
+      "This prevents large sustained deviations and helps maintain a relatively stable internal environment."
+    ],
+    "markschemeJa": [
+      "調節される体内の変数は、受容器や感知する細胞によって監視される。",
+      "その値が基準値や正常範囲からずれると、その変化が検出される。",
+      "調節系が効果器を働かせ、最初に起こった変化と反対方向の反応を起こす。",
+      "変数が正常範囲へ戻るにつれて、修正反応を起こす刺激は弱くなる。",
+      "これによって大きなずれが長く続くのを防ぎ、体内環境を比較的安定に保つことができる。"
+    ],
+    "modelAnswer": "Negative feedback maintains stability by opposing change. Receptors or sensing cells monitor a variable and detect when it moves away from its normal range or set point. A control system then activates effectors that act in the opposite direction to the disturbance. As the variable returns toward normal, the stimulus for the response becomes smaller, so the corrective action is reduced. This limits large fluctuations in the internal environment.",
+    "modelAnswerJa": "負のフィードバックは、起こった変化を打ち消す方向に働くことで体内環境を安定させます。受容器などが体内のある値を監視し、正常範囲や基準値から外れたことを検出すると、調節系が効果器を働かせます。効果器は最初の変化と反対方向の反応を起こし、値を正常範囲へ戻します。正常に近づくほど修正反応を起こす刺激も弱くなるため、必要以上に反応が続きません。これによって体内環境の大きな変動を防ぎます。"
+  },
+  {
+    "id": "BIO-P2-D4-002",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.3 Climate change",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain how an increase in greenhouse-gas concentration can lead to biological effects of climate change.",
+    "markscheme": [
+      "Greenhouse gases absorb outgoing infrared radiation and reduce the rate at which heat escapes to space.",
+      "An increase in greenhouse-gas concentration strengthens the greenhouse effect and raises average global temperature.",
+      "Warming can alter rainfall patterns, sea level and the frequency or intensity of some extreme conditions.",
+      "Species distributions and seasonal biological events can shift as environmental conditions change.",
+      "Species unable to migrate or adapt rapidly enough may experience population decline or increased extinction risk."
+    ],
+    "markschemeJa": [
+      "温室効果ガスは地表から出る赤外線を吸収し、熱が宇宙へ逃げる速さを小さくする。",
+      "温室効果ガスの濃度が上がると温室効果が強まり、地球の平均気温が上昇する。",
+      "温暖化によって降水パターン、海面、極端な気象条件の頻度や強さなどが変化することがある。",
+      "環境条件が変わることで、生物の分布域や季節的な活動の時期が変化することがある。",
+      "十分な速さで移動したり適応したりできない種では、個体数の減少や絶滅リスクの上昇が起こる可能性がある。"
+    ],
+    "modelAnswer": "Greenhouse gases absorb infrared radiation emitted from Earth's surface and slow the loss of heat to space. Increasing their concentration strengthens the greenhouse effect and raises average global temperature. This can change rainfall, sea level and patterns of extreme conditions. Organisms may respond by shifting their geographic ranges or the timing of seasonal events. Species that cannot move or adapt quickly enough may decline and face a greater risk of extinction.",
+    "modelAnswerJa": "温室効果ガスは地表から放出される赤外線を吸収し、熱が宇宙へ逃げるのを遅くします。その濃度が高くなると温室効果が強まり、地球の平均気温が上昇します。これに伴って降水のパターンや海面、極端な気象条件なども変化します。生物は分布域を移したり、繁殖や渡りなど季節的な活動の時期を変えたりすることがあります。しかし、環境変化に十分な速さで移動・適応できない種では個体数が減少し、絶滅リスクが高まる可能性があります。"
+  },
+  {
+    "id": "BIO-P2-D4-003",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.2 Sustainability and change",
+    "commandTerm": "Discuss",
+    "marks": 5,
+    "difficulty": "challenging",
+    "question": "Discuss why sustainable harvesting requires information about population size and population growth.",
+    "markscheme": [
+      "Harvesting removes individuals from a population and can reduce population size.",
+      "If removal exceeds the population's capacity to replace individuals through reproduction, the population will decline.",
+      "Population growth rate can change with density and resource availability, so a fixed harvest may not always be sustainable.",
+      "Reliable estimates of population size and trends allow harvest limits to be adjusted when conditions change.",
+      "Monitoring and precautionary limits can reduce the risk of overexploitation and long-term loss of the resource."
+    ],
+    "markschemeJa": [
+      "採取や漁獲によって個体群から個体が取り除かれるため、個体数が減少する可能性がある。",
+      "取り除かれる個体数が繁殖によって補充できる数を上回ると、個体群は減少する。",
+      "個体群の成長率は密度や資源量によって変化するため、いつも同じ量を採取しても持続可能とは限らない。",
+      "個体数や増減傾向を信頼できる方法で推定すれば、環境条件の変化に応じて採取上限を調整できる。",
+      "継続的なモニタリングと慎重な採取制限によって、過剰利用や資源の長期的な消失のリスクを下げられる。"
+    ],
+    "modelAnswer": "Harvesting directly removes individuals from a population. If individuals are removed faster than births and recruitment can replace them, the population will decline. Because growth rates change with population density and environmental conditions, a harvest level that is safe in one year may be unsustainable in another. Monitoring population size and trends allows managers to adjust limits, and precautionary rules help reduce the risk of overexploitation and collapse.",
+    "modelAnswerJa": "漁獲や採取は、個体群から直接個体を取り除く行為です。繁殖によって新しく加わる個体より多くを取り続ければ、個体数は減っていきます。また、個体群の成長率は個体密度や環境条件によって変わるため、ある年には問題のない採取量でも、別の年には多すぎることがあります。そのため、個体数や増減傾向を継続して調べ、状況に応じて採取上限を変える必要があります。慎重な上限設定とモニタリングによって、過剰利用や資源の崩壊を防ぎやすくなります。"
+  }
+]
