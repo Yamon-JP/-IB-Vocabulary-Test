@@ -70,8 +70,13 @@
   </section>
 
   <section id="practice-page" class="page">
-    <h2>Practice</h2>
-    <p class="practice-scope-label"><span id="selection-subject-practice"></span></p>
+    <div class="practice-header">
+      <button class="back-button" onclick="App.backToSelection()">← Back</button>
+      <div>
+        <h2>Practice</h2>
+        <p class="practice-scope-label"><span id="selection-subject-practice"></span></p>
+      </div>
+    </div>
 
     <section id="vocabulary-practice-panel">
       <section id="flashcard">
@@ -126,7 +131,7 @@
 
   <nav class="navigation">
     <button onclick="Pages.show('home')">Home</button>
-    <button onclick="Pages.show('practice')">Practice</button>
+    <button onclick="App.openPractice()">Practice</button>
     <button onclick="Pages.show('statistics')">Statistics</button>
     <button onclick="Pages.show('achievements')">Achievements</button>
     <button onclick="Pages.show('settings')">Settings</button>
