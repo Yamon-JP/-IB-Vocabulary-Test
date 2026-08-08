@@ -1,29 +1,29 @@
 [
   {
-    "id": 1,
+    "id": "ENG-C1-A",
     "subject": "English B HL",
+    "chapter": "Chapter 1",
     "word": "sustainable",
     "definition": "able to continue without causing damage",
     "japanese": "持続可能な",
-    "topic": "Environment",
     "level": "HL"
   },
   {
-    "id": 2,
+    "id": "ENG-C1-B",
     "subject": "English B HL",
+    "chapter": "Chapter 1",
     "word": "biodiversity",
     "definition": "the variety of living organisms in an ecosystem",
     "japanese": "生物多様性",
-    "topic": "Environment",
     "level": "HL"
   },
   {
-    "id": 3,
+    "id": "BIO-C1-A",
     "subject": "Biology SL",
+    "chapter": "Chapter 1",
     "word": "homeostasis",
     "definition": "maintenance of a stable internal environment",
     "japanese": "恒常性",
-    "topic": "Cell Biology",
     "level": "SL"
   }
 ]
