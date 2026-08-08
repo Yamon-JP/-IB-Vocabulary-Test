@@ -158,8 +158,13 @@ button:focus-visible { outline: 3px solid rgba(37, 99, 235, 0.25); outline-offse
 }
 .navigation button { min-height: 42px; }
 
+/* The practice page has a dedicated Back button in its header. */
+body.practice-active #app { padding-bottom: 20px; }
+body.practice-active .navigation { display: none; }
+
 @media (max-width: 600px) {
   #app { padding: 10px; padding-bottom: 78px; }
+  body.practice-active #app { padding-bottom: 10px; }
   .hero h1 { font-size: 1.55rem; }
   .progress-panel, #flashcard, #quiz-area, #practice-achievements { padding: 12px; }
   #quiz-question { font-size: 1.1rem; margin-bottom: 10px; }
