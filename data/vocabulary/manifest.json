@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "subjects": {
+    "English B HL": [
+      "data/vocabulary/english-b/chapter-1.json",
+      "data/vocabulary/english-b/chapter-2.json",
+      "data/vocabulary/english-b/chapter-3.json",
+      "data/vocabulary/english-b/chapter-4.json",
+      "data/vocabulary/english-b/chapter-5.json"
+    ],
+    "Biology SL": [],
+    "ESS HL": []
+  }
+}
