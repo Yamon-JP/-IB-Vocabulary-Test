@@ -7,12 +7,21 @@ const Paper2 = {
     try {
       const response = await fetch('data/paper2.json');
       if (!response.ok) throw new Error('Paper 2 data not found');
-      this.allQuestions = await response.json();
+      const data = await response.json();
+      this.allQuestions = Array.isArray(data) ? data : [];
     } catch (error) {
-      console.warn('Paper 2 data is not available yet.');
+      console.warn('Paper 2 data is not available yet.', error);
       this.allQuestions = [];
     }
     this.renderEmptyState();
+  },
+
+  pickQuestion(excludeId = null) {
+    if (!this.questions.length) return null;
+    const candidates = excludeId && this.questions.length > 1
+      ? this.questions.filter(question => question.id !== excludeId)
+      : this.questions;
+    return candidates[Math.floor(Math.random() * candidates.length)] || null;
   },
 
   loadForSelection(subject, chapters = []) {
@@ -22,24 +31,29 @@ const Paper2 = {
       const chapter = question.chapter || question.topic;
       return chapters.includes(chapter);
     });
-    this.current = this.questions.length
-      ? this.questions[Math.floor(Math.random() * this.questions.length)]
-      : null;
+    this.current = this.pickQuestion();
     this.render();
   },
 
   setQuestions(questions = []) {
-    this.questions = questions;
-    this.current = questions.length
-      ? questions[Math.floor(Math.random() * questions.length)]
-      : null;
+    this.questions = Array.isArray(questions) ? questions : [];
+    this.current = this.pickQuestion();
     this.render();
+  },
+
+  escapeHtml(value) {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
   },
 
   renderEmptyState() {
     const question = document.getElementById('paper2-question');
     if (!question) return;
-    question.innerHTML = '<p class="muted">Paper 2 question data will be added after the question database is prepared.</p>';
+    question.innerHTML = '<p class="muted">No Paper 2 questions are available for this selection yet.</p>';
   },
 
   render() {
@@ -72,12 +86,36 @@ const Paper2 = {
     const answer = document.getElementById('paper2-answer');
     if (!feedback || !answer) return;
 
-    feedback.innerHTML = '<div class="paper2-feedback-card"><strong>Answer recorded.</strong><p>Markscheme and feedback will appear here when this question has been added to the Paper 2 database.</p></div>';
+    if (!answer.value.trim()) {
+      feedback.innerHTML = '<div class="paper2-feedback-card"><strong>Write an answer first.</strong><p>Attempt the question before revealing the markscheme.</p></div>';
+      return;
+    }
+
+    const markscheme = Array.isArray(this.current.markscheme) ? this.current.markscheme : [];
+    const markschemeHtml = markscheme.length
+      ? `<ol class="paper2-markscheme-list">${markscheme.map(point => `<li>${this.escapeHtml(point)}</li>`).join('')}</ol>`
+      : '<p class="muted">No markscheme is available for this question.</p>';
+    const modelAnswer = this.current.modelAnswer
+      ? `<div class="paper2-model-answer"><h4>Model Answer</h4><p>${this.escapeHtml(this.current.modelAnswer)}</p></div>`
+      : '';
+
+    feedback.innerHTML = `
+      <div class="paper2-feedback-card">
+        <div class="paper2-feedback-heading">
+          <strong>Self-mark your answer</strong>
+          <span>${this.escapeHtml(this.current.marks ?? '—')} marks</span>
+        </div>
+        <p>Compare your response with the marking points below. Award a mark only when your answer clearly communicates the required idea.</p>
+        <h4>Markscheme</h4>
+        ${markschemeHtml}
+        ${modelAnswer}
+      </div>`;
   },
 
   next() {
     if (!this.questions.length) return;
-    this.current = this.questions[Math.floor(Math.random() * this.questions.length)];
+    const previousId = this.current && this.current.id;
+    this.current = this.pickQuestion(previousId);
     this.render();
   }
 };
