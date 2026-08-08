@@ -7,6 +7,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "challenging",
+    "assessmentTarget": "practice",
     "question": "Explain the semi-conservative replication of DNA.",
     "markscheme": [
       "The two strands of the DNA double helix separate as hydrogen bonds between complementary bases are disrupted.",
@@ -33,6 +34,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
     "question": "Explain how a base substitution in a protein-coding gene can affect the structure and function of a protein.",
     "markscheme": [
       "A base substitution changes one nucleotide in the DNA sequence of a gene.",
@@ -59,6 +61,7 @@
     "commandTerm": "Compare and contrast",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "practice",
     "question": "Compare and contrast mitosis and meiosis.",
     "markscheme": [
       "Both involve chromosome replication before nuclear division and the movement of chromosomes by spindle microtubules.",
@@ -85,6 +88,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
     "question": "Explain how differences in water potential cause changes in plant-cell turgor.",
     "markscheme": [
       "Water moves across a selectively permeable membrane from higher water potential to lower water potential.",
@@ -111,6 +115,7 @@
     "commandTerm": "Explain",
     "marks": 6,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
     "question": "Explain the hormonal control of ovulation in the human menstrual cycle.",
     "markscheme": [
       "FSH from the pituitary stimulates development of ovarian follicles.",
@@ -139,6 +144,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "practice",
     "question": "Explain how negative feedback helps maintain a stable internal condition in an organism.",
     "markscheme": [
       "A regulated variable is monitored by receptors or sensing cells.",
@@ -165,6 +171,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2b",
     "question": "Explain how an increase in greenhouse-gas concentration can lead to biological effects of climate change.",
     "markscheme": [
       "Greenhouse gases absorb outgoing infrared radiation and reduce the rate at which heat escapes to space.",
@@ -191,6 +198,7 @@
     "commandTerm": "Discuss",
     "marks": 5,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
     "question": "Discuss why sustainable harvesting requires information about population size and population growth.",
     "markscheme": [
       "Harvesting removes individuals from a population and can reduce population size.",
