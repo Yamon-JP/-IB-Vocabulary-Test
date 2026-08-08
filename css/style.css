@@ -95,7 +95,7 @@ button:focus-visible { outline: 3px solid rgba(37, 99, 235, 0.25); outline-offse
 #quiz-area { margin-top: 14px; padding: 16px; }
 #quiz-question { margin: 0 0 14px; font-size: 1.25rem; line-height: 1.5; font-weight: 700; }
 #quiz-choices button { display: block; width: 100%; min-height: 46px; margin: 7px 0; padding: 10px 12px; border-radius: 8px; cursor: pointer; font-size: 1rem; text-align: left; }
-#quiz-choices button.selected { border: 2px solid var(--accent); background: var(--accent-soft); }
+#quiz-choices button.selected { border: 2px solid #a78bfa; background: #f3e8ff; }
 #quiz-choices button.correct { background: var(--success-soft); border: 2px solid var(--success); }
 #quiz-choices button.incorrect { background: var(--danger-soft); border: 2px solid var(--danger); }
 #quiz-result { min-height: 24px; margin: 10px 0 4px; font-weight: 700; }
