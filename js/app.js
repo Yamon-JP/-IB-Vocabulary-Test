@@ -22,6 +22,7 @@ const App = {
         this.renderChapterSelector();
         this.applySavedSelection();
         this.applyPracticeTypeUI();
+        this.applyPracticeScopeUI();
         if (typeof Quiz !== 'undefined') Quiz.init();
         if (typeof Paper2 !== 'undefined') Paper2.init();
         this.updatePracticeHeader();
@@ -58,6 +59,7 @@ const App = {
     this.saveState();
     this.renderChapterSelector();
     this.applyPracticeTypeUI();
+    this.applyPracticeScopeUI();
     Pages.show('selection');
   },
 
@@ -103,6 +105,7 @@ const App = {
     }
     this.renderChapterSelector();
     this.applyPracticeTypeUI();
+    this.applyPracticeScopeUI();
     Pages.show('selection');
   },
 
@@ -179,6 +182,7 @@ const App = {
       return;
     }
 
+    const selected = new Set(this.state.selectedChapters || []);
     list.innerHTML = chapters.map((chapter, index) => {
       const chapterData = this.state.subject === 'ESS HL'
         ? Vocabulary.allWords.find(word => word.subject === this.state.subject && (word.chapter || word.topic) === chapter)
@@ -189,7 +193,11 @@ const App = {
 
       return `
         <label class="chapter-option">
-          <input type="checkbox" value="${chapter.replace(/"/g, '&quot;')}" data-chapter-index="${index}">
+          <input type="checkbox"
+            value="${chapter.replace(/"/g, '&quot;')}"
+            data-chapter-index="${index}"
+            ${selected.has(chapter) ? 'checked' : ''}
+            onchange="App.toggleChapterSelection(this.value, this.checked)">
           <span>${displayChapter}</span>
         </label>`;
     }).join('');
@@ -212,7 +220,19 @@ const App = {
   },
 
   setPracticeScope(scope) {
+    this.state.practiceScope = scope === 'selected' ? 'selected' : 'all';
+    this.applyPracticeScopeUI();
+    this.saveState();
+  },
+
+  applyPracticeScopeUI() {
+    const scope = this.state.practiceScope === 'selected' ? 'selected' : 'all';
     this.state.practiceScope = scope;
+
+    document.querySelectorAll('input[name="practice-scope"]').forEach(input => {
+      input.checked = input.value === scope;
+    });
+
     const chapterBox = document.getElementById('chapter-options');
     if (chapterBox) chapterBox.style.display = scope === 'selected' ? 'block' : 'none';
   },
