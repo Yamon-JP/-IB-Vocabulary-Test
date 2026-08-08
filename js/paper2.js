@@ -92,14 +92,20 @@ const Paper2 = {
     }
 
     const markscheme = Array.isArray(this.current.markscheme) ? this.current.markscheme : [];
+    const markschemeJa = Array.isArray(this.current.markschemeJa) ? this.current.markschemeJa : [];
     const markschemeHtml = markscheme.length
-      ? `<ol class="paper2-markscheme-list">${markscheme.map(point => `<li>${this.escapeHtml(point)}</li>`).join('')}</ol>`
+      ? `<ol class="paper2-markscheme-list">${markscheme.map((point, index) => {
+          const japanese = markschemeJa[index]
+            ? `<div class="paper2-markscheme-ja" lang="ja">日本語：${this.escapeHtml(markschemeJa[index])}</div>`
+            : '';
+          return `<li><div>${this.escapeHtml(point)}</div>${japanese}</li>`;
+        }).join('')}</ol>`
       : '<p class="muted">No markscheme is available for this question.</p>';
     const modelAnswer = this.current.modelAnswer
       ? `<div class="paper2-model-answer"><h4>Model Answer</h4><p>${this.escapeHtml(this.current.modelAnswer)}</p></div>`
       : '';
     const modelAnswerJa = this.current.modelAnswerJa
-      ? `<div class="paper2-model-answer paper2-model-answer-ja"><h4>日本語訳</h4><p>${this.escapeHtml(this.current.modelAnswerJa)}</p></div>`
+      ? `<div class="paper2-model-answer paper2-model-answer-ja" lang="ja"><h4>日本語訳</h4><p>${this.escapeHtml(this.current.modelAnswerJa)}</p></div>`
       : '';
 
     feedback.innerHTML = `
