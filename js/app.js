@@ -179,11 +179,20 @@ const App = {
       return;
     }
 
-    list.innerHTML = chapters.map((chapter, index) => `
-      <label class="chapter-option">
-        <input type="checkbox" value="${chapter.replace(/"/g, '&quot;')}" data-chapter-index="${index}">
-        <span>${chapter}</span>
-      </label>`).join('');
+    list.innerHTML = chapters.map((chapter, index) => {
+      const chapterData = this.state.subject === 'ESS HL'
+        ? Vocabulary.allWords.find(word => word.subject === this.state.subject && (word.chapter || word.topic) === chapter)
+        : null;
+      const displayChapter = chapterData?.chapterTitle
+        ? `${chapter}: ${chapterData.chapterTitle}`
+        : chapter;
+
+      return `
+        <label class="chapter-option">
+          <input type="checkbox" value="${chapter.replace(/"/g, '&quot;')}" data-chapter-index="${index}">
+          <span>${displayChapter}</span>
+        </label>`;
+    }).join('');
   },
 
   selectBiologyTheme(theme) {
