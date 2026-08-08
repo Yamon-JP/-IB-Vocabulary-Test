@@ -51,7 +51,10 @@ const Achievements = {
   },
 
   check(progress) {
-    const before = { ...this.data };
+    const before = {
+      ...this.data,
+      chapterAchievements: JSON.parse(JSON.stringify(this.data.chapterAchievements || {}))
+    };
 
     this.data.firstPractice ||= progress.questions > 0;
     this.data.xp10 ||= progress.xp >= 10;
@@ -71,7 +74,28 @@ const Achievements = {
 
     this.checkChapterAchievements(progress);
 
-    this.newlyUnlocked = Object.keys(this.data).filter(key => this.data[key] && !before[key]);
+    const newlyUnlockedGlobal = Object.keys(this.definitions)
+      .filter(key => this.data[key] && !before[key])
+      .map(key => ({ type: 'global', key, title: this.definitions[key].title }));
+
+    const newlyUnlockedChapter = [];
+    Object.entries(this.data.chapterAchievements || {}).forEach(([subject, chapters]) => {
+      Object.entries(chapters || {}).forEach(([chapter, achievements]) => {
+        Object.keys(this.chapterDefinitions).forEach(key => {
+          if (achievements[key] && !before.chapterAchievements?.[subject]?.[chapter]?.[key]) {
+            newlyUnlockedChapter.push({
+              type: 'chapter',
+              key,
+              title: this.chapterDefinitions[key].title,
+              subject,
+              chapter
+            });
+          }
+        });
+      });
+    });
+
+    this.newlyUnlocked = [...newlyUnlockedGlobal, ...newlyUnlockedChapter];
 
     Storage.save('ib_achievements', this.data);
     this.render();
@@ -123,10 +147,15 @@ const Achievements = {
   showNotification() {
     if (!this.newlyUnlocked.length) return;
 
-    const names = this.newlyUnlocked
-      .map(key => this.definitions[key]?.title)
-      .filter(Boolean)
-      .join(' · ');
+    const globalNames = this.newlyUnlocked
+      .filter(item => item.type === 'global')
+      .map(item => item.title);
+
+    const chapterItems = this.newlyUnlocked.filter(item => item.type === 'chapter');
+    const lines = [];
+
+    if (globalNames.length) lines.push(globalNames.join(' · '));
+    chapterItems.forEach(item => lines.push(`${item.title} — ${item.subject} / ${item.chapter}`));
 
     let toast = document.getElementById('achievement-toast');
     if (!toast) {
@@ -137,7 +166,7 @@ const Achievements = {
       document.body.appendChild(toast);
     }
 
-    toast.innerHTML = `🏆 Achievement Unlocked!<br><span>${names}</span>`;
+    toast.innerHTML = `🏆 Achievement Unlocked!<br><span>${lines.join('<br>')}</span>`;
     toast.style.display = 'block';
 
     if (this.notificationTimer) clearTimeout(this.notificationTimer);
@@ -169,7 +198,6 @@ const Achievements = {
         const current = this.getChapterProgress(subject, chapter, progress);
         const achievementCards = Object.entries(this.chapterDefinitions).map(([key, definition]) => {
           const unlocked = Boolean(current.achievements[key]);
-          const questionProgress = Math.min(current.questions, definition.targetQuestions);
           const percent = definition.targetAccuracy > 0
             ? Math.min(100, Math.round(Math.min(current.questions / definition.targetQuestions, 1) * 50 + Math.min(current.accuracy / definition.targetAccuracy, 1) * 50))
             : Math.min(100, Math.round((current.questions / definition.targetQuestions) * 100));
