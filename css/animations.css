@@ -36,3 +36,18 @@
     transition-duration: .01ms !important;
   }
 }
+
+
+@keyframes mission-complete-pop {
+  0% { transform: scale(.98); }
+  55% { transform: scale(1.018); }
+  100% { transform: scale(1); }
+}
+
+@keyframes tiny-check-pop {
+  0% { opacity: 0; transform: scale(.72) rotate(-8deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+.daily-mission-card.just-completed { animation: mission-complete-pop .28s ease-out; }
+.chapter-option:has(input:checked)::after { animation: tiny-check-pop .16s ease-out; }
