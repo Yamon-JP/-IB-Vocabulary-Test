@@ -1,7 +1,29 @@
+const Paper2Progress = {
+  storageKey: 'ib_paper2_progress',
+  schemaVersion: 1,
+
+  load() {
+    const saved = typeof Storage !== 'undefined' ? Storage.load(this.storageKey) : null;
+    return {
+      schemaVersion: this.schemaVersion,
+      attempts: Array.isArray(saved?.attempts) ? saved.attempts : []
+    };
+  },
+
+  recordAttempt(attempt) {
+    if (!attempt || typeof Storage === 'undefined') return null;
+    const data = this.load();
+    data.attempts.push(attempt);
+    Storage.save(this.storageKey, data);
+    return attempt;
+  }
+};
+
 const Paper2 = {
   allQuestions: [],
   questions: [],
   current: null,
+  attemptSaved: false,
 
   async init() {
     const sources = [
@@ -174,6 +196,8 @@ const Paper2 = {
     const feedback = document.getElementById('paper2-feedback');
     if (!question) return;
 
+    this.attemptSaved = false;
+
     if (!this.current) {
       this.renderEmptyState();
       if (marks) marks.textContent = '—';
@@ -191,6 +215,110 @@ const Paper2 = {
     if (feedback) feedback.innerHTML = '';
   },
 
+  renderMarkscheme(markscheme, markschemeJa) {
+    if (!markscheme.length) {
+      return '<p class="muted">No markscheme is available for this question.</p>';
+    }
+
+    return `<ol class="paper2-markscheme-list paper2-self-mark-list">${markscheme.map((point, index) => {
+      const japanese = markschemeJa[index]
+        ? `<span class="paper2-markscheme-ja" lang="ja">日本語：${this.escapeHtml(markschemeJa[index])}</span>`
+        : '';
+      return `
+        <li class="paper2-self-mark-point">
+          <label>
+            <input type="checkbox" data-paper2-mark-point="${index}" onchange="Paper2.updateSelfMarkScore()">
+            <span class="paper2-self-mark-copy">
+              <span>${this.escapeHtml(point)}</span>
+              ${japanese}
+            </span>
+          </label>
+        </li>`;
+    }).join('')}</ol>`;
+  },
+
+  renderSelfMarkPanel(maxMarks) {
+    return `
+      <div class="paper2-self-mark-panel">
+        <div class="paper2-self-mark-heading">
+          <div>
+            <strong>Markscheme checklist</strong>
+            <small>Tick a point only if your answer clearly communicates that idea.</small>
+            <small lang="ja">答案にその内容が明確に含まれている場合だけチェックしてください。</small>
+          </div>
+          <span id="paper2-self-score">0 / ${this.escapeHtml(maxMarks)}</span>
+        </div>
+        <div class="paper2-self-mark-save">
+          <button type="button" id="paper2-save-score" onclick="Paper2.saveSelfMarkAttempt()">Save Score</button>
+          <small id="paper2-save-status">Not saved yet.</small>
+        </div>
+      </div>`;
+  },
+
+  updateSelfMarkScore() {
+    const maxMarks = Number(this.current?.marks) || 0;
+    const selected = document.querySelectorAll('#paper2-feedback input[data-paper2-mark-point]:checked').length;
+    const score = Math.min(selected, maxMarks || selected);
+    const scoreElement = document.getElementById('paper2-self-score');
+    if (scoreElement) scoreElement.textContent = `${score} / ${maxMarks}`;
+  },
+
+  saveSelfMarkAttempt() {
+    if (!this.current || this.attemptSaved) return;
+
+    const maxMarks = Number(this.current.marks) || 0;
+    const markscheme = Array.isArray(this.current.markscheme) ? this.current.markscheme : [];
+    const checkedIndexes = new Set(
+      [...document.querySelectorAll('#paper2-feedback input[data-paper2-mark-point]:checked')]
+        .map(input => Number(input.dataset.paper2MarkPoint))
+        .filter(Number.isInteger)
+    );
+    const criteria = markscheme.map((_, index) => ({
+      criterionId: `${this.current.id || 'paper2'}:criterion:${index + 1}`,
+      index: index + 1,
+      markValue: 1,
+      awarded: checkedIndexes.has(index)
+    }));
+    const rawScore = criteria.reduce((sum, criterion) => sum + (criterion.awarded ? criterion.markValue : 0), 0);
+    const score = Math.min(rawScore, maxMarks || rawScore);
+
+    const attempt = {
+      attemptId: `${this.current.id || 'paper2'}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      schemaVersion: Paper2Progress.schemaVersion,
+      questionId: this.current.id || null,
+      subject: this.current.subject || null,
+      chapter: this.current.chapter || this.current.topic || null,
+      unit: this.current.unit || null,
+      commandTerm: this.current.commandTerm || null,
+      difficulty: this.current.difficulty || null,
+      questionType: this.current.stimulus ? 'data-based' : 'written',
+      score,
+      maxMarks,
+      percentage: maxMarks ? Math.round((score / maxMarks) * 100) : 0,
+      evaluator: {
+        type: 'self-checklist',
+        version: 1
+      },
+      criteria,
+      createdAt: new Date().toISOString()
+    };
+
+    const saved = Paper2Progress.recordAttempt(attempt);
+    if (!saved) return;
+
+    this.attemptSaved = true;
+    document.querySelectorAll('#paper2-feedback input[data-paper2-mark-point]').forEach(input => {
+      input.disabled = true;
+    });
+    const saveButton = document.getElementById('paper2-save-score');
+    const status = document.getElementById('paper2-save-status');
+    if (saveButton) {
+      saveButton.disabled = true;
+      saveButton.textContent = 'Score Saved';
+    }
+    if (status) status.textContent = `${score} / ${maxMarks} saved for this attempt.`;
+  },
+
   submit() {
     if (!this.current) return;
     const feedback = document.getElementById('paper2-feedback');
@@ -204,14 +332,9 @@ const Paper2 = {
 
     const markscheme = Array.isArray(this.current.markscheme) ? this.current.markscheme : [];
     const markschemeJa = Array.isArray(this.current.markschemeJa) ? this.current.markschemeJa : [];
-    const markschemeHtml = markscheme.length
-      ? `<ol class="paper2-markscheme-list">${markscheme.map((point, index) => {
-          const japanese = markschemeJa[index]
-            ? `<div class="paper2-markscheme-ja" lang="ja">日本語：${this.escapeHtml(markschemeJa[index])}</div>`
-            : '';
-          return `<li><div>${this.escapeHtml(point)}</div>${japanese}</li>`;
-        }).join('')}</ol>`
-      : '<p class="muted">No markscheme is available for this question.</p>';
+    const maxMarks = Number(this.current.marks) || markscheme.length;
+    const markschemeHtml = this.renderMarkscheme(markscheme, markschemeJa);
+    const selfMarkPanel = this.renderSelfMarkPanel(maxMarks);
     const modelAnswer = this.current.modelAnswer
       ? `<div class="paper2-model-answer"><h4>Model Answer</h4><p>${this.escapeHtml(this.current.modelAnswer)}</p></div>`
       : '';
@@ -219,15 +342,17 @@ const Paper2 = {
       ? `<div class="paper2-model-answer paper2-model-answer-ja" lang="ja"><h4>日本語訳</h4><p>${this.escapeHtml(this.current.modelAnswerJa)}</p></div>`
       : '';
 
+    this.attemptSaved = false;
     feedback.innerHTML = `
       <div class="paper2-feedback-card">
         <div class="paper2-feedback-heading">
           <strong>Self-mark your answer</strong>
           <span>${this.escapeHtml(this.current.marks ?? '—')} marks</span>
         </div>
-        <p>Compare your response with the marking points below. Award a mark only when your answer clearly communicates the required idea.</p>
+        <p>Compare your response with each marking point. Tick only the points that are clearly present in your answer.</p>
         <h4>Markscheme</h4>
         ${markschemeHtml}
+        ${selfMarkPanel}
         ${modelAnswer}
         ${modelAnswerJa}
       </div>`;
