@@ -8,21 +8,30 @@ const Quiz = {
   mode: 'word-definition',
 
   init() {
-    if (!Vocabulary || !Vocabulary.words || !Vocabulary.words.length) return;
+    if (typeof Vocabulary === 'undefined' || !Vocabulary.words || !Vocabulary.words.length) return;
     this.questions = Vocabulary.words;
+    this.syncModeSelector();
     this.bindModeSelector();
     this.syncWithPracticeWord();
+  },
+
+  syncModeSelector() {
+    const selector = document.querySelector(`input[name="quiz-mode"][value="${this.mode}"]`);
+    if (selector) selector.checked = true;
   },
 
   bindModeSelector() {
     document.querySelectorAll('input[name="quiz-mode"]').forEach(selector => {
       selector.onchange = () => {
         this.mode = selector.value;
-        if (this.questions.length) {
-          this.current = this.questions[Math.floor(Math.random() * this.questions.length)];
+        this.syncModeSelector();
+
+        // Keep the same question when changing quiz mode.
+        // Only the question/answer direction changes.
+        if (this.current) {
           if (typeof App !== 'undefined') App.setPracticeWord(this.current);
+          this.render();
         }
-        this.render();
       };
     });
   },
@@ -36,19 +45,24 @@ const Quiz = {
 
   generateChoices(correct) {
     const pool = this.mode === 'definition-word'
-      ? this.questions.map(word => word.word)
+      ? this.questions.map(word => word.word).filter(Boolean)
       : this.questions.map(word => word.definition).filter(Boolean);
 
     const uniqueWrongChoices = [...new Set(pool.filter(value => value !== correct))]
       .sort(() => Math.random() - 0.5);
 
-    const choices = [correct, ...uniqueWrongChoices];
-    while (choices.length < 4) choices.push('No option');
-    return choices.slice(0, 4).sort(() => Math.random() - 0.5);
+    const choices = [correct, ...uniqueWrongChoices].slice(0, 4);
+
+    // Keep the four-choice layout even when the database contains
+    // fewer than four real alternatives. Placeholder options are disabled.
+    while (choices.length < 4) choices.push(null);
+
+    return choices.sort(() => Math.random() - 0.5);
   },
 
   render() {
     if (!this.current) return;
+
     const question = document.getElementById('quiz-question');
     const choices = document.getElementById('quiz-choices');
     const result = document.getElementById('quiz-result');
@@ -67,20 +81,29 @@ const Quiz = {
 
     this.generateChoices(this.getAnswer()).forEach(answer => {
       const button = document.createElement('button');
-      button.textContent = answer;
       button.className = 'quiz-choice';
-      button.onclick = () => {
-        if (this.answered) return;
-        this.selected = answer;
-        document.querySelectorAll('.quiz-choice').forEach(item => item.classList.remove('selected'));
-        button.classList.add('selected');
-      };
+
+      if (answer === null) {
+        button.textContent = '—';
+        button.disabled = true;
+        button.classList.add('placeholder-choice');
+      } else {
+        button.textContent = answer;
+        button.onclick = () => {
+          if (this.answered) return;
+          this.selected = answer;
+          document.querySelectorAll('.quiz-choice').forEach(item => item.classList.remove('selected'));
+          button.classList.add('selected');
+        };
+      }
+
       choices.appendChild(button);
     });
   },
 
   submit() {
     if (this.answered || !this.selected || this.xpAwarded) return;
+
     const correct = this.check(this.selected);
     this.answered = true;
     this.xpAwarded = true;
