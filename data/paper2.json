@@ -7,6 +7,7 @@
     "commandTerm": "Explain",
     "marks": 4,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Explain how properties of water make it suitable for transport in living organisms.",
     "markscheme": [
       "Water molecules are polar and can form hydrogen bonds.",
@@ -31,6 +32,7 @@
     "commandTerm": "Compare and contrast",
     "marks": 4,
     "difficulty": "standard",
+    "assessmentTarget": "practice",
     "question": "Compare and contrast the structures of DNA and RNA.",
     "markscheme": [
       "Both DNA and RNA are polymers made of nucleotides with sugar-phosphate backbones.",
@@ -55,6 +57,7 @@
     "commandTerm": "Compare and contrast",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "practice",
     "question": "Compare and contrast the structures of prokaryotic and eukaryotic cells.",
     "markscheme": [
       "Both cell types have a plasma membrane, cytoplasm, ribosomes and genetic material.",
@@ -81,6 +84,7 @@
     "commandTerm": "Explain",
     "marks": 4,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Explain why lipids are well suited for long-term energy storage in organisms.",
     "markscheme": [
       "Lipids contain many energy-rich carbon-hydrogen bonds and release a large amount of energy when oxidized.",
@@ -105,6 +109,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Explain the roles of membrane proteins in facilitated diffusion and active transport.",
     "markscheme": [
       "Facilitated diffusion uses specific channel or carrier proteins in the membrane.",
@@ -131,6 +136,7 @@
     "commandTerm": "Explain",
     "marks": 4,
     "difficulty": "standard",
+    "assessmentTarget": "practice",
     "question": "Explain how the structure of mammalian alveoli supports efficient gas exchange.",
     "markscheme": [
       "Many alveoli provide a large surface area for diffusion.",
@@ -155,6 +161,7 @@
     "commandTerm": "Explain",
     "marks": 4,
     "difficulty": "standard",
+    "assessmentTarget": "paper2b",
     "question": "Explain the effect of increasing temperature on the rate of an enzyme-catalysed reaction from a low temperature to a temperature above the enzyme's optimum.",
     "markscheme": [
       "At low temperatures, increasing temperature raises molecular kinetic energy and collision frequency.",
@@ -179,6 +186,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
     "question": "Explain how a specific immune response can provide protection after exposure to a pathogen.",
     "markscheme": [
       "Antigens from the pathogen are recognized as foreign by specific lymphocytes.",
@@ -205,6 +213,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
     "question": "Explain how the sequence of bases in mRNA determines the amino acid sequence of a polypeptide during translation.",
     "markscheme": [
       "The ribosome reads the mRNA in groups of three bases called codons.",
@@ -231,6 +240,7 @@
     "commandTerm": "Explain",
     "marks": 6,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
     "question": "Explain how natural selection can lead to an increase in antibiotic resistance in a bacterial population.",
     "markscheme": [
       "Genetic variation exists in the bacterial population, for example because mutations can produce resistance.",
@@ -259,6 +269,7 @@
     "commandTerm": "Explain",
     "marks": 4,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Explain how whole-genome sequencing can provide evidence about evolutionary relationships between species.",
     "markscheme": [
       "Whole-genome sequencing determines the nucleotide sequence across most or all of an organism's genome.",
@@ -283,6 +294,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2b",
     "question": "Explain how geographical isolation can lead to speciation.",
     "markscheme": [
       "A geographical barrier can separate one population into isolated populations.",
@@ -309,6 +321,7 @@
     "commandTerm": "Explain",
     "marks": 4,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Explain how abiotic factors can limit the distribution of a species.",
     "markscheme": [
       "Each species has a range of tolerance for abiotic factors such as temperature, salinity or water availability.",
@@ -333,6 +346,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2a",
     "question": "Explain how the structure of a neuron is adapted for receiving and transmitting signals.",
     "markscheme": [
       "Branched dendrites provide a large surface area for receiving signals from other cells.",
@@ -359,6 +373,7 @@
     "commandTerm": "Explain",
     "marks": 5,
     "difficulty": "standard",
+    "assessmentTarget": "paper2b",
     "question": "Explain why the amount of energy available decreases at successive trophic levels in an ecosystem.",
     "markscheme": [
       "Not all biomass at one trophic level is eaten by organisms at the next trophic level.",
@@ -385,6 +400,7 @@
     "commandTerm": "Explain",
     "marks": 4,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
     "question": "Explain how meiosis generates genetic variation in the gametes produced.",
     "markscheme": [
       "Homologous chromosomes pair during meiosis I and crossing over can exchange DNA between non-sister chromatids.",
@@ -409,6 +425,7 @@
     "commandTerm": "Explain",
     "marks": 4,
     "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
     "question": "Explain why an X-linked recessive disorder is often more common in males than in females.",
     "markscheme": [
       "Males typically have one X chromosome and one Y chromosome, whereas females typically have two X chromosomes.",
