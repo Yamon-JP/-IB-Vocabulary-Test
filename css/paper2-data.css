@@ -1,0 +1,96 @@
+.paper2-stimulus {
+  margin: 0 0 18px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--border);
+}
+.paper2-stimulus-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+.paper2-stimulus h3 {
+  margin: 9px 0 4px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.paper2-stimulus-description,
+.paper2-stimulus-note {
+  margin: 5px 0 0;
+  color: #667085;
+  font-size: .82rem;
+  line-height: 1.5;
+}
+.paper2-stimulus-note { font-style: italic; }
+.paper2-data-table-wrap,
+.paper2-data-graph-wrap {
+  overflow-x: auto;
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+}
+.paper2-data-table {
+  width: 100%;
+  min-width: 500px;
+  border-collapse: collapse;
+  font-size: .86rem;
+}
+.paper2-data-table th,
+.paper2-data-table td {
+  padding: 9px 11px;
+  border-right: 1px solid #e4e7ec;
+  border-bottom: 1px solid #e4e7ec;
+  text-align: center;
+  white-space: nowrap;
+}
+.paper2-data-table th {
+  background: #f8fafc;
+  color: #344054;
+  font-weight: 800;
+}
+.paper2-data-table th:last-child,
+.paper2-data-table td:last-child { border-right: 0; }
+.paper2-data-table tbody tr:last-child td { border-bottom: 0; }
+.paper2-data-graph-wrap { padding: 8px; }
+.paper2-data-graph {
+  display: block;
+  width: 100%;
+  min-width: 480px;
+  height: auto;
+  color: #4f46e5;
+}
+.paper2-data-axis { stroke: #667085; stroke-width: 1.2; }
+.paper2-data-grid { stroke: #e4e7ec; stroke-width: 1; }
+.paper2-data-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.paper2-data-points circle { fill: currentColor; }
+.paper2-data-tick {
+  fill: #667085;
+  font-size: 11px;
+}
+.paper2-data-axis-label {
+  fill: #344054;
+  font-size: 12px;
+  font-weight: 700;
+}
+.paper2-question-text {
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+@media (max-width: 600px) {
+  .paper2-data-table { min-width: 460px; }
+  .paper2-data-graph { min-width: 450px; }
+}
