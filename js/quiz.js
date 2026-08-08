@@ -26,10 +26,17 @@ const Quiz = {
         this.mode = selector.value;
         this.syncModeSelector();
 
-        // Keep the same question when changing quiz mode.
-        // Only the question/answer direction changes.
-        if (this.current) {
+        // Switching quiz mode starts a fresh question intentionally.
+        // This prevents using the same word in the opposite direction
+        // to infer/reveal the answer and farm the question.
+        if (this.questions.length) {
+          const candidates = this.questions.length > 1
+            ? this.questions.filter(word => !this.current || word.id !== this.current.id)
+            : this.questions;
+          this.current = candidates[Math.floor(Math.random() * candidates.length)];
+
           if (typeof App !== 'undefined') App.setPracticeWord(this.current);
+          if (typeof Flashcard !== 'undefined') Flashcard.setWord(this.current);
           this.render();
         }
       };
