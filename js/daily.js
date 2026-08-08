@@ -59,7 +59,7 @@ const DailyChallenge = {
 
   showBonus() {
     const toast = document.createElement('div');
-    toast.className = 'achievement-toast';
+    toast.id = 'achievement-toast';
     toast.textContent = `🎯 Daily Challenge Complete! +${this.bonusXP} XP`;
     document.body.appendChild(toast);
 
