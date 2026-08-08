@@ -1,0 +1,210 @@
+[
+  {
+    "id": "BIO-P2-B1-002",
+    "subject": "Biology SL",
+    "chapter": "B1 Molecules",
+    "unit": "B1.2 Proteins",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain how the amino acid sequence of a polypeptide can determine the structure and function of a protein.",
+    "markscheme": [
+      "The primary structure is the specific sequence of amino acids in a polypeptide.",
+      "Different amino-acid side chains have different chemical properties and interactions.",
+      "Interactions among side chains contribute to folding into a specific three-dimensional structure.",
+      "The three-dimensional structure produces features such as active sites or binding sites.",
+      "A change in amino acid sequence can alter folding and therefore change or reduce protein function."
+    ],
+    "markschemeJa": [
+      "一次構造とは、ポリペプチドをつくるアミノ酸の特定の並び方である。",
+      "アミノ酸の側鎖（R基）はそれぞれ異なる化学的性質をもち、異なる相互作用をする。",
+      "側鎖どうしの相互作用によって、ポリペプチドは特定の立体構造へ折りたたまれる。",
+      "その立体構造によって、活性部位や結合部位など、タンパク質の働きに必要な形がつくられる。",
+      "アミノ酸配列が変化すると折りたたみ方も変わり、タンパク質の機能が変化したり低下したりすることがある。"
+    ],
+    "modelAnswer": "A protein begins with a particular amino acid sequence. Because the side chains of different amino acids have different chemical properties, they interact in different ways and cause the polypeptide to fold into a specific three-dimensional shape. That shape creates functional regions such as active sites or binding sites. A change in the amino acid sequence can therefore change folding and alter the protein's function.",
+    "modelAnswerJa": "タンパク質は、まず特定の順序で並んだアミノ酸からつくられます。アミノ酸ごとに側鎖（R基）の性質が異なるため、側鎖どうしの相互作用によってポリペプチドは特定の立体構造へ折りたたまれます。その形によって、酵素の活性部位や他の分子が結合する部位などがつくられます。したがって、アミノ酸配列が変わると立体構造も変化し、タンパク質の働きが変わったり失われたりすることがあります。"
+  },
+  {
+    "id": "BIO-P2-B1-003",
+    "subject": "Biology SL",
+    "chapter": "B1 Molecules",
+    "unit": "B1.1 Carbohydrates and lipids",
+    "commandTerm": "Compare and contrast",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Compare and contrast starch, glycogen and cellulose.",
+    "markscheme": [
+      "All three are polysaccharides made from glucose monomers.",
+      "Starch is a major storage carbohydrate in plants.",
+      "Glycogen is a major storage carbohydrate in animals and is highly branched.",
+      "Cellulose has a structural role in plant cell walls rather than serving mainly as an energy store.",
+      "Cellulose has a different arrangement of glucose units and forms strong fibers, giving it different properties from starch and glycogen."
+    ],
+    "markschemeJa": [
+      "3つはいずれも、グルコースを単量体としてできた多糖類である。",
+      "デンプンは植物で主要な貯蔵用炭水化物として使われる。",
+      "グリコーゲンは動物で主要な貯蔵用炭水化物として使われ、枝分かれが多い。",
+      "セルロースは主にエネルギー貯蔵ではなく、植物の細胞壁をつくる構造物質として働く。",
+      "セルロースではグルコースの結合のしかたが異なり、強い繊維をつくるため、デンプンやグリコーゲンとは性質が異なる。"
+    ],
+    "modelAnswer": "Starch, glycogen and cellulose are all polysaccharides made from glucose. Starch stores carbohydrate in plants, whereas glycogen is the main storage polysaccharide in animals and is strongly branched. Cellulose has a different arrangement of glucose units and forms strong fibers. It therefore has a structural role in plant cell walls rather than acting mainly as an energy store.",
+    "modelAnswerJa": "デンプン、グリコーゲン、セルロースはいずれもグルコースからできた多糖類です。デンプンは植物で、グリコーゲンは動物で主にエネルギー貯蔵に使われます。特にグリコーゲンは枝分かれが多い構造です。一方、セルロースはグルコースの結合のしかたが異なり、強い繊維をつくります。そのため、主な役割はエネルギー貯蔵ではなく、植物の細胞壁を丈夫にすることです。"
+  },
+  {
+    "id": "BIO-P2-B2-002",
+    "subject": "Biology SL",
+    "chapter": "B2 Cells",
+    "unit": "B2.1 Membranes and membrane transport",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain how the structure of a phospholipid bilayer contributes to selective permeability of a cell membrane.",
+    "markscheme": [
+      "Phospholipids have hydrophilic heads and hydrophobic fatty-acid tails.",
+      "In water, phospholipids form a bilayer with the tails facing inward and the heads facing the aqueous environments.",
+      "The hydrophobic interior allows small non-polar molecules to pass more readily than ions or many polar molecules.",
+      "Ions and many polar substances require specific membrane proteins to cross efficiently.",
+      "The membrane is therefore selectively permeable rather than freely permeable to all substances."
+    ],
+    "markschemeJa": [
+      "リン脂質には親水性の頭部と疎水性の脂肪酸尾部がある。",
+      "水中では、親水性の頭部が水に面し、疎水性の尾部が内側を向くように二重層をつくる。",
+      "疎水性の内部は、小さな非極性分子を比較的通しやすいが、イオンや多くの極性分子は通しにくい。",
+      "イオンや多くの極性物質が効率よく膜を通るには、特定の膜タンパク質が必要になる。",
+      "そのため細胞膜は、すべての物質を自由に通すのではなく、選択的透過性をもつ。"
+    ],
+    "modelAnswer": "Phospholipids contain hydrophilic heads and hydrophobic tails. In an aqueous environment they arrange into a bilayer with the heads facing water and the tails forming a hydrophobic interior. Small non-polar molecules can cross this interior relatively easily, but ions and many polar molecules cannot. These substances often require channels or carrier proteins, so the membrane controls which substances can cross efficiently.",
+    "modelAnswerJa": "リン脂質は、親水性の頭部と疎水性の尾部を持っています。水中では頭部が水の方を向き、尾部が内側で向き合う二重層をつくります。この疎水性の内部は、小さな非極性分子なら比較的通しやすい一方、イオンや多くの極性分子は通しにくくなっています。そのため、これらの物質はチャネルタンパク質や担体タンパク質などを利用して移動します。この構造により、細胞膜は物質を選択して通すことができます。"
+  },
+  {
+    "id": "BIO-P2-B2-003",
+    "subject": "Biology SL",
+    "chapter": "B2 Cells",
+    "unit": "B2.2 Organelles and compartmentalization",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "challenging",
+    "question": "Explain how compartmentalization increases the efficiency of processes in eukaryotic cells.",
+    "markscheme": [
+      "Membrane-bound organelles separate different chemical environments within the cell.",
+      "Different organelles can maintain conditions suited to particular reactions, such as pH or ion concentrations.",
+      "Enzymes and substrates for a pathway can be concentrated in the same compartment.",
+      "Incompatible reactions can occur in separate compartments without interfering with one another.",
+      "Internal membranes provide additional surface area for membrane-associated reactions."
+    ],
+    "markschemeJa": [
+      "膜で囲まれた細胞小器官によって、細胞内に異なる化学環境を分けてつくることができる。",
+      "各細胞小器官は、pHやイオン濃度など、特定の反応に適した条件を保つことができる。",
+      "ある代謝経路に必要な酵素や基質を同じ区画に集めることができる。",
+      "互いに干渉する可能性のある反応を別の区画で行うことで、同時に進めることができる。",
+      "細胞内膜は、膜上で行われる反応のための表面積も増やす。"
+    ],
+    "modelAnswer": "Compartmentalization divides a eukaryotic cell into membrane-bound regions with different conditions. Organelles can maintain a suitable pH, ion concentration or set of enzymes for particular reactions. Enzymes and substrates can be concentrated together, which can make reactions more efficient, while incompatible processes can be separated. Internal membranes also provide a large surface area for reactions that depend on membrane proteins.",
+    "modelAnswerJa": "区画化（compartmentalization）によって、真核細胞の内部は膜で囲まれた複数の空間に分かれます。各細胞小器官では、特定の反応に合ったpHやイオン濃度を保ったり、必要な酵素と基質を同じ場所に集めたりできます。また、互いに邪魔をする可能性がある反応を別々の場所で同時に進められます。さらに細胞内膜そのものが、膜タンパク質を使う反応のための大きな表面積を提供します。"
+  },
+  {
+    "id": "BIO-P2-B3-002",
+    "subject": "Biology SL",
+    "chapter": "B3 Organisms",
+    "unit": "B3.2 Transport",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain how xylem vessels are adapted for the transport of water through a plant.",
+    "markscheme": [
+      "Xylem vessels form long continuous tubes through the plant.",
+      "Mature vessel elements are dead and have little or no cytoplasmic obstruction to water flow.",
+      "End walls are absent or perforated, reducing resistance to movement of water.",
+      "Thick lignified walls strengthen the vessels and help prevent collapse under tension.",
+      "Narrow vessels and adhesion to the walls contribute to maintaining a continuous column of water."
+    ],
+    "markschemeJa": [
+      "木部道管は植物体内で長く連続した管をつくる。",
+      "成熟した道管要素は死細胞で、細胞質による水の流れの妨げがほとんどない。",
+      "端の壁がなくなる、または穴が開くことで、水が流れるときの抵抗が小さくなる。",
+      "リグニンで厚くなった壁が道管を強化し、水が引っ張られているときにもつぶれにくくする。",
+      "細い管の構造や壁への付着力は、連続した水柱を保つことにも役立つ。"
+    ],
+    "modelAnswer": "Xylem vessels form long tubes that provide a low-resistance pathway for water. Their mature conducting cells are dead and largely empty, and their end walls are absent or perforated, so water can move through them with little obstruction. Lignin strengthens the walls and prevents the vessels from collapsing when the water column is under tension. The narrow tubes and adhesion of water to the walls also help maintain a continuous water column.",
+    "modelAnswerJa": "木部道管は、植物の中を縦に続く長い管となり、水が通るための抵抗の少ない経路をつくります。成熟した道管の細胞は死んでいて内部がほぼ空であり、端の壁もなくなるか穴が開くため、水の流れが妨げられにくくなっています。また、壁にはリグニンが沈着して丈夫になっており、水柱が引っ張られて負圧になっても管がつぶれにくくなります。細い管の構造や、水が壁に付着する性質も連続した水柱を保つのに役立ちます。"
+  },
+  {
+    "id": "BIO-P2-B3-003",
+    "subject": "Biology SL",
+    "chapter": "B3 Organisms",
+    "unit": "B3.2 Transport",
+    "commandTerm": "Compare and contrast",
+    "marks": 6,
+    "difficulty": "standard",
+    "question": "Compare and contrast arteries, veins and capillaries in the mammalian circulatory system.",
+    "markscheme": [
+      "Arteries carry blood away from the heart, whereas veins carry blood toward the heart.",
+      "Arteries have thicker muscular and elastic walls than veins because they experience higher pressure.",
+      "Veins have a wider lumen and often contain valves that help prevent backflow.",
+      "Capillaries have walls only one cell thick, creating a short diffusion distance for exchange.",
+      "Capillaries have a very small diameter and form extensive networks, providing a large surface area for exchange.",
+      "All three are blood vessels lined by an endothelium and form connected parts of the circulatory system."
+    ],
+    "markschemeJa": [
+      "動脈は心臓から血液を運び出し、静脈は心臓へ血液を戻す。",
+      "動脈は高い血圧に耐えるため、静脈より筋肉層と弾性組織が厚い。",
+      "静脈は内腔が比較的広く、血液の逆流を防ぐ弁をもつことが多い。",
+      "毛細血管の壁は1層の細胞からできているため、物質交換の拡散距離が短い。",
+      "毛細血管は非常に細く、広いネットワークをつくるため、物質交換に使える表面積が大きい。",
+      "3種類とも内皮で裏打ちされた血管であり、互いにつながって循環系を構成する。"
+    ],
+    "modelAnswer": "Arteries carry blood away from the heart and have thick muscular, elastic walls that withstand and maintain high pressure. Veins return blood to the heart, have a wider lumen and thinner walls, and often contain valves to prevent backflow. Capillaries are much smaller and have walls only one cell thick, giving a short diffusion distance and a large total surface area for exchange. All are endothelial-lined blood vessels that form a continuous circulatory network.",
+    "modelAnswerJa": "動脈は心臓から血液を運び出す血管で、高い血圧に耐えるため筋肉層と弾性組織が厚くなっています。静脈は血液を心臓へ戻し、動脈より壁が薄く内腔が広いほか、逆流を防ぐ弁を持つことが多いです。毛細血管は非常に細く、壁が1層の細胞だけでできているため、拡散距離が短く、広いネットワークによって物質交換のための大きな表面積をつくります。3種類とも内皮で裏打ちされた血管で、連続した循環経路を構成しています。"
+  },
+  {
+    "id": "BIO-P2-B4-002",
+    "subject": "Biology SL",
+    "chapter": "B4 Ecosystems",
+    "unit": "B4.2 Ecological niches",
+    "commandTerm": "Explain",
+    "marks": 4,
+    "difficulty": "standard",
+    "question": "Explain why a species' realized niche can be smaller than its fundamental niche.",
+    "markscheme": [
+      "The fundamental niche is the full range of conditions and resources a species could use in the absence of biotic restrictions.",
+      "The realized niche is the part of that potential niche actually occupied in nature.",
+      "Competition with other species can prevent access to some resources or habitats within the fundamental niche.",
+      "Predation, parasitism or other biotic interactions can also restrict where the species survives and reproduces."
+    ],
+    "markschemeJa": [
+      "基本ニッチ（fundamental niche）は、他の生物からの制約がないと仮定したとき、その種が利用できる環境条件や資源の全範囲である。",
+      "実現ニッチ（realized niche）は、そのうち実際の自然環境でその種が利用している範囲である。",
+      "他種との競争によって、基本ニッチに含まれる一部の資源や生息場所を利用できなくなることがある。",
+      "捕食、寄生などの生物間相互作用によっても、その種が生存・繁殖できる範囲が狭められる。"
+    ],
+    "modelAnswer": "A species' fundamental niche includes all of the conditions and resources it could potentially use if other organisms did not restrict it. In nature, competition may exclude it from some habitats or resources, and predation or parasitism may also reduce where it can survive. The part of the fundamental niche that the species actually occupies is its realized niche, which is therefore often smaller.",
+    "modelAnswerJa": "基本ニッチとは、他の生物からの影響を考えなければ、その種が本来利用できる環境条件や資源の範囲です。しかし自然界では、他種との競争によって一部の場所や資源を使えなかったり、捕食や寄生によって生存できる範囲が狭くなったりします。実際にその種が利用している範囲を実現ニッチと呼ぶため、実現ニッチは基本ニッチより小さくなることがあります。"
+  },
+  {
+    "id": "BIO-P2-B4-003",
+    "subject": "Biology SL",
+    "chapter": "B4 Ecosystems",
+    "unit": "B4.1 Adaptation to environment",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "question": "Explain how xerophyte adaptations can reduce water loss in a dry environment.",
+    "markscheme": [
+      "A thick waxy cuticle reduces evaporation from the leaf surface.",
+      "Reduced leaf area, for example small leaves or spines, decreases the surface available for water loss.",
+      "Sunken stomata or hairs can trap humid air and reduce the water-vapour gradient near stomata.",
+      "Stomata can close during periods of water stress, reducing transpiration.",
+      "Water-storage tissues or extensive root systems can improve water availability when rainfall is limited."
+    ],
+    "markschemeJa": [
+      "厚いワックス状のクチクラは、葉の表面からの蒸発を減らす。",
+      "小さな葉やトゲなどで葉の表面積を小さくすると、水が失われる面積が減る。",
+      "くぼんだ気孔や毛は湿った空気をため、気孔付近の水蒸気の濃度勾配を小さくする。",
+      "水不足のときに気孔を閉じることで、蒸散による水の損失を減らすことができる。",
+      "貯水組織や広く発達した根系は、雨が少ない環境で利用できる水を確保するのに役立つ。"
+    ],
+    "modelAnswer": "Xerophytes have features that conserve water. A thick waxy cuticle reduces evaporation, while small leaves or spines reduce the surface area from which water can be lost. Sunken stomata or leaf hairs can trap humid air near the stomata and reduce the diffusion gradient for water vapour. Closing stomata during water stress reduces transpiration further. Some xerophytes also store water or develop extensive roots to improve water supply.",
+    "modelAnswerJa": "乾生植物（xerophyte）には、水を失いにくくするさまざまな適応があります。厚いワックス状のクチクラは葉からの蒸発を減らし、小さな葉やトゲは水を失う表面積を小さくします。くぼんだ気孔や葉の毛は気孔の周りに湿った空気を保ち、水蒸気が外へ拡散する勾配を小さくします。さらに水不足のときに気孔を閉じれば蒸散を減らせます。種類によっては、水を蓄える組織や広く伸びた根を持ち、水の確保そのものを助けています。"
+  }
+]
