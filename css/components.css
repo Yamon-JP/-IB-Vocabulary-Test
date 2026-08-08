@@ -43,6 +43,7 @@
   border: 1px solid #dbe2ea;
 }
 
+.practice-type-control,
 .scope-control,
 .chapter-options {
   margin-top: 16px;
@@ -50,9 +51,39 @@
   border-top: 1px solid #dbe2ea;
 }
 
+.practice-type-control h3,
 .scope-control h3,
 .chapter-options h3 {
   margin: 0 0 10px;
+}
+
+.practice-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.practice-type-card {
+  min-height: 88px;
+  padding: 13px;
+  text-align: left;
+}
+
+.practice-type-card strong,
+.practice-type-card small {
+  display: block;
+}
+
+.practice-type-card small {
+  margin-top: 5px;
+  color: #64748b;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.practice-type-card.active {
+  border: 2px solid #2563eb;
+  background: #eff6ff;
 }
 
 .scope-control label {
@@ -93,6 +124,75 @@ button {
   cursor: pointer;
 }
 
+.paper2-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 15px;
+  border-bottom: 1px solid #dbe2ea;
+  background: #f8fafc;
+  font-weight: 700;
+}
+
+.paper2-meta {
+  padding: 10px 15px;
+  color: #475569;
+  border-bottom: 1px solid #dbe2ea;
+  font-size: 0.92rem;
+}
+
+.paper2-question-card {
+  margin: 14px 0;
+  padding: 18px;
+  min-height: 130px;
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
+  background: #fff;
+  line-height: 1.7;
+}
+
+.paper2-answer-label {
+  display: block;
+  margin: 14px 0 7px;
+  font-weight: 700;
+}
+
+#paper2-answer {
+  display: block;
+  width: 100%;
+  min-height: 180px;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.paper2-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.paper2-actions button {
+  flex: 1;
+}
+
+.paper2-feedback-card {
+  margin-top: 12px;
+  padding: 13px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #dbe2ea;
+}
+
+.paper2-feedback-card p {
+  margin-bottom: 0;
+  color: #475569;
+}
+
 @media (max-width: 600px) {
   .subject-card,
   .progress-panel,
@@ -105,7 +205,12 @@ button {
     gap: 10px;
   }
 
-  .selection-actions {
+  .practice-type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .selection-actions,
+  .paper2-actions {
     gap: 8px;
   }
 }
