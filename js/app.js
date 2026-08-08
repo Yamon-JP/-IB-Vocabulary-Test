@@ -19,6 +19,7 @@ const App = {
         this.renderSubjectCards();
         this.renderChapterSelector();
         this.applySavedSelection();
+        if (typeof Quiz !== 'undefined') Quiz.init();
       });
     }
 
