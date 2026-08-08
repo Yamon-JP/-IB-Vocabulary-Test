@@ -35,12 +35,43 @@
         <div class="streak-pill">🔥 <strong id="streak">0</strong><span>day streak</span></div>
       </div>
 
-      <div class="mission-focus">
-        <div class="mission-score">
-          <strong id="daily-progress">0/10</strong>
-          <span>Daily Challenge</span>
+      <div class="mission-deck" aria-label="Daily missions">
+        <div class="mission-deck-heading">
+          <div>
+            <strong id="daily-missions-summary">0 / 3 complete</strong>
+            <span id="daily-mission-message">Three ways to build momentum today.</span>
+          </div>
+          <span class="mission-reset-note">Resets daily</span>
         </div>
-        <p>Ten focused questions a day is enough to build a reliable study rhythm.</p>
+
+        <div class="daily-mission-grid">
+          <article id="daily-mission-questions" class="daily-mission-card">
+            <div class="daily-mission-icon" aria-hidden="true">⚡</div>
+            <div class="daily-mission-copy">
+              <div class="daily-mission-title"><strong>100 Questions</strong><span id="daily-progress">0/100</span></div>
+              <small id="daily-questions-status">Build volume</small>
+              <div class="daily-mission-track"><span id="daily-questions-bar"></span></div>
+            </div>
+          </article>
+
+          <article id="daily-mission-correct" class="daily-mission-card">
+            <div class="daily-mission-icon" aria-hidden="true">🎯</div>
+            <div class="daily-mission-copy">
+              <div class="daily-mission-title"><strong>75 Correct</strong><span id="daily-correct-progress">0/75</span></div>
+              <small id="daily-correct-status">Build accuracy</small>
+              <div class="daily-mission-track"><span id="daily-correct-bar"></span></div>
+            </div>
+          </article>
+
+          <article id="daily-mission-streak" class="daily-mission-card">
+            <div class="daily-mission-icon" aria-hidden="true">🔥</div>
+            <div class="daily-mission-copy">
+              <div class="daily-mission-title"><strong>10 in a Row</strong><span id="daily-streak-progress">0/10</span></div>
+              <small id="daily-streak-status">Build focus</small>
+              <div class="daily-mission-track"><span id="daily-streak-bar"></span></div>
+            </div>
+          </article>
+        </div>
       </div>
 
       <div class="home-stat-grid" aria-label="Today's progress">
