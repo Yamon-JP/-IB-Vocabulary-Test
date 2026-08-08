@@ -32,13 +32,16 @@ const Achievements = {
     master: { title: 'Chapter Master', targetQuestions: 50, targetAccuracy: 85, description: 'Answer 50 questions with at least 85% accuracy' },
     expert: { title: 'Chapter Expert', targetQuestions: 100, targetAccuracy: 90, description: 'Answer 100 questions with at least 90% accuracy' }
   },
+  selectedTrophySubject: null,
   newlyUnlocked: [],
   notificationTimer: null,
+
   load() {
     const saved = Storage.load('ib_achievements');
     if (saved) this.data = { ...this.data, ...saved, chapterAchievements: saved.chapterAchievements || {} };
     this.render();
   },
+
   check(progress) {
     const before = { ...this.data, chapterAchievements: JSON.parse(JSON.stringify(this.data.chapterAchievements || {})) };
     this.data.firstPractice ||= progress.questions > 0;
@@ -69,6 +72,7 @@ const Achievements = {
     this.render();
     this.showNotification();
   },
+
   checkChapterAchievements(progress) {
     const chapterStats = progress?.chapterStats || {};
     Object.entries(chapterStats).forEach(([subject, chapters]) => {
@@ -84,16 +88,19 @@ const Achievements = {
       });
     });
   },
+
   getChapterProgress(subject, chapter, progress = Progress.data) {
     const stats = progress?.chapterStats?.[subject]?.[chapter] || { questions: 0, correct: 0 };
     const accuracy = stats.questions > 0 ? Math.round((stats.correct / stats.questions) * 100) : 0;
     const achievements = this.data.chapterAchievements?.[subject]?.[chapter] || {};
     return { ...stats, accuracy, achievements };
   },
+
   getProgress(item, progress) {
     const current = { questions: progress?.questions || 0, xp: progress?.xp || 0, streak: typeof Streak !== 'undefined' ? (Streak.data.count || 0) : 0, correctStreak: progress?.correctStreak || 0 };
     return Math.min(current[item.type] || 0, item.target);
   },
+
   getTrophyRank(unlocked, total) {
     const percent = total > 0 ? (unlocked / total) * 100 : 0;
     if (percent >= 80) return { title: 'Master', icon: '👑', description: 'Exceptional achievement collection.' };
@@ -102,44 +109,85 @@ const Achievements = {
     if (percent >= 20) return { title: 'Learner', icon: '📘', description: 'Keep practicing to build your collection.' };
     return { title: 'Rookie', icon: '🌱', description: 'Start practicing to build your collection.' };
   },
+
+  getTrophySubjects(progress) {
+    return Object.keys(progress?.chapterStats || {});
+  },
+
+  selectTrophySubject(subject) {
+    this.selectedTrophySubject = subject;
+    this.renderTrophyRoom(typeof Progress !== 'undefined' ? Progress.data : {});
+  },
+
   renderTrophyRoom(progress) {
     const globalEntries = Object.entries(this.definitions);
     let chapterTotal = 0;
     let chapterUnlocked = 0;
-    Object.values(progress.chapterStats || {}).forEach(chapters => { Object.keys(chapters || {}).forEach(() => { chapterTotal += Object.keys(this.chapterDefinitions).length; }); });
-    Object.values(this.data.chapterAchievements || {}).forEach(chapters => { Object.values(chapters || {}).forEach(achievements => { Object.keys(this.chapterDefinitions).forEach(key => { if (achievements?.[key]) chapterUnlocked += 1; }); }); });
+    const subjects = this.getTrophySubjects(progress);
+
+    Object.values(progress.chapterStats || {}).forEach(chapters => {
+      Object.keys(chapters || {}).forEach(() => { chapterTotal += Object.keys(this.chapterDefinitions).length; });
+    });
+    Object.values(this.data.chapterAchievements || {}).forEach(chapters => {
+      Object.values(chapters || {}).forEach(achievements => {
+        Object.keys(this.chapterDefinitions).forEach(key => { if (achievements?.[key]) chapterUnlocked += 1; });
+      });
+    });
+
     const globalUnlocked = globalEntries.filter(([key]) => Boolean(this.data[key])).length;
     const total = globalEntries.length + chapterTotal;
     const unlocked = globalUnlocked + chapterUnlocked;
     const percent = total > 0 ? Math.round((unlocked / total) * 100) : 0;
     const rank = this.getTrophyRank(unlocked, total);
+
+    if (!this.selectedTrophySubject || !subjects.includes(this.selectedTrophySubject)) {
+      this.selectedTrophySubject = subjects[0] || null;
+    }
+
     const count = document.getElementById('trophy-unlocked-count');
     const bar = document.getElementById('trophy-summary-bar');
     const percentLabel = document.getElementById('trophy-summary-percent');
     const rankIcon = document.getElementById('trophy-rank-icon');
     const rankTitle = document.getElementById('trophy-rank-title');
     const rankDescription = document.getElementById('trophy-rank-description');
+    const tabsArea = document.getElementById('trophy-subject-tabs');
+    const chapterArea = document.getElementById('trophy-chapter-list');
+
     if (count) count.textContent = `${unlocked} / ${total}`;
     if (bar) bar.style.width = `${percent}%`;
     if (percentLabel) percentLabel.textContent = `${percent}% Complete`;
     if (rankIcon) rankIcon.textContent = rank.icon;
     if (rankTitle) rankTitle.textContent = rank.title;
     if (rankDescription) rankDescription.textContent = rank.description;
-    const chapterArea = document.getElementById('trophy-chapter-list');
-    const chapterHtml = Object.entries(progress.chapterStats || {}).map(([subject, chapters]) => {
-      const cards = Object.entries(chapters).map(([chapter]) => {
-        const current = this.getChapterProgress(subject, chapter, progress);
-        const achievementCards = Object.entries(this.chapterDefinitions).map(([key, definition]) => {
-          const unlockedAchievement = Boolean(current.achievements[key]);
-          const percentProgress = definition.targetAccuracy > 0 ? Math.min(100, Math.round(Math.min(current.questions / definition.targetQuestions, 1) * 50 + Math.min(current.accuracy / definition.targetAccuracy, 1) * 50)) : Math.min(100, Math.round((current.questions / definition.targetQuestions) * 100));
-          return `<div class="chapter-achievement ${unlockedAchievement ? 'unlocked' : 'locked'}"><strong>${unlockedAchievement ? '🏆' : '🔒'} ${definition.title}</strong><span>${current.questions}/${definition.targetQuestions} · ${current.accuracy}%</span><small>${definition.description}</small><div class="achievement-progress-track"><span style="width:${percentProgress}%"></span></div></div>`;
-        }).join('');
-        return `<article class="chapter-progress-card"><h4>${subject} — ${chapter}</h4><p><strong>${current.accuracy}%</strong> · ${current.correct}/${current.questions} correct</p>${achievementCards}</article>`;
+
+    if (tabsArea) {
+      tabsArea.innerHTML = subjects.length
+        ? subjects.map(subject => `<button type="button" class="trophy-subject-tab ${subject === this.selectedTrophySubject ? 'active' : ''}" role="tab" aria-selected="${subject === this.selectedTrophySubject}" onclick="Achievements.selectTrophySubject(${JSON.stringify(subject)})">${subject}</button>`).join('')
+        : '<span class="muted">No chapter data yet.</span>';
+    }
+
+    if (!chapterArea) return;
+    if (!this.selectedTrophySubject) {
+      chapterArea.innerHTML = '<p class="muted">Complete practice questions to unlock chapter trophies.</p>';
+      return;
+    }
+
+    const chapters = progress.chapterStats?.[this.selectedTrophySubject] || {};
+    const chapterHtml = Object.entries(chapters).map(([chapter]) => {
+      const current = this.getChapterProgress(this.selectedTrophySubject, chapter, progress);
+      const achievementCards = Object.entries(this.chapterDefinitions).map(([key, definition]) => {
+        const unlockedAchievement = Boolean(current.achievements[key]);
+        const percentProgress = definition.targetAccuracy > 0
+          ? Math.min(100, Math.round(Math.min(current.questions / definition.targetQuestions, 1) * 50 + Math.min(current.accuracy / definition.targetAccuracy, 1) * 50))
+          : Math.min(100, Math.round((current.questions / definition.targetQuestions) * 100));
+        return `<div class="chapter-achievement ${unlockedAchievement ? 'unlocked' : 'locked'}"><strong>${unlockedAchievement ? '🏆' : '🔒'} ${definition.title}</strong><span>${current.questions}/${definition.targetQuestions} · ${current.accuracy}%</span><small>${definition.description}</small><div class="achievement-progress-track"><span style="width:${percentProgress}%"></span></div></div>`;
       }).join('');
-      return `<section class="chapter-progress-subject"><h3>${subject}</h3>${cards}</section>`;
+      return `<article class="chapter-progress-card"><h4>${this.selectedTrophySubject} — ${chapter}</h4><p><strong>${current.accuracy}%</strong> · ${current.correct}/${current.questions} correct</p>${achievementCards}</article>`;
     }).join('');
-    if (chapterArea) chapterArea.innerHTML = chapterHtml || '<p class="muted">Complete practice questions to unlock chapter trophies.</p>';
+
+    chapterArea.innerHTML = chapterHtml || '<p class="muted">No chapter progress for this subject yet.</p>';
   },
+
   showNotification() {
     if (!this.newlyUnlocked.length) return;
     const globalNames = this.newlyUnlocked.filter(item => item.type === 'global').map(item => item.title);
@@ -155,6 +203,7 @@ const Achievements = {
     this.notificationTimer = setTimeout(() => { toast.style.display = 'none'; this.notificationTimer = null; }, 3000);
     this.newlyUnlocked = [];
   },
+
   render() {
     const progress = typeof Progress !== 'undefined' ? Progress.data : {};
     const fullArea = document.getElementById('achievement-list');
