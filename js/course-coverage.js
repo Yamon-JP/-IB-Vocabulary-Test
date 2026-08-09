@@ -13,6 +13,9 @@ const CourseCoverage = {
     this.registerDefaultProviders();
     this.ensureStyles();
     this.patchApp();
+    this.load();
+    this.migrateBiologyLegacyState();
+    this.render();
   },
 
   registerProvider(subject, provider) {
