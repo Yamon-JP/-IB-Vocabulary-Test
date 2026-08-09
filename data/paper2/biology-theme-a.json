@@ -232,5 +232,37 @@
     ],
     "modelAnswer": "Homologous structures have the same basic structural plan in different species even if they perform different functions. This is consistent with the structures having been inherited from a common ancestor and modified during evolution. Scientists can also compare DNA or amino-acid sequences. Species with more similar sequences are generally inferred to be more closely related. When structural and molecular evidence support the same pattern, the case for common ancestry is strengthened.",
     "modelAnswerJa": "相同構造とは、現在の働きが違っていても、基本的な構造のつくりが共通している器官などを指します。これは、共通祖先がもっていた構造を受け継ぎ、その後の進化でそれぞれ異なる働きに変化したと考えることで説明できます。また、DNAやアミノ酸の配列を種どうしで比較することもできます。一般に配列がよく似ているほど近縁だと考えられます。構造上の証拠と分子レベルの証拠が同じ進化関係を示せば、共通祖先をもつという考えがより強く支持されます。"
+  },
+  {
+    "id": "BIO-P2-A2-004",
+    "subject": "Biology SL",
+    "chapter": "A2 Cells",
+    "unit": "A2.2 Cell structure",
+    "primaryChapter": "A2 Cells",
+    "primaryUnit": "A2.2 Cell structure",
+    "requiredUnits": ["A2.2 Cell structure"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "surface-area-volume-quantitative-explanation",
+    "scopeType": "single-unit",
+    "commandTerm": "Calculate and explain",
+    "marks": 4,
+    "difficulty": "standard",
+    "assessmentTarget": "paper2a",
+    "question": "Two model cells are cubes. Cell P has sides of 1.0 µm and cell Q has sides of 3.0 µm. Calculate the surface area to volume ratio of each cell and explain why the larger cell may exchange substances with its surroundings less efficiently.",
+    "markscheme": [
+      "For a cube, surface area = 6a² and volume = a³.",
+      "Cell P has a surface area to volume ratio of 6:1.",
+      "Cell Q has a surface area to volume ratio of 2:1.",
+      "The larger cell has less surface area available per unit volume, so exchange across the membrane is less able to meet the needs of the greater cell volume."
+    ],
+    "markschemeJa": [
+      "立方体では、表面積=6a²、体積=a³で求める。",
+      "細胞Pの表面積対体積比は6:1である。",
+      "細胞Qの表面積対体積比は2:1である。",
+      "大きい細胞では体積1単位あたりに利用できる表面積が小さくなるため、細胞膜を通した物質交換が大きな細胞全体の需要を満たしにくくなる。"
+    ],
+    "modelAnswer": "For a cube, surface area is 6a² and volume is a³. Cell P therefore has SA = 6 µm² and V = 1 µm³, giving an SA:V ratio of 6:1. Cell Q has SA = 54 µm² and V = 27 µm³, giving an SA:V ratio of 2:1. As cell size increases, surface area does not increase as rapidly as volume, so there is less membrane area available per unit volume for exchange with the surroundings.",
+    "modelAnswerJa": "立方体の表面積は6a²、体積はa³です。細胞Pでは表面積6 µm²、体積1 µm³なのでSA:Vは6:1です。細胞Qでは表面積54 µm²、体積27 µm³なのでSA:Vは2:1です。細胞が大きくなると、表面積より体積の方が速く増えるため、体積1単位あたりに使える細胞膜の面積が減り、周囲との物質交換が相対的に難しくなります。"
   }
 ]
