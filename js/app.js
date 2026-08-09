@@ -4,6 +4,7 @@ const App = {
     subject: null,
     practiceType: 'vocabulary',
     paper1Section: 'paper1a',
+    paper2Section: 'paper2a',
     practiceScope: 'all',
     selectedChapters: [],
     biologyLearnedUnits: [],
@@ -84,6 +85,7 @@ const App = {
     this.state.subject = subject;
     this.state.practiceType = 'vocabulary';
     this.state.paper1Section = 'paper1a';
+    this.state.paper2Section = 'paper2a';
     this.state.practiceScope = 'all';
     this.state.selectedChapters = [];
     this.state.biologyTheme = 'A';
@@ -163,6 +165,9 @@ const App = {
     if (type === 'paper1') {
       this.state.paper1Section = this.state.paper1Section === 'paper1b' ? 'paper1b' : 'paper1a';
     }
+    if (type === 'paper2' && this.state.subject === 'Biology SL') {
+      this.state.paper2Section = this.state.paper2Section === 'paper2b' ? 'paper2b' : 'paper2a';
+    }
     this.applyPracticeTypeUI();
     this.saveState();
   },
@@ -175,13 +180,23 @@ const App = {
     if (typeof Paper1 !== 'undefined') Paper1.applySectionUI();
   },
 
+  setPaper2Section(section) {
+    if (this.state.subject !== 'Biology SL') return;
+    this.state.paper2Section = section === 'paper2b' ? 'paper2b' : 'paper2a';
+    this.saveState();
+    this.applyPracticeTypeUI();
+    this.updatePracticeHeader();
+  },
+
   applyPracticeTypeUI() {
     const vocabularyButton = document.getElementById('type-vocabulary');
     const paper1Button = document.getElementById('type-paper1');
     const paper2Button = document.getElementById('type-paper2');
     const typeGrid = document.querySelector('.practice-type-grid');
     const paper1Control = document.getElementById('paper1-section-control');
+    const paper2Control = document.getElementById('paper2-section-control');
     const paper1Available = this.state.subject === 'Biology SL';
+    const biologyPaper2 = this.state.subject === 'Biology SL';
 
     if (this.state.practiceType === 'paper1' && !paper1Available) {
       this.state.practiceType = 'vocabulary';
@@ -194,6 +209,19 @@ const App = {
     if (paper1Button) paper1Button.classList.toggle('active', this.state.practiceType === 'paper1');
     if (paper2Button) paper2Button.classList.toggle('active', this.state.practiceType === 'paper2');
     if (paper1Control) paper1Control.style.display = this.state.practiceType === 'paper1' && paper1Available ? 'block' : 'none';
+    if (paper2Control) paper2Control.style.display = this.state.practiceType === 'paper2' && biologyPaper2 ? 'block' : 'none';
+
+    const paper2AButton = document.getElementById('section-paper2a');
+    const paper2BButton = document.getElementById('section-paper2b');
+    if (paper2AButton) paper2AButton.classList.toggle('active', this.state.paper2Section !== 'paper2b');
+    if (paper2BButton) paper2BButton.classList.toggle('active', this.state.paper2Section === 'paper2b');
+
+    const paper2Title = document.getElementById('paper2-section-title');
+    if (paper2Title) {
+      paper2Title.textContent = this.state.subject === 'Biology SL'
+        ? `${this.state.paper2Section === 'paper2b' ? 'Paper 2B' : 'Paper 2A'} Practice`
+        : 'Paper 2 Practice';
+    }
 
     if (typeof Paper1 !== 'undefined') {
       Paper1.applySectionUI();
@@ -353,7 +381,7 @@ const App = {
       if (question.subject !== subject) return false;
 
       if (subject === 'Biology SL') {
-        if (!['paper2a', 'paper2b'].includes(question.assessmentTarget)) return false;
+        if (question.assessmentTarget !== this.state.paper2Section) return false;
         const requiredUnits = Array.isArray(question.requiredUnits)
           ? question.requiredUnits.filter(unit => typeof unit === 'string' && unit.trim())
           : [];
@@ -420,8 +448,9 @@ const App = {
       }
       const count = this.loadPaper2ForSelection(this.state.subject, chapters);
       if (!count) {
+        const selectedPaper2 = this.state.paper2Section === 'paper2b' ? 'Paper 2B' : 'Paper 2A';
         alert(this.state.subject === 'Biology SL'
-          ? 'No Paper 2 questions are available for the selected chapters and learned units yet.'
+          ? `No ${selectedPaper2} questions are available for the selected chapters and learned units yet.`
           : 'No Paper 2 questions are available for this selection yet.');
         return;
       }
@@ -458,7 +487,11 @@ const App = {
         ? this.state.selectedChapters.join(', ')
         : 'All Chapters';
       let mode = 'Vocabulary';
-      if (this.state.practiceType === 'paper2') mode = 'Paper 2';
+      if (this.state.practiceType === 'paper2') {
+        mode = this.state.subject === 'Biology SL'
+          ? (this.state.paper2Section === 'paper2b' ? 'Paper 2B' : 'Paper 2A')
+          : 'Paper 2';
+      }
       if (this.state.practiceType === 'paper1') mode = this.state.paper1Section === 'paper1b' ? 'Paper 1B' : 'Paper 1A';
       subject.textContent = `${this.state.subject || ''} · ${mode} · ${scope}`;
     }
@@ -470,6 +503,7 @@ const App = {
     if (paper1Panel) paper1Panel.style.display = this.state.practiceType === 'paper1' ? 'block' : 'none';
     if (paper2Panel) paper2Panel.style.display = this.state.practiceType === 'paper2' ? 'block' : 'none';
     if (typeof Paper1 !== 'undefined') Paper1.applySectionUI();
+    this.applyPracticeTypeUI();
   },
 
   applySavedSelection() {
@@ -507,6 +541,7 @@ const App = {
     const saved = Storage.load('ib_master_trainer_state');
     if (saved) this.state = { ...this.state, ...saved };
     this.state.paper1Section = this.state.paper1Section === 'paper1b' ? 'paper1b' : 'paper1a';
+    this.state.paper2Section = this.state.paper2Section === 'paper2b' ? 'paper2b' : 'paper2a';
     if (!Array.isArray(this.state.biologyLearnedUnits)) this.state.biologyLearnedUnits = [];
   },
 
