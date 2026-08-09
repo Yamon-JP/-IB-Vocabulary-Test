@@ -1,0 +1,138 @@
+.course-coverage-panel {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+body.course-coverage-ready #paper1-learned-units-control {
+  display: none !important;
+}
+
+.course-coverage-summary-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.course-coverage-summary-row h3 {
+  margin: 3px 0 5px;
+  font-size: 1rem;
+}
+
+.course-coverage-summary {
+  margin: 0;
+  color: #475467;
+  font-size: .92rem;
+}
+
+.course-coverage-summary strong {
+  color: var(--brand-dark);
+  font-size: 1.05rem;
+}
+
+.course-coverage-note {
+  margin: 5px 0 0;
+  font-size: .78rem;
+}
+
+.course-coverage-toggle {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 8px 12px;
+  border-color: #c7c2ff;
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+  font-size: .82rem;
+}
+
+.course-coverage-editor {
+  margin-top: 15px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.course-coverage-editor[hidden] {
+  display: none;
+}
+
+.course-coverage-group {
+  margin: 8px 0;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--surface-soft);
+  overflow: hidden;
+}
+
+.course-coverage-group summary {
+  padding: 11px 13px;
+  cursor: pointer;
+  font-size: .86rem;
+}
+
+.course-coverage-group summary > span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.course-coverage-group summary small {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.course-coverage-group-body {
+  padding: 0 10px 10px;
+}
+
+.course-coverage-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 7px;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  font-size: .86rem;
+  line-height: 1.4;
+}
+
+.course-coverage-item input {
+  margin-top: 3px;
+  accent-color: var(--brand);
+}
+
+.course-coverage-select-all {
+  background: var(--brand-soft);
+  border-color: #d8d5ff;
+}
+
+.course-coverage-loading {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .course-coverage-panel {
+    padding: 14px;
+  }
+
+  .course-coverage-summary-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .course-coverage-toggle {
+    width: 100%;
+  }
+
+  .course-coverage-group summary > span {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+  }
+}
