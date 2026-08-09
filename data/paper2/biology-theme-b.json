@@ -270,5 +270,71 @@
     ],
     "modelAnswer": "Xerophytes have features that conserve water. A thick waxy cuticle reduces evaporation, while small leaves or spines reduce the surface area from which water can be lost. Sunken stomata or leaf hairs can trap humid air near the stomata and reduce the diffusion gradient for water vapour. Closing stomata during water stress reduces transpiration further. Some xerophytes also store water or develop extensive roots to improve water supply.",
     "modelAnswerJa": "乾生植物（xerophyte）には、水を失いにくくするさまざまな適応があります。厚いワックス状のクチクラは葉からの蒸発を減らし、小さな葉やトゲは水を失う表面積を小さくします。くぼんだ気孔や葉の毛は気孔の周りに湿った空気を保ち、水蒸気が外へ拡散する勾配を小さくします。さらに水不足のときに気孔を閉じれば蒸散を減らせます。種類によっては、水を蓄える組織や広く伸びた根を持ち、水の確保そのものを助けています。"
+  },
+  {
+    "id": "BIO-P2-B2-004",
+    "subject": "Biology SL",
+    "chapter": "B2 Cells",
+    "unit": "B2.3 Cell specialization",
+    "primaryChapter": "B2 Cells",
+    "primaryUnit": "B2.3 Cell specialization",
+    "requiredUnits": ["B2.3 Cell specialization"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2"],
+    "archetype": "specialized-cell-structure-function",
+    "scopeType": "single-unit",
+    "commandTerm": "Explain",
+    "marks": 4,
+    "difficulty": "standard",
+    "assessmentTarget": "paper2a",
+    "question": "A specialized cell has many mitochondria, extensive folds in its plasma membrane and many transport proteins. Explain how these features adapt the cell for rapid active transport.",
+    "markscheme": [
+      "Many mitochondria provide a high rate of ATP production for energy-requiring transport processes.",
+      "Folding of the plasma membrane increases the surface area available for transport.",
+      "A larger membrane area can contain more carrier proteins or pumps.",
+      "The combination of ATP supply and numerous transport proteins allows substances to be moved rapidly against concentration or electrochemical gradients."
+    ],
+    "markschemeJa": [
+      "多数のミトコンドリアが、エネルギーを必要とする輸送のためにATPを多く供給できる。",
+      "細胞膜のひだは、物質輸送に使える膜の表面積を増やす。",
+      "膜面積が大きいほど、より多くの担体タンパク質やポンプを配置できる。",
+      "十分なATP供給と多数の輸送タンパク質によって、濃度勾配または電気化学的勾配に逆らう物質移動を速く行える。"
+    ],
+    "modelAnswer": "Active transport requires energy and membrane transport proteins. Many mitochondria can produce large amounts of ATP to supply this energy. Folding the plasma membrane increases its surface area, allowing more carrier proteins and pumps to be present. Together, the high ATP supply and large number of transport proteins enable rapid movement of substances against their concentration or electrochemical gradients.",
+    "modelAnswerJa": "能動輸送にはエネルギーと膜輸送タンパク質が必要です。多数のミトコンドリアがATPを多く供給し、細胞膜のひだは膜表面積を増やして、より多くの担体タンパク質やポンプを配置できるようにします。この2つが組み合わさることで、物質を濃度勾配や電気化学的勾配に逆らって速く移動させることができます。"
+  },
+  {
+    "id": "BIO-P2-B3-004",
+    "subject": "Biology SL",
+    "chapter": "B3 Organisms",
+    "unit": "B3.2 Transport",
+    "primaryChapter": "B3 Organisms",
+    "primaryUnit": "B3.2 Transport",
+    "requiredUnits": ["A1.1 Water", "B3.2 Transport"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2"],
+    "archetype": "cohesion-tension-transport-explanation",
+    "scopeType": "cross-chapter",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
+    "question": "Explain how transpiration, the properties of water and xylem structure contribute to the upward movement of water through a plant.",
+    "markscheme": [
+      "Evaporation from leaf surfaces during transpiration lowers water potential in the leaf and creates tension in the xylem water column.",
+      "This tension pulls water upward through the xylem from lower parts of the plant.",
+      "Cohesion between water molecules helps maintain a continuous column of water under tension.",
+      "Adhesion between water and xylem walls can help support the water column.",
+      "Xylem vessels form continuous, lignified tubes that provide a low-resistance pathway and resist collapse under tension."
+    ],
+    "markschemeJa": [
+      "蒸散によって葉の表面から水が蒸発すると、葉の水ポテンシャルが低下し、木部の水柱に張力が生じる。",
+      "この張力によって、植物の下部から木部内の水が上向きに引かれる。",
+      "水分子どうしの凝集力によって、張力がかかっても連続した水柱を保ちやすい。",
+      "水と木部壁との付着力も水柱を支えるのに役立つ。",
+      "木部道管は連続したリグニン化した管をつくり、水が流れやすい経路を提供するとともに、張力によるつぶれを防ぐ。"
+    ],
+    "modelAnswer": "Transpiration removes water from leaf surfaces and lowers water potential in the leaf, generating tension in the xylem. This tension pulls the xylem water column upward. Cohesion between water molecules keeps the column continuous, while adhesion to the xylem walls helps support it. Xylem vessels form long, low-resistance tubes, and their lignified walls prevent collapse when the water column is under tension.",
+    "modelAnswerJa": "蒸散によって葉から水が失われると葉の水ポテンシャルが低下し、木部内の水柱に張力が生じます。その張力が水柱を上へ引き上げます。水分子どうしの凝集力によって水柱は途中で切れにくく、水と道管壁との付着力も水柱を支えます。さらに木部道管は長く連続した抵抗の少ない管で、リグニン化した壁が張力による管のつぶれを防ぎます。"
   }
 ]
