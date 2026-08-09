@@ -272,5 +272,124 @@
     ],
     "modelAnswer": "Harvesting directly removes individuals from a population. If individuals are removed faster than births and recruitment can replace them, the population will decline. Because growth rates change with population density and environmental conditions, a harvest level that is safe in one year may be unsustainable in another. Monitoring population size and trends allows managers to adjust limits, and precautionary rules help reduce the risk of overexploitation and collapse.",
     "modelAnswerJa": "漁獲や採取は、個体群から直接個体を取り除く行為です。繁殖によって新しく加わる個体より多くを取り続ければ、個体数は減っていきます。また、個体群の成長率は個体密度や環境条件によって変わるため、ある年には問題のない採取量でも、別の年には多すぎることがあります。そのため、個体数や増減傾向を継続して調べ、状況に応じて採取上限を変える必要があります。慎重な上限設定とモニタリングによって、過剰利用や資源の崩壊を防ぎやすくなります。"
+  },
+  {
+    "id": "BIO-P2-D1-004",
+    "subject": "Biology SL",
+    "chapter": "D1 Molecules",
+    "unit": "D1.1 DNA replication",
+    "primaryChapter": "D1 Molecules",
+    "primaryUnit": "D1.1 DNA replication",
+    "requiredUnits": ["D1.1 DNA replication"],
+    "level": "SL",
+    "assessmentObjectives": ["AO3"],
+    "archetype": "replication-model-data-deduction",
+    "scopeType": "single-unit",
+    "commandTerm": "Deduce",
+    "marks": 4,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "DNA density after transfer from heavy to light nitrogen medium",
+      "columns": ["Generation", "Observed DNA density"],
+      "rows": [[0, "Heavy"], [1, "All intermediate"], [2, "Approximately 50% intermediate and 50% light"]]
+    },
+    "question": "Deduce the model of DNA replication supported by the data and justify your conclusion using the observations.",
+    "markscheme": [
+      "The data support semi-conservative DNA replication.",
+      "After one generation, all DNA has intermediate density, consistent with each molecule containing one heavy parental strand and one newly synthesized light strand.",
+      "After two generations, both intermediate and light DNA are present, as expected when hybrid molecules produce one hybrid and one fully light molecule during replication.",
+      "The absence of separate heavy and light bands after the first generation is inconsistent with a conservative model."
+    ],
+    "markschemeJa": [
+      "このデータはDNAの半保存的複製を支持する。",
+      "1世代後にすべてのDNAが中間密度なのは、各DNA分子が重い親鎖1本と新しく合成された軽い鎖1本を含む場合と一致する。",
+      "2世代後に中間密度DNAと軽いDNAの両方が見られることも、半保存的複製から予測される結果である。",
+      "1世代後に重いDNAと軽いDNAが別々に現れないため、保存的複製モデルとは一致しない。"
+    ],
+    "modelAnswer": "The results support semi-conservative replication. After one generation, all DNA is of intermediate density, which is expected if every molecule contains one original heavy strand and one newly synthesized light strand. After a second generation, approximately half the DNA remains intermediate and half is fully light, which also matches the semi-conservative model. A conservative model would predict separate heavy and light DNA after the first generation, which was not observed.",
+    "modelAnswerJa": "結果は半保存的複製を支持します。1世代後にすべてのDNAが中間密度になったことは、各DNA分子が元の重い鎖1本と新しい軽い鎖1本を含むと考えると説明できます。2世代後に中間密度と軽いDNAがおよそ半分ずつになることも半保存的複製の予測と一致します。保存的複製なら1世代後に重いDNAと軽いDNAが別々に現れるはずなので、観察結果と一致しません。"
+  },
+  {
+    "id": "BIO-P2-D3-004",
+    "subject": "Biology SL",
+    "chapter": "D3 Organisms",
+    "unit": "D3.3 Homeostasis",
+    "primaryChapter": "D3 Organisms",
+    "primaryUnit": "D3.3 Homeostasis",
+    "requiredUnits": ["D3.3 Homeostasis"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "blood-glucose-negative-feedback-application",
+    "scopeType": "single-unit",
+    "commandTerm": "Explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Blood glucose concentration after a carbohydrate-rich meal",
+      "columns": ["Time after meal (min)", "Blood glucose (mmol dm⁻³)"],
+      "rows": [[0, 4.8], [30, 8.2], [90, 6.0], [150, 4.9]]
+    },
+    "question": "Explain how negative feedback can account for the return of blood glucose concentration toward its initial value after the meal.",
+    "markscheme": [
+      "The rise in blood glucose is detected by glucose-sensing cells in the pancreas.",
+      "Increased blood glucose stimulates increased insulin secretion from pancreatic beta cells.",
+      "Insulin promotes glucose uptake by responsive cells and promotes storage of glucose, for example as glycogen.",
+      "These responses reduce blood glucose concentration toward the normal range, consistent with the fall from 8.2 to 4.9 mmol dm⁻³.",
+      "As blood glucose returns toward normal, the stimulus for insulin secretion decreases, reducing the corrective response."
+    ],
+    "markschemeJa": [
+      "血糖値の上昇は膵臓のグルコースを感知する細胞によって検出される。",
+      "血糖値が高くなると、膵臓のβ細胞からのインスリン分泌が増える。",
+      "インスリンは反応する細胞へのグルコース取り込みを促し、グリコーゲンなどとしての貯蔵も促進する。",
+      "これらの反応によって血糖値が正常範囲へ下がり、データの8.2から4.9 mmol dm⁻³への低下と一致する。",
+      "血糖値が正常に近づくとインスリン分泌を促す刺激が弱くなり、修正反応も小さくなる。"
+    ],
+    "modelAnswer": "After the meal, blood glucose rises from 4.8 to 8.2 mmol dm⁻³. This increase is detected by the pancreas and stimulates beta cells to secrete more insulin. Insulin increases glucose uptake by target cells and encourages glucose storage, including glycogen formation, so blood glucose falls. As it returns toward the normal range, the stimulus for insulin secretion becomes weaker. This opposing response is negative feedback and is consistent with the return to 4.9 mmol dm⁻³ by 150 minutes.",
+    "modelAnswerJa": "食後、血糖値は4.8から8.2 mmol dm⁻³へ上昇しています。この上昇を膵臓が感知するとβ細胞からのインスリン分泌が増えます。インスリンによって細胞へのグルコース取り込みやグリコーゲンとしての貯蔵が促され、血糖値は低下します。正常範囲に近づくにつれてインスリン分泌を促す刺激も弱くなります。このように最初の変化を打ち消す反応が負のフィードバックであり、150分後に4.9 mmol dm⁻³まで戻ったデータと一致します。"
+  },
+  {
+    "id": "BIO-P2-D4-004",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.1 Natural selection",
+    "primaryChapter": "D4 Ecosystems",
+    "primaryUnit": "D4.1 Natural selection",
+    "requiredUnits": ["D4.1 Natural selection"],
+    "level": "SL",
+    "assessmentObjectives": ["AO3", "AO4"],
+    "archetype": "selection-frequency-data-evaluation",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Frequency of a pesticide-resistance allele in an insect population",
+      "description": "The same pesticide was used in the habitat throughout the study.",
+      "columns": ["Generation", "Resistance allele frequency"],
+      "rows": [[0, 0.08], [5, 0.19], [10, 0.41], [15, 0.68]]
+    },
+    "question": "Analyse the change in allele frequency using natural selection and state one limitation of the data for identifying the cause of the change.",
+    "markscheme": [
+      "The resistance allele increases in frequency from 0.08 to 0.68 over 15 generations.",
+      "Heritable variation in pesticide resistance must be present for natural selection to change allele frequencies.",
+      "Pesticide exposure can act as a selection pressure, so resistant insects are more likely to survive and reproduce than susceptible insects.",
+      "Greater reproductive contribution by resistant survivors increases the resistance allele frequency across generations.",
+      "A limitation is that the data lack an untreated control population or information about other changing factors, so the pesticide cannot be established as the sole cause from these observations alone."
+    ],
+    "markschemeJa": [
+      "耐性対立遺伝子の頻度は15世代で0.08から0.68へ増加している。",
+      "自然選択によって対立遺伝子頻度が変化するには、農薬耐性について遺伝可能な変異が存在する必要がある。",
+      "農薬は選択圧として働き、耐性個体は感受性個体より生存・繁殖しやすくなる可能性がある。",
+      "耐性個体がより多く子孫を残すことで、世代を重ねるにつれて耐性対立遺伝子の頻度が高くなる。",
+      "未処理の対照個体群や他の環境要因の変化に関する情報がないため、この観察だけから農薬が唯一の原因だと断定できない。"
+    ],
+    "modelAnswer": "The resistance allele rises from 0.08 to 0.68 over 15 generations. If resistance is heritable, pesticide exposure can create a selection pressure in which resistant insects survive and reproduce more successfully than susceptible insects. Their greater reproductive contribution increases the frequency of the resistance allele in later generations. However, there is no untreated control population and no information about other possible environmental changes, so the data are consistent with pesticide-driven selection but do not prove that pesticide exposure was the only cause.",
+    "modelAnswerJa": "耐性対立遺伝子の頻度は15世代で0.08から0.68まで増えています。耐性が遺伝する形質であれば、農薬が選択圧となり、耐性個体の方が感受性個体より生き残って繁殖しやすくなります。その結果、耐性個体がより多くの子孫を残し、後の世代で耐性対立遺伝子の頻度が上昇します。ただし、農薬を使わない対照個体群がなく、他の環境変化についても情報がないため、農薬による自然選択と一致するものの、農薬だけが原因だったと証明することはできません。"
   }
 ]
