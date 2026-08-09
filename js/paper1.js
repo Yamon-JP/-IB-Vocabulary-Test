@@ -340,7 +340,7 @@ const Paper1 = {
     const feedback = document.getElementById('paper1a-feedback');
     if (!question || !choices) return;
 
-    question.innerHTML = `<div class="paper1-question-text">${this.escapeHtml(this.current.question || '')}</div>`;
+    question.innerHTML = `${this.renderStimulus(this.current.stimulus)}<div class="paper1-question-text">${this.escapeHtml(this.current.question || '')}</div>`;
     const options = Array.isArray(this.current.options) ? this.current.options : [];
     choices.innerHTML = options.map(option => `
       <button type="button" class="paper1-choice" data-choice-id="${this.escapeHtml(option.id)}" onclick="Paper1.selectChoice('${this.escapeHtml(option.id)}')">
