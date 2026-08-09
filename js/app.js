@@ -6,6 +6,7 @@ const App = {
     paper1Section: 'paper1a',
     practiceScope: 'all',
     selectedChapters: [],
+    biologyLearnedUnits: [],
     biologyTheme: 'A',
     practiceWord: null,
     user: { xp: 0, streak: 0 }
@@ -111,7 +112,10 @@ const App = {
       await this.ensurePaper1Module();
       if (typeof Paper1 !== 'undefined') {
         await Paper1.init();
-        Paper1.loadForSelection(this.state.subject, chapters, this.state.paper1Section);
+        const learnedUnits = this.state.subject === 'Biology SL'
+          ? [...(this.state.biologyLearnedUnits || [])]
+          : [];
+        Paper1.loadForSelection(this.state.subject, chapters, this.state.paper1Section, learnedUnits);
       }
     } else if (this.state.practiceType === 'paper2') {
       this.loadPaper2ForSelection(this.state.subject, chapters);
@@ -191,7 +195,10 @@ const App = {
     if (paper2Button) paper2Button.classList.toggle('active', this.state.practiceType === 'paper2');
     if (paper1Control) paper1Control.style.display = this.state.practiceType === 'paper1' && paper1Available ? 'block' : 'none';
 
-    if (typeof Paper1 !== 'undefined') Paper1.applySectionUI();
+    if (typeof Paper1 !== 'undefined') {
+      Paper1.applySectionUI();
+      if (typeof Paper1.renderLearnedUnitSelector === 'function') Paper1.renderLearnedUnitSelector();
+    }
   },
 
   renderChapterSelector() {
@@ -291,6 +298,15 @@ const App = {
     this.saveState();
   },
 
+  toggleBiologyLearnedUnit(unit, checked) {
+    if (this.state.subject !== 'Biology SL' || !unit) return;
+    const learned = new Set(Array.isArray(this.state.biologyLearnedUnits) ? this.state.biologyLearnedUnits : []);
+    if (checked) learned.add(unit);
+    else learned.delete(unit);
+    this.state.biologyLearnedUnits = [...learned].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+    this.saveState();
+  },
+
   setPracticeScope(scope) {
     this.state.practiceScope = scope === 'selected' ? 'selected' : 'all';
     this.applyPracticeScopeUI();
@@ -346,9 +362,16 @@ const App = {
         return;
       }
       await Paper1.init();
-      const count = Paper1.loadForSelection(this.state.subject, chapters, this.state.paper1Section);
+      const learnedUnits = Array.isArray(this.state.biologyLearnedUnits)
+        ? [...this.state.biologyLearnedUnits]
+        : [];
+      if (this.state.subject === 'Biology SL' && !learnedUnits.length) {
+        alert('Please select at least one learned unit before starting Paper 1 Practice.');
+        return;
+      }
+      const count = Paper1.loadForSelection(this.state.subject, chapters, this.state.paper1Section, learnedUnits);
       if (!count) {
-        alert('No Paper 1 questions are available for this selection yet.');
+        alert('No Paper 1 questions are available for the selected chapters and learned units yet.');
         return;
       }
       this.updatePracticeHeader();
@@ -444,6 +467,7 @@ const App = {
     const saved = Storage.load('ib_master_trainer_state');
     if (saved) this.state = { ...this.state, ...saved };
     this.state.paper1Section = this.state.paper1Section === 'paper1b' ? 'paper1b' : 'paper1a';
+    if (!Array.isArray(this.state.biologyLearnedUnits)) this.state.biologyLearnedUnits = [];
   },
 
   saveState() {
