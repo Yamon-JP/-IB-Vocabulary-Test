@@ -594,5 +594,79 @@
     ],
     "modelAnswer": "A species' fundamental niche is the range it could occupy without restrictive biotic interactions, whereas its realized niche is the range actually occupied in nature. Interspecific competition can reduce access to resources or exclude the species from part of the potential habitat, especially where a competitor uses the same limiting resources more effectively. One way to test this is to remove or exclude the competitor and determine whether the focal species expands into the previously unused part of its potential niche. However, predation and abiotic differences must also be considered before concluding that competition alone caused the restricted distribution.",
     "modelAnswerJa": "基本ニッチは、制限となる生物間相互作用がなければ利用できる範囲で、実現ニッチは自然界で実際に利用している範囲です。種間競争が起こると、同じ限られた資源をより効率よく使う競争相手によって、対象種が潜在的な生息地の一部から排除されることがあります。競争相手を除去した実験で対象種がそれまで利用していなかった範囲へ広がれば、競争の影響を支持できます。ただし、捕食や非生物的環境条件の違いも調べ、分布制限を競争だけに帰属させないことが重要です。"
+  },
+  {
+    "id": "BIO-P2-B3-007",
+    "subject": "Biology SL",
+    "chapter": "B3 Organisms",
+    "unit": "B3.2 Transport",
+    "primaryChapter": "B3 Organisms",
+    "primaryUnit": "B3.2 Transport",
+    "requiredUnits": ["B3.2 Transport"],
+    "level": "SL",
+    "assessmentObjectives": ["AO1", "AO2"],
+    "archetype": "blood-vessel-structure-function-comparison",
+    "scopeType": "single-unit",
+    "commandTerm": "Compare and explain",
+    "marks": 7,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
+    "question": "Compare arteries, veins and capillaries and explain how their structures are related to pressure, one-way transport and exchange in the mammalian circulatory system.",
+    "markscheme": [
+      "Arteries carry blood away from the heart and receive blood at relatively high pressure.",
+      "Arteries have thick muscular and elastic walls that withstand pressure and elastic recoil helps maintain blood flow between heart contractions.",
+      "Veins return blood toward the heart at lower pressure and have thinner walls and a relatively wide lumen.",
+      "Valves in many veins prevent backflow and help maintain one-way movement of blood when pressure is low.",
+      "Capillary walls consist of a very thin endothelium, giving a short diffusion distance between blood and tissues.",
+      "Capillaries have a very small diameter and form extensive networks, producing a large total surface area and bringing blood close to cells.",
+      "The structural differences therefore match the main roles of arteries in high-pressure delivery, veins in low-pressure return and capillaries in exchange."
+    ],
+    "markschemeJa": [
+      "動脈は心臓から血液を運び出し、比較的高い圧力の血液を受ける。",
+      "動脈には厚い筋肉層と弾性組織があり、高圧に耐えるとともに弾性反跳によって心拍の間も血流を維持しやすい。",
+      "静脈は低い圧力で血液を心臓へ戻し、動脈より壁が薄く、内腔が比較的広い。",
+      "多くの静脈にある弁は逆流を防ぎ、圧力が低い条件でも一方向の血流を維持するのに役立つ。",
+      "毛細血管の壁は非常に薄い内皮からなり、血液と組織の間の拡散距離を短くする。",
+      "毛細血管は直径が小さく広いネットワークをつくるため、総表面積が大きくなり、血液を細胞の近くまで運べる。",
+      "したがって構造の違いは、動脈の高圧輸送、静脈の低圧での還流、毛細血管の物質交換という役割に対応している。"
+    ],
+    "modelAnswer": "Arteries carry blood away from the heart under relatively high pressure, so they have thick muscular and elastic walls that withstand pressure and recoil to help maintain flow. Veins return blood at lower pressure, so their walls are thinner and their lumen is wider; valves help prevent backflow. Capillaries are specialized for exchange rather than pressure transmission. Their walls are only a very thin endothelium, and their small diameter and extensive networks provide a large surface area and short diffusion distance. The three vessel types therefore have structures matched to high-pressure delivery, low-pressure return and exchange, respectively.",
+    "modelAnswerJa": "動脈は心臓から高い圧力で血液を運ぶため、厚い筋肉層と弾性組織をもち、圧力に耐えながら弾性反跳で血流を保ちます。静脈は低圧で血液を心臓へ戻すため壁が薄く内腔が広く、多くの場合は弁が逆流を防ぎます。毛細血管は圧力を伝えるより物質交換に特化しており、非常に薄い内皮、細い直径、広いネットワークによって大きな表面積と短い拡散距離をつくります。このように3種類の血管は、それぞれの役割に合った構造をしています。"
+  },
+  {
+    "id": "BIO-P2-B4-005",
+    "subject": "Biology SL",
+    "chapter": "B4 Ecosystems",
+    "unit": "B4.1 Adaptation to environment",
+    "primaryChapter": "B4 Ecosystems",
+    "primaryUnit": "B4.1 Adaptation to environment",
+    "requiredUnits": ["B4.1 Adaptation to environment"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "distribution-tolerance-transect-discussion",
+    "scopeType": "single-unit",
+    "commandTerm": "Discuss",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
+    "question": "Discuss how abiotic factors, ranges of tolerance and adaptations can influence the distribution of a species, and how transect data could be used to investigate such a relationship.",
+    "markscheme": [
+      "A species can survive and reproduce only across a limited range of values for abiotic factors such as temperature, water availability, light or salinity.",
+      "Adaptations can increase performance or survival under particular environmental conditions and therefore influence where the species can persist.",
+      "Where an abiotic factor lies outside the species' tolerance range, survival, growth or reproduction is reduced, limiting distribution.",
+      "A transect can record species abundance or presence at repeated positions while the relevant abiotic factor is measured along the same environmental gradient.",
+      "A consistent change in abundance associated with the abiotic gradient would support a relationship between the factor and distribution.",
+      "Correlation in transect data alone does not prove causation because other abiotic factors and biotic interactions may vary along the same gradient and should also be measured or controlled."
+    ],
+    "markschemeJa": [
+      "種は温度、水分量、光、塩分濃度などの非生物的要因について、一定の耐性範囲内でのみ十分に生存・繁殖できる。",
+      "適応によって特定の環境条件での生存や機能が向上し、その種が維持できる分布域に影響する。",
+      "非生物的要因が耐性範囲を外れると、生存、成長、繁殖が低下し、分布が制限される。",
+      "トランセクトでは環境勾配に沿った複数地点で種の個体数や存在を記録し、同じ地点で関係する非生物的要因も測定できる。",
+      "非生物的要因の変化とともに個体数が一貫して変化すれば、その要因と分布との関連を支持する証拠になる。",
+      "ただしトランセクトでの相関だけでは因果関係を証明できず、同じ勾配で変化する他の非生物的要因や生物間相互作用も測定・統制する必要がある。"
+    ],
+    "modelAnswer": "Species have tolerance ranges for abiotic conditions such as temperature, water availability, light and salinity. Adaptations can allow a species to function well under particular conditions, but outside its tolerance range survival or reproduction declines, restricting its distribution. A transect can test this by measuring species abundance at repeated positions along an environmental gradient and measuring the relevant abiotic factor at the same locations. If abundance changes consistently with the factor, the data support an association. However, other environmental variables and biotic interactions may also change along the transect, so correlation alone does not establish that one abiotic factor caused the distribution pattern.",
+    "modelAnswerJa": "生物には温度、水分量、光、塩分濃度などの非生物的要因に対する耐性範囲があります。適応によって特定の条件で生存・繁殖しやすくなりますが、耐性範囲を外れると生存率や繁殖率が下がり、分布が制限されます。トランセクトを使えば、環境勾配に沿って複数地点の個体数と非生物的要因を同時に測定し、両者の関係を調べられます。ただし、同じ場所で他の環境要因や生物間相互作用も変化している可能性があるため、相関だけで1つの要因が分布の原因だと断定することはできません。"
   }
 ]
