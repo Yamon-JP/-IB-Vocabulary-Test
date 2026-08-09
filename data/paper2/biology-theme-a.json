@@ -264,5 +264,43 @@
     ],
     "modelAnswer": "For a cube, surface area is 6a² and volume is a³. Cell P therefore has SA = 6 µm² and V = 1 µm³, giving an SA:V ratio of 6:1. Cell Q has SA = 54 µm² and V = 27 µm³, giving an SA:V ratio of 2:1. As cell size increases, surface area does not increase as rapidly as volume, so there is less membrane area available per unit volume for exchange with the surroundings.",
     "modelAnswerJa": "立方体の表面積は6a²、体積はa³です。細胞Pでは表面積6 µm²、体積1 µm³なのでSA:Vは6:1です。細胞Qでは表面積54 µm²、体積27 µm³なのでSA:Vは2:1です。細胞が大きくなると、表面積より体積の方が速く増えるため、体積1単位あたりに使える細胞膜の面積が減り、周囲との物質交換が相対的に難しくなります。"
+  },
+  {
+    "id": "BIO-P2-A1-004",
+    "subject": "Biology SL",
+    "chapter": "A1 Molecules",
+    "unit": "A1.2 Nucleic acids",
+    "primaryChapter": "A1 Molecules",
+    "primaryUnit": "A1.2 Nucleic acids",
+    "requiredUnits": ["A1.2 Nucleic acids"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "gc-content-dna-stability-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 4,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Base composition and strand-separation temperature of equal-length DNA samples",
+      "columns": ["DNA sample", "GC content (%)", "Strand-separation temperature (°C)"],
+      "rows": [["P", 30, 72], ["Q", 42, 78], ["R", 55, 84], ["S", 68, 91]]
+    },
+    "question": "Analyse the relationship between GC content and strand-separation temperature, and explain the molecular basis of the pattern.",
+    "markscheme": [
+      "Strand-separation temperature increases as GC content increases across the samples.",
+      "For example, sample P has 30% GC and separates at 72°C, whereas sample S has 68% GC and separates at 91°C.",
+      "Guanine pairs with cytosine by three hydrogen bonds, whereas adenine pairs with thymine by two hydrogen bonds.",
+      "DNA with a greater proportion of GC base pairs therefore requires more energy to disrupt the hydrogen bonding and separate the strands."
+    ],
+    "markschemeJa": [
+      "GC含有率が高くなるほど、DNA鎖が分離する温度も高くなっている。",
+      "例えばPはGC含有率30%で72°Cなのに対し、Sは68%で91°Cである。",
+      "グアニンとシトシンの塩基対は3本の水素結合で結ばれるのに対し、アデニンとチミンは2本の水素結合で結ばれる。",
+      "そのためGC塩基対の割合が高いDNAほど、水素結合を切って2本鎖を分離するためにより多くのエネルギーが必要になる。"
+    ],
+    "modelAnswer": "The data show a positive relationship between GC content and strand-separation temperature. DNA with 30% GC separates at 72°C, whereas DNA with 68% GC separates at 91°C. A G-C base pair is held together by three hydrogen bonds, compared with two in an A-T base pair. A higher proportion of G-C pairs therefore increases the energy required to separate the two strands, giving a higher separation temperature.",
+    "modelAnswerJa": "データでは、GC含有率が高いDNAほど鎖の分離温度が高くなっています。GC 30%のDNAは72°Cで分離しますが、GC 68%では91°Cです。G-C塩基対は3本の水素結合、A-T塩基対は2本の水素結合で結ばれています。そのためG-C塩基対が多いほど2本鎖を離すために必要なエネルギーが大きくなり、分離温度も高くなります。"
   }
 ]
