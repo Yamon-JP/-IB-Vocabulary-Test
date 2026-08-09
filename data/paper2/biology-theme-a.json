@@ -302,5 +302,46 @@
     ],
     "modelAnswer": "The data show a positive relationship between GC content and strand-separation temperature. DNA with 30% GC separates at 72°C, whereas DNA with 68% GC separates at 91°C. A G-C base pair is held together by three hydrogen bonds, compared with two in an A-T base pair. A higher proportion of G-C pairs therefore increases the energy required to separate the two strands, giving a higher separation temperature.",
     "modelAnswerJa": "データでは、GC含有率が高いDNAほど鎖の分離温度が高くなっています。GC 30%のDNAは72°Cで分離しますが、GC 68%では91°Cです。G-C塩基対は3本の水素結合、A-T塩基対は2本の水素結合で結ばれています。そのためG-C塩基対が多いほど2本鎖を離すために必要なエネルギーが大きくなり、分離温度も高くなります。"
+  },
+  {
+    "id": "BIO-P2-A4-004",
+    "subject": "Biology SL",
+    "chapter": "A4 Ecosystems",
+    "unit": "A4.2 Conservation of biodiversity",
+    "primaryChapter": "A4 Ecosystems",
+    "primaryUnit": "A4.2 Conservation of biodiversity",
+    "requiredUnits": ["A4.2 Conservation of biodiversity"],
+    "level": "SL",
+    "assessmentObjectives": ["AO3", "AO4"],
+    "archetype": "conservation-population-trend-evaluation",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse and evaluate",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Population size before and after a conservation programme",
+      "description": "A habitat-protection programme began in 2020.",
+      "columns": ["Year", "Estimated population size"],
+      "rows": [[2016, 1200], [2020, 900], [2023, 990], [2026, 1080]]
+    },
+    "question": "Analyse the population trend before and after the conservation programme and evaluate whether the data support the conclusion that the programme has been effective.",
+    "markscheme": [
+      "The estimated population declined from 1200 in 2016 to 900 in 2020, a decrease of 25%.",
+      "After the programme began, the estimated population increased from 900 in 2020 to 1080 in 2026, a 20% increase from the 2020 value.",
+      "The post-2020 increase is consistent with the conservation programme having a beneficial effect.",
+      "The population in 2026 remains below the 2016 estimate, so full recovery has not occurred.",
+      "The data alone do not prove that the programme caused the increase because other environmental factors, sampling error or natural population variation could also influence the estimates."
+    ],
+    "markschemeJa": [
+      "推定個体数は2016年の1200から2020年の900へ減少しており、25%の減少である。",
+      "保全プログラム開始後は900から2026年の1080へ増え、2020年の値から20%増加している。",
+      "2020年以降の増加は、保全プログラムが有益な効果をもった可能性と一致する。",
+      "ただし2026年の個体数は2016年の1200には戻っておらず、完全な回復とはいえない。",
+      "他の環境要因、標本誤差、自然な個体数変動も推定値に影響し得るため、このデータだけでは保全プログラムが増加の原因だと証明できない。"
+    ],
+    "modelAnswer": "The population fell from 1200 in 2016 to 900 in 2020, a 25% decrease. After the conservation programme began, it rose from 900 to 1080 by 2026, which is a 20% increase from the 2020 value. This reversal is consistent with a beneficial effect of the programme, but the 2026 population is still below the 2016 value. In addition, the observations do not isolate the programme from other environmental changes, natural variation or sampling error, so they support effectiveness without proving causation.",
+    "modelAnswerJa": "個体数は2016年の1200から2020年の900へ25%減少しました。その後、保全プログラム開始後には2026年までに1080へ増え、2020年から20%回復しています。この傾向の反転は保全策が有効だった可能性を支持しますが、2026年でも2016年の水準には戻っていません。また、他の環境変化や自然変動、標本誤差を除外できないため、このデータは保全策の有効性を支持しますが、因果関係を証明するものではありません。"
   }
 ]
