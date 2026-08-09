@@ -270,5 +270,85 @@
     ],
     "modelAnswer": "Photosynthesis takes carbon dioxide from the atmosphere or water and fixes the carbon into organic molecules. Feeding transfers this organic carbon through food chains. Respiration by producers, consumers and decomposers returns carbon dioxide to the environment. Decomposition also transfers carbon from dead material into soils and sediments. Combustion of biomass and fossil fuels releases stored carbon rapidly as carbon dioxide, adding another major flux to the cycle.",
     "modelAnswerJa": "光合成では、大気や水中の二酸化炭素が取り込まれ、炭素が有機物に組み込まれます。その有機物が食べられることで、炭素は食物連鎖を通して生物から生物へ移動します。生産者、消費者、分解者が細胞呼吸を行うと、炭素は二酸化炭素として環境へ戻ります。分解では死骸などの炭素の一部が土壌や堆積物にも移ります。さらに、バイオマスや化石燃料を燃やすと、長く蓄えられていた炭素が二酸化炭素として短時間で大気へ放出されます。"
+  },
+  {
+    "id": "BIO-P2-C1-004",
+    "subject": "Biology SL",
+    "chapter": "C1 Molecules",
+    "unit": "C1.1 Enzymes and metabolism",
+    "primaryChapter": "C1 Molecules",
+    "primaryUnit": "C1.1 Enzymes and metabolism",
+    "requiredUnits": ["C1.1 Enzymes and metabolism"],
+    "level": "SL",
+    "assessmentObjectives": ["AO3"],
+    "archetype": "enzyme-substrate-data-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Effect of substrate concentration on reaction rate",
+      "columns": ["Substrate concentration (mmol dm⁻³)", "Initial rate (arbitrary units)"],
+      "rows": [[0.5, 1.2], [1.0, 2.2], [2.0, 3.6], [4.0, 4.8], [8.0, 5.1]]
+    },
+    "question": "Analyse the relationship between substrate concentration and reaction rate, and explain why the rate approaches a plateau at high substrate concentration.",
+    "markscheme": [
+      "Reaction rate increases as substrate concentration increases across the data set.",
+      "The increase in rate becomes progressively smaller at higher substrate concentrations; for example, doubling substrate from 4.0 to 8.0 mmol dm⁻³ raises the rate only from 4.8 to 5.1 units.",
+      "At lower substrate concentration, increasing substrate increases the frequency of successful enzyme-substrate interactions.",
+      "At high substrate concentration, most enzyme active sites are occupied for much of the time.",
+      "Enzyme concentration then limits the maximum rate, so adding more substrate has little further effect."
+    ],
+    "markschemeJa": [
+      "データ全体では、基質濃度が高くなるほど反応速度は上昇している。",
+      "ただし高濃度では速度の増加幅が小さくなり、例えば4.0から8.0 mmol dm⁻³へ2倍にしても反応速度は4.8から5.1にしか増えていない。",
+      "低い基質濃度では、基質を増やすことで酵素と基質が適切に出会う頻度が高くなる。",
+      "高い基質濃度では、多くの酵素の活性部位がほぼ常に基質で占有される。",
+      "その段階では酵素量が最大反応速度を制限するため、さらに基質を増やしても速度はほとんど上がらない。"
+    ],
+    "modelAnswer": "The reaction rate rises as substrate concentration increases, but the size of the increase becomes smaller at high substrate concentrations. For example, increasing substrate from 4.0 to 8.0 mmol dm⁻³ changes the rate only from 4.8 to 5.1 units. At low substrate concentration, more substrate increases the chance of enzyme-substrate collisions. At high substrate concentration, most active sites are occupied most of the time, so enzyme concentration becomes limiting and the rate approaches a maximum.",
+    "modelAnswerJa": "基質濃度が上がると反応速度も上がりますが、高濃度になるほど増加幅は小さくなります。例えば基質を4.0から8.0 mmol dm⁻³へ2倍にしても、速度は4.8から5.1にしか上がりません。低濃度では基質を増やすと酵素と基質が出会う頻度が増えますが、高濃度ではほとんどの活性部位が基質で占有されます。そのため酵素量が制限要因となり、反応速度は最大値に近づきます。"
+  },
+  {
+    "id": "BIO-P2-C3-004",
+    "subject": "Biology SL",
+    "chapter": "C3 Organisms",
+    "unit": "C3.1 Integration of body systems",
+    "primaryChapter": "C3 Organisms",
+    "primaryUnit": "C3.1 Integration of body systems",
+    "requiredUnits": ["B3.1 Gas exchange", "B3.2 Transport", "C1.2 Cell respiration", "C3.1 Integration of body systems"],
+    "level": "SL",
+    "assessmentObjectives": ["AO3"],
+    "archetype": "exercise-systems-data-analysis",
+    "scopeType": "cross-chapter",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Physiological responses to exercise",
+      "columns": ["Condition", "Ventilation (L min⁻¹)", "Cardiac output (L min⁻¹)", "O₂ uptake (L min⁻¹)"],
+      "rows": [["Rest", 6, 5, 0.25], ["Moderate exercise", 30, 12, 1.20], ["Vigorous exercise", 65, 20, 3.10]]
+    },
+    "question": "Analyse the data to explain how the respiratory and circulatory systems respond together as exercise intensity increases.",
+    "markscheme": [
+      "Ventilation increases strongly with exercise intensity, from 6 L min⁻¹ at rest to 65 L min⁻¹ during vigorous exercise.",
+      "Cardiac output also increases, from 5 to 20 L min⁻¹.",
+      "Oxygen uptake rises from 0.25 to 3.10 L min⁻¹, indicating a much greater demand for oxygen by respiring tissues.",
+      "Greater ventilation helps maintain oxygen delivery to the gas-exchange surface and supports diffusion into the blood.",
+      "Greater cardiac output transports oxygenated blood more rapidly to active tissues, showing coordinated respiratory and circulatory responses to increased metabolic demand."
+    ],
+    "markschemeJa": [
+      "運動強度が上がると換気量は大きく増え、安静時6 L min⁻¹から激しい運動時65 L min⁻¹になる。",
+      "心拍出量も5から20 L min⁻¹へ増加している。",
+      "酸素消費量は0.25から3.10 L min⁻¹へ増え、呼吸を行う組織の酸素需要が大幅に高まったことを示す。",
+      "換気量の増加によってガス交換面へ酸素を多く供給し、血液への酸素拡散を維持しやすくなる。",
+      "心拍出量の増加によって酸素を含む血液を活動組織へより速く運べるため、代謝需要の増加に対して呼吸系と循環系が協調している。"
+    ],
+    "modelAnswer": "As exercise intensity increases, ventilation, cardiac output and oxygen uptake all rise. Ventilation increases from 6 to 65 L min⁻¹ and cardiac output from 5 to 20 L min⁻¹, while oxygen uptake rises more than twelve-fold from 0.25 to 3.10 L min⁻¹. Increased ventilation supports oxygen transfer into the blood, and increased cardiac output transports that oxygen more rapidly to active tissues. The parallel changes therefore show coordinated respiratory and circulatory responses to increased demand for aerobic respiration.",
+    "modelAnswerJa": "運動強度が上がるにつれて、換気量、心拍出量、酸素消費量がすべて増加しています。換気量は6から65 L min⁻¹、心拍出量は5から20 L min⁻¹へ増え、酸素消費量も0.25から3.10 L min⁻¹へ12倍以上に増えています。換気量を増やすことで血液へ酸素を取り込みやすくし、心拍出量を増やすことでその酸素を活動中の組織へより速く運びます。したがって、呼吸系と循環系が協調して好気呼吸の需要増加に対応していることが分かります。"
   }
 ]
