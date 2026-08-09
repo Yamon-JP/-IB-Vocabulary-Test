@@ -8,190 +8,51 @@
     "chapters": ["Topic 1", "Topic 4"],
     "requiredUnits": ["1.1 Perspectives", "1.2 Systems", "1.3 Sustainability", "4.1 Water systems", "4.2 Water access, use and security", "4.4 Water pollution"],
     "resources": [
-      {
-        "type": "text",
-        "title": "Resource 1: Basin background",
-        "text": "The Aster River rises in a forested upland, flows through an irrigated farming district and the city of Meridia, and then enters the internationally protected Luma Wetland. A reservoir upstream of Meridia supplies drinking water, irrigation water and hydropower. During the dry season, low river flow increases competition among users. The regional government is considering a new water-allocation plan that would cap irrigation withdrawals, expand wastewater treatment, introduce seasonal water pricing and guarantee a minimum environmental flow to the wetland."
-      },
-      {
-        "type": "table",
-        "title": "Resource 2: Annual freshwater withdrawals",
-        "description": "Hypothetical annual freshwater withdrawals in the Aster River Basin.",
-        "columns": ["Sector", "2022 withdrawal (million m³)", "2032 projected withdrawal without new policy (million m³)"],
-        "rows": [["Agriculture", "420", "500"], ["Households", "150", "190"], ["Industry", "90", "120"], ["Total", "660", "810"]],
-        "note": "Current long-term renewable freshwater availability is estimated at 760 million m³ per year."
-      },
-      {
-        "type": "lineGraph",
-        "title": "Resource 3: Mean monthly river discharge",
-        "description": "Mean monthly discharge measured downstream of Meridia in a representative year.",
-        "xLabel": "Month",
-        "yLabel": "Discharge (m³ s⁻¹)",
-        "xMin": 1,
-        "xMax": 12,
-        "yMin": 0,
-        "yMax": 120,
-        "points": [{"x":1,"y":92},{"x":2,"y":88},{"x":3,"y":80},{"x":4,"y":68},{"x":5,"y":52},{"x":6,"y":36},{"x":7,"y":24},{"x":8,"y":20},{"x":9,"y":28},{"x":10,"y":46},{"x":11,"y":70},{"x":12,"y":86}],
-        "note": "Ecologists recommend that discharge should not fall below 30 m³ s⁻¹ for prolonged periods if wetland habitat quality is to be maintained."
-      },
-      {
-        "type": "table",
-        "title": "Resource 4: Water-quality survey",
-        "description": "Hypothetical mean water-quality measurements at three sampling sites.",
-        "columns": ["Site", "Nitrate (mg L⁻¹)", "BOD (mg L⁻¹)", "Dissolved oxygen (mg L⁻¹)"],
-        "rows": [["Upland forest", "0.8", "1.2", "9.4"], ["Downstream of farms", "4.9", "2.4", "8.1"], ["Downstream of Meridia", "6.2", "5.8", "5.9"]],
-        "note": "Higher BOD indicates greater oxygen demand by microorganisms decomposing biodegradable organic matter."
-      },
-      {
-        "type": "text",
-        "title": "Resource 5: Stakeholder positions",
-        "text": "Farmers argue that restricting irrigation could reduce crop yields and rural employment. Meridia's water utility supports higher dry-season prices because it expects demand management to postpone costly supply expansion. Wetland conservation groups support a legally guaranteed environmental flow and stronger nutrient controls. Some low-income urban residents oppose higher household water prices unless a basic water allowance is protected. The national government must also comply with a regional agreement requiring participating jurisdictions to avoid causing significant downstream environmental harm."
-      }
+      {"type":"text","title":"Resource 1: Basin background","text":"The Aster River rises in a forested upland, flows through an irrigated farming district and the city of Meridia, and then enters the internationally protected Luma Wetland. A reservoir upstream of Meridia supplies drinking water, irrigation water and hydropower. During the dry season, low river flow increases competition among users. The regional government is considering a new water-allocation plan that would cap irrigation withdrawals, expand wastewater treatment, introduce seasonal water pricing and guarantee a minimum environmental flow to the wetland."},
+      {"type":"table","title":"Resource 2: Annual freshwater withdrawals","description":"Hypothetical annual freshwater withdrawals in the Aster River Basin.","columns":["Sector","2022 withdrawal (million m³)","2032 projected withdrawal without new policy (million m³)"],"rows":[["Agriculture","420","500"],["Households","150","190"],["Industry","90","120"],["Total","660","810"]],"note":"Current long-term renewable freshwater availability is estimated at 760 million m³ per year."},
+      {"type":"lineGraph","title":"Resource 3: Mean monthly river discharge","description":"Mean monthly discharge measured downstream of Meridia in a representative year.","xLabel":"Month","yLabel":"Discharge (m³ s⁻¹)","xMin":1,"xMax":12,"yMin":0,"yMax":120,"points":[{"x":1,"y":92},{"x":2,"y":88},{"x":3,"y":80},{"x":4,"y":68},{"x":5,"y":52},{"x":6,"y":36},{"x":7,"y":24},{"x":8,"y":20},{"x":9,"y":28},{"x":10,"y":46},{"x":11,"y":70},{"x":12,"y":86}],"note":"Ecologists recommend that discharge should not fall below 30 m³ s⁻¹ for prolonged periods if wetland habitat quality is to be maintained."},
+      {"type":"table","title":"Resource 4: Water-quality survey","description":"Hypothetical mean water-quality measurements at three sampling sites.","columns":["Site","Nitrate (mg L⁻¹)","BOD (mg L⁻¹)","Dissolved oxygen (mg L⁻¹)"],"rows":[["Upland forest","0.8","1.2","9.4"],["Downstream of farms","4.9","2.4","8.1"],["Downstream of Meridia","6.2","5.8","5.9"]],"note":"Higher BOD indicates greater oxygen demand by microorganisms decomposing biodegradable organic matter."},
+      {"type":"text","title":"Resource 5: Stakeholder positions","text":"Farmers argue that restricting irrigation could reduce crop yields and rural employment. Meridia's water utility supports higher dry-season prices because it expects demand management to postpone costly supply expansion. Wetland conservation groups support a legally guaranteed environmental flow and stronger nutrient controls. Some low-income urban residents oppose higher household water prices unless a basic water allowance is protected. The national government must also comply with a regional agreement requiring participating jurisdictions to avoid causing significant downstream environmental harm."}
     ]
   },
   {
-    "id": "ESS-CS2-LAND-001",
-    "subject": "ESS HL",
-    "title": "Verdantia Forest Frontier: Biodiversity, Land Use and Food Production",
-    "summary": "A fictional tropical forest frontier used to investigate habitat loss, biodiversity decline, agricultural expansion, soil degradation, conservation and sustainable food production. All names and numerical data are hypothetical and created for examination practice.",
-    "hypothetical": true,
-    "chapters": ["Topic 1", "Topic 2", "Topic 3", "Topic 5"],
-    "requiredUnits": ["1.1 Perspectives", "1.3 Sustainability", "2.1 Individuals, populations, communities and ecosystems", "2.3 Biogeochemical cycles", "3.1 Biodiversity and evolution", "3.2 Human impact on biodiversity", "3.3 Conservation and regeneration", "5.1 Soil", "5.2 Agriculture and food"],
-    "resources": [
-      {
-        "type": "text",
-        "title": "Resource 1: Landscape background",
-        "text": "The fictional Verdantia Forest Frontier covers 100,000 hectares of lowland tropical landscape. During the last two decades, road construction and export-oriented soybean production have expanded into native forest. The remaining forest contains several endemic bird and amphibian species and provides water regulation, soil protection, carbon storage and pollination services. The government is considering a land-use strategy that would prohibit further clearance in high-biodiversity forest, establish an 8,000-hectare wildlife corridor between two protected areas, charge a levy on high fertilizer use and pay farmers who convert part of their land to agroforestry."
-      },
-      {
-        "type": "table",
-        "title": "Resource 2: Land-use change in Verdantia",
-        "description": "Hypothetical land-use areas in 2005 and 2025. The total landscape area is 100,000 ha in both years.",
-        "columns": ["Land use", "2005 area (ha)", "2025 area (ha)"],
-        "rows": [["Native forest", "72000", "46000"], ["Smallholder mixed farms", "18000", "22000"], ["Soy monoculture", "5000", "23000"], ["Settlements and roads", "5000", "9000"]],
-        "note": "Most new soybean fields and roads were established in areas that were native forest in 2005."
-      },
-      {
-        "type": "lineGraph",
-        "title": "Resource 3: Forest-specialist bird population index",
-        "description": "A hypothetical index based on repeated surveys of forest-specialist birds. The index is set to 100 in 2005.",
-        "xLabel": "Year",
-        "yLabel": "Population index",
-        "xMin": 2005,
-        "xMax": 2025,
-        "yMin": 0,
-        "yMax": 110,
-        "points": [{"x":2005,"y":100},{"x":2010,"y":92},{"x":2015,"y":78},{"x":2020,"y":63},{"x":2025,"y":51}],
-        "note": "Survey methods were kept consistent between years. The index represents relative abundance rather than the number of species."
-      },
-      {
-        "type": "table",
-        "title": "Resource 4: Comparison of farming systems",
-        "description": "Hypothetical mean values from farms with similar rainfall and soil parent material.",
-        "columns": ["Farming system", "Food/export yield (t ha⁻¹ yr⁻¹)", "Nitrogen fertilizer (kg ha⁻¹ yr⁻¹)", "Soil organic matter (%)", "Soil loss (t ha⁻¹ yr⁻¹)", "Bird species recorded"],
-        "rows": [["Soy monoculture", "3.6", "160", "2.1", "12.5", "18"], ["Agroforestry", "2.9", "70", "4.3", "3.2", "36"], ["Smallholder mixed farming", "2.4", "55", "3.8", "4.6", "31"]],
-        "note": "Yield values are not directly equivalent in market value because the systems produce different combinations of products."
-      },
-      {
-        "type": "text",
-        "title": "Resource 5: Stakeholder positions",
-        "text": "An agribusiness association argues that soybean expansion provides export earnings, tax revenue and employment and warns that strict land limits could reduce investment. Conservation organizations support the corridor and a permanent ban on clearing high-biodiversity forest because fragmented populations may become isolated. A smallholder cooperative supports payments for agroforestry but opposes rules that could remove productive land without compensation. Indigenous communities downstream emphasize the cultural value of intact forest and clean water. The government states that its goal is to maintain food production while preventing further biodiversity loss and soil degradation."
-      }
+    "id":"ESS-CS2-LAND-001","subject":"ESS HL","title":"Verdantia Forest Frontier: Biodiversity, Land Use and Food Production","summary":"A fictional tropical forest frontier used to investigate habitat loss, biodiversity decline, agricultural expansion, soil degradation, conservation and sustainable food production. All names and numerical data are hypothetical and created for examination practice.","hypothetical":true,"chapters":["Topic 1","Topic 2","Topic 3","Topic 5"],"requiredUnits":["1.1 Perspectives","1.3 Sustainability","2.1 Individuals, populations, communities and ecosystems","2.3 Biogeochemical cycles","3.1 Biodiversity and evolution","3.2 Human impact on biodiversity","3.3 Conservation and regeneration","5.1 Soil","5.2 Agriculture and food"],
+    "resources":[
+      {"type":"text","title":"Resource 1: Landscape background","text":"The fictional Verdantia Forest Frontier covers 100,000 hectares of lowland tropical landscape. During the last two decades, road construction and export-oriented soybean production have expanded into native forest. The remaining forest contains several endemic bird and amphibian species and provides water regulation, soil protection, carbon storage and pollination services. The government is considering a land-use strategy that would prohibit further clearance in high-biodiversity forest, establish an 8,000-hectare wildlife corridor between two protected areas, charge a levy on high fertilizer use and pay farmers who convert part of their land to agroforestry."},
+      {"type":"table","title":"Resource 2: Land-use change in Verdantia","description":"Hypothetical land-use areas in 2005 and 2025. The total landscape area is 100,000 ha in both years.","columns":["Land use","2005 area (ha)","2025 area (ha)"],"rows":[["Native forest","72000","46000"],["Smallholder mixed farms","18000","22000"],["Soy monoculture","5000","23000"],["Settlements and roads","5000","9000"]],"note":"Most new soybean fields and roads were established in areas that were native forest in 2005."},
+      {"type":"lineGraph","title":"Resource 3: Forest-specialist bird population index","description":"A hypothetical index based on repeated surveys of forest-specialist birds. The index is set to 100 in 2005.","xLabel":"Year","yLabel":"Population index","xMin":2005,"xMax":2025,"yMin":0,"yMax":110,"points":[{"x":2005,"y":100},{"x":2010,"y":92},{"x":2015,"y":78},{"x":2020,"y":63},{"x":2025,"y":51}],"note":"Survey methods were kept consistent between years. The index represents relative abundance rather than the number of species."},
+      {"type":"table","title":"Resource 4: Comparison of farming systems","description":"Hypothetical mean values from farms with similar rainfall and soil parent material.","columns":["Farming system","Food/export yield (t ha⁻¹ yr⁻¹)","Nitrogen fertilizer (kg ha⁻¹ yr⁻¹)","Soil organic matter (%)","Soil loss (t ha⁻¹ yr⁻¹)","Bird species recorded"],"rows":[["Soy monoculture","3.6","160","2.1","12.5","18"],["Agroforestry","2.9","70","4.3","3.2","36"],["Smallholder mixed farming","2.4","55","3.8","4.6","31"]],"note":"Yield values are not directly equivalent in market value because the systems produce different combinations of products."},
+      {"type":"text","title":"Resource 5: Stakeholder positions","text":"An agribusiness association argues that soybean expansion provides export earnings, tax revenue and employment and warns that strict land limits could reduce investment. Conservation organizations support the corridor and a permanent ban on clearing high-biodiversity forest because fragmented populations may become isolated. A smallholder cooperative supports payments for agroforestry but opposes rules that could remove productive land without compensation. Indigenous communities downstream emphasize the cultural value of intact forest and clean water. The government states that its goal is to maintain food production while preventing further biodiversity loss and soil degradation."}
     ]
   },
   {
-    "id": "ESS-CS3-ENERGY-001",
-    "subject": "ESS HL",
-    "title": "Kestrel Republic: Energy Transition, Climate Policy and Urban Air Quality",
-    "summary": "A fictional national energy transition used to investigate fossil-fuel dependence, renewable energy, greenhouse-gas mitigation, urban air pollution, energy security and social equity. All names and numerical data are hypothetical and created for examination practice.",
-    "hypothetical": true,
-    "chapters": ["Topic 1", "Topic 6", "Topic 7", "Topic 8"],
-    "requiredUnits": ["1.1 Perspectives", "1.3 Sustainability", "6.2 Climate change—causes and impacts", "6.3 Climate change—mitigation and adaptation", "7.2 Energy sources—uses and management", "8.3 Urban air pollution"],
-    "resources": [
-      {
-        "type": "text",
-        "title": "Resource 1: National energy background",
-        "text": "The fictional Kestrel Republic has historically generated most of its electricity from domestic coal and imported natural gas. Coal mining provides employment in two inland provinces, while the capital, Aurum City, experiences frequent winter air-pollution episodes. The government has proposed a 2035 energy-transition plan that would retire the oldest coal plants, expand solar and wind generation, add grid-scale storage, introduce a carbon price, strengthen power-station air-pollution controls and provide retraining and income support for workers in coal-dependent communities. A protected basic electricity tariff would remain available for low-income households."
-      },
-      {
-        "type": "table",
-        "title": "Resource 2: Electricity generation mix",
-        "description": "Hypothetical annual electricity generation in 2025 and under the government's 2035 plan.",
-        "columns": ["Energy source", "2025 generation (TWh)", "2035 planned generation (TWh)"],
-        "rows": [["Coal", "55", "20"], ["Natural gas", "25", "20"], ["Solar", "10", "35"], ["Wind", "5", "25"], ["Hydroelectricity", "5", "10"], ["Total", "100", "110"]],
-        "note": "The plan assumes total electricity demand rises because of economic growth and electrification of transport and heating."
-      },
-      {
-        "type": "table",
-        "title": "Resource 3: Operational emissions from electricity sources",
-        "description": "Hypothetical average operational emissions. Values exclude construction, fuel extraction and other life-cycle emissions.",
-        "columns": ["Energy source", "CO₂ (g kWh⁻¹)", "SO₂ (g kWh⁻¹)", "NOx (g kWh⁻¹)", "PM2.5 (g kWh⁻¹)"],
-        "rows": [["Coal", "900", "1.60", "1.20", "0.18"], ["Natural gas", "400", "0.02", "0.50", "0.02"], ["Solar", "0", "0", "0", "0"], ["Wind", "0", "0", "0", "0"], ["Hydroelectricity", "0", "0", "0", "0"]],
-        "note": "Zero values indicate no direct operational combustion emissions; they do not imply zero life-cycle environmental impact."
-      },
-      {
-        "type": "lineGraph",
-        "title": "Resource 4: Annual mean PM2.5 concentration in Aurum City",
-        "description": "Hypothetical citywide annual mean PM2.5 concentration under the government's transition scenario.",
-        "xLabel": "Year",
-        "yLabel": "PM2.5 (µg m⁻³)",
-        "xMin": 2025,
-        "xMax": 2035,
-        "yMin": 0,
-        "yMax": 40,
-        "points": [{"x":2025,"y":36},{"x":2027,"y":34},{"x":2029,"y":31},{"x":2031,"y":27},{"x":2033,"y":23},{"x":2035,"y":20}],
-        "note": "The national policy target is to reduce the annual mean below 25 µg m⁻³ by 2035. Transport, industry and household fuels also contribute to Aurum City's PM2.5, so changes cannot be attributed to the electricity sector alone."
-      },
-      {
-        "type": "text",
-        "title": "Resource 5: Stakeholder positions",
-        "text": "Coal-worker unions support cleaner air but argue that plant closures should occur only after credible replacement jobs and income protection are available. Renewable-energy companies support faster auctions for solar, wind and storage. Energy-intensive manufacturers worry that carbon pricing could raise electricity costs and reduce international competitiveness. Public-health organizations support rapid coal retirement because lower particulate and sulfur emissions could reduce respiratory and cardiovascular disease. Climate groups argue that the transition should be faster because electricity-sector decarbonization can also support low-carbon transport and heating. The government argues that domestic renewable generation will reduce dependence on imported gas and improve long-term energy security."
-      }
+    "id":"ESS-CS3-ENERGY-001","subject":"ESS HL","title":"Kestrel Republic: Energy Transition, Climate Policy and Urban Air Quality","summary":"A fictional national energy transition used to investigate fossil-fuel dependence, renewable energy, greenhouse-gas mitigation, urban air pollution, energy security and social equity. All names and numerical data are hypothetical and created for examination practice.","hypothetical":true,"chapters":["Topic 1","Topic 6","Topic 7","Topic 8"],"requiredUnits":["1.1 Perspectives","1.3 Sustainability","6.2 Climate change—causes and impacts","6.3 Climate change—mitigation and adaptation","7.2 Energy sources—uses and management","8.3 Urban air pollution"],
+    "resources":[
+      {"type":"text","title":"Resource 1: National energy background","text":"The fictional Kestrel Republic has historically generated most of its electricity from domestic coal and imported natural gas. Coal mining provides employment in two inland provinces, while the capital, Aurum City, experiences frequent winter air-pollution episodes. The government has proposed a 2035 energy-transition plan that would retire the oldest coal plants, expand solar and wind generation, add grid-scale storage, introduce a carbon price, strengthen power-station air-pollution controls and provide retraining and income support for workers in coal-dependent communities. A protected basic electricity tariff would remain available for low-income households."},
+      {"type":"table","title":"Resource 2: Electricity generation mix","description":"Hypothetical annual electricity generation in 2025 and under the government's 2035 plan.","columns":["Energy source","2025 generation (TWh)","2035 planned generation (TWh)"],"rows":[["Coal","55","20"],["Natural gas","25","20"],["Solar","10","35"],["Wind","5","25"],["Hydroelectricity","5","10"],["Total","100","110"]],"note":"The plan assumes total electricity demand rises because of economic growth and electrification of transport and heating."},
+      {"type":"table","title":"Resource 3: Operational emissions from electricity sources","description":"Hypothetical average operational emissions. Values exclude construction, fuel extraction and other life-cycle emissions.","columns":["Energy source","CO₂ (g kWh⁻¹)","SO₂ (g kWh⁻¹)","NOx (g kWh⁻¹)","PM2.5 (g kWh⁻¹)"],"rows":[["Coal","900","1.60","1.20","0.18"],["Natural gas","400","0.02","0.50","0.02"],["Solar","0","0","0","0"],["Wind","0","0","0","0"],["Hydroelectricity","0","0","0","0"]],"note":"Zero values indicate no direct operational combustion emissions; they do not imply zero life-cycle environmental impact."},
+      {"type":"lineGraph","title":"Resource 4: Annual mean PM2.5 concentration in Aurum City","description":"Hypothetical citywide annual mean PM2.5 concentration under the government's transition scenario.","xLabel":"Year","yLabel":"PM2.5 (µg m⁻³)","xMin":2025,"xMax":2035,"yMin":0,"yMax":40,"points":[{"x":2025,"y":36},{"x":2027,"y":34},{"x":2029,"y":31},{"x":2031,"y":27},{"x":2033,"y":23},{"x":2035,"y":20}],"note":"The national policy target is to reduce the annual mean below 25 µg m⁻³ by 2035. Transport, industry and household fuels also contribute to Aurum City's PM2.5, so changes cannot be attributed to the electricity sector alone."},
+      {"type":"text","title":"Resource 5: Stakeholder positions","text":"Coal-worker unions support cleaner air but argue that plant closures should occur only after credible replacement jobs and income protection are available. Renewable-energy companies support faster auctions for solar, wind and storage. Energy-intensive manufacturers worry that carbon pricing could raise electricity costs and reduce international competitiveness. Public-health organizations support rapid coal retirement because lower particulate and sulfur emissions could reduce respiratory and cardiovascular disease. Climate groups argue that the transition should be faster because electricity-sector decarbonization can also support low-carbon transport and heating. The government argues that domestic renewable generation will reduce dependence on imported gas and improve long-term energy security."}
     ]
   },
   {
-    "id": "ESS-CS4-URBAN-001",
-    "subject": "ESS HL",
-    "title": "Nova Metro Region: Urban Growth, Waste Management and Air Quality",
-    "summary": "A fictional metropolitan region used to investigate urbanization, municipal solid waste, transport, air pollution, circularity, urban planning and social equity. All names and numerical data are hypothetical and created for examination practice.",
-    "hypothetical": true,
-    "chapters": ["Topic 1", "Topic 7", "Topic 8"],
-    "requiredUnits": ["1.1 Perspectives", "1.2 Systems", "1.3 Sustainability", "7.3 Solid waste", "8.1 Human populations", "8.2 Urban systems and urban planning", "8.3 Urban air pollution"],
-    "resources": [
-      {
-        "type": "text",
-        "title": "Resource 1: Metropolitan background",
-        "text": "The fictional Nova Metro Region has grown rapidly as people move from surrounding rural districts and smaller towns. Housing expansion has spread beyond the original urban boundary, traffic congestion has increased and the main landfill is approaching capacity. The metropolitan authority proposes a 2035 strategy that combines higher-density transit-oriented development, expanded bus and rail services, a low-emission zone, separate collection of organic waste, more recycling, anaerobic digestion and composting, landfill methane capture, urban green infrastructure and upgraded waste collection in informal settlements. The authority states that the strategy should reduce pollution without making housing, transport or waste services less affordable for low-income residents."
-      },
-      {
-        "type": "table",
-        "title": "Resource 2: Population and municipal solid waste",
-        "description": "Hypothetical population and municipal solid-waste generation in Nova Metro Region.",
-        "columns": ["Year", "Population (million)", "Municipal solid waste (million tonnes yr⁻¹)"],
-        "rows": [["2015", "2.4", "1.05"], ["2025", "3.2", "1.55"], ["2035 projection", "4.0", "2.05"]],
-        "note": "The 2035 waste value is a projection without additional waste-prevention measures."
-      },
-      {
-        "type": "table",
-        "title": "Resource 3: Waste-management mix",
-        "description": "Hypothetical shares of municipal solid waste by treatment route.",
-        "columns": ["Treatment route", "2025 share (%)", "2035 strategy share (%)"],
-        "rows": [["Landfill", "70", "35"], ["Recycling", "15", "30"], ["Composting / anaerobic digestion", "8", "20"], ["Incineration with energy recovery", "7", "15"]],
-        "note": "The strategy also includes landfill-methane capture. Percentages sum to 100 in each year."
-      },
-      {
-        "type": "table",
-        "title": "Resource 4: Urban transport and air quality",
-        "description": "Hypothetical transport-mode shares and annual mean roadside PM2.5 concentration.",
-        "columns": ["Indicator", "2025", "2035 strategy"],
-        "rows": [["Private car share of trips (%)", "58", "42"], ["Public transport share (%)", "25", "35"], ["Walking and cycling share (%)", "17", "23"], ["Annual mean roadside PM2.5 (µg m⁻³)", "31", "22"]],
-        "note": "Road traffic is not the only source of PM2.5; industry, construction and household fuels also contribute."
-      },
-      {
-        "type": "text",
-        "title": "Resource 5: Stakeholder positions",
-        "text": "Public-transport users support more frequent and reliable services but oppose fare increases. Residents near the landfill support reduced disposal and methane capture because of odour and air-quality concerns. Informal waste pickers fear losing livelihoods if recycling becomes centralized, while environmental groups argue that waste prevention, reuse and recycling should remain above incineration in the waste hierarchy. Developers support transit-oriented construction but warn that stricter land-use rules may increase housing costs. Public-health organizations support the low-emission zone. Community groups in informal settlements argue that universal waste collection and affordable transport should be implemented before penalties or service charges are increased."
-      }
+    "id":"ESS-CS4-URBAN-001","subject":"ESS HL","title":"Nova Metro Region: Urban Growth, Waste Management and Air Quality","summary":"A fictional metropolitan region used to investigate urbanization, municipal solid waste, transport, air pollution, circularity, urban planning and social equity. All names and numerical data are hypothetical and created for examination practice.","hypothetical":true,"chapters":["Topic 1","Topic 7","Topic 8"],"requiredUnits":["1.1 Perspectives","1.2 Systems","1.3 Sustainability","7.3 Solid waste","8.1 Human populations","8.2 Urban systems and urban planning","8.3 Urban air pollution"],
+    "resources":[
+      {"type":"text","title":"Resource 1: Metropolitan background","text":"The fictional Nova Metro Region has grown rapidly as people move from surrounding rural districts and smaller towns. Housing expansion has spread beyond the original urban boundary, traffic congestion has increased and the main landfill is approaching capacity. The metropolitan authority proposes a 2035 strategy that combines higher-density transit-oriented development, expanded bus and rail services, a low-emission zone, separate collection of organic waste, more recycling, anaerobic digestion and composting, landfill methane capture, urban green infrastructure and upgraded waste collection in informal settlements. The authority states that the strategy should reduce pollution without making housing, transport or waste services less affordable for low-income residents."},
+      {"type":"table","title":"Resource 2: Population and municipal solid waste","description":"Hypothetical population and municipal solid-waste generation in Nova Metro Region.","columns":["Year","Population (million)","Municipal solid waste (million tonnes yr⁻¹)"],"rows":[["2015","2.4","1.05"],["2025","3.2","1.55"],["2035 projection","4.0","2.05"]],"note":"The 2035 waste value is a projection without additional waste-prevention measures."},
+      {"type":"table","title":"Resource 3: Waste-management mix","description":"Hypothetical shares of municipal solid waste by treatment route.","columns":["Treatment route","2025 share (%)","2035 strategy share (%)"],"rows":[["Landfill","70","35"],["Recycling","15","30"],["Composting / anaerobic digestion","8","20"],["Incineration with energy recovery","7","15"]],"note":"The strategy also includes landfill-methane capture. Percentages sum to 100 in each year."},
+      {"type":"table","title":"Resource 4: Urban transport and air quality","description":"Hypothetical transport-mode shares and annual mean roadside PM2.5 concentration.","columns":["Indicator","2025","2035 strategy"],"rows":[["Private car share of trips (%)","58","42"],["Public transport share (%)","25","35"],["Walking and cycling share (%)","17","23"],["Annual mean roadside PM2.5 (µg m⁻³)","31","22"]],"note":"Road traffic is not the only source of PM2.5; industry, construction and household fuels also contribute."},
+      {"type":"text","title":"Resource 5: Stakeholder positions","text":"Public-transport users support more frequent and reliable services but oppose fare increases. Residents near the landfill support reduced disposal and methane capture because of odour and air-quality concerns. Informal waste pickers fear losing livelihoods if recycling becomes centralized, while environmental groups argue that waste prevention, reuse and recycling should remain above incineration in the waste hierarchy. Developers support transit-oriented construction but warn that stricter land-use rules may increase housing costs. Public-health organizations support the low-emission zone. Community groups in informal settlements argue that universal waste collection and affordable transport should be implemented before penalties or service charges are increased."}
+    ]
+  },
+  {
+    "id":"ESS-CS5-AQUATIC-001","subject":"ESS HL","title":"Bluehaven Lake and Delta: Fisheries, Aquaculture and Water Quality","summary":"A fictional freshwater lake and delta system used to investigate capture fisheries, aquaculture, eutrophication, water pollution, resource management and stakeholder trade-offs. All names and numerical data are hypothetical and created for examination practice.","hypothetical":true,"chapters":["Topic 1","Topic 2","Topic 3","Topic 4"],"requiredUnits":["1.1 Perspectives","1.2 Systems","1.3 Sustainability","2.2 Energy and biomass in ecosystems","2.3 Biogeochemical cycles","3.3 Conservation and regeneration","4.3 Aquatic food production systems","4.4 Water pollution"],
+    "resources":[
+      {"type":"text","title":"Resource 1: Lake and delta background","text":"Bluehaven is a fictional freshwater lake connected to a shallow delta lagoon. The lake supports a commercial wild fishery, small-scale fishing communities and a rapidly expanding cage-aquaculture industry. Crop farms and settlements in the catchment add nutrients to inflowing rivers. The government is considering a management package that would reduce fishing effort, introduce catch quotas, create a seasonal no-take spawning zone, tighten aquaculture nutrient-discharge permits, restore riparian buffer vegetation and upgrade wastewater treatment. Fish farmers argue that aquaculture is needed to maintain food supply as wild catches decline, while fishing communities are concerned about both stock decline and restrictions on access."},
+      {"type":"table","title":"Resource 2: Fisheries and aquaculture indicators","description":"Hypothetical indicators for Bluehaven Lake.","columns":["Indicator","2016","2021","2026"],"rows":[["Wild capture catch (thousand tonnes yr⁻¹)","48","44","36"],["Fishing effort index (2016 = 100)","100","118","135"],["Spawning-stock biomass index (2016 = 100)","100","82","61"],["Aquaculture production (thousand tonnes yr⁻¹)","12","24","38"]],"note":"Fishing effort combines vessel number, fishing days and gear capacity into one relative index."},
+      {"type":"table","title":"Resource 3: Water-quality survey","description":"Hypothetical annual mean values at three monitoring sites.","columns":["Site","Nitrate (mg L⁻¹)","Phosphate (mg L⁻¹)","Dissolved oxygen (mg L⁻¹)","Chlorophyll-a (µg L⁻¹)"],"rows":[["Upper inflow","1.2","0.05","9.0","4"],["Aquaculture zone","3.8","0.18","6.4","22"],["Delta lagoon","5.1","0.24","4.8","35"]],"note":"Higher chlorophyll-a is used here as an indicator of greater phytoplankton biomass. Measurements show association, not proof of a single pollution source."},
+      {"type":"table","title":"Resource 4: Aquaculture nutrient-loss scenarios","description":"Hypothetical nutrient losses per tonne of fish produced.","columns":["Production system","Nitrogen loss (kg t⁻¹ fish)","Phosphorus loss (kg t⁻¹ fish)","Relative production cost"],"rows":[["Current open cages","40","7","1.00"],["Improved feed and stocking","28","5","1.08"],["Closed recirculating system","8","2","1.45"]],"note":"The 2026 aquaculture output is 38,000 tonnes yr⁻¹. Values exclude nutrient inputs from farms, settlements and natural sources."},
+      {"type":"text","title":"Resource 5: Stakeholder positions and proposed management","text":"Commercial fishers support rebuilding wild stocks but oppose abrupt quota cuts that could reduce income. Small-scale fishing communities request priority access near villages and financial support during the spawning closure. Aquaculture companies support improved feed but argue that closed recirculating systems are too costly for rapid adoption. Delta conservation groups want stricter nutrient limits because low dissolved oxygen threatens fish, invertebrates and wetland biodiversity. Farmers upstream oppose a nutrient levy unless grants are available for riparian buffers and more efficient fertilizer use. The government proposes a five-year package combining a 20% reduction in fishing effort, science-based catch quotas, a seasonal no-take spawning zone, improved-feed standards for cages, nutrient-discharge permits, riparian buffers and upgraded wastewater treatment."}
     ]
   }
 ]
