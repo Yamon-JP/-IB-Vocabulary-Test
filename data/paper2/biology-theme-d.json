@@ -622,5 +622,41 @@
     ],
     "modelAnswer": "The table shows that both atmospheric CO₂ and global temperature anomaly increase over time. CO₂ rises from 339 ppm in 1980 to 423 ppm in 2025, while the temperature anomaly rises from 0.27°C to 1.18°C. This is a positive association, but the table alone cannot prove that one variable caused the other because it does not control other factors or directly test a causal mechanism. A causal interpretation requires additional evidence, including the known greenhouse mechanism and broader evidence that competing explanations do not account for the observed warming.",
     "modelAnswerJa": "表では、大気中CO₂濃度と世界平均気温の偏差がどちらも時間とともに増えています。CO₂は1980年の339 ppmから2025年の423 ppmへ、気温偏差は0.27°Cから1.18°Cへ上昇しています。これは正の関連を示しますが、この表だけでは他の要因を統制しておらず、因果機構を直接検証していないため、CO₂増加が気温上昇を引き起こしたと単独では証明できません。因果関係の判断には、温室効果の物理的機構や他の説明を検討した、より広い証拠が必要です。"
+  },
+  {
+    "id": "BIO-P2-D2-004",
+    "subject": "Biology SL",
+    "chapter": "D2 Cells",
+    "unit": "D2.1 Cell and nuclear division",
+    "primaryChapter": "D2 Cells",
+    "primaryUnit": "D2.1 Cell and nuclear division",
+    "requiredUnits": ["D2.1 Cell and nuclear division"],
+    "level": "SL",
+    "assessmentObjectives": ["AO1", "AO2"],
+    "archetype": "meiosis-genetic-variation-explanation",
+    "scopeType": "single-unit",
+    "commandTerm": "Explain",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
+    "question": "Explain how crossing over and independent assortment during meiosis generate genetic variation in gametes.",
+    "markscheme": [
+      "Homologous chromosomes pair during meiosis I.",
+      "Crossing over can occur between non-sister chromatids of homologous chromosomes, exchanging corresponding DNA segments.",
+      "Crossing over produces chromatids with new combinations of alleles compared with the parental chromosomes.",
+      "Homologous chromosome pairs orient independently of one another at metaphase I.",
+      "The maternal or paternal homologue of each pair can therefore segregate to either pole independently of other chromosome pairs.",
+      "The combination of recombination and independent assortment produces many different allele combinations in the haploid gametes formed by meiosis."
+    ],
+    "markschemeJa": [
+      "減数分裂Iでは相同染色体どうしが対合する。",
+      "相同染色体の非姉妹染色分体間で交差が起こり、対応するDNA領域が交換されることがある。",
+      "交差によって、親の染色体とは異なる対立遺伝子の組み合わせをもつ染色分体が生じる。",
+      "中期Iでは相同染色体対が他の染色体対とは独立して向きを決める。",
+      "そのため各対の母由来または父由来の相同染色体は、他の対とは独立してどちらかの極へ分配される。",
+      "組換えと独立の法則が組み合わさることで、減数分裂でできる半数体配偶子に多様な対立遺伝子の組み合わせが生じる。"
+    ],
+    "modelAnswer": "During meiosis I, homologous chromosomes pair. Crossing over can occur between non-sister chromatids, exchanging corresponding DNA segments and producing recombinant chromatids with new combinations of alleles. In addition, each homologous pair aligns independently at metaphase I, so the maternal or paternal chromosome of each pair can be distributed to either pole independently of other pairs. These two processes generate many different combinations of alleles in the haploid gametes produced by meiosis.",
+    "modelAnswerJa": "減数分裂Iでは相同染色体が対合し、その非姉妹染色分体間で交差が起こることがあります。対応するDNA領域が交換されるため、親の染色体にはなかった対立遺伝子の組み合わせをもつ組換え染色分体ができます。また、中期Iでは各相同染色体対の向きが他の対とは独立して決まり、母由来・父由来の染色体がさまざまな組み合わせで配偶子へ分配されます。これらの過程によって、減数分裂で生じる配偶子の遺伝的多様性が大きくなります。"
   }
 ]
