@@ -510,5 +510,41 @@
     ],
     "modelAnswer": "The estimated population size is (80 × 100) / 20 = 400 animals. This estimate assumes that the marked animals mix randomly with the rest of the population and that marks are retained and do not affect the chance of survival or recapture. It also works best if the population is approximately closed between samples. If marked animals are lost, migrate, behave differently or are less likely to be recaptured, the proportion of marked animals in the second sample will be distorted and the estimate may be unreliable.",
     "modelAnswerJa": "推定個体数は(80×100)÷20=400個体です。この方法では、標識個体が個体群へランダムに混ざること、標識が失われず、生存や再捕獲の確率を変えないことなどを前提とします。また2回の調査間で出生・死亡・移入・移出が少ないことも重要です。これらの条件が崩れると2回目の標本に含まれる標識個体の割合が変化し、推定値に偏りが生じます。"
+  },
+  {
+    "id": "BIO-P2-C1-005",
+    "subject": "Biology SL",
+    "chapter": "C1 Molecules",
+    "unit": "C1.3 Photosynthesis",
+    "primaryChapter": "C1 Molecules",
+    "primaryUnit": "C1.3 Photosynthesis",
+    "requiredUnits": ["C1.1 Enzymes and metabolism", "C1.3 Photosynthesis"],
+    "level": "SL",
+    "assessmentObjectives": ["AO1", "AO2"],
+    "archetype": "interacting-limiting-factors-explanation",
+    "scopeType": "cross-chapter",
+    "commandTerm": "Explain",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
+    "question": "Explain how light intensity, carbon dioxide concentration and temperature interact to determine the rate of photosynthesis, including why the limiting factor can change as conditions change.",
+    "markscheme": [
+      "At low light intensity, the supply of light energy limits the light-dependent processes and therefore the overall photosynthetic rate.",
+      "Increasing light can increase the rate until light is no longer the factor in shortest effective supply.",
+      "At low carbon dioxide concentration, carbon fixation can limit the production of organic molecules even when sufficient light is available.",
+      "Increasing carbon dioxide can raise the rate until another factor becomes limiting.",
+      "Temperature affects enzyme-controlled reactions, with low temperature slowing reaction rates and temperatures above the optimum reducing enzyme function.",
+      "Because photosynthesis depends on all of these factors, improving one condition may expose another as the new limiting factor, so the response to one factor depends on the levels of the others."
+    ],
+    "markschemeJa": [
+      "光が弱いと、光に依存する反応へ供給される光エネルギーが不足し、光合成全体の速度が制限される。",
+      "光を強くすると、光が最も不足している要因でなくなるまでは光合成速度が上昇する。",
+      "二酸化炭素濃度が低いと、十分な光があっても炭素固定が有機物生産を制限することがある。",
+      "二酸化炭素を増やすと、別の要因が制限要因になるまでは速度が上昇する。",
+      "温度は酵素によって制御される反応に影響し、低温では反応が遅く、最適温度を超えると酵素機能が低下する。",
+      "光合成はこれらすべての要因に依存するため、1つの条件を改善すると別の要因が新たな制限要因になり、ある要因の効果は他の要因の状態によって変わる。"
+    ],
+    "modelAnswer": "Photosynthesis depends simultaneously on light, carbon dioxide and suitable temperature. At low light intensity, limited light energy restricts the light-dependent processes. Once light is increased sufficiently, carbon dioxide may become limiting because carbon fixation requires an adequate CO₂ supply. Temperature influences enzyme-controlled reactions, so low temperatures slow them and temperatures above the optimum can reduce enzyme activity. Therefore increasing one factor does not necessarily continue to raise photosynthesis indefinitely: once that factor is no longer limiting, another requirement becomes the main constraint. The effect of changing one environmental factor consequently depends on the levels of the others.",
+    "modelAnswerJa": "光合成は光、二酸化炭素、適切な温度に同時に依存します。光が弱ければ光に依存する反応へのエネルギー供給が不足しますが、光を十分に増やすと、今度は炭素固定に必要なCO₂が制限要因になることがあります。温度も酵素反応に影響し、低温では反応が遅く、最適温度を超えると酵素の働きが低下します。そのため、1つの要因を増やしても無限に速度が上がるわけではなく、その要因が十分になると別の要因が新たな制限要因になります。したがって、ある環境要因を変えた効果は他の要因の状態によって決まります。"
   }
 ]
