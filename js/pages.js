@@ -58,6 +58,26 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureEssCourseCoverage() {
+    if (typeof EssCourseCoverage !== 'undefined') {
+      EssCourseCoverage.start();
+      return;
+    }
+
+    if (document.getElementById('ess-course-coverage-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'ess-course-coverage-script';
+    script.src = 'js/ess-course-coverage.js';
+    script.onload = () => {
+      if (typeof EssCourseCoverage !== 'undefined') EssCourseCoverage.start();
+    };
+    script.onerror = () => {
+      console.warn('ESS Course Coverage extension could not be loaded. Existing ESS practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensurePaper2ProgressView() {
     if (typeof Paper2ProgressView !== 'undefined') {
       Paper2ProgressView.render();
@@ -107,6 +127,7 @@ const Pages = {
     this.ensureEssExamModule();
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
+    this.ensureEssCourseCoverage();
     this.show('home');
   }
 };
