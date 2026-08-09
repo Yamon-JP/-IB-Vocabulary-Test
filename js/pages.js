@@ -21,6 +21,23 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureUIOptimizations() {
+    if (typeof UIOptimizations !== 'undefined') {
+      UIOptimizations.install();
+      return;
+    }
+
+    if (document.getElementById('ui-optimizations-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'ui-optimizations-script';
+    script.src = 'js/ui-optimizations.js';
+    script.onerror = () => {
+      console.warn('UI optimization layer could not be loaded.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensurePaper2ProgressView() {
     if (typeof Paper2ProgressView !== 'undefined') {
       Paper2ProgressView.render();
@@ -68,6 +85,7 @@ const Pages = {
 
   init() {
     this.ensureEssExamModule();
+    this.ensureUIOptimizations();
     this.show('home');
   }
 };
