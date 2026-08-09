@@ -133,7 +133,7 @@
       "外液の水ポテンシャルの方が低いと水は細胞外へ出て膨圧が低下し、場合によっては原形質分離が起こる。"
     ],
     "modelAnswer": "Water moves by osmosis from a region of higher water potential to one of lower water potential. If the solution outside a plant cell has a higher water potential than the cell, water enters and the vacuole expands. The contents press the plasma membrane against the cell wall, and resistance from the wall produces turgor pressure. If the external water potential is lower, water leaves, turgor falls and severe water loss can lead to plasmolysis.",
-    "modelAnswerJa": "水は浸透によって、水ポテンシャルが高い方から低い方へ移動します。植物細胞の外側の水ポテンシャルが細胞内より高ければ、水が細胞へ入り、液胞が大きくなります。細胞の内容物が細胞膜を細胞壁へ押しつけますが、細胞壁はそれ以上の膨張に抵抗するため膨圧が生じ、細胞は張った状態になります。反対に外側の水ポテンシャルが低ければ水が外へ出て膨圧が低下し、水を大きく失うと原形質分離が起こることがあります。"
+    "modelAnswerJa": "水は浸透によって、水ポテンシャルが高い方から低い方へ移動します。植物細胞の外側の水ポテンシャルが細胞内より高ければ、水が細胞へ入り、液胞が大きくなります。細胞の内容物が細胞膜を細胞壁へ押しつけますが、細胞壁はそれ以上の膨張に抵抗するため膨圧が生じ、細胞は張った状態になります。反対に外側の水ポテンシャルが低ければ水が細胞外へ出て膨圧が低下し、水を大きく失うと原形質分離が起こることがあります。"
   },
   {
     "id": "BIO-P2-D3-002",
@@ -391,5 +391,124 @@
     ],
     "modelAnswer": "The resistance allele rises from 0.08 to 0.68 over 15 generations. If resistance is heritable, pesticide exposure can create a selection pressure in which resistant insects survive and reproduce more successfully than susceptible insects. Their greater reproductive contribution increases the frequency of the resistance allele in later generations. However, there is no untreated control population and no information about other possible environmental changes, so the data are consistent with pesticide-driven selection but do not prove that pesticide exposure was the only cause.",
     "modelAnswerJa": "耐性対立遺伝子の頻度は15世代で0.08から0.68まで増えています。耐性が遺伝する形質であれば、農薬が選択圧となり、耐性個体の方が感受性個体より生き残って繁殖しやすくなります。その結果、耐性個体がより多くの子孫を残し、後の世代で耐性対立遺伝子の頻度が上昇します。ただし、農薬を使わない対照個体群がなく、他の環境変化についても情報がないため、農薬による自然選択と一致するものの、農薬だけが原因だったと証明することはできません。"
+  },
+  {
+    "id": "BIO-P2-D1-005",
+    "subject": "Biology SL",
+    "chapter": "D1 Molecules",
+    "unit": "D1.2 Protein synthesis",
+    "primaryChapter": "D1 Molecules",
+    "primaryUnit": "D1.2 Protein synthesis",
+    "requiredUnits": ["D1.2 Protein synthesis"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "transcription-translation-sequence-deduction",
+    "scopeType": "single-unit",
+    "commandTerm": "Deduce",
+    "marks": 4,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Information for translation",
+      "columns": ["Item", "Sequence or meaning"],
+      "rows": [["DNA template strand", "3′-TAC CCG AAA ATT-5′"], ["AUG", "Methionine"], ["GGC", "Glycine"], ["UUU", "Phenylalanine"], ["UAA", "Stop"]]
+    },
+    "question": "Deduce the mRNA sequence transcribed from the DNA template and the amino acid sequence produced before the stop codon.",
+    "markscheme": [
+      "The mRNA sequence is complementary to the DNA template and is written 5′ to 3′.",
+      "The mRNA sequence is 5′-AUG GGC UUU UAA-3′.",
+      "The translated amino acid sequence is methionine-glycine-phenylalanine.",
+      "UAA is a stop codon and does not add an amino acid to the polypeptide."
+    ],
+    "markschemeJa": [
+      "mRNAはDNA鋳型鎖に相補的で、5′から3′方向に表す。",
+      "mRNA配列は5′-AUG GGC UUU UAA-3′である。",
+      "翻訳されるアミノ酸配列はメチオニン-グリシン-フェニルアラニンである。",
+      "UAAは終止コドンなので、ポリペプチドにアミノ酸を追加しない。"
+    ],
+    "modelAnswer": "The DNA template is read by complementary base pairing to produce the mRNA 5′-AUG GGC UUU UAA-3′. Using the codon information provided, AUG codes for methionine, GGC for glycine and UUU for phenylalanine. UAA is a stop codon, so the polypeptide sequence produced before termination is methionine-glycine-phenylalanine.",
+    "modelAnswerJa": "DNA鋳型鎖と相補的になるように転写すると、mRNAは5′-AUG GGC UUU UAA-3′になります。提示されたコドン情報から、AUGはメチオニン、GGCはグリシン、UUUはフェニルアラニンを指定します。UAAは終止コドンなので、できるポリペプチドはメチオニン-グリシン-フェニルアラニンです。"
+  },
+  {
+    "id": "BIO-P2-D3-005",
+    "subject": "Biology SL",
+    "chapter": "D3 Organisms",
+    "unit": "D3.1 Reproduction",
+    "primaryChapter": "D3 Organisms",
+    "primaryUnit": "D3.1 Reproduction",
+    "requiredUnits": ["D3.1 Reproduction"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "menstrual-hormone-data-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Relative hormone concentrations during a menstrual cycle",
+      "columns": ["Day", "FSH", "LH", "Oestrogen", "Progesterone"],
+      "rows": [[1, 4, 3, 2, 1], [7, 5, 4, 6, 1], [14, 7, 20, 10, 2], [21, 3, 4, 5, 12], [28, 4, 3, 2, 2]]
+    },
+    "question": "Analyse the hormone data to identify when ovulation is most likely to occur and explain the evidence for your conclusion.",
+    "markscheme": [
+      "Ovulation is most likely to occur around day 14.",
+      "LH shows a large surge on day 14, rising to a much higher relative concentration than on the other sampled days.",
+      "The LH surge is the hormonal signal that triggers ovulation.",
+      "Oestrogen is also high near day 14 and can stimulate the LH surge when its concentration becomes sufficiently high.",
+      "Progesterone is much higher by day 21, consistent with formation of the corpus luteum after ovulation."
+    ],
+    "markschemeJa": [
+      "排卵は14日目ごろに起こる可能性が最も高い。",
+      "14日目にはLHが大きく急増し、他の測定日より非常に高い相対濃度になっている。",
+      "LHサージは排卵を引き起こすホルモンシグナルである。",
+      "14日目付近ではエストロゲンも高く、十分に高い濃度になるとLHサージを促すことができる。",
+      "21日目にはプロゲステロンが大きく増えており、排卵後に黄体が形成されたことと一致する。"
+    ],
+    "modelAnswer": "Ovulation is most likely around day 14 because LH reaches a pronounced peak at that time. A surge in LH triggers ovulation. Oestrogen is also high at day 14, consistent with the high oestrogen concentration that helps generate the LH surge. By day 21, progesterone is much higher, which is consistent with secretion by the corpus luteum formed after ovulation.",
+    "modelAnswerJa": "排卵は14日目ごろと考えられます。14日目にLHが大きくピークを示しており、LHサージが排卵を引き起こすためです。またこの時期にはエストロゲンも高く、LHサージを起こす高濃度のエストロゲンと一致します。21日目にはプロゲステロンが高くなっており、排卵後に形成された黄体から分泌されていることと一致します。"
+  },
+  {
+    "id": "BIO-P2-D4-005",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.2 Sustainability and change",
+    "primaryChapter": "D4 Ecosystems",
+    "primaryUnit": "D4.2 Sustainability and change",
+    "requiredUnits": ["C4.1 Populations and communities", "D4.2 Sustainability and change"],
+    "level": "SL",
+    "assessmentObjectives": ["AO3", "AO4"],
+    "archetype": "harvest-sustainability-data-evaluation",
+    "scopeType": "cross-chapter",
+    "commandTerm": "Evaluate",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Annual changes in a harvested population",
+      "description": "The population contains 8000 individuals at the start of the year. Estimated recruitment is 1300 individuals and natural mortality is 500 individuals.",
+      "columns": ["Harvest plan", "Individuals removed per year"],
+      "rows": [["Plan P", 600], ["Plan Q", 1000]]
+    },
+    "question": "Evaluate which harvest plan is more likely to be sustainable using the data, and state one limitation of making a long-term decision from these estimates.",
+    "markscheme": [
+      "Before harvesting, recruitment minus natural mortality gives a net annual increase of 800 individuals.",
+      "With Plan P, the expected net change is +200 individuals, so the population would increase under the stated estimates.",
+      "With Plan Q, the expected net change is −200 individuals, so the population would decline under the stated estimates.",
+      "Plan P is therefore more likely to be sustainable than Plan Q if the estimates remain valid.",
+      "A limitation is that recruitment, mortality, environmental conditions or population growth can vary between years, so one year's estimates cannot establish long-term sustainability."
+    ],
+    "markschemeJa": [
+      "採取前では、新規加入1300個体から自然死亡500個体を引くと、年間の正味増加は800個体である。",
+      "Plan Pでは600個体を採取するため、予想される正味変化は+200個体となり、提示された条件では個体数は増加する。",
+      "Plan Qでは1000個体を採取するため、予想される正味変化は−200個体となり、提示された条件では個体数は減少する。",
+      "したがって、推定値が維持されるならPlan Pの方がPlan Qより持続可能である可能性が高い。",
+      "ただし加入数、死亡率、環境条件、個体群成長率は年によって変化するため、1年分の推定だけでは長期的な持続可能性を確定できない。"
+    ],
+    "modelAnswer": "Recruitment of 1300 minus natural mortality of 500 gives an annual increase of 800 individuals before harvesting. Plan P removes 600, leaving a predicted net change of +200, whereas Plan Q removes 1000 and gives a net change of −200. Plan P is therefore more likely to be sustainable under the stated conditions. However, recruitment, mortality and environmental conditions can change between years, so a single set of annual estimates is not enough to demonstrate long-term sustainability.",
+    "modelAnswerJa": "新規加入1300個体から自然死亡500個体を引くと、採取前の年間正味増加は800個体です。Plan Pでは600個体を採取するため+200個体、Plan Qでは1000個体を採取するため−200個体になります。したがって、提示された条件ではPlan Pの方が持続可能である可能性が高いです。ただし加入数、死亡率、環境条件などは毎年変化し得るため、1年分の推定だけで長期的な持続可能性を証明することはできません。"
   }
 ]
