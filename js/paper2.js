@@ -51,12 +51,40 @@ const Paper2 = {
     this.renderEmptyState();
   },
 
+  getQuestionWeight(question) {
+    if (!question?.id) return 3;
+    const attempts = Paper2Progress.load().attempts
+      .filter(attempt => attempt?.questionId === question.id)
+      .sort((a, b) => (Date.parse(b.createdAt) || 0) - (Date.parse(a.createdAt) || 0))
+      .slice(0, 3);
+    const percentages = attempts
+      .map(attempt => Number(attempt.percentage))
+      .filter(value => Number.isFinite(value));
+
+    if (!percentages.length) return 3;
+    const average = percentages.reduce((sum, value) => sum + value, 0) / percentages.length;
+    if (average < 60) return 5;
+    if (average < 80) return 3;
+    return 1;
+  },
+
   pickQuestion(excludeId = null) {
     if (!this.questions.length) return null;
     const candidates = excludeId && this.questions.length > 1
       ? this.questions.filter(question => question.id !== excludeId)
       : this.questions;
-    return candidates[Math.floor(Math.random() * candidates.length)] || null;
+    const weighted = candidates.map(question => ({
+      question,
+      weight: this.getQuestionWeight(question)
+    }));
+    const totalWeight = weighted.reduce((sum, item) => sum + item.weight, 0);
+    let threshold = Math.random() * totalWeight;
+
+    for (const item of weighted) {
+      threshold -= item.weight;
+      if (threshold < 0) return item.question;
+    }
+    return candidates[candidates.length - 1] || null;
   },
 
   loadForSelection(subject, chapters = []) {
@@ -287,6 +315,7 @@ const Paper2 = {
       schemaVersion: Paper2Progress.schemaVersion,
       questionId: this.current.id || null,
       subject: this.current.subject || null,
+      assessmentTarget: this.current.assessmentTarget || null,
       chapter: this.current.chapter || this.current.topic || null,
       unit: this.current.unit || null,
       commandTerm: this.current.commandTerm || null,
