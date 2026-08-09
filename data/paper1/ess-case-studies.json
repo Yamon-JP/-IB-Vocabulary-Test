@@ -164,5 +164,87 @@
         "text": "An agribusiness association argues that soybean expansion provides export earnings, tax revenue and employment and warns that strict land limits could reduce investment. Conservation organizations support the corridor and a permanent ban on clearing high-biodiversity forest because fragmented populations may become isolated. A smallholder cooperative supports payments for agroforestry but opposes rules that could remove productive land without compensation. Indigenous communities downstream emphasize the cultural value of intact forest and clean water. The government states that its goal is to maintain food production while preventing further biodiversity loss and soil degradation."
       }
     ]
+  },
+  {
+    "id": "ESS-CS3-ENERGY-001",
+    "subject": "ESS HL",
+    "title": "Kestrel Republic: Energy Transition, Climate Policy and Urban Air Quality",
+    "summary": "A fictional national energy transition used to investigate fossil-fuel dependence, renewable energy, greenhouse-gas mitigation, urban air pollution, energy security and social equity. All names and numerical data are hypothetical and created for examination practice.",
+    "hypothetical": true,
+    "chapters": [
+      "Topic 1",
+      "Topic 6",
+      "Topic 7",
+      "Topic 8"
+    ],
+    "requiredUnits": [
+      "1.1 Perspectives",
+      "1.3 Sustainability",
+      "6.2 Climate change—causes and impacts",
+      "6.3 Climate change—mitigation and adaptation",
+      "7.2 Energy sources—uses and management",
+      "8.3 Urban air pollution"
+    ],
+    "resources": [
+      {
+        "type": "text",
+        "title": "Resource 1: National energy background",
+        "text": "The fictional Kestrel Republic has historically generated most of its electricity from domestic coal and imported natural gas. Coal mining provides employment in two inland provinces, while the capital, Aurum City, experiences frequent winter air-pollution episodes. The government has proposed a 2035 energy-transition plan that would retire the oldest coal plants, expand solar and wind generation, add grid-scale storage, introduce a carbon price, strengthen power-station air-pollution controls and provide retraining and income support for workers in coal-dependent communities. A protected basic electricity tariff would remain available for low-income households."
+      },
+      {
+        "type": "table",
+        "title": "Resource 2: Electricity generation mix",
+        "description": "Hypothetical annual electricity generation in 2025 and under the government's 2035 plan.",
+        "columns": ["Energy source", "2025 generation (TWh)", "2035 planned generation (TWh)"],
+        "rows": [
+          ["Coal", "55", "20"],
+          ["Natural gas", "25", "20"],
+          ["Solar", "10", "35"],
+          ["Wind", "5", "25"],
+          ["Hydroelectricity", "5", "10"],
+          ["Total", "100", "110"]
+        ],
+        "note": "The plan assumes total electricity demand rises because of economic growth and electrification of transport and heating."
+      },
+      {
+        "type": "table",
+        "title": "Resource 3: Operational emissions from electricity sources",
+        "description": "Hypothetical average operational emissions. Values exclude construction, fuel extraction and other life-cycle emissions.",
+        "columns": ["Energy source", "CO₂ (g kWh⁻¹)", "SO₂ (g kWh⁻¹)", "NOx (g kWh⁻¹)", "PM2.5 (g kWh⁻¹)"],
+        "rows": [
+          ["Coal", "900", "1.60", "1.20", "0.18"],
+          ["Natural gas", "400", "0.02", "0.50", "0.02"],
+          ["Solar", "0", "0", "0", "0"],
+          ["Wind", "0", "0", "0", "0"],
+          ["Hydroelectricity", "0", "0", "0", "0"]
+        ],
+        "note": "Zero values indicate no direct operational combustion emissions; they do not imply zero life-cycle environmental impact."
+      },
+      {
+        "type": "lineGraph",
+        "title": "Resource 4: Annual mean PM2.5 concentration in Aurum City",
+        "description": "Hypothetical citywide annual mean PM2.5 concentration under the government's transition scenario.",
+        "xLabel": "Year",
+        "yLabel": "PM2.5 (µg m⁻³)",
+        "xMin": 2025,
+        "xMax": 2035,
+        "yMin": 0,
+        "yMax": 40,
+        "points": [
+          {"x": 2025, "y": 36},
+          {"x": 2027, "y": 34},
+          {"x": 2029, "y": 31},
+          {"x": 2031, "y": 27},
+          {"x": 2033, "y": 23},
+          {"x": 2035, "y": 20}
+        ],
+        "note": "The national policy target is to reduce the annual mean below 25 µg m⁻³ by 2035. Transport, industry and household fuels also contribute to Aurum City's PM2.5, so changes cannot be attributed to the electricity sector alone."
+      },
+      {
+        "type": "text",
+        "title": "Resource 5: Stakeholder positions",
+        "text": "Coal-worker unions support cleaner air but argue that plant closures should occur only after credible replacement jobs and income protection are available. Renewable-energy companies support faster auctions for solar, wind and storage. Energy-intensive manufacturers worry that carbon pricing could raise electricity costs and reduce international competitiveness. Public-health organizations support rapid coal retirement because lower particulate and sulfur emissions could reduce respiratory and cardiovascular disease. Climate groups argue that the transition should be faster because electricity-sector decarbonization can also support low-carbon transport and heating. The government argues that domestic renewable generation will reduce dependence on imported gas and improve long-term energy security."
+      }
+    ]
   }
 ]
