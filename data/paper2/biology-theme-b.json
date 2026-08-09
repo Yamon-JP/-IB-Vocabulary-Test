@@ -336,5 +336,77 @@
     ],
     "modelAnswer": "Transpiration removes water from leaf surfaces and lowers water potential in the leaf, generating tension in the xylem. This tension pulls the xylem water column upward. Cohesion between water molecules keeps the column continuous, while adhesion to the xylem walls helps support it. Xylem vessels form long, low-resistance tubes, and their lignified walls prevent collapse when the water column is under tension.",
     "modelAnswerJa": "蒸散によって葉から水が失われると葉の水ポテンシャルが低下し、木部内の水柱に張力が生じます。その張力が水柱を上へ引き上げます。水分子どうしの凝集力によって水柱は途中で切れにくく、水と道管壁との付着力も水柱を支えます。さらに木部道管は長く連続した抵抗の少ない管で、リグニン化した壁が張力による管のつぶれを防ぎます。"
+  },
+  {
+    "id": "BIO-P2-B1-004",
+    "subject": "Biology SL",
+    "chapter": "B1 Molecules",
+    "unit": "B1.2 Proteins",
+    "primaryChapter": "B1 Molecules",
+    "primaryUnit": "B1.2 Proteins",
+    "requiredUnits": ["B1.2 Proteins"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2"],
+    "archetype": "amino-acid-substitution-protein-application",
+    "scopeType": "single-unit",
+    "commandTerm": "Explain",
+    "marks": 4,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
+    "question": "A non-polar amino acid located in the hydrophobic interior of a globular protein is replaced by a charged amino acid. Explain how this substitution could alter the structure and function of the protein.",
+    "markscheme": [
+      "The replacement changes the chemical properties of one amino-acid side chain.",
+      "A charged side chain interacts differently with water and other side chains from a non-polar side chain.",
+      "These altered interactions can change folding or the three-dimensional structure of the protein.",
+      "If the shape of a functional region such as an active site or binding site changes, protein function can be reduced or altered."
+    ],
+    "markschemeJa": [
+      "置換によって1つのアミノ酸側鎖の化学的性質が変化する。",
+      "荷電した側鎖は、非極性側鎖とは水や他の側鎖との相互作用のしかたが異なる。",
+      "そのため側鎖間の相互作用が変わり、タンパク質の折りたたみ方や立体構造が変化する可能性がある。",
+      "活性部位や結合部位など機能に必要な部分の形が変われば、タンパク質の機能が低下または変化することがある。"
+    ],
+    "modelAnswer": "Replacing a non-polar amino acid with a charged amino acid changes the chemical behavior of that side chain. A charged side chain will interact differently with water and with other side chains, so interactions that stabilize the folded protein may change. This can alter the protein's three-dimensional structure. If an active site, binding site or other functional region changes shape, the protein's activity may also change or decrease.",
+    "modelAnswerJa": "非極性アミノ酸を荷電したアミノ酸に置き換えると、その側鎖の化学的性質が変わります。荷電した側鎖は水や他の側鎖との相互作用が異なるため、タンパク質を安定させている相互作用が変化し、折りたたみ方や立体構造が変わる可能性があります。活性部位や結合部位などの形まで変化すれば、タンパク質の働きも低下したり変化したりします。"
+  },
+  {
+    "id": "BIO-P2-B3-005",
+    "subject": "Biology SL",
+    "chapter": "B3 Organisms",
+    "unit": "B3.1 Gas exchange",
+    "primaryChapter": "B3 Organisms",
+    "primaryUnit": "B3.1 Gas exchange",
+    "requiredUnits": ["B3.1 Gas exchange"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "gas-partial-pressure-data-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Partial pressures at a mammalian gas-exchange surface",
+      "columns": ["Location", "O₂ partial pressure (kPa)", "CO₂ partial pressure (kPa)"],
+      "rows": [["Alveolar air", 13.3, 5.3], ["Blood entering lung capillaries", 5.3, 6.1]]
+    },
+    "question": "Analyse the data to predict the direction of diffusion of oxygen and carbon dioxide, and explain how these gradients support gas exchange.",
+    "markscheme": [
+      "Oxygen has a higher partial pressure in alveolar air than in incoming blood, so oxygen diffuses from the alveoli into the blood.",
+      "Carbon dioxide has a higher partial pressure in incoming blood than in alveolar air, so carbon dioxide diffuses from the blood into the alveoli.",
+      "Both gases move down their partial-pressure gradients by diffusion.",
+      "Ventilation helps maintain alveolar gas concentrations and blood flow continually brings deoxygenated, carbon-dioxide-rich blood to the surface.",
+      "Maintaining these gradients allows rapid net exchange across the thin gas-exchange surface."
+    ],
+    "markschemeJa": [
+      "酸素分圧は流入血液より肺胞内の方が高いため、酸素は肺胞から血液へ拡散する。",
+      "二酸化炭素分圧は肺胞内より流入血液の方が高いため、二酸化炭素は血液から肺胞へ拡散する。",
+      "どちらの気体も分圧勾配に従って拡散する。",
+      "換気によって肺胞内の気体組成が保たれ、血流によって酸素の少ない二酸化炭素の多い血液が継続して運ばれる。",
+      "これらの勾配を維持することで、薄いガス交換面を通した速い正味の物質交換が可能になる。"
+    ],
+    "modelAnswer": "Oxygen partial pressure is 13.3 kPa in the alveoli but only 5.3 kPa in incoming blood, so oxygen diffuses from alveolar air into the blood. Carbon dioxide partial pressure is 6.1 kPa in incoming blood and 5.3 kPa in the alveoli, so carbon dioxide diffuses into the alveoli. Ventilation and continuous blood flow help maintain these opposing partial-pressure gradients, allowing rapid net diffusion across the thin exchange surface.",
+    "modelAnswerJa": "酸素分圧は肺胞内で13.3 kPa、流入血液で5.3 kPaなので、酸素は肺胞から血液へ拡散します。二酸化炭素分圧は流入血液で6.1 kPa、肺胞内で5.3 kPaなので、二酸化炭素は血液から肺胞へ拡散します。換気と継続した血流によってこれらの分圧勾配が維持されるため、薄いガス交換面を通して効率よく正味の拡散が起こります。"
   }
 ]
