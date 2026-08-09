@@ -343,5 +343,41 @@
     ],
     "modelAnswer": "The population fell from 1200 in 2016 to 900 in 2020, a 25% decrease. After the conservation programme began, it rose from 900 to 1080 by 2026, which is a 20% increase from the 2020 value. This reversal is consistent with a beneficial effect of the programme, but the 2026 population is still below the 2016 value. In addition, the observations do not isolate the programme from other environmental changes, natural variation or sampling error, so they support effectiveness without proving causation.",
     "modelAnswerJa": "個体数は2016年の1200から2020年の900へ25%減少しました。その後、保全プログラム開始後には2026年までに1080へ増え、2020年から20%回復しています。この傾向の反転は保全策が有効だった可能性を支持しますが、2026年でも2016年の水準には戻っていません。また、他の環境変化や自然変動、標本誤差を除外できないため、このデータは保全策の有効性を支持しますが、因果関係を証明するものではありません。"
+  },
+  {
+    "id": "BIO-P2-A1-005",
+    "subject": "Biology SL",
+    "chapter": "A1 Molecules",
+    "unit": "A1.1 Water",
+    "primaryChapter": "A1 Molecules",
+    "primaryUnit": "A1.1 Water",
+    "requiredUnits": ["A1.1 Water"],
+    "level": "SL",
+    "assessmentObjectives": ["AO1", "AO2"],
+    "archetype": "integrated-water-properties-explanation",
+    "scopeType": "single-unit",
+    "commandTerm": "Explain",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
+    "question": "Explain how the polarity of water and hydrogen bonding give water properties that are biologically important for transport, temperature stability and solvent function.",
+    "markscheme": [
+      "Water molecules are polar because electrons are shared unequally, producing partial charges.",
+      "The partial charges allow hydrogen bonds to form between neighboring water molecules.",
+      "Hydrogen bonding produces cohesion, helping maintain continuous columns of water during transport.",
+      "Energy is required to disrupt hydrogen bonds, giving water a high specific heat capacity and helping resist rapid temperature change.",
+      "Water's polarity allows ions and many other polar solutes to interact with water molecules and dissolve.",
+      "Dissolved substances can therefore be transported in aqueous solutions such as cytoplasm, blood plasma or plant sap."
+    ],
+    "markschemeJa": [
+      "水分子では電子が不均等に共有されるため極性が生じ、部分的な正電荷と負電荷をもつ。",
+      "この部分電荷によって、隣り合う水分子間に水素結合が形成される。",
+      "水素結合による凝集力は水分子を互いに引きつけ、輸送中に連続した水柱を維持するのに役立つ。",
+      "水素結合を崩すにはエネルギーが必要なため、水は比熱容量が大きく、急激な温度変化を抑えやすい。",
+      "水の極性によってイオンや多くの極性溶質が水分子と相互作用し、水に溶けることができる。",
+      "そのため溶解した物質を、細胞質、血漿、植物の樹液などの水溶液中で運ぶことができる。"
+    ],
+    "modelAnswer": "Water is polar because electrons are shared unequally within each molecule, creating partial charges. These charges allow hydrogen bonds to form between water molecules. Hydrogen bonding gives water cohesion, which helps maintain continuous columns during transport, and it also contributes to a high specific heat capacity, so large energy changes cause relatively small temperature changes. Water's polarity also allows ions and many polar molecules to dissolve through interactions with water molecules. As a result, water provides both a stable thermal environment and an effective medium for transporting dissolved substances in organisms.",
+    "modelAnswerJa": "水分子は電子を不均等に共有するため極性をもち、部分的な正電荷と負電荷が生じます。この部分電荷によって水分子間に水素結合ができます。水素結合は凝集力を生み、輸送時に連続した水柱を保つのに役立ちます。また、水素結合を崩すにはエネルギーが必要なので比熱容量が大きく、急激な温度変化を抑えます。さらに水の極性によってイオンや多くの極性物質を溶かすことができるため、水は生体内で溶質を運ぶ媒体としても重要です。"
   }
 ]
