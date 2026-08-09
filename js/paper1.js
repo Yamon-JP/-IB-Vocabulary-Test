@@ -122,7 +122,7 @@ const Paper1 = {
           <h3>Learned Units</h3>
           <span class="muted">Only checked units can appear</span>
         </div>
-        <p class="muted">Mark only units already studied in class. Opening, answering or completing a question never marks a unit as learned.</p>
+        <p class="muted">Select only units already studied in class.</p>
         <div id="paper1-learned-units-list"></div>`;
       scopeControl.parentNode.insertBefore(learnedControl, scopeControl);
     }
@@ -199,6 +199,15 @@ const Paper1 = {
     return [...units].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
   },
 
+  updateLearnedUnitThemeCount(theme) {
+    if (typeof App === 'undefined') return;
+    const themeUnits = this.getAvailableUnits().filter(unit => unit.startsWith(theme));
+    const learned = new Set(Array.isArray(App.state.biologyLearnedUnits) ? App.state.biologyLearnedUnits : []);
+    const selectedCount = themeUnits.filter(unit => learned.has(unit)).length;
+    const count = document.getElementById(`paper1-learned-count-${theme}`);
+    if (count) count.textContent = `${selectedCount} / ${themeUnits.length} selected`;
+  },
+
   renderLearnedUnitSelector() {
     const control = document.getElementById('paper1-learned-units-control');
     const list = document.getElementById('paper1-learned-units-list');
@@ -221,18 +230,24 @@ const Paper1 = {
     list.innerHTML = themes.map(theme => {
       const themeUnits = units.filter(unit => unit.startsWith(theme));
       if (!themeUnits.length) return '';
+      const selectedCount = themeUnits.filter(unit => learned.has(unit)).length;
       return `
-        <p class="muted"><strong>Theme ${theme}</strong></p>
-        <div class="biology-chapter-list">
-          ${themeUnits.map(unit => `
-            <label class="chapter-option">
-              <input type="checkbox"
-                value="${this.escapeHtml(unit)}"
-                ${learned.has(unit) ? 'checked' : ''}
-                onchange="App.toggleBiologyLearnedUnit(this.value, this.checked)">
-              <span>${this.escapeHtml(unit)}</span>
-            </label>`).join('')}
-        </div>`;
+        <details class="paper1-learned-theme">
+          <summary>
+            <strong>Theme ${theme}</strong>
+            <span id="paper1-learned-count-${theme}" class="muted">${selectedCount} / ${themeUnits.length} selected</span>
+          </summary>
+          <div class="biology-chapter-list">
+            ${themeUnits.map(unit => `
+              <label class="chapter-option">
+                <input type="checkbox"
+                  value="${this.escapeHtml(unit)}"
+                  ${learned.has(unit) ? 'checked' : ''}
+                  onchange="App.toggleBiologyLearnedUnit(this.value, this.checked); Paper1.updateLearnedUnitThemeCount('${theme}')">
+                <span>${this.escapeHtml(unit)}</span>
+              </label>`).join('')}
+          </div>
+        </details>`;
     }).join('');
   },
 
