@@ -530,5 +530,183 @@
     ],
     "modelAnswer": "The resistant phenotype increases by 72 percentage points, from 4% at generation 0 to 76% at generation 20. The increase is progressive across the experiment. Natural selection can explain this if resistant variants are heritable: in the presence of antibiotic, resistant bacteria survive and reproduce more successfully, so resistance becomes more common in later generations. It is incorrect to say that bacteria mutate because they need resistance; mutations are not directed by need, while the antibiotic selects among variants. The table shows a strong increase in resistance in the treated culture, but without a control population lacking antibiotic and evidence of inheritance, it cannot by itself prove the cause or genetic mechanism of the change.",
     "modelAnswerJa": "耐性表現型は0世代の4%から20世代の76%へ、72パーセントポイント増加しています。実験期間を通して耐性菌の割合は増加しています。耐性が遺伝する形質であれば、抗生物質環境では耐性菌の方が生存・繁殖しやすく、その子孫が増えるため耐性の頻度が世代ごとに上昇します。細菌が耐性を必要としたから突然変異が起こるわけではなく、突然変異は必要性とは無関係に生じ、抗生物質がその中から耐性型を選択します。ただし、抗生物質を含まない対照群や遺伝性の証拠がないため、この表だけで変化の原因や遺伝的機構まで証明することはできません。"
+  },
+  {
+    "id": "BIO-P1B-A1-001",
+    "subject": "Biology SL",
+    "chapter": "A1 Molecules",
+    "unit": "A1.1 Water",
+    "primaryChapter": "A1 Molecules",
+    "primaryUnit": "A1.1 Water",
+    "requiredUnits": ["A1.1 Water"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3", "AO4"],
+    "archetype": "table-rate-control-method-evaluation-and-conclusion",
+    "scopeType": "single-unit",
+    "commandTerm": "Evaluate",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Cooling of equal masses of water and another liquid",
+      "description": "Equal masses of water and liquid X were heated to 80 °C in identical open containers and allowed to cool in the same room. Temperature was recorded every two minutes.",
+      "columns": ["Time (min)", "Water temperature (°C)", "Liquid X temperature (°C)"],
+      "rows": [[0, 80, 80], [2, 78, 75], [4, 76, 71], [6, 74, 67], [8, 72, 64], [10, 71, 62]],
+      "note": "Both containers had the same dimensions and were placed side by side."
+    },
+    "question": "Calculate the mean rate of temperature decrease for water from 0 to 10 minutes. Compare the cooling of the two liquids. State one additional variable that should be controlled and suggest one improvement to increase reliability. Explain the pattern using the thermal properties of water, and evaluate the conclusion that water provides greater thermal stability than liquid X under these conditions.",
+    "markscheme": [
+      "Water decreases from 80 °C to 71 °C in 10 minutes, giving a mean cooling rate of 9/10 = 0.9 °C min⁻¹.",
+      "Liquid X cools more rapidly, falling by 18 °C compared with a 9 °C decrease for water over the same period.",
+      "A suitable additional controlled variable is initial mass or volume, exposed surface area, room airflow, container material, initial temperature or distance from heat sources, provided it is kept the same for both liquids.",
+      "Reliability could be improved by repeating the cooling trial several times for each liquid and calculating mean temperatures or mean cooling rates.",
+      "Water has a high specific heat capacity because energy is required to disrupt hydrogen-bond interactions, so its temperature changes relatively slowly when energy is lost.",
+      "The data support greater thermal stability for water than liquid X in this apparatus because water shows the smaller temperature decrease, but the conclusion is limited to the tested liquids and conditions unless the experiment is replicated and other heat-loss variables are controlled."
+    ],
+    "markschemeJa": [
+      "水は10分間で80 °Cから71 °Cへ9 °C低下しているため、平均冷却速度は9/10=0.9 °C min⁻¹である。",
+      "同じ10分間に液体Xは18 °C低下しており、水の9 °C低下よりも速く冷えている。",
+      "追加の制御変数として、初期の質量または体積、露出表面積、室内の気流、容器の材質、初期温度、熱源からの距離などを両方で同じにすることが挙げられる。",
+      "各液体について実験を複数回繰り返し、温度や冷却速度の平均を求めれば、偶然のばらつきの影響を減らして信頼性を高められる。",
+      "水は水素結合による相互作用を崩すためにエネルギーが必要で比熱容量が大きいため、エネルギーを失っても温度が比較的ゆっくり変化する。",
+      "この装置では水の温度低下が小さいため、液体Xより熱的に安定しているという結論を支持する。ただし、他の熱損失要因を十分に制御し反復しなければ、結論はこの液体と条件に限定される。"
+    ],
+    "modelAnswer": "Water cools from 80 °C to 71 °C in 10 minutes, so its mean cooling rate is 0.9 °C min⁻¹. Liquid X cools twice as much over the same period, decreasing by 18 °C. Variables such as airflow or exposed surface area should be controlled, and repeated trials followed by calculation of means would improve reliability. Water changes temperature relatively slowly because it has a high specific heat capacity associated with hydrogen bonding. The results therefore support the conclusion that water provided greater thermal stability than liquid X in this experiment, although the conclusion should not be generalized beyond these conditions without further replicated evidence.",
+    "modelAnswerJa": "水は10分間で80 °Cから71 °Cへ下がるため、平均冷却速度は0.9 °C min⁻¹です。液体Xは同じ時間に18 °C低下しており、水より大きく温度が変化しています。気流や露出表面積などは一定にし、実験を繰り返して平均を求めれば信頼性が高まります。水は水素結合に関係する高い比熱容量をもつため、エネルギーを失っても温度が比較的ゆっくり変化します。したがって、この実験条件では水の方が液体Xより熱的に安定しているという結論は支持されますが、他の条件や液体に一般化するには追加の反復データが必要です。"
+  },
+  {
+    "id": "BIO-P1B-B2-001",
+    "subject": "Biology SL",
+    "chapter": "B2 Cells",
+    "unit": "B2.1 Membranes and membrane transport",
+    "primaryChapter": "B2 Cells",
+    "primaryUnit": "B2.1 Membranes and membrane transport",
+    "requiredUnits": ["B2.1 Membranes and membrane transport"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3", "AO4"],
+    "archetype": "table-anomaly-prediction-membrane-mechanism-and-reliability",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Effect of ethanol concentration on pigment leakage from beetroot cells",
+      "description": "Equal-sized beetroot cylinders were placed for 12 minutes in ethanol solutions of different concentrations. The absorbance of pigment released into each solution was measured; greater absorbance indicates more pigment leakage.",
+      "columns": ["Ethanol concentration (%)", "Absorbance (arbitrary units)"],
+      "rows": [[0, 0.05], [10, 0.12], [20, 0.21], [30, 0.18], [40, 0.52]],
+      "note": "Only one measurement was made at each ethanol concentration."
+    },
+    "question": "Analyse the overall relationship between ethanol concentration and pigment leakage and identify the anomalous result. Predict a reasonable absorbance at 50% ethanol, with justification. Explain how increased membrane permeability could produce the observed pattern. Explain why the anomalous result should be repeated rather than simply discarded, and suggest one variable that should be controlled.",
+    "markscheme": [
+      "Overall absorbance increases as ethanol concentration increases, from 0.05 at 0% ethanol to 0.52 at 40%, indicating greater pigment leakage.",
+      "The 30% ethanol value of 0.18 is anomalous because it is lower than the 20% value and does not fit the overall increasing trend.",
+      "A reasonable prediction at 50% ethanol is a value above 0.52, for example approximately 0.6–0.7 absorbance units, with justification based on the overall increasing trend; accept another defensible extrapolation.",
+      "Ethanol can disrupt membrane structure and interactions among membrane components, increasing permeability so more pigment can leave the beetroot cells and enter the surrounding solution.",
+      "The 30% result should be repeated because it may reflect random measurement error or real variation; repetition can show whether the low value is reproducible before deciding how to treat it.",
+      "A suitable controlled variable is beetroot cylinder size/surface area, exposure time, temperature, beetroot source, solution volume or measurement wavelength, kept constant across treatments."
+    ],
+    "markschemeJa": [
+      "全体としてエタノール濃度が高くなるほど吸光度は上昇し、0%の0.05から40%の0.52まで増えているため、色素漏出が増えている。",
+      "30%エタノールの0.18は20%の値より低く、全体の増加傾向から外れているため異常値と考えられる。",
+      "50%では0.52より高い値、例えば約0.6〜0.7程度を予測できる。全体の増加傾向に基づく妥当な外挿であれば認める。",
+      "エタノールは膜構造や膜成分間の相互作用を乱し、膜の透過性を高めることで、より多くの色素が細胞外の溶液へ漏れ出す。",
+      "30%の結果は偶然の測定誤差か実際のばらつきか分からないため、単純に捨てるのではなく再測定し、その低い値が再現されるか確認する必要がある。",
+      "制御変数として、ビートルート片の大きさ・表面積、浸す時間、温度、材料の由来、溶液量、測定波長などを一定にすることが挙げられる。"
+    ],
+    "modelAnswer": "Absorbance generally increases with ethanol concentration, rising from 0.05 at 0% to 0.52 at 40%, so pigment leakage increases. The 30% value of 0.18 is anomalous because it falls below the value at 20%. A value above 0.52, such as about 0.6–0.7, would be a reasonable prediction for 50% ethanol based on the trend, although extrapolation is uncertain. Ethanol can disrupt membrane structure and increase permeability, allowing more pigment to leak out. The anomalous measurement should be repeated rather than discarded because it may be either an error or genuine variation. Variables such as cylinder size, exposure time and temperature should be controlled.",
+    "modelAnswerJa": "吸光度は全体としてエタノール濃度とともに上昇し、0%の0.05から40%の0.52まで増えているため、色素漏出が増えています。30%の0.18は20%より低く、増加傾向から外れた異常値です。50%では0.52を超える約0.6〜0.7程度が妥当な予測ですが、外挿なので不確かさがあります。エタノールは膜構造を乱して透過性を高め、色素をより多く細胞外へ漏出させます。30%の値は誤差か実際の変動か判断できないため、削除せず再測定すべきです。また、組織片の大きさ、浸す時間、温度などを一定にする必要があります。"
+  },
+  {
+    "id": "BIO-P1B-C4-001",
+    "subject": "Biology SL",
+    "chapter": "C4 Ecosystems",
+    "unit": "C4.1 Populations and communities",
+    "primaryChapter": "C4 Ecosystems",
+    "primaryUnit": "C4.1 Populations and communities",
+    "requiredUnits": ["C4.1 Populations and communities"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "table-growth-rate-carrying-capacity-prediction-and-evidence",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Population growth in a closed culture",
+      "description": "A population of small aquatic organisms was grown in a closed culture with a fixed volume of medium. Population size was estimated every two days.",
+      "columns": ["Time (days)", "Population size"],
+      "rows": [[0, 50], [2, 94], [4, 176], [6, 302], [8, 410], [10, 463], [12, 478]],
+      "note": "No additional food or medium was added during the investigation."
+    },
+    "question": "Calculate the mean population growth rate from day 4 to day 8. Analyse how growth changes through time. Estimate the carrying capacity of the culture and predict a reasonable population size at day 14. Explain why population growth slows at high density, and evaluate the conclusion that the population has reached carrying capacity by day 12.",
+    "markscheme": [
+      "From day 4 to day 8, population size increases from 176 to 410, so mean growth rate = (410 - 176) / 4 = 58.5 organisms day⁻¹.",
+      "Population size initially increases rapidly, but the increase becomes progressively smaller after about day 8 as the curve approaches a plateau.",
+      "A reasonable estimate of carrying capacity is approximately 480 organisms, based on the population levelling near 463–478.",
+      "A reasonable prediction for day 14 is close to the apparent plateau, for example approximately 480–490 organisms, rather than continued rapid exponential increase.",
+      "At high density, density-dependent factors such as competition for food or space, waste accumulation or disease can reduce birth rate and/or increase death rate, slowing net population growth.",
+      "The day-12 value is consistent with approaching carrying capacity, but one near-plateau reading does not prove a stable carrying capacity; additional measurements over more time and repeated cultures would be needed."
+    ],
+    "markschemeJa": [
+      "4日目から8日目に個体数は176から410へ増えているため、平均増加速度は(410-176)/4=58.5個体 day⁻¹である。",
+      "初期には個体数が急速に増えるが、8日目ごろ以降は増加量が次第に小さくなり、一定値に近づいている。",
+      "463〜478個体付近で増加が頭打ちになっているため、環境収容力は約480個体と推定できる。",
+      "14日目は急激な指数関数的増加を続けるよりも、頭打ち付近の約480〜490個体程度と予測するのが妥当である。",
+      "個体密度が高くなると、食物や空間をめぐる競争、老廃物の蓄積、病気などの密度依存要因によって出生率が下がる、または死亡率が上がり、正味の個体数増加が遅くなる。",
+      "12日目の値は環境収容力に近づいていることと整合するが、1回の頭打ちに近い値だけでは安定した環境収容力に到達したと証明できない。より長期間の測定や反復培養が必要である。"
+    ],
+    "modelAnswer": "Between days 4 and 8 the population increases by 234 organisms in four days, giving a mean growth rate of 58.5 organisms day⁻¹. Growth is rapid at first but slows after about day 8 and approaches a plateau near 480 organisms, so a day-14 population of roughly 480–490 is reasonable. As density increases, competition for limited resources and other density-dependent effects reduce net growth. The data are consistent with the population approaching its carrying capacity by day 12, but additional later measurements and replicate cultures are needed before concluding that a stable carrying capacity has definitely been reached.",
+    "modelAnswerJa": "4日目から8日目の4日間で個体数は234増えるため、平均増加速度は58.5個体 day⁻¹です。初期には急速に増えますが、8日目以降は増加が鈍り、約480個体付近の頭打ちに近づいています。そのため14日目も約480〜490個体と予測するのが妥当です。個体密度が高くなると、限られた資源をめぐる競争などの密度依存要因によって正味の増加が遅くなります。12日目のデータは環境収容力に近づいていることを支持しますが、安定して到達したと断定するには、さらに長期間のデータや反復実験が必要です。"
+  },
+  {
+    "id": "BIO-P1B-D1-001",
+    "subject": "Biology SL",
+    "chapter": "D1 Molecules",
+    "unit": "D1.1 DNA replication",
+    "primaryChapter": "D1 Molecules",
+    "primaryUnit": "D1.1 DNA replication",
+    "requiredUnits": ["D1.1 DNA replication"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "table-model-prediction-replication-and-evidence-evaluation",
+    "scopeType": "single-unit",
+    "commandTerm": "Evaluate",
+    "marks": 7,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "DNA density pattern after transfer to a light-isotope medium",
+      "description": "Cells containing DNA labelled with a heavy isotope were transferred to a medium containing only a light isotope. After each round of DNA replication, DNA molecules were classified as heavy, intermediate or light density.",
+      "columns": ["Generation", "Heavy DNA (%)", "Intermediate DNA (%)", "Light DNA (%)"],
+      "rows": [[0, 100, 0, 0], [1, 0, 100, 0], [2, 0, 50, 50], [3, 0, 25, 75]],
+      "note": "Percentages refer to DNA molecules detected in the population after each completed round of replication."
+    },
+    "question": "Predict the percentages of intermediate and light DNA expected after generation 4 if the observed pattern continues. Analyse how the data are consistent with semi-conservative DNA replication. Compare the generation-1 prediction of semi-conservative and conservative replication, and evaluate how strongly the data support the semi-conservative model.",
+    "markscheme": [
+      "At generation 4, approximately 12.5% intermediate DNA and 87.5% light DNA are predicted; heavy DNA remains 0%.",
+      "After the first replication all molecules are intermediate, consistent with each daughter DNA molecule containing one original heavy-labelled strand and one newly synthesized light-labelled strand.",
+      "With each further round, the proportion of intermediate DNA halves while the proportion of light DNA increases because only molecules retaining an original heavy strand remain intermediate.",
+      "Semi-conservative replication predicts 100% intermediate DNA after generation 1 when heavy DNA is transferred to light medium.",
+      "A conservative model would predict separate heavy and light DNA molecules after generation 1 rather than a single intermediate-density class.",
+      "The absence of heavy DNA and presence of 100% intermediate DNA at generation 1 therefore contradict the conservative prediction and strongly support semi-conservative replication.",
+      "The later 50:50 and 25:75 intermediate-to-light patterns provide further quantitative agreement with the semi-conservative model, although conclusions still depend on accurate density classification and the stated experimental conditions."
+    ],
+    "markschemeJa": [
+      "4世代目では中間密度DNAは約12.5%、軽いDNAは約87.5%と予測され、重いDNAは0%のままである。",
+      "1回目の複製後にすべてが中間密度になることは、各娘DNA分子が元の重く標識された鎖1本と新しく合成された軽い鎖1本をもつ半保存的複製と一致する。",
+      "その後の世代では、元の重い鎖を保持するDNAだけが中間密度として残るため、中間密度DNAの割合は世代ごとに半減し、軽いDNAの割合が増える。",
+      "半保存的複製では、重いDNAを軽い培地へ移した後の1世代目は100%中間密度になると予測される。",
+      "保存的複製モデルでは1世代目に重いDNA分子と軽いDNA分子が別々に存在すると予測され、中間密度だけにはならない。",
+      "したがって1世代目で重いDNAがなく100%中間密度であることは保存的モデルと矛盾し、半保存的複製を強く支持する。",
+      "2世代目の50:50、3世代目の25:75という中間密度と軽いDNAの割合も半保存的モデルの定量的予測と一致する。ただし結論は密度分類が正確で、提示された実験条件が成立していることを前提とする。"
+    ],
+    "modelAnswer": "If the pattern continues, generation 4 should contain about 12.5% intermediate DNA and 87.5% light DNA, with no heavy DNA. The results fit semi-conservative replication because every molecule after generation 1 has intermediate density, as expected when each daughter DNA molecule contains one original heavy strand and one newly synthesized light strand. In later generations, only molecules containing an original heavy strand remain intermediate, so the intermediate fraction halves each generation. Conservative replication would instead predict separate heavy and light DNA after generation 1. The observed generation-1 result therefore strongly rejects that prediction, and the later 50:50 and 25:75 patterns provide additional support for the semi-conservative model.",
+    "modelAnswerJa": "この傾向が続けば、4世代目では中間密度DNAが約12.5%、軽いDNAが約87.5%、重いDNAは0%と予測できます。1世代目にすべてのDNAが中間密度になるのは、各娘DNAが元の重い鎖1本と新しく合成された軽い鎖1本をもつ半保存的複製と一致します。その後は元の重い鎖を含む分子だけが中間密度として残るため、その割合は世代ごとに半減します。保存的複製なら1世代目に重いDNAと軽いDNAが別々に現れるはずなので、観察結果とは一致しません。さらに2世代目の50:50、3世代目の25:75という比率も半保存的モデルを強く支持しています。"
   }
 ]
