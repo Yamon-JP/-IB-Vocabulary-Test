@@ -350,5 +350,85 @@
     ],
     "modelAnswer": "As exercise intensity increases, ventilation, cardiac output and oxygen uptake all rise. Ventilation increases from 6 to 65 L min⁻¹ and cardiac output from 5 to 20 L min⁻¹, while oxygen uptake rises more than twelve-fold from 0.25 to 3.10 L min⁻¹. Increased ventilation supports oxygen transfer into the blood, and increased cardiac output transports that oxygen more rapidly to active tissues. The parallel changes therefore show coordinated respiratory and circulatory responses to increased demand for aerobic respiration.",
     "modelAnswerJa": "運動強度が上がるにつれて、換気量、心拍出量、酸素消費量がすべて増加しています。換気量は6から65 L min⁻¹、心拍出量は5から20 L min⁻¹へ増え、酸素消費量も0.25から3.10 L min⁻¹へ12倍以上に増えています。換気量を増やすことで血液へ酸素を取り込みやすくし、心拍出量を増やすことでその酸素を活動中の組織へより速く運びます。したがって、呼吸系と循環系が協調して好気呼吸の需要増加に対応していることが分かります。"
+  },
+  {
+    "id": "BIO-P2-C4-004",
+    "subject": "Biology SL",
+    "chapter": "C4 Ecosystems",
+    "unit": "C4.2 Transfers of energy and matter",
+    "primaryChapter": "C4 Ecosystems",
+    "primaryUnit": "C4.2 Transfers of energy and matter",
+    "requiredUnits": ["C4.2 Transfers of energy and matter"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "trophic-transfer-efficiency-calculation",
+    "scopeType": "single-unit",
+    "commandTerm": "Calculate and explain",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Energy stored as biomass at three trophic levels",
+      "columns": ["Trophic level", "Energy in biomass (kJ m⁻² yr⁻¹)"],
+      "rows": [["Producers", 10000], ["Primary consumers", 1200], ["Secondary consumers", 120]]
+    },
+    "question": "Calculate the percentage transfer efficiency from producers to primary consumers and from primary to secondary consumers, and explain why energy availability decreases at higher trophic levels.",
+    "markscheme": [
+      "Producer to primary-consumer transfer efficiency = 1200 ÷ 10000 × 100 = 12%.",
+      "Primary- to secondary-consumer transfer efficiency = 120 ÷ 1200 × 100 = 10%.",
+      "Not all biomass at one trophic level is consumed or digested by the next trophic level.",
+      "Organisms use assimilated energy in respiration and other metabolic processes.",
+      "Energy released during metabolism is transferred to the surroundings as heat, so only a fraction remains in new biomass for the next trophic level."
+    ],
+    "markschemeJa": [
+      "生産者から一次消費者への移行効率は1200÷10000×100=12%である。",
+      "一次消費者から二次消費者への移行効率は120÷1200×100=10%である。",
+      "ある栄養段階のバイオマスが次の栄養段階ですべて食べられ、消化されるわけではない。",
+      "生物は吸収したエネルギーの一部を細胞呼吸やその他の代謝活動に使う。",
+      "代謝で使われたエネルギーの一部は熱として周囲へ移るため、次の栄養段階へ渡せる新しいバイオマスには一部しか残らない。"
+    ],
+    "modelAnswer": "The transfer efficiency from producers to primary consumers is 1200/10000 × 100 = 12%. From primary to secondary consumers it is 120/1200 × 100 = 10%. Energy decreases at higher trophic levels because not all biomass is eaten or digested, and organisms use much of the assimilated energy in respiration and other metabolic processes. Energy is released to the surroundings as heat, leaving only the fraction stored in new biomass available to the next trophic level.",
+    "modelAnswerJa": "生産者から一次消費者へのエネルギー移行効率は12%、一次消費者から二次消費者へは10%です。上位の栄養段階ほど利用できるエネルギーが減るのは、前の段階のバイオマスがすべて食べられたり消化されたりするわけではなく、さらに吸収されたエネルギーの多くが細胞呼吸などの代謝に使われ、熱として周囲へ放出されるためです。その結果、新しいバイオマスとして残った一部だけが次の段階へ移ります。"
+  },
+  {
+    "id": "BIO-P2-C2-004",
+    "subject": "Biology SL",
+    "chapter": "C2 Cells",
+    "unit": "C2.2 Neural signalling",
+    "primaryChapter": "C2 Cells",
+    "primaryUnit": "C2.2 Neural signalling",
+    "requiredUnits": ["C2.2 Neural signalling"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "action-potential-data-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Membrane potential during an action potential",
+      "columns": ["Time (ms)", "Membrane potential (mV)"],
+      "rows": [[0.0, -70], [1.0, -55], [1.5, 20], [2.0, 35], [3.0, -20], [4.0, -75], [6.0, -70]]
+    },
+    "question": "Analyse the changes in membrane potential and relate the main phases to ion movement across the neuron membrane.",
+    "markscheme": [
+      "The membrane begins near the resting potential of about −70 mV and reaches threshold near −55 mV.",
+      "The rapid rise to positive values is depolarization and is associated with opening of voltage-gated sodium channels and sodium ion entry.",
+      "The membrane reaches a peak positive potential before beginning to fall.",
+      "The fall back toward negative values is repolarization and is associated mainly with potassium ion movement out through voltage-gated potassium channels.",
+      "The potential briefly becomes more negative than the resting value before returning toward −70 mV as the membrane and ion gradients recover."
+    ],
+    "markschemeJa": [
+      "膜電位は約−70 mVの静止膜電位から始まり、約−55 mVでしきい値に達している。",
+      "正の値まで急速に上昇する段階が脱分極で、電位依存性ナトリウムチャネルが開いてNa⁺が流入することと関係する。",
+      "膜電位は正のピークに達した後、低下し始める。",
+      "負の値へ戻る段階が再分極で、主に電位依存性カリウムチャネルを通るK⁺の流出と関係する。",
+      "一時的に静止電位より負になる過分極の後、膜の状態とイオン勾配が回復して約−70 mVへ戻る。"
+    ],
+    "modelAnswer": "The neuron starts at about −70 mV and reaches threshold near −55 mV. The rapid increase to positive membrane potential is depolarization, caused mainly by sodium ions entering through voltage-gated sodium channels. After the peak, the membrane repolarizes as potassium ions leave through voltage-gated potassium channels. The membrane briefly becomes more negative than the resting potential before returning to about −70 mV as channel activity and ion gradients return toward the resting state.",
+    "modelAnswerJa": "ニューロンは約−70 mVの静止膜電位から始まり、約−55 mVのしきい値に達します。その後、電位依存性Na⁺チャネルが開いてNa⁺が流入し、膜電位が急速に正方向へ変化する脱分極が起こります。ピークの後は主にK⁺が電位依存性K⁺チャネルから流出することで再分極します。その後、一時的に静止電位より負になる過分極を経て、チャネルの状態とイオン勾配が回復し、約−70 mVへ戻ります。"
   }
 ]
