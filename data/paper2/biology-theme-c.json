@@ -546,5 +546,41 @@
     ],
     "modelAnswer": "Photosynthesis depends simultaneously on light, carbon dioxide and suitable temperature. At low light intensity, limited light energy restricts the light-dependent processes. Once light is increased sufficiently, carbon dioxide may become limiting because carbon fixation requires an adequate CO₂ supply. Temperature influences enzyme-controlled reactions, so low temperatures slow them and temperatures above the optimum can reduce enzyme activity. Therefore increasing one factor does not necessarily continue to raise photosynthesis indefinitely: once that factor is no longer limiting, another requirement becomes the main constraint. The effect of changing one environmental factor consequently depends on the levels of the others.",
     "modelAnswerJa": "光合成は光、二酸化炭素、適切な温度に同時に依存します。光が弱ければ光に依存する反応へのエネルギー供給が不足しますが、光を十分に増やすと、今度は炭素固定に必要なCO₂が制限要因になることがあります。温度も酵素反応に影響し、低温では反応が遅く、最適温度を超えると酵素の働きが低下します。そのため、1つの要因を増やしても無限に速度が上がるわけではなく、その要因が十分になると別の要因が新たな制限要因になります。したがって、ある環境要因を変えた効果は他の要因の状態によって決まります。"
+  },
+  {
+    "id": "BIO-P2-C4-006",
+    "subject": "Biology SL",
+    "chapter": "C4 Ecosystems",
+    "unit": "C4.1 Populations and communities",
+    "primaryChapter": "C4 Ecosystems",
+    "primaryUnit": "C4.1 Populations and communities",
+    "requiredUnits": ["C4.1 Populations and communities"],
+    "level": "SL",
+    "assessmentObjectives": ["AO1", "AO2"],
+    "archetype": "population-regulation-discussion",
+    "scopeType": "single-unit",
+    "commandTerm": "Discuss",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
+    "question": "Discuss how density-dependent and density-independent factors, competition and carrying capacity can influence the size of a population over time.",
+    "markscheme": [
+      "Density-dependent factors have stronger effects as population density increases; examples include competition, disease and some forms of predation.",
+      "Competition for limiting resources can reduce growth, survival or reproduction as population density rises.",
+      "Carrying capacity is the population size that an environment can support over time under the prevailing resource and environmental conditions.",
+      "As a population approaches carrying capacity, density-dependent limits can reduce the net growth rate and contribute to a plateau or fluctuations around that level.",
+      "Density-independent factors such as severe weather, fire or other disturbances can alter population size regardless of population density.",
+      "Because carrying capacity and environmental conditions can change, real populations may fluctuate rather than remaining at one fixed size."
+    ],
+    "markschemeJa": [
+      "密度依存要因は個体群密度が高くなるほど影響が強くなり、競争、病気、一部の捕食などが例である。",
+      "個体群密度が高くなると、限られた資源をめぐる競争によって成長、生存、繁殖が低下することがある。",
+      "環境収容力は、その時点の資源量や環境条件のもとで長期的に維持できる個体群サイズである。",
+      "個体群が環境収容力に近づくと、密度依存的な制限によって正味成長率が低下し、その水準付近で個体数が安定または変動しやすくなる。",
+      "激しい気象、火災などの密度非依存要因は、個体群密度とは関係なく個体数を変化させることがある。",
+      "環境収容力や環境条件自体も変化するため、実際の個体群は1つの固定値にとどまらず変動することがある。"
+    ],
+    "modelAnswer": "Population size is influenced by both density-dependent and density-independent factors. As density increases, competition for food, space or other limiting resources becomes stronger, and disease or predation may also have greater effects. These processes can slow population growth as carrying capacity is approached. Carrying capacity is not necessarily fixed because resource supply and environmental conditions can change. Density-independent events such as severe weather or fire can reduce or alter a population regardless of its density. Consequently, real populations often fluctuate through time rather than remaining permanently at one size.",
+    "modelAnswerJa": "個体群サイズは密度依存要因と密度非依存要因の両方から影響を受けます。密度が高まると食物や空間などの限られた資源をめぐる競争が強くなり、病気や捕食の影響も大きくなることがあります。そのため環境収容力に近づくにつれて個体群の成長は遅くなります。一方、激しい気象や火災などは密度に関係なく個体数を変化させます。また資源量や環境条件が変われば環境収容力そのものも変化します。このため、自然の個体群は一定の個体数に固定されるのではなく、時間とともに変動することが一般的です。"
   }
 ]
