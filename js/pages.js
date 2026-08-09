@@ -1,6 +1,26 @@
 const Pages = {
   current: 'home',
 
+  ensureEssExamModule() {
+    if (typeof EssExam !== 'undefined') {
+      EssExam.init();
+      return;
+    }
+
+    if (document.getElementById('ess-exam-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'ess-exam-script';
+    script.src = 'js/ess-exam.js';
+    script.onload = () => {
+      if (typeof EssExam !== 'undefined') EssExam.init();
+    };
+    script.onerror = () => {
+      console.warn('ESS exam foundation module could not be loaded.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensurePaper2ProgressView() {
     if (typeof Paper2ProgressView !== 'undefined') {
       Paper2ProgressView.render();
@@ -47,6 +67,7 @@ const Pages = {
   },
 
   init() {
+    this.ensureEssExamModule();
     this.show('home');
   }
 };
