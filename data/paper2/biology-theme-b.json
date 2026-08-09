@@ -408,5 +408,45 @@
     ],
     "modelAnswer": "Oxygen partial pressure is 13.3 kPa in the alveoli but only 5.3 kPa in incoming blood, so oxygen diffuses from alveolar air into the blood. Carbon dioxide partial pressure is 6.1 kPa in incoming blood and 5.3 kPa in the alveoli, so carbon dioxide diffuses into the alveoli. Ventilation and continuous blood flow help maintain these opposing partial-pressure gradients, allowing rapid net diffusion across the thin exchange surface.",
     "modelAnswerJa": "酸素分圧は肺胞内で13.3 kPa、流入血液で5.3 kPaなので、酸素は肺胞から血液へ拡散します。二酸化炭素分圧は流入血液で6.1 kPa、肺胞内で5.3 kPaなので、二酸化炭素は血液から肺胞へ拡散します。換気と継続した血流によってこれらの分圧勾配が維持されるため、薄いガス交換面を通して効率よく正味の拡散が起こります。"
+  },
+  {
+    "id": "BIO-P2-B2-005",
+    "subject": "Biology SL",
+    "chapter": "B2 Cells",
+    "unit": "B2.2 Organelles and compartmentalization",
+    "primaryChapter": "B2 Cells",
+    "primaryUnit": "B2.2 Organelles and compartmentalization",
+    "requiredUnits": ["B2.2 Organelles and compartmentalization"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "organelle-abundance-function-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Relative abundance of organelles in four cells",
+      "columns": ["Cell", "Rough ER", "Golgi apparatus", "Mitochondria"],
+      "rows": [["W", 1, 1, 2], ["X", 5, 5, 3], ["Y", 2, 1, 5], ["Z", 1, 2, 1]]
+    },
+    "question": "Analyse the data to identify the cell most specialized for secretion of large amounts of protein and explain your choice.",
+    "markscheme": [
+      "Cell X is the cell most specialized for protein secretion.",
+      "Cell X has the highest relative abundance of rough endoplasmic reticulum.",
+      "Ribosomes associated with rough ER synthesize proteins that can enter the endomembrane system for secretion.",
+      "Cell X also has the highest relative abundance of Golgi apparatus, which modifies and packages proteins into vesicles.",
+      "Its mitochondria can provide ATP for energy-requiring processes involved in protein synthesis, vesicle transport and secretion."
+    ],
+    "markschemeJa": [
+      "タンパク質を大量に分泌するのに最も特化しているのはCell Xである。",
+      "Cell Xは粗面小胞体の相対量が最も多い。",
+      "粗面小胞体に付着したリボソームは、分泌経路へ入るタンパク質の合成に関わる。",
+      "Cell Xはゴルジ体の相対量も最も多く、タンパク質の修飾や小胞への包装に適している。",
+      "ミトコンドリアはタンパク質合成、小胞輸送、分泌などのエネルギーを必要とする過程にATPを供給できる。"
+    ],
+    "modelAnswer": "Cell X is most specialized for protein secretion because it has the greatest relative abundance of both rough ER and Golgi apparatus. Ribosomes on the rough ER synthesize proteins for secretion, while the Golgi apparatus modifies and packages them into vesicles. Cell X also contains mitochondria that can supply ATP for protein synthesis, vesicle movement and exocytosis. The combination of these organelles is therefore consistent with a highly secretory cell.",
+    "modelAnswerJa": "Cell Xが最も分泌細胞に適しています。粗面小胞体とゴルジ体の相対量がどちらも最大だからです。粗面小胞体のリボソームで分泌タンパク質を合成し、ゴルジ体で修飾して小胞へ包装できます。また、ミトコンドリアからATPを得て、タンパク質合成や小胞輸送、エキソサイトーシスを支えられます。したがって、この細胞小器官の組み合わせは大量のタンパク質分泌に適しています。"
   }
 ]
