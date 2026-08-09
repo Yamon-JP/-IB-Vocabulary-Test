@@ -133,7 +133,7 @@
       "外液の水ポテンシャルの方が低いと水は細胞外へ出て膨圧が低下し、場合によっては原形質分離が起こる。"
     ],
     "modelAnswer": "Water moves by osmosis from a region of higher water potential to one of lower water potential. If the solution outside a plant cell has a higher water potential than the cell, water enters and the vacuole expands. The contents press the plasma membrane against the cell wall, and resistance from the wall produces turgor pressure. If the external water potential is lower, water leaves, turgor falls and severe water loss can lead to plasmolysis.",
-    "modelAnswerJa": "水は浸透によって、水ポテンシャルが高い方から低い方へ移動します。植物細胞の外側の水ポテンシャルが細胞内より高ければ、水が細胞へ入り、液胞が大きくなります。細胞の内容物が細胞膜を細胞壁へ押しつけますが、細胞壁はそれ以上の膨張に抵抗するため膨圧が生じ、細胞は張った状態になります。反対に外側の水ポテンシャルが低ければ水が細胞外へ出て膨圧が低下し、水を大きく失うと原形質分離が起こることがあります。"
+    "modelAnswerJa": "水は浸透によって、水ポテンシャルが高い方から低い方へ移動します。植物細胞の外側の水ポテンシャルが細胞内より高ければ、水が細胞へ入り、液胞が大きくなります。細胞の内容物が細胞膜を細胞壁へ押しつけますが、細胞壁はそれ以上の膨張に抵抗するため膨圧が生じ、細胞は張った状態になります。反対に外側の水ポテンシャルが低ければ水が外へ出て膨圧が低下し、水を大きく失うと原形質分離が起こることがあります。"
   },
   {
     "id": "BIO-P2-D3-002",
