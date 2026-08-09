@@ -352,5 +352,183 @@
     ],
     "modelAnswer": "Blood glucose peaks at 30 minutes at 8.7 mmol L⁻¹. From 30 to 120 minutes it falls by about 43%. Insulin rises strongly at the same time as blood glucose, reaching 52 units at 30 minutes, and then both values decline. High blood glucose stimulates insulin secretion. Insulin promotes glucose uptake by responsive cells and storage as glycogen, reducing blood glucose. As glucose returns toward the normal range, insulin secretion falls, which is characteristic of negative feedback. By 120 minutes glucose is 5.0 mmol L⁻¹, close to the initial 4.8 mmol L⁻¹, supporting the conclusion that homeostatic regulation has restored the variable toward its normal range.",
     "modelAnswerJa": "血糖濃度は30分で8.7 mmol L⁻¹と最大になります。30分から120分までの減少率は約43%です。血糖が上がるとインスリンも大きく増え、30分では52単位になります。その後、血糖が下がるにつれてインスリンも低下しています。高い血糖はインスリン分泌を促し、インスリンは細胞へのグルコース取り込みやグリコーゲンとしての貯蔵を促進して血糖を下げます。血糖が正常範囲に近づくとインスリン分泌を促す刺激も弱くなるため、これは負のフィードバックです。120分では血糖が5.0 mmol L⁻¹となり、初期値4.8 mmol L⁻¹にほぼ戻っているため、恒常性による調節が働いていると判断できます。"
+  },
+  {
+    "id": "BIO-P1B-A4-001",
+    "subject": "Biology SL",
+    "chapter": "A4 Ecosystems",
+    "unit": "A4.2 Conservation of biodiversity",
+    "primaryChapter": "A4 Ecosystems",
+    "primaryUnit": "A4.2 Conservation of biodiversity",
+    "requiredUnits": ["A4.2 Conservation of biodiversity"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3", "AO4"],
+    "archetype": "table-sampling-mean-reliability-and-evaluation",
+    "scopeType": "single-unit",
+    "commandTerm": "Evaluate",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Plant species richness in protected and unprotected grassland",
+      "description": "A student used equal-sized quadrats to record the number of plant species at randomly selected locations in two neighbouring grassland areas.",
+      "columns": ["Quadrat", "Protected area: species richness", "Unprotected area: species richness"],
+      "rows": [[1, 8, 5], [2, 10, 4], [3, 9, 6], [4, 11, 3], [5, 7, 5]],
+      "note": "The same quadrat size and identification method were used in both areas."
+    },
+    "question": "Calculate the mean plant species richness for each area. Compare the two samples. Explain why random quadrat placement and a larger sample size improve the investigation. Evaluate the conclusion that the protected area has greater biodiversity.",
+    "markscheme": [
+      "Mean species richness is 9.0 species per quadrat in the protected area and 4.6 species per quadrat in the unprotected area.",
+      "Plant species richness is higher in every protected-area quadrat and the protected mean is nearly twice the unprotected mean.",
+      "Random quadrat placement reduces selection bias and makes the sample more representative of each area.",
+      "A larger sample size would include more spatial variation and reduce the influence of an unusual quadrat, increasing reliability of the estimated mean.",
+      "The data support the narrower conclusion that plant species richness was greater in the sampled protected area.",
+      "The evidence is insufficient to conclude that total biodiversity is greater because only five quadrats and plant species richness were measured; other taxa, abundance or replicated sites were not assessed."
+    ],
+    "markschemeJa": [
+      "保護区域の平均種数は1区画あたり9.0種、非保護区域は4.6種である。",
+      "すべての区画で保護区域の植物種数が多く、平均値も非保護区域のおよそ2倍である。",
+      "区画を無作為に配置することで、調査者が都合のよい場所を選ぶ偏りを減らし、区域全体をより代表する標本にできる。",
+      "標本数を増やすと場所によるばらつきをより多く含めることができ、特殊な1区画の影響も小さくなるため、平均値の信頼性が高まる。",
+      "このデータは、少なくとも調査した範囲では保護区域の植物の種数が多かったという結論を支持する。",
+      "ただし5区画の植物種数しか測定しておらず、他の生物群、個体数、別の調査地点などを調べていないため、区域全体の生物多様性が高いとまでは断定できない。"
+    ],
+    "modelAnswer": "The protected area has a mean species richness of 9.0 species per quadrat, whereas the unprotected area has a mean of 4.6. All five protected quadrats also contain more species than the corresponding unprotected samples. Random placement reduces selection bias, and using more quadrats would make the estimated mean less sensitive to local variation or an unusual sample. The results therefore support the conclusion that plant species richness was higher in the sampled protected grassland. They do not by themselves prove that total biodiversity is higher, because only five quadrats and one component of biodiversity—plant species richness—were measured.",
+    "modelAnswerJa": "保護区域の平均種数は1区画あたり9.0種、非保護区域は4.6種です。また5つすべての区画で保護区域の方が種数が多くなっています。無作為抽出は場所選びの偏りを減らし、区画数を増やせば局所的なばらつきや特殊な区画の影響を小さくできます。したがって、この調査範囲では保護区域の植物種数が多いという結論は支持されます。ただし、調べたのは5区画の植物の種数だけなので、区域全体の生物多様性が高いと断定するには、他の生物群や個体数、より多くの地点などの情報も必要です。"
+  },
+  {
+    "id": "BIO-P1B-B4-001",
+    "subject": "Biology SL",
+    "chapter": "B4 Ecosystems",
+    "unit": "B4.1 Adaptation to environment",
+    "primaryChapter": "B4 Ecosystems",
+    "primaryUnit": "B4.1 Adaptation to environment",
+    "requiredUnits": ["B4.1 Adaptation to environment"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3", "AO4"],
+    "archetype": "table-mean-variation-uncertainty-and-causation",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Stomatal density in plants from dry and moist habitats",
+      "description": "One mature leaf was sampled from each of five plants of the same species in a dry habitat and five plants in a moist habitat. Stomata were counted from equal microscope areas on the lower leaf surface.",
+      "columns": ["Plant", "Dry habitat (stomata mm⁻²)", "Moist habitat (stomata mm⁻²)"],
+      "rows": [[1, 115, 162], [2, 121, 155], [3, 108, 168], [4, 119, 159], [5, 116, 164]],
+      "note": "Leaves of similar age and position were selected."
+    },
+    "question": "Calculate the mean stomatal density for plants from each habitat. Compare the data and explain how lower stomatal density could be advantageous in a dry environment. State one source of measurement uncertainty and explain why sampling several plants improves the investigation. Evaluate whether the data prove that the habitat caused the difference in stomatal density.",
+    "markscheme": [
+      "Mean stomatal density is 115.8 stomata mm⁻² for the dry habitat and 161.6 stomata mm⁻² for the moist habitat.",
+      "All five dry-habitat values are lower than the moist-habitat values; both groups have a range of 13 stomata mm⁻².",
+      "Lower stomatal density can reduce the number of pathways for water-vapour loss when stomata are open, which may help conserve water in dry conditions.",
+      "A reasonable source of measurement uncertainty is deciding whether stomata at field boundaries should be counted, measuring the microscope area, focusing the image or distinguishing stomata accurately.",
+      "Sampling several plants includes biological variation among individuals and makes the result more representative and reliable than a measurement from one plant.",
+      "The data show an association but do not prove that habitat caused the difference; genetic differences or other environmental factors could also contribute, so a controlled or common-garden experiment would be needed for stronger causal evidence."
+    ],
+    "markschemeJa": [
+      "乾燥環境の平均気孔密度は115.8個 mm⁻²、湿潤環境は161.6個 mm⁻²である。",
+      "5個体すべてで乾燥環境の値の方が低く、両群の範囲はどちらも13個 mm⁻²である。",
+      "気孔密度が低ければ、気孔が開いているときに水蒸気が失われる経路が少なくなり、乾燥条件で水を保持するうえで有利になりうる。",
+      "測定の不確かさとして、視野の境界上の気孔を数えるかどうか、視野面積の測定、ピント、気孔の識別などが挙げられる。",
+      "複数個体を測定すると個体間の生物学的ばらつきを含められるため、1個体だけを測るより代表性と信頼性が高まる。",
+      "この結果は生息環境と気孔密度の関連を示すが、環境が原因だと証明するものではない。遺伝的差異や他の環境要因も影響しうるため、因果関係を強く示すには共通環境で育てる実験などが必要である。"
+    ],
+    "modelAnswer": "The mean stomatal density is 115.8 stomata mm⁻² in the dry habitat and 161.6 stomata mm⁻² in the moist habitat. Every dry-habitat value is lower, although the spread within each group is similar. A lower stomatal density may reduce potential water loss through stomata and therefore be advantageous where water is limited. Counting stomata introduces uncertainty, for example when stomata lie on the edge of the microscope field. Measuring several plants captures biological variation and gives a more representative result. However, the habitat cannot be identified as the cause from these observational data alone because genetic differences or other environmental factors could explain part of the pattern.",
+    "modelAnswerJa": "乾燥環境の平均気孔密度は115.8個 mm⁻²、湿潤環境は161.6個 mm⁻²です。すべての個体で乾燥環境の方が低い一方、群内のばらつきの幅は同程度です。気孔密度が低いことは、気孔から失われる水を減らす可能性があり、水が少ない環境では有利になりえます。気孔の計数では、視野の境界上の気孔をどう扱うかなどに測定の不確かさがあります。複数個体を調べることで個体差を含めた、より代表的な結果になります。ただし観察データだけでは環境が差を生じさせた原因だとは証明できず、遺伝的差異や他の環境要因も考える必要があります。"
+  },
+  {
+    "id": "BIO-P1B-C1-002",
+    "subject": "Biology SL",
+    "chapter": "C1 Molecules",
+    "unit": "C1.3 Photosynthesis",
+    "primaryChapter": "C1 Molecules",
+    "primaryUnit": "C1.3 Photosynthesis",
+    "requiredUnits": ["C1.3 Photosynthesis"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3", "AO4"],
+    "archetype": "table-rate-anomaly-reliability-and-evaluation",
+    "scopeType": "single-unit",
+    "commandTerm": "Evaluate",
+    "marks": 7,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Oxygen concentration during photosynthesis in an aquatic plant",
+      "description": "An aquatic plant was illuminated at constant light intensity. Dissolved oxygen concentration in the surrounding water was measured at five-minute intervals while temperature was kept constant.",
+      "columns": ["Time (min)", "Dissolved oxygen (mg L⁻¹)"],
+      "rows": [[0, 5.2], [5, 6.0], [10, 6.9], [15, 7.7], [20, 7.3], [25, 9.4]],
+      "note": "A single oxygen reading was recorded at each time point."
+    },
+    "question": "Calculate the mean rate of increase in dissolved oxygen from 0 to 15 minutes. Analyse the overall trend and identify the anomalous result. Explain why increasing oxygen can indicate photosynthetic activity. Explain why the anomalous value should not automatically be removed, and how repeated measurements and calculation of a mean would improve reliability. Suggest one plausible source of the anomalous result.",
+    "markscheme": [
+      "The mean rate from 0 to 15 minutes is (7.7 - 5.2) / 15 = approximately 0.17 mg L⁻¹ min⁻¹.",
+      "Dissolved oxygen generally increases with time, rising from 5.2 mg L⁻¹ at 0 minutes to 9.4 mg L⁻¹ at 25 minutes.",
+      "The 20-minute value of 7.3 mg L⁻¹ is anomalous relative to the surrounding upward trend because it is lower than the 15-minute value and followed by a much higher value at 25 minutes.",
+      "Photosynthesis releases oxygen, so under controlled conditions an increase in dissolved oxygen can provide evidence of net oxygen production by the illuminated plant.",
+      "The anomalous value should not be deleted without evidence because it could reflect real biological variation or a measurement error; its cause should be investigated or the measurement repeated.",
+      "Repeating measurements at each time point and using a mean would reduce the influence of random variation or a single unusual reading and allow consistency to be assessed, improving reliability.",
+      "A plausible source is incomplete mixing, an air bubble on the oxygen probe, temporary probe error or calibration/reading error."
+    ],
+    "markschemeJa": [
+      "0〜15分の平均増加速度は(7.7-5.2)/15で、約0.17 mg L⁻¹ min⁻¹である。",
+      "溶存酸素は全体として時間とともに増え、0分の5.2 mg L⁻¹から25分の9.4 mg L⁻¹へ上昇している。",
+      "20分の7.3 mg L⁻¹は、15分の値より低く、その後25分で大きく上昇しているため、全体の増加傾向から外れた異常値と考えられる。",
+      "光合成では酸素が生じるため、条件が管理されていれば溶存酸素の増加は照明された植物による正味の酸素生成を示す証拠になりうる。",
+      "異常値は実際の生物学的変動か測定誤差か分からないため、根拠なく削除してはいけない。原因を調べるか測定を繰り返す必要がある。",
+      "各時点で測定を繰り返して平均を求めれば、偶然のばらつきや1回の特殊な値の影響を小さくでき、一貫性も確認できるため信頼性が高まる。",
+      "原因として、水が十分混ざっていなかった、酸素プローブに気泡が付いた、プローブが一時的に不安定だった、校正や読み取りに誤差があったことなどが考えられる。"
+    ],
+    "modelAnswer": "From 0 to 15 minutes, dissolved oxygen increases by 2.5 mg L⁻¹, giving a mean rate of about 0.17 mg L⁻¹ min⁻¹. Oxygen generally rises with time, but the 20-minute value of 7.3 mg L⁻¹ is anomalous because it falls below the 15-minute reading before the concentration rises to 9.4 mg L⁻¹ at 25 minutes. Photosynthesis releases oxygen, so the overall rise is consistent with photosynthetic oxygen production. The anomalous value should not simply be removed because it may represent either real variation or an error. Repeating measurements and calculating means would show whether the pattern is reproducible and reduce the influence of random variation. A probe air bubble, incomplete mixing or a reading error could explain the unusual value.",
+    "modelAnswerJa": "0〜15分で溶存酸素は2.5 mg L⁻¹増えているため、平均増加速度は約0.17 mg L⁻¹ min⁻¹です。全体として酸素濃度は時間とともに上昇していますが、20分の7.3 mg L⁻¹は15分より低く、その後25分で9.4 mg L⁻¹まで上がるため異常値と考えられます。光合成では酸素が生じるので、全体の上昇は光合成による酸素生成と整合します。ただし異常値は実際の変動か誤差か分からないため、単純に削除すべきではありません。測定を繰り返して平均を求めれば再現性を確認でき、偶然のばらつきの影響も小さくできます。プローブへの気泡、混合不足、読み取り誤差などが原因として考えられます。"
+  },
+  {
+    "id": "BIO-P1B-D4-001",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.1 Natural selection",
+    "primaryChapter": "D4 Ecosystems",
+    "primaryUnit": "D4.1 Natural selection",
+    "requiredUnits": ["D4.1 Natural selection"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "table-percentage-trend-selection-and-causal-evaluation",
+    "scopeType": "single-unit",
+    "commandTerm": "Evaluate",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Frequency of antibiotic-resistant bacteria over generations",
+      "description": "A bacterial population was cultured for 20 generations in medium containing the same antibiotic concentration. At intervals, the percentage of bacteria showing a resistant phenotype was measured.",
+      "columns": ["Generation", "Resistant bacteria (%)"],
+      "rows": [[0, 4], [5, 11], [10, 27], [15, 51], [20, 76]],
+      "note": "No comparison population without antibiotic is shown."
+    },
+    "question": "Calculate the increase in resistant phenotype frequency from generation 0 to generation 20 in percentage points. Analyse the trend and explain it using natural selection. Explain why it is incorrect to state that the antibiotic caused resistance mutations because the bacteria needed them. Evaluate what can and cannot be concluded from these data alone.",
+    "markscheme": [
+      "Resistance increases by 76 - 4 = 72 percentage points from generation 0 to generation 20.",
+      "The frequency of resistant bacteria increases progressively across the generations, from 4% initially to 76% at generation 20.",
+      "If heritable variation in resistance is present, resistant bacteria are more likely to survive and reproduce in the antibiotic environment than susceptible bacteria.",
+      "As resistant bacteria contribute proportionally more descendants, alleles or traits associated with resistance become more common in the population over generations.",
+      "Mutations arise without regard to what the bacteria need; the antibiotic acts as a selective pressure that favours resistant variants rather than deliberately producing useful mutations.",
+      "The data support an increase in resistant phenotype frequency in this antibiotic-treated population, but without a no-antibiotic control and evidence that the resistance is heritable, the table alone cannot prove that the antibiotic caused the evolutionary change or identify its genetic mechanism."
+    ],
+    "markschemeJa": [
+      "耐性表現型の頻度は0世代から20世代までに76-4=72パーセントポイント増加している。",
+      "耐性菌の割合は世代とともに一貫して増加し、初期の4%から20世代では76%になっている。",
+      "遺伝する耐性のばらつきが集団内に存在する場合、抗生物質環境では感受性菌より耐性菌の方が生存・繁殖しやすい。",
+      "耐性菌がより多くの子孫を残すことで、耐性に関係する対立遺伝子や形質の頻度が世代を経て高くなる。",
+      "突然変異は細菌が必要としているかどうかとは無関係に生じ、抗生物質は有用な突然変異を目的に応じて作るのではなく、すでに生じた耐性変異を選択する圧力として働く。",
+      "このデータは抗生物質を含む培養で耐性表現型が増加したことを支持するが、抗生物質なしの対照群や耐性が遺伝することを示す証拠がないため、抗生物質が進化的変化の原因だと証明したり遺伝的機構を特定したりすることはできない。"
+    ],
+    "modelAnswer": "The resistant phenotype increases by 72 percentage points, from 4% at generation 0 to 76% at generation 20. The increase is progressive across the experiment. Natural selection can explain this if resistant variants are heritable: in the presence of antibiotic, resistant bacteria survive and reproduce more successfully, so resistance becomes more common in later generations. It is incorrect to say that bacteria mutate because they need resistance; mutations are not directed by need, while the antibiotic selects among variants. The table shows a strong increase in resistance in the treated culture, but without a control population lacking antibiotic and evidence of inheritance, it cannot by itself prove the cause or genetic mechanism of the change.",
+    "modelAnswerJa": "耐性表現型は0世代の4%から20世代の76%へ、72パーセントポイント増加しています。実験期間を通して耐性菌の割合は増加しています。耐性が遺伝する形質であれば、抗生物質環境では耐性菌の方が生存・繁殖しやすく、その子孫が増えるため耐性の頻度が世代ごとに上昇します。細菌が耐性を必要としたから突然変異が起こるわけではなく、突然変異は必要性とは無関係に生じ、抗生物質がその中から耐性型を選択します。ただし、抗生物質を含まない対照群や遺伝性の証拠がないため、この表だけで変化の原因や遺伝的機構まで証明することはできません。"
   }
 ]
