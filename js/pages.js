@@ -38,6 +38,26 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureCourseCoverage() {
+    if (typeof CourseCoverage !== 'undefined') {
+      CourseCoverage.install();
+      return;
+    }
+
+    if (document.getElementById('course-coverage-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'course-coverage-script';
+    script.src = 'js/course-coverage.js';
+    script.onload = () => {
+      if (typeof CourseCoverage !== 'undefined') CourseCoverage.install();
+    };
+    script.onerror = () => {
+      console.warn('Course Coverage module could not be loaded. Existing learned-unit controls remain available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensurePaper2ProgressView() {
     if (typeof Paper2ProgressView !== 'undefined') {
       Paper2ProgressView.render();
@@ -86,6 +106,7 @@ const Pages = {
   init() {
     this.ensureEssExamModule();
     this.ensureUIOptimizations();
+    this.ensureCourseCoverage();
     this.show('home');
   }
 };
