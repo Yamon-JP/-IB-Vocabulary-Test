@@ -493,12 +493,20 @@ const Paper1 = {
 
     const markscheme = Array.isArray(this.current.markscheme) ? this.current.markscheme : [];
     const markschemeJa = Array.isArray(this.current.markschemeJa) ? this.current.markschemeJa : [];
+    const modelAnswer = this.current.modelAnswer || '';
+    const modelAnswerJa = this.current.modelAnswerJa || '';
     const maxMarks = Number(this.current.marks) || markscheme.length;
     feedback.innerHTML = `
       <div class="paper1-feedback-card">
         <strong>Markscheme</strong>
         <p>Compare your answer carefully with each marking point.</p>
         ${this.renderMarkscheme(markscheme, markschemeJa)}
+        ${modelAnswer ? `
+          <div class="paper1-model-answer">
+            <strong>Model Answer</strong>
+            <p>${this.escapeHtml(modelAnswer)}</p>
+            ${modelAnswerJa ? `<p class="paper1-feedback-ja" lang="ja">日本語：${this.escapeHtml(modelAnswerJa)}</p>` : ''}
+          </div>` : ''}
         ${this.renderSelfMarkPanel(maxMarks)}
       </div>`;
     this.updateSelfMarkScore();
