@@ -658,5 +658,77 @@
     ],
     "modelAnswer": "During meiosis I, homologous chromosomes pair. Crossing over can occur between non-sister chromatids, exchanging corresponding DNA segments and producing recombinant chromatids with new combinations of alleles. In addition, each homologous pair aligns independently at metaphase I, so the maternal or paternal chromosome of each pair can be distributed to either pole independently of other pairs. These two processes generate many different combinations of alleles in the haploid gametes produced by meiosis.",
     "modelAnswerJa": "減数分裂Iでは相同染色体が対合し、その非姉妹染色分体間で交差が起こることがあります。対応するDNA領域が交換されるため、親の染色体にはなかった対立遺伝子の組み合わせをもつ組換え染色分体ができます。また、中期Iでは各相同染色体対の向きが他の対とは独立して決まり、母由来・父由来の染色体がさまざまな組み合わせで配偶子へ分配されます。これらの過程によって、減数分裂で生じる配偶子の遺伝的多様性が大きくなります。"
+  },
+  {
+    "id": "BIO-P2-D1-007",
+    "subject": "Biology SL",
+    "chapter": "D1 Molecules",
+    "unit": "D1.1 DNA replication",
+    "primaryChapter": "D1 Molecules",
+    "primaryUnit": "D1.1 DNA replication",
+    "requiredUnits": ["D1.1 DNA replication"],
+    "level": "SL",
+    "assessmentObjectives": ["AO1", "AO2"],
+    "archetype": "integrated-dna-replication-mechanism",
+    "scopeType": "single-unit",
+    "commandTerm": "Explain",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
+    "question": "Explain the mechanism of semi-conservative DNA replication, including the roles of strand separation, complementary base pairing and DNA polymerase.",
+    "markscheme": [
+      "The DNA double helix is unwound and the two parental strands separate as hydrogen bonds between complementary bases are disrupted.",
+      "Each original DNA strand acts as a template for synthesis of a new complementary strand.",
+      "Free nucleotides align with exposed bases by complementary base pairing, with adenine pairing with thymine and guanine with cytosine.",
+      "DNA polymerase catalyses the joining of nucleotides to form the sugar-phosphate backbone of each new DNA strand.",
+      "The newly synthesized strand is complementary to its parental template, allowing the original base sequence to be reproduced accurately.",
+      "Each daughter DNA molecule contains one parental strand and one newly synthesized strand, so replication is semi-conservative."
+    ],
+    "markschemeJa": [
+      "DNA二重らせんがほどけ、相補的塩基間の水素結合が切れることで2本の親鎖が分離する。",
+      "元のDNAの各鎖が、新しい相補鎖を合成するための鋳型として働く。",
+      "遊離ヌクレオチドが、アデニンとチミン、グアニンとシトシンという相補的塩基対形成によって露出した塩基に並ぶ。",
+      "DNAポリメラーゼがヌクレオチドをつなぎ、新しいDNA鎖の糖-リン酸骨格を形成する。",
+      "新しく合成された鎖は親の鋳型鎖に相補的であるため、元の塩基配列を高い正確さで再現できる。",
+      "複製後の各DNA分子には親由来の鎖1本と新しく合成された鎖1本が含まれるため、半保存的複製である。"
+    ],
+    "modelAnswer": "During DNA replication, the double helix is unwound and the parental strands separate when hydrogen bonds between complementary bases are disrupted. Each parental strand then acts as a template. Free nucleotides align by complementary base pairing, with A pairing with T and G with C. DNA polymerase joins the nucleotides into new sugar-phosphate backbones. The new strands are complementary to the original templates, allowing the base sequence to be copied accurately. Each resulting DNA molecule contains one original strand and one newly synthesized strand, so the process is semi-conservative.",
+    "modelAnswerJa": "DNA複製では二重らせんがほどけ、相補的塩基間の水素結合が切れて2本の親鎖が分離します。それぞれの親鎖が鋳型となり、遊離ヌクレオチドがA-T、G-Cの相補的塩基対形成によって並びます。DNAポリメラーゼがこれらのヌクレオチドをつないで新しい糖-リン酸骨格をつくります。新しい鎖は元の鋳型鎖に相補的なので、元の塩基配列を正確にコピーできます。できたDNA分子はそれぞれ親鎖1本と新しい鎖1本をもつため、半保存的複製と呼ばれます。"
+  },
+  {
+    "id": "BIO-P2-D3-007",
+    "subject": "Biology SL",
+    "chapter": "D3 Organisms",
+    "unit": "D3.3 Homeostasis",
+    "primaryChapter": "D3 Organisms",
+    "primaryUnit": "D3.3 Homeostasis",
+    "requiredUnits": ["D3.3 Homeostasis"],
+    "level": "SL",
+    "assessmentObjectives": ["AO1", "AO2"],
+    "archetype": "bidirectional-blood-glucose-homeostasis",
+    "scopeType": "single-unit",
+    "commandTerm": "Explain",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
+    "question": "Explain how insulin, glucagon and negative feedback regulate blood glucose concentration when it rises above or falls below the normal range.",
+    "markscheme": [
+      "A rise in blood glucose is detected by pancreatic beta cells, which increase insulin secretion.",
+      "Insulin promotes glucose uptake by responsive cells and promotes storage of glucose, including conversion to glycogen, lowering blood glucose toward the normal range.",
+      "A fall in blood glucose is detected by pancreatic alpha cells, which increase glucagon secretion.",
+      "Glucagon promotes processes in the liver that increase the release of glucose into the blood, including breakdown of glycogen.",
+      "The insulin response opposes a rise and the glucagon response opposes a fall, so each response reverses the original deviation from the normal range.",
+      "As blood glucose returns toward normal, the stimulus for the relevant hormone secretion decreases, completing the negative-feedback response."
+    ],
+    "markschemeJa": [
+      "血糖値が上昇すると膵臓のβ細胞がそれを感知し、インスリン分泌を増やす。",
+      "インスリンは反応する細胞へのグルコース取り込みを促し、グリコーゲンへの変換を含むグルコース貯蔵を促進して、血糖値を正常範囲へ下げる。",
+      "血糖値が低下すると膵臓のα細胞がそれを感知し、グルカゴン分泌を増やす。",
+      "グルカゴンは肝臓でグリコーゲン分解などを促し、血液中へのグルコース放出を増やす。",
+      "インスリンの反応は血糖上昇を、グルカゴンの反応は血糖低下を打ち消すため、どちらも正常範囲からのずれと反対方向に働く。",
+      "血糖値が正常に近づくにつれて該当するホルモン分泌を促す刺激が弱くなり、負のフィードバック反応が小さくなる。"
+    ],
+    "modelAnswer": "When blood glucose rises, pancreatic beta cells respond by secreting more insulin. Insulin promotes glucose uptake and storage, including glycogen formation, so blood glucose falls toward normal. When blood glucose falls, pancreatic alpha cells secrete more glucagon. Glucagon acts mainly on the liver to promote processes such as glycogen breakdown that increase glucose release into the blood. Each hormone therefore produces a response opposite to the original change. As the concentration returns toward the normal range, the stimulus for insulin or glucagon secretion decreases, which is characteristic of negative feedback.",
+    "modelAnswerJa": "血糖値が上がると膵臓のβ細胞からインスリンが多く分泌され、細胞へのグルコース取り込みやグリコーゲンとしての貯蔵が促されるため、血糖値は正常範囲へ下がります。反対に血糖値が下がるとα細胞からグルカゴンが分泌され、主に肝臓でグリコーゲン分解などが促されて血液へグルコースが放出され、血糖値が上がります。どちらも最初の変化を打ち消す方向に働き、正常値へ戻るにつれてホルモン分泌を促す刺激が弱くなります。これが負のフィードバックによる調節です。"
   }
 ]
