@@ -190,13 +190,41 @@ const Paper1 = {
 
   getAvailableUnits() {
     const units = new Set();
-    [...this.paper1aQuestions, ...this.paper1bQuestions].forEach(question => {
+    const questions = [...this.paper1aQuestions, ...this.paper1bQuestions];
+    if (typeof Paper2 !== 'undefined' && Array.isArray(Paper2.allQuestions)) {
+      questions.push(...Paper2.allQuestions.filter(question =>
+        question?.subject === 'Biology SL'
+        && ['paper2a', 'paper2b'].includes(question.assessmentTarget)
+      ));
+    }
+
+    questions.forEach(question => {
       const requiredUnits = Array.isArray(question?.requiredUnits) ? question.requiredUnits : [];
       requiredUnits.forEach(unit => {
         if (typeof unit === 'string' && unit.trim()) units.add(unit.trim());
       });
     });
     return [...units].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+  },
+
+  updateLearnedUnitThemeSelectAll(theme) {
+    if (typeof App === 'undefined') return;
+    const themeUnits = this.getAvailableUnits().filter(unit => unit.startsWith(theme));
+    const learned = new Set(Array.isArray(App.state.biologyLearnedUnits) ? App.state.biologyLearnedUnits : []);
+    const selectedCount = themeUnits.filter(unit => learned.has(unit)).length;
+    const selectAll = document.getElementById(`paper1-learned-select-all-${theme}`);
+    if (!selectAll) return;
+
+    selectAll.checked = themeUnits.length > 0 && selectedCount === themeUnits.length;
+    selectAll.indeterminate = selectedCount > 0 && selectedCount < themeUnits.length;
+  },
+
+  syncLearnedUnitThemeCheckboxes(theme) {
+    if (typeof App === 'undefined') return;
+    const learned = new Set(Array.isArray(App.state.biologyLearnedUnits) ? App.state.biologyLearnedUnits : []);
+    document.querySelectorAll(`#paper1-learned-units-list input[data-learned-unit-theme="${theme}"]`).forEach(input => {
+      input.checked = learned.has(input.value);
+    });
   },
 
   updateLearnedUnitThemeCount(theme) {
@@ -206,6 +234,7 @@ const Paper1 = {
     const selectedCount = themeUnits.filter(unit => learned.has(unit)).length;
     const count = document.getElementById(`paper1-learned-count-${theme}`);
     if (count) count.textContent = `${selectedCount} / ${themeUnits.length} selected`;
+    this.updateLearnedUnitThemeSelectAll(theme);
   },
 
   renderLearnedUnitSelector() {
@@ -215,7 +244,7 @@ const Paper1 = {
 
     const visible = typeof App !== 'undefined'
       && App.state.subject === 'Biology SL'
-      && App.state.practiceType === 'paper1';
+      && ['paper1', 'paper2'].includes(App.state.practiceType);
     control.style.display = visible ? 'block' : 'none';
     if (!visible) return;
 
@@ -238,10 +267,17 @@ const Paper1 = {
             <span id="paper1-learned-count-${theme}" class="muted">${selectedCount} / ${themeUnits.length} selected</span>
           </summary>
           <div class="biology-chapter-list">
+            <label class="chapter-option">
+              <input type="checkbox"
+                id="paper1-learned-select-all-${theme}"
+                onchange="App.toggleBiologyLearnedTheme('${theme}', this.checked)">
+              <span><strong>Select all Theme ${theme}</strong></span>
+            </label>
             ${themeUnits.map(unit => `
               <label class="chapter-option">
                 <input type="checkbox"
                   value="${this.escapeHtml(unit)}"
+                  data-learned-unit-theme="${theme}"
                   ${learned.has(unit) ? 'checked' : ''}
                   onchange="App.toggleBiologyLearnedUnit(this.value, this.checked); Paper1.updateLearnedUnitThemeCount('${theme}')">
                 <span>${this.escapeHtml(unit)}</span>
@@ -249,6 +285,8 @@ const Paper1 = {
           </div>
         </details>`;
     }).join('');
+
+    themes.forEach(theme => this.updateLearnedUnitThemeCount(theme));
   },
 
   applySectionUI() {
