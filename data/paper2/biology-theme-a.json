@@ -379,5 +379,41 @@
     ],
     "modelAnswer": "Water is polar because electrons are shared unequally within each molecule, creating partial charges. These charges allow hydrogen bonds to form between water molecules. Hydrogen bonding gives water cohesion, which helps maintain continuous columns during transport, and it also contributes to a high specific heat capacity, so large energy changes cause relatively small temperature changes. Water's polarity also allows ions and many polar molecules to dissolve through interactions with water molecules. As a result, water provides both a stable thermal environment and an effective medium for transporting dissolved substances in organisms.",
     "modelAnswerJa": "水分子は電子を不均等に共有するため極性をもち、部分的な正電荷と負電荷が生じます。この部分電荷によって水分子間に水素結合ができます。水素結合は凝集力を生み、輸送時に連続した水柱を保つのに役立ちます。また、水素結合を崩すにはエネルギーが必要なので比熱容量が大きく、急激な温度変化を抑えます。さらに水の極性によってイオンや多くの極性物質を溶かすことができるため、水は生体内で溶質を運ぶ媒体としても重要です。"
+  },
+  {
+    "id": "BIO-P2-A1-006",
+    "subject": "Biology SL",
+    "chapter": "A1 Molecules",
+    "unit": "A1.2 Nucleic acids",
+    "primaryChapter": "A1 Molecules",
+    "primaryUnit": "A1.2 Nucleic acids",
+    "requiredUnits": ["A1.2 Nucleic acids"],
+    "level": "SL",
+    "assessmentObjectives": ["AO1", "AO2"],
+    "archetype": "dna-structure-information-stability-explanation",
+    "scopeType": "single-unit",
+    "commandTerm": "Explain",
+    "marks": 6,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2b",
+    "question": "Explain how the structure of DNA allows genetic information to be stored stably and copied accurately.",
+    "markscheme": [
+      "The sequence of nitrogenous bases along a DNA strand stores genetic information.",
+      "The sugar-phosphate backbone contains strong covalent bonds that give each polynucleotide strand structural stability.",
+      "DNA is double-stranded, with specific complementary base pairing between adenine and thymine and between guanine and cytosine.",
+      "Hydrogen bonds between complementary bases hold the two strands together while still allowing the strands to separate when DNA is copied.",
+      "Each parental strand can act as a template because exposed bases pair specifically with complementary free nucleotides.",
+      "Complementary base pairing therefore allows the base sequence, and hence the genetic information, to be copied with high accuracy."
+    ],
+    "markschemeJa": [
+      "DNA鎖に並ぶ塩基の配列が遺伝情報を保存している。",
+      "糖-リン酸骨格には強い共有結合があり、各ポリヌクレオチド鎖に構造的な安定性を与える。",
+      "DNAは二本鎖で、アデニンとチミン、グアニンとシトシンの間で特異的な相補的塩基対を形成する。",
+      "相補的塩基間の水素結合は2本の鎖を結びつける一方、DNAを複製するときには鎖を分離できる。",
+      "親DNAの各鎖は、露出した塩基に遊離ヌクレオチドが相補的に結合するため、新しい鎖の鋳型として働く。",
+      "この相補的塩基対形成によって塩基配列、つまり遺伝情報を高い正確さでコピーできる。"
+    ],
+    "modelAnswer": "Genetic information is stored in the order of bases along DNA. Strong covalent bonds in the sugar-phosphate backbone make each strand stable, while the two strands are held together by hydrogen bonds between specific complementary base pairs: A with T and G with C. These hydrogen bonds can be disrupted when the molecule must be copied. Each original strand then acts as a template because free nucleotides pair only with complementary exposed bases. Complementary base pairing therefore allows the original base sequence to be reproduced accurately while the overall double-stranded structure provides stable storage of information.",
+    "modelAnswerJa": "DNAでは塩基の並び方に遺伝情報が保存されています。糖-リン酸骨格の強い共有結合が各鎖を安定させ、2本の鎖はA-T、G-Cという特異的な相補的塩基対の水素結合で結ばれています。この水素結合は複製時には切ることができ、分かれた各親鎖が鋳型になります。遊離ヌクレオチドは露出した塩基と相補的に結合するため、元の塩基配列を高い正確さで再現できます。この構造によってDNAは情報を安定して保存しながら正確にコピーできます。"
   }
 ]
