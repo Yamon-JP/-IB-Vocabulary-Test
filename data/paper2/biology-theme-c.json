@@ -430,5 +430,85 @@
     ],
     "modelAnswer": "The neuron starts at about −70 mV and reaches threshold near −55 mV. The rapid increase to positive membrane potential is depolarization, caused mainly by sodium ions entering through voltage-gated sodium channels. After the peak, the membrane repolarizes as potassium ions leave through voltage-gated potassium channels. The membrane briefly becomes more negative than the resting potential before returning to about −70 mV as channel activity and ion gradients return toward the resting state.",
     "modelAnswerJa": "ニューロンは約−70 mVの静止膜電位から始まり、約−55 mVのしきい値に達します。その後、電位依存性Na⁺チャネルが開いてNa⁺が流入し、膜電位が急速に正方向へ変化する脱分極が起こります。ピークの後は主にK⁺が電位依存性K⁺チャネルから流出することで再分極します。その後、一時的に静止電位より負になる過分極を経て、チャネルの状態とイオン勾配が回復し、約−70 mVへ戻ります。"
+  },
+  {
+    "id": "BIO-P2-C3-005",
+    "subject": "Biology SL",
+    "chapter": "C3 Organisms",
+    "unit": "C3.2 Defence against disease",
+    "primaryChapter": "C3 Organisms",
+    "primaryUnit": "C3.2 Defence against disease",
+    "requiredUnits": ["C3.2 Defence against disease"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "primary-secondary-immune-response-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Antibody concentration after first and second exposure to the same antigen",
+      "columns": ["Time after exposure (days)", "Primary response (arbitrary units)", "Secondary response (arbitrary units)"],
+      "rows": [[0, 0, 0], [3, 1, 8], [7, 6, 24], [14, 10, 32], [21, 5, 25]]
+    },
+    "question": "Analyse the differences between the primary and secondary antibody responses and explain how immunological memory contributes to the pattern and to vaccination.",
+    "markscheme": [
+      "The secondary response begins more rapidly, with a much higher antibody concentration by day 3 than the primary response.",
+      "The secondary response reaches a higher peak antibody concentration than the primary response.",
+      "Memory lymphocytes formed after the first exposure remain in the body and respond rapidly when the same antigen is encountered again.",
+      "Rapid clonal expansion and differentiation of memory cells can produce a faster and stronger antigen-specific response.",
+      "Vaccination exposes the immune system to antigen in a controlled way so that memory cells can form before later exposure to the pathogen."
+    ],
+    "markschemeJa": [
+      "二次応答はより速く始まり、3日目の時点ですでに一次応答より抗体濃度が大幅に高い。",
+      "二次応答の抗体濃度のピークは一次応答より高い。",
+      "最初の抗原曝露で形成された記憶リンパ球が体内に残り、同じ抗原に再び出会うと速やかに反応する。",
+      "記憶細胞が素早くクローン増殖・分化することで、より速く強い抗原特異的応答が生じる。",
+      "ワクチン接種は抗原を制御された形で免疫系へ提示し、将来の病原体曝露より前に記憶細胞を形成させる。"
+    ],
+    "modelAnswer": "The secondary response is both faster and stronger than the primary response. By day 3 the secondary antibody concentration is already 8 units compared with 1 unit in the primary response, and its peak is also much higher. The first exposure produces memory lymphocytes that persist after the initial response. When the same antigen appears again, these cells can undergo rapid clonal expansion and produce a strong specific response. Vaccination uses this principle by generating immunological memory before natural exposure to the pathogen.",
+    "modelAnswerJa": "二次応答は一次応答より速く、強く起こっています。3日目には二次応答が8 unitsなのに対して一次応答は1 unitで、ピークも二次応答の方が大きくなっています。最初の曝露で記憶リンパ球が形成され、その後も体内に残るため、同じ抗原が再び入ると素早くクローン増殖して強い特異的免疫応答を起こせます。ワクチンはこの仕組みを利用し、実際の病原体に感染する前に免疫記憶を形成させます。"
+  },
+  {
+    "id": "BIO-P2-C4-005",
+    "subject": "Biology SL",
+    "chapter": "C4 Ecosystems",
+    "unit": "C4.1 Populations and communities",
+    "primaryChapter": "C4 Ecosystems",
+    "primaryUnit": "C4.1 Populations and communities",
+    "requiredUnits": ["C4.1 Populations and communities"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3", "AO4"],
+    "archetype": "mark-release-recapture-calculation-evaluation",
+    "scopeType": "single-unit",
+    "commandTerm": "Calculate and evaluate",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper2a",
+    "stimulus": {
+      "type": "table",
+      "title": "Mark–release–recapture study",
+      "columns": ["Measure", "Number of animals"],
+      "rows": [["Marked and released in first sample", 80], ["Caught in second sample", 100], ["Marked animals recaptured", 20]]
+    },
+    "question": "Calculate the estimated population size and evaluate two assumptions or limitations that could affect the reliability of the estimate.",
+    "markscheme": [
+      "Estimated population size = (80 × 100) ÷ 20 = 400 animals.",
+      "Marked individuals should mix randomly back into the population before the second sample.",
+      "Marks should not be lost, overlooked or alter survival or recapture probability.",
+      "The population should be approximately closed between samples, with little birth, death, immigration or emigration.",
+      "Violation of these assumptions would change the proportion of marked animals in the second sample and could bias the population estimate."
+    ],
+    "markschemeJa": [
+      "推定個体数は(80×100)÷20=400個体である。",
+      "標識個体は2回目の捕獲までに個体群へ十分に戻り、ランダムに混ざっている必要がある。",
+      "標識が失われたり見落とされたりせず、標識自体が生存率や再捕獲されやすさを変えない必要がある。",
+      "2回の調査の間に出生、死亡、移入、移出が少なく、個体群がほぼ閉じている必要がある。",
+      "これらの前提が崩れると2回目の標本中の標識個体の割合が変わり、個体数推定に偏りが生じる。"
+    ],
+    "modelAnswer": "The estimated population size is (80 × 100) / 20 = 400 animals. This estimate assumes that the marked animals mix randomly with the rest of the population and that marks are retained and do not affect the chance of survival or recapture. It also works best if the population is approximately closed between samples. If marked animals are lost, migrate, behave differently or are less likely to be recaptured, the proportion of marked animals in the second sample will be distorted and the estimate may be unreliable.",
+    "modelAnswerJa": "推定個体数は(80×100)÷20=400個体です。この方法では、標識個体が個体群へランダムに混ざること、標識が失われず、生存や再捕獲の確率を変えないことなどを前提とします。また2回の調査間で出生・死亡・移入・移出が少ないことも重要です。これらの条件が崩れると2回目の標本に含まれる標識個体の割合が変化し、推定値に偏りが生じます。"
   }
 ]
