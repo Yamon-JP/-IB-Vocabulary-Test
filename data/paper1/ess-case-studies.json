@@ -1,1 +1,160 @@
-[]
+[
+  {
+    "id": "ESS-CS1-WATER-001",
+    "subject": "ESS HL",
+    "title": "Aster River Basin: Water Security and River Basin Management",
+    "summary": "A fictional river basin used to investigate water security, competing water demands, pollution, stakeholder perspectives and sustainable river-basin management. All names and numerical data are hypothetical and created for examination practice.",
+    "hypothetical": true,
+    "chapters": [
+      "Topic 1",
+      "Topic 4"
+    ],
+    "requiredUnits": [
+      "1.1 Perspectives",
+      "1.2 Systems",
+      "1.3 Sustainability",
+      "4.1 Water systems",
+      "4.2 Water access, use and security",
+      "4.4 Water pollution"
+    ],
+    "resources": [
+      {
+        "type": "text",
+        "title": "Resource 1: Basin background",
+        "text": "The Aster River rises in a forested upland, flows through an irrigated farming district and the city of Meridia, and then enters the internationally protected Luma Wetland. A reservoir upstream of Meridia supplies drinking water, irrigation water and hydropower. During the dry season, low river flow increases competition among users. The regional government is considering a new water-allocation plan that would cap irrigation withdrawals, expand wastewater treatment, introduce seasonal water pricing and guarantee a minimum environmental flow to the wetland."
+      },
+      {
+        "type": "table",
+        "title": "Resource 2: Annual freshwater withdrawals",
+        "description": "Hypothetical annual freshwater withdrawals in the Aster River Basin.",
+        "columns": [
+          "Sector",
+          "2022 withdrawal (million m³)",
+          "2032 projected withdrawal without new policy (million m³)"
+        ],
+        "rows": [
+          [
+            "Agriculture",
+            "420",
+            "500"
+          ],
+          [
+            "Households",
+            "150",
+            "190"
+          ],
+          [
+            "Industry",
+            "90",
+            "120"
+          ],
+          [
+            "Total",
+            "660",
+            "810"
+          ]
+        ],
+        "note": "Current long-term renewable freshwater availability is estimated at 760 million m³ per year."
+      },
+      {
+        "type": "lineGraph",
+        "title": "Resource 3: Mean monthly river discharge",
+        "description": "Mean monthly discharge measured downstream of Meridia in a representative year.",
+        "xLabel": "Month",
+        "yLabel": "Discharge (m³ s⁻¹)",
+        "xMin": 1,
+        "xMax": 12,
+        "yMin": 0,
+        "yMax": 120,
+        "points": [
+          {
+            "x": 1,
+            "y": 92
+          },
+          {
+            "x": 2,
+            "y": 88
+          },
+          {
+            "x": 3,
+            "y": 80
+          },
+          {
+            "x": 4,
+            "y": 68
+          },
+          {
+            "x": 5,
+            "y": 52
+          },
+          {
+            "x": 6,
+            "y": 36
+          },
+          {
+            "x": 7,
+            "y": 24
+          },
+          {
+            "x": 8,
+            "y": 20
+          },
+          {
+            "x": 9,
+            "y": 28
+          },
+          {
+            "x": 10,
+            "y": 46
+          },
+          {
+            "x": 11,
+            "y": 70
+          },
+          {
+            "x": 12,
+            "y": 86
+          }
+        ],
+        "note": "Ecologists recommend that discharge should not fall below 30 m³ s⁻¹ for prolonged periods if wetland habitat quality is to be maintained."
+      },
+      {
+        "type": "table",
+        "title": "Resource 4: Water-quality survey",
+        "description": "Hypothetical mean water-quality measurements at three sampling sites.",
+        "columns": [
+          "Site",
+          "Nitrate (mg L⁻¹)",
+          "BOD (mg L⁻¹)",
+          "Dissolved oxygen (mg L⁻¹)"
+        ],
+        "rows": [
+          [
+            "Upland forest",
+            "0.8",
+            "1.2",
+            "9.4"
+          ],
+          [
+            "Downstream of farms",
+            "4.9",
+            "2.4",
+            "8.1"
+          ],
+          [
+            "Downstream of Meridia",
+            "6.2",
+            "5.8",
+            "5.9"
+          ]
+        ],
+        "note": "Higher BOD indicates greater oxygen demand by microorganisms decomposing biodegradable organic matter."
+      },
+      {
+        "type": "text",
+        "title": "Resource 5: Stakeholder positions",
+        "text": "Farmers argue that restricting irrigation could reduce crop yields and rural employment. Meridia's water utility supports higher dry-season prices because it expects demand management to postpone costly supply expansion. Wetland conservation groups support a legally guaranteed environmental flow and stronger nutrient controls. Some low-income urban residents oppose higher household water prices unless a basic water allowance is protected. The national government must also comply with a regional agreement requiring participating jurisdictions to avoid causing significant downstream environmental harm."
+      }
+    ]
+  }
+]
