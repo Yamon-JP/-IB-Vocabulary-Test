@@ -307,6 +307,25 @@ const App = {
     this.saveState();
   },
 
+  toggleBiologyLearnedTheme(theme, checked) {
+    if (this.state.subject !== 'Biology SL' || !theme || typeof Paper1 === 'undefined') return;
+    const themeUnits = typeof Paper1.getAvailableUnits === 'function'
+      ? Paper1.getAvailableUnits().filter(unit => unit.startsWith(theme))
+      : [];
+    if (!themeUnits.length) return;
+
+    const learned = new Set(Array.isArray(this.state.biologyLearnedUnits) ? this.state.biologyLearnedUnits : []);
+    themeUnits.forEach(unit => {
+      if (checked) learned.add(unit);
+      else learned.delete(unit);
+    });
+    this.state.biologyLearnedUnits = [...learned].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+    this.saveState();
+
+    if (typeof Paper1.syncLearnedUnitThemeCheckboxes === 'function') Paper1.syncLearnedUnitThemeCheckboxes(theme);
+    if (typeof Paper1.updateLearnedUnitThemeCount === 'function') Paper1.updateLearnedUnitThemeCount(theme);
+  },
+
   setPracticeScope(scope) {
     this.state.practiceScope = scope === 'selected' ? 'selected' : 'all';
     this.applyPracticeScopeUI();
@@ -327,9 +346,21 @@ const App = {
 
   loadPaper2ForSelection(subject, chapters = []) {
     if (typeof Paper2 === 'undefined') return 0;
+    const learned = new Set(subject === 'Biology SL' && Array.isArray(this.state.biologyLearnedUnits)
+      ? this.state.biologyLearnedUnits
+      : []);
     const eligible = (Array.isArray(Paper2.allQuestions) ? Paper2.allQuestions : []).filter(question => {
       if (question.subject !== subject) return false;
-      if (subject === 'Biology SL' && !['paper2a', 'paper2b'].includes(question.assessmentTarget)) return false;
+
+      if (subject === 'Biology SL') {
+        if (!['paper2a', 'paper2b'].includes(question.assessmentTarget)) return false;
+        const requiredUnits = Array.isArray(question.requiredUnits)
+          ? question.requiredUnits.filter(unit => typeof unit === 'string' && unit.trim())
+          : [];
+        if (!requiredUnits.length) return false;
+        if (!requiredUnits.every(unit => learned.has(unit))) return false;
+      }
+
       if (!chapters.length) return true;
       const chapter = question.chapter || question.topic;
       return chapters.includes(chapter);
@@ -380,9 +411,18 @@ const App = {
     }
 
     if (this.state.practiceType === 'paper2') {
+      const learnedUnits = Array.isArray(this.state.biologyLearnedUnits)
+        ? [...this.state.biologyLearnedUnits]
+        : [];
+      if (this.state.subject === 'Biology SL' && !learnedUnits.length) {
+        alert('Please select at least one learned unit before starting Paper 2 Practice.');
+        return;
+      }
       const count = this.loadPaper2ForSelection(this.state.subject, chapters);
       if (!count) {
-        alert('No Paper 2 questions are available for this selection yet.');
+        alert(this.state.subject === 'Biology SL'
+          ? 'No Paper 2 questions are available for the selected chapters and learned units yet.'
+          : 'No Paper 2 questions are available for this selection yet.');
         return;
       }
       this.updatePracticeHeader();
