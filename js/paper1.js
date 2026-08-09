@@ -35,6 +35,7 @@ const Paper1 = {
     this.installUI();
     if (this.initialized) {
       this.applySectionUI();
+      this.renderLearnedUnitSelector();
       return;
     }
 
@@ -60,6 +61,7 @@ const Paper1 = {
     this.initialized = true;
     this.renderEmptyState();
     this.applySectionUI();
+    this.renderLearnedUnitSelector();
   },
 
   ensureStyles() {
@@ -108,6 +110,21 @@ const Paper1 = {
           </button>
         </div>`;
       scopeControl.parentNode.insertBefore(control, scopeControl);
+    }
+
+    if (scopeControl && !document.getElementById('paper1-learned-units-control')) {
+      const learnedControl = document.createElement('div');
+      learnedControl.id = 'paper1-learned-units-control';
+      learnedControl.className = 'chapter-options';
+      learnedControl.style.display = 'none';
+      learnedControl.innerHTML = `
+        <div class="chapter-options-heading">
+          <h3>Learned Units</h3>
+          <span class="muted">Only checked units can appear</span>
+        </div>
+        <p class="muted">Mark only units already studied in class. Opening, answering or completing a question never marks a unit as learned.</p>
+        <div id="paper1-learned-units-list"></div>`;
+      scopeControl.parentNode.insertBefore(learnedControl, scopeControl);
     }
 
     const achievements = document.getElementById('practice-achievements');
@@ -171,6 +188,54 @@ const Paper1 = {
     return section === 'paper1b' ? 'paper1b' : 'paper1a';
   },
 
+  getAvailableUnits() {
+    const units = new Set();
+    [...this.paper1aQuestions, ...this.paper1bQuestions].forEach(question => {
+      const requiredUnits = Array.isArray(question?.requiredUnits) ? question.requiredUnits : [];
+      requiredUnits.forEach(unit => {
+        if (typeof unit === 'string' && unit.trim()) units.add(unit.trim());
+      });
+    });
+    return [...units].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+  },
+
+  renderLearnedUnitSelector() {
+    const control = document.getElementById('paper1-learned-units-control');
+    const list = document.getElementById('paper1-learned-units-list');
+    if (!control || !list) return;
+
+    const visible = typeof App !== 'undefined'
+      && App.state.subject === 'Biology SL'
+      && App.state.practiceType === 'paper1';
+    control.style.display = visible ? 'block' : 'none';
+    if (!visible) return;
+
+    const units = this.getAvailableUnits();
+    if (!units.length) {
+      list.innerHTML = '<p class="muted">Unit information is loading...</p>';
+      return;
+    }
+
+    const learned = new Set(Array.isArray(App.state.biologyLearnedUnits) ? App.state.biologyLearnedUnits : []);
+    const themes = ['A', 'B', 'C', 'D'];
+    list.innerHTML = themes.map(theme => {
+      const themeUnits = units.filter(unit => unit.startsWith(theme));
+      if (!themeUnits.length) return '';
+      return `
+        <p class="muted"><strong>Theme ${theme}</strong></p>
+        <div class="biology-chapter-list">
+          ${themeUnits.map(unit => `
+            <label class="chapter-option">
+              <input type="checkbox"
+                value="${this.escapeHtml(unit)}"
+                ${learned.has(unit) ? 'checked' : ''}
+                onchange="App.toggleBiologyLearnedUnit(this.value, this.checked)">
+              <span>${this.escapeHtml(unit)}</span>
+            </label>`).join('')}
+        </div>`;
+    }).join('');
+  },
+
   applySectionUI() {
     const section = this.normalizeSection(typeof App !== 'undefined' ? App.state.paper1Section : this.section);
     this.section = section;
@@ -193,11 +258,21 @@ const Paper1 = {
     if (type) type.textContent = section === 'paper1a' ? 'Choose one best answer.' : 'Use the stimulus and biological knowledge.';
   },
 
-  loadForSelection(subject, chapters = [], section = 'paper1a') {
+  loadForSelection(subject, chapters = [], section = 'paper1a', learnedUnits = []) {
     this.section = this.normalizeSection(section);
     const source = this.section === 'paper1b' ? this.paper1bQuestions : this.paper1aQuestions;
+    const learned = new Set(Array.isArray(learnedUnits) ? learnedUnits : []);
     this.questions = source.filter(question => {
       if (question.subject !== subject) return false;
+
+      if (subject === 'Biology SL') {
+        const requiredUnits = Array.isArray(question.requiredUnits)
+          ? question.requiredUnits.filter(unit => typeof unit === 'string' && unit.trim())
+          : [];
+        if (!requiredUnits.length) return false;
+        if (!requiredUnits.every(unit => learned.has(unit))) return false;
+      }
+
       if (!chapters.length) return true;
       const chapter = question.chapter || question.topic;
       return chapters.includes(chapter);
