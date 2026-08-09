@@ -64,6 +64,25 @@ const App = {
     });
   },
 
+  getCourseCoverageItems(subject) {
+    if (!subject) return [];
+
+    if (
+      typeof CourseCoverage !== 'undefined'
+      && typeof CourseCoverage.hasSubject === 'function'
+      && typeof CourseCoverage.getSelected === 'function'
+      && CourseCoverage.hasSubject(subject)
+    ) {
+      return CourseCoverage.getSelected(subject);
+    }
+
+    if (subject === 'Biology SL' && Array.isArray(this.state.biologyLearnedUnits)) {
+      return [...this.state.biologyLearnedUnits];
+    }
+
+    return [];
+  },
+
   renderSubjectCards() {
     const container = document.getElementById('subject-list');
     if (!container || typeof Vocabulary === 'undefined') return;
@@ -114,9 +133,7 @@ const App = {
       await this.ensurePaper1Module();
       if (typeof Paper1 !== 'undefined') {
         await Paper1.init();
-        const learnedUnits = this.state.subject === 'Biology SL'
-          ? [...(this.state.biologyLearnedUnits || [])]
-          : [];
+        const learnedUnits = this.getCourseCoverageItems(this.state.subject);
         Paper1.loadForSelection(this.state.subject, chapters, this.state.paper1Section, learnedUnits);
       }
     } else if (this.state.practiceType === 'paper2') {
@@ -374,9 +391,7 @@ const App = {
 
   loadPaper2ForSelection(subject, chapters = []) {
     if (typeof Paper2 === 'undefined') return 0;
-    const learned = new Set(subject === 'Biology SL' && Array.isArray(this.state.biologyLearnedUnits)
-      ? this.state.biologyLearnedUnits
-      : []);
+    const learned = new Set(this.getCourseCoverageItems(subject));
     const eligible = (Array.isArray(Paper2.allQuestions) ? Paper2.allQuestions : []).filter(question => {
       if (question.subject !== subject) return false;
 
@@ -421,9 +436,7 @@ const App = {
         return;
       }
       await Paper1.init();
-      const learnedUnits = Array.isArray(this.state.biologyLearnedUnits)
-        ? [...this.state.biologyLearnedUnits]
-        : [];
+      const learnedUnits = this.getCourseCoverageItems(this.state.subject);
       if (this.state.subject === 'Biology SL' && !learnedUnits.length) {
         alert('Please select at least one learned unit before starting Paper 1 Practice.');
         return;
@@ -439,9 +452,7 @@ const App = {
     }
 
     if (this.state.practiceType === 'paper2') {
-      const learnedUnits = Array.isArray(this.state.biologyLearnedUnits)
-        ? [...this.state.biologyLearnedUnits]
-        : [];
+      const learnedUnits = this.getCourseCoverageItems(this.state.subject);
       if (this.state.subject === 'Biology SL' && !learnedUnits.length) {
         alert('Please select at least one learned unit before starting Paper 2 Practice.');
         return;
