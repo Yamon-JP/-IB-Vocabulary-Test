@@ -33,26 +33,10 @@
           "2032 projected withdrawal without new policy (million m³)"
         ],
         "rows": [
-          [
-            "Agriculture",
-            "420",
-            "500"
-          ],
-          [
-            "Households",
-            "150",
-            "190"
-          ],
-          [
-            "Industry",
-            "90",
-            "120"
-          ],
-          [
-            "Total",
-            "660",
-            "810"
-          ]
+          ["Agriculture", "420", "500"],
+          ["Households", "150", "190"],
+          ["Industry", "90", "120"],
+          ["Total", "660", "810"]
         ],
         "note": "Current long-term renewable freshwater availability is estimated at 760 million m³ per year."
       },
@@ -67,54 +51,18 @@
         "yMin": 0,
         "yMax": 120,
         "points": [
-          {
-            "x": 1,
-            "y": 92
-          },
-          {
-            "x": 2,
-            "y": 88
-          },
-          {
-            "x": 3,
-            "y": 80
-          },
-          {
-            "x": 4,
-            "y": 68
-          },
-          {
-            "x": 5,
-            "y": 52
-          },
-          {
-            "x": 6,
-            "y": 36
-          },
-          {
-            "x": 7,
-            "y": 24
-          },
-          {
-            "x": 8,
-            "y": 20
-          },
-          {
-            "x": 9,
-            "y": 28
-          },
-          {
-            "x": 10,
-            "y": 46
-          },
-          {
-            "x": 11,
-            "y": 70
-          },
-          {
-            "x": 12,
-            "y": 86
-          }
+          {"x": 1, "y": 92},
+          {"x": 2, "y": 88},
+          {"x": 3, "y": 80},
+          {"x": 4, "y": 68},
+          {"x": 5, "y": 52},
+          {"x": 6, "y": 36},
+          {"x": 7, "y": 24},
+          {"x": 8, "y": 20},
+          {"x": 9, "y": 28},
+          {"x": 10, "y": 46},
+          {"x": 11, "y": 70},
+          {"x": 12, "y": 86}
         ],
         "note": "Ecologists recommend that discharge should not fall below 30 m³ s⁻¹ for prolonged periods if wetland habitat quality is to be maintained."
       },
@@ -122,31 +70,11 @@
         "type": "table",
         "title": "Resource 4: Water-quality survey",
         "description": "Hypothetical mean water-quality measurements at three sampling sites.",
-        "columns": [
-          "Site",
-          "Nitrate (mg L⁻¹)",
-          "BOD (mg L⁻¹)",
-          "Dissolved oxygen (mg L⁻¹)"
-        ],
+        "columns": ["Site", "Nitrate (mg L⁻¹)", "BOD (mg L⁻¹)", "Dissolved oxygen (mg L⁻¹)"],
         "rows": [
-          [
-            "Upland forest",
-            "0.8",
-            "1.2",
-            "9.4"
-          ],
-          [
-            "Downstream of farms",
-            "4.9",
-            "2.4",
-            "8.1"
-          ],
-          [
-            "Downstream of Meridia",
-            "6.2",
-            "5.8",
-            "5.9"
-          ]
+          ["Upland forest", "0.8", "1.2", "9.4"],
+          ["Downstream of farms", "4.9", "2.4", "8.1"],
+          ["Downstream of Meridia", "6.2", "5.8", "5.9"]
         ],
         "note": "Higher BOD indicates greater oxygen demand by microorganisms decomposing biodegradable organic matter."
       },
@@ -154,6 +82,86 @@
         "type": "text",
         "title": "Resource 5: Stakeholder positions",
         "text": "Farmers argue that restricting irrigation could reduce crop yields and rural employment. Meridia's water utility supports higher dry-season prices because it expects demand management to postpone costly supply expansion. Wetland conservation groups support a legally guaranteed environmental flow and stronger nutrient controls. Some low-income urban residents oppose higher household water prices unless a basic water allowance is protected. The national government must also comply with a regional agreement requiring participating jurisdictions to avoid causing significant downstream environmental harm."
+      }
+    ]
+  },
+  {
+    "id": "ESS-CS2-LAND-001",
+    "subject": "ESS HL",
+    "title": "Verdantia Forest Frontier: Biodiversity, Land Use and Food Production",
+    "summary": "A fictional tropical forest frontier used to investigate habitat loss, biodiversity decline, agricultural expansion, soil degradation, conservation and sustainable food production. All names and numerical data are hypothetical and created for examination practice.",
+    "hypothetical": true,
+    "chapters": [
+      "Topic 1",
+      "Topic 2",
+      "Topic 3",
+      "Topic 5"
+    ],
+    "requiredUnits": [
+      "1.1 Perspectives",
+      "1.3 Sustainability",
+      "2.1 Individuals, populations, communities and ecosystems",
+      "2.3 Biogeochemical cycles",
+      "3.1 Biodiversity and evolution",
+      "3.2 Human impact on biodiversity",
+      "3.3 Conservation and regeneration",
+      "5.1 Soil",
+      "5.2 Agriculture and food"
+    ],
+    "resources": [
+      {
+        "type": "text",
+        "title": "Resource 1: Landscape background",
+        "text": "The fictional Verdantia Forest Frontier covers 100,000 hectares of lowland tropical landscape. During the last two decades, road construction and export-oriented soybean production have expanded into native forest. The remaining forest contains several endemic bird and amphibian species and provides water regulation, soil protection, carbon storage and pollination services. The government is considering a land-use strategy that would prohibit further clearance in high-biodiversity forest, establish an 8,000-hectare wildlife corridor between two protected areas, charge a levy on high fertilizer use and pay farmers who convert part of their land to agroforestry."
+      },
+      {
+        "type": "table",
+        "title": "Resource 2: Land-use change in Verdantia",
+        "description": "Hypothetical land-use areas in 2005 and 2025. The total landscape area is 100,000 ha in both years.",
+        "columns": ["Land use", "2005 area (ha)", "2025 area (ha)"],
+        "rows": [
+          ["Native forest", "72000", "46000"],
+          ["Smallholder mixed farms", "18000", "22000"],
+          ["Soy monoculture", "5000", "23000"],
+          ["Settlements and roads", "5000", "9000"]
+        ],
+        "note": "Most new soybean fields and roads were established in areas that were native forest in 2005."
+      },
+      {
+        "type": "lineGraph",
+        "title": "Resource 3: Forest-specialist bird population index",
+        "description": "A hypothetical index based on repeated surveys of forest-specialist birds. The index is set to 100 in 2005.",
+        "xLabel": "Year",
+        "yLabel": "Population index",
+        "xMin": 2005,
+        "xMax": 2025,
+        "yMin": 0,
+        "yMax": 110,
+        "points": [
+          {"x": 2005, "y": 100},
+          {"x": 2010, "y": 92},
+          {"x": 2015, "y": 78},
+          {"x": 2020, "y": 63},
+          {"x": 2025, "y": 51}
+        ],
+        "note": "Survey methods were kept consistent between years. The index represents relative abundance rather than the number of species."
+      },
+      {
+        "type": "table",
+        "title": "Resource 4: Comparison of farming systems",
+        "description": "Hypothetical mean values from farms with similar rainfall and soil parent material.",
+        "columns": ["Farming system", "Food/export yield (t ha⁻¹ yr⁻¹)", "Nitrogen fertilizer (kg ha⁻¹ yr⁻¹)", "Soil organic matter (%)", "Soil loss (t ha⁻¹ yr⁻¹)", "Bird species recorded"],
+        "rows": [
+          ["Soy monoculture", "3.6", "160", "2.1", "12.5", "18"],
+          ["Agroforestry", "2.9", "70", "4.3", "3.2", "36"],
+          ["Smallholder mixed farming", "2.4", "55", "3.8", "4.6", "31"]
+        ],
+        "note": "Yield values are not directly equivalent in market value because the systems produce different combinations of products."
+      },
+      {
+        "type": "text",
+        "title": "Resource 5: Stakeholder positions",
+        "text": "An agribusiness association argues that soybean expansion provides export earnings, tax revenue and employment and warns that strict land limits could reduce investment. Conservation organizations support the corridor and a permanent ban on clearing high-biodiversity forest because fragmented populations may become isolated. A smallholder cooperative supports payments for agroforestry but opposes rules that could remove productive land without compensation. Indigenous communities downstream emphasize the cultural value of intact forest and clean water. The government states that its goal is to maintain food production while preventing further biodiversity loss and soil degradation."
       }
     ]
   }
