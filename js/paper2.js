@@ -113,6 +113,107 @@ const Paper2 = {
       .replace(/'/g, '&#039;');
   },
 
+  isEssSectionB(question = this.current) {
+    return question?.subject === 'ESS HL' && question?.assessmentTarget === 'ess2b';
+  },
+
+  ensureEssayStyles() {
+    if (document.getElementById('paper2-essay-rubric-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'paper2-essay-rubric-styles';
+    style.textContent = `
+      #paper2-answer.paper2-answer-essay { min-height: 360px; }
+      .paper2-essay-meta {
+        display: inline-flex;
+        margin-bottom: 10px;
+        padding: 5px 9px;
+        border: 1px solid #ddd9ff;
+        border-radius: 999px;
+        background: #f7f6ff;
+        color: #4338ca;
+        font-size: .76rem;
+        font-weight: 850;
+      }
+      .paper2-essay-rubric { display: grid; gap: 12px; margin-top: 10px; }
+      .paper2-rubric-group {
+        overflow: hidden;
+        border: 1px solid #e4e7ec;
+        border-radius: 14px;
+        background: #fbfcfe;
+      }
+      .paper2-rubric-group-heading {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 11px 12px;
+        border-bottom: 1px solid #e4e7ec;
+        background: #f8fafc;
+      }
+      .paper2-rubric-group-heading strong,
+      .paper2-rubric-group-heading small { display: block; }
+      .paper2-rubric-group-heading small { margin-top: 2px; color: #667085; font-size: .75rem; }
+      .paper2-rubric-group-heading > span { flex: 0 0 auto; color: #475467; font-size: .78rem; font-weight: 850; }
+      .paper2-rubric-group .paper2-self-mark-list { margin: 0; padding: 6px 12px 8px 38px; }
+      .paper2-rubric-group .paper2-self-mark-point { padding: 7px 0; }
+      @media (max-width: 600px) {
+        #paper2-answer.paper2-answer-essay { min-height: 300px; }
+        .paper2-rubric-group-heading { flex-direction: column; gap: 4px; }
+      }
+    `;
+    document.head.appendChild(style);
+  },
+
+  renderMarkPoint(point, index, japaneseText = '') {
+    const japanese = japaneseText
+      ? `<span class="paper2-markscheme-ja" lang="ja">日本語：${this.escapeHtml(japaneseText)}</span>`
+      : '';
+    return `
+      <li class="paper2-self-mark-point">
+        <label>
+          <input type="checkbox" data-paper2-mark-point="${index}" onchange="Paper2.updateSelfMarkScore()">
+          <span class="paper2-self-mark-copy">
+            <span>${this.escapeHtml(point)}</span>
+            ${japanese}
+          </span>
+        </label>
+      </li>`;
+  },
+
+  renderEssayRubric(markscheme, markschemeJa, rubricGroups) {
+    const groups = (Array.isArray(rubricGroups) ? rubricGroups : [])
+      .map(group => ({
+        title: String(group?.title || '').trim(),
+        titleJa: String(group?.titleJa || '').trim(),
+        start: Number(group?.start),
+        count: Number(group?.count)
+      }))
+      .filter(group => group.title && Number.isInteger(group.start) && Number.isInteger(group.count) && group.start >= 0 && group.count > 0);
+    if (!groups.length) return '';
+
+    const html = groups.map(group => {
+      const end = Math.min(group.start + group.count, markscheme.length);
+      if (end <= group.start) return '';
+      const points = [];
+      for (let index = group.start; index < end; index += 1) {
+        points.push(this.renderMarkPoint(markscheme[index], index, markschemeJa[index] || ''));
+      }
+      const japaneseTitle = group.titleJa
+        ? `<small lang="ja">${this.escapeHtml(group.titleJa)}</small>`
+        : '';
+      return `
+        <section class="paper2-rubric-group">
+          <div class="paper2-rubric-group-heading">
+            <div><strong>${this.escapeHtml(group.title)}</strong>${japaneseTitle}</div>
+            <span>${points.length} marks</span>
+          </div>
+          <ol class="paper2-markscheme-list paper2-self-mark-list" start="${group.start + 1}">${points.join('')}</ol>
+        </section>`;
+    }).filter(Boolean).join('');
+
+    return html ? `<div class="paper2-essay-rubric">${html}</div>` : '';
+  },
+
   renderTableStimulus(stimulus) {
     const columns = Array.isArray(stimulus.columns) ? stimulus.columns : [];
     const rows = Array.isArray(stimulus.rows) ? stimulus.rows : [];
@@ -225,21 +326,32 @@ const Paper2 = {
     if (!question) return;
 
     this.attemptSaved = false;
+    this.ensureEssayStyles();
 
     if (!this.current) {
       this.renderEmptyState();
       if (marks) marks.textContent = '—';
       if (command) command.textContent = '—';
-      if (answer) answer.value = '';
+      if (answer) {
+        answer.value = '';
+        answer.classList.remove('paper2-answer-essay');
+      }
       if (feedback) feedback.innerHTML = '';
       return;
     }
 
+    const isEssay = this.isEssSectionB();
     const stimulus = this.renderStimulus(this.current.stimulus);
-    question.innerHTML = `${stimulus}<div class="paper2-question-text">${this.escapeHtml(this.current.question || '')}</div>`;
+    const essayMeta = isEssay && (this.current.mockSet || this.current.option)
+      ? `<div class="paper2-essay-meta">${this.current.mockSet ? `Mock Set ${this.escapeHtml(this.current.mockSet)}` : 'Section B'}${this.current.option ? ` · Option ${this.escapeHtml(this.current.option)}` : ''}</div>`
+      : '';
+    question.innerHTML = `${stimulus}${essayMeta}<div class="paper2-question-text">${this.escapeHtml(this.current.question || '')}</div>`;
     if (marks) marks.textContent = this.current.marks ?? '—';
     if (command) command.textContent = this.current.commandTerm || '—';
-    if (answer) answer.value = '';
+    if (answer) {
+      answer.value = '';
+      answer.classList.toggle('paper2-answer-essay', isEssay);
+    }
     if (feedback) feedback.innerHTML = '';
   },
 
@@ -248,31 +360,32 @@ const Paper2 = {
       return '<p class="muted">No markscheme is available for this question.</p>';
     }
 
-    return `<ol class="paper2-markscheme-list paper2-self-mark-list">${markscheme.map((point, index) => {
-      const japanese = markschemeJa[index]
-        ? `<span class="paper2-markscheme-ja" lang="ja">日本語：${this.escapeHtml(markschemeJa[index])}</span>`
-        : '';
-      return `
-        <li class="paper2-self-mark-point">
-          <label>
-            <input type="checkbox" data-paper2-mark-point="${index}" onchange="Paper2.updateSelfMarkScore()">
-            <span class="paper2-self-mark-copy">
-              <span>${this.escapeHtml(point)}</span>
-              ${japanese}
-            </span>
-          </label>
-        </li>`;
-    }).join('')}</ol>`;
+    if (this.isEssSectionB()) {
+      const grouped = this.renderEssayRubric(markscheme, markschemeJa, this.current?.rubricGroups);
+      if (grouped) return grouped;
+    }
+
+    return `<ol class="paper2-markscheme-list paper2-self-mark-list">${markscheme.map((point, index) =>
+      this.renderMarkPoint(point, index, markschemeJa[index] || '')
+    ).join('')}</ol>`;
   },
 
   renderSelfMarkPanel(maxMarks) {
+    const isEssay = this.isEssSectionB();
+    const title = isEssay ? 'Essay training rubric' : 'Markscheme checklist';
+    const guidance = isEssay
+      ? 'Use the five areas to check whether your essay demonstrates the skills needed for a strong 20-mark response. This is a training rubric, not an official IB mark-band table.'
+      : 'Tick a point only if your answer clearly communicates that idea.';
+    const guidanceJa = isEssay
+      ? '20点essayに必要な力を5領域で確認する練習用rubricです。IB公式のmark bandそのものではありません。'
+      : '答案にその内容が明確に含まれている場合だけチェックしてください。';
     return `
       <div class="paper2-self-mark-panel">
         <div class="paper2-self-mark-heading">
           <div>
-            <strong>Markscheme checklist</strong>
-            <small>Tick a point only if your answer clearly communicates that idea.</small>
-            <small lang="ja">答案にその内容が明確に含まれている場合だけチェックしてください。</small>
+            <strong>${title}</strong>
+            <small>${guidance}</small>
+            <small lang="ja">${guidanceJa}</small>
           </div>
           <span id="paper2-self-score">0 / ${this.escapeHtml(maxMarks)}</span>
         </div>
@@ -362,14 +475,20 @@ const Paper2 = {
     const markscheme = Array.isArray(this.current.markscheme) ? this.current.markscheme : [];
     const markschemeJa = Array.isArray(this.current.markschemeJa) ? this.current.markschemeJa : [];
     const maxMarks = Number(this.current.marks) || markscheme.length;
+    const isEssay = this.isEssSectionB();
     const markschemeHtml = this.renderMarkscheme(markscheme, markschemeJa);
     const selfMarkPanel = this.renderSelfMarkPanel(maxMarks);
     const modelAnswer = this.current.modelAnswer
       ? `<div class="paper2-model-answer"><h4>Model Answer</h4><p>${this.escapeHtml(this.current.modelAnswer)}</p></div>`
       : '';
+    const modelAnswerJaHeading = isEssay ? '日本語解説' : '日本語訳';
     const modelAnswerJa = this.current.modelAnswerJa
-      ? `<div class="paper2-model-answer paper2-model-answer-ja" lang="ja"><h4>日本語訳</h4><p>${this.escapeHtml(this.current.modelAnswerJa)}</p></div>`
+      ? `<div class="paper2-model-answer paper2-model-answer-ja" lang="ja"><h4>${modelAnswerJaHeading}</h4><p>${this.escapeHtml(this.current.modelAnswerJa)}</p></div>`
       : '';
+    const feedbackIntro = isEssay
+      ? 'Compare your response with the five training-rubric areas. Tick only the criteria that are clearly demonstrated in your essay.'
+      : 'Compare your response with each marking point. Tick only the points that are clearly present in your answer.';
+    const feedbackHeading = isEssay ? 'Training rubric' : 'Markscheme';
 
     this.attemptSaved = false;
     feedback.innerHTML = `
@@ -378,8 +497,8 @@ const Paper2 = {
           <strong>Self-mark your answer</strong>
           <span>${this.escapeHtml(this.current.marks ?? '—')} marks</span>
         </div>
-        <p>Compare your response with each marking point. Tick only the points that are clearly present in your answer.</p>
-        <h4>Markscheme</h4>
+        <p>${feedbackIntro}</p>
+        <h4>${feedbackHeading}</h4>
         ${markschemeHtml}
         ${selfMarkPanel}
         ${modelAnswer}
