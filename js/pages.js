@@ -80,14 +80,14 @@ const Pages = {
   },
 
   ensureEssSectionBJapaneseFinalPass() {
-    if (typeof Paper2 !== 'undefined' && Paper2.essSectionBJapaneseFinalPassInstalled) return;
+    if (typeof Paper2 !== 'undefined' && Paper2.essSectionBJapaneseFinalPassV2Installed) return;
     if (document.getElementById('ess-section-b-japanese-final-pass-script')) return;
 
     const script = document.createElement('script');
     script.id = 'ess-section-b-japanese-final-pass-script';
-    script.src = 'js/ess-section-b-japanese-final-pass.js?v=1';
+    script.src = 'js/ess-section-b-japanese-final-pass-v2.js?v=2';
     script.onerror = () => {
-      console.warn('ESS Section B final Japanese cleanup could not be loaded. Existing ESS practice remains available.');
+      console.warn('ESS Section B final Japanese cleanup v2 could not be loaded. Existing ESS practice remains available.');
     };
     document.body.appendChild(script);
   },
