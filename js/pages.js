@@ -105,6 +105,19 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureEssSectionBZeroBareEnglish() {
+    if (typeof Paper2 !== 'undefined' && Paper2.essSectionBZeroBareEnglishInstalled) return;
+    if (document.getElementById('ess-section-b-zero-bare-english-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'ess-section-b-zero-bare-english-script';
+    script.src = 'js/ess-section-b-japanese-zero-bare-english.js?v=1';
+    script.onerror = () => {
+      console.warn('ESS Section B final bare-English cleanup could not be loaded. Existing ESS practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureUIOptimizations() {
     if (typeof UIOptimizations !== 'undefined') {
       UIOptimizations.install();
@@ -192,11 +205,8 @@ const Pages = {
       target.style.display = 'block';
       this.current = page;
 
-      // Keep the global bottom navigation visible on every page,
-      // including Practice. Practice also has its dedicated Back button.
       document.body.classList.remove('practice-active');
 
-      // Refresh progress display after page becomes visible
       if (typeof Progress !== 'undefined') {
         Progress.render();
       }
@@ -215,6 +225,7 @@ const Pages = {
     this.ensureEssSectionBJapaneseAudit();
     this.ensureEssSectionBJapaneseFinalPass();
     this.ensureEssSectionBJapaneseRenderGuard();
+    this.ensureEssSectionBZeroBareEnglish();
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
