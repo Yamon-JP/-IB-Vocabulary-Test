@@ -126,7 +126,28 @@
       ['stakeholder', '利害関係者（stakeholder）'],
       ['system', 'システム（system）'],
       ['feedback', 'フィードバック（feedback）'],
-      ['biomass', 'バイオマス（biomass）']
+      ['biomass', 'バイオマス（biomass）'],
+      ['biodiversity loss', '生物多様性の損失'],
+      ['biodiversity', '生物多様性'],
+      ['soil fertility', '土壌肥沃度'],
+      ['population momentum', '人口モメンタム'],
+      ['total fertility rate', '合計特殊出生率'],
+      ['replacement fertility', '人口置換水準の出生率'],
+      ['dependency ratio', '従属人口指数'],
+      ['demographic transition model', '人口転換モデル'],
+      ['urbanization', '都市化'],
+      ['particulate matter', '粒子状物質'],
+      ['nitrogen oxides', '窒素酸化物'],
+      ['volatile organic compounds', '揮発性有機化合物'],
+      ['air quality index', '大気質指数'],
+      ['critical minerals', '重要鉱物'],
+      ['critical mineral', '重要鉱物'],
+      ['Green GDP', 'グリーンGDP'],
+      ['genuine progress indicator', '真正進歩指標'],
+      ['natural capital accounting', '自然資本会計'],
+      ['economic valuation', '経済評価'],
+      ['public good', '公共財'],
+      ['cost-benefit analysis', '費用便益分析']
     ];
 
     const plainTerms = [
@@ -208,7 +229,13 @@
       ['integrated pest management', 'integrated pest management (IPM)'],
       ['biochemical oxygen demand', 'biochemical oxygen demand (BOD)'],
       ['dissolved oxygen', 'dissolved oxygen (DO)'],
-      ['marine protected area', 'marine protected area (MPA)']
+      ['marine protected area', 'marine protected area (MPA)'],
+      ['total fertility rate', 'total fertility rate (TFR)'],
+      ['demographic transition model', 'demographic transition model (DTM)'],
+      ['nitrogen oxides', 'nitrogen oxides (NOx)'],
+      ['volatile organic compounds', 'volatile organic compounds (VOCs)'],
+      ['air quality index', 'air quality index (AQI)'],
+      ['genuine progress indicator', 'genuine progress indicator (GPI)']
     ]);
     const getJapaneseGloss = translation => String(translation || '').replace(/（[^）]*）\s*$/, '').trim();
     const formatTechnicalTerm = (source, translation) => `${technicalAliases.get(source) || source}（${getJapaneseGloss(translation)}）`;
