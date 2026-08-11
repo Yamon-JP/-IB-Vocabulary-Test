@@ -52,19 +52,22 @@ const EssExam = {
   },
 
   async loadData() {
-    const [caseStudies, paper1, sectionA, sectionB] = await Promise.all([
+    const [caseStudies, paper1, sectionA, sectionB, sectionBFinalSets] = await Promise.all([
       this.loadJson('data/paper1/ess-case-studies.json'),
       this.loadJson('data/paper1/ess-paper1.json'),
       this.loadJson('data/paper2/ess-section-a.json'),
-      this.loadJson('data/paper2/ess-section-b.json')
+      this.loadJson('data/paper2/ess-section-b.json'),
+      this.loadJson('data/paper2/ess-section-b-sets-7-8.json')
     ]);
+
+    const combinedSectionB = [...sectionB, ...sectionBFinalSets];
 
     this.caseStudies = caseStudies;
     this.paper1Questions = paper1.filter(question => question?.subject === 'ESS HL' && question?.assessmentTarget === 'ess-paper1');
     this.paper2SectionAQuestions = sectionA
       .filter(question => question?.subject === 'ESS HL' && question?.assessmentTarget === 'ess2a')
       .map(question => this.normalizeEssPaper2Question(question));
-    this.paper2SectionBQuestions = sectionB
+    this.paper2SectionBQuestions = combinedSectionB
       .filter(question => question?.subject === 'ESS HL' && question?.assessmentTarget === 'ess2b')
       .map(question => this.normalizeEssPaper2Question(question));
 
