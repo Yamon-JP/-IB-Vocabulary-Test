@@ -66,6 +66,19 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureEssSectionBJapaneseAudit() {
+    if (typeof Paper2 !== 'undefined' && Paper2.essSectionBJapaneseAuditInstalled) return;
+    if (document.getElementById('ess-section-b-japanese-audit-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'ess-section-b-japanese-audit-script';
+    script.src = 'js/ess-section-b-japanese-audit.js';
+    script.onerror = () => {
+      console.warn('ESS Section B Japanese audit layer could not be loaded. Existing ESS practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureUIOptimizations() {
     if (typeof UIOptimizations !== 'undefined') {
       UIOptimizations.install();
@@ -173,6 +186,7 @@ const Pages = {
     this.ensureEssSectionBStructured();
     this.ensureEssSectionBStructuredSets();
     this.ensureEssJapaneseLocalization();
+    this.ensureEssSectionBJapaneseAudit();
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
