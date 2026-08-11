@@ -92,6 +92,19 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureEssSectionBJapaneseRenderGuard() {
+    if (typeof Paper2 !== 'undefined' && Paper2.essSectionBJapaneseRenderGuardInstalled) return;
+    if (document.getElementById('ess-section-b-japanese-render-guard-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'ess-section-b-japanese-render-guard-script';
+    script.src = 'js/ess-section-b-japanese-render-guard.js?v=1';
+    script.onerror = () => {
+      console.warn('ESS Section B Japanese render guard could not be loaded. Existing ESS practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureUIOptimizations() {
     if (typeof UIOptimizations !== 'undefined') {
       UIOptimizations.install();
@@ -201,6 +214,7 @@ const Pages = {
     this.ensureEssJapaneseLocalization();
     this.ensureEssSectionBJapaneseAudit();
     this.ensureEssSectionBJapaneseFinalPass();
+    this.ensureEssSectionBJapaneseRenderGuard();
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
