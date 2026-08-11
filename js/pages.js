@@ -131,6 +131,19 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureEssSectionBJapaneseDomSweep() {
+    if (typeof Paper2 !== 'undefined' && Paper2.essSectionBJapaneseDomSweepInstalled) return;
+    if (document.getElementById('ess-section-b-japanese-dom-sweep-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'ess-section-b-japanese-dom-sweep-script';
+    script.src = 'js/ess-section-b-japanese-dom-sweep.js?v=1';
+    script.onerror = () => {
+      console.warn('ESS Section B Japanese DOM sweep could not be loaded. Existing ESS practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureUIOptimizations() {
     if (typeof UIOptimizations !== 'undefined') {
       UIOptimizations.install();
@@ -240,6 +253,7 @@ const Pages = {
     this.ensureEssSectionBJapaneseRenderGuard();
     this.ensureEssSectionBZeroBareEnglish();
     this.ensureEssSectionBFinalJapaneseAudit();
+    this.ensureEssSectionBJapaneseDomSweep();
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
