@@ -21,6 +21,19 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureEssSectionBStructured() {
+    if (typeof Paper2 !== 'undefined' && typeof Paper2.isStructuredEssSectionB === 'function') return;
+    if (document.getElementById('ess-section-b-structured-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'ess-section-b-structured-script';
+    script.src = 'js/ess-section-b-structured.js';
+    script.onerror = () => {
+      console.warn('ESS Section B structured-marking extension could not be loaded. Existing ESS practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureUIOptimizations() {
     if (typeof UIOptimizations !== 'undefined') {
       UIOptimizations.install();
@@ -125,6 +138,7 @@ const Pages = {
 
   init() {
     this.ensureEssExamModule();
+    this.ensureEssSectionBStructured();
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
