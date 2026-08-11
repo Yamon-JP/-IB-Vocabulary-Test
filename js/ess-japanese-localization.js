@@ -201,6 +201,18 @@
       return text.replace(pattern, (match, prefix) => `${prefix}${replacement}`);
     };
 
+    const technicalAliases = new Map([
+      ['maximum sustainable yield', 'maximum sustainable yield (MSY)'],
+      ['transit-oriented development', 'transit-oriented development (TOD)'],
+      ['extended producer responsibility', 'extended producer responsibility (EPR)'],
+      ['integrated pest management', 'integrated pest management (IPM)'],
+      ['biochemical oxygen demand', 'biochemical oxygen demand (BOD)'],
+      ['dissolved oxygen', 'dissolved oxygen (DO)'],
+      ['marine protected area', 'marine protected area (MPA)']
+    ]);
+    const getJapaneseGloss = translation => String(translation || '').replace(/（[^）]*）\s*$/, '').trim();
+    const formatTechnicalTerm = (source, translation) => `${technicalAliases.get(source) || source}（${getJapaneseGloss(translation)}）`;
+
     const sortedTechnical = [...technicalTerms].sort((a, b) => b[0].length - a[0].length);
     const sortedPlain = [...plainTerms].sort((a, b) => b[0].length - a[0].length);
 
@@ -212,7 +224,7 @@
       sortedTechnical.forEach(([source, translation], index) => {
         const token = `@@ESSJP${index}@@`;
         const next = replaceTerm(result, source, token);
-        if (next !== result) placeholders[index] = translation;
+        if (next !== result) placeholders[index] = formatTechnicalTerm(source, translation);
         result = next;
       });
 
