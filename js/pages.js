@@ -137,7 +137,7 @@ const Pages = {
 
     const script = document.createElement('script');
     script.id = 'ess-section-b-japanese-dom-sweep-script';
-    script.src = 'js/ess-section-b-japanese-dom-sweep.js?v=1';
+    script.src = 'js/ess-section-b-japanese-dom-sweep.js?v=2';
     script.onerror = () => {
       console.warn('ESS Section B Japanese DOM sweep could not be loaded. Existing ESS practice remains available.');
     };
