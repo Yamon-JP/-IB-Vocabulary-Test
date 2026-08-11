@@ -34,6 +34,25 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureEssSectionBStructuredSets() {
+    const sources = [
+      ['ess-section-b-structured-sets-1-3-script', 'js/ess-section-b-structured-sets-1-3.js'],
+      ['ess-section-b-structured-sets-4-5-script', 'js/ess-section-b-structured-sets-4-5.js'],
+      ['ess-section-b-structured-sets-6-7-script', 'js/ess-section-b-structured-sets-6-7.js']
+    ];
+
+    sources.forEach(([id, src]) => {
+      if (document.getElementById(id)) return;
+      const script = document.createElement('script');
+      script.id = id;
+      script.src = src;
+      script.onerror = () => {
+        console.warn(`ESS Section B structured definitions could not be loaded: ${src}`);
+      };
+      document.body.appendChild(script);
+    });
+  },
+
   ensureUIOptimizations() {
     if (typeof UIOptimizations !== 'undefined') {
       UIOptimizations.install();
@@ -139,6 +158,7 @@ const Pages = {
   init() {
     this.ensureEssExamModule();
     this.ensureEssSectionBStructured();
+    this.ensureEssSectionBStructuredSets();
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
