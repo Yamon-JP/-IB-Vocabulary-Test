@@ -53,6 +53,19 @@ const Pages = {
     });
   },
 
+  ensureEssJapaneseLocalization() {
+    if (typeof Paper2 !== 'undefined' && Paper2.essJapaneseLocalizationInstalled) return;
+    if (document.getElementById('ess-japanese-localization-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'ess-japanese-localization-script';
+    script.src = 'js/ess-japanese-localization.js';
+    script.onerror = () => {
+      console.warn('ESS Japanese localization layer could not be loaded. Existing ESS practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureUIOptimizations() {
     if (typeof UIOptimizations !== 'undefined') {
       UIOptimizations.install();
@@ -159,6 +172,7 @@ const Pages = {
     this.ensureEssExamModule();
     this.ensureEssSectionBStructured();
     this.ensureEssSectionBStructuredSets();
+    this.ensureEssJapaneseLocalization();
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
