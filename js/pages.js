@@ -144,6 +144,22 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureEnglishBPaper1() {
+    if (typeof EnglishBPaper1 !== 'undefined') {
+      EnglishBPaper1.init();
+      return;
+    }
+    if (document.getElementById('english-b-paper1-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'english-b-paper1-script';
+    script.src = 'js/english-b-paper1.js?v=1';
+    script.onerror = () => {
+      console.warn('English B Paper 1 Writing module could not be loaded. Existing practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureUIOptimizations() {
     if (typeof UIOptimizations !== 'undefined') {
       UIOptimizations.install();
@@ -254,6 +270,7 @@ const Pages = {
     this.ensureEssSectionBZeroBareEnglish();
     this.ensureEssSectionBFinalJapaneseAudit();
     this.ensureEssSectionBJapaneseDomSweep();
+    this.ensureEnglishBPaper1();
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
