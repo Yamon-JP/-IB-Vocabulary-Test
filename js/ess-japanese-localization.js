@@ -271,9 +271,8 @@
 
     const originalRenderMarkPoint = Paper2.renderMarkPoint.bind(Paper2);
     Paper2.renderMarkPoint = function(point, index, japaneseText = '') {
-      const localizedJapanese = localizeText(japaneseText);
-      const html = originalRenderMarkPoint(point, index, localizedJapanese);
-      if (!localizedJapanese) return html;
+      const html = originalRenderMarkPoint(point, index, japaneseText);
+      if (!japaneseText) return html;
       const label = typeof this.isEssSectionB === 'function' && this.isEssSectionB()
         ? '日本語解説：'
         : '日本語訳：';
