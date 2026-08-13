@@ -160,6 +160,22 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureEnglishBPaper2Reading() {
+    if (typeof EnglishBPaper2Reading !== 'undefined') {
+      EnglishBPaper2Reading.init();
+      return;
+    }
+    if (document.getElementById('english-b-paper2-reading-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'english-b-paper2-reading-script';
+    script.src = 'js/english-b-paper2-reading.js?v=1';
+    script.onerror = () => {
+      console.warn('English B Paper 2 Reading module could not be loaded. Existing practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureUIOptimizations() {
     if (typeof UIOptimizations !== 'undefined') {
       UIOptimizations.install();
@@ -271,6 +287,7 @@ const Pages = {
     this.ensureEssSectionBFinalJapaneseAudit();
     this.ensureEssSectionBJapaneseDomSweep();
     this.ensureEnglishBPaper1();
+    this.ensureEnglishBPaper2Reading();
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
