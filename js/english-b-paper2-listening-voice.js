@@ -72,10 +72,7 @@
         this.voiceCache = [];
         return [];
       }
-      this.voiceCache = window.speechSynthesis.getVoices().filter(voice => {
-        const lang = String(voice.lang || '').toLowerCase().replace('_','-');
-        return lang.startsWith('en-us') || lang.startsWith('en-gb');
-      });
+      this.voiceCache = window.speechSynthesis.getVoices();
       return this.voiceCache;
     };
 
@@ -98,26 +95,62 @@
       this.refreshVoiceCache();
     };
 
+    module.isJapaneseVoice = function(voice) {
+      const lang = String(voice?.lang || '').toLowerCase().replace('_','-');
+      const name = String(voice?.name || '').toLowerCase();
+      return lang.startsWith('ja') || /japanese|日本語|kyoko|otoya/.test(name);
+    };
+
+    module.isUsVoice = function(voice) {
+      if (!voice || this.isJapaneseVoice(voice)) return false;
+      const lang = String(voice.lang || '').toLowerCase().replace('_','-');
+      const name = String(voice.name || '').toLowerCase();
+      if (lang.startsWith('en-us')) return true;
+      return /english\s*\(?(united states|u\.s\.|us)\)?|american english|us english|u\.s\. english/.test(name);
+    };
+
     module.availableVoices = function(locale = this.getAccentLocale()) {
       const target = String(locale || this.getAccentLocale()).toLowerCase().replace('_','-');
       const voices = this.voiceCache?.length ? this.voiceCache : this.refreshVoiceCache();
-      return voices.filter(voice => String(voice.lang || '').toLowerCase().replace('_','-').startsWith(target));
+      if (target.startsWith('en-us')) return voices.filter(voice => this.isUsVoice(voice));
+      // Keep the already-working GB behaviour unchanged: en-GB language tag only.
+      return voices.filter(voice => String(voice.lang || '').toLowerCase().replace('_','-').startsWith('en-gb'));
     };
 
     module.voiceQualityScore = function(voice) {
       const name = String(voice?.name || '').toLowerCase();
       let score = 0;
-      if (name.includes('natural')) score += 12;
-      if (name.includes('online')) score += 10;
-      if (name.includes('google')) score += 8;
-      if (name.includes('microsoft')) score += 7;
-      if (name.includes('siri')) score += 7;
-      if (name.includes('enhanced')) score += 6;
+      if (name.includes('natural')) score += 50;
+      if (name.includes('enhanced')) score += 40;
+      if (name.includes('premium')) score += 38;
+      if (name.includes('neural')) score += 36;
+      if (name.includes('online')) score += 30;
+      if (name.includes('google us english')) score += 28;
+      if (name.includes('samantha')) score += 26;
+      if (name.includes('alex')) score += 24;
+      if (name.includes('aria')) score += 22;
+      if (name.includes('jenny')) score += 21;
+      if (name.includes('guy')) score += 20;
+      if (name.includes('google')) score += 16;
+      if (name.includes('microsoft')) score += 15;
+      if (name.includes('siri')) score += 15;
+      if (voice?.default) score += 4;
       return score;
     };
 
+    module.preferredUsVoice = function() {
+      return this.availableVoices('en-US')
+        .slice()
+        .sort((a, b) => this.voiceQualityScore(b) - this.voiceQualityScore(a))[0] || null;
+    };
+
     module.pickVoice = function(_hint, speaker, index) {
-      const voices = this.availableVoices(this.getAccentLocale())
+      if (this.getAccent() === 'US') {
+        // US is deliberately fixed to one best voice. This avoids mobile browsers
+        // rotating into lower-quality or misconfigured en-US voices for different speakers.
+        return this.preferredUsVoice();
+      }
+      const voices = this.availableVoices('en-GB')
         .slice()
         .sort((a, b) => this.voiceQualityScore(b) - this.voiceQualityScore(a));
       if (!voices.length) return null;
@@ -141,12 +174,14 @@
         status.textContent = `${locale} voice is still loading or is not installed. Playback will not use a Japanese fallback voice.`;
         return;
       }
-      const preferred = voices.slice().sort((a, b) => this.voiceQualityScore(b) - this.voiceQualityScore(a))[0];
-      status.textContent = `${accent === 'GB' ? 'British English' : 'US English'} · ${voices.length} ${locale} voice${voices.length === 1 ? '' : 's'} available · Preferred: ${preferred.name} (${preferred.lang})`;
+      const preferred = accent === 'US'
+        ? this.preferredUsVoice()
+        : voices.slice().sort((a, b) => this.voiceQualityScore(b) - this.voiceQualityScore(a))[0];
+      status.textContent = `${accent === 'GB' ? 'British English' : 'US English'} · ${voices.length} ${locale} voice${voices.length === 1 ? '' : 's'} available · Using: ${preferred?.name || 'English voice'} (${preferred?.lang || locale})`;
     };
 
     module.ensureAccentVoices = async function(locale) {
-      for (let attempt = 0; attempt < 15; attempt += 1) {
+      for (let attempt = 0; attempt < 30; attempt += 1) {
         const voices = this.availableVoices(locale);
         if (voices.length) return voices;
         await new Promise(resolve => window.setTimeout(resolve, 100));
@@ -172,6 +207,13 @@
         return;
       }
 
+      const fixedUsVoice = this.getAccent() === 'US' ? this.preferredUsVoice() : null;
+      if (this.getAccent() === 'US' && !fixedUsVoice) {
+        this.updateAccentUI();
+        alert('A suitable US English voice is not available on this device yet.');
+        return;
+      }
+
       this.stopAudio();
       this.activeTextId = text.id;
       this.playCounts[text.id] = (this.playCounts[text.id] || 0) + 1;
@@ -184,7 +226,7 @@
         utterance.lang = locale;
         utterance.rate = 0.95;
         utterance.pitch = 1;
-        const voice = this.pickVoice(locale, segment.speaker, index);
+        const voice = fixedUsVoice || this.pickVoice(locale, segment.speaker, index);
         if (!voice) return;
         utterance.voice = voice;
         if (index === segments.length - 1) utterance.onend = () => {
