@@ -178,6 +178,23 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureEnglishBPaper2Listening() {
+    if (typeof EnglishBPaper2Listening !== 'undefined') {
+      EnglishBPaper2Listening.init();
+      return;
+    }
+    if (document.getElementById('english-b-paper2-listening-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'english-b-paper2-listening-script';
+    script.async = false;
+    script.src = 'js/english-b-paper2-listening.js?v=1';
+    script.onerror = () => {
+      console.warn('English B Paper 2 Listening module could not be loaded. Existing practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureUIOptimizations() {
     if (typeof UIOptimizations !== 'undefined') {
       UIOptimizations.install();
@@ -290,6 +307,7 @@ const Pages = {
     this.ensureEssSectionBJapaneseDomSweep();
     this.ensureEnglishBPaper1();
     this.ensureEnglishBPaper2Reading();
+    this.ensureEnglishBPaper2Listening();
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
