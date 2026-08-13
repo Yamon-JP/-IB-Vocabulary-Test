@@ -153,6 +153,7 @@ const Pages = {
 
     const script = document.createElement('script');
     script.id = 'english-b-paper1-script';
+    script.async = false;
     script.src = 'js/english-b-paper1.js?v=1';
     script.onerror = () => {
       console.warn('English B Paper 1 Writing module could not be loaded. Existing practice remains available.');
@@ -169,6 +170,7 @@ const Pages = {
 
     const script = document.createElement('script');
     script.id = 'english-b-paper2-reading-script';
+    script.async = false;
     script.src = 'js/english-b-paper2-reading.js?v=1';
     script.onerror = () => {
       console.warn('English B Paper 2 Reading module could not be loaded. Existing practice remains available.');
