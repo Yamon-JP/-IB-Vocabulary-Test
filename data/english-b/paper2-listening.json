@@ -1,0 +1,128 @@
+[
+  {
+    "id":"ENGB-L-MS1","title":"Listening Mock 1","totalMarks":25,
+    "texts":[
+      {
+        "id":"ENGB-L-MS1-A","chapter":"Chapter 2","theme":"Experiences","title":"Why I stopped planning every minute","sourceType":"Podcast interview","marks":8,
+        "segments":[
+          {"speaker":"Host","voiceHint":"en-GB","text":"Today we are talking to travel writer Maya Chen, who recently published an article about unplanned travel. Maya, you used to organize every trip in great detail. What changed?"},
+          {"speaker":"Maya","voiceHint":"en-US","text":"I missed a train in northern Spain three years ago. At first I was furious because my timetable was ruined. But I ended up spending six hours in a town I had never heard of. I found a small market, spoke to a family who ran a bakery, and learned more about the area than I probably would have on my original route."},
+          {"speaker":"Host","voiceHint":"en-GB","text":"So now you avoid planning?"},
+          {"speaker":"Maya","voiceHint":"en-US","text":"Not completely. I still book accommodation for the first night and check safety information. What changed is that I no longer fill every hour. I leave space for delays, recommendations and conversations. That makes a trip less efficient, but often more memorable."},
+          {"speaker":"Host","voiceHint":"en-GB","text":"Some people would say that approach is only possible if you have extra time and money."},
+          {"speaker":"Maya","voiceHint":"en-US","text":"That criticism is fair. Flexibility can be a privilege. If you have a strict work schedule, children with you, or a limited budget, missing a train can be a serious problem rather than an adventure. I think the lesson is not that everyone should travel spontaneously. It is simply that perfect control is not always the same as a good experience."}
+        ],
+        "questions":[
+          {"id":"A1","type":"mcq","marks":1,"prompt":"What event changed Maya's approach to travel?","options":["She lost her passport.","She missed a train.","She stayed in an expensive hotel.","She became a travel writer."],"correctIndex":1,"explanationJa":"きっかけはスペイン北部で列車に乗り遅れたことです。"},
+          {"id":"A2","type":"short","marks":2,"prompt":"Give two things Maya did during the unexpected six-hour stop.","markscheme":["She visited a small market.","She spoke to a family who ran a bakery and/or learned more about the local area."],"explanationJa":"市場を訪れたことと、パン屋を営む家族と話したことが中心です。"},
+          {"id":"A3","type":"gap","marks":1,"prompt":"Complete the idea: Maya still books accommodation for the ________ night.","markscheme":["first"],"explanationJa":"すべてを無計画にするのではなく、最初の夜の宿は予約します。"},
+          {"id":"A4","type":"mcq","marks":1,"prompt":"What does Maya now deliberately leave in her schedule?","options":["Long shopping periods","Space for unexpected events and recommendations","Extra work meetings","A second hotel booking"],"correctIndex":1,"explanationJa":"delays、recommendations、conversationsのための余白を残します。"},
+          {"id":"A5","type":"multi","marks":2,"prompt":"Choose TWO situations that Maya says can make flexibility difficult.","options":["A strict work schedule","Travelling with children","Knowing local people","Having already visited the country","Speaking more than one language"],"correctIndices":[0,1],"required":2,"explanationJa":"仕事の厳しい日程と、子ども連れの旅行を具体例として挙げています。"},
+          {"id":"A6","type":"mcq","marks":1,"prompt":"What is Maya's final point?","options":["Spontaneous travel is always better.","People should never make travel plans.","Perfect control does not necessarily create the best experience.","Travellers should spend more money for flexibility."],"correctIndex":2,"explanationJa":"『完全に管理すること＝良い経験』とは限らない、という結論です。"}
+        ]
+      },
+      {
+        "id":"ENGB-L-MS1-B","chapter":"Chapter 4","theme":"Social organization","title":"A library after dark","sourceType":"Radio news report","marks":8,
+        "segments":[
+          {"speaker":"Reporter","voiceHint":"en-GB","text":"The central library in Brookdale will begin opening until midnight during examination season after a six-month student campaign. Until now, the building has closed at eight in the evening."},
+          {"speaker":"Student","voiceHint":"en-US","text":"A lot of students live in crowded homes or share bedrooms with younger brothers and sisters. We were not asking for luxury. We wanted a quiet, safe place to work after dinner."},
+          {"speaker":"Reporter","voiceHint":"en-GB","text":"The council originally rejected the idea because keeping the entire building open would require extra security and cleaning staff. The revised plan uses only the ground floor after ten o'clock and limits late opening to the four weeks before major exams."},
+          {"speaker":"Librarian","voiceHint":"en-US","text":"We will also require students under sixteen to leave by ten unless they are accompanied by an adult. That rule disappointed some campaigners, but we have to balance access with safeguarding."},
+          {"speaker":"Reporter","voiceHint":"en-GB","text":"The trial will begin next month. The council says it will review attendance, staffing costs and reports from nearby residents before deciding whether the extended hours should return next year."}
+        ],
+        "questions":[
+          {"id":"B1","type":"mcq","marks":1,"prompt":"What change will the library make during examination season?","options":["It will open earlier in the morning.","It will remain open until midnight.","It will close the ground floor.","It will become students-only."],"correctIndex":1,"explanationJa":"試験期に限り深夜0時まで開館します。"},
+          {"id":"B2","type":"short","marks":2,"prompt":"Give two reasons students wanted later opening hours.","markscheme":["Some students live in crowded homes or share rooms.","They wanted a quiet and safe place to study after dinner."],"explanationJa":"家庭で静かな学習場所を確保しにくいことと、安全で静かな場所が必要なことです。"},
+          {"id":"B3","type":"mcq","marks":1,"prompt":"Why did the council reject the original plan?","options":["Students did not support it.","The library had too few books.","Opening the whole building would increase staffing costs.","Nearby residents demanded earlier closing."],"correctIndex":2,"explanationJa":"securityとcleaningの追加人員が必要になるためです。"},
+          {"id":"B4","type":"multi","marks":2,"prompt":"Choose TWO features of the revised plan.","options":["Only the ground floor stays open after 10 p.m.","Late opening continues all year.","Late opening is limited to four weeks before major exams.","All students may remain until midnight without restrictions.","The library closes at 6 p.m. on weekends."],"correctIndices":[0,2],"required":2,"explanationJa":"22時以降は1階のみ、そして主要試験前の4週間に限定されます。"},
+          {"id":"B5","type":"gap","marks":1,"prompt":"Students under sixteen must leave by ten unless they are with an ________.","markscheme":["adult"],"explanationJa":"16歳未満はadult同伴でなければ22時までです。"},
+          {"id":"B6","type":"mcq","marks":1,"prompt":"What will the council examine after the trial?","options":["Only student grades","Attendance, staffing costs and residents' reports","The number of books borrowed","Teachers' salaries"],"correctIndex":1,"explanationJa":"attendance、staffing costs、nearby residentsからの報告を確認します。"}
+        ]
+      },
+      {
+        "id":"ENGB-L-MS1-C","chapter":"Chapter 3","theme":"Human ingenuity","title":"Designing a phone that lasts","sourceType":"Panel discussion","marks":9,
+        "segments":[
+          {"speaker":"Moderator","voiceHint":"en-GB","text":"Our final topic is smartphone design. Engineer Daniel Brooks, why are so many phones difficult to repair?"},
+          {"speaker":"Daniel","voiceHint":"en-US","text":"There is no single reason. Consumers want thin devices that resist water, and manufacturers want fast assembly. Glue can help with both goals, but it also makes batteries and screens harder to replace."},
+          {"speaker":"Moderator","voiceHint":"en-GB","text":"Campaigner Sara Malik, what would you change?"},
+          {"speaker":"Sara","voiceHint":"en-GB","text":"I would require companies to sell spare parts for a reasonable number of years and publish repair instructions. I would also like batteries to be easier to replace. A phone should not become electronic waste simply because one component has worn out."},
+          {"speaker":"Daniel","voiceHint":"en-US","text":"I support better access to parts, but we should be careful. Some repairs involve damaged batteries, and poor work can create a fire risk. We need products that are repairable, but we also need clear warnings about which jobs require trained technicians."},
+          {"speaker":"Sara","voiceHint":"en-GB","text":"That's true. Right-to-repair does not mean everyone must repair everything themselves. It means the owner should have a realistic choice: repair it personally if the task is simple, use an independent technician, or return it to the manufacturer."},
+          {"speaker":"Moderator","voiceHint":"en-GB","text":"So perhaps the debate is less about whether repair matters and more about how to make repair practical without ignoring safety."}
+        ],
+        "questions":[
+          {"id":"C1","type":"mcq","marks":1,"prompt":"According to Daniel, why is glue used in some phones?","options":["It makes phones cheaper to recycle.","It can help make phones thin and water-resistant.","It improves camera quality.","It makes batteries safer to remove."],"correctIndex":1,"explanationJa":"薄型化と耐水性に役立つ一方、修理を難しくします。"},
+          {"id":"C2","type":"short","marks":2,"prompt":"Give two changes Sara wants manufacturers to make.","markscheme":["Sell spare parts for a reasonable number of years and/or publish repair instructions.","Make batteries easier to replace."],"explanationJa":"spare parts、repair instructions、交換しやすいbatteryのうち2点です。"},
+          {"id":"C3","type":"multi","marks":2,"prompt":"Choose TWO concerns Daniel raises about repair.","options":["Damaged batteries can create fire risks.","All repairs should be illegal.","Some jobs require trained technicians.","Independent repair is always unsafe.","Phones should contain more glue."],"correctIndices":[0,2],"required":2,"explanationJa":"battery fire riskと、trained technicianが必要な作業の存在です。"},
+          {"id":"C4","type":"gap","marks":1,"prompt":"Sara says the owner should have a realistic ________.","markscheme":["choice"],"explanationJa":"repair方法を選べる現実的なchoiceが必要だと述べています。"},
+          {"id":"C5","type":"short","marks":2,"prompt":"According to Sara, what are two possible repair routes for an owner?","markscheme":["Repair the product personally if the task is simple.","Use an independent technician and/or return it to the manufacturer."],"explanationJa":"自分で修理、独立系技術者、メーカーへ戻す、のうち2つです。"},
+          {"id":"C6","type":"mcq","marks":1,"prompt":"How does the moderator summarize the discussion?","options":["Repair is unnecessary for modern phones.","Safety is more important than repair in every case.","The challenge is making repair practical while protecting safety.","Manufacturers and campaigners completely disagree."],"correctIndex":2,"explanationJa":"repairabilityとsafetyの両立が中心論点だとまとめています。"}
+        ]
+      }
+    ]
+  },
+  {
+    "id":"ENGB-L-MS2","title":"Listening Mock 2","totalMarks":25,
+    "texts":[
+      {
+        "id":"ENGB-L-MS2-A","chapter":"Chapter 1","theme":"Identities","title":"The name I use at work","sourceType":"Personal radio essay","marks":8,
+        "segments":[
+          {"speaker":"Speaker","voiceHint":"en-US","text":"When I started my first weekend job, I introduced myself as Sam instead of Sameer. Nobody asked me to change my name. I simply thought Sam would be easier for customers and colleagues to remember."},
+          {"speaker":"Speaker","voiceHint":"en-US","text":"At first the decision felt practical, but after a few months I noticed something uncomfortable. People at work knew a version of me that my family never used. When a colleague finally heard my mother call me Sameer, she laughed and said, 'I didn't know that was your real name.' She meant no harm, but the comment stayed with me."},
+          {"speaker":"Speaker","voiceHint":"en-US","text":"I began wondering why one name had started to feel more official than the other. Sam was not fake; friends genuinely used it. But Sameer carried family history, and I did not like the idea that convenience should make that history disappear."},
+          {"speaker":"Speaker","voiceHint":"en-US","text":"Eventually I changed my work name badge to 'Sameer — Sam'. It created a few more questions, but most were friendly. More importantly, I stopped feeling that I had to choose between making communication easy and keeping a visible connection to my background."}
+        ],
+        "questions":[
+          {"id":"A1","type":"mcq","marks":1,"prompt":"Why did Sameer initially use the name Sam at work?","options":["His manager required it.","He thought it would be easier for others to remember.","His family preferred it.","He wanted a completely new identity."],"correctIndex":1,"explanationJa":"職場で覚えてもらいやすいという実用的な理由でした。"},
+          {"id":"A2","type":"short","marks":2,"prompt":"Give two reasons the colleague's comment affected him.","markscheme":["It suggested that Sameer was his 'real' name while Sam was somehow less real or vice versa, making him question which identity seemed official.","Sameer was connected to family history and he did not want convenience to erase that connection."],"explanationJa":"nameの『本物らしさ』とfamily historyへのつながりが問題になりました。"},
+          {"id":"A3","type":"gap","marks":1,"prompt":"Sameer says that Sam was not ________.","markscheme":["fake"],"explanationJa":"Samも実際に友人が使う名前なのでfakeではありません。"},
+          {"id":"A4","type":"multi","marks":2,"prompt":"Choose TWO results of changing the badge to 'Sameer — Sam'.","options":["It created a few more questions.","His manager removed the badge.","Most questions were friendly.","He stopped speaking to customers.","His family asked him to quit."],"correctIndices":[0,2],"required":2,"explanationJa":"質問は増えましたが、その多くはfriendlyでした。"},
+          {"id":"A5","type":"mcq","marks":1,"prompt":"What conflict did the new badge help him avoid?","options":["Choosing between easy communication and visible cultural connection","Choosing between two different jobs","Choosing whether to speak English","Choosing whether to see his family"],"correctIndex":0,"explanationJa":"communicationの便利さとbackgroundへのvisible connectionを二者択一にしなくてよくなりました。"},
+          {"id":"A6","type":"mcq","marks":1,"prompt":"What is the main focus of the essay?","options":["How customers learn names","How names can connect convenience, identity and family history","Why everyone should use a nickname","Why workplaces should ban name badges"],"correctIndex":1,"explanationJa":"名前を通じたidentityとfamily history、実用性の関係が主題です。"}
+        ]
+      },
+      {
+        "id":"ENGB-L-MS2-B","chapter":"Chapter 5","theme":"Sharing the planet","title":"The school that cut food waste","sourceType":"Community interview","marks":8,
+        "segments":[
+          {"speaker":"Interviewer","voiceHint":"en-GB","text":"Your school says it has reduced cafeteria food waste by almost forty percent. What was the first step?"},
+          {"speaker":"Teacher","voiceHint":"en-US","text":"We measured the waste for two weeks. Students were surprised by the amount of unopened food being thrown away. Before changing the menu, we needed to know what the problem actually was."},
+          {"speaker":"Interviewer","voiceHint":"en-GB","text":"What changes followed?"},
+          {"speaker":"Teacher","voiceHint":"en-US","text":"We introduced two portion sizes and allowed students to take fruit at the end of lunch instead of automatically placing it on every tray. We also moved one unpopular meal from a weekly to a monthly schedule."},
+          {"speaker":"Interviewer","voiceHint":"en-GB","text":"Did students simply get less food?"},
+          {"speaker":"Teacher","voiceHint":"en-US","text":"No. Anyone can ask for a second serving of the main dish if food is available. The goal is not smaller meals; it is matching portions to appetite. We also donate safe unopened items to a local community kitchen."},
+          {"speaker":"Interviewer","voiceHint":"en-GB","text":"What remains difficult?"},
+          {"speaker":"Teacher","voiceHint":"en-US","text":"Special events. On sports days and festivals, attendance is harder to predict, so we still prepare too much sometimes. Our next step is to improve forecasting rather than pretending waste can be eliminated completely."}
+        ],
+        "questions":[
+          {"id":"B1","type":"mcq","marks":1,"prompt":"What did the school do before changing the menu?","options":["It reduced all portions.","It measured food waste for two weeks.","It closed the cafeteria.","It surveyed only teachers."],"correctIndex":1,"explanationJa":"まず2週間、実際のwaste量を測定しました。"},
+          {"id":"B2","type":"short","marks":2,"prompt":"Give two changes the school made to normal lunches.","markscheme":["It introduced two portion sizes.","Students could take fruit later rather than receiving it automatically and/or an unpopular meal was served less often."],"explanationJa":"portion size、fruitの配布方法、人気の低いmenu頻度の変更です。"},
+          {"id":"B3","type":"multi","marks":2,"prompt":"Choose TWO statements that are true about the new system.","options":["Students can request a second serving when food is available.","Every student must take fruit.","Safe unopened items may be donated.","The school now serves only small meals.","All waste has been eliminated."],"correctIndices":[0,2],"required":2,"explanationJa":"second servingとsafe unopened foodのdonationが正しいです。"},
+          {"id":"B4","type":"gap","marks":1,"prompt":"The goal is to match portions to students' ________.","markscheme":["appetite"],"explanationJa":"portionをappetiteに合わせることが目的です。"},
+          {"id":"B5","type":"mcq","marks":1,"prompt":"Why are special events still difficult?","options":["Food is more expensive then.","Attendance is difficult to predict.","Students refuse all meals.","The community kitchen is closed."],"correctIndex":1,"explanationJa":"sports dayやfestivalではattendance予測が難しいためです。"},
+          {"id":"B6","type":"mcq","marks":1,"prompt":"What is the school's next priority?","options":["Eliminating the cafeteria","Improving forecasting","Serving only cold food","Stopping donations"],"correctIndex":1,"explanationJa":"次の重点はforecasting改善です。"}
+        ]
+      },
+      {
+        "id":"ENGB-L-MS2-C","chapter":"Chapter 4","theme":"Social organization","title":"Should voting begin at sixteen?","sourceType":"Debate excerpt","marks":9,
+        "segments":[
+          {"speaker":"Moderator","voiceHint":"en-GB","text":"Our final debate asks whether the voting age in local elections should be lowered to sixteen. Councillor Reed, you support the change."},
+          {"speaker":"Reed","voiceHint":"en-US","text":"Yes. Sixteen-year-olds work, pay taxes in some cases, use public transport, attend schools funded by local government and are affected by decisions about housing and climate. If politics concerns their lives, they should have a formal voice."},
+          {"speaker":"Moderator","voiceHint":"en-GB","text":"Dr Patel, you disagree."},
+          {"speaker":"Patel","voiceHint":"en-GB","text":"I am not against youth participation. My concern is consistency. At sixteen, many legal responsibilities are still limited. Before changing the voting age, we should ask why this particular right should move earlier while others do not."},
+          {"speaker":"Reed","voiceHint":"en-US","text":"But rights do not all begin at the same age now. We already use different ages for driving, employment and other responsibilities. The important question is whether sixteen-year-olds can make a meaningful political choice, not whether every law uses one birthday."},
+          {"speaker":"Patel","voiceHint":"en-GB","text":"Then civic education becomes crucial. Lowering the age without helping young people understand local institutions may change the number of voters without improving participation. Schools would need time and resources to teach how councils actually work."},
+          {"speaker":"Reed","voiceHint":"en-US","text":"I agree with the education point. In fact, allowing students to vote while they are still in school could make civic education more relevant because the knowledge would have an immediate purpose."},
+          {"speaker":"Moderator","voiceHint":"en-GB","text":"So although you disagree on the voting age, both of you see civic education as part of the issue."}
+        ],
+        "questions":[
+          {"id":"C1","type":"mcq","marks":1,"prompt":"What is Reed's main argument for lowering the voting age?","options":["Sixteen-year-olds understand every law.","Local political decisions already affect young people's lives.","All legal rights should begin at sixteen.","Young people pay more tax than adults."],"correctIndex":1,"explanationJa":"local governmentの決定が若者の生活に直接影響するため、formal voiceを持つべきだという主張です。"},
+          {"id":"C2","type":"short","marks":2,"prompt":"Give two examples Reed uses to show that local politics affects sixteen-year-olds.","markscheme":["They use public transport and/or attend schools funded by local government.","They are affected by decisions about housing and/or climate; some also work or pay taxes."],"explanationJa":"public transport、school funding、housing、climate、work/taxなどから2点です。"},
+          {"id":"C3","type":"multi","marks":2,"prompt":"Choose TWO points made by Patel.","options":["Youth participation is completely unnecessary.","Many legal responsibilities are still limited at sixteen.","Civic education would need time and resources.","All rights must begin at exactly the same age.","Schools should stop teaching politics."],"correctIndices":[1,2],"required":2,"explanationJa":"16歳では法的責任が一部限定される点と、civic educationにresourceが必要な点です。"},
+          {"id":"C4","type":"gap","marks":1,"prompt":"Reed says rights do not all begin at the same ________.","markscheme":["age"],"explanationJa":"rightsは現在もすべて同じageから始まるわけではないと述べます。"},
+          {"id":"C5","type":"short","marks":2,"prompt":"Why does Reed think voting at sixteen could strengthen civic education? Give two linked ideas.","markscheme":["Students would be able to vote while they are still in school.","The knowledge taught in civic education would have an immediate practical purpose and therefore feel more relevant."],"explanationJa":"school在学中に実際に投票できれば、学んだ内容にimmediate purposeが生まれるという論理です。"},
+          {"id":"C6","type":"mcq","marks":1,"prompt":"What area of agreement does the moderator identify?","options":["The voting age should definitely be sixteen.","Local elections should be abolished.","Civic education is an important part of the debate.","Young people should vote only at school."],"correctIndex":2,"explanationJa":"voting age自体では対立しますが、civic educationの重要性では一致しています。"}
+        ]
+      }
+    ]
+  }
+]
