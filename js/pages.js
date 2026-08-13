@@ -202,7 +202,7 @@ const Pages = {
     const script = document.createElement('script');
     script.id = 'english-b-paper2-listening-voice-script';
     script.async = false;
-    script.src = 'js/english-b-paper2-listening-voice.js?v=2';
+    script.src = 'js/english-b-paper2-listening-voice.js?v=3';
     script.onerror = () => {
       console.warn('English B Paper 2 Listening voice selector could not be loaded. Existing Listening practice remains available.');
     };
