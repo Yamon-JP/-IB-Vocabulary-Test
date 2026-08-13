@@ -1,4 +1,4 @@
-// English B HL Listening voice control: stable US/GB English voices only.
+// English B HL Listening voice control: stable US/GB English voices with desktop-safe fallback.
 (() => {
   const install = () => {
     const module = window.EnglishBPaper2Listening;
@@ -7,6 +7,7 @@
     module.voiceCache = [];
     module.voiceListenerInstalled = false;
     module.activeVoice = null;
+    module.activeVoiceTier = 'standard';
 
     module.ensureAccentStyles = function() {
       if (document.getElementById('engb-l-accent-styles')) return;
@@ -31,10 +32,16 @@
       return this.getAccent() === 'GB' ? 'en-GB' : 'en-US';
     };
 
+    module.isDesktopBrowser = function() {
+      const ua = String(navigator.userAgent || '');
+      return !/Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+    };
+
     module.setAccent = function(accent) {
       const normalized = accent === 'GB' ? 'GB' : 'US';
       this.stopAudio();
       this.activeVoice = null;
+      this.activeVoiceTier = 'standard';
       if (typeof App !== 'undefined') {
         App.state.englishBListeningAccent = normalized;
         App.saveState();
@@ -84,6 +91,7 @@
       const refresh = () => {
         this.refreshVoiceCache();
         this.activeVoice = null;
+        this.activeVoiceTier = 'standard';
         this.updateAccentUI();
       };
       if (typeof window.speechSynthesis.addEventListener === 'function') {
@@ -125,6 +133,20 @@
       return /natural|neural|online|expressive|emotion|emotional|premium|studio|journey|multilingual|wavenet/.test(name);
     };
 
+    module.isUnsafeDesktopVoice = function(voice) {
+      const name = String(voice?.name || '').toLowerCase();
+      return /expressive|emotion|emotional|journey|multitalker|multi-talker|podcast|storytelling|character|whisper|singing|narrative/.test(name);
+    };
+
+    module.isTrustedDesktopVoice = function(voice) {
+      if (!voice || this.isJapaneseVoice(voice) || this.isUnsafeDesktopVoice(voice)) return false;
+      const name = String(voice.name || '').toLowerCase();
+      if (/google (us|uk) english/.test(name)) return true;
+      if (/microsoft (david|zira|mark|aria|jenny|guy|ava|andrew|brian|emma|roger|steffan|george|hazel|susan|ryan|sonia|libby)/.test(name)) return true;
+      if (/\b(samantha|alex|daniel|karen|moira|tessa)\b/.test(name)) return true;
+      return false;
+    };
+
     module.rawAccentVoices = function(locale = this.getAccentLocale()) {
       const voices = this.voiceCache?.length ? this.voiceCache : this.refreshVoiceCache();
       return String(locale).toLowerCase().startsWith('en-gb')
@@ -138,8 +160,26 @@
         .sort((a, b) => this.stabilityScore(b) - this.stabilityScore(a));
     };
 
+    module.desktopFallbackVoices = function(locale = this.getAccentLocale()) {
+      if (!this.isDesktopBrowser()) return [];
+      return this.rawAccentVoices(locale)
+        .filter(voice => this.isTrustedDesktopVoice(voice))
+        .sort((a, b) => this.desktopFallbackScore(b) - this.desktopFallbackScore(a));
+    };
+
+    module.candidateVoices = function(locale = this.getAccentLocale()) {
+      const stable = this.stableAccentVoices(locale);
+      if (stable.length) {
+        this.activeVoiceTier = 'standard';
+        return stable;
+      }
+      const fallback = this.desktopFallbackVoices(locale);
+      if (fallback.length) this.activeVoiceTier = 'desktop fallback';
+      return fallback;
+    };
+
     module.availableVoices = function(locale = this.getAccentLocale()) {
-      return this.stableAccentVoices(locale);
+      return this.candidateVoices(locale);
     };
 
     module.stabilityScore = function(voice) {
@@ -156,8 +196,19 @@
       return score;
     };
 
+    module.desktopFallbackScore = function(voice) {
+      const name = String(voice?.name || '').toLowerCase();
+      let score = 0;
+      if (/microsoft (david|zira|mark|george|hazel|susan)/.test(name)) score += 100;
+      if (/google (us|uk) english/.test(name)) score += 95;
+      if (/microsoft (aria|jenny|guy|ava|andrew|brian|emma|roger|steffan|ryan|sonia|libby)/.test(name)) score += 85;
+      if (/\b(samantha|alex|daniel|karen|moira|tessa)\b/.test(name)) score += 80;
+      if (voice?.localService === true) score += 20;
+      return score;
+    };
+
     module.preferredStableVoice = function(locale = this.getAccentLocale()) {
-      return this.stableAccentVoices(locale)[0] || null;
+      return this.candidateVoices(locale)[0] || null;
     };
 
     module.preferredUsVoice = function() {
@@ -179,19 +230,19 @@
         return;
       }
       const locale = this.getAccentLocale();
-      const voices = this.stableAccentVoices(locale);
+      const voices = this.candidateVoices(locale);
       if (!voices.length) {
-        status.textContent = `${locale}: no stable standard voice is available. Expressive / emotional voices will not be used.`;
+        status.textContent = `${locale}: no suitable standard reading voice is available. Emotional / character voices will not be used.`;
         return;
       }
       const preferred = this.activeVoice || voices[0];
-      const localLabel = preferred.localService === true ? 'local standard voice' : 'standard voice';
-      status.textContent = `${accent === 'GB' ? 'British English' : 'US English'} · Using: ${preferred.name} (${preferred.lang}) · ${localLabel}`;
+      const tier = this.activeVoiceTier === 'desktop fallback' ? 'trusted desktop voice' : (preferred.localService === true ? 'local standard voice' : 'standard voice');
+      status.textContent = `${accent === 'GB' ? 'British English' : 'US English'} · Using: ${preferred.name} (${preferred.lang}) · ${tier}`;
     };
 
     module.ensureAccentVoices = async function(locale) {
       for (let attempt = 0; attempt < 30; attempt += 1) {
-        const voices = this.stableAccentVoices(locale);
+        const voices = this.candidateVoices(locale);
         if (voices.length) return voices;
         await new Promise(resolve => window.setTimeout(resolve, 100));
         this.refreshVoiceCache();
@@ -232,7 +283,7 @@
       const candidates = await this.ensureAccentVoices(locale);
       if (!candidates.length) {
         this.updateAccentUI();
-        alert(`${locale}: no stable standard English voice is available on this device. Expressive / emotional voices will not be used.`);
+        alert(`${locale}: no suitable standard reading voice is available on this device. Emotional / character voices will not be used.`);
         return;
       }
 
