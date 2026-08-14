@@ -31,6 +31,7 @@ const Flashcard = {
     const meaning = document.getElementById('flashcard-meaning');
     if (meaning) meaning.innerHTML = resultHtml;
     this.answerMode = true;
+    this.updateAudioButtonState();
   },
 
   toggleMeaning() {
@@ -115,9 +116,28 @@ const Flashcard = {
     return safeEnglish[0] || null;
   },
 
+  isDefinitionToTermMode() {
+    return typeof Quiz !== 'undefined' && Quiz.mode === 'definition-word';
+  },
+
+  canPronounce() {
+    return !this.isDefinitionToTermMode() || this.answerMode;
+  },
+
+  updateAudioButtonState() {
+    const button = document.getElementById('flashcard-audio');
+    if (!button) return;
+    const enabled = this.canPronounce();
+    button.disabled = !enabled;
+    button.setAttribute('aria-disabled', enabled ? 'false' : 'true');
+    button.title = enabled
+      ? 'Play pronunciation of the current term'
+      : 'Pronunciation is available after checking the answer.';
+  },
+
   speak() {
     const current = this.current();
-    if (!current || !('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') return;
+    if (!current || !this.canPronounce() || !('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') return;
 
     const utterance = new SpeechSynthesisUtterance(current.word);
     const voice = this.preferredVoice();
@@ -134,18 +154,23 @@ const Flashcard = {
     const button = document.getElementById('flashcard-audio');
     if (!button) return;
     button.onclick = () => this.speak();
+    this.updateAudioButtonState();
   },
 
   render() {
     const word = document.getElementById('flashcard-word');
     const meaning = document.getElementById('flashcard-meaning');
     const current = this.current();
-    if (!current) return;
+    if (!current) {
+      this.updateAudioButtonState();
+      return;
+    }
 
-    const definitionMode = typeof Quiz !== 'undefined' && Quiz.mode === 'definition-word';
+    const definitionMode = this.isDefinitionToTermMode();
     if (word) word.textContent = definitionMode ? current.definition : current.word;
 
     if (meaning && !this.answerMode) meaning.innerHTML = '';
+    this.updateAudioButtonState();
   }
 };
 
