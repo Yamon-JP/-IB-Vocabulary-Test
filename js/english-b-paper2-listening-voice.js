@@ -258,13 +258,15 @@
         utterance.pitch = 1;
         utterance.voice = voice;
         utterance.onend = () => resolve({ ok: true });
-        utterance.onerror = event => resolve({ ok: false, error: event?.error || 'speech-error' });
+        utterance.onerror = event => resolve({ ok: true, warning: event?.error || 'speech-error' });
         if (isLast) {
-          utterance.onend = () => {
+          const finish = result => {
             this.activeTextId = null;
             this.paused = false;
-            resolve({ ok: true });
+            resolve(result);
           };
+          utterance.onend = () => finish({ ok: true });
+          utterance.onerror = event => finish({ ok: true, warning: event?.error || 'speech-error' });
         }
         window.speechSynthesis.speak(utterance);
       });
@@ -293,28 +295,18 @@
       this.refreshPlayCounts();
 
       const segments = Array.isArray(text.segments) ? text.segments : [];
-      let voiceIndex = 0;
-      let voice = candidates[voiceIndex];
+      const voice = candidates[0];
       this.activeVoice = voice;
       this.updateAccentUI();
 
       for (let index = 0; index < segments.length; index += 1) {
         if (this.activeTextId !== text.id) return;
-        let result = await this.speakSegment(segments[index], locale, voice, index === segments.length - 1);
-        while (!result.ok && voiceIndex + 1 < candidates.length) {
-          voiceIndex += 1;
-          voice = candidates[voiceIndex];
-          this.activeVoice = voice;
-          this.updateAccentUI();
-          result = await this.speakSegment(segments[index], locale, voice, index === segments.length - 1);
-        }
-        if (!result.ok) {
-          this.stopAudio();
-          this.activeVoice = null;
-          this.updateAccentUI();
-          alert(`Stable ${locale} speech could not be played on this device.`);
-          return;
-        }
+        await this.speakSegment(segments[index], locale, voice, index === segments.length - 1);
+      }
+
+      if (this.activeTextId === text.id) {
+        this.activeTextId = null;
+        this.paused = false;
       }
     };
 
