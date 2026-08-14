@@ -209,20 +209,6 @@ const Pages = {
     document.body.appendChild(script);
   },
 
-  ensureEnglishBPaper2ListeningVoiceDiagnostics() {
-    if (typeof EnglishBPaper2Listening !== 'undefined' && EnglishBPaper2Listening.voiceDiagnosticsInstalled) return;
-    if (document.getElementById('english-b-paper2-listening-voice-diagnostics-script')) return;
-
-    const script = document.createElement('script');
-    script.id = 'english-b-paper2-listening-voice-diagnostics-script';
-    script.async = false;
-    script.src = 'js/english-b-paper2-listening-voice-diagnostics.js?v=1';
-    script.onerror = () => {
-      console.warn('English B Paper 2 Listening voice diagnostics could not be loaded. Existing Listening practice remains available.');
-    };
-    document.body.appendChild(script);
-  },
-
   ensureUIOptimizations() {
     if (typeof UIOptimizations !== 'undefined') {
       UIOptimizations.install();
@@ -337,7 +323,6 @@ const Pages = {
     this.ensureEnglishBPaper2Reading();
     this.ensureEnglishBPaper2Listening();
     this.ensureEnglishBPaper2ListeningVoice();
-    this.ensureEnglishBPaper2ListeningVoiceDiagnostics();
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
