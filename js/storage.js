@@ -102,3 +102,50 @@ const Storage = {
     document.head.appendChild(script);
   }
 })();
+
+(() => {
+  if (!document.getElementById('progress-ui-v2-style')) {
+    const link = document.createElement('link');
+    link.id = 'progress-ui-v2-style';
+    link.rel = 'stylesheet';
+    link.href = 'css/progress-ui-v2.css?v=1';
+    document.head.appendChild(link);
+  }
+
+  if (document.getElementById('progress-ui-v2-script')) return;
+  const script = document.createElement('script');
+  script.id = 'progress-ui-v2-script';
+  script.src = 'js/progress-ui-v2.js?v=1';
+  script.onload = () => {
+    const ui = window.ProgressUIV2;
+    if (!ui) return;
+
+    ui.renderOverviewSummary = function() {
+      const grid = document.getElementById('progress-v2-summary-grid');
+      if (!grid || typeof Progress === 'undefined') return;
+      const currentStreak = typeof DailyChallenge !== 'undefined' && typeof DailyChallenge.getCurrentMissionStreak === 'function'
+        ? DailyChallenge.getCurrentMissionStreak()
+        : Number(window.Streak?.data?.count || 0);
+      const values = [
+        ['🔥', currentStreak, 'Day Streak'],
+        ['⚡', Number(Progress.data?.xp || 0), 'Total XP'],
+        ['✓', Number(Progress.data?.questions || 0), 'Quiz Questions'],
+        ['◎', `${typeof Progress.accuracy === 'function' ? Progress.accuracy() : 0}%`, 'Quiz Accuracy']
+      ];
+      grid.innerHTML = values.map(([icon, value, label]) => `
+        <article class="progress-v2-summary-card">
+          <span aria-hidden="true">${icon}</span>
+          <strong>${ui.escapeHtml(value)}</strong>
+          <small>${ui.escapeHtml(label)}</small>
+        </article>`).join('');
+    };
+
+    const page = document.getElementById('statistics-page');
+    if (page && !page.__progressUiV2Observer) {
+      const observer = new MutationObserver(() => ui.attachLegacyPanels());
+      observer.observe(page, { childList: true, subtree: true });
+      page.__progressUiV2Observer = observer;
+    }
+  };
+  document.head.appendChild(script);
+})();
