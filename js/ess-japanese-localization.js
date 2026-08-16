@@ -1,7 +1,7 @@
-// ESS HL Paper 2 Japanese localization layer.
+// ESS HL Paper 1 / Paper 2 Japanese localization layer.
 // Keeps English assessment content unchanged and improves only Japanese support text.
 (() => {
-  const VERSION = 1;
+  const VERSION = 2;
   const MAX_ATTEMPTS = 200;
 
   const install = (attempt = 0) => {
@@ -248,6 +248,27 @@
       let result = text;
       const placeholders = [];
 
+      // First normalize Japanese-only and legacy Japanese-first key terms to
+      // English term（Japanese）. Correctly glossed terms are protected so they
+      // cannot be translated or duplicated by later passes.
+      sortedTechnical.forEach(([source, translation], index) => {
+        const token = `@@ESSJP${index}@@`;
+        const formatted = formatTechnicalTerm(source, translation);
+        const japaneseGloss = getJapaneseGloss(translation);
+        const candidates = [formatted, String(translation || ''), japaneseGloss]
+          .filter(Boolean)
+          .filter((value, candidateIndex, values) => values.indexOf(value) === candidateIndex)
+          .sort((a, b) => b.length - a.length);
+        let changed = false;
+        candidates.forEach(candidate => {
+          if (!result.includes(candidate)) return;
+          result = result.split(candidate).join(token);
+          changed = true;
+        });
+        if (changed) placeholders[index] = formatted;
+      });
+
+      // Then convert technical terms that are still present in English.
       sortedTechnical.forEach(([source, translation], index) => {
         const token = `@@ESSJP${index}@@`;
         const next = replaceTerm(result, source, token);
@@ -338,6 +359,37 @@
         return originalRenderStructuredModels(...args).replace(/日本語：/g, '日本語解説：');
       };
     }
+
+    // ESS Paper 1 uses the shared Paper1 renderer and may initialize after this
+    // localization layer. Wait until EssExam has finished patching Paper1, then
+    // localize the active ESS question immediately before feedback is revealed.
+    const installPaper1Support = (paper1Attempt = 0) => {
+      const essPaper1Ready = typeof Paper1 !== 'undefined'
+        && typeof Paper1.submitPaper1B === 'function'
+        && typeof EssExam !== 'undefined'
+        && Boolean(EssExam.originals?.paper1Patched);
+      if (!essPaper1Ready) {
+        if (paper1Attempt < 300) window.setTimeout(() => installPaper1Support(paper1Attempt + 1), 50);
+        else console.warn('ESS Japanese localization could not attach to Paper 1.');
+        return;
+      }
+      if (Paper1.essJapaneseLocalizationInstalledV2) return;
+      Paper1.essJapaneseLocalizationInstalledV2 = true;
+      Paper1.localizeEssJapaneseText = localizeText;
+      Paper1.localizeEssJapaneseQuestion = localizeQuestion;
+
+      if (Array.isArray(Paper1.essPaper1Questions)) {
+        Paper1.essPaper1Questions = Paper1.essPaper1Questions.map(localizeQuestion);
+      }
+
+      const originalSubmitPaper1B = Paper1.submitPaper1B.bind(Paper1);
+      Paper1.submitPaper1B = function(...args) {
+        if (this.current?.subject === 'ESS HL') this.current = localizeQuestion(this.current);
+        return originalSubmitPaper1B(...args);
+      };
+    };
+
+    installPaper1Support();
   };
 
   install();
