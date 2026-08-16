@@ -33,10 +33,10 @@ const Storage = {
 })();
 
 (() => {
-  if (document.getElementById('math-ai-sl-script')) return;
+  if (document.getElementById('math-ai-sl-loader-script')) return;
   const script = document.createElement('script');
-  script.id = 'math-ai-sl-script';
-  script.src = 'js/math-ai-sl.js?v=1';
+  script.id = 'math-ai-sl-loader-script';
+  script.src = 'js/math-ai-sl-loader.js?v=1';
   document.head.appendChild(script);
 })();
 
