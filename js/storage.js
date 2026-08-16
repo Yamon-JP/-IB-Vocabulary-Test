@@ -47,3 +47,11 @@ const Storage = {
   script.src = 'js/math-ai-sl-ui-guard.js?v=1';
   document.head.appendChild(script);
 })();
+
+(() => {
+  if (document.getElementById('math-ai-sl-batch2-script')) return;
+  const script = document.createElement('script');
+  script.id = 'math-ai-sl-batch2-script';
+  script.src = 'js/math-ai-sl-batch2.js?v=1';
+  document.head.appendChild(script);
+})();
