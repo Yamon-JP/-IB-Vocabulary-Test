@@ -1,5 +1,6 @@
 // ESS HL Final Exam Training: final balance extension.
 // Additive only: waits for the stable ESS foundation and first training batch.
+// Paper 1 UI labels show Case Study 1, 2, ... using the loaded case-study order.
 (() => {
   const Extension = window.EssFinalTraining2 = {
     loaded: false,
