@@ -33,10 +33,14 @@
       if (this.paper1Loaded) return true;
       if (typeof Paper1 === 'undefined' || !Paper1.initialized) return false;
 
-      const [paper1aExtra, paper1bExtra] = await Promise.all([
-        this.fetchArray('data/paper1/biology-final-training-extra.json?v=1'),
-        this.fetchArray('data/paper2/biology-final-data-extra.json?v=1')
+      const [paper1aBatch1, paper1bBatch1, paper1aBatch2, paper1bBatch2] = await Promise.all([
+        this.fetchArray('data/paper1/biology-final-training-extra.json?v=2'),
+        this.fetchArray('data/paper2/biology-final-data-extra.json?v=2'),
+        this.fetchArray('data/paper1/biology-final-training-extra-2.json?v=2'),
+        this.fetchArray('data/paper2/biology-final-data-extra-2.json?v=2')
       ]);
+      const paper1aExtra = [...paper1aBatch1, ...paper1aBatch2];
+      const paper1bExtra = [...paper1bBatch1, ...paper1bBatch2];
 
       Paper1.paper1aQuestions = this.mergeUnique(
         Paper1.paper1aQuestions,
@@ -61,7 +65,11 @@
       if (this.paper2Loaded) return true;
       if (typeof Paper2 === 'undefined' || !Array.isArray(Paper2.allQuestions) || !Paper2.allQuestions.length) return false;
 
-      const extra = await this.fetchArray('data/paper2/biology-final-response-extra.json?v=1');
+      const [batch1, batch2] = await Promise.all([
+        this.fetchArray('data/paper2/biology-final-response-extra.json?v=2'),
+        this.fetchArray('data/paper2/biology-final-response-extra-2.json?v=2')
+      ]);
+      const extra = [...batch1, ...batch2];
       Paper2.allQuestions = this.mergeUnique(
         Paper2.allQuestions,
         extra.filter(question => ['paper2a', 'paper2b'].includes(question?.assessmentTarget))
