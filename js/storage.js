@@ -31,3 +31,11 @@ const Storage = {
   script.src = 'js/ess-final-training-2.js?v=1';
   document.head.appendChild(script);
 })();
+
+(() => {
+  if (document.getElementById('math-ai-sl-script')) return;
+  const script = document.createElement('script');
+  script.id = 'math-ai-sl-script';
+  script.src = 'js/math-ai-sl.js?v=1';
+  document.head.appendChild(script);
+})();
