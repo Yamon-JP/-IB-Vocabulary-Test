@@ -163,3 +163,20 @@ const Storage = {
     document.head.appendChild(script);
   }
 })();
+
+(() => {
+  if (!document.getElementById('navigation-ui-v2-style')) {
+    const link = document.createElement('link');
+    link.id = 'navigation-ui-v2-style';
+    link.rel = 'stylesheet';
+    link.href = 'css/navigation-ui-v2.css?v=1';
+    document.head.appendChild(link);
+  }
+
+  if (!document.getElementById('navigation-ui-v2-script')) {
+    const script = document.createElement('script');
+    script.id = 'navigation-ui-v2-script';
+    script.src = 'js/navigation-ui-v2.js?v=1';
+    document.head.appendChild(script);
+  }
+})();
