@@ -23,3 +23,11 @@ const Storage = {
   script.src = 'js/ess-final-training.js?v=3';
   document.head.appendChild(script);
 })();
+
+(() => {
+  if (document.getElementById('ess-final-training-2-script')) return;
+  const script = document.createElement('script');
+  script.id = 'ess-final-training-2-script';
+  script.src = 'js/ess-final-training-2.js?v=1';
+  document.head.appendChild(script);
+})();
