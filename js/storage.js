@@ -146,3 +146,20 @@ const Storage = {
   };
   document.head.appendChild(script);
 })();
+
+(() => {
+  if (!document.getElementById('trophy-ui-v2-style')) {
+    const link = document.createElement('link');
+    link.id = 'trophy-ui-v2-style';
+    link.rel = 'stylesheet';
+    link.href = 'css/trophy-ui-v2.css?v=1';
+    document.head.appendChild(link);
+  }
+
+  if (!document.getElementById('trophy-ui-v2-script')) {
+    const script = document.createElement('script');
+    script.id = 'trophy-ui-v2-script';
+    script.src = 'js/trophy-ui-v2.js?v=1';
+    document.head.appendChild(script);
+  }
+})();
