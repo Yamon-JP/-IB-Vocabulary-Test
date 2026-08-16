@@ -1,0 +1,418 @@
+/* Phase UI-1: Home refresh. Scoped to #home-page so training/progress/trophies remain untouched. */
+#home-page.home-ui-v2 {
+  display: grid;
+  gap: 16px;
+}
+
+#home-page .home-ui-v2-dashboard {
+  padding: 26px;
+  border-radius: 26px;
+}
+
+#home-page .home-ui-v2-dashboard .mission-topline {
+  align-items: center;
+}
+
+#home-page .home-ui-v2-dashboard .mission-topline h2 {
+  max-width: 540px;
+}
+
+#home-page .home-status-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+#home-page .home-xp-pill,
+#home-page .home-status-pills .streak-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 8px 11px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  white-space: nowrap;
+}
+
+#home-page .home-xp-pill strong,
+#home-page .home-status-pills .streak-pill strong {
+  font-size: 1rem;
+}
+
+#home-page .home-xp-pill small,
+#home-page .home-status-pills .streak-pill span {
+  color: rgba(255,255,255,.78);
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+#home-page .home-compact-mission {
+  position: relative;
+  z-index: 1;
+  margin-top: 22px;
+  padding: 15px 16px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 17px;
+  background: rgba(255,255,255,.11);
+  backdrop-filter: blur(8px);
+}
+
+#home-page .home-compact-mission-copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+#home-page .home-compact-mission-copy span {
+  color: rgba(255,255,255,.82);
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+#home-page .home-compact-mission-copy strong {
+  font-size: 1rem;
+}
+
+#home-page .home-compact-mission-track {
+  overflow: hidden;
+  height: 9px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.16);
+}
+
+#home-page .home-compact-mission-track span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg,#fff,#c4b5fd);
+  transition: width .28s ease;
+}
+
+#home-page .home-mission-state {
+  display: block;
+  margin-top: 9px;
+  color: rgba(255,255,255,.8);
+  font-size: .8rem;
+}
+
+#home-page .home-mission-state.secured { color: #fde68a; }
+#home-page .home-mission-state.complete { color: #bbf7d0; }
+
+#home-page .home-continue-card {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  align-items: center;
+  gap: 18px;
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 18px;
+  background: #fff;
+  color: var(--text);
+  box-shadow: 0 12px 28px rgba(15,23,42,.14);
+}
+
+#home-page .home-continue-copy {
+  min-width: 0;
+}
+
+#home-page .home-continue-kicker {
+  display: block;
+  color: #7c3aed;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .13em;
+}
+
+#home-page .home-continue-copy strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 1.06rem;
+}
+
+#home-page .home-continue-copy small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+#home-page .home-continue-button {
+  min-width: 150px;
+  padding: 10px 16px;
+  border-color: #4f46e5;
+  background: #4f46e5;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(79,70,229,.18);
+}
+
+#home-page .home-mission-details {
+  position: relative;
+  z-index: 1;
+  margin-top: 10px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 16px;
+  background: rgba(255,255,255,.08);
+}
+
+#home-page .home-mission-details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 10px 14px;
+  cursor: pointer;
+  list-style: none;
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+#home-page .home-mission-details summary::-webkit-details-marker { display: none; }
+#home-page .home-mission-details summary small { color: rgba(255,255,255,.7); }
+#home-page .home-mission-details summary::after { content: '⌄'; font-size: 1rem; }
+#home-page .home-mission-details[open] summary::after { transform: rotate(180deg); }
+
+#home-page .home-mission-details .mission-deck {
+  margin: 0;
+  padding: 2px 12px 13px;
+  background: transparent;
+}
+
+#home-page .home-mission-details .mission-deck-heading {
+  margin-bottom: 10px;
+}
+
+#home-page .home-mission-details .mission-reset-note,
+#home-page .home-mission-details .mission-deck-heading span,
+#home-page .home-mission-details .daily-mission-card small {
+  color: rgba(255,255,255,.68);
+}
+
+#home-page .home-mission-details .daily-mission-card {
+  border-color: rgba(255,255,255,.14);
+  background: rgba(255,255,255,.09);
+}
+
+#home-page .home-mission-details .daily-mission-title,
+#home-page .home-mission-details .daily-mission-title span {
+  color: #fff;
+}
+
+#home-page .home-focus-section,
+#home-page .home-overall-section {
+  padding: 0;
+}
+
+#home-page .home-section-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 9px;
+  padding: 0 2px;
+}
+
+#home-page .home-section-title h2 {
+  margin: 3px 0 0;
+  font-size: 1.22rem;
+  letter-spacing: -.02em;
+}
+
+#home-page .home-section-title > span {
+  color: var(--muted);
+  font-size: .78rem;
+  text-align: right;
+}
+
+#home-page .home-section-title.compact { margin-bottom: 8px; }
+
+#home-page .home-focus-card {
+  --focus-accent: #4f46e5;
+  --focus-soft: #eef2ff;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr) auto;
+  align-items: center;
+  gap: 14px;
+  overflow: hidden;
+  min-height: 106px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 19px;
+  background: linear-gradient(135deg,#fff 60%,var(--focus-soft));
+  box-shadow: var(--shadow-sm);
+}
+
+#home-page .home-focus-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: var(--focus-accent);
+}
+
+#home-page .home-focus-card[data-subject-theme="english"] { --focus-accent:#8b5cf6; --focus-soft:#faf5ff; }
+#home-page .home-focus-card[data-subject-theme="biology"] { --focus-accent:#10b981; --focus-soft:#f0fdf4; }
+#home-page .home-focus-card[data-subject-theme="ess"] { --focus-accent:#06b6d4; --focus-soft:#ecfeff; }
+#home-page .home-focus-card[data-subject-theme="math"] { --focus-accent:#3b82f6; --focus-soft:#eff6ff; }
+#home-page .home-focus-card.is-empty { --focus-accent:#94a3b8; --focus-soft:#f8fafc; }
+
+#home-page .home-focus-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  background: var(--focus-soft);
+  color: var(--focus-accent);
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+#home-page .home-focus-copy { min-width: 0; }
+#home-page .home-focus-copy span {
+  display: block;
+  color: var(--focus-accent);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+#home-page .home-focus-copy strong {
+  display: block;
+  margin-top: 3px;
+  overflow-wrap: anywhere;
+  font-size: .98rem;
+  line-height: 1.35;
+}
+#home-page .home-focus-copy small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+#home-page .home-focus-card button {
+  min-width: 112px;
+  padding: 9px 13px;
+  border-color: var(--focus-accent);
+  color: var(--focus-accent);
+  background: #fff;
+}
+#home-page .home-focus-card button:disabled {
+  border-color: var(--border);
+  color: #98a2b3;
+  cursor: default;
+  box-shadow: none;
+}
+
+#home-page .subject-section {
+  margin-top: 0;
+  padding: 20px;
+}
+
+#home-page #subject-list {
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 10px;
+}
+
+#home-page #subject-list .subject-card {
+  min-height: 142px;
+  justify-content: flex-end;
+  padding: 17px;
+  border-radius: 18px;
+}
+
+#home-page #subject-list .subject-card::after {
+  content: 'Aa';
+  top: 16px;
+  right: 16px;
+  width: auto;
+  min-width: 40px;
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 9px;
+  background: #ede9fe;
+  color: #7c3aed;
+  font-size: .72rem;
+  font-weight: 900;
+}
+#home-page #subject-list .subject-card:nth-child(2)::after { content:'BIO'; background:#d1fae5; color:#047857; }
+#home-page #subject-list .subject-card:nth-child(3)::after { content:'ESS'; background:#cffafe; color:#0e7490; }
+#home-page #subject-list .subject-card:nth-child(4)::after { content:'MATH'; background:#dbeafe; color:#1d4ed8; }
+
+#home-page #subject-list .subject-card strong {
+  max-width: 100%;
+  padding-right: 0;
+}
+
+#home-page .home-overall-section {
+  padding: 15px 16px 16px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(255,255,255,.72);
+  box-shadow: var(--shadow-sm);
+}
+
+#home-page .home-overall-section .home-stat-grid {
+  position: static;
+  margin: 0;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+}
+
+#home-page .home-overall-section .home-stat {
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  backdrop-filter: none;
+}
+
+#home-page .home-overall-section .home-stat span {
+  color: var(--muted);
+}
+
+#home-page .home-overall-section .home-stat strong {
+  color: var(--text);
+  font-size: 1.12rem;
+}
+
+@media (max-width: 760px) {
+  #home-page .home-ui-v2-dashboard { padding: 20px; }
+  #home-page .home-ui-v2-dashboard .mission-topline { align-items: flex-start; }
+  #home-page .home-status-pills { justify-content: flex-start; }
+  #home-page .home-continue-card { grid-template-columns: 1fr; gap: 12px; }
+  #home-page .home-continue-button { width: 100%; }
+  #home-page #subject-list { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  #home-page .home-focus-card { grid-template-columns: auto minmax(0,1fr); }
+  #home-page .home-focus-card button { grid-column: 1 / -1; width: 100%; }
+  #home-page .home-overall-section .home-stat-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  #home-page .home-mission-details .daily-mission-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  #home-page.home-ui-v2 { gap: 13px; }
+  #home-page .home-ui-v2-dashboard { padding: 17px; border-radius: 21px; }
+  #home-page .home-ui-v2-dashboard .mission-topline { flex-direction: column; gap: 12px; }
+  #home-page .home-status-pills { width: 100%; }
+  #home-page .home-xp-pill,
+  #home-page .home-status-pills .streak-pill { flex: 1; justify-content: center; }
+  #home-page .home-section-title { align-items: flex-start; flex-direction: column; gap: 2px; }
+  #home-page .home-section-title > span { text-align: left; }
+  #home-page .home-focus-card { padding: 14px; gap: 11px; }
+  #home-page .home-focus-icon { width: 42px; height: 42px; border-radius: 13px; }
+  #home-page .subject-section { padding: 15px; }
+  #home-page #subject-list { margin-top: 14px; }
+  #home-page #subject-list .subject-card { min-height: 118px; padding: 14px; }
+  #home-page #subject-list .subject-card::after { top: 12px; right: 12px; min-width: 36px; height: 27px; }
+  #home-page .home-overall-section { padding: 13px; }
+}
