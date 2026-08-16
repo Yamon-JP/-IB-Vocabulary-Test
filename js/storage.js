@@ -55,3 +55,11 @@ const Storage = {
   script.src = 'js/math-ai-sl-batch2.js?v=1';
   document.head.appendChild(script);
 })();
+
+(() => {
+  if (document.getElementById('math-ai-sl-final-audit-script')) return;
+  const script = document.createElement('script');
+  script.id = 'math-ai-sl-final-audit-script';
+  script.src = 'js/math-ai-sl-final-audit.js?v=1';
+  document.head.appendChild(script);
+})();
