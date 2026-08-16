@@ -85,3 +85,20 @@ const Storage = {
   script.src = 'js/math-home-icon.js?v=1';
   document.head.appendChild(script);
 })();
+
+(() => {
+  if (!document.getElementById('home-ui-v2-style')) {
+    const link = document.createElement('link');
+    link.id = 'home-ui-v2-style';
+    link.rel = 'stylesheet';
+    link.href = 'css/home-ui-v2.css?v=1';
+    document.head.appendChild(link);
+  }
+
+  if (!document.getElementById('home-ui-v2-script')) {
+    const script = document.createElement('script');
+    script.id = 'home-ui-v2-script';
+    script.src = 'js/home-ui-v2.js?v=1';
+    document.head.appendChild(script);
+  }
+})();
