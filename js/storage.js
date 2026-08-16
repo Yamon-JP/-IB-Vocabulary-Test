@@ -63,3 +63,11 @@ const Storage = {
   script.src = 'js/math-ai-sl-final-audit.js?v=1';
   document.head.appendChild(script);
 })();
+
+(() => {
+  if (document.getElementById('v1-audit-fixes-script')) return;
+  const script = document.createElement('script');
+  script.id = 'v1-audit-fixes-script';
+  script.src = 'js/v1-audit-fixes.js?v=1';
+  document.head.appendChild(script);
+})();
