@@ -1,0 +1,112 @@
+.bottom-nav.navigation.navigation-ui-v2 {
+  width: min(760px, calc(100% - 24px));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 5px;
+  padding: 7px;
+}
+
+.bottom-nav.navigation.navigation-ui-v2 .navigation-v2-item {
+  position: relative;
+  min-width: 0;
+  min-height: 56px;
+  padding: 6px 6px 5px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: #667085;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.bottom-nav.navigation.navigation-ui-v2 .navigation-v2-item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  width: 24px;
+  height: 3px;
+  border-radius: 999px;
+  background: transparent;
+  transform: translateX(-50%);
+  transition: width .16s ease, background .16s ease;
+}
+
+.bottom-nav.navigation.navigation-ui-v2 .navigation-v2-item:hover,
+.bottom-nav.navigation.navigation-ui-v2 .navigation-v2-item:focus-visible {
+  background: #f7f7ff;
+  color: #4338ca;
+}
+
+.bottom-nav.navigation.navigation-ui-v2 .navigation-v2-item.active {
+  background: #eef2ff;
+  color: #3730a3;
+  box-shadow: inset 0 0 0 1px #d9ddff;
+}
+
+.bottom-nav.navigation.navigation-ui-v2 .navigation-v2-item.active::after {
+  width: 34px;
+  background: #6366f1;
+}
+
+.navigation-v2-icon,
+.navigation-v2-label {
+  display: block;
+  min-width: 0;
+}
+
+.navigation-v2-icon {
+  font-size: 1.06rem;
+  line-height: 1.1;
+}
+
+.navigation-v2-label {
+  margin-top: 2px;
+  overflow: hidden;
+  color: inherit;
+  font-size: .69rem;
+  font-weight: 850;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .bottom-nav.navigation.navigation-ui-v2 {
+    bottom: 8px;
+    width: calc(100% - 16px);
+    gap: 3px;
+    padding: 6px;
+  }
+
+  .bottom-nav.navigation.navigation-ui-v2 .navigation-v2-item {
+    min-height: 52px;
+    padding: 5px 3px 4px;
+    border-radius: 12px;
+  }
+
+  .navigation-v2-icon {
+    font-size: 1rem;
+  }
+
+  .navigation-v2-label {
+    font-size: .63rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .bottom-nav.navigation.navigation-ui-v2 {
+    width: calc(100% - 10px);
+    gap: 2px;
+    padding: 5px;
+  }
+
+  .bottom-nav.navigation.navigation-ui-v2 .navigation-v2-item {
+    min-height: 50px;
+    padding-inline: 2px;
+  }
+
+  .navigation-v2-label {
+    font-size: .58rem;
+    letter-spacing: -.01em;
+  }
+}
