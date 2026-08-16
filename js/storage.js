@@ -20,6 +20,6 @@ const Storage = {
   if (document.getElementById('ess-final-training-script')) return;
   const script = document.createElement('script');
   script.id = 'ess-final-training-script';
-  script.src = 'js/ess-final-training.js?v=2';
+  script.src = 'js/ess-final-training.js?v=3';
   document.head.appendChild(script);
 })();
