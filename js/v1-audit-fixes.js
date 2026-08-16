@@ -66,6 +66,7 @@
       const h=document.querySelectorAll('#home-page .home-stat-grid .home-stat>span');if(h[0])h[0].textContent='Quiz Questions';if(h[1])h[1].textContent='Quiz Accuracy';if(h[2])h[2].textContent='Quiz XP';
       const p=document.querySelectorAll('#practice-page .practice-mini-stats>div>span');if(p[0])p[0].textContent='Quiz Questions';if(p[1])p[1].textContent='Quiz Accuracy';if(p[2])p[2].textContent='Quiz XP';
     },
+    syncPracticeAchievements(){const p=document.getElementById('practice-achievements');if(!p||typeof App==='undefined')return;p.style.display=App.state?.practiceType==='vocabulary'?'block':'none';},
     panel(){let p=document.getElementById('all-subject-final-progress');if(p)return p;const page=document.getElementById('statistics-page');if(!page)return null;p=document.createElement('section');p.id='all-subject-final-progress';p.className='progress-panel paper2-progress-panel';const bio=document.getElementById('paper2-progress-panel');bio?bio.insertAdjacentElement('beforebegin',p):page.appendChild(p);return p;},
     renderProgress(){
       const p=this.panel();if(!p)return;const secs=this.sections(this.activeSubject);let id=this.activeAssessment[this.activeSubject];if(!secs.some(x=>x[0]===id))id=secs[0]?.[0];this.activeAssessment[this.activeSubject]=id;
@@ -74,8 +75,8 @@
       p.querySelectorAll('[data-fix-subject]').forEach(b=>b.onclick=()=>{this.activeSubject=b.dataset.fixSubject;this.renderProgress();});p.querySelectorAll('[data-fix-section]').forEach(b=>b.onclick=()=>{this.activeAssessment[this.activeSubject]=b.dataset.fixSection;this.renderProgress();});
       const bio=document.getElementById('paper2-progress-panel');if(bio)bio.style.display=this.activeSubject==='Biology SL'?'block':'none';if(this.activeSubject==='Biology SL'&&typeof Paper2ProgressView!=='undefined'&&['paper1a','paper1b','paper2a','paper2b'].includes(id)&&Paper2ProgressView.activeAssessment!==id)Paper2ProgressView.setAssessment(id);
     },
-    patchPages(){if(Pages.__v1AuditFix)return;const show=Pages.show.bind(Pages),self=this;Pages.show=function(page){const r=show(page);self.updateStats();if(page==='statistics')self.renderProgress();return r;};Pages.__v1AuditFix=true;},
-    install(){if(this.installed)return true;if(typeof Storage==='undefined'||typeof DailyChallenge==='undefined'||typeof Streak==='undefined'||typeof Pages==='undefined')return false;this.ensureStyles();this.patchStreak();this.patchPages();this.updateStats();this.installed=true;return true;},
+    patchPages(){if(Pages.__v1AuditFix)return;const show=Pages.show.bind(Pages),self=this;Pages.show=function(page){const r=show(page);self.updateStats();self.syncPracticeAchievements();if(page==='statistics')self.renderProgress();return r;};Pages.__v1AuditFix=true;},
+    install(){if(this.installed)return true;if(typeof Storage==='undefined'||typeof DailyChallenge==='undefined'||typeof Streak==='undefined'||typeof Pages==='undefined')return false;this.ensureStyles();this.patchStreak();this.patchPages();this.updateStats();this.syncPracticeAchievements();this.installed=true;return true;},
     boot(){let n=0;const t=setInterval(()=>{n++;const ok=this.install();this.patchEnglish();if(ok&&this.englishPatched){clearInterval(t);this.updateStats();this.renderProgress();}else if(n>=600){clearInterval(t);console.warn('v1 audit fixes did not fully initialize.');}},50);}
   };
   Fix.boot();
