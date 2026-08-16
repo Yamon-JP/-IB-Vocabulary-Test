@@ -9,23 +9,23 @@
       style.id = 'math-home-icon-style';
       style.textContent = `
         #subject-math-ai-sl.math-home-icon-card {
-          align-items: center;
-          justify-content: center;
-          padding: 18px;
+          position: relative;
         }
         #subject-math-ai-sl .math-home-subject-icon {
+          position: absolute;
+          left: 18px;
+          top: 18px;
           display: block;
-          width: 82px;
-          height: 82px;
-          border-radius: 18px;
+          width: 46px;
+          height: 46px;
+          border-radius: 13px;
           object-fit: cover;
-          flex: 0 0 auto;
         }
         @media (max-width: 800px) {
           #subject-math-ai-sl .math-home-subject-icon {
-            width: 72px;
-            height: 72px;
-            border-radius: 16px;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
           }
         }
       `;
@@ -37,7 +37,14 @@
       if (!button) return false;
       button.classList.add('math-home-icon-card');
       button.setAttribute('aria-label', 'Math AI SL');
-      button.innerHTML = '<img class="math-home-subject-icon" src="assets/math-home-icon.svg?v=1" alt="MATH">';
+      if (!button.querySelector('.math-home-subject-icon')) {
+        const icon = document.createElement('img');
+        icon.className = 'math-home-subject-icon';
+        icon.src = 'assets/math-home-icon.svg?v=1';
+        icon.alt = '';
+        icon.setAttribute('aria-hidden', 'true');
+        button.prepend(icon);
+      }
       return true;
     },
 
