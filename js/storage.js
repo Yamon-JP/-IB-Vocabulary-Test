@@ -12,6 +12,6 @@ const Storage = {
   if (document.getElementById('biology-final-training-script')) return;
   const script = document.createElement('script');
   script.id = 'biology-final-training-script';
-  script.src = 'js/biology-final-training.js?v=2';
+  script.src = 'js/biology-final-training.js?v=3';
   document.head.appendChild(script);
 })();
