@@ -4,6 +4,7 @@
   const Extension = window.EssFinalTraining2 = {
     loaded: false,
     running: false,
+    numberingInstalled: false,
 
     async fetchArray(url) {
       try {
@@ -26,6 +27,30 @@
         merged.push(item);
       }
       return merged;
+    },
+
+    installCaseStudyNumbering() {
+      if (this.numberingInstalled || typeof EssExam === 'undefined' || typeof EssExam.renderCaseStudy !== 'function') {
+        return;
+      }
+
+      const originalRenderCaseStudy = EssExam.renderCaseStudy.bind(EssExam);
+      EssExam.renderCaseStudy = caseStudy => {
+        const html = originalRenderCaseStudy(caseStudy);
+        if (!caseStudy || !html) return html;
+
+        const index = Array.isArray(EssExam.caseStudies)
+          ? EssExam.caseStudies.findIndex(item => item?.id === caseStudy.id)
+          : -1;
+        if (index < 0) return html;
+
+        return html.replace(
+          'ESS PAPER 1 CASE STUDY',
+          `ESS PAPER 1 · CASE STUDY ${index + 1}`
+        );
+      };
+
+      this.numberingInstalled = true;
     },
 
     async extend() {
@@ -76,6 +101,7 @@
           .map(normalize)
       );
 
+      this.installCaseStudyNumbering();
       if (typeof EssExam.attachData === 'function') EssExam.attachData();
       this.loaded = true;
       if (typeof CourseCoverage !== 'undefined' && typeof CourseCoverage.render === 'function') {
