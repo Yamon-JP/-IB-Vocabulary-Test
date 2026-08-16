@@ -186,6 +186,6 @@ const Storage = {
   const link = document.createElement('link');
   link.id = 'ui-polish-v2-style';
   link.rel = 'stylesheet';
-  link.href = 'css/ui-polish-v2.css?v=1';
+  link.href = 'css/ui-polish-v2.css?v=2';
   document.head.appendChild(link);
 })();
