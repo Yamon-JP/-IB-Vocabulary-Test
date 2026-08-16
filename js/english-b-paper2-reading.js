@@ -270,10 +270,12 @@
             const value = this.getRadioValue(`engb-r-${key}-tf`);
             const selected = value === 'true' ? true : value === 'false' ? false : null;
             correct = selected !== null && selected === Boolean(question.correct);
-            autoAwarded = correct ? 1 : 0;
-            this.autoMax += 1;
             html += `<p><strong>True / False:</strong> ${question.correct ? 'True' : 'False'} ${correct ? '✓' : ''}</p>`;
-            selfPoints = [{ text: question.justification, points: Math.max(0, Number(question.marks || 2) - 1) }];
+            if (correct) {
+              selfPoints = [{ text: question.justification, points: Number(question.marks || 1) }];
+            } else {
+              html += '<p><small>Both the True / False choice and the justification must be correct to receive the marks.</small></p>';
+            }
           } else if (question.type === 'short') {
             selfPoints = (question.markscheme || []).map(point => ({ text: point, points: 1 }));
           }
