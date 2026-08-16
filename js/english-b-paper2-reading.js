@@ -18,6 +18,7 @@
 
   const EnglishBPaper2Reading = window.EnglishBPaper2Reading = {
     data: [],
+    focusedData: [],
     practiceSets: [],
     currentSetIndex: 0,
     initialized: false,
@@ -50,11 +51,32 @@
           console.warn('English B Paper 2 Reading extra mock data could not be loaded.', extraError);
         }
         this.data = [...baseData, ...extraData];
+
+        this.focusedData = [];
+        const focusUrls = [1, 2, 3, 4, 5].map(
+          chapter => `data/english-b/paper2-reading-focus-ch${chapter}.json?v=1`
+        );
+        const focusResults = await Promise.allSettled(
+          focusUrls.map(async url => {
+            const focusResponse = await fetch(url);
+            if (!focusResponse.ok) throw new Error(`Focused Reading data not found: ${url}`);
+            const focusData = await focusResponse.json();
+            return Array.isArray(focusData) ? focusData : [];
+          })
+        );
+        this.focusedData = focusResults.flatMap(result =>
+          result.status === 'fulfilled' ? result.value : []
+        );
+        if (focusResults.some(result => result.status === 'rejected')) {
+          console.warn('Some English B Chapter-focused Reading data could not be loaded.');
+        }
+
         this.initialized = true;
         return true;
       } catch (error) {
         console.warn('English B Paper 2 Reading data could not be loaded.', error);
         this.data = [];
+        this.focusedData = [];
         return false;
       }
     },
@@ -112,7 +134,9 @@
     buildPracticeSets(chapters = []) {
       const selected = new Set(Array.isArray(chapters) ? chapters : []);
       if (!selected.size) return this.data.map(set => ({ ...set, texts: set.texts.map(text => ({ ...text, questions: text.questions.map(question => ({ ...question })) })) }));
-      const texts = this.data.flatMap(set => Array.isArray(set.texts) ? set.texts : []).filter(text => selected.has(text.chapter));
+      const baseTexts = this.data.flatMap(set => Array.isArray(set.texts) ? set.texts : []);
+      const focusedTexts = Array.isArray(this.focusedData) ? this.focusedData : [];
+      const texts = [...baseTexts, ...focusedTexts].filter(text => selected.has(text.chapter));
       const sets = [];
       for (let i = 0; i < texts.length; i += 3) {
         const chunk = texts.slice(i, i + 3).map(text => ({ ...text, questions: text.questions.map(question => ({ ...question })) }));
