@@ -39,3 +39,11 @@ const Storage = {
   script.src = 'js/math-ai-sl.js?v=1';
   document.head.appendChild(script);
 })();
+
+(() => {
+  if (document.getElementById('math-ai-sl-ui-guard-script')) return;
+  const script = document.createElement('script');
+  script.id = 'math-ai-sl-ui-guard-script';
+  script.src = 'js/math-ai-sl-ui-guard.js?v=1';
+  document.head.appendChild(script);
+})();
