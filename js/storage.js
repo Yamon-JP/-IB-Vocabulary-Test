@@ -140,12 +140,9 @@ const Storage = {
         </article>`).join('');
     };
 
-    const page = document.getElementById('statistics-page');
-    if (page && !page.__progressUiV2Observer) {
-      const observer = new MutationObserver(() => ui.attachLegacyPanels());
-      observer.observe(page, { childList: true, subtree: true });
-      page.__progressUiV2Observer = observer;
-    }
+    [0, 120, 350, 800, 1500].forEach(delay => {
+      window.setTimeout(() => ui.attachLegacyPanels(), delay);
+    });
   };
   document.head.appendChild(script);
 })();
