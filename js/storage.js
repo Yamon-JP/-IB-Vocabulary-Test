@@ -180,3 +180,12 @@ const Storage = {
     document.head.appendChild(script);
   }
 })();
+
+(() => {
+  if (document.getElementById('ui-polish-v2-style')) return;
+  const link = document.createElement('link');
+  link.id = 'ui-polish-v2-style';
+  link.rel = 'stylesheet';
+  link.href = 'css/ui-polish-v2.css?v=1';
+  document.head.appendChild(link);
+})();
