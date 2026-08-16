@@ -36,7 +36,20 @@
         const response = await fetch('data/english-b/paper2-reading.json?v=1');
         if (!response.ok) throw new Error('English B Paper 2 Reading data not found');
         const data = await response.json();
-        this.data = Array.isArray(data) ? data : [];
+        const baseData = Array.isArray(data) ? data : [];
+        let extraData = [];
+        try {
+          const extraResponse = await fetch('data/english-b/paper2-reading-extra.json?v=1');
+          if (extraResponse.ok) {
+            const extra = await extraResponse.json();
+            extraData = Array.isArray(extra) ? extra : [];
+          } else {
+            console.warn('English B Paper 2 Reading extra mock data not found.');
+          }
+        } catch (extraError) {
+          console.warn('English B Paper 2 Reading extra mock data could not be loaded.', extraError);
+        }
+        this.data = [...baseData, ...extraData];
         this.initialized = true;
         return true;
       } catch (error) {
