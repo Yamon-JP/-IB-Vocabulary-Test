@@ -12,9 +12,12 @@
     },
 
     legacyAssessmentTargets: {
+      'BIO-P2-A1-002': 'paper2a',
+      'BIO-P2-A2-001': 'paper2b',
       'BIO-P2-A2-002': 'paper2a',
       'BIO-P2-A2-003': 'paper2b',
       'BIO-P2-B1-003': 'paper2a',
+      'BIO-P2-B3-001': 'paper2a',
       'BIO-P2-B3-002': 'paper2a',
       'BIO-P2-B3-003': 'paper2b',
       'BIO-P2-B4-003': 'paper2a',
