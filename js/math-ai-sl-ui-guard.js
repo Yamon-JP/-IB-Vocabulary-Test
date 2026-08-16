@@ -10,10 +10,16 @@
     const originalApplyPracticeTypeUI = App.applyPracticeTypeUI;
     App.applyPracticeTypeUI = function(...args) {
       const result = originalApplyPracticeTypeUI.apply(this, args);
-      if (this.state.subject !== MathAISL.subject) {
-        const vocabularyButton = document.getElementById('type-vocabulary');
-        if (vocabularyButton) vocabularyButton.hidden = false;
+      const vocabularyButton = document.getElementById('type-vocabulary');
+      const isMath = this.state.subject === MathAISL.subject;
 
+      if (vocabularyButton) {
+        vocabularyButton.hidden = isMath;
+        vocabularyButton.style.display = isMath ? 'none' : '';
+        vocabularyButton.setAttribute('aria-hidden', isMath ? 'true' : 'false');
+      }
+
+      if (!isMath) {
         const paper2Description = document.querySelector('#type-paper2 small');
         if (paper2Description && paper2Description.textContent === 'Extended-response modeling and interpretation') {
           paper2Description.textContent = 'IB-style written answers and markscheme review';
