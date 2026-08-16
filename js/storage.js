@@ -4,7 +4,13 @@ const Storage = {
   },
   load(key) {
     const value = localStorage.getItem(key);
-    return value ? JSON.parse(value) : null;
+    if (!value) return null;
+    try {
+      return JSON.parse(value);
+    } catch (error) {
+      console.warn(`Saved data could not be read: ${key}`, error);
+      return null;
+    }
   }
 };
 
