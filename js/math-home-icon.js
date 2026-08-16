@@ -1,4 +1,4 @@
-// Home-only Math AI SL subject icon. Keeps exam modules and course coverage untouched.
+// Home-only Math AI SL subject badge. Keeps exam modules and course coverage untouched.
 (() => {
   const MathHomeIcon = window.MathHomeIcon = {
     installed: false,
@@ -8,25 +8,12 @@
       const style = document.createElement('style');
       style.id = 'math-home-icon-style';
       style.textContent = `
-        #subject-math-ai-sl.math-home-icon-card {
-          position: relative;
-        }
-        #subject-math-ai-sl .math-home-subject-icon {
-          position: absolute;
-          left: 18px;
-          top: 18px;
-          display: block;
-          width: 46px;
-          height: 46px;
-          border-radius: 13px;
-          object-fit: cover;
-        }
-        @media (max-width: 800px) {
-          #subject-math-ai-sl .math-home-subject-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-          }
+        /* Match the existing Aa / BIO / ESS subject badges exactly. */
+        #subject-math-ai-sl::after {
+          content: "MATH";
+          color: #1d4ed8;
+          background: #bfdbfe;
+          letter-spacing: -.04em;
         }
       `;
       document.head.appendChild(style);
@@ -35,16 +22,17 @@
     decorate() {
       const button = document.getElementById('subject-math-ai-sl');
       if (!button) return false;
-      button.classList.add('math-home-icon-card');
+
       button.setAttribute('aria-label', 'Math AI SL');
-      if (!button.querySelector('.math-home-subject-icon')) {
-        const icon = document.createElement('img');
-        icon.className = 'math-home-subject-icon';
-        icon.src = 'assets/math-home-icon.svg?v=1';
-        icon.alt = '';
-        icon.setAttribute('aria-hidden', 'true');
-        button.prepend(icon);
-      }
+
+      // Remove the previous image-based icon if an old DOM instance is still present.
+      const oldIcon = button.querySelector('.math-home-subject-icon');
+      if (oldIcon) oldIcon.remove();
+      button.classList.remove('math-home-icon-card');
+
+      const subtitle = button.querySelector('small');
+      if (subtitle) subtitle.textContent = 'Practice';
+
       return true;
     },
 
@@ -71,7 +59,7 @@
         attempts += 1;
         if (this.install() || attempts >= 400) {
           window.clearInterval(timer);
-          if (!this.installed) console.warn('Math Home icon could not initialize. Existing Home cards remain available.');
+          if (!this.installed) console.warn('Math Home badge could not initialize. Existing Home cards remain available.');
         }
       }, 50);
     }
