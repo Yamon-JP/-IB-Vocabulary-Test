@@ -1,0 +1,185 @@
+/* Phase UI-5: final mobile and motion polish.
+   Display-only refinements. No training, progress, achievement or storage logic changes. */
+
+/* Keep fixed navigation clear of device home indicators / safe areas. */
+.bottom-nav.navigation.navigation-ui-v2 {
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+}
+
+#app {
+  padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px));
+}
+
+/* Consistent touch targets across the refreshed UI. */
+.progress-v2-tabs button,
+.trophy-v2-filters button,
+.progress-v2-details > summary,
+.trophy-v2-global-card > summary,
+.trophy-v2-chapter-row > summary,
+#home-page .home-mission-details summary {
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+/* Make disclosure affordances feel consistent without adding heavy motion. */
+.progress-v2-details > summary span,
+#home-page .home-mission-details summary::after,
+.trophy-v2-global-card > summary .trophy-v2-card-chevron,
+.trophy-v2-chapter-row > summary .trophy-v2-card-chevron {
+  transition: transform .16s ease;
+}
+
+.progress-v2-details[open] > summary span,
+.trophy-v2-global-card[open] > summary .trophy-v2-card-chevron,
+.trophy-v2-chapter-row[open] > summary .trophy-v2-card-chevron {
+  transform: rotate(180deg);
+}
+
+.progress-v2-details[open] > :not(summary),
+#home-page .home-mission-details[open] .mission-deck,
+.trophy-v2-global-card[open] > :not(summary),
+.trophy-v2-chapter-row[open] > :not(summary) {
+  animation: ui-polish-reveal .16s ease-out;
+}
+
+@keyframes ui-polish-reveal {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Touch devices should not retain desktop hover lift effects after tapping. */
+@media (hover: none) {
+  .subject-card:hover,
+  .progress-v2-performance-row:hover,
+  .bottom-nav.navigation.navigation-ui-v2 .navigation-v2-item:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 700px) {
+  #app {
+    padding-bottom: calc(102px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .bottom-nav.navigation.navigation-ui-v2 {
+    bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Keep primary quiz actions visible side by side on phones. */
+  #quiz-actions {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  #quiz-actions button {
+    min-width: 0;
+    min-height: 48px;
+  }
+
+  /* Prevent long selection labels from forcing awkward horizontal growth. */
+  .practice-type-card,
+  .scope-options label > span,
+  .chapter-option {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  /* Progress and Trophy category controls stay finger-friendly. */
+  .progress-v2-tabs button,
+  .trophy-v2-filters button {
+    min-height: 44px;
+  }
+
+  .progress-v2-tabs button {
+    font-size: .69rem;
+    line-height: 1.1;
+  }
+
+  .trophy-v2-filters button {
+    font-size: .65rem;
+    line-height: 1.1;
+  }
+
+  /* Slightly reduce dense panel spacing while keeping readable breathing room. */
+  .progress-v2-panel,
+  .trophy-v2-panel {
+    padding: 14px;
+  }
+
+  .progress-v2-view,
+  #progress-ui-v2-root,
+  #trophy-ui-v2-root {
+    gap: 12px;
+  }
+
+  /* Preserve two-column Home subject cards without cramped copy. */
+  #home-page #subject-list .subject-card strong {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  #home-page #subject-list .subject-card small {
+    font-size: .76rem;
+  }
+}
+
+@media (max-width: 430px) {
+  /* Override the legacy rule that stacked quiz actions vertically. */
+  #quiz-actions {
+    flex-direction: row;
+  }
+
+  #quiz-actions button {
+    padding: 9px 6px;
+    font-size: .84rem;
+  }
+
+  /* Keep practice header readable on narrow screens. */
+  .practice-header {
+    gap: 9px;
+  }
+
+  .practice-header .back-button {
+    min-height: 44px;
+  }
+
+  .practice-mini-stats > div {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  /* Avoid excessively tiny navigation / tab labels on compact phones. */
+  .navigation-v2-label {
+    font-size: .62rem;
+  }
+
+  .progress-v2-tabs button {
+    font-size: .64rem;
+  }
+
+  .trophy-v2-filters button {
+    font-size: .62rem;
+  }
+
+  .bottom-nav.navigation.navigation-ui-v2 .navigation-v2-item {
+    min-height: 52px;
+  }
+
+  /* Keep summary metrics readable while retaining the compact grid. */
+  .progress-v2-summary-card small,
+  .trophy-v2-section-heading > span {
+    font-size: .66rem;
+  }
+}
+
+/* Respect the existing reduced-motion preference for these new reveal effects too. */
+@media (prefers-reduced-motion: reduce) {
+  .progress-v2-details[open] > :not(summary),
+  #home-page .home-mission-details[open] .mission-deck,
+  .trophy-v2-global-card[open] > :not(summary),
+  .trophy-v2-chapter-row[open] > :not(summary) {
+    animation: none !important;
+  }
+}
