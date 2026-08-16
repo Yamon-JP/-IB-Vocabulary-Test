@@ -18,6 +18,7 @@
 
   const EnglishBPaper1 = window.EnglishBPaper1 = {
     data: [],
+    focusedData: [],
     practiceSets: [],
     currentSetIndex: 0,
     selectedTaskIndex: null,
@@ -35,11 +36,32 @@
         if (!response.ok) throw new Error('English B Paper 1 data not found');
         const data = await response.json();
         this.data = Array.isArray(data) ? data : [];
+
+        this.focusedData = [];
+        const focusUrls = [1, 2, 3, 4, 5].map(
+          chapter => `data/english-b/paper1-writing-focus-ch${chapter}.json?v=1`
+        );
+        const focusResults = await Promise.allSettled(
+          focusUrls.map(async url => {
+            const focusResponse = await fetch(url);
+            if (!focusResponse.ok) throw new Error(`Focused Paper 1 Writing data not found: ${url}`);
+            const focusData = await focusResponse.json();
+            return Array.isArray(focusData) ? focusData : [];
+          })
+        );
+        this.focusedData = focusResults.flatMap(result =>
+          result.status === 'fulfilled' ? result.value : []
+        );
+        if (focusResults.some(result => result.status === 'rejected')) {
+          console.warn('Some English B Chapter-focused Paper 1 Writing data could not be loaded.');
+        }
+
         this.initialized = true;
         return true;
       } catch (error) {
         console.warn('English B Paper 1 Writing data could not be loaded.', error);
         this.data = [];
+        this.focusedData = [];
         return false;
       }
     },
@@ -120,8 +142,9 @@
     buildPracticeSets(chapters = []) {
       const selected = new Set(Array.isArray(chapters) ? chapters : []);
       if (!selected.size) return this.data.map(set => ({ ...set, tasks: set.tasks.map(task => ({ ...task })) }));
-      const tasks = this.data.flatMap(set => Array.isArray(set.tasks) ? set.tasks : [])
-        .filter(task => selected.has(task.chapter));
+      const baseTasks = this.data.flatMap(set => Array.isArray(set.tasks) ? set.tasks : []);
+      const focusedTasks = Array.isArray(this.focusedData) ? this.focusedData : [];
+      const tasks = [...baseTasks, ...focusedTasks].filter(task => selected.has(task.chapter));
       const sets = [];
       for (let i = 0; i < tasks.length; i += 3) {
         sets.push({ id: `ENGB-P1-FOCUS-${sets.length + 1}`, title: `Focused Practice ${sets.length + 1}`, focused: true, tasks: tasks.slice(i, i + 3) });
@@ -286,6 +309,17 @@
           <h4>Model Answer · ${modelCount} words</h4>
           <div class="engb-p1-model">${this.escapeHtml(task.modelAnswer)}</div>
           <div class="engb-p1-jp" lang="ja"><strong>日本語解説：</strong>${this.escapeHtml(task.modelAnswerJa)}</div>
+        </div>
+        <div class="engb-p1-feedback-card">
+          <h4>Targeted improvement check</h4>
+          <div class="engb-p1-task-check">
+            <label><input type="checkbox"><span>Rewrite your weakest paragraph with a clear main point, specific support or example, and an explanation of why it matters.</span></label>
+            <label><input type="checkbox"><span>Check that the opening and ending clearly follow the conventions of ${this.escapeHtml(this.selectedTextType)}.</span></label>
+            <label><input type="checkbox"><span>Find at least two places where the tone or register could be adjusted more precisely for ${this.escapeHtml(task.audience)}.</span></label>
+            <label><input type="checkbox"><span>Upgrade at least three vague or repetitive words with more precise vocabulary linked to ${this.escapeHtml(task.theme)}.</span></label>
+            <label><input type="checkbox"><span>Compare every task requirement with your response and add development where an idea is only mentioned rather than explained.</span></label>
+          </div>
+          <p class="muted">Use this after comparing your response with the model. The goal is to revise your own writing, not copy the model answer.</p>
         </div>
         <div class="engb-p1-feedback-card"><strong>Your word count: ${count}</strong><p>${count >= 450 && count <= 600 ? 'Within the directed HL range.' : 'Outside the directed HL range. Do not apply an automatic penalty; instead check whether relevance, development, effectiveness or coherence suffered.'}</p></div>`;
       feedback.scrollIntoView({ behavior: 'smooth', block: 'start' });
