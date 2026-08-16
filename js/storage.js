@@ -71,3 +71,11 @@ const Storage = {
   script.src = 'js/v1-audit-fixes.js?v=1';
   document.head.appendChild(script);
 })();
+
+(() => {
+  if (document.getElementById('math-home-icon-script')) return;
+  const script = document.createElement('script');
+  script.id = 'math-home-icon-script';
+  script.src = 'js/math-home-icon.js?v=1';
+  document.head.appendChild(script);
+})();
