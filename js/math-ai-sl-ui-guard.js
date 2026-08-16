@@ -1,4 +1,4 @@
-// Keeps Math-only UI state from leaking into the stable subject screens.
+// Keeps Math-only UI state from leaking into stable subject screens; Math vocabulary stays hidden.
 (() => {
   const install = (attempt = 0) => {
     if (typeof App === 'undefined' || typeof MathAISL === 'undefined' || !MathAISL.installed) {
