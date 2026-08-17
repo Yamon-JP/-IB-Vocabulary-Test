@@ -190,7 +190,7 @@ const Pages = {
     script.async = false;
     script.src = 'js/english-b-paper2-listening.js?v=1';
     script.onerror = () => {
-      console.warn('English B Paper 2 Listening module could not be loaded. Existing practice remains available.');
+      console.warn('English B Paper 2 Listening module could not be loaded. Existing Listening practice remains available.');
     };
     document.body.appendChild(script);
   },
@@ -261,7 +261,27 @@ const Pages = {
       if (typeof EssCourseCoverage !== 'undefined') EssCourseCoverage.start();
     };
     script.onerror = () => {
-      console.warn('ESS Course Coverage extension could not be loaded. Existing ESS practice remains available.');
+      console.warn('ESS Course Coverage extension could not be loaded. Existing learned-unit controls remain available.');
+    };
+    document.body.appendChild(script);
+  },
+
+  ensureBiologyPaper1BMock() {
+    if (typeof BiologyPaper1BMock !== 'undefined') {
+      BiologyPaper1BMock.install();
+      return;
+    }
+    if (document.getElementById('biology-paper1b-mock-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'biology-paper1b-mock-script';
+    script.async = false;
+    script.src = 'js/biology-paper1b-mock.js?v=1';
+    script.onload = () => {
+      if (typeof BiologyPaper1BMock !== 'undefined') BiologyPaper1BMock.install();
+    };
+    script.onerror = () => {
+      console.warn('Biology Paper 1B Mock module could not be loaded. Existing Paper 1B Practice remains available.');
     };
     document.body.appendChild(script);
   },
@@ -326,6 +346,7 @@ const Pages = {
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
+    this.ensureBiologyPaper1BMock();
     this.show('home');
   }
 };
