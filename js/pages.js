@@ -59,7 +59,7 @@ const Pages = {
 
     const script = document.createElement('script');
     script.id = 'ess-japanese-localization-script';
-    script.src = 'js/ess-japanese-localization.js?v=2';
+    script.src = 'js/ess-japanese-localization.js?v=3';
     script.onerror = () => {
       console.warn('ESS Japanese localization layer could not be loaded. Existing ESS practice remains available.');
     };
