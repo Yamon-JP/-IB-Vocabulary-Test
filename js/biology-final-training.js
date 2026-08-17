@@ -362,7 +362,7 @@
         this.fetchArray('data/paper1/biology-final-training-extra-2.json?v=3'),
         this.fetchArray('data/paper2/biology-final-data-extra-2.json?v=3'),
         this.fetchArray('data/paper2/biology-final-data-extra-3.json?v=3'),
-        this.fetchArray('data/paper1/biology-paper1b-structured-v1.json?v=1')
+        this.fetchArray('data/paper1/biology-paper1b-structured-v1.json?v=2')
       ]);
       const paper1aExtra = [...paper1aBatch1, ...paper1aBatch2];
       const paper1bExtra = [...paper1bBatch1, ...paper1bBatch2, ...paper1bBatch3, ...structuredPaper1B];
