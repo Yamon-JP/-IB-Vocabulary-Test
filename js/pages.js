@@ -190,7 +190,7 @@ const Pages = {
     script.async = false;
     script.src = 'js/english-b-paper2-listening.js?v=1';
     script.onerror = () => {
-      console.warn('English B Paper 2 Listening module could not be loaded. Existing Listening practice remains available.');
+      console.warn('English B Paper 2 Listening module could not be loaded. Existing practice remains available.');
     };
     document.body.appendChild(script);
   },
