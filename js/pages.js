@@ -190,7 +190,7 @@ const Pages = {
     script.async = false;
     script.src = 'js/english-b-paper2-listening.js?v=1';
     script.onerror = () => {
-      console.warn('English B Paper 2 Listening module could not be loaded. Existing Listening practice remains available.');
+      console.warn('English B Paper 2 Listening module could not be loaded. Existing practice remains available.');
     };
     document.body.appendChild(script);
   },
@@ -261,7 +261,7 @@ const Pages = {
       if (typeof EssCourseCoverage !== 'undefined') EssCourseCoverage.start();
     };
     script.onerror = () => {
-      console.warn('ESS Course Coverage extension could not be loaded. Existing learned-unit controls remain available.');
+      console.warn('ESS Course Coverage extension could not be loaded. Existing ESS practice remains available.');
     };
     document.body.appendChild(script);
   },
