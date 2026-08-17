@@ -286,6 +286,26 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureBiologyPaper1FullMock() {
+    if (typeof BiologyPaper1FullMock !== 'undefined') {
+      BiologyPaper1FullMock.install();
+      return;
+    }
+    if (document.getElementById('biology-paper1-full-mock-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'biology-paper1-full-mock-script';
+    script.async = false;
+    script.src = 'js/biology-paper1-full-mock.js?v=1';
+    script.onload = () => {
+      if (typeof BiologyPaper1FullMock !== 'undefined') BiologyPaper1FullMock.install();
+    };
+    script.onerror = () => {
+      console.warn('Biology Paper 1 Full Mock module could not be loaded. Existing Paper 1 Practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensurePaper2ProgressView() {
     if (typeof Paper2ProgressView !== 'undefined') {
       Paper2ProgressView.render();
@@ -347,6 +367,7 @@ const Pages = {
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
     this.ensureBiologyPaper1BMock();
+    this.ensureBiologyPaper1FullMock();
     this.show('home');
   }
 };
