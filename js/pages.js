@@ -276,7 +276,7 @@ const Pages = {
     const script = document.createElement('script');
     script.id = 'biology-paper1b-mock-script';
     script.async = false;
-    script.src = 'js/biology-paper1b-mock.js?v=1';
+    script.src = 'js/biology-paper1b-mock.js?v=2';
     script.onload = () => {
       if (typeof BiologyPaper1BMock !== 'undefined') BiologyPaper1BMock.install();
     };
