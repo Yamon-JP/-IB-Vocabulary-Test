@@ -117,11 +117,11 @@ const A=window.AdaptiveTraining={
       const aa=a.accuracy===null?101:a.accuracy;
       const ba=b.accuracy===null?101:b.accuracy;
       if(aa!==ba)return aa-ba;
+      if(a.attemptCount!==b.attemptCount)return a.attemptCount-b.attemptCount;
+      if(a.lastAt!==b.lastAt)return a.lastAt-b.lastAt;
       const am=a.paperMockScore===null?101:a.paperMockScore;
       const bm=b.paperMockScore===null?101:b.paperMockScore;
       if(am!==bm)return am-bm;
-      if(a.attemptCount!==b.attemptCount)return a.attemptCount-b.attemptCount;
-      if(a.lastAt!==b.lastAt)return a.lastAt-b.lastAt;
       return a.unit.localeCompare(b.unit,'en',{numeric:true});
     });
   },
