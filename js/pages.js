@@ -190,7 +190,7 @@ const Pages = {
     script.async = false;
     script.src = 'js/english-b-paper2-listening.js?v=1';
     script.onerror = () => {
-      console.warn('English B Paper 2 Listening module could not be loaded. Existing practice remains available.');
+      console.warn('English B Paper 2 Listening module could not be loaded. Existing Listening practice remains available.');
     };
     document.body.appendChild(script);
   },
@@ -366,6 +366,26 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureFinalExamProgressV2() {
+    if (typeof FinalExamProgressV2 !== 'undefined') {
+      FinalExamProgressV2.install();
+      return;
+    }
+    if (document.getElementById('final-exam-progress-v2-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'final-exam-progress-v2-script';
+    script.async = false;
+    script.src = 'js/final-exam-progress-v2.js?v=1';
+    script.onload = () => {
+      if (typeof FinalExamProgressV2 !== 'undefined') FinalExamProgressV2.install();
+    };
+    script.onerror = () => {
+      console.warn('Final Exam Progress v2 could not be loaded. Existing Progress remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensurePaper2ProgressView() {
     if (typeof Paper2ProgressView !== 'undefined') {
       Paper2ProgressView.render();
@@ -431,6 +451,7 @@ const Pages = {
     this.ensureBiologyPaper2FullMock();
     this.ensureAdaptiveTraining();
     this.ensureTrainingPoints();
+    this.ensureFinalExamProgressV2();
     this.show('home');
   }
 };
