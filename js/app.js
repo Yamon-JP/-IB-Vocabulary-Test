@@ -236,7 +236,7 @@ const App = {
     const paper2Title = document.getElementById('paper2-section-title');
     if (paper2Title) {
       paper2Title.textContent = this.state.subject === 'Biology SL'
-        ? `${this.state.paper2Section === 'paper2b' ? 'Paper 2B' : 'Paper 2A'} Practice`
+        ? `${this.state.paper2Section === 'paper2b' ? 'Paper 2 · Section B' : 'Paper 2 · Section A'} Practice`
         : 'Paper 2 Practice';
     }
 
@@ -459,7 +459,7 @@ const App = {
       }
       const count = this.loadPaper2ForSelection(this.state.subject, chapters);
       if (!count) {
-        const selectedPaper2 = this.state.paper2Section === 'paper2b' ? 'Paper 2B' : 'Paper 2A';
+        const selectedPaper2 = this.state.paper2Section === 'paper2b' ? 'Paper 2 · Section B' : 'Paper 2 · Section A';
         alert(this.state.subject === 'Biology SL'
           ? `No ${selectedPaper2} questions are available for the selected chapters and learned units yet.`
           : 'No Paper 2 questions are available for this selection yet.');
@@ -500,7 +500,7 @@ const App = {
       let mode = 'Vocabulary';
       if (this.state.practiceType === 'paper2') {
         mode = this.state.subject === 'Biology SL'
-          ? (this.state.paper2Section === 'paper2b' ? 'Paper 2B' : 'Paper 2A')
+          ? (this.state.paper2Section === 'paper2b' ? 'Paper 2 · Section B' : 'Paper 2 · Section A')
           : 'Paper 2';
       }
       if (this.state.practiceType === 'paper1') mode = this.state.paper1Section === 'paper1b' ? 'Paper 1B' : 'Paper 1A';
