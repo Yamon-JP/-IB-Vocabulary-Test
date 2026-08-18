@@ -126,7 +126,7 @@ const Pages = {
     script.id = 'ess-section-b-final-japanese-audit-script';
     script.src = 'js/ess-section-b-japanese-final-audit.js?v=1';
     script.onerror = () => {
-      console.warn('ESS Section B final Japanese audit could not be loaded. Existing ESS practice remains available.');
+      console.warn('ESS Section B final Japanese audit layer could not be loaded. Existing ESS practice remains available.');
     };
     document.body.appendChild(script);
   },
@@ -326,6 +326,26 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureAdaptiveTraining() {
+    if (typeof AdaptiveTraining !== 'undefined') {
+      AdaptiveTraining.install();
+      return;
+    }
+    if (document.getElementById('adaptive-training-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'adaptive-training-script';
+    script.async = false;
+    script.src = 'js/adaptive-training.js?v=1';
+    script.onload = () => {
+      if (typeof AdaptiveTraining !== 'undefined') AdaptiveTraining.install();
+    };
+    script.onerror = () => {
+      console.warn('Adaptive Training module could not be loaded. Existing practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensurePaper2ProgressView() {
     if (typeof Paper2ProgressView !== 'undefined') {
       Paper2ProgressView.render();
@@ -389,6 +409,7 @@ const Pages = {
     this.ensureBiologyPaper1BMock();
     this.ensureBiologyPaper1FullMock();
     this.ensureBiologyPaper2FullMock();
+    this.ensureAdaptiveTraining();
     this.show('home');
   }
 };
