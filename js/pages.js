@@ -126,7 +126,7 @@ const Pages = {
     script.id = 'ess-section-b-final-japanese-audit-script';
     script.src = 'js/ess-section-b-japanese-final-audit.js?v=1';
     script.onerror = () => {
-      console.warn('ESS Section B final Japanese audit layer could not be loaded. Existing ESS practice remains available.');
+      console.warn('ESS Section B final Japanese audit could not be loaded. Existing ESS practice remains available.');
     };
     document.body.appendChild(script);
   },
