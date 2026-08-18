@@ -346,6 +346,26 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureTrainingPoints() {
+    if (typeof TrainingPoints !== 'undefined') {
+      TrainingPoints.install();
+      return;
+    }
+    if (document.getElementById('training-points-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'training-points-script';
+    script.async = false;
+    script.src = 'js/training-points.js?v=1';
+    script.onload = () => {
+      if (typeof TrainingPoints !== 'undefined') TrainingPoints.install();
+    };
+    script.onerror = () => {
+      console.warn('Overall Daily Training module could not be loaded. Existing Daily Missions remain available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensurePaper2ProgressView() {
     if (typeof Paper2ProgressView !== 'undefined') {
       Paper2ProgressView.render();
@@ -410,6 +430,7 @@ const Pages = {
     this.ensureBiologyPaper1FullMock();
     this.ensureBiologyPaper2FullMock();
     this.ensureAdaptiveTraining();
+    this.ensureTrainingPoints();
     this.show('home');
   }
 };
