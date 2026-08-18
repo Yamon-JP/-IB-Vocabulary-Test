@@ -27,7 +27,7 @@ const Paper2ProgressView = {
         <div>
           <p class="eyebrow">FINAL EXAM READINESS</p>
           <h3>Biology Final Exam Progress</h3>
-          <p class="muted">Track score and coverage separately across Paper 1A, Paper 1B, Paper 2A and Paper 2B.</p>
+          <p class="muted">Track score and coverage separately across Paper 1A, Paper 1B, Paper 2 · Section A and Paper 2 · Section B.</p>
         </div>
         <span id="paper2-progress-attempt-badge">0 attempts</span>
       </div>
@@ -89,8 +89,8 @@ const Paper2ProgressView = {
     const labels = {
       paper1a: 'Paper 1A',
       paper1b: 'Paper 1B',
-      paper2a: 'Paper 2A',
-      paper2b: 'Paper 2B'
+      paper2a: 'Paper 2 · Section A',
+      paper2b: 'Paper 2 · Section B'
     };
     return labels[section] || 'Paper';
   },
