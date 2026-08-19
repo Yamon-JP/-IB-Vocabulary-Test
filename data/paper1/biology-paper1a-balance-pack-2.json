@@ -1,0 +1,383 @@
+[
+  {
+    "id": "BIO-BAL2-P1A-B2-001",
+    "subject": "Biology SL",
+    "chapter": "B2 Cells",
+    "unit": "B2.3 Cell specialization",
+    "primaryChapter": "B2 Cells",
+    "primaryUnit": "B2.3 Cell specialization",
+    "requiredUnits": [
+      "B2.3 Cell specialization"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "specialization-data-application",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "challenging",
+    "stimulus": {
+      "type": "table",
+      "title": "Relative abundance of cell structures",
+      "columns": [
+        "Cell",
+        "Mitochondria",
+        "Rough ER",
+        "Surface folds"
+      ],
+      "rows": [
+        [
+          "P",
+          "Low",
+          "High",
+          "Low"
+        ],
+        [
+          "Q",
+          "High",
+          "Low",
+          "High"
+        ],
+        [
+          "R",
+          "Moderate",
+          "Moderate",
+          "Low"
+        ]
+      ]
+    },
+    "question": "Which cell is best adapted for rapid active transport of ions across its plasma membrane?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cell P, because rough ER directly supplies ATP for membrane pumps."
+      },
+      {
+        "id": "B",
+        "text": "Cell Q, because many mitochondria and surface folds support energy-dependent transport."
+      },
+      {
+        "id": "C",
+        "text": "Cell R, because moderate amounts of all structures always maximize transport."
+      },
+      {
+        "id": "D",
+        "text": "Cell P, because surface area is unimportant for membrane transport."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Rapid active transport benefits from a large membrane surface area and abundant ATP. Cell Q combines many mitochondria, which supply ATP, with extensive surface folds that increase membrane area.",
+    "explanationJa": "能動輸送にはATPと十分な膜表面積が必要です。Qはミトコンドリアが多くATP供給能力が高いうえ、表面のひだによって膜面積も大きいため最も適しています。"
+  },
+  {
+    "id": "BIO-BAL2-P1A-B3-001",
+    "subject": "Biology SL",
+    "chapter": "B3 Organisms",
+    "unit": "B3.2 Transport",
+    "primaryChapter": "B3 Organisms",
+    "primaryUnit": "B3.2 Transport",
+    "requiredUnits": [
+      "B3.2 Transport"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2"
+    ],
+    "archetype": "phloem-translocation-application",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "question": "A mature leaf is exporting sucrose to a growing root. Which statement best describes translocation in the phloem?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sucrose moves only by diffusion through dead xylem vessels."
+      },
+      {
+        "id": "B",
+        "text": "Sucrose is transported from a source toward a sink through living phloem tissue."
+      },
+      {
+        "id": "C",
+        "text": "Water potential has no role in generating pressure differences in phloem."
+      },
+      {
+        "id": "D",
+        "text": "Translocation can occur only upward from roots to leaves."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A mature photosynthetic leaf can act as a source and a growing root as a sink. Sucrose is transported through living phloem tissue, and pressure differences associated with loading and unloading help drive mass flow.",
+    "explanationJa": "成熟した葉はショ糖を供給するsource、成長中の根は利用するsinkになり得ます。ショ糖は生きた師部組織を通って運ばれ、積み込み・積み下ろしに伴う圧力差が大量流動を支えます。"
+  },
+  {
+    "id": "BIO-BAL2-P1A-D1-001",
+    "subject": "Biology SL",
+    "chapter": "D1 Molecules",
+    "unit": "D1.2 Protein synthesis",
+    "primaryChapter": "D1 Molecules",
+    "primaryUnit": "D1.2 Protein synthesis",
+    "requiredUnits": [
+      "D1.2 Protein synthesis"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2"
+    ],
+    "archetype": "translation-sequence-reasoning",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "question": "An mRNA sequence contains the codons 5′-AUG GAA UGC UGA-3′. Which statement is correct?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Translation begins at AUG and stops when UGA reaches the ribosome."
+      },
+      {
+        "id": "B",
+        "text": "UGA codes for an amino acid that is added after cysteine."
+      },
+      {
+        "id": "C",
+        "text": "The ribosome reads the sequence from the 3′ end toward the 5′ end."
+      },
+      {
+        "id": "D",
+        "text": "Every codon is first converted into DNA before translation."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "AUG commonly functions as a start codon, while UGA is a stop codon. Ribosomes read mRNA in the 5′ to 3′ direction and stop translation when a stop codon enters the decoding site.",
+    "explanationJa": "AUGは一般に開始コドンとして働き、UGAは終止コドンです。リボソームはmRNAを5′→3′方向に読み、終止コドンに到達すると翻訳を終了します。"
+  },
+  {
+    "id": "BIO-BAL2-P1A-D2-001",
+    "subject": "Biology SL",
+    "chapter": "D2 Cells",
+    "unit": "D2.3 Water potential",
+    "primaryChapter": "D2 Cells",
+    "primaryUnit": "D2.3 Water potential",
+    "requiredUnits": [
+      "D2.3 Water potential"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "water-potential-deduction",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "challenging",
+    "stimulus": {
+      "type": "table",
+      "title": "Water potential of two compartments",
+      "columns": [
+        "Compartment",
+        "Water potential (kPa)"
+      ],
+      "rows": [
+        [
+          "Cell sap",
+          -420
+        ],
+        [
+          "External solution",
+          -260
+        ]
+      ]
+    },
+    "question": "If the plasma membrane is permeable to water but not to the main solutes, what is the most likely initial net movement of water?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Into the cell, because water moves from higher to lower water potential."
+      },
+      {
+        "id": "B",
+        "text": "Out of the cell, because water always moves toward the less negative value."
+      },
+      {
+        "id": "C",
+        "text": "There is no net movement because both values are negative."
+      },
+      {
+        "id": "D",
+        "text": "Out of the cell, because solute concentration is irrelevant to water movement."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "The external solution has the higher water potential (-260 kPa) and the cell sap has the lower water potential (-420 kPa). Water therefore moves into the cell down the water-potential gradient.",
+    "explanationJa": "外液の水ポテンシャル−260 kPaは細胞液の−420 kPaより高いため、水は高い水ポテンシャルから低い側へ移動し、最初は細胞内へ正味で流入します。"
+  },
+  {
+    "id": "BIO-BAL2-P1A-D4-001",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.2 Stability and change",
+    "primaryChapter": "D4 Ecosystems",
+    "primaryUnit": "D4.2 Stability and change",
+    "requiredUnits": [
+      "D4.2 Stability and change"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO3"
+    ],
+    "archetype": "resilience-data-interpretation",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "challenging",
+    "stimulus": {
+      "type": "table",
+      "title": "Community biomass after a storm",
+      "columns": [
+        "Year after storm",
+        "Site X biomass (% of pre-storm)",
+        "Site Y biomass (% of pre-storm)"
+      ],
+      "rows": [
+        [
+          0,
+          45,
+          42
+        ],
+        [
+          1,
+          61,
+          48
+        ],
+        [
+          2,
+          78,
+          56
+        ],
+        [
+          3,
+          91,
+          63
+        ],
+        [
+          4,
+          98,
+          69
+        ]
+      ]
+    },
+    "question": "Which conclusion is best supported by the data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Site X shows greater resilience because its biomass returns closer to the pre-storm level."
+      },
+      {
+        "id": "B",
+        "text": "Site Y is more resistant because its biomass increases more rapidly after the storm."
+      },
+      {
+        "id": "C",
+        "text": "The storm had no effect on either site because both eventually increased."
+      },
+      {
+        "id": "D",
+        "text": "Biomass data alone prove that every species recovered equally at Site X."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Resilience refers to recovery after disturbance. Site X recovers to 98% of its pre-storm biomass within four years, whereas Site Y reaches only 69%. The data do not show equal recovery of individual species.",
+    "explanationJa": "レジリエンスは撹乱後にどれだけ回復できるかを表します。Xは4年後に撹乱前の98%まで戻る一方、Yは69%なので、Xの回復力が高いと判断できます。ただし個々の種が同じように回復したことまでは示せません。"
+  },
+  {
+    "id": "BIO-BAL2-P1A-D4-002",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.3 Climate change",
+    "primaryChapter": "D4 Ecosystems",
+    "primaryUnit": "D4.3 Climate change",
+    "requiredUnits": [
+      "D4.3 Climate change"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "climate-correlation-reasoning",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "stimulus": {
+      "type": "table",
+      "title": "Atmospheric CO₂ and mean annual temperature at one monitoring site",
+      "columns": [
+        "Year",
+        "CO₂ (ppm)",
+        "Mean temperature anomaly (°C)"
+      ],
+      "rows": [
+        [
+          2000,
+          370,
+          0.18
+        ],
+        [
+          2005,
+          380,
+          0.25
+        ],
+        [
+          2010,
+          390,
+          0.34
+        ],
+        [
+          2015,
+          401,
+          0.47
+        ],
+        [
+          2020,
+          414,
+          0.58
+        ]
+      ]
+    },
+    "question": "Which statement is most scientifically appropriate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The data show a positive association, but this single observational series alone does not prove that CO₂ is the only cause of the temperature change."
+      },
+      {
+        "id": "B",
+        "text": "The data prove that every 10 ppm increase in CO₂ always causes exactly the same temperature rise everywhere."
+      },
+      {
+        "id": "C",
+        "text": "The temperature trend proves that no other climate factor changed during the period."
+      },
+      {
+        "id": "D",
+        "text": "Because both variables increase, the greenhouse effect cannot be involved."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "The two variables rise together in this dataset, which supports a positive association. However, a single observational time series cannot by itself isolate all causal influences or establish a universal fixed response.",
+    "explanationJa": "このデータではCO₂濃度と気温偏差がともに上昇しており正の関連が見られます。ただし単一地点の観察時系列だけで、他の要因を除外したり普遍的な一定の因果関係を証明したりすることはできません。"
+  }
+]

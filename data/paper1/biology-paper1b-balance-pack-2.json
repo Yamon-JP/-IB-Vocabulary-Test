@@ -1,0 +1,807 @@
+[
+  {
+    "id": "BIO-BAL2-P1B-A1-001",
+    "subject": "Biology SL",
+    "chapter": "A1 Molecules",
+    "unit": "A1.1 Water",
+    "primaryChapter": "A1 Molecules",
+    "primaryUnit": "A1.1 Water",
+    "requiredUnits": [
+      "A1.1 Water"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "water-solvent-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Solubility of three substances in water and a non-polar solvent",
+      "columns": [
+        "Substance",
+        "Water (g per 100 g solvent)",
+        "Non-polar solvent (g per 100 g solvent)"
+      ],
+      "rows": [
+        [
+          "Glucose",
+          91,
+          1
+        ],
+        [
+          "Sodium chloride",
+          36,
+          0
+        ],
+        [
+          "Lipid",
+          0.2,
+          78
+        ]
+      ]
+    },
+    "question": "Analyse the data and explain how the polarity of water affects its role as a biological solvent.",
+    "markscheme": [
+      "Glucose and sodium chloride are much more soluble in water than in the non-polar solvent.",
+      "The lipid is far more soluble in the non-polar solvent than in water.",
+      "Water is polar and can form favourable interactions with ions and many polar molecules.",
+      "The polarity of water therefore allows many metabolites and ions to remain dissolved in cytoplasm, blood plasma or other aqueous fluids.",
+      "Non-polar substances are poorly soluble in water, which contributes to the formation of hydrophobic structures such as lipid bilayers."
+    ],
+    "markschemeJa": [
+      "グルコースと塩化ナトリウムは非極性溶媒より水に大きく溶ける。",
+      "脂質は水より非極性溶媒に大きく溶ける。",
+      "水は極性をもち、イオンや多くの極性分子と安定な相互作用を形成できる。",
+      "そのため多くの代謝物やイオンを細胞質や血漿などの水系に溶かして運ぶことができる。",
+      "非極性物質は水に溶けにくく、この性質は脂質二重層など疎水性構造の形成にも関係する。"
+    ],
+    "modelAnswer": "Glucose and sodium chloride dissolve readily in water, whereas the lipid dissolves mainly in the non-polar solvent. This pattern is explained by water's polarity. Polar water molecules interact with ions and polar solutes, making water an effective medium for transport and metabolic reactions. In contrast, non-polar molecules interact poorly with water, promoting hydrophobic aggregation such as membrane formation.",
+    "modelAnswerJa": "グルコースと塩化ナトリウムは水によく溶けますが、脂質は主に非極性溶媒に溶けます。これは水が極性をもつためです。水分子はイオンや極性溶質と相互作用できるので、輸送や代謝反応の媒体として機能します。一方、非極性分子は水と相互作用しにくく、膜のような疎水性構造の形成につながります。"
+  },
+  {
+    "id": "BIO-BAL2-P1B-A3-001",
+    "subject": "Biology SL",
+    "chapter": "A3 Organisms",
+    "unit": "A3.1 Diversity of organisms",
+    "primaryChapter": "A3 Organisms",
+    "primaryUnit": "A3.1 Diversity of organisms",
+    "requiredUnits": [
+      "A3.1 Diversity of organisms"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "molecular-relatedness-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "DNA sequence differences among four species",
+      "columns": [
+        "Pair compared",
+        "Number of differences in the same 800-base region"
+      ],
+      "rows": [
+        [
+          "P-Q",
+          12
+        ],
+        [
+          "P-R",
+          47
+        ],
+        [
+          "P-S",
+          63
+        ],
+        [
+          "Q-R",
+          44
+        ],
+        [
+          "Q-S",
+          61
+        ],
+        [
+          "R-S",
+          28
+        ]
+      ]
+    },
+    "question": "Analyse the data to infer relative evolutionary relatedness and state one limitation of the inference.",
+    "markscheme": [
+      "P and Q have the fewest differences, 12, so they are the most closely related pair in this dataset.",
+      "R and S have 28 differences and are more closely related to each other than either is to P or Q.",
+      "Pairs involving P/Q with R/S show larger sequence differences.",
+      "Fewer differences in homologous DNA generally support a more recent common ancestor when mutation rates and compared regions are appropriate.",
+      "The analysis uses only one DNA region, so a broader set of independent genetic evidence would strengthen the evolutionary inference."
+    ],
+    "markschemeJa": [
+      "PとQは差が12と最も少なく、このデータでは最も近縁な組と推定される。",
+      "RとSは差が28で、RまたはSとP/Qを比較した場合より互いに近縁と推定される。",
+      "P/QとR/Sをまたぐ比較では配列差がより大きい。",
+      "同じ相同DNA領域では、一般に差が少ないほどより最近の共通祖先を支持する。",
+      "1つのDNA領域だけの比較なので、複数の独立した遺伝情報を用いると推定の信頼性が高まる。"
+    ],
+    "modelAnswer": "P and Q are the closest pair because their homologous DNA region differs at only 12 positions. R and S form another relatively close pair with 28 differences. The much larger differences between these groups suggest older common ancestry between them. However, conclusions from one DNA region are limited and should be tested with additional independent sequences.",
+    "modelAnswerJa": "PとQは同じDNA領域で12塩基しか違わないため最も近縁と考えられます。RとSも28の差で比較的近縁です。両グループ間では差が大きいため、共通祖先はより古いと推定されます。ただし1領域だけでは限界があるため、他の独立した配列でも確認する必要があります。"
+  },
+  {
+    "id": "BIO-BAL2-P1B-A4-001",
+    "subject": "Biology SL",
+    "chapter": "A4 Ecosystems",
+    "unit": "A4.2 Conservation of biodiversity",
+    "primaryChapter": "A4 Ecosystems",
+    "primaryUnit": "A4.2 Conservation of biodiversity",
+    "requiredUnits": [
+      "A4.2 Conservation of biodiversity"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "conservation-fragment-evaluation",
+    "scopeType": "single-unit",
+    "commandTerm": "Evaluate",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Population data before and after habitat corridors were established",
+      "columns": [
+        "Population",
+        "Before: adults",
+        "After 5 years: adults",
+        "Heterozygosity before",
+        "Heterozygosity after"
+      ],
+      "rows": [
+        [
+          "X",
+          84,
+          126,
+          0.31,
+          0.43
+        ],
+        [
+          "Y",
+          71,
+          109,
+          0.29,
+          0.41
+        ],
+        [
+          "Z",
+          93,
+          118,
+          0.35,
+          0.42
+        ]
+      ]
+    },
+    "question": "Evaluate the evidence that habitat corridors improved the conservation status of the populations.",
+    "markscheme": [
+      "Adult population size increases in all three populations after corridors are established.",
+      "Heterozygosity also increases in all three populations, consistent with increased gene flow or reduced isolation.",
+      "The consistency of both trends across three populations supports a beneficial association with the corridor intervention.",
+      "The data do not include untreated control populations, so other environmental changes could have contributed to the increases.",
+      "Longer-term monitoring of survival, reproduction, movement and habitat quality would strengthen the evaluation of conservation success."
+    ],
+    "markschemeJa": [
+      "回廊設置後、3集団すべてで成体個体数が増加している。",
+      "ヘテロ接合度も3集団すべてで増加しており、遺伝子流動の増加や隔離の低下と一致する。",
+      "3集団で個体数と遺伝的多様性の両方が同方向に変化しているため、回廊の有益な効果を支持する。",
+      "未処置の対照集団がないため、他の環境変化が増加に寄与した可能性を除外できない。",
+      "生存、繁殖、移動、生息地質をより長期に監視すると保全効果の評価が強くなる。"
+    ],
+    "modelAnswer": "All three populations increased in adult abundance and heterozygosity after corridors were introduced, so the observations are consistent with improved connectivity and conservation status. However, the study lacks comparable populations without corridors. It therefore supports an association rather than proving that corridors alone caused the improvement. Long-term demographic and movement data would provide stronger evidence.",
+    "modelAnswerJa": "回廊設置後、3集団すべてで成体数とヘテロ接合度が上がっており、連結性と保全状態の改善と一致します。ただし回廊を設けていない対照集団がないため、回廊だけが原因だとは証明できません。長期的な個体群動態や移動データがあれば、より強い評価ができます。"
+  },
+  {
+    "id": "BIO-BAL2-P1B-B2-001",
+    "subject": "Biology SL",
+    "chapter": "B2 Cells",
+    "unit": "B2.3 Cell specialization",
+    "primaryChapter": "B2 Cells",
+    "primaryUnit": "B2.3 Cell specialization",
+    "requiredUnits": [
+      "B2.3 Cell specialization"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "specialized-cell-comparison",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Features of three specialized cells",
+      "columns": [
+        "Cell",
+        "Surface-area index",
+        "Mitochondria per relative area",
+        "Rough ER abundance"
+      ],
+      "rows": [
+        [
+          "P",
+          4.8,
+          95,
+          "Low"
+        ],
+        [
+          "Q",
+          1.2,
+          18,
+          "High"
+        ],
+        [
+          "R",
+          2.0,
+          34,
+          "Moderate"
+        ]
+      ]
+    },
+    "question": "Analyse the data to identify which cell is most likely specialized for active absorption and which is most likely specialized for protein secretion.",
+    "markscheme": [
+      "Cell P has the highest surface-area index.",
+      "Cell P also has the greatest mitochondrial abundance, supporting high ATP demand for active absorption.",
+      "Cell P is therefore the best candidate for an actively absorbing cell.",
+      "Cell Q has the highest rough ER abundance, supporting synthesis of proteins for secretion.",
+      "Different organelle and surface-area profiles illustrate how cell structure is adapted to specialized function."
+    ],
+    "markschemeJa": [
+      "Pは表面積指数が最も高い。",
+      "Pはミトコンドリア量も最も多く、能動吸収に必要な高いATP需要を支えられる。",
+      "したがってPが能動吸収に特化した細胞として最も適切である。",
+      "Qは粗面小胞体が最も多く、分泌タンパク質の合成に適している。",
+      "細胞表面や細胞小器官の違いは、細胞構造が特定機能に適応していることを示す。"
+    ],
+    "modelAnswer": "Cell P is best suited to active absorption because it combines a large surface area with many mitochondria, providing membrane area and ATP. Cell Q is best suited to protein secretion because its rough ER is most abundant. The comparison shows that specialized cells contain structural features that match their particular functional demands.",
+    "modelAnswerJa": "Pは大きな表面積と多数のミトコンドリアをもち、膜面積とATPの両方を確保できるため能動吸収に適しています。Qは粗面小胞体が最も豊富なのでタンパク質分泌に適しています。この比較は、細胞の構造が特定の機能要求に合わせて特殊化することを示します。"
+  },
+  {
+    "id": "BIO-BAL2-P1B-B3-001",
+    "subject": "Biology SL",
+    "chapter": "B3 Organisms",
+    "unit": "B3.2 Transport",
+    "primaryChapter": "B3 Organisms",
+    "primaryUnit": "B3.2 Transport",
+    "requiredUnits": [
+      "B3.2 Transport"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "phloem-source-sink-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Sucrose concentration and pressure in a phloem pathway",
+      "columns": [
+        "Region",
+        "Sucrose concentration (arbitrary units)",
+        "Hydrostatic pressure (MPa)"
+      ],
+      "rows": [
+        [
+          "Mature leaf",
+          82,
+          1.35
+        ],
+        [
+          "Stem midway",
+          55,
+          0.92
+        ],
+        [
+          "Growing root",
+          19,
+          0.46
+        ]
+      ]
+    },
+    "question": "Analyse the data using the source-sink model of phloem transport.",
+    "markscheme": [
+      "The mature leaf has the highest sucrose concentration and the highest hydrostatic pressure.",
+      "The growing root has the lowest sucrose concentration and pressure.",
+      "Loading sucrose at the source lowers local water potential, promoting water entry and increasing hydrostatic pressure.",
+      "Unloading sucrose at the sink favours water movement out and helps maintain lower pressure.",
+      "The pressure difference from source to sink is consistent with mass flow of phloem sap toward the growing root."
+    ],
+    "markschemeJa": [
+      "成熟葉はショ糖濃度と静水圧が最も高い。",
+      "成長中の根はショ糖濃度と圧力が最も低い。",
+      "sourceでショ糖を積み込むと局所的な水ポテンシャルが下がり、水が入りやすくなって静水圧が上昇する。",
+      "sinkでショ糖を積み下ろすと水が外へ移動しやすくなり、低い圧力の維持に寄与する。",
+      "sourceからsinkへの圧力差は、成長中の根へ向かう師部液の大量流動と一致する。"
+    ],
+    "modelAnswer": "The mature leaf behaves as a source: it has the highest sucrose concentration and pressure. Sucrose loading lowers water potential, causing water entry and raising hydrostatic pressure. The growing root acts as a sink where sucrose is unloaded and pressure is lower. This source-to-sink pressure gradient is consistent with mass flow through phloem.",
+    "modelAnswerJa": "成熟葉はショ糖濃度と圧力が高くsourceとして働きます。ショ糖の積み込みで水ポテンシャルが低下し、水が流入して静水圧が上がります。成長根はsinkとしてショ糖を受け取り、圧力が低くなっています。このsourceからsinkへの圧力勾配が師部の大量流動を支えます。"
+  },
+  {
+    "id": "BIO-BAL2-P1B-C2-001",
+    "subject": "Biology SL",
+    "chapter": "C2 Cells",
+    "unit": "C2.2 Neural signalling",
+    "primaryChapter": "C2 Cells",
+    "primaryUnit": "C2.2 Neural signalling",
+    "requiredUnits": [
+      "C2.2 Neural signalling"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "nerve-conduction-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Properties of three axons",
+      "columns": [
+        "Axon",
+        "Diameter (µm)",
+        "Myelinated?",
+        "Conduction speed (m s⁻¹)"
+      ],
+      "rows": [
+        [
+          "P",
+          2,
+          "No",
+          1.5
+        ],
+        [
+          "Q",
+          2,
+          "Yes",
+          18
+        ],
+        [
+          "R",
+          8,
+          "Yes",
+          62
+        ]
+      ]
+    },
+    "question": "Analyse how myelination and axon diameter are associated with conduction speed.",
+    "markscheme": [
+      "Axons P and Q have the same diameter, but the myelinated axon Q conducts much faster than P.",
+      "This comparison supports a strong effect of myelination on conduction speed.",
+      "Axon R is myelinated and wider than Q, and has the highest conduction speed.",
+      "A larger axon diameter reduces internal resistance to current flow and is associated with faster conduction.",
+      "The data support effects of both myelination and diameter, although the table alone does not isolate all other biological variables."
+    ],
+    "markschemeJa": [
+      "PとQは直径が同じだが、髄鞘のあるQの方がPより大幅に速く伝導する。",
+      "この比較は髄鞘が伝導速度を高める効果を支持する。",
+      "Rは髄鞘がありQより太く、伝導速度が最も高い。",
+      "軸索径が大きいと内部抵抗が小さくなり、より速い伝導と関連する。",
+      "データは髄鞘と直径の両方の影響を支持するが、表だけで他のすべての生物学的要因を分離できるわけではない。"
+    ],
+    "modelAnswer": "Q conducts much faster than P despite the same diameter, showing the importance of myelination. R is both myelinated and wider and has the fastest conduction. Myelin allows rapid saltatory conduction between nodes, while a larger diameter reduces resistance to current flow. The data therefore support both factors as contributors to conduction speed.",
+    "modelAnswerJa": "QはPと同じ直径なのに大幅に速く、髄鞘の効果が分かります。Rは髄鞘をもち、さらに太いため最速です。髄鞘は跳躍伝導を可能にし、太い軸索は電流に対する内部抵抗を小さくするため、両方が伝導速度を高めます。"
+  },
+  {
+    "id": "BIO-BAL2-P1B-C4-001",
+    "subject": "Biology SL",
+    "chapter": "C4 Ecosystems",
+    "unit": "C4.1 Populations and communities",
+    "primaryChapter": "C4 Ecosystems",
+    "primaryUnit": "C4.1 Populations and communities",
+    "requiredUnits": [
+      "C4.1 Populations and communities"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "mark-recapture-evaluation",
+    "scopeType": "single-unit",
+    "commandTerm": "Calculate and evaluate",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Mark-recapture study of a small mammal population",
+      "columns": [
+        "Initially marked",
+        "Second sample size",
+        "Marked individuals recaptured"
+      ],
+      "rows": [
+        [
+          90,
+          120,
+          18
+        ]
+      ]
+    },
+    "question": "Calculate the estimated population size and evaluate two assumptions that affect the reliability of the estimate.",
+    "markscheme": [
+      "Estimated population size = 90 × 120 ÷ 18 = 600 individuals.",
+      "Marked individuals should mix randomly back into the population before recapture.",
+      "Marks should not be lost and should not substantially change survival or probability of recapture.",
+      "The population should be approximately closed to major immigration, emigration, births and deaths during the study interval.",
+      "Violation of these assumptions changes the proportion of marked animals in the second sample and can bias the estimate."
+    ],
+    "markschemeJa": [
+      "推定個体数=90×120÷18=600個体。",
+      "再捕獲前に標識個体が集団内へ十分ランダムに混ざる必要がある。",
+      "標識が失われず、標識によって生存率や再捕獲されやすさが大きく変化しない必要がある。",
+      "調査期間中に大規模な移入・移出・出生・死亡がない閉鎖的な集団であることが望ましい。",
+      "これらの仮定が破れると2回目標本中の標識個体割合が変化し、推定値に偏りが生じる。"
+    ],
+    "modelAnswer": "The Lincoln estimate is 90 × 120 ÷ 18 = 600 individuals. Reliability depends on assumptions such as random mixing of marked individuals, retention of marks, equal capture probability and little demographic change during the study. If marked animals are more or less likely to be recaptured, the estimated population size will be biased.",
+    "modelAnswerJa": "Lincoln法では90×120÷18=600個体です。信頼できる推定には、標識個体がランダムに混ざること、標識が失われないこと、捕獲確率が大きく変わらないこと、調査中の個体群変化が小さいことなどが必要です。これらが崩れると推定値に偏りが生じます。"
+  },
+  {
+    "id": "BIO-BAL2-P1B-C4-002",
+    "subject": "Biology SL",
+    "chapter": "C4 Ecosystems",
+    "unit": "C4.2 Transfers of energy and matter",
+    "primaryChapter": "C4 Ecosystems",
+    "primaryUnit": "C4.2 Transfers of energy and matter",
+    "requiredUnits": [
+      "C4.2 Transfers of energy and matter"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "trophic-efficiency-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Calculate and analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Energy stored in biomass at three trophic levels",
+      "columns": [
+        "Trophic level",
+        "Energy stored (kJ m⁻² year⁻¹)"
+      ],
+      "rows": [
+        [
+          "Producers",
+          18500
+        ],
+        [
+          "Primary consumers",
+          2380
+        ],
+        [
+          "Secondary consumers",
+          310
+        ]
+      ]
+    },
+    "question": "Calculate the transfer efficiency between successive trophic levels and analyse why energy availability decreases.",
+    "markscheme": [
+      "Producer to primary-consumer efficiency = 2380 ÷ 18500 × 100 ≈ 12.9%.",
+      "Primary- to secondary-consumer efficiency = 310 ÷ 2380 × 100 ≈ 13.0%.",
+      "Only a minority of energy stored at one trophic level becomes biomass at the next level.",
+      "Energy is lost from organisms through respiration and dissipated as heat.",
+      "Not all biomass is consumed or assimilated, so material can enter detrital pathways rather than the next consumer level."
+    ],
+    "markschemeJa": [
+      "生産者から一次消費者への効率=2380÷18500×100≈12.9%。",
+      "一次消費者から二次消費者への効率=310÷2380×100≈13.0%。",
+      "ある栄養段階に蓄えられたエネルギーの一部しか次の段階の生物量にならない。",
+      "呼吸によってエネルギーが利用され、熱として散逸する。",
+      "すべての生物量が摂食・同化されるわけではなく、一部はデトリタス経路へ移る。"
+    ],
+    "modelAnswer": "The transfer efficiencies are about 12.9% and 13.0%. Most energy is therefore not incorporated into biomass at the next trophic level. Organisms use energy in respiration and release heat, while uneaten and unassimilated material enters detrital pathways. These losses explain the decline in available energy at higher trophic levels.",
+    "modelAnswerJa": "移動効率は約12.9%と13.0%です。つまり大部分のエネルギーは次の栄養段階の生物量にはなりません。呼吸でエネルギーが使われ熱として散逸し、食べられない・同化されない物質はデトリタス経路へ移るため、高次ほど利用可能エネルギーが減少します。"
+  },
+  {
+    "id": "BIO-BAL2-P1B-D1-001",
+    "subject": "Biology SL",
+    "chapter": "D1 Molecules",
+    "unit": "D1.2 Protein synthesis",
+    "primaryChapter": "D1 Molecules",
+    "primaryUnit": "D1.2 Protein synthesis",
+    "requiredUnits": [
+      "D1.2 Protein synthesis"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "translation-mutation-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Effect of a mutation on an mRNA segment",
+      "columns": [
+        "Sequence",
+        "mRNA codons",
+        "Amino acids"
+      ],
+      "rows": [
+        [
+          "Original",
+          "AUG-GAA-UUU-GGC",
+          "Met-Glu-Phe-Gly"
+        ],
+        [
+          "Mutant",
+          "AUG-GUA-UUU-GGC",
+          "Met-Val-Phe-Gly"
+        ]
+      ]
+    },
+    "question": "Analyse how the mutation can change the polypeptide and explain why the effect on protein function cannot be predicted from this information alone.",
+    "markscheme": [
+      "The second codon changes from GAA to GUA.",
+      "The encoded amino acid changes from glutamate to valine.",
+      "This is a missense substitution because one amino acid in the polypeptide is replaced.",
+      "Changing a charged/polar amino-acid side chain to a more hydrophobic side chain can alter local interactions and folding.",
+      "The functional effect depends on the position of the substitution and the role of that residue in the final three-dimensional protein, so sequence information alone is insufficient."
+    ],
+    "markschemeJa": [
+      "2番目のコドンがGAAからGUAへ変化している。",
+      "指定されるアミノ酸がグルタミン酸からバリンへ変化している。",
+      "1つのアミノ酸が置換されるためミスセンス変異である。",
+      "荷電・極性の性質をもつ側鎖からより疎水性の側鎖へ変わると、局所的相互作用や折りたたみに影響する可能性がある。",
+      "機能への影響は置換位置と、その残基が最終立体構造で果たす役割に依存するため、この配列情報だけでは断定できない。"
+    ],
+    "modelAnswer": "The mutation changes GAA to GUA and therefore replaces glutamate with valine. This is a missense substitution. Because the two amino acids have different side-chain properties, local interactions and protein folding may change. However, the actual functional effect depends on where the residue lies in the protein and whether it contributes to an active site, binding region or structural core.",
+    "modelAnswerJa": "変異によってGAAがGUAになり、グルタミン酸がバリンへ置換されます。これはミスセンス変異です。側鎖の性質が異なるため局所的相互作用や折りたたみが変わる可能性がありますが、その残基が活性部位・結合部位・構造中心などのどこにあるかで影響が変わるため、配列だけでは機能変化を断定できません。"
+  },
+  {
+    "id": "BIO-BAL2-P1B-D2-001",
+    "subject": "Biology SL",
+    "chapter": "D2 Cells",
+    "unit": "D2.3 Water potential",
+    "primaryChapter": "D2 Cells",
+    "primaryUnit": "D2.3 Water potential",
+    "requiredUnits": [
+      "D2.3 Water potential"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "isotonic-interpolation-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Estimate and explain",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Change in potato-cylinder mass after 60 minutes",
+      "columns": [
+        "Sucrose concentration (mol dm⁻³)",
+        "Mean mass change (%)"
+      ],
+      "rows": [
+        [
+          0.2,
+          6.5
+        ],
+        [
+          0.3,
+          3.2
+        ],
+        [
+          0.4,
+          0.8
+        ],
+        [
+          0.5,
+          -2.7
+        ],
+        [
+          0.6,
+          -5.1
+        ]
+      ]
+    },
+    "question": "Estimate the sucrose concentration at which there would be no net mass change and explain the result in terms of water potential.",
+    "markscheme": [
+      "Zero mass change lies between 0.40 mol dm⁻³ (+0.8%) and 0.50 mol dm⁻³ (-2.7%).",
+      "Linear interpolation gives approximately 0.42 mol dm⁻³.",
+      "At approximately zero mass change there is no net movement of water into or out of the tissue.",
+      "This occurs when the external solution and tissue have approximately equal water potential under the experimental conditions.",
+      "At lower sucrose concentration water enters the tissue, whereas at higher concentration water leaves the tissue down the water-potential gradient."
+    ],
+    "markschemeJa": [
+      "質量変化0%は0.40 mol dm⁻³の+0.8%と0.50 mol dm⁻³の−2.7%の間にある。",
+      "線形補間では約0.42 mol dm⁻³となる。",
+      "質量変化がほぼ0のとき、組織への水の正味移動も組織からの正味移動もない。",
+      "これは実験条件下で外液と組織の水ポテンシャルがほぼ等しいときに起こる。",
+      "より低濃度では水が組織へ入り、より高濃度では水ポテンシャル勾配に従って組織から水が出る。"
+    ],
+    "modelAnswer": "The isotonic concentration is approximately 0.42 mol dm⁻³. This is between 0.40 mol dm⁻³, where mass increases, and 0.50 mol dm⁻³, where mass decreases. At the zero-change point the external solution and tissue have approximately equal water potential, so there is no net water movement across cell membranes.",
+    "modelAnswerJa": "等張になる濃度は約0.42 mol dm⁻³です。0.40 mol dm⁻³では質量が増え、0.50 mol dm⁻³では減るため、その間で0になります。この点では外液と組織の水ポテンシャルがほぼ等しく、細胞膜を通る水の正味移動がありません。"
+  },
+  {
+    "id": "BIO-BAL2-P1B-D4-001",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.2 Stability and change",
+    "primaryChapter": "D4 Ecosystems",
+    "primaryUnit": "D4.2 Stability and change",
+    "requiredUnits": [
+      "D4.2 Stability and change"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "disturbance-resistance-resilience",
+    "scopeType": "single-unit",
+    "commandTerm": "Compare and evaluate",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Community biomass before and after drought",
+      "columns": [
+        "Site",
+        "Pre-drought biomass",
+        "Immediately after drought",
+        "Three years later"
+      ],
+      "rows": [
+        [
+          "P",
+          100,
+          78,
+          96
+        ],
+        [
+          "Q",
+          100,
+          52,
+          95
+        ],
+        [
+          "R",
+          100,
+          84,
+          72
+        ]
+      ],
+      "note": "Values are percentages relative to each site's pre-drought biomass."
+    },
+    "question": "Compare resistance and resilience among the three sites and evaluate why both measures are needed.",
+    "markscheme": [
+      "Site R shows the greatest immediate resistance because biomass falls least, from 100 to 84.",
+      "Site P is also relatively resistant, while Q shows the largest immediate decline to 52.",
+      "Sites P and Q show high resilience because they recover to 96 and 95 after three years.",
+      "Site R has low resilience in this interval because its biomass remains at 72 after three years.",
+      "Resistance describes the size of the initial change whereas resilience describes recovery, so using both prevents different community responses from being treated as equivalent."
+    ],
+    "markschemeJa": [
+      "Rは100から84への低下で最も小さいため、直後の抵抗性が最も高い。",
+      "Pも比較的抵抗性が高いが、Qは52まで下がり直後の影響が最も大きい。",
+      "PとQは3年後に96と95まで戻るため高いレジリエンスを示す。",
+      "Rは3年後も72なので、この期間では回復力が低い。",
+      "抵抗性は最初の変化の大きさ、レジリエンスはその後の回復を表すため、両方を見ることで異なる応答を同じものとして扱うことを避けられる。"
+    ],
+    "modelAnswer": "R is most resistant because it experiences the smallest immediate biomass loss, but it is the least resilient over the next three years because recovery remains incomplete. Q is least resistant but highly resilient, while P performs well on both measures. Resistance and resilience therefore describe different components of ecosystem stability and should be evaluated separately.",
+    "modelAnswerJa": "Rは直後の生物量低下が最も小さいので抵抗性は最高ですが、3年後も72%なので回復力は最も低いです。Qは抵抗性が低い一方で回復力は高く、Pは両方で良好です。したがって抵抗性とレジリエンスは生態系安定性の異なる側面を表し、別々に評価する必要があります。"
+  },
+  {
+    "id": "BIO-BAL2-P1B-D4-002",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.3 Climate change",
+    "primaryChapter": "D4 Ecosystems",
+    "primaryUnit": "D4.3 Climate change",
+    "requiredUnits": [
+      "D4.3 Climate change"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "climate-longterm-data-evaluation",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse and evaluate",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Long-term conditions at a reef monitoring site",
+      "columns": [
+        "Period",
+        "Mean summer sea temperature anomaly (°C)",
+        "Mean seawater pH",
+        "Bleaching events per period"
+      ],
+      "rows": [
+        [
+          "1990-1999",
+          0.1,
+          8.12,
+          1
+        ],
+        [
+          "2000-2009",
+          0.32,
+          8.09,
+          2
+        ],
+        [
+          "2010-2019",
+          0.61,
+          8.05,
+          5
+        ],
+        [
+          "2020-2025",
+          0.84,
+          8.02,
+          4
+        ]
+      ],
+      "note": "The final period covers six years rather than a full decade."
+    },
+    "question": "Analyse the long-term patterns and evaluate the conclusion that climate-related change is increasing stress on the reef.",
+    "markscheme": [
+      "The sea-temperature anomaly increases across the monitoring periods.",
+      "Mean seawater pH decreases, which is consistent with increasing acidification at the site.",
+      "Recorded bleaching events are more frequent in the recent periods than in the 1990s.",
+      "The combined patterns are consistent with increasing climate-related stress, but observational association alone does not isolate all causes of bleaching.",
+      "The final bleaching count covers only six years, so direct comparison with full decades requires caution or standardization by time."
+    ],
+    "markschemeJa": [
+      "海水温偏差は監視期間を通して増加している。",
+      "平均海水pHは低下しており、その地点で酸性化が進む傾向と一致する。",
+      "近年の期間では1990年代より白化イベントの記録が多い。",
+      "これらの組み合わせは気候関連ストレスの増加と一致するが、観察上の関連だけでは白化のすべての原因を分離できない。",
+      "最後の白化回数は6年間だけなので、10年間の期間と直接比較するには注意し、時間当たりに標準化する必要がある。"
+    ],
+    "modelAnswer": "Temperature anomalies rise while pH falls, and bleaching is recorded more often in recent periods than in the 1990s. Together these trends are consistent with increasing thermal and chemical stress on the reef. However, the observations do not prove that climate variables alone caused every bleaching event, and the 2020-2025 count covers only six years, so the time intervals should be standardized before comparing event rates directly.",
+    "modelAnswerJa": "海水温偏差は上昇し、pHは低下し、白化も1990年代より近年に多く記録されています。これらは熱的・化学的ストレスの増加と一致します。ただし気候要因だけがすべての白化を引き起こしたと証明するものではなく、2020-2025は6年間だけなので、イベント頻度を比較する際は期間を標準化する必要があります。"
+  }
+]
