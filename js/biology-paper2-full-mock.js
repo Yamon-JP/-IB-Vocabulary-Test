@@ -43,7 +43,7 @@
     },
 
     validateA(data) {
-      if (!data || Number(data.totalMarks) !== 34 || !Array.isArray(data.questions) || data.questions.length !== 6) return false;
+      if (!data || Number(data.totalMarks) !== 34 || !Array.isArray(data.questions) || data.questions.length !== 5) return false;
       const marks = data.questions.reduce((sum, q) => sum + (Number(q.marks) || 0), 0);
       const points = data.questions.reduce((sum, q) => sum + (q.parts || []).reduce((partSum, p) => partSum + (p.markscheme || []).length, 0), 0);
       const partsValid = data.questions.every(q => (q.parts || []).every(p =>
@@ -407,7 +407,7 @@
       const feedback = document.getElementById('p2fm-feedback');
 
       document.getElementById('p2fm-phase').textContent = `Paper 2 · Section A · Set ${this.currentSet}`;
-      document.getElementById('p2fm-progress').textContent = `Question ${this.ai + 1}/6 · ${q.marks} marks`;
+      document.getElementById('p2fm-progress').textContent = `Question ${this.ai + 1}/${this.aq.length} · ${q.marks} marks`;
       question.innerHTML = `${Paper2.renderStimulus?.(q.stimulus) || ''}<div class="paper2-question-text">${this.e(q.question || 'Answer all parts.')}</div>`;
       feedback.innerHTML = '';
       parts.innerHTML = q.parts.map((part, index) => `
@@ -416,11 +416,11 @@
           <p>${this.e(part.question)}</p>
           <textarea oninput="BiologyPaper2FullMock.aa[${this.ai}][${index}]=this.value">${this.e(this.aa[this.ai][index])}</textarea>
         </section>`).join('');
-      actions.innerHTML = `<button ${this.ai === 0 ? 'disabled' : ''} onclick="BiologyPaper2FullMock.moveA(-1)">← Previous</button>${this.ai < 5 ? '<button onclick="BiologyPaper2FullMock.moveA(1)">Next →</button>' : '<button onclick="BiologyPaper2FullMock.toB()">Continue to Section B →</button>'}`;
+      actions.innerHTML = `<button ${this.ai === 0 ? 'disabled' : ''} onclick="BiologyPaper2FullMock.moveA(-1)">← Previous</button>${this.ai < this.aq.length - 1 ? '<button onclick="BiologyPaper2FullMock.moveA(1)">Next →</button>' : '<button onclick="BiologyPaper2FullMock.toB()">Continue to Section B →</button>'}`;
     },
 
     moveA(delta) {
-      this.ai = Math.max(0, Math.min(5, this.ai + delta));
+      this.ai = Math.max(0, Math.min(this.aq.length - 1, this.ai + delta));
       this.renderA();
     },
 
@@ -457,7 +457,7 @@
           <small class="muted">Required units: ${this.e((q.requiredUnits || []).join(' · '))}</small>
           <div class="p2fm-actions"><button onclick="BiologyPaper2FullMock.selectB(${index})">${this.bi === index ? 'Continue with this option' : `Choose Option ${index + 1}`}</button></div>
         </section>`).join('')}</div>`;
-      actions.innerHTML = '<button onclick="BiologyPaper2FullMock.phase=\'a\';BiologyPaper2FullMock.ai=5;BiologyPaper2FullMock.renderA()">← Back to Section A</button>';
+      actions.innerHTML = '<button onclick="BiologyPaper2FullMock.phase=\'a\';BiologyPaper2FullMock.ai=BiologyPaper2FullMock.aq.length-1;BiologyPaper2FullMock.renderA()">← Back to Section A</button>';
     },
 
     selectB(index) {
