@@ -1,0 +1,610 @@
+[
+  {
+    "id": "BIO-BAL3-P1B-B1-001",
+    "subject": "Biology SL",
+    "chapter": "B1 Molecules",
+    "unit": "B1.1 Carbohydrates and lipids",
+    "primaryChapter": "B1 Molecules",
+    "primaryUnit": "B1.1 Carbohydrates and lipids",
+    "requiredUnits": [
+      "B1.1 Carbohydrates and lipids"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "energy-storage-comparison",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Properties of two energy-storage molecules",
+      "columns": [
+        "Property",
+        "Glycogen",
+        "Triglyceride"
+      ],
+      "rows": [
+        [
+          "Energy released (kJ g⁻¹)",
+          17,
+          38
+        ],
+        [
+          "Water associated with storage (relative amount)",
+          "High",
+          "Low"
+        ],
+        [
+          "Typical storage form",
+          "Granules in cytoplasm",
+          "Lipid droplets"
+        ]
+      ]
+    },
+    "question": "Analyse the data and explain why triglycerides and glycogen are suited to different biological energy-storage roles.",
+    "markscheme": [
+      "Triglycerides release substantially more energy per gram than glycogen.",
+      "Triglycerides are stored with relatively little associated water, so they provide compact long-term energy storage.",
+      "Glycogen is stored with more associated water and therefore has a lower effective energy density by mass.",
+      "Glycogen is a branched carbohydrate that can be hydrolysed rapidly to release glucose when short-term demand increases.",
+      "The different chemical properties therefore make triglycerides advantageous for dense long-term storage and glycogen advantageous for rapidly mobilized carbohydrate storage."
+    ],
+    "markschemeJa": [
+      "トリグリセリドはグリコーゲンより1 gあたりの放出エネルギーが大きい。",
+      "トリグリセリドは結合する水が少なく、長期的なエネルギーを高密度に蓄えられる。",
+      "グリコーゲンは多くの水を伴って蓄えられるため、質量あたりの実効的なエネルギー密度は低い。",
+      "グリコーゲンは分岐した炭水化物で、必要時に加水分解されてグルコースを比較的速く供給できる。",
+      "したがってトリグリセリドは高密度な長期貯蔵、グリコーゲンは素早く利用できる炭水化物貯蔵に適する。"
+    ],
+    "modelAnswer": "Triglycerides yield about twice as much energy per gram as glycogen and are stored with little associated water, so they are efficient for compact long-term energy storage. Glycogen has a lower energy density and binds more water, but its branched polymer can be hydrolysed rapidly to release glucose. The data therefore support different roles for the two molecules rather than one universally superior storage molecule.",
+    "modelAnswerJa": "トリグリセリドはグリコーゲンのおよそ2倍のエネルギーを1 gあたりから得られ、伴う水も少ないため、長期的で高密度なエネルギー貯蔵に適しています。グリコーゲンはエネルギー密度が低く水を多く伴いますが、分岐した高分子なので比較的速く加水分解してグルコースを供給できます。したがって両者は異なる貯蔵役割に適しています。"
+  },
+  {
+    "id": "BIO-BAL3-P1B-B1-002",
+    "subject": "Biology SL",
+    "chapter": "B1 Molecules",
+    "unit": "B1.2 Proteins",
+    "primaryChapter": "B1 Molecules",
+    "primaryUnit": "B1.2 Proteins",
+    "requiredUnits": [
+      "B1.2 Proteins"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "protein-denaturation-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Activity of a protein enzyme before and after heating",
+      "columns": [
+        "Treatment",
+        "Relative enzyme activity (%)"
+      ],
+      "rows": [
+        [
+          "25 °C for 10 min",
+          100
+        ],
+        [
+          "60 °C for 10 min",
+          8
+        ],
+        [
+          "60 °C for 10 min, then cooled to 25 °C",
+          11
+        ]
+      ]
+    },
+    "question": "Analyse the data and explain how protein structure accounts for the observed change in enzyme activity.",
+    "markscheme": [
+      "Heating to 60 °C reduces enzyme activity from 100% to 8%.",
+      "Cooling after heating restores very little activity, because activity rises only to 11%.",
+      "High temperature disrupts interactions that maintain the protein's three-dimensional structure.",
+      "Loss of tertiary structure changes the shape and chemical environment of the active site, reducing substrate binding or catalysis.",
+      "The small recovery after cooling indicates that denaturation was largely irreversible under these conditions."
+    ],
+    "markschemeJa": [
+      "60 °Cに加熱すると酵素活性は100%から8%まで低下する。",
+      "加熱後に25 °Cへ戻しても活性は11%にしかならず、ほとんど回復しない。",
+      "高温はタンパク質の三次元構造を維持する相互作用を乱す。",
+      "三次構造が失われると活性部位の形や化学的環境が変わり、基質結合や触媒作用が低下する。",
+      "冷却後の回復が小さいことから、この条件では変性の多くが不可逆的だったと考えられる。"
+    ],
+    "modelAnswer": "Heating caused a large loss of activity and cooling did not restore it. The most likely explanation is denaturation: heat disrupted interactions that maintain the enzyme's tertiary structure, altering the active site so that substrate binding and catalysis were greatly reduced. Because activity remained low after cooling, most of the structural change was not reversed.",
+    "modelAnswerJa": "加熱によって活性が大きく低下し、冷却してもほとんど回復していません。これは熱によって酵素の三次構造を保つ相互作用が乱れ、活性部位の形が変わって基質結合や触媒作用が低下したためと考えられます。冷却後も活性が低いことから、構造変化の多くは元に戻らなかったと推定できます。"
+  },
+  {
+    "id": "BIO-BAL3-P1B-B4-001",
+    "subject": "Biology SL",
+    "chapter": "B4 Ecosystems",
+    "unit": "B4.1 Adaptation to environment",
+    "primaryChapter": "B4 Ecosystems",
+    "primaryUnit": "B4.1 Adaptation to environment",
+    "requiredUnits": [
+      "B4.1 Adaptation to environment"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "xerophyte-adaptation-data",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Leaf traits and water loss in three plant species",
+      "columns": [
+        "Species",
+        "Leaf thickness (mm)",
+        "Stomata mm⁻²",
+        "Water loss in dry air (mg g⁻¹ h⁻¹)"
+      ],
+      "rows": [
+        [
+          "P",
+          0.18,
+          240,
+          42
+        ],
+        [
+          "Q",
+          0.55,
+          95,
+          14
+        ],
+        [
+          "R",
+          0.31,
+          170,
+          27
+        ]
+      ]
+    },
+    "question": "Analyse the data to identify the species best adapted to a dry habitat and explain how the measured traits support your conclusion.",
+    "markscheme": [
+      "Species Q has the lowest water-loss rate, 14 mg g⁻¹ h⁻¹.",
+      "Species Q has the thickest leaves of the three species.",
+      "Species Q also has the lowest stomatal density.",
+      "A thicker leaf can reduce the rate of water loss relative to internal tissue volume and may include a thicker cuticle or greater water-storage tissue.",
+      "Fewer stomata can reduce transpiration, so the combination of traits supports Q as the species best adapted to dry conditions."
+    ],
+    "markschemeJa": [
+      "Qは水分損失速度が14 mg g⁻¹ h⁻¹で最も低い。",
+      "Qは3種の中で葉が最も厚い。",
+      "Qは気孔密度も最も低い。",
+      "厚い葉は内部組織量に対する水分損失を抑えやすく、厚いクチクラや貯水組織を伴う場合もある。",
+      "気孔が少ないほど蒸散を抑えやすいため、これらの特徴の組み合わせからQが乾燥環境に最も適応していると考えられる。"
+    ],
+    "modelAnswer": "Species Q is the strongest candidate for a dry habitat because it loses the least water, has the thickest leaves and has the fewest stomata per unit area. Lower stomatal density can reduce transpiration, while thicker leaves can reduce relative water loss and may support water conservation. The measured traits therefore match the observed low water-loss rate.",
+    "modelAnswerJa": "Qは水分損失が最も少なく、葉が最も厚く、単位面積あたりの気孔数も最も少ないため、乾燥環境への適応が最も強いと考えられます。気孔密度が低いと蒸散を抑えやすく、厚い葉も水分保持に有利です。測定された形態的特徴と低い水分損失率が一致しています。"
+  },
+  {
+    "id": "BIO-BAL3-P1B-B4-002",
+    "subject": "Biology SL",
+    "chapter": "B4 Ecosystems",
+    "unit": "B4.2 Ecological niches",
+    "primaryChapter": "B4 Ecosystems",
+    "primaryUnit": "B4.2 Ecological niches",
+    "requiredUnits": [
+      "B4.2 Ecological niches"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "realized-niche-competition",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Distribution of species X with and without a competing species",
+      "columns": [
+        "Zone",
+        "X present with competitor (%)",
+        "X present after competitor removal (%)"
+      ],
+      "rows": [
+        [
+          "Upper shore",
+          78,
+          82
+        ],
+        [
+          "Middle shore",
+          12,
+          71
+        ],
+        [
+          "Lower shore",
+          3,
+          64
+        ]
+      ]
+    },
+    "question": "Analyse the data using the concepts of fundamental niche, realized niche and interspecific competition.",
+    "markscheme": [
+      "With the competitor present, species X occurs mainly in the upper shore and is uncommon in the middle and lower shore.",
+      "After competitor removal, X becomes common in all three zones.",
+      "The wider distribution after removal shows that X can tolerate conditions outside the upper shore.",
+      "This broader potential distribution represents part of the fundamental niche, whereas the narrower distribution with competition represents the realized niche.",
+      "The data support interspecific competition as a biotic factor restricting the realized niche of species X."
+    ],
+    "markschemeJa": [
+      "競争種がいるとき、Xは主に上部潮間帯に分布し、中部・下部では少ない。",
+      "競争種を除くと、Xは3つすべての帯で多く見られる。",
+      "除去後に分布が広がることから、Xは上部以外の環境条件にも生存できる。",
+      "この広い潜在的分布は基本ニッチの一部を示し、競争下での狭い分布は実現ニッチを示す。",
+      "このデータは、種間競争がXの実現ニッチを制限する生物的要因であることを支持する。"
+    ],
+    "modelAnswer": "When the competitor is present, X is largely restricted to the upper shore. Removing the competitor allows X to occupy the middle and lower shore as well, showing that abiotic conditions there are within its potential tolerance. The broader distribution therefore reflects its fundamental niche more closely, while competition narrows the realized niche.",
+    "modelAnswerJa": "競争種がいるとXはほぼ上部潮間帯に限られますが、競争種を除くと中部・下部にも広がります。これは中部・下部の非生物的条件でもXが生存できることを示します。そのため、除去後の広い分布は基本ニッチに近く、競争によって実現ニッチが狭められていると考えられます。"
+  },
+  {
+    "id": "BIO-BAL3-P1B-D1-001",
+    "subject": "Biology SL",
+    "chapter": "D1 Molecules",
+    "unit": "D1.1 DNA replication",
+    "primaryChapter": "D1 Molecules",
+    "primaryUnit": "D1.1 DNA replication",
+    "requiredUnits": [
+      "D1.1 DNA replication"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "semiconservative-replication-data",
+    "scopeType": "single-unit",
+    "commandTerm": "Deduce",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "DNA density after cells were transferred from ¹⁵N medium to ¹⁴N medium",
+      "columns": [
+        "Cell generation after transfer",
+        "Heavy DNA (%)",
+        "Intermediate DNA (%)",
+        "Light DNA (%)"
+      ],
+      "rows": [
+        [
+          0,
+          100,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          100,
+          0
+        ],
+        [
+          2,
+          0,
+          50,
+          50
+        ]
+      ]
+    },
+    "question": "Deduce the mode of DNA replication supported by the data and explain the pattern across the two generations.",
+    "markscheme": [
+      "After one generation, all DNA has intermediate density.",
+      "This result is consistent with each DNA molecule containing one original heavy strand and one newly synthesized light strand.",
+      "After two generations, half of the DNA is intermediate and half is light.",
+      "Semiconservative replication predicts that each original strand remains paired with a new strand after the first replication.",
+      "In the second replication, molecules containing a heavy parental strand produce one intermediate molecule while newly synthesized light strands contribute to fully light molecules, matching the data."
+    ],
+    "markschemeJa": [
+      "1世代後、DNAはすべて中間密度になっている。",
+      "これは各DNA分子が元の重い鎖1本と新しく合成された軽い鎖1本を含むことと一致する。",
+      "2世代後には中間密度DNAと軽いDNAが50%ずつになる。",
+      "半保存的複製では、最初の複製後も各親鎖が新しい鎖と対になって残る。",
+      "2回目の複製では重い親鎖を含む分子から中間密度分子が残る一方、新しい軽い鎖から軽いDNAが生じ、このデータと一致する。"
+    ],
+    "modelAnswer": "The results support semiconservative DNA replication. After one generation every molecule is intermediate because each contains one ¹⁵N parental strand and one newly synthesized ¹⁴N strand. After the second generation, half the molecules remain hybrid while half contain only light strands, producing the observed 50:50 intermediate-to-light pattern.",
+    "modelAnswerJa": "この結果はDNAの半保存的複製を支持します。1世代後は各DNA分子が¹⁵Nの親鎖1本と新しく合成された¹⁴N鎖1本を含むため、すべて中間密度になります。2世代後には中間密度DNAと軽いDNAが半分ずつになり、観察された50:50のパターンになります。"
+  },
+  {
+    "id": "BIO-BAL3-P1B-D1-002",
+    "subject": "Biology SL",
+    "chapter": "D1 Molecules",
+    "unit": "D1.3 Mutation and gene editing",
+    "primaryChapter": "D1 Molecules",
+    "primaryUnit": "D1.3 Mutation and gene editing",
+    "requiredUnits": [
+      "D1.3 Mutation and gene editing"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "gene-editing-evaluation",
+    "scopeType": "single-unit",
+    "commandTerm": "Evaluate",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Results of two gene-editing treatments in cultured cells",
+      "columns": [
+        "Treatment",
+        "Cells with intended edit (%)",
+        "Cells with restored phenotype (%)",
+        "Cells with detected off-target change (%)"
+      ],
+      "rows": [
+        [
+          "Control",
+          0,
+          2,
+          0
+        ],
+        [
+          "Editor A",
+          72,
+          65,
+          1.5
+        ],
+        [
+          "Editor B",
+          86,
+          78,
+          9.0
+        ]
+      ]
+    },
+    "question": "Evaluate which gene-editing treatment provides the better overall outcome, using the data and one limitation of the evidence.",
+    "markscheme": [
+      "Editor B produces the highest intended-edit rate, 86%, and the highest phenotype-restoration rate, 78%.",
+      "Editor A has lower intended editing and phenotype restoration, at 72% and 65%.",
+      "Editor B also has a substantially higher detected off-target-change rate, 9.0%, compared with 1.5% for Editor A.",
+      "If minimizing unintended changes is important, Editor A may provide the better balance of benefit and risk despite lower efficiency.",
+      "The evidence is limited to cultured cells and detected off-target sites, so long-term effects or additional unintended changes are not established."
+    ],
+    "markschemeJa": [
+      "Editor Bは目的編集率86%、表現型回復率78%で最も高い。",
+      "Editor Aは目的編集率72%、表現型回復率65%でBより低い。",
+      "一方、Editor Bの検出されたオフターゲット変化は9.0%で、Aの1.5%より大幅に高い。",
+      "意図しない変化を抑えることを重視するなら、効率は低くてもEditor Aの方が利益とリスクのバランスがよい可能性がある。",
+      "培養細胞と検出対象となったオフターゲット部位だけのデータなので、長期影響や他の意図しない変化は不明である。"
+    ],
+    "modelAnswer": "Editor B is more efficient, giving the highest intended-edit and phenotype-restoration rates, but this benefit is accompanied by a much higher off-target rate. Editor A is less efficient but appears safer in the measured dataset. Therefore A may be preferable when unintended sequence changes are given high weight, although the conclusion is limited because the experiment used cultured cells and cannot establish all long-term or off-target effects.",
+    "modelAnswerJa": "Editor Bは目的編集率と表現型回復率が最も高く、効率では優れていますが、オフターゲット変化も大幅に多くなっています。Editor Aは効率がやや低い一方、測定された範囲では安全性が高いと考えられます。したがって意図しない配列変化を重視するならAがより良い選択になり得ますが、培養細胞での結果だけなので長期影響やすべてのオフターゲット変化は判断できません。"
+  },
+  {
+    "id": "BIO-BAL3-P1B-D3-001",
+    "subject": "Biology SL",
+    "chapter": "D3 Organisms",
+    "unit": "D3.1 Reproduction",
+    "primaryChapter": "D3 Organisms",
+    "primaryUnit": "D3.1 Reproduction",
+    "requiredUnits": [
+      "D3.1 Reproduction"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "pollen-germination-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Pollen germination and pollen-tube growth at different sucrose concentrations",
+      "columns": [
+        "Sucrose concentration (%)",
+        "Pollen germination after 30 min (%)",
+        "Mean pollen-tube length after 60 min (µm)"
+      ],
+      "rows": [
+        [
+          0,
+          18,
+          62
+        ],
+        [
+          5,
+          61,
+          184
+        ],
+        [
+          10,
+          84,
+          276
+        ],
+        [
+          20,
+          39,
+          121
+        ]
+      ]
+    },
+    "question": "Analyse the data and explain why the results are relevant to successful sexual reproduction in flowering plants.",
+    "markscheme": [
+      "Pollen germination and pollen-tube growth are greatest at 10% sucrose.",
+      "Both measures are lower at 0% and 20% sucrose, showing that the relationship is not a simple increase with concentration.",
+      "Successful fertilization requires pollen to germinate and a pollen tube to grow toward the ovule.",
+      "An appropriate external solute concentration can support water balance and provide conditions suitable for pollen metabolism and tube extension.",
+      "Very low or very high sucrose concentrations reduce reproductive success in this experiment because fewer pollen grains germinate and tubes grow less."
+    ],
+    "markschemeJa": [
+      "花粉発芽率と花粉管伸長は10%ショ糖で最大になる。",
+      "0%と20%ではどちらの値も低く、濃度が高いほど単純に増える関係ではない。",
+      "被子植物の受精には花粉が発芽し、花粉管が胚珠方向へ伸長することが必要である。",
+      "適切な外部溶質濃度は水分バランスを保ち、花粉の代謝や花粉管伸長に適した条件を与える。",
+      "この実験ではショ糖濃度が低すぎても高すぎても、発芽花粉が減り花粉管も短くなるため生殖成功が低下する。"
+    ],
+    "modelAnswer": "The optimum in this dataset is 10% sucrose, where both germination and tube growth are highest. Pollen must germinate and form a growing tube for male gametes to reach the ovule, so both measurements are directly relevant to fertilization success. Conditions that are too dilute or too concentrated reduce these processes, likely because the water and solute environment is less suitable for pollen metabolism and cell expansion.",
+    "modelAnswerJa": "このデータでは10%ショ糖が最適で、花粉発芽率と花粉管伸長がともに最大です。受精には花粉が発芽して花粉管を形成し、雄性配偶子が胚珠へ到達する必要があるため、両指標は受精成功に直接関係します。濃度が低すぎても高すぎても、水分・溶質環境が花粉の代謝や細胞伸長に適さず、これらの過程が低下すると考えられます。"
+  },
+  {
+    "id": "BIO-BAL3-P1B-D3-002",
+    "subject": "Biology SL",
+    "chapter": "D3 Organisms",
+    "unit": "D3.3 Homeostasis",
+    "primaryChapter": "D3 Organisms",
+    "primaryUnit": "D3.3 Homeostasis",
+    "requiredUnits": [
+      "D3.3 Homeostasis"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "glucose-homeostasis-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Blood glucose concentration after a glucose drink",
+      "columns": [
+        "Time after drink (min)",
+        "Person P (mmol L⁻¹)",
+        "Person Q (mmol L⁻¹)"
+      ],
+      "rows": [
+        [
+          0,
+          4.8,
+          5.1
+        ],
+        [
+          30,
+          7.3,
+          9.8
+        ],
+        [
+          60,
+          5.9,
+          9.1
+        ],
+        [
+          120,
+          5.0,
+          7.6
+        ]
+      ]
+    },
+    "question": "Analyse the data and explain how negative feedback normally returns blood glucose concentration toward its starting level.",
+    "markscheme": [
+      "Both people show an increase in blood glucose after the drink, but Q reaches a higher concentration than P.",
+      "By 120 minutes, P has returned close to the starting concentration whereas Q remains substantially elevated.",
+      "An increase in blood glucose is detected by pancreatic beta cells, leading to increased insulin secretion.",
+      "Insulin promotes glucose uptake by responsive cells and promotes conversion of glucose to glycogen, lowering blood glucose.",
+      "As blood glucose falls toward the set range, the stimulus for insulin secretion decreases; Q's slower decline indicates less effective glucose regulation in this test."
+    ],
+    "markschemeJa": [
+      "飲用後は両者で血糖値が上昇するが、QはPより高い値に達する。",
+      "120分後、Pは開始値近くまで戻るが、Qは依然として大きく高い。",
+      "血糖値の上昇は膵臓のβ細胞で検出され、インスリン分泌が増加する。",
+      "インスリンは細胞へのグルコース取り込みやグリコーゲンへの変換を促進し、血糖値を下げる。",
+      "血糖値が設定範囲へ戻るとインスリン分泌を促す刺激が弱まり、Qの低下が遅いことはこの試験で血糖調節がより効果的でないことを示す。"
+    ],
+    "modelAnswer": "Person P shows effective restoration toward the starting glucose concentration, whereas Q remains elevated after two hours. Normally, rising glucose stimulates pancreatic beta cells to release insulin. Insulin increases glucose uptake and glycogen formation, causing blood glucose to fall. As the concentration returns toward the normal range, insulin secretion is reduced by negative feedback.",
+    "modelAnswerJa": "Pは開始時の血糖値近くまで戻っていますが、Qは2時間後も高いままです。通常、血糖値が上昇すると膵臓のβ細胞からインスリンが分泌されます。インスリンは細胞へのグルコース取り込みやグリコーゲン形成を促し、血糖値を下げます。正常範囲へ戻るにつれてインスリン分泌刺激も弱まるため、負のフィードバックが成立します。"
+  },
+  {
+    "id": "BIO-BAL3-P1B-D4-001",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.1 Natural selection",
+    "primaryChapter": "D4 Ecosystems",
+    "primaryUnit": "D4.1 Natural selection",
+    "requiredUnits": [
+      "D4.1 Natural selection"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "antibiotic-selection-frequency",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Frequency of an antibiotic-resistance allele in bacterial populations",
+      "columns": [
+        "Generation",
+        "Population with antibiotic (%)",
+        "Population without antibiotic (%)"
+      ],
+      "rows": [
+        [
+          0,
+          4,
+          4
+        ],
+        [
+          5,
+          19,
+          5
+        ],
+        [
+          10,
+          48,
+          4
+        ],
+        [
+          15,
+          79,
+          5
+        ]
+      ]
+    },
+    "question": "Analyse the data and explain how natural selection can account for the change in resistance-allele frequency.",
+    "markscheme": [
+      "The resistance allele increases from 4% to 79% over 15 generations in the population exposed to antibiotic.",
+      "In the population without antibiotic, the allele remains close to 4–5%, so the strong increase is associated with antibiotic exposure.",
+      "Genetic variation for resistance is present at the start of the experiment.",
+      "Antibiotic exposure creates a selection pressure: resistant bacteria are more likely to survive and reproduce than susceptible bacteria.",
+      "Because resistant bacteria contribute more descendants, the resistance allele becomes more frequent; the antibiotic selects among existing variants rather than directing bacteria to produce the needed mutation."
+    ],
+    "markschemeJa": [
+      "抗生物質ありの集団では耐性アレル頻度が15世代で4%から79%へ増加する。",
+      "抗生物質なしの集団では4〜5%付近のままであり、大きな増加は抗生物質曝露と関連している。",
+      "実験開始時点ですでに耐性に関する遺伝的変異が存在する。",
+      "抗生物質は選択圧となり、耐性菌は感受性菌より生存・繁殖しやすい。",
+      "耐性菌がより多くの子孫を残すため耐性アレル頻度が上昇するのであり、抗生物質が必要な突然変異を目的的に作らせるわけではない。"
+    ],
+    "modelAnswer": "The resistance allele was already present at low frequency. Under antibiotic exposure, resistant bacteria had a survival and reproductive advantage, so they contributed a larger fraction of the next generations and the allele rose to 79%. The control population changed little, supporting antibiotic treatment as the selection pressure. This is natural selection acting on existing heritable variation, not directed mutation caused by need.",
+    "modelAnswerJa": "耐性アレルは開始時から低頻度で存在していました。抗生物質がある環境では耐性菌の方が生存・繁殖に有利なため、次世代により多く寄与し、耐性アレル頻度が79%まで上昇しました。抗生物質なしの集団ではほとんど変化しないことから、抗生物質が選択圧として働いたと考えられます。これは既存の遺伝的変異に対する自然選択であり、必要に応じて突然変異が起きたわけではありません。"
+  }
+]
