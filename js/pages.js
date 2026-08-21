@@ -21,6 +21,26 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureEssPaper1FullMock() {
+    if (typeof EssPaper1FullMock !== 'undefined') {
+      EssPaper1FullMock.install();
+      return;
+    }
+    if (document.getElementById('ess-paper1-full-mock-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'ess-paper1-full-mock-script';
+    script.async = false;
+    script.src = 'js/ess-paper1-full-mock.js?v=1';
+    script.onload = () => {
+      if (typeof EssPaper1FullMock !== 'undefined') EssPaper1FullMock.install();
+    };
+    script.onerror = () => {
+      console.warn('ESS Paper 1 Full Mock module could not be loaded. Existing ESS Paper 1 Practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureEssSectionBStructured() {
     if (typeof Paper2 !== 'undefined' && typeof Paper2.isStructuredEssSectionB === 'function') return;
     if (document.getElementById('ess-section-b-structured-script')) return;
@@ -190,7 +210,7 @@ const Pages = {
     script.async = false;
     script.src = 'js/english-b-paper2-listening.js?v=1';
     script.onerror = () => {
-      console.warn('English B Paper 2 Listening module could not be loaded. Existing practice remains available.');
+      console.warn('English B Paper 2 Listening module could not be loaded. Existing Listening practice remains available.');
     };
     document.body.appendChild(script);
   },
@@ -430,6 +450,7 @@ const Pages = {
 
   init() {
     this.ensureEssExamModule();
+    this.ensureEssPaper1FullMock();
     this.ensureEssSectionBStructured();
     this.ensureEssSectionBStructuredSets();
     this.ensureEssJapaneseLocalization();
