@@ -41,6 +41,26 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureEssPaper2FullMock() {
+    if (typeof EssPaper2FullMock !== 'undefined') {
+      EssPaper2FullMock.install();
+      return;
+    }
+    if (document.getElementById('ess-paper2-full-mock-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'ess-paper2-full-mock-script';
+    script.async = false;
+    script.src = 'js/ess-paper2-full-mock.js?v=1';
+    script.onload = () => {
+      if (typeof EssPaper2FullMock !== 'undefined') EssPaper2FullMock.install();
+    };
+    script.onerror = () => {
+      console.warn('ESS Paper 2 Full Mock module could not be loaded. Existing ESS Paper 2 Practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureEssSectionBStructured() {
     if (typeof Paper2 !== 'undefined' && typeof Paper2.isStructuredEssSectionB === 'function') return;
     if (document.getElementById('ess-section-b-structured-script')) return;
@@ -451,6 +471,7 @@ const Pages = {
   init() {
     this.ensureEssExamModule();
     this.ensureEssPaper1FullMock();
+    this.ensureEssPaper2FullMock();
     this.ensureEssSectionBStructured();
     this.ensureEssSectionBStructuredSets();
     this.ensureEssJapaneseLocalization();
