@@ -306,6 +306,27 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureMathAISLModules() {
+    const sources = [
+      ['math-ai-sl-loader-script', 'js/math-ai-sl-loader.js?v=1'],
+      ['math-ai-sl-ui-guard-script', 'js/math-ai-sl-ui-guard.js?v=1'],
+      ['math-ai-sl-batch2-script', 'js/math-ai-sl-batch2.js?v=1'],
+      ['math-ai-sl-final-audit-script', 'js/math-ai-sl-final-audit.js?v=1']
+    ];
+
+    sources.forEach(([id, src]) => {
+      if (document.getElementById(id)) return;
+      const script = document.createElement('script');
+      script.id = id;
+      script.async = false;
+      script.src = src;
+      script.onerror = () => {
+        console.warn(`Math AI SL module could not be loaded: ${src}`);
+      };
+      document.body.appendChild(script);
+    });
+  },
+
   ensureBiologyPaper1BMock() {
     if (typeof BiologyPaper1BMock !== 'undefined') {
       BiologyPaper1BMock.install();
@@ -488,6 +509,7 @@ const Pages = {
     this.ensureUIOptimizations();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
+    this.ensureMathAISLModules();
     this.ensureBiologyPaper1BMock();
     this.ensureBiologyPaper1FullMock();
     this.ensureBiologyPaper2FullMock();
