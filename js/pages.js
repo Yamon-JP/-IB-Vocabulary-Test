@@ -311,7 +311,8 @@ const Pages = {
       ['math-ai-sl-loader-script', 'js/math-ai-sl-loader.js?v=1'],
       ['math-ai-sl-ui-guard-script', 'js/math-ai-sl-ui-guard.js?v=1'],
       ['math-ai-sl-batch2-script', 'js/math-ai-sl-batch2.js?v=1'],
-      ['math-ai-sl-final-audit-script', 'js/math-ai-sl-final-audit.js?v=1']
+      ['math-ai-sl-final-audit-script', 'js/math-ai-sl-final-audit.js?v=1'],
+      ['math-ai-sl-full-mock-script', 'js/math-ai-sl-full-mock.js?v=1']
     ];
 
     sources.forEach(([id, src]) => {
