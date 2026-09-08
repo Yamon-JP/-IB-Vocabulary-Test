@@ -6,8 +6,8 @@
   margin-bottom: 14px;
 }
 
-#chapter-progress-panel,
-#all-subject-final-progress {
+#statistics-page.progress-ui-v2-page #chapter-progress-panel,
+#statistics-page.progress-ui-v2-page #all-subject-final-progress {
   display: none !important;
 }
 
