@@ -448,6 +448,27 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureProgressUIV2() {
+    if (typeof ProgressUIV2 !== 'undefined') {
+      ProgressUIV2.install();
+      return;
+    }
+    if (document.getElementById('progress-ui-v2-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'progress-ui-v2-script';
+    script.async = false;
+    script.src = 'js/progress-ui-v2.js?v=1';
+    script.onload = () => {
+      if (typeof ProgressUIV2 !== 'undefined') ProgressUIV2.install();
+      if (typeof FinalExamProgressV2 !== 'undefined') FinalExamProgressV2.install();
+    };
+    script.onerror = () => {
+      console.warn('Progress UI v2 could not be loaded. Existing Progress remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureFinalExamProgressV2() {
     if (typeof FinalExamProgressV2 !== 'undefined') {
       FinalExamProgressV2.install();
@@ -537,6 +558,7 @@ const Pages = {
     this.ensureBiologyPaper2FullMock();
     this.ensureAdaptiveTraining();
     this.ensureTrainingPoints();
+    this.ensureProgressUIV2();
     this.ensureFinalExamProgressV2();
     this.show('home');
   }
