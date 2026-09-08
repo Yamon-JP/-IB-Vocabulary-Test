@@ -328,6 +328,26 @@ const Pages = {
     });
   },
 
+  ensureBiologyFinalTraining() {
+    if (typeof BiologyFinalTraining !== 'undefined') {
+      BiologyFinalTraining.start();
+      return;
+    }
+    if (document.getElementById('biology-final-training-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'biology-final-training-script';
+    script.async = false;
+    script.src = 'js/biology-final-training.js?v=1';
+    script.onload = () => {
+      if (typeof BiologyFinalTraining !== 'undefined') BiologyFinalTraining.start();
+    };
+    script.onerror = () => {
+      console.warn('Biology Final Training module could not be loaded. Existing Biology practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureBiologyPaper1BMock() {
     if (typeof BiologyPaper1BMock !== 'undefined') {
       BiologyPaper1BMock.install();
@@ -511,6 +531,7 @@ const Pages = {
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
     this.ensureMathAISLModules();
+    this.ensureBiologyFinalTraining();
     this.ensureBiologyPaper1BMock();
     this.ensureBiologyPaper1FullMock();
     this.ensureBiologyPaper2FullMock();
