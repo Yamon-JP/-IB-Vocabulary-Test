@@ -1,0 +1,152 @@
+[
+  {
+    "id": "ENGB-P1-TTB1",
+    "title": "Text-Type Balance 1",
+    "tasks": [
+      {
+        "id": "ENGB-P1-TTB1-A",
+        "chapter": "Chapter 1",
+        "theme": "Identities",
+        "prompt": "Your school has surveyed students about whether they feel that their languages, cultures and personal identities are represented fairly in school life. Write a text for school leaders in which you summarize the main findings, identify areas of concern, and recommend practical next steps.",
+        "requirements": [
+          "Summarize the main findings of the student survey.",
+          "Identify important concerns or gaps in representation.",
+          "Recommend practical actions and a way to review progress."
+        ],
+        "textTypes": [
+          {"name": "Report", "suitability": "best"},
+          {"name": "Opinion column", "suitability": "acceptable"},
+          {"name": "Personal letter", "suitability": "weak"}
+        ],
+        "bestTextType": "Report",
+        "audience": "School leaders and senior staff",
+        "purpose": "Present findings objectively and recommend evidence-based actions",
+        "register": "Formal, concise and analytical",
+        "textTypeRationale": "A report is best because the task requires organized findings, identified concerns and practical recommendations for decision-makers.",
+        "modelAnswerJa": "ReportとしてPurpose / Findings / Concerns / Recommendations / Reviewに分け、個人的な感想より調査結果と実行可能な提案を中心にしています。formal registerと見出しの使い方がCriterion Cの重要点です。",
+        "modelAnswer": "Report: Student Representation and Belonging\n\nPurpose\n\nThis report summarizes the main findings of the recent student survey on cultural, linguistic and personal representation in school life. It also identifies areas that require attention and recommends practical steps for the next academic year.\n\nMain findings\n\nThe survey shows that most students value the school’s diversity and believe that classmates generally respect different backgrounds. Many respondents mentioned international events, language clubs and student-led celebrations as positive examples of inclusion.\n\nHowever, the results also reveal important gaps. A significant group of multilingual students said that their home languages are visible mainly during special events rather than in everyday school life. Some students from mixed cultural backgrounds reported that forms and activities sometimes expect them to choose one national identity. Several respondents also said that displays of culture can become superficial when they focus only on food, flags or traditional clothing.\n\nAnother concern is participation. Students who are confident speakers are more likely to volunteer for assemblies and panels, while quieter students may feel that the same voices repeatedly represent a whole community. Some respondents said they had been asked to explain a country, religion or culture simply because of their family background.\n\nThe survey also suggests that inclusion is uneven across year groups. Younger students were more likely to describe school activities as welcoming, while older students were more critical of stereotypes in classroom examples and informal comments. This difference should be investigated rather than assuming that one successful event reflects the experience of the whole school.\n\nRecommendations\n\nFirst, the school should increase everyday representation rather than relying only on annual events. Library displays, reading lists, examples used in lessons and school communications should reflect a wider range of languages, family structures and cultural experiences.\n\nSecond, students should never be expected to act as unofficial representatives of an entire group. Teachers organizing discussions should invite personal perspectives while making clear that one person cannot speak for millions of others.\n\nThird, forms and activities should allow flexible descriptions of identity. Where nationality is not essential information, students should not be forced into a single category.\n\nFourth, the school should create more ways to contribute. Anonymous surveys, small-group discussions and written submissions would allow students who do not want to speak publicly to influence decisions.\n\nReview\n\nProgress should be reviewed after two terms. The school could repeat key survey questions, compare participation across activities and ask student groups whether the changes have made representation feel more accurate and less tokenistic.\n\nConclusion\n\nThe survey suggests that the school has a strong foundation but should move from celebrating diversity to building belonging into everyday practice. Representation is most effective when students can recognize themselves in school life without being reduced to stereotypes or expected to perform an identity for others."
+      },
+      {
+        "id": "ENGB-P1-TTB1-B",
+        "chapter": "Chapter 3",
+        "theme": "Human ingenuity",
+        "prompt": "You took part in a one-month school trial of an AI study assistant. The digital-learning coordinator has asked for your feedback. Write a text in which you explain what was useful, identify problems or risks, and suggest how the tool should be used if the school continues the trial.",
+        "requirements": [
+          "Explain useful features of the AI study assistant.",
+          "Identify problems, risks or limitations you experienced.",
+          "Recommend clear conditions for future use."
+        ],
+        "textTypes": [
+          {"name": "Email", "suitability": "best"},
+          {"name": "Proposal", "suitability": "acceptable"},
+          {"name": "Travel guide", "suitability": "weak"}
+        ],
+        "bestTextType": "Email",
+        "audience": "The school digital-learning coordinator",
+        "purpose": "Give direct feedback and practical recommendations after a trial",
+        "register": "Professional, clear and appropriately personal",
+        "textTypeRationale": "An email is best because the task is a direct response to a known staff member requesting feedback after a specific trial.",
+        "modelAnswerJa": "特定の担当者へのfeedbackなので、件名を意識した明確なopening、体験に基づく具体例、箇条書きに近いrecommendation、丁寧なclosingを使っています。Proposalほど形式張らず、professional emailの距離感を保つ点が重要です。",
+        "modelAnswer": "Dear Ms Patel,\n\nThank you for asking for feedback on the one-month AI study-assistant trial. Overall, I found the tool useful when it supported work I was already doing, but much less useful when I treated it as a shortcut.\n\nThe strongest feature was explanation. When I did not understand a biology term or a mathematics method, I could ask for the same idea to be explained in simpler language or with a different example. This was especially helpful outside lesson time because I could identify the exact step that was confusing me.\n\nThe tool was also useful for revision. I asked it to create short quizzes from topics we had already studied and to give me alternative practice questions. This made revision more active than simply rereading notes.\n\nHowever, I noticed three problems. First, some answers sounded confident even when they were incomplete or wrong. On one occasion, the assistant gave me an incorrect explanation of a statistics result. I only noticed because the answer disagreed with my textbook.\n\nSecond, it was easy to become passive. If I asked the tool to improve a paragraph, the revised version often sounded better, but I had not necessarily learned how to produce that language myself. The temptation to copy a polished answer was much stronger when I was tired or close to a deadline.\n\nThird, students may enter information without thinking about privacy. During the trial, I heard people discussing whether they could paste teacher comments, personal reflections or group-project material into the system. We need clearer guidance about what should never be uploaded.\n\nIf the school continues the trial, I suggest three conditions. Teachers should state clearly when AI use is allowed for each task. Students should be required to disclose significant help, for example by writing, “I used the AI assistant to generate practice questions and check clarity.” Finally, the school should teach verification: important claims should be checked against class materials or reliable sources.\n\nIt would also help if the school published a short list of permitted and non-permitted examples. At the moment, students interpret “use AI responsibly” in very different ways. Clear examples would reduce uncertainty and make academic-honesty decisions more consistent between subjects.\n\nI would also recommend keeping some tasks completely AI-free. If every early draft is improved by a tool, teachers may find it harder to see what students can actually do independently.\n\nI support continuing the trial because the assistant can be a useful tutor, revision partner and source of extra practice. However, it should not become an invisible co-author. The most useful rule I learned was to ask the tool to help me think, not to replace the thinking I was supposed to practise.\n\nBest regards,\n\nMaya Chen"
+      },
+      {
+        "id": "ENGB-P1-TTB1-C",
+        "chapter": "Chapter 2",
+        "theme": "Experiences",
+        "prompt": "Your school is sending students on an exchange programme to a city they have never visited. The programme website needs practical advice for students before they arrive. Write a text that recommends places or experiences, explains local customs and transport, and helps students behave as respectful visitors rather than ordinary tourists.",
+        "requirements": [
+          "Recommend useful places, activities or experiences for exchange students.",
+          "Explain practical points such as customs, transport or daily routines.",
+          "Give advice on respectful and responsible behaviour."
+        ],
+        "textTypes": [
+          {"name": "Travel guide", "suitability": "best"},
+          {"name": "Blog", "suitability": "acceptable"},
+          {"name": "Report", "suitability": "weak"}
+        ],
+        "bestTextType": "Travel guide",
+        "audience": "Students preparing for a school exchange",
+        "purpose": "Provide practical destination guidance and encourage respectful travel",
+        "register": "Friendly, informative and practical",
+        "textTypeRationale": "A travel guide is designed to help visitors navigate a place through organized practical advice, recommendations and local-awareness tips.",
+        "modelAnswerJa": "Travel guideらしくdestination overview、Getting around、What to experience、Local habits、Respectful travelのような読みやすいsectionsを使っています。personal reflectionより、訪問者が現地で使える情報を優先しています。",
+        "modelAnswer": "Exchange Guide: Getting More from Your Week in Busan\n\nBusan is easy to enjoy as a visitor, but an exchange programme gives you a better opportunity: you can experience the city as part of someone else’s everyday routine. Use this guide to explore confidently without treating the city as a checklist of tourist attractions.\n\nGetting around\n\nThe metro is the simplest way to travel between major areas. Buy a rechargeable transport card soon after arrival and keep a small balance on it for buses as well. Bus routes are useful for neighbourhoods farther from metro stations, but allow extra time during busy periods.\n\nWhen using public transport, keep conversations quiet and avoid blocking doors while checking your phone. Priority seats should be left available for passengers who need them.\n\nWhat to experience\n\nDo visit famous places such as Haeundae Beach and Jagalchi Market, but also spend time in ordinary neighbourhoods. A walk through a local market, a small library or a community sports centre can teach you more about daily life than another hour taking photographs at a landmark.\n\nIf your host family offers to show you a place that is not on your plan, say yes when possible. Exchange programmes become more meaningful when you stop controlling every experience.\n\nFood and shared meals\n\nMeals are an important part of social life. If you have allergies or dietary restrictions, explain them clearly and early rather than waiting until food is served. Try unfamiliar dishes, but you do not need to pretend to enjoy everything.\n\nAt shared meals, notice what your host family does before assuming that customs are identical to those at home. A polite question is usually better than silently worrying about making a mistake.\n\nRespectful visiting\n\nAsk before taking close photographs of people, especially in markets, religious sites or residential areas. A location may look interesting to you while being someone else’s workplace or home.\n\nLearn a few useful Korean expressions. Nobody expects perfect language, but greetings, thanks and simple questions show that communication is a shared effort rather than something your hosts must do for you.\n\nBe careful with online posts as well. Do not upload photographs of your host family, classmates or their homes without permission.\n\nMake the exchange an exchange\n\nIt is tempting to spend free time with students from your own school because communication is easier. Try not to do that all the time. Join ordinary activities, ask your host student questions and share something about your own life too.\n\nThe goal is not to become an expert on Busan in one week. It is to leave with a better understanding of how another community works and with relationships that are more memorable than the places in your camera roll."
+      }
+    ]
+  },
+  {
+    "id": "ENGB-P1-TTB2",
+    "title": "Text-Type Balance 2",
+    "tasks": [
+      {
+        "id": "ENGB-P1-TTB2-A",
+        "chapter": "Chapter 1",
+        "theme": "Identities",
+        "prompt": "After a school cultural event, you were repeatedly asked to explain a culture connected to your family as if you represented everyone from that background. Write a private text in which you describe what happened, explore your mixed feelings, and reflect on what you wish other students understood about identity.",
+        "requirements": [
+          "Describe the event and what other students asked or expected.",
+          "Explore your personal feelings rather than only explaining the issue generally.",
+          "Reflect on what you now wish others understood about identity."
+        ],
+        "textTypes": [
+          {"name": "Diary", "suitability": "best"},
+          {"name": "Opinion column", "suitability": "acceptable"},
+          {"name": "Report", "suitability": "weak"}
+        ],
+        "bestTextType": "Diary",
+        "audience": "The writer themself",
+        "purpose": "Record and reflect privately on a personal identity experience",
+        "register": "Personal, candid and reflective",
+        "textTypeRationale": "A diary is best because the task asks for private reflection, mixed feelings and personal processing rather than public persuasion.",
+        "modelAnswerJa": "Diaryなのでpublic audience向けの説明ではなく、その日の出来事・感情の揺れ・後から気づいたことを一人称で記録しています。日付、内面的な問い、結論を急がないtoneがconventionsとして有効です。",
+        "modelAnswer": "14 October\n\nI thought Culture Day would be fun. It mostly was, but I came home more tired than I expected.\n\nOur class had a table about Korea because several of us have Korean family connections. I helped bring snacks and photographs, and at first I enjoyed explaining a few things my grandmother does during holidays. Then the questions changed.\n\nOne student asked me whether “Koreans really think” a certain way about school. Someone else asked which political opinion Korean people have about an issue we discussed in class. Later, a teacher introduced me to a visitor by saying, “She can explain Korean culture to you.”\n\nI knew nobody was trying to be rude. That almost made it harder to explain why I felt uncomfortable.\n\nPart of me was proud that people were interested. I do not want classmates to be afraid to ask questions. I also liked talking about my family, especially the traditions that actually mean something to us.\n\nBut another part of me felt trapped. I was suddenly responsible for giving the correct answer about millions of people. If I said, “My family does this,” someone sometimes heard, “Koreans do this.” If I said I did not know, I worried that I sounded disconnected from my own background.\n\nThe strangest moment came when someone said I was “basically the expert.” I nearly laughed. I go to school in Japan, my Korean is good but not perfect in every situation, and I disagree with some of my relatives about almost everything. How could that make me an expert on a whole country?\n\nMaybe what bothered me most was the idea that identity becomes more authentic when it is easy to display. Food, clothing and holidays fit neatly on a table. Uncertainty does not. Neither does the feeling of being more Japanese in one conversation and more Korean in another, while still being the same person.\n\nI also noticed that I was changing my answers depending on who asked. With close friends, I was comfortable saying, “I’m not sure.” With strangers, I felt pressure to sound certain. That makes me wonder how often we perform confidence simply because uncertainty is harder for other people to understand.\n\nNext year, if we do Culture Day again, I want to suggest changing the questions. Instead of “What do Korean people think?” we could ask, “What has your experience been?” That gives someone room to answer personally without turning them into a spokesperson.\n\nI also need to remember that curiosity is not the enemy. I would rather people ask respectful questions than avoid the subject completely.\n\nTonight I feel proud, irritated, grateful and slightly embarrassed all at once. Maybe that mixture is the point. Identity is not a presentation I can finish in five minutes. I wish people understood that asking about someone’s background can open a conversation, but it should not close that person inside a category."
+      },
+      {
+        "id": "ENGB-P1-TTB2-B",
+        "chapter": "Chapter 4",
+        "theme": "Social organization",
+        "prompt": "Your local council plans to close a public study centre used by teenagers in the evenings because of budget pressure. Write a text to the council in which you explain why the centre matters, address the financial concern, and formally request a realistic alternative to closure.",
+        "requirements": [
+          "Explain why the study centre is important to young people.",
+          "Acknowledge the council's financial concern.",
+          "Request a specific and realistic alternative to full closure."
+        ],
+        "textTypes": [
+          {"name": "Formal letter", "suitability": "best"},
+          {"name": "Speech", "suitability": "acceptable"},
+          {"name": "Diary", "suitability": "weak"}
+        ],
+        "bestTextType": "Formal letter",
+        "audience": "Members of the local council",
+        "purpose": "Make a formal case and request a specific policy alternative",
+        "register": "Formal, respectful and persuasive",
+        "textTypeRationale": "A formal letter best suits a direct written request to public decision-makers and allows a clear reasoned case with an explicit request.",
+        "modelAnswerJa": "Formal letterとして宛先を意識した丁寧なopening、問題の根拠、相手側のbudget concernへの理解、具体的request、formal closingを使っています。感情だけでなく実行可能な代替案を提示する点が重要です。",
+        "modelAnswer": "Dear Members of the Council,\n\nI am writing regarding the proposal to close the Northside Evening Study Centre at the end of this term. I understand that the council is facing serious budget pressure. However, I ask you to consider a reduced-service model before removing the centre completely.\n\nThe centre is more than a quiet room with desks. Many teenagers in the area live in crowded homes, share bedrooms or have unreliable internet access. For these students, the centre provides a stable place to complete homework, prepare for examinations and access computers.\n\nIt also offers safe evening space. The centre stays open until 9 p.m., which is especially useful for students who attend sports, care for younger siblings or work part-time before studying. Closing it would not remove the need; it would simply move students to cafés, school corridors where available, or homes that may not be suitable for concentrated work.\n\nI recognize the council’s argument that the building is expensive to operate. Keeping the current schedule unchanged may not be realistic. For that reason, I would like to suggest three alternatives.\n\nThe impact of closure should also be considered in terms of equality. Students who can pay for private study spaces, transport to another library or faster home internet will find alternatives. Those with fewer resources are more likely to lose access completely. A saving in one budget can therefore create a larger educational cost elsewhere.\n\nFirst, reduce opening hours rather than ending the service. The centre could open four evenings per week and focus on the busiest period before examinations.\n\nSecond, share the building with another community service. If youth advice, adult education or library programmes used the same site at different times, fixed costs could be spread across several budgets.\n\nThird, recruit supervised volunteers for some non-specialist duties while keeping a qualified staff member responsible for safety and access. Volunteers should not replace professional roles entirely, but they may reduce staffing pressure for routine tasks.\n\nBefore making a final decision, the council should also publish usage data and consult students, parents and nearby schools. If attendance is low at particular times, services can be adjusted. If the centre is heavily used by students with few alternatives, that information should be part of the financial calculation.\n\nEducation does not happen only inside school hours. A relatively small public service can determine whether a student has a quiet place, internet access and enough time to complete work safely.\n\nI therefore respectfully request that the council postpone full closure for six months and test a reduced-hours, shared-use model during that period. The results could then be reviewed using attendance, operating costs and feedback from users.\n\nThank you for considering this request. I would be grateful if the council could publish the next consultation date so that young residents can contribute directly.\n\nYours faithfully,\n\nJordan Lee"
+      },
+      {
+        "id": "ENGB-P1-TTB2-C",
+        "chapter": "Chapter 5",
+        "theme": "Sharing the planet",
+        "prompt": "Your school magazine is preparing a feature on the growing repair-and-reuse movement. Write a text that explains why repair is becoming more important, examines barriers that stop people repairing products, and suggests what schools, businesses and consumers can do.",
+        "requirements": [
+          "Explain why repair and reuse matter environmentally or socially.",
+          "Examine barriers that make repair difficult.",
+          "Suggest practical action by more than one group."
+        ],
+        "textTypes": [
+          {"name": "Article", "suitability": "best"},
+          {"name": "Brochure", "suitability": "acceptable"},
+          {"name": "Personal letter", "suitability": "weak"}
+        ],
+        "bestTextType": "Article",
+        "audience": "Readers of a school magazine",
+        "purpose": "Inform and engage readers while exploring a wider sustainability trend",
+        "register": "Accessible, informative and analytical",
+        "textTypeRationale": "An article is best because the task requires an engaging explanation of a broader issue, multiple perspectives and practical implications for a general readership.",
+        "modelAnswerJa": "Magazine articleとしてheadlineとengaging openingを使い、背景→barriers→stakeholder actions→broader messageへ展開しています。単なるHow-to guideではなく、問題を説明・分析するinformative articleになっています。",
+        "modelAnswer": "Why Repair Is Making a Comeback\n\nFor years, replacing a broken product often seemed easier than repairing it. A damaged toaster, cracked phone screen or torn jacket could be thrown away and replaced by something new within hours. That convenience is now being questioned.\n\nRepair matters because products contain more than the materials we see. Manufacturing uses energy, water, minerals, transport and labour. When an item is discarded because of one small failure, much of that investment is lost. Electronic waste is particularly serious because devices can contain valuable metals as well as materials that are difficult to handle safely.\n\nSo why do people still replace things that could be repaired?\n\nCost is one reason. A professional repair can sometimes approach the price of a new product, especially when replacement parts are expensive. Design is another barrier. Some devices use glued cases, unusual screws or batteries that are difficult to remove. Even skilled users may be unable to open a product without damaging it.\n\nInformation matters too. Consumers may not know which part has failed, where to buy a safe replacement or whether a repair will affect a warranty. In clothing, the barrier can be simpler: many people have never learned basic skills such as sewing on a button or repairing a small tear.\n\nThe solution requires more than telling consumers to “buy less.”\n\nManufacturers can design products that are easier to open, maintain and update. They can also provide spare parts and repair information for a reasonable period after sale. Businesses offering repair services can make prices clearer so customers can compare repair with replacement.\n\nSchools have a role as well. A repair workshop combines sustainability with practical learning. Students could learn basic sewing, safe bicycle maintenance or how to diagnose simple electronic faults without opening dangerous equipment. Schools could also host repair cafés with trained volunteers and clear safety rules.\n\nConsumers can change habits too. Before replacing an item, ask whether the fault is small, whether a repair service exists and whether a second-hand replacement might be more sensible than buying new. Choosing durable products can matter more than choosing the cheapest option every time.\n\nRepair is not always the correct answer. Damaged batteries, unsafe electrical equipment and critical safety components may require professional replacement. Old appliances can also be so inefficient that continued use has environmental costs of its own.\n\nThe goal is not to keep every object forever. It is to make replacement a decision rather than an automatic reaction.\n\nA repair culture changes the question from “What new thing should I buy?” to “What value is still left in what I already have?” In a world of limited resources, that is a useful question for schools, companies and consumers alike."
+      }
+    ]
+  }
+]
