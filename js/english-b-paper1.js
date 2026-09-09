@@ -23,6 +23,7 @@
     currentSetIndex: 0,
     selectedTaskIndex: null,
     selectedTextType: '',
+    attemptSaved: false,
     initialized: false,
     appPatched: false,
 
@@ -157,6 +158,7 @@
       this.currentSetIndex = 0;
       this.selectedTaskIndex = null;
       this.selectedTextType = '';
+      this.attemptSaved = false;
       this.render();
       return this.practiceSets.reduce((sum, set) => sum + (Array.isArray(set.tasks) ? set.tasks.length : 0), 0);
     },
@@ -202,6 +204,7 @@
       if (!set || !set.tasks[index]) return;
       this.selectedTaskIndex = index;
       this.selectedTextType = '';
+      this.attemptSaved = false;
       this.render();
       this.renderSelectedTask();
     },
@@ -303,7 +306,7 @@
             <div class="engb-p1-criterion"><strong>C · Conceptual understanding /6</strong><p>Text type, register and tone suit the task; conventions of the chosen text type are executed effectively.</p><select id="engb-p1-score-c" onchange="EnglishBPaper1.updateSelfMark()">${this.criterionOptions(6)}</select></div>
           </div>
           <div class="engb-p1-total"><span>Self-mark total</span><strong id="engb-p1-self-total">— / 30</strong></div>
-          <div class="engb-p1-actions"><button type="button" onclick="EnglishBPaper1.saveSelfMark()">Save Attempt</button><span id="engb-p1-save-status" class="engb-p1-save-status"></span></div>
+          <div class="engb-p1-actions"><button type="button" id="engb-p1-save" onclick="EnglishBPaper1.saveSelfMark()" ${this.attemptSaved ? 'disabled' : ''}>Save Attempt</button><span id="engb-p1-save-status" class="engb-p1-save-status"></span></div>
         </div>
         <div class="engb-p1-feedback-card">
           <h4>Model Answer · ${modelCount} words</h4>
@@ -341,6 +344,12 @@
       const task = this.currentTask();
       const answer = document.getElementById('engb-p1-answer');
       const status = document.getElementById('engb-p1-save-status');
+      const saveButton = document.getElementById('engb-p1-save');
+      if (this.attemptSaved) {
+        if (status) status.textContent = 'This attempt is already saved.';
+        if (saveButton) saveButton.disabled = true;
+        return;
+      }
       const a = document.getElementById('engb-p1-score-a')?.value ?? '';
       const b = document.getElementById('engb-p1-score-b')?.value ?? '';
       const c = document.getElementById('engb-p1-score-c')?.value ?? '';
@@ -363,7 +372,13 @@
         maxMarks: 30,
         createdAt: new Date().toISOString()
       };
-      EnglishBPaper1Progress.recordAttempt(attempt);
+      const savedAttempt = EnglishBPaper1Progress.recordAttempt(attempt);
+      if (!savedAttempt) {
+        if (status) status.textContent = 'Attempt could not be saved.';
+        return;
+      }
+      this.attemptSaved = true;
+      if (saveButton) saveButton.disabled = true;
       if (status) status.textContent = `${attempt.score} / 30 saved.`;
     },
 
@@ -372,6 +387,7 @@
       this.currentSetIndex = (this.currentSetIndex + 1) % this.practiceSets.length;
       this.selectedTaskIndex = null;
       this.selectedTextType = '';
+      this.attemptSaved = false;
       this.render();
       document.getElementById('english-b-paper1-practice-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     },

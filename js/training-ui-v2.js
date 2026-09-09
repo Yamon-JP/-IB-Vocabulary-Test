@@ -34,6 +34,24 @@
       return style.display !== 'none' && style.visibility !== 'hidden';
     },
 
+    activeFullMock() {
+      return [
+        window.BiologyPaper1FullMock,
+        window.BiologyPaper2FullMock,
+        window.EssPaper1FullMock,
+        window.EssPaper2FullMock,
+        window.MathAISLFullMock
+      ].find(module => Boolean(module?.active)) || null;
+    },
+
+    confirmFullMockExit() {
+      const module = this.activeFullMock();
+      if (!module) return true;
+      if (!window.confirm('End the current Full Mock? Unsaved answers will be lost.')) return false;
+      if (typeof module.stop === 'function') module.stop();
+      return true;
+    },
+
     isFullMock() {
       const activeMock = [
         window.BiologyPaper1FullMock,
@@ -284,6 +302,13 @@
     installEventHandlers() {
       if (this.eventHandlersInstalled) return;
       const handler = event => {
+        const practiceBack = event.target?.closest?.('#practice-page .back-button');
+        const subjectChoice = event.target?.closest?.('#home-page .subject-card');
+        if ((practiceBack || subjectChoice) && !this.confirmFullMockExit()) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          return;
+        }
         if (event.target?.closest?.('#selection-page')) this.scheduleRender();
       };
       document.addEventListener('click', handler, true);
