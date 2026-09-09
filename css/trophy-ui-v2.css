@@ -1,0 +1,840 @@
+#achievements-page.trophy-ui-v2-page > .trophy-room-header,
+#achievements-page.trophy-ui-v2-page > .trophy-rank-card,
+#achievements-page.trophy-ui-v2-page > .trophy-section {
+  display: none !important;
+}
+
+#trophy-ui-v2-root {
+  display: grid;
+  gap: 14px;
+  padding-bottom: 28px;
+}
+
+.trophy-v2-hero {
+  display: grid;
+  gap: 14px;
+}
+
+.trophy-v2-hero-copy h2 {
+  margin: 4px 0 6px;
+  font-size: clamp(1.6rem, 3vw, 2.05rem);
+  letter-spacing: -.035em;
+}
+
+.trophy-v2-hero-copy p:last-child {
+  margin: 0;
+  color: #667085;
+}
+
+.trophy-v2-rank-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(150px, 190px);
+  align-items: center;
+  gap: 15px;
+  padding: 18px;
+  border: 1px solid #dedbf9;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #f5f3ff, #fff 66%);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, .05);
+}
+
+.trophy-v2-rank-icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 19px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #e6e3fb;
+  font-size: 1.95rem;
+}
+
+.trophy-v2-rank-copy {
+  min-width: 0;
+}
+
+.trophy-v2-rank-copy > span,
+.trophy-v2-rank-copy > strong,
+.trophy-v2-rank-copy > small {
+  display: block;
+}
+
+.trophy-v2-rank-copy > span {
+  color: #7c3aed;
+  font-size: .65rem;
+  font-weight: 950;
+  letter-spacing: .08em;
+}
+
+.trophy-v2-rank-copy > strong {
+  margin-top: 3px;
+  color: #1f2937;
+  font-size: 1.25rem;
+}
+
+.trophy-v2-rank-copy > small {
+  margin-top: 3px;
+  color: #667085;
+  font-size: .76rem;
+  line-height: 1.4;
+}
+
+.trophy-v2-collection-score {
+  min-width: 0;
+  text-align: right;
+}
+
+.trophy-v2-collection-score > strong,
+.trophy-v2-collection-score > span,
+.trophy-v2-collection-score > small {
+  display: block;
+}
+
+.trophy-v2-collection-score > strong {
+  color: #1f2937;
+  font-size: 1.22rem;
+}
+
+.trophy-v2-collection-score > span,
+.trophy-v2-collection-score > small {
+  color: #667085;
+  font-size: .68rem;
+  font-weight: 800;
+}
+
+.trophy-v2-summary-track,
+.trophy-v2-progress-track {
+  overflow: hidden;
+  width: 100%;
+  height: 7px;
+  border-radius: 999px;
+  background: #e8edf4;
+}
+
+.trophy-v2-summary-track {
+  margin: 8px 0 6px;
+}
+
+.trophy-v2-summary-track > span,
+.trophy-v2-progress-track > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+  transition: width .25s ease;
+}
+
+.trophy-v2-filters {
+  position: sticky;
+  top: 8px;
+  z-index: 11;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .95);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, .06);
+  backdrop-filter: blur(10px);
+}
+
+.trophy-v2-filters button {
+  min-height: 42px;
+  padding: 8px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: #667085;
+  font-size: .72rem;
+  font-weight: 900;
+}
+
+.trophy-v2-filters button.active {
+  color: #6d28d9;
+  background: #f3e8ff;
+  box-shadow: inset 0 0 0 1px #ddd6fe;
+}
+
+.trophy-v2-panel {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #e6e9ef;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, .045);
+}
+
+.trophy-v2-panel[hidden] {
+  display: none !important;
+}
+
+.trophy-v2-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 13px;
+}
+
+.trophy-v2-section-heading h3 {
+  margin: 2px 0 0;
+  color: #1f2937;
+}
+
+.trophy-v2-section-heading > span {
+  color: #98a2b3;
+  font-size: .7rem;
+  font-weight: 750;
+}
+
+.trophy-v2-next-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.trophy-v2-next-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 6px 10px;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #ebeef3;
+  border-radius: 15px;
+  background: #fcfcfd;
+}
+
+.trophy-v2-next-icon {
+  display: grid;
+  place-items: center;
+  grid-row: 1;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #f2f4f7;
+}
+
+.trophy-v2-next-copy {
+  min-width: 0;
+}
+
+.trophy-v2-next-copy > span,
+.trophy-v2-next-copy > strong,
+.trophy-v2-next-copy > small {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.trophy-v2-next-copy > span {
+  color: #7c3aed;
+  font-size: .59rem;
+  font-weight: 950;
+  letter-spacing: .06em;
+}
+
+.trophy-v2-next-copy > strong {
+  margin-top: 2px;
+  color: #344054;
+  font-size: .84rem;
+}
+
+.trophy-v2-next-copy > small {
+  margin-top: 2px;
+  color: #98a2b3;
+  font-size: .65rem;
+}
+
+.trophy-v2-next-metric {
+  text-align: right;
+}
+
+.trophy-v2-next-metric strong,
+.trophy-v2-next-metric small {
+  display: block;
+}
+
+.trophy-v2-next-metric strong {
+  color: #6d28d9;
+  font-size: .95rem;
+}
+
+.trophy-v2-next-metric small {
+  margin-top: 2px;
+  color: #98a2b3;
+  font-size: .62rem;
+}
+
+.trophy-v2-next-card > .trophy-v2-progress-track {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin-top: 3px;
+}
+
+.trophy-v2-global-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.trophy-v2-global-card {
+  min-width: 0;
+  border: 1px solid #ebeef3;
+  border-radius: 15px;
+  background: #fbfcfe;
+  overflow: hidden;
+}
+
+.trophy-v2-global-card.unlocked {
+  border-color: #edd187;
+  background: linear-gradient(145deg, #fffdf7, #fff8e7);
+}
+
+.trophy-v2-global-card > summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+  min-height: 76px;
+  padding: 11px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.trophy-v2-global-card > summary::-webkit-details-marker,
+.trophy-v2-chapter-row > summary::-webkit-details-marker,
+.trophy-v2-exam-milestone > summary::-webkit-details-marker {
+  display: none;
+}
+
+.trophy-v2-card-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: #f2f4f7;
+}
+
+.trophy-v2-global-card.unlocked .trophy-v2-card-icon {
+  background: #fff1bf;
+}
+
+.trophy-v2-card-copy {
+  min-width: 0;
+}
+
+.trophy-v2-card-copy strong,
+.trophy-v2-card-copy small {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.trophy-v2-card-copy strong {
+  color: #344054;
+  font-size: .79rem;
+  line-height: 1.3;
+}
+
+.trophy-v2-card-copy small {
+  margin-top: 3px;
+  color: #98a2b3;
+  font-size: .63rem;
+  font-weight: 750;
+}
+
+.trophy-v2-global-card.unlocked .trophy-v2-card-copy small {
+  color: #a16207;
+}
+
+.trophy-v2-card-chevron {
+  color: #98a2b3;
+  transition: transform .2s ease;
+}
+
+.trophy-v2-global-card[open] .trophy-v2-card-chevron,
+.trophy-v2-chapter-row[open] .trophy-v2-card-chevron,
+.trophy-v2-exam-milestone[open] .trophy-v2-card-chevron {
+  transform: rotate(180deg);
+}
+
+.trophy-v2-card-detail {
+  padding: 0 11px 12px;
+  border-top: 1px solid rgba(229, 231, 235, .7);
+}
+
+.trophy-v2-card-detail p {
+  margin: 10px 0 8px;
+  color: #667085;
+  font-size: .7rem;
+  line-height: 1.45;
+}
+
+.trophy-v2-card-detail small {
+  display: block;
+  margin-top: 6px;
+  color: #98a2b3;
+  font-size: .64rem;
+  font-weight: 750;
+}
+
+.trophy-v2-exam-panel {
+  border-color: #dbeafe;
+  background: linear-gradient(145deg, #f8fbff, #fff 58%);
+}
+
+#trophy-v2-exam-content {
+  display: grid;
+  gap: 13px;
+}
+
+.trophy-v2-exam-global,
+.trophy-v2-exam-subject-card {
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #e1eaf6;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .9);
+}
+
+.trophy-v2-exam-subheading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+
+.trophy-v2-exam-subheading strong,
+.trophy-v2-exam-subheading small {
+  display: block;
+}
+
+.trophy-v2-exam-subheading strong {
+  color: #1e3a5f;
+  font-size: .8rem;
+}
+
+.trophy-v2-exam-subheading small,
+.trophy-v2-exam-subheading > span {
+  color: #64748b;
+  font-size: .64rem;
+  font-weight: 800;
+}
+
+.trophy-v2-exam-subheading small {
+  margin-top: 2px;
+}
+
+.trophy-v2-exam-global-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.trophy-v2-exam-subject-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.trophy-v2-exam-subject-milestones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.trophy-v2-exam-milestone {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e3eaf3;
+  border-radius: 13px;
+  background: #fbfdff;
+}
+
+.trophy-v2-exam-milestone.unlocked {
+  border-color: #b9d8ff;
+  background: #f2f8ff;
+}
+
+.trophy-v2-exam-milestone > summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 7px;
+  min-height: 58px;
+  padding: 9px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.trophy-v2-exam-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: #edf2f7;
+  font-size: .76rem;
+}
+
+.trophy-v2-exam-milestone.unlocked .trophy-v2-exam-icon {
+  background: #dbeafe;
+}
+
+.trophy-v2-exam-copy {
+  min-width: 0;
+}
+
+.trophy-v2-exam-copy strong,
+.trophy-v2-exam-copy small {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.trophy-v2-exam-copy strong {
+  color: #334155;
+  font-size: .72rem;
+  line-height: 1.3;
+}
+
+.trophy-v2-exam-copy small {
+  margin-top: 2px;
+  color: #789;
+  font-size: .59rem;
+  font-weight: 800;
+}
+
+.trophy-v2-exam-milestone.unlocked .trophy-v2-exam-copy small {
+  color: #2563eb;
+}
+
+.trophy-v2-exam-detail {
+  padding: 0 9px 10px;
+  border-top: 1px solid #edf2f7;
+}
+
+.trophy-v2-exam-detail p {
+  margin: 8px 0 7px;
+  color: #64748b;
+  font-size: .64rem;
+  line-height: 1.45;
+}
+
+.trophy-v2-exam-detail small {
+  display: block;
+  margin-top: 5px;
+  color: #789;
+  font-size: .59rem;
+  font-weight: 800;
+}
+
+.trophy-v2-exam-milestone .trophy-v2-progress-track > span {
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+}
+
+.trophy-v2-subject-tabs {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  padding: 2px 1px 10px;
+  scrollbar-width: thin;
+}
+
+.trophy-v2-subject-tabs button {
+  flex: 0 0 auto;
+  min-height: 38px;
+  padding: 7px 12px;
+  border: 1px solid #e3e7ee;
+  border-radius: 999px;
+  background: #fff;
+  color: #667085;
+  font-size: .72rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.trophy-v2-subject-tabs button.active {
+  border-color: #c4b5fd;
+  background: #f5f3ff;
+  color: #6d28d9;
+}
+
+.trophy-v2-chapter-list {
+  display: grid;
+  gap: 7px;
+}
+
+.trophy-v2-chapter-row {
+  border: 1px solid #ebeef3;
+  border-radius: 15px;
+  background: #fcfcfd;
+  overflow: hidden;
+}
+
+.trophy-v2-chapter-row > summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 62px;
+  padding: 10px 12px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.trophy-v2-chapter-copy {
+  min-width: 0;
+}
+
+.trophy-v2-chapter-copy strong,
+.trophy-v2-chapter-copy small {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.trophy-v2-chapter-copy strong {
+  color: #344054;
+  font-size: .8rem;
+}
+
+.trophy-v2-chapter-copy small {
+  margin-top: 2px;
+  color: #98a2b3;
+  font-size: .62rem;
+}
+
+.trophy-v2-chapter-icons {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.trophy-v2-chapter-icons span {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  font-size: .72rem;
+}
+
+.trophy-v2-chapter-icons span.unlocked {
+  background: #fff7d6;
+}
+
+.trophy-v2-chapter-icons span.locked {
+  background: #f2f4f7;
+  opacity: .76;
+}
+
+.trophy-v2-chapter-metric {
+  min-width: 50px;
+  text-align: right;
+}
+
+.trophy-v2-chapter-metric strong,
+.trophy-v2-chapter-metric small {
+  display: block;
+}
+
+.trophy-v2-chapter-metric strong {
+  color: #344054;
+  font-size: .75rem;
+}
+
+.trophy-v2-chapter-metric small {
+  margin-top: 2px;
+  color: #7c3aed;
+  font-size: .67rem;
+  font-weight: 900;
+}
+
+.trophy-v2-chapter-detail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  padding: 10px 12px 12px;
+  border-top: 1px solid #edf0f4;
+  background: #fff;
+}
+
+.trophy-v2-milestone {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 9px;
+  border: 1px solid #edf0f4;
+  border-radius: 12px;
+  background: #fbfcfe;
+}
+
+.trophy-v2-milestone.unlocked {
+  border-color: #f1d58b;
+  background: #fffaf0;
+}
+
+.trophy-v2-milestone > div {
+  min-width: 0;
+}
+
+.trophy-v2-milestone > div strong,
+.trophy-v2-milestone > div small {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.trophy-v2-milestone > div strong {
+  color: #344054;
+  font-size: .72rem;
+}
+
+.trophy-v2-milestone > div small {
+  margin-top: 2px;
+  color: #98a2b3;
+  font-size: .58rem;
+  line-height: 1.35;
+}
+
+.trophy-v2-milestone > strong {
+  color: #7c3aed;
+  font-size: .65rem;
+}
+
+.trophy-v2-milestone.unlocked > strong {
+  color: #a16207;
+}
+
+.trophy-v2-empty {
+  grid-column: 1 / -1;
+  padding: 14px;
+  border: 1px dashed #d8dde6;
+  border-radius: 14px;
+  background: #fbfcfe;
+  color: #667085;
+  font-size: .76rem;
+  line-height: 1.5;
+}
+
+.trophy-v2-empty-inline {
+  color: #98a2b3;
+  font-size: .72rem;
+}
+
+@media (max-width: 760px) {
+  .trophy-v2-rank-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .trophy-v2-collection-score {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .trophy-v2-next-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trophy-v2-global-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trophy-v2-exam-subject-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .trophy-v2-panel {
+    padding: 14px;
+    border-radius: 17px;
+  }
+
+  .trophy-v2-filters {
+    top: 5px;
+    gap: 4px;
+    padding: 5px;
+  }
+
+  .trophy-v2-filters button {
+    min-height: 39px;
+    padding: 6px 2px;
+    font-size: .58rem;
+  }
+
+  .trophy-v2-section-heading {
+    display: grid;
+    gap: 5px;
+  }
+
+  .trophy-v2-section-heading > span {
+    justify-self: start;
+  }
+
+  .trophy-v2-global-card > summary {
+    min-height: 70px;
+    padding: 9px;
+  }
+
+  .trophy-v2-exam-subject-milestones {
+    grid-template-columns: 1fr;
+  }
+
+  .trophy-v2-exam-subheading {
+    align-items: flex-start;
+  }
+
+  .trophy-v2-chapter-row > summary {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 7px;
+  }
+
+  .trophy-v2-card-chevron {
+    display: none;
+  }
+
+  .trophy-v2-chapter-icons span {
+    width: 21px;
+    height: 21px;
+    font-size: .64rem;
+  }
+
+  .trophy-v2-chapter-detail {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 390px) {
+  .trophy-v2-rank-icon {
+    width: 54px;
+    height: 54px;
+    font-size: 1.6rem;
+  }
+
+  .trophy-v2-global-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trophy-v2-exam-global-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trophy-v2-chapter-icons {
+    gap: 2px;
+  }
+
+  .trophy-v2-chapter-icons span {
+    width: 19px;
+    height: 19px;
+    font-size: .58rem;
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "subjects": {
+    "English B HL": [
+      "data/vocabulary/english-b/chapter-1.json",
+      "data/vocabulary/english-b/chapter-2.json",
+      "data/vocabulary/english-b/chapter-3.json",
+      "data/vocabulary/english-b/chapter-4.json",
+      "data/vocabulary/english-b/chapter-5.json"
+    ],
+    "Biology SL": [
+      "data/vocabulary/biology/a1-molecules.json",
+      "data/vocabulary/biology/a2-cells.json",
+      "data/vocabulary/biology/a3-organisms.json",
+      "data/vocabulary/biology/a4-ecosystems.json",
+      "data/vocabulary/biology/b1-molecules.json",
+      "data/vocabulary/biology/b2-cells.json",
+      "data/vocabulary/biology/b3-organisms.json",
+      "data/vocabulary/biology/b4-ecosystems.json",
+      "data/vocabulary/biology/c1-molecules.json",
+      "data/vocabulary/biology/c2-cells.json",
+      "data/vocabulary/biology/c3-organisms.json",
+      "data/vocabulary/biology/c4-ecosystems.json",
+      "data/vocabulary/biology/d1-molecules.json",
+      "data/vocabulary/biology/d2-cells.json",
+      "data/vocabulary/biology/d3-organisms.json",
+      "data/vocabulary/biology/d4-ecosystems.json"
+    ],
+    "ESS HL": [
+      "data/vocabulary/ess/topic-1.json",
+      "data/vocabulary/ess/topic-2.json",
+      "data/vocabulary/ess/topic-3.json",
+      "data/vocabulary/ess/topic-4.json",
+      "data/vocabulary/ess/topic-5.json",
+      "data/vocabulary/ess/topic-6.json",
+      "data/vocabulary/ess/topic-7.json",
+      "data/vocabulary/ess/topic-8.json",
+      "data/vocabulary/ess/hl-environmental-law.json",
+      "data/vocabulary/ess/hl-environmental-economics.json",
+      "data/vocabulary/ess/hl-environmental-ethics.json"
+    ]
+  }
+}

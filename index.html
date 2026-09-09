@@ -1,279 +1,342 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>IB Master Trainer Beta 2</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f6fb">
+  <title>IB Master Trainer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/progress-ui-v2.css">
+  <link rel="stylesheet" href="css/navigation-ui-v2.css">
+  <link rel="stylesheet" href="css/home-ui-v2.css">
+  <link rel="stylesheet" href="css/trophy-ui-v2.css">
+  <link rel="stylesheet" href="css/training-ui-v2.css">
 </head>
-
-
 <body>
-
-
-<header>
-
-<h1>🧬 IB Master Trainer</h1>
-
-<p>
-IB English B HL / Biology SL Beta 2
-</p>
-
-
-<select id="subject" onchange="changeSubject()">
-
-<option value="english">
-English B HL
-</option>
-
-<option value="biology">
-Biology SL
-</option>
-
-</select>
-
-
-</header>
-
-
-
-<main>
-
-
-<!-- Biology Achievement Area -->
-
-<section id="biology-dashboard" class="card-area">
-
-
-<h2>
-🧪 Biology Progress
-</h2>
-
-
-<div id="topic-buttons">
-
-<button onclick="startAllTopics()">
-All Topics
-</button>
-
-
-<button onclick="startWeakWords()">
-🔥 Weak Words
-</button>
-
-
-<button onclick="startWrongAnswers()">
-❌ Wrong Answers
-</button>
-
-
-</div>
-
-
-
-<h3>
-Topic Achievement
-</h3>
-
-
-<div id="achievement-list">
-
-Loading...
-
-</div>
-
-
-<div id="achievement-message">
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section class="card-area">
-
-
-<h2 id="mode">
-English B HL
-</h2>
-
-
-<div id="card" class="card">
-
-
-<div id="word">
-Loading...
-</div>
-
-
-<div id="meaning" class="hidden">
-
-</div>
-
-
-</div>
-
-
-
-<button onclick="flipCard()">
-
-Definition / Meaning 表示
-
-</button>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="test-area">
-
-
-<h2>
-Paper 1 Practice
-</h2>
-
-
-
-<p id="question">
-
-問題読み込み中...
-
-</p>
-
-
-
-<div id="choices">
-
-</div>
-
-
-
-<p id="result">
-
-</p>
-
-
-
-<button onclick="nextQuestion()">
-
-Next Question
-
-</button>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="definition-area">
-
-
-<h2>
-Definition Writing Practice
-</h2>
-
-
-
-<p id="definition-question">
-
-</p>
-
-
-
-<button onclick="showAnswer()">
-
-Show Model Answer
-
-</button>
-
-
-
-<p id="definition-answer">
-
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="status">
-
-
-<h2>
-Progress
-</h2>
-
-
-
-<p>
-
-Correct:
-<span id="correct">
-0
-</span>
-
-</p>
-
-
-
-<p>
-
-Questions:
-<span id="total">
-0
-</span>
-
-</p>
-
-
-
-<p>
-
-Accuracy:
-<span id="accuracy">
-0%
-</span>
-
-</p>
-
-
-</section>
-
-
-
+<main id="app">
+  <header class="hero">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">IMT</div>
+      <div class="brand-copy">
+        <div class="brand-title-row">
+          <h1>IB Master Trainer</h1>
+          <span class="version-pill">v1.0</span>
+        </div>
+        <p>Daily training for stronger IB performance.</p>
+      </div>
+    </div>
+    <button type="button" class="icon-button settings-shortcut" onclick="Pages.show('settings')" aria-label="Open settings" title="Settings">⚙</button>
+  </header>
+
+  <section id="home-page" class="page">
+    <section class="progress-panel home-dashboard">
+      <div class="mission-topline">
+        <div>
+          <p class="eyebrow light-eyebrow">TODAY'S MISSION</p>
+          <h2>Keep the momentum going.</h2>
+        </div>
+        <div class="streak-pill">🔥 <strong id="streak">0</strong><span>day streak</span></div>
+      </div>
+
+      <div class="mission-deck" aria-label="Daily missions">
+        <div class="mission-deck-heading">
+          <div>
+            <strong id="daily-missions-summary">0 / 3 complete</strong>
+            <span id="daily-mission-message">Three ways to build momentum today.</span>
+          </div>
+          <span class="mission-reset-note">Resets daily</span>
+        </div>
+
+        <div class="daily-mission-grid">
+          <article id="daily-mission-questions" class="daily-mission-card">
+            <div class="daily-mission-icon" aria-hidden="true">⚡</div>
+            <div class="daily-mission-copy">
+              <div class="daily-mission-title"><strong>100 Questions</strong><span id="daily-progress">0/100</span></div>
+              <small id="daily-questions-status">Build volume</small>
+              <div class="daily-mission-track"><span id="daily-questions-bar"></span></div>
+            </div>
+          </article>
+
+          <article id="daily-mission-correct" class="daily-mission-card">
+            <div class="daily-mission-icon" aria-hidden="true">🎯</div>
+            <div class="daily-mission-copy">
+              <div class="daily-mission-title"><strong>75 Correct</strong><span id="daily-correct-progress">0/75</span></div>
+              <small id="daily-correct-status">Build accuracy</small>
+              <div class="daily-mission-track"><span id="daily-correct-bar"></span></div>
+            </div>
+          </article>
+
+          <article id="daily-mission-streak" class="daily-mission-card">
+            <div class="daily-mission-icon" aria-hidden="true">🔥</div>
+            <div class="daily-mission-copy">
+              <div class="daily-mission-title"><strong>10 in a Row</strong><span id="daily-streak-progress">0/10</span></div>
+              <small id="daily-streak-status">Build focus</small>
+              <div class="daily-mission-track"><span id="daily-streak-bar"></span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="home-stat-grid" aria-label="Today's progress">
+        <div class="home-stat">
+          <span>Questions</span>
+          <strong id="questions">0</strong>
+        </div>
+        <div class="home-stat">
+          <span>Accuracy</span>
+          <strong id="accuracy">0%</strong>
+        </div>
+        <div class="home-stat">
+          <span>Total XP</span>
+          <strong id="xp">0</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="subject-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CHOOSE YOUR FOCUS</p>
+          <h2>Subjects</h2>
+        </div>
+        <p class="section-note">Pick a subject, choose your chapters, and start a focused session.</p>
+      </div>
+      <div id="subject-list" class="card-grid"></div>
+    </section>
+  </section>
+
+  <section id="selection-page" class="page">
+    <section class="selection-panel">
+      <div class="selection-heading">
+        <div>
+          <p class="eyebrow">STUDY SETUP</p>
+          <p class="muted compact-label">Selected Subject</p>
+          <h2 id="selection-subject">Subject</h2>
+        </div>
+        <span class="setup-badge">Focused session</span>
+      </div>
+
+      <div class="practice-type-control">
+        <h3>Practice Type</h3>
+        <div class="practice-type-grid">
+          <button type="button" id="type-vocabulary" class="practice-type-card active" onclick="App.setPracticeType('vocabulary')">
+            <span class="practice-type-icon" aria-hidden="true">Aa</span>
+            <span>
+              <strong>Vocabulary</strong>
+              <small>Definitions, recall and 4-choice practice</small>
+            </span>
+          </button>
+          <button type="button" id="type-paper2" class="practice-type-card" onclick="App.setPracticeType('paper2')">
+            <span class="practice-type-icon" aria-hidden="true">✎</span>
+            <span>
+              <strong>Paper 2 Practice</strong>
+              <small>IB-style written answers and markscheme review</small>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div id="paper2-section-control" class="paper1-section-control" style="display:none">
+        <h3>Paper 2 Section</h3>
+        <div class="paper1-section-grid">
+          <button type="button" id="section-paper2a" class="paper1-section-card active" onclick="App.setPaper2Section('paper2a')">
+            <strong>Section A</strong>
+            <small>Data-based and structured short-answer practice</small>
+          </button>
+          <button type="button" id="section-paper2b" class="paper1-section-card" onclick="App.setPaper2Section('paper2b')">
+            <strong>Section B</strong>
+            <small>Longer written responses and integrated explanations</small>
+          </button>
+        </div>
+      </div>
+
+      <div class="scope-control">
+        <h3>Practice Scope</h3>
+        <div class="scope-options">
+          <label>
+            <input type="radio" name="practice-scope" value="all" checked onchange="App.setPracticeScope('all')">
+            <span><strong>All Chapters</strong><small>Mix the full subject</small></span>
+          </label>
+          <label>
+            <input type="radio" name="practice-scope" value="selected" onchange="App.setPracticeScope('selected')">
+            <span><strong>Selected Chapters</strong><small>Target specific areas</small></span>
+          </label>
+        </div>
+      </div>
+
+      <div id="chapter-options" class="chapter-options" style="display:none">
+        <div class="chapter-options-heading">
+          <h3>Select Chapters</h3>
+          <span class="muted">Multiple selection supported</span>
+        </div>
+        <div id="chapter-list"></div>
+      </div>
+
+      <div class="selection-actions">
+        <button type="button" class="secondary-action" onclick="Pages.show('home')">← Back</button>
+        <button type="button" class="primary-action" onclick="App.startPractice()">Start Practice →</button>
+      </div>
+    </section>
+  </section>
+
+  <section id="practice-page" class="page">
+    <div class="practice-header">
+      <button type="button" class="back-button" onclick="App.backToSelection()">← Back</button>
+      <div class="practice-heading-copy">
+        <p class="eyebrow">FOCUS MODE</p>
+        <h2>Practice</h2>
+        <p class="practice-scope-label"><span id="selection-subject-practice"></span></p>
+      </div>
+    </div>
+
+    <div class="practice-mini-stats" aria-label="Overall practice stats">
+      <div><span>Questions</span><strong id="practice-questions">0</strong></div>
+      <div><span>Accuracy</span><strong id="practice-accuracy">0%</strong></div>
+      <div><span>XP</span><strong id="practice-xp">0</strong></div>
+    </div>
+
+    <section id="vocabulary-practice-panel">
+      <section id="flashcard">
+        <div class="prompt-label">CURRENT PROMPT</div>
+        <h2 id="flashcard-word"></h2>
+        <div id="flashcard-meaning"></div>
+        <button type="button" id="flashcard-audio" class="audio-button">🔊 Pronounce</button>
+      </section>
+
+      <section id="quiz-area">
+        <div id="quiz-progress" class="quiz-progress" aria-live="polite">
+          <strong id="quiz-progress-question">Question 1 / 1</strong>
+          <span id="quiz-progress-chapter"></span>
+        </div>
+        <p id="quiz-question">Loading Quiz...</p>
+        <div id="quiz-choices"></div>
+        <div id="quiz-actions">
+          <button type="button" onclick="Quiz.submit()">Check Answer</button>
+          <button type="button" onclick="Quiz.nextQuestion()">Next Question →</button>
+        </div>
+        <p id="quiz-result"></p>
+        <div id="quiz-mode-control">
+          <h4>Question Format</h4>
+          <div class="quiz-mode-options">
+            <label><input type="radio" name="quiz-mode" value="word-definition" checked><span>Term → Definition</span></label>
+            <label><input type="radio" name="quiz-mode" value="definition-word"><span>Definition → Term</span></label>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section id="paper2-practice-panel" style="display:none">
+      <div class="paper2-header">
+        <span id="paper2-section-title">Paper 2 Practice</span>
+        <span>Marks: <strong id="paper2-marks">—</strong></span>
+      </div>
+      <div class="paper2-meta">
+        <span>Command term: <strong id="paper2-command">—</strong></span>
+      </div>
+      <section id="paper2-question" class="paper2-question-card"></section>
+      <label class="paper2-answer-label" for="paper2-answer">Your Answer</label>
+      <textarea id="paper2-answer" rows="10" placeholder="Write your answer here..."></textarea>
+      <div class="paper2-actions">
+        <button type="button" onclick="Paper2.submit()">Check Answer</button>
+        <button type="button" onclick="Paper2.next()">Next Question →</button>
+      </div>
+      <section id="paper2-feedback"></section>
+    </section>
+
+    <section id="practice-achievements">
+      <div class="section-heading compact-section-heading">
+        <div>
+          <p class="eyebrow">MOMENTUM</p>
+          <h3>Achievement Progress</h3>
+        </div>
+        <span class="muted">Keep going</span>
+      </div>
+      <div id="practice-achievement-list"></div>
+    </section>
+  </section>
+
+  <section id="statistics-page" class="page">
+    <div class="page-heading">
+      <p class="eyebrow">LEARNING DATA</p>
+      <h2>Progress</h2>
+      <p class="muted">See where your accuracy is growing and which chapters need more practice.</p>
+    </div>
+    <section id="chapter-progress-panel" class="progress-panel chapter-progress-panel">
+      <h3>Chapter Progress</h3>
+      <div id="chapter-progress-list">
+        <p class="muted">No chapter progress yet.</p>
+      </div>
+    </section>
+  </section>
+
+  <section id="achievements-page" class="page">
+    <div class="trophy-room-header">
+      <div>
+        <p class="eyebrow">ACHIEVEMENT COLLECTION</p>
+        <h2>🏆 Trophy Room</h2>
+        <p class="muted">Your learning achievements, collected chapter by chapter.</p>
+      </div>
+      <div class="trophy-summary" id="trophy-summary">
+        <strong id="trophy-unlocked-count">0 / 0</strong>
+        <span>Unlocked</span>
+        <div class="trophy-summary-track"><span id="trophy-summary-bar"></span></div>
+        <small id="trophy-summary-percent">0%</small>
+      </div>
+    </div>
+    <section class="trophy-rank-card">
+      <div class="trophy-rank-icon" id="trophy-rank-icon">🌱</div>
+      <div>
+        <span class="eyebrow">CURRENT RANK</span>
+        <h3 id="trophy-rank-title">Rookie</h3>
+        <p id="trophy-rank-description">Start practicing to build your collection.</p>
+      </div>
+    </section>
+    <section class="trophy-section">
+      <h3>Global Achievements</h3>
+      <div id="achievement-list" class="trophy-grid"></div>
+    </section>
+    <section class="trophy-section">
+      <h3>Chapter Achievements</h3>
+      <div id="trophy-subject-tabs" class="trophy-subject-tabs" role="tablist" aria-label="Trophy Room subjects"></div>
+      <div id="trophy-chapter-list"></div>
+    </section>
+  </section>
+
+  <section id="settings-page" class="page">
+    <div class="page-heading">
+      <p class="eyebrow">PREFERENCES</p>
+      <h2>Settings</h2>
+      <p class="muted">App preferences will live here as IB Master Trainer expands.</p>
+    </div>
+    <section class="settings-card">
+      <div class="settings-icon" aria-hidden="true">⚙</div>
+      <div>
+        <h3>Simple by design</h3>
+        <p>For Version 1.0, the study experience stays focused on practice, progress and achievements.</p>
+      </div>
+    </section>
+  </section>
+
+  <nav class="navigation bottom-nav" aria-label="Main navigation">
+    <button type="button" onclick="Pages.show('home')" aria-label="Home"><span class="nav-icon">⌂</span><span>Home</span></button>
+    <button type="button" onclick="App.openPractice()" aria-label="Study"><span class="nav-icon">▶</span><span>Study</span></button>
+    <button type="button" onclick="Pages.show('statistics')" aria-label="Progress"><span class="nav-icon">▥</span><span>Progress</span></button>
+    <button type="button" onclick="Pages.show('achievements')" aria-label="Trophies"><span class="nav-icon">🏆</span><span>Trophies</span></button>
+  </nav>
 </main>
 
-
-
-
-
-<script src="script.js"></script>
-
-
+<script src="js/storage.js"></script>
+<script src="js/vocabulary.js"></script>
+<script src="js/achievements.js"></script>
+<script src="js/daily.js"></script>
+<script src="js/streak.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/flashcard.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/paper2.js"></script>
+<script src="js/pages.js"></script>
+<script src="js/app.js"></script>
 </body>
-
 </html>

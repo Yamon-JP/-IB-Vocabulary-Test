@@ -1,0 +1,86 @@
+/* UI Optimization Phase 1
+   Display-only refinements. Daily Mission, quiz logic, XP and achievements data are unchanged. */
+
+/* Vocabulary: visually merge the prompt and choices into one focused card
+   while preserving the existing DOM structure and answer flow. */
+#vocabulary-practice-panel {
+  margin-top: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--panel-bg);
+  box-shadow: var(--shadow-md);
+}
+
+#vocabulary-practice-panel #flashcard,
+#vocabulary-practice-panel #quiz-area {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+#vocabulary-practice-panel #flashcard {
+  min-height: 132px;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+#vocabulary-practice-panel #quiz-area {
+  padding: 16px 20px 20px;
+}
+
+#vocabulary-practice-panel #flashcard-meaning:empty {
+  display: none;
+}
+
+#vocabulary-practice-panel #quiz-question {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.4;
+  font-weight: 750;
+}
+
+#vocabulary-practice-panel #quiz-progress {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+/* Bottom navigation: clearly show the current area without changing routing. */
+.bottom-nav.navigation button.ui-nav-active {
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+  box-shadow: inset 0 0 0 1px #d8dcff;
+}
+
+.bottom-nav.navigation button.ui-nav-active .nav-icon {
+  transform: translateY(-1px);
+}
+
+/* Practice only shows the two closest achievement goals.
+   Trophy Room still keeps the full collection. */
+#practice-achievement-list .achievement-card[hidden] {
+  display: none !important;
+}
+
+#practice-achievements .compact-section-heading > .muted {
+  font-size: .76rem;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  #vocabulary-practice-panel #flashcard {
+    min-height: 118px;
+    padding: 15px 14px 12px;
+  }
+
+  #vocabulary-practice-panel #quiz-area {
+    padding: 13px 14px 14px;
+  }
+
+  #vocabulary-practice-panel #quiz-question {
+    font-size: .82rem;
+  }
+}

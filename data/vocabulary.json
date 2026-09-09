@@ -1,0 +1,110 @@
+[
+  {
+    "id": "ENG-C1-A",
+    "subject": "English B HL",
+    "chapter": "Chapter 1",
+    "word": "multicultural",
+    "definition": "including or relating to people from several different cultures",
+    "japanese": "多文化の",
+    "level": "HL"
+  },
+  {
+    "id": "ENG-C1-B",
+    "subject": "English B HL",
+    "chapter": "Chapter 1",
+    "word": "globalisation",
+    "definition": "the process by which people, businesses and cultures become more connected around the world",
+    "japanese": "グローバル化",
+    "level": "HL"
+  },
+  {
+    "id": "ENG-C1-C",
+    "subject": "English B HL",
+    "chapter": "Chapter 1",
+    "word": "worldly",
+    "definition": "experienced and knowledgeable about different countries and cultures",
+    "japanese": "世界の事情に通じた",
+    "level": "HL"
+  },
+  {
+    "id": "ENG-C1-D",
+    "subject": "English B HL",
+    "chapter": "Chapter 1",
+    "word": "association",
+    "definition": "a connection between a person, idea, place or thing and another idea or experience",
+    "japanese": "連想・関連",
+    "level": "HL"
+  },
+  {
+    "id": "ENG-C1-E",
+    "subject": "English B HL",
+    "chapter": "Chapter 1",
+    "word": "diverse",
+    "definition": "including people or things that are very different from one another",
+    "japanese": "多様な",
+    "level": "HL"
+  },
+  {
+    "id": "ENG-C1-F",
+    "subject": "English B HL",
+    "chapter": "Chapter 1",
+    "word": "stereotypes",
+    "definition": "fixed and oversimplified ideas about a particular type of person or group",
+    "japanese": "固定観念・ステレオタイプ",
+    "level": "HL"
+  },
+  {
+    "id": "ENG-C1-G",
+    "subject": "English B HL",
+    "chapter": "Chapter 1",
+    "word": "identity",
+    "definition": "the qualities and beliefs that make a person or group who they are",
+    "japanese": "アイデンティティ・自己認識",
+    "level": "HL"
+  },
+  {
+    "id": "ENG-C1-H",
+    "subject": "English B HL",
+    "chapter": "Chapter 1",
+    "word": "race",
+    "definition": "a category used to group people according to perceived physical or social characteristics",
+    "japanese": "人種",
+    "level": "HL"
+  },
+  {
+    "id": "ENG-C1-I",
+    "subject": "English B HL",
+    "chapter": "Chapter 1",
+    "word": "ritual",
+    "definition": "a repeated action or ceremony performed in a particular way",
+    "japanese": "儀式・慣習的行為",
+    "level": "HL"
+  },
+  {
+    "id": "ENG-C1-J",
+    "subject": "English B HL",
+    "chapter": "Chapter 1",
+    "word": "customs",
+    "definition": "traditional ways of behaving or doing things in a particular society",
+    "japanese": "習慣・風習",
+    "level": "HL"
+  },
+  {
+    "id": "ENG-C1-K",
+    "subject": "English B HL",
+    "chapter": "Chapter 1",
+    "word": "belief",
+    "definition": "an idea or opinion that a person accepts as true",
+    "japanese": "信念・信仰",
+    "level": "HL"
+  },
+  {
+    "id": "ENG-C1-L",
+    "subject": "English B HL",
+    "chapter": "Chapter 1",
+    "word": "values",
+    "definition": "principles or standards that guide what a person considers important or right",
+    "japanese": "価値観",
+    "level": "HL"
+  }
+]

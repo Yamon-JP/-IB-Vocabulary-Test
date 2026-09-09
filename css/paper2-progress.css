@@ -1,0 +1,387 @@
+.paper2-progress-panel,
+#chapter-progress-panel {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 18px;
+  overflow: hidden;
+}
+.paper2-progress-panel {
+  margin-top: 18px;
+}
+#chapter-progress-panel > h3 {
+  margin: 0 0 12px;
+}
+#chapter-progress-list,
+#paper2-progress-themes,
+#paper2-progress-recent,
+.paper2-progress-section,
+.paper2-progress-summary,
+.paper2-progress-heading,
+.final-exam-progress-tabs {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+#chapter-progress-panel .chapter-progress-subject,
+#chapter-progress-panel .chapter-progress-row {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+#chapter-progress-panel .chapter-progress-row span,
+#chapter-progress-panel .chapter-progress-row small {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.paper2-progress-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.paper2-progress-heading > div {
+  min-width: 0;
+}
+.paper2-progress-heading h3 {
+  margin: 2px 0 5px;
+}
+.paper2-progress-heading p:last-child {
+  margin-bottom: 0;
+  overflow-wrap: anywhere;
+}
+#paper2-progress-attempt-badge {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: .76rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.final-exam-progress-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.final-exam-progress-tab {
+  min-width: 0;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fbfcfe;
+  color: #667085;
+  font-size: .82rem;
+  font-weight: 850;
+}
+.final-exam-progress-tab.active {
+  border-color: #9f96ef;
+  background: #eef2ff;
+  color: #3730a3;
+  box-shadow: 0 6px 14px rgba(79, 70, 229, .08);
+}
+.paper2-progress-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.paper2-progress-stat {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fbfcfe;
+}
+.paper2-progress-stat span,
+.paper2-progress-stat strong {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.paper2-progress-stat span {
+  color: #667085;
+  font-size: .76rem;
+  font-weight: 700;
+}
+.paper2-progress-stat strong {
+  margin-top: 4px;
+  color: #344054;
+  font-size: 1.18rem;
+}
+.paper2-progress-section {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.paper2-progress-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  margin-bottom: 10px;
+}
+.paper2-progress-section-heading h4 {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.paper2-progress-section-heading span {
+  flex: 0 1 auto;
+  min-width: 0;
+  font-size: .75rem;
+  overflow-wrap: anywhere;
+}
+.final-exam-theme-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: #fff;
+  overflow: hidden;
+}
+.final-exam-theme-card:first-child {
+  margin-top: 0;
+}
+.final-exam-theme-card > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  padding: 13px 14px;
+  cursor: pointer;
+  list-style: none;
+  background: #fbfcfe;
+}
+.final-exam-theme-card > summary::-webkit-details-marker {
+  display: none;
+}
+.final-exam-theme-card > summary > div {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.final-exam-theme-card > summary strong,
+.final-exam-theme-card > summary small {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.final-exam-theme-card > summary strong {
+  color: #344054;
+  font-size: .92rem;
+}
+.final-exam-theme-card > summary small {
+  margin-top: 3px;
+  color: #667085;
+  font-size: .73rem;
+  line-height: 1.4;
+}
+.final-exam-theme-score {
+  flex: 0 0 auto;
+  max-width: 42%;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: .78rem;
+  font-weight: 900;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.final-exam-theme-score.empty,
+.final-exam-score-pill.empty {
+  background: #f2f4f7;
+  color: #667085;
+}
+.final-exam-unit-list {
+  padding: 0 14px 6px;
+}
+.final-exam-unit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 12px 0;
+  border-top: 1px solid #edf0f4;
+}
+.final-exam-unit-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.final-exam-unit-copy strong,
+.final-exam-unit-copy small {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.final-exam-unit-copy strong {
+  color: #344054;
+  font-size: .86rem;
+}
+.final-exam-unit-copy small {
+  margin-top: 3px;
+  color: #667085;
+  font-size: .72rem;
+  line-height: 1.4;
+}
+.final-exam-unit-metrics {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  flex: 0 0 auto;
+  min-width: 0;
+  max-width: 48%;
+}
+.final-exam-score-pill,
+.final-exam-coverage-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 900;
+  text-align: center;
+}
+.final-exam-score-pill {
+  background: #eef2ff;
+  color: #4338ca;
+}
+.final-exam-coverage-pill {
+  background: #ecfdf3;
+  color: #047857;
+}
+.paper2-recent-attempt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 12px 4px;
+  border-top: 1px solid #edf0f4;
+}
+.paper2-recent-attempt:first-child {
+  border-top: 0;
+}
+.paper2-recent-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+}
+.paper2-recent-main strong,
+.paper2-recent-main span,
+.paper2-recent-main small,
+.paper2-recent-score strong,
+.paper2-recent-score span {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.paper2-recent-main span,
+.paper2-recent-main small {
+  margin-top: 2px;
+  color: #667085;
+  font-size: .76rem;
+  line-height: 1.4;
+}
+.paper2-recent-score {
+  flex: 0 0 auto;
+  min-width: 0;
+  max-width: 42%;
+  text-align: right;
+}
+.paper2-recent-score strong {
+  color: #344054;
+}
+.paper2-recent-score span {
+  margin-top: 3px;
+  color: #667085;
+  font-size: .7rem;
+  font-weight: 800;
+}
+.paper2-progress-empty {
+  margin: 10px 0 2px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .paper2-progress-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .paper2-progress-panel,
+  #chapter-progress-panel {
+    padding: 14px;
+  }
+  .paper2-progress-heading {
+    flex-direction: column;
+    gap: 9px;
+  }
+  .final-exam-progress-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .paper2-progress-summary {
+    grid-template-columns: 1fr;
+  }
+  .paper2-progress-stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 12px;
+  }
+  .paper2-progress-stat strong {
+    margin-top: 0;
+    font-size: 1rem;
+    text-align: right;
+  }
+  .paper2-progress-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .final-exam-theme-card > summary {
+    align-items: flex-start;
+  }
+  .final-exam-theme-score {
+    max-width: 46%;
+  }
+  .final-exam-unit-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .final-exam-unit-metrics {
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+  .paper2-recent-attempt {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .paper2-recent-score {
+    max-width: 100%;
+    text-align: left;
+  }
+}

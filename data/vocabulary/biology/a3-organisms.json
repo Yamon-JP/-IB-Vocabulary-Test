@@ -1,0 +1,31 @@
+{
+  "subject": "Biology SL",
+  "theme": "Theme A: Unity and diversity",
+  "chapter": "A3 Organisms",
+  "chapterTitle": "Organisms",
+  "level": "SL",
+  "units": [
+    {
+      "unit": "A3.1 Diversity of organisms",
+      "words": [
+        {"id":"BIO-A3-1-001","word":"variation","priority":"core","theme":"Theme A: Unity and diversity","definition":"differences in characteristics among individuals of the same species","japanese":"変異・多様性","example":"Genetic and environmental factors both contribute to variation within a population."},
+        {"id":"BIO-A3-1-002","word":"species","priority":"core","theme":"Theme A: Unity and diversity","definition":"a group of organisms that share defining characteristics and can be distinguished from other such groups","japanese":"種","example":"A species is a fundamental unit used to describe biological diversity."},
+        {"id":"BIO-A3-1-003","word":"morphological species concept","priority":"core","theme":"Theme A: Unity and diversity","definition":"a way of defining species by differences in observable structural characteristics","japanese":"形態学的種概念","example":"The morphological species concept is useful when reproductive data are unavailable."},
+        {"id":"BIO-A3-1-004","word":"binomial nomenclature","priority":"core","theme":"Theme A: Unity and diversity","definition":"the system of naming each species with a two-part scientific name consisting of genus and specific epithet","japanese":"二名法","example":"In binomial nomenclature, Homo sapiens is the scientific name for humans."},
+        {"id":"BIO-A3-1-005","word":"genus","priority":"core","theme":"Theme A: Unity and diversity","definition":"a taxonomic group containing one or more closely related species","japanese":"属","example":"The genus Homo includes humans and several extinct relatives."},
+        {"id":"BIO-A3-1-006","word":"biological species concept","priority":"core","theme":"Theme A: Unity and diversity","definition":"the concept that a species consists of populations that can interbreed and produce fertile offspring","japanese":"生物学的種概念","example":"The biological species concept emphasizes reproductive compatibility."},
+        {"id":"BIO-A3-1-007","word":"fertile offspring","priority":"core","theme":"Theme A: Unity and diversity","definition":"offspring capable of reproducing and producing the next generation","japanese":"繁殖可能な子孫","example":"Members of the same biological species can usually produce fertile offspring."},
+        {"id":"BIO-A3-1-008","word":"population divergence","priority":"core","theme":"Theme A: Unity and diversity","definition":"the accumulation of differences between populations over time","japanese":"集団の分化","example":"Population divergence can increase when gene flow is reduced."},
+        {"id":"BIO-A3-1-009","word":"species boundary","priority":"core","theme":"Theme A: Unity and diversity","definition":"the biological or practical distinction separating one species from another","japanese":"種の境界","example":"Hybridization can make a species boundary difficult to define."},
+        {"id":"BIO-A3-1-010","word":"chromosome number","priority":"core","theme":"Theme A: Unity and diversity","definition":"the number of chromosomes present in a cell or species-specific chromosome set","japanese":"染色体数","example":"Humans have 46 chromosomes in most somatic cells."},
+        {"id":"BIO-A3-1-011","word":"karyotype","priority":"core","theme":"Theme A: Unity and diversity","definition":"the number and appearance of chromosomes characteristic of an individual or species","japanese":"核型","example":"A human karyotype normally contains 23 chromosome pairs."},
+        {"id":"BIO-A3-1-012","word":"karyogram","priority":"core","theme":"Theme A: Unity and diversity","definition":"an ordered image of chromosomes arranged in homologous pairs","japanese":"核型図","example":"A karyogram can reveal abnormalities in chromosome number."},
+        {"id":"BIO-A3-1-013","word":"centromere","priority":"core","theme":"Theme A: Unity and diversity","definition":"the chromosome region where sister chromatids are joined and spindle attachment occurs during division","japanese":"セントロメア","example":"The centromere is visible as a constricted region on a condensed chromosome."},
+        {"id":"BIO-A3-1-014","word":"genome","priority":"core","theme":"Theme A: Unity and diversity","definition":"the complete genetic material of an organism or cell","japanese":"ゲノム","example":"The human genome contains all of the DNA in a human cell."},
+        {"id":"BIO-A3-1-015","word":"genome size","priority":"core","theme":"Theme A: Unity and diversity","definition":"the total amount of DNA in one complete genome","japanese":"ゲノムサイズ","example":"Genome size varies greatly among species."},
+        {"id":"BIO-A3-1-016","word":"genomic variation","priority":"extended","theme":"Theme A: Unity and diversity","definition":"differences in DNA sequence or genome structure among individuals or populations","japanese":"ゲノム変異","example":"Genomic variation provides evidence about relatedness among populations."},
+        {"id":"BIO-A3-1-017","word":"whole-genome sequencing","priority":"extended","theme":"Theme A: Unity and diversity","definition":"determining the nucleotide sequence of nearly all DNA in an organism's genome","japanese":"全ゲノムシーケンシング","example":"Whole-genome sequencing can reveal genetic differences among individuals."}
+      ]
+    }
+  ]
+}

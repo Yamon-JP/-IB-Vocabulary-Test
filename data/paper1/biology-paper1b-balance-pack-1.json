@@ -1,0 +1,496 @@
+[
+  {
+    "id": "BIO-BAL1-P1B-A1-001",
+    "subject": "Biology SL",
+    "chapter": "A1 Molecules",
+    "unit": "A1.1 Water",
+    "primaryChapter": "A1 Molecules",
+    "primaryUnit": "A1.1 Water",
+    "requiredUnits": ["A1.1 Water"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "water-property-data-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Cooling of equal masses of two liquids",
+      "description": "Equal masses of water and liquid X were heated to 60 °C and allowed to cool in identical containers.",
+      "columns": ["Time (min)", "Water temperature (°C)", "Liquid X temperature (°C)"],
+      "rows": [[0,60,60],[5,54,49],[10,49,41],[15,45,35],[20,42,31]],
+      "note": "Room temperature was 22 °C."
+    },
+    "question": "Analyse the temperature data and explain how a property of water accounts for the pattern.",
+    "markscheme": [
+      "Water cools more slowly than liquid X over the 20-minute period.",
+      "After 20 minutes water is at 42 °C whereas liquid X is at 31 °C.",
+      "Water has a high specific heat capacity, so a relatively large amount of energy must be removed to lower its temperature.",
+      "Hydrogen bonding between water molecules contributes to the large energy requirement for temperature change.",
+      "The property helps water buffer temperature changes in organisms and aquatic environments."
+    ],
+    "markschemeJa": [
+      "20分間を通して、水は液体Xよりゆっくり冷えている。",
+      "20分後、水は42 °Cだが液体Xは31 °Cまで低下している。",
+      "水は比熱容量が大きく、温度を下げるには比較的多くのエネルギーを取り除く必要がある。",
+      "水分子間の水素結合が、温度変化に必要なエネルギーを大きくする一因である。",
+      "この性質により、生物体内や水域環境では急激な温度変化が緩和される。"
+    ],
+    "modelAnswer": "Water remained warmer than liquid X throughout the cooling period, showing that its temperature changed more slowly. Water has a high specific heat capacity because substantial energy is involved in changing the motion and interactions of hydrogen-bonded molecules. As a result, water can absorb or release relatively large amounts of heat with a smaller temperature change, helping stabilize biological temperatures.",
+    "modelAnswerJa": "水は冷却中ずっと液体Xより高い温度を保ち、温度変化が遅いことが分かります。水は比熱容量が大きく、水素結合で相互作用する分子の運動状態を変えるには比較的大きなエネルギーが必要です。そのため多くの熱を吸収・放出しても温度変化が小さく、生物の温度を安定させるのに役立ちます。"
+  },
+  {
+    "id": "BIO-BAL1-P1B-A2-001",
+    "subject": "Biology SL",
+    "chapter": "A2 Cells",
+    "unit": "A2.2 Cell structure",
+    "primaryChapter": "A2 Cells",
+    "primaryUnit": "A2.2 Cell structure",
+    "requiredUnits": ["A2.2 Cell structure"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "cell-size-microscopy-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Calculate and analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Measurements of two cells in microscope images",
+      "description": "The actual widths of two cells were estimated from calibrated microscope images.",
+      "columns": ["Cell", "Image width (mm)", "Magnification", "Actual width (µm)"],
+      "rows": [["P",48,2000,"?"],["Q",36,1200,"?"]]
+    },
+    "question": "Calculate the actual width of each cell and analyse which cell would be expected to have the larger surface-area-to-volume ratio if the cells are geometrically similar.",
+    "markscheme": [
+      "For cell P, actual width = 48 mm ÷ 2000 = 0.024 mm = 24 µm.",
+      "For cell Q, actual width = 36 mm ÷ 1200 = 0.030 mm = 30 µm.",
+      "Cell P is smaller than cell Q.",
+      "For geometrically similar cells, surface area scales with length squared whereas volume scales with length cubed.",
+      "The smaller cell P therefore has the larger surface-area-to-volume ratio."
+    ],
+    "markschemeJa": [
+      "細胞Pの実際の幅は48 mm÷2000=0.024 mm=24 µm。",
+      "細胞Qの実際の幅は36 mm÷1200=0.030 mm=30 µm。",
+      "細胞Pは細胞Qより小さい。",
+      "相似な細胞では表面積は長さの2乗、体積は長さの3乗に比例する。",
+      "したがって小さい細胞Pの方が表面積対体積比が大きい。"
+    ],
+    "modelAnswer": "Cell P is 24 µm wide and cell Q is 30 µm wide. Because surface area increases with the square of linear size while volume increases with the cube, a smaller geometrically similar cell has a larger surface-area-to-volume ratio. Cell P would therefore have the larger ratio.",
+    "modelAnswerJa": "細胞Pは24 µm、細胞Qは30 µmです。相似な物体では表面積は長さの2乗、体積は3乗に比例するため、小さい細胞ほど表面積対体積比が大きくなります。したがってPの方が大きい比をもちます。"
+  },
+  {
+    "id": "BIO-BAL1-P1B-A4-001",
+    "subject": "Biology SL",
+    "chapter": "A4 Ecosystems",
+    "unit": "A4.1 Evolution and speciation",
+    "primaryChapter": "A4 Ecosystems",
+    "primaryUnit": "A4.1 Evolution and speciation",
+    "requiredUnits": ["A4.1 Evolution and speciation"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "isolation-allele-frequency-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Allele frequency in separated populations",
+      "description": "Two populations were separated by a river after generation 0. The frequency of allele R was measured later.",
+      "columns": ["Generation", "Population X: frequency of R", "Population Y: frequency of R"],
+      "rows": [[0,0.42,0.42],[10,0.49,0.34],[20,0.61,0.25],[30,0.70,0.18]]
+    },
+    "question": "Analyse the data and explain how reduced gene flow can contribute to evolutionary divergence.",
+    "markscheme": [
+      "Both populations begin with the same allele R frequency of 0.42.",
+      "The frequency of R increases to 0.70 in population X but decreases to 0.18 in population Y.",
+      "The difference between the populations becomes larger over generations.",
+      "Separation can reduce gene flow, allowing mutation, genetic drift and different selection pressures to change allele frequencies independently.",
+      "If genetic divergence is accompanied by reproductive isolation, the populations may eventually form separate species."
+    ],
+    "markschemeJa": [
+      "両集団はR対立遺伝子頻度0.42から始まっている。",
+      "XではR頻度が0.70まで増加する一方、Yでは0.18まで低下している。",
+      "世代が進むほど2集団の差が大きくなっている。",
+      "隔離によって遺伝子流動が減ると、突然変異、遺伝的浮動、異なる選択圧によって対立遺伝子頻度が独立に変化できる。",
+      "遺伝的分化に加えて生殖隔離が成立すれば、最終的に別種へ分化する可能性がある。"
+    ],
+    "modelAnswer": "The two populations start with the same allele frequency but diverge strongly after separation: R rises in X and falls in Y. Reduced gene flow means the populations no longer continually exchange alleles. Mutation, drift and different selection pressures can therefore change their allele frequencies independently. Continued divergence can contribute to speciation if reproductive isolation develops.",
+    "modelAnswerJa": "2集団は同じ頻度から始まりますが、隔離後はXでRが増え、Yでは減少して大きく分化しています。遺伝子流動が減ると対立遺伝子の交換が少なくなり、突然変異、遺伝的浮動、異なる選択圧によってそれぞれ独立に変化できます。さらに生殖隔離が成立すれば種分化につながります。"
+  },
+  {
+    "id": "BIO-BAL1-P1B-B3-001",
+    "subject": "Biology SL",
+    "chapter": "B3 Organisms",
+    "unit": "B3.2 Transport",
+    "primaryChapter": "B3 Organisms",
+    "primaryUnit": "B3.2 Transport",
+    "requiredUnits": ["B3.2 Transport"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "transpiration-environment-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Environmental conditions and transpiration rate",
+      "description": "The same plant species was measured under four controlled conditions.",
+      "columns": ["Condition", "Air temperature (°C)", "Relative humidity (%)", "Air movement", "Transpiration rate (g h⁻¹)"],
+      "rows": [["A",22,70,"Low",1.2],["B",22,35,"Low",2.4],["C",22,35,"High",3.5],["D",30,35,"High",4.6]]
+    },
+    "question": "Analyse the effects of humidity, air movement and temperature on transpiration rate.",
+    "markscheme": [
+      "Lowering relative humidity from 70% to 35% at 22 °C increases transpiration from 1.2 to 2.4 g h⁻¹.",
+      "Increasing air movement at 22 °C and 35% humidity increases transpiration from 2.4 to 3.5 g h⁻¹.",
+      "Increasing temperature from 22 °C to 30 °C under high air movement increases transpiration from 3.5 to 4.6 g h⁻¹.",
+      "Low humidity and air movement maintain a steeper water-vapour concentration gradient between the leaf and surrounding air.",
+      "Higher temperature increases evaporation and can increase the rate at which water vapour diffuses from the leaf."
+    ],
+    "markschemeJa": [
+      "22 °Cで相対湿度を70%から35%へ下げると、蒸散速度は1.2から2.4 g h⁻¹へ増加する。",
+      "22 °C・湿度35%で空気の動きを大きくすると、蒸散速度は2.4から3.5 g h⁻¹へ増加する。",
+      "強い空気移動条件で温度を22 °Cから30 °Cへ上げると、蒸散速度は3.5から4.6 g h⁻¹へ増加する。",
+      "低湿度と空気移動は葉と周囲空気の水蒸気濃度勾配を大きく保つ。",
+      "高温は蒸発を促進し、葉からの水蒸気拡散速度を高めることがある。"
+    ],
+    "modelAnswer": "Transpiration rises when humidity falls, when air movement increases and when temperature increases. Lower humidity increases the water-vapour gradient from the moist leaf to the air. Moving air removes humid boundary-layer air, maintaining that gradient. Higher temperature increases evaporation and molecular movement, which can further increase water loss.",
+    "modelAnswerJa": "蒸散は湿度低下、空気移動増加、温度上昇によって大きくなっています。低湿度は葉内と外気の水蒸気濃度差を大きくし、風は葉表面の湿った境界層を取り除いて勾配を維持します。高温は蒸発と分子運動を促進し、水の損失を増やします。"
+  },
+  {
+    "id": "BIO-BAL1-P1B-B2-001",
+    "subject": "Biology SL",
+    "chapter": "B2 Cells",
+    "unit": "B2.1 Membranes and membrane transport",
+    "primaryChapter": "B2 Cells",
+    "primaryUnit": "B2.1 Membranes and membrane transport",
+    "requiredUnits": ["B2.1 Membranes and membrane transport"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "transport-inhibitor-data-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Deduce",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Uptake of ion M by cultured cells",
+      "description": "Ion uptake was measured with different external concentrations and with or without an ATP-production inhibitor.",
+      "columns": ["External M concentration (mmol dm⁻³)", "Uptake without inhibitor", "Uptake with inhibitor"],
+      "rows": [[1,1.8,0.7],[2,3.2,1.1],[4,5.1,1.6],[8,6.0,1.9]]
+    },
+    "question": "Deduce what the data suggest about the mechanism of ion M uptake.",
+    "markscheme": [
+      "Uptake increases as external M concentration increases in both treatments.",
+      "Without inhibitor, the increase begins to level off at high concentration, consistent with a limited number of transport proteins.",
+      "The ATP-production inhibitor substantially reduces uptake at every concentration.",
+      "The inhibitor effect supports an energy-dependent component of transport, such as active transport.",
+      "Residual uptake with inhibitor suggests that some transport may occur by an energy-independent pathway or that inhibition is incomplete."
+    ],
+    "markschemeJa": [
+      "どちらの処理でも外部M濃度が高くなると取り込み量が増加する。",
+      "阻害剤なしでは高濃度で増加が頭打ちに近づき、輸送タンパク質数が有限であることと一致する。",
+      "ATP産生阻害剤はすべての濃度で取り込み量を大きく低下させる。",
+      "この阻害効果は、能動輸送などエネルギー依存性の輸送成分を支持する。",
+      "阻害剤存在下でも取り込みが残ることから、エネルギー非依存性経路があるか、阻害が不完全である可能性がある。"
+    ],
+    "modelAnswer": "Ion uptake increases with concentration but tends toward a plateau, which is consistent with carrier-mediated transport. Blocking ATP production strongly reduces uptake, supporting the involvement of active transport. Because some uptake remains, either another passive protein-mediated route also contributes or ATP production was not completely blocked.",
+    "modelAnswerJa": "イオン取り込みは濃度とともに増えますが高濃度では頭打ちになり、担体を利用する輸送と一致します。ATP産生を阻害すると取り込みが大きく減るため、能動輸送の関与が支持されます。ただし取り込みが完全には消えないので、受動的経路も関与するか阻害が不完全な可能性があります。"
+  },
+  {
+    "id": "BIO-BAL1-P1B-B2-002",
+    "subject": "Biology SL",
+    "chapter": "B2 Cells",
+    "unit": "B2.2 Organelles and compartmentalization",
+    "primaryChapter": "B2 Cells",
+    "primaryUnit": "B2.2 Organelles and compartmentalization",
+    "requiredUnits": ["B2.2 Organelles and compartmentalization"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "organelle-fraction-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Enzyme activity in cell fractions",
+      "description": "A cell homogenate was separated into fractions enriched in different organelles. Activity of three enzymes was measured.",
+      "columns": ["Fraction", "ATP-synthesizing enzyme", "Hydrolytic enzyme", "Protein-processing enzyme"],
+      "rows": [["P",82,6,12],["Q",8,91,5],["R",11,7,88]],
+      "note": "Values are relative activity units."
+    },
+    "question": "Analyse the data to identify the likely organelle enriched in each fraction and explain one advantage of compartmentalization.",
+    "markscheme": [
+      "Fraction P is most likely enriched in mitochondria because ATP-synthesizing enzyme activity is highest.",
+      "Fraction Q is most likely enriched in lysosomes because hydrolytic enzyme activity is highest.",
+      "Fraction R is most likely enriched in endoplasmic reticulum/Golgi-associated membranes because protein-processing activity is highest.",
+      "Compartmentalization localizes enzymes and substrates in particular regions of the cell.",
+      "Separate compartments can maintain different chemical conditions and allow incompatible processes to occur efficiently at the same time."
+    ],
+    "markschemeJa": [
+      "P画分はATP合成酵素活性が最も高いため、ミトコンドリアに富むと考えられる。",
+      "Q画分は加水分解酵素活性が最も高いため、リソソームに富むと考えられる。",
+      "R画分はタンパク質処理酵素活性が最も高いため、小胞体／ゴルジ体関連膜に富むと考えられる。",
+      "区画化によって酵素と基質を細胞内の特定領域に集められる。",
+      "異なる化学条件を別々に維持し、互いに干渉しうる過程を同時に効率よく進められる。"
+    ],
+    "modelAnswer": "Fraction P is consistent with mitochondria, Q with lysosomes, and R with membranes involved in protein processing such as ER or Golgi. Compartmentalization concentrates particular enzymes and substrates and allows different organelles to maintain suitable conditions. This increases efficiency and prevents different pathways from interfering with one another.",
+    "modelAnswerJa": "Pはミトコンドリア、Qはリソソーム、Rは小胞体やゴルジ体などタンパク質処理に関わる膜系と考えられます。区画化は特定の酵素と基質を集め、各区画に適した条件を保つことで反応効率を高め、異なる経路同士の干渉を防ぎます。"
+  },
+  {
+    "id": "BIO-BAL1-P1B-C1-001",
+    "subject": "Biology SL",
+    "chapter": "C1 Molecules",
+    "unit": "C1.2 Cell respiration",
+    "primaryChapter": "C1 Molecules",
+    "primaryUnit": "C1.2 Cell respiration",
+    "requiredUnits": ["C1.2 Cell respiration"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "respiration-substrate-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Calculate and analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Respiration of germinating seeds",
+      "description": "Equal masses of germinating seeds were tested for 30 minutes.",
+      "columns": ["Treatment", "O₂ consumed (cm³)", "CO₂ produced (cm³)"],
+      "rows": [["P",12.0,11.4],["Q",8.0,5.6],["R",3.0,2.9]]
+    },
+    "question": "Calculate the CO₂ produced ÷ O₂ consumed ratio for each treatment and analyse what the data show about respiratory activity.",
+    "markscheme": [
+      "The ratio for P is 11.4 ÷ 12.0 = 0.95.",
+      "The ratio for Q is 5.6 ÷ 8.0 = 0.70.",
+      "The ratio for R is 2.9 ÷ 3.0 ≈ 0.97.",
+      "Treatment P has the greatest oxygen consumption and carbon dioxide production, indicating the highest measured respiratory rate.",
+      "The different CO₂:O₂ ratios suggest that substrate use or metabolic conditions may differ among treatments, so oxygen consumption alone does not describe all aspects of respiration."
+    ],
+    "markschemeJa": [
+      "Pの比は11.4÷12.0=0.95。",
+      "Qの比は5.6÷8.0=0.70。",
+      "Rの比は2.9÷3.0≈0.97。",
+      "Pは酸素消費量と二酸化炭素産生量が最も大きく、測定された呼吸速度が最も高い。",
+      "CO₂:O₂比の違いは、利用する基質や代謝条件が処理間で異なる可能性を示し、酸素消費量だけでは呼吸の全側面を表せない。"
+    ],
+    "modelAnswer": "The CO₂:O₂ ratios are approximately 0.95 for P, 0.70 for Q and 0.97 for R. P shows the highest total gas exchange and therefore the highest measured respiration rate. The lower ratio in Q indicates that the relationship between oxygen use and carbon dioxide production differs, which could reflect different respiratory substrates or metabolic conditions.",
+    "modelAnswerJa": "CO₂:O₂比はP約0.95、Q 0.70、R約0.97です。Pは両方の気体交換量が最大なので、測定された呼吸速度が最も高いと考えられます。Qでは比が低く、利用基質や代謝条件の違いによって酸素消費と二酸化炭素産生の関係が異なる可能性があります。"
+  },
+  {
+    "id": "BIO-BAL1-P1B-C3-001",
+    "subject": "Biology SL",
+    "chapter": "C3 Organisms",
+    "unit": "C3.1 Integration of body systems",
+    "primaryChapter": "C3 Organisms",
+    "primaryUnit": "C3.1 Integration of body systems",
+    "requiredUnits": ["C3.1 Integration of body systems"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "exercise-coordination-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Responses during increasing exercise intensity",
+      "description": "Measurements were taken from one participant at steady exercise intensities.",
+      "columns": ["Work rate (W)", "Ventilation (L min⁻¹)", "Cardiac output (L min⁻¹)", "Blood lactate (mmol L⁻¹)"],
+      "rows": [[50,18,8,1.2],[100,30,11,1.5],[150,48,15,2.4],[200,78,19,5.8]]
+    },
+    "question": "Analyse how respiratory and circulatory responses are coordinated as exercise intensity increases.",
+    "markscheme": [
+      "Ventilation increases progressively from 18 to 78 L min⁻¹ as work rate increases.",
+      "Cardiac output also increases from 8 to 19 L min⁻¹.",
+      "The coordinated increases can deliver more oxygen to active tissues and remove more carbon dioxide.",
+      "Blood lactate rises especially strongly at the highest work rate, indicating a greater contribution from anaerobic metabolism when demand is high.",
+      "Integration of respiratory, circulatory and metabolic responses helps match oxygen delivery and waste removal to changing tissue demand."
+    ],
+    "markschemeJa": [
+      "運動強度が上がるにつれて換気量は18から78 L min⁻¹へ段階的に増加する。",
+      "心拍出量も8から19 L min⁻¹へ増加する。",
+      "これらの協調した増加により、活動組織へより多くの酸素を届け、二酸化炭素をより速く除去できる。",
+      "最高運動強度では血中乳酸が特に大きく増え、高い需要時に嫌気的代謝の寄与が増えたことを示す。",
+      "呼吸・循環・代謝の統合によって、酸素供給と老廃物除去を変化する組織需要に合わせられる。"
+    ],
+    "modelAnswer": "Both ventilation and cardiac output rise as work rate increases, showing coordinated respiratory and circulatory adjustment. These responses increase oxygen delivery and carbon dioxide removal. At the highest work rate, lactate increases sharply, indicating that aerobic supply is no longer sufficient to meet all ATP demand. Whole-body integration therefore supports changing metabolic requirements.",
+    "modelAnswerJa": "運動強度に伴って換気量と心拍出量がともに増え、呼吸系と循環系が協調して調節されていることが分かります。これにより酸素供給と二酸化炭素除去が増えます。最高強度では乳酸が急増し、好気的供給だけではATP需要を満たしきれず嫌気的代謝の寄与が増えたことを示します。"
+  },
+  {
+    "id": "BIO-BAL1-P1B-C3-002",
+    "subject": "Biology SL",
+    "chapter": "C3 Organisms",
+    "unit": "C3.2 Defence against disease",
+    "primaryChapter": "C3 Organisms",
+    "primaryUnit": "C3.2 Defence against disease",
+    "requiredUnits": ["C3.2 Defence against disease"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "immune-memory-data-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Antibody concentration after antigen exposure",
+      "description": "A person was exposed to the same antigen on day 0 and again on day 60.",
+      "columns": ["Time after exposure (days)", "Primary response antibody level", "Secondary response antibody level"],
+      "rows": [[0,0,0],[4,1,12],[8,8,42],[12,18,65],[20,11,51]]
+    },
+    "question": "Analyse the differences between the primary and secondary antibody responses and explain the biological basis.",
+    "markscheme": [
+      "The secondary response begins more rapidly, reaching a high antibody level by day 4.",
+      "The secondary response reaches a much higher peak than the primary response, 65 compared with 18 relative units.",
+      "The secondary response remains higher than the primary response at the later measured times.",
+      "Memory lymphocytes formed after the first exposure can respond rapidly when the same antigen is encountered again.",
+      "Rapid clonal expansion and differentiation of antigen-specific cells produce a larger and faster secondary response."
+    ],
+    "markschemeJa": [
+      "二次応答はより速く始まり、4日目までに高い抗体レベルへ達する。",
+      "二次応答のピークは一次応答よりはるかに高く、相対値65に対して一次応答は18である。",
+      "測定後半でも二次応答は一次応答より高い。",
+      "最初の曝露後に形成された記憶リンパ球が、同じ抗原への再曝露時に迅速に反応できる。",
+      "抗原特異的細胞の速いクローン増殖と分化により、より大きく速い二次応答が生じる。"
+    ],
+    "modelAnswer": "The secondary response is faster, larger and more sustained than the primary response. Memory lymphocytes generated during the first response persist in the body. When the same antigen is encountered again, these cells undergo rapid clonal expansion and generate effector cells quickly, producing a stronger antibody response.",
+    "modelAnswerJa": "二次応答は一次応答より速く、大きく、長く続きます。最初の免疫応答で形成された記憶リンパ球が体内に残り、同じ抗原に再び出会うと素早くクローン増殖してエフェクター細胞を形成するため、強い抗体応答が生じます。"
+  },
+  {
+    "id": "BIO-BAL1-P1B-D1-001",
+    "subject": "Biology SL",
+    "chapter": "D1 Molecules",
+    "unit": "D1.1 DNA replication",
+    "primaryChapter": "D1 Molecules",
+    "primaryUnit": "D1.1 DNA replication",
+    "requiredUnits": ["D1.1 DNA replication"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "replication-isotope-deduction",
+    "scopeType": "single-unit",
+    "commandTerm": "Deduce",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "DNA density after transfer to a lighter isotope medium",
+      "description": "Cells containing only heavy-isotope DNA were transferred to medium containing only light isotope. DNA density bands were recorded after replication.",
+      "columns": ["Generation", "Heavy band", "Intermediate band", "Light band"],
+      "rows": [[0,"Present","Absent","Absent"],[1,"Absent","Present","Absent"],[2,"Absent","Present","Present"]]
+    },
+    "question": "Deduce which model of DNA replication is supported and explain the pattern.",
+    "markscheme": [
+      "After one generation, only intermediate-density DNA is present.",
+      "This is consistent with each DNA molecule containing one heavy parental strand and one newly synthesized light strand.",
+      "After two generations, both intermediate and light DNA are present.",
+      "Semi-conservative replication predicts one original strand is retained in each daughter DNA molecule while a new complementary strand is synthesized.",
+      "The observations are inconsistent with a fully conservative model, which would predict separate heavy and light DNA after the first generation."
+    ],
+    "markschemeJa": [
+      "1世代後には中間密度DNAだけが存在する。",
+      "これは各DNA分子が重い親鎖1本と新しく合成された軽い鎖1本を含むことと一致する。",
+      "2世代後には中間密度DNAと軽いDNAの両方が存在する。",
+      "半保存的複製では、各娘DNA分子に元の鎖1本が残り、新しい相補鎖が合成される。",
+      "完全保存的モデルなら1世代後から重いDNAと軽いDNAが別々に予測されるため、この観察とは一致しない。"
+    ],
+    "modelAnswer": "The results support semi-conservative replication. After one generation all DNA is hybrid because each molecule contains one original heavy strand and one new light strand. After a second generation, some molecules remain hybrid while others contain two light strands. A conservative model would have produced separate heavy and light bands after the first generation.",
+    "modelAnswerJa": "結果は半保存的複製を支持します。1世代後は各DNAが重い親鎖1本と軽い新生鎖1本をもつため、すべて中間密度になります。2世代後には中間密度と軽いDNAが生じます。完全保存的複製なら1世代後に重いDNAと軽いDNAが分かれて現れるはずです。"
+  },
+  {
+    "id": "BIO-BAL1-P1B-D3-001",
+    "subject": "Biology SL",
+    "chapter": "D3 Organisms",
+    "unit": "D3.3 Homeostasis",
+    "primaryChapter": "D3 Organisms",
+    "primaryUnit": "D3.3 Homeostasis",
+    "requiredUnits": ["D3.3 Homeostasis"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "glucose-feedback-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Analyse",
+    "marks": 5,
+    "difficulty": "standard",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Blood glucose after a carbohydrate-rich meal",
+      "description": "Blood glucose and two pancreatic hormones were measured in one participant.",
+      "columns": ["Time (min)", "Blood glucose (mmol L⁻¹)", "Insulin (relative units)", "Glucagon (relative units)"],
+      "rows": [[0,4.9,8,18],[30,8.2,46,7],[60,6.8,34,9],[120,5.1,11,16]]
+    },
+    "question": "Analyse the data as an example of negative-feedback regulation.",
+    "markscheme": [
+      "Blood glucose rises from 4.9 to 8.2 mmol L⁻¹ after the meal.",
+      "Insulin rises strongly as blood glucose rises, while glucagon decreases.",
+      "Insulin promotes processes that lower blood glucose, including uptake and storage of glucose.",
+      "As blood glucose returns toward the initial value, insulin decreases and glucagon rises again.",
+      "The hormonal responses oppose the original deviation in blood glucose, which is characteristic of negative feedback."
+    ],
+    "markschemeJa": [
+      "食後、血糖値は4.9から8.2 mmol L⁻¹へ上昇する。",
+      "血糖上昇に伴ってインスリンは大きく増加し、グルカゴンは低下する。",
+      "インスリンはグルコースの取り込みや貯蔵など、血糖値を下げる過程を促進する。",
+      "血糖値が開始値へ戻るにつれ、インスリンは低下し、グルカゴンは再び増加する。",
+      "ホルモン応答が血糖値の最初の変化を打ち消す方向に働くため、負のフィードバックの特徴を示す。"
+    ],
+    "modelAnswer": "The meal raises blood glucose, which is followed by a large rise in insulin and a fall in glucagon. Insulin promotes glucose uptake and storage, causing glucose concentration to move back toward its starting value. As the deviation decreases, insulin also falls and glucagon recovers. The response therefore opposes the original increase, demonstrating negative feedback.",
+    "modelAnswerJa": "食後に血糖値が上がるとインスリンが大きく増え、グルカゴンが低下します。インスリンはグルコースの取り込みや貯蔵を促し、血糖値を開始値へ戻します。偏差が小さくなるとインスリンも低下し、グルカゴンが回復するため、最初の変化を打ち消す負のフィードバックです。"
+  },
+  {
+    "id": "BIO-BAL1-P1B-D2-001",
+    "subject": "Biology SL",
+    "chapter": "D2 Cells",
+    "unit": "D2.1 Cell and nuclear division",
+    "primaryChapter": "D2 Cells",
+    "primaryUnit": "D2.1 Cell and nuclear division",
+    "requiredUnits": ["D2.1 Cell and nuclear division"],
+    "level": "SL",
+    "assessmentObjectives": ["AO2", "AO3"],
+    "archetype": "cell-cycle-drug-analysis",
+    "scopeType": "single-unit",
+    "commandTerm": "Calculate and evaluate",
+    "marks": 5,
+    "difficulty": "challenging",
+    "assessmentTarget": "paper1b",
+    "stimulus": {
+      "type": "table",
+      "title": "Cell-cycle distribution after treatment",
+      "description": "Two equal samples of 1200 cells were classified after exposure to a test compound.",
+      "columns": ["Treatment", "Interphase", "Prophase", "Metaphase", "Anaphase + telophase"],
+      "rows": [["Control",900,120,84,96],["Compound",690,150,300,60]]
+    },
+    "question": "Calculate the percentage of cells in metaphase for each treatment and evaluate the conclusion that the compound disrupts progression through mitosis.",
+    "markscheme": [
+      "Control metaphase percentage = 84 ÷ 1200 × 100 = 7%.",
+      "Compound metaphase percentage = 300 ÷ 1200 × 100 = 25%.",
+      "The compound treatment produces a much larger proportion of cells in metaphase.",
+      "Accumulation in one stage is consistent with the compound slowing or blocking progression beyond metaphase.",
+      "Independent biological replicates and statistical analysis would be needed to determine whether the difference is reproducible and significant."
+    ],
+    "markschemeJa": [
+      "対照の中期細胞割合は84÷1200×100=7%。",
+      "化合物処理の中期細胞割合は300÷1200×100=25%。",
+      "化合物処理では中期にある細胞の割合が大幅に高い。",
+      "特定段階に細胞が蓄積することは、化合物が中期以降への進行を遅らせる、または停止させることと一致する。",
+      "差が再現性・統計的有意性をもつか判断するには、独立した生物学的反復と統計解析が必要である。"
+    ],
+    "modelAnswer": "Metaphase cells make up 7% of the control but 25% of the treated sample. The large accumulation in metaphase is consistent with the compound interfering with progression through that stage, causing cells to remain there longer. However, replicated experiments and statistical analysis would be required before concluding that the compound reliably blocks mitosis.",
+    "modelAnswerJa": "中期細胞は対照で7%、処理群で25%です。処理群で中期の細胞が大きく蓄積しているため、この化合物が中期から先への進行を妨げ、細胞が長く中期にとどまる可能性を支持します。ただし確かな結論には反復と統計解析が必要です。"
+  }
+]
