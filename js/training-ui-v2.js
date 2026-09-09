@@ -292,6 +292,7 @@
       const original = Pages.show.bind(Pages);
       const self = this;
       Pages.show = function(page) {
+        if (page !== 'practice' && self.activeFullMock() && !self.confirmFullMockExit()) return false;
         const result = original(page);
         if (page === 'selection' || page === 'practice') window.setTimeout(() => self.render(), 0);
         return result;
