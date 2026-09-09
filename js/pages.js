@@ -468,6 +468,26 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureHomeUIV2() {
+    if (typeof HomeUIV2 !== 'undefined') {
+      HomeUIV2.install();
+      return;
+    }
+    if (document.getElementById('home-ui-v2-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'home-ui-v2-script';
+    script.async = false;
+    script.src = 'js/home-ui-v2.js?v=1';
+    script.onload = () => {
+      if (typeof HomeUIV2 !== 'undefined') HomeUIV2.install();
+    };
+    script.onerror = () => {
+      console.warn('Home UI v2 could not be loaded. Existing Home remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureProgressUIV2() {
     if (typeof ProgressUIV2 !== 'undefined') {
       ProgressUIV2.install();
@@ -579,6 +599,7 @@ const Pages = {
     this.ensureBiologyPaper2FullMock();
     this.ensureAdaptiveTraining();
     this.ensureTrainingPoints();
+    this.ensureHomeUIV2();
     this.ensureProgressUIV2();
     this.ensureFinalExamProgressV2();
     this.show('home');

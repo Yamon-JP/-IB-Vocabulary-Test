@@ -122,8 +122,8 @@
       overall.className = 'home-overall-section';
       overall.innerHTML = `
         <div class="home-section-title compact">
-          <div><p class="eyebrow">YOUR TRAINING</p><h2>Overall</h2></div>
-          <span>Quiz + exam activity</span>
+          <div><p class="eyebrow">VOCABULARY & QUIZ</p><h2>Quiz Progress</h2></div>
+          <span>Questions · Accuracy · XP</span>
         </div>`;
       subjectSection.insertAdjacentElement('afterend', overall);
       overall.appendChild(statsGrid);
