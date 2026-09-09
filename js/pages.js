@@ -529,6 +529,47 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureFinalExamAchievements() {
+    if (typeof FinalExamAchievements !== 'undefined') {
+      FinalExamAchievements.install();
+      return;
+    }
+    if (document.getElementById('final-exam-achievements-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'final-exam-achievements-script';
+    script.async = false;
+    script.src = 'js/final-exam-achievements.js?v=1';
+    script.onload = () => {
+      if (typeof FinalExamAchievements !== 'undefined') FinalExamAchievements.install();
+      if (typeof TrophyUIV2 !== 'undefined' && TrophyUIV2.installed) TrophyUIV2.render();
+    };
+    script.onerror = () => {
+      console.warn('Final Exam Achievement milestones could not be loaded. Existing achievements remain available.');
+    };
+    document.body.appendChild(script);
+  },
+
+  ensureTrophyUIV2() {
+    if (typeof TrophyUIV2 !== 'undefined') {
+      TrophyUIV2.install();
+      return;
+    }
+    if (document.getElementById('trophy-ui-v2-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'trophy-ui-v2-script';
+    script.async = false;
+    script.src = 'js/trophy-ui-v2.js?v=1';
+    script.onload = () => {
+      if (typeof TrophyUIV2 !== 'undefined') TrophyUIV2.install();
+    };
+    script.onerror = () => {
+      console.warn('Trophy UI v2 could not be loaded. Existing Trophy Room remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensurePaper2ProgressView() {
     if (typeof Paper2ProgressView !== 'undefined') {
       Paper2ProgressView.render();
@@ -602,6 +643,8 @@ const Pages = {
     this.ensureHomeUIV2();
     this.ensureProgressUIV2();
     this.ensureFinalExamProgressV2();
+    this.ensureFinalExamAchievements();
+    this.ensureTrophyUIV2();
     this.show('home');
   }
 };

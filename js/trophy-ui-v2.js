@@ -144,6 +144,14 @@
           <div id="trophy-v2-global-grid" class="trophy-v2-global-grid"></div>
         </section>
 
+        <section id="trophy-v2-exam-section" class="trophy-v2-panel trophy-v2-exam-panel">
+          <div class="trophy-v2-section-heading">
+            <div><p class="eyebrow">FINAL EXAM</p><h3>Final Exam Milestones</h3></div>
+            <span>App readiness milestones · not IB grade boundaries</span>
+          </div>
+          <div id="trophy-v2-exam-content"></div>
+        </section>
+
         <section id="trophy-v2-chapter-section" class="trophy-v2-panel trophy-v2-chapter-panel">
           <div class="trophy-v2-section-heading">
             <div><p class="eyebrow">CHAPTER MASTERY</p><h3>Chapter Achievements</h3></div>
@@ -158,7 +166,7 @@
     },
 
     setFilter(filter) {
-      if (!['all', 'general', 'streak', 'chapter'].includes(filter)) return;
+      if (!['all', 'general', 'streak', 'exam', 'chapter'].includes(filter)) return;
       this.activeFilter = filter;
       this.render();
     },
@@ -170,6 +178,7 @@
         ['all', 'ALL'],
         ['general', 'GENERAL'],
         ['streak', 'STREAK'],
+        ['exam', 'EXAM'],
         ['chapter', 'CHAPTER']
       ];
       nav.innerHTML = filters.map(([key, label]) => `
@@ -226,6 +235,10 @@
         });
       });
 
+      if (typeof FinalExamAchievements !== 'undefined' && FinalExamAchievements.installed && typeof FinalExamAchievements.nextCandidates === 'function') {
+        items.push(...FinalExamAchievements.nextCandidates());
+      }
+
       return items.sort((a, b) => b.pct - a.pct || a.title.localeCompare(b.title)).slice(0, 2);
     },
 
@@ -241,7 +254,7 @@
         <article class="trophy-v2-next-card">
           <div class="trophy-v2-next-icon">🔒</div>
           <div class="trophy-v2-next-copy">
-            <span>${this.escapeHtml(item.kind === 'chapter' ? 'CHAPTER' : 'GLOBAL')}</span>
+            <span>${this.escapeHtml(item.kind === 'chapter' ? 'CHAPTER' : item.kind === 'exam' ? 'EXAM' : 'GLOBAL')}</span>
             <strong>${this.escapeHtml(item.title)}</strong>
             <small>${this.escapeHtml(item.subtitle)}</small>
           </div>
@@ -265,7 +278,7 @@
       const title = document.getElementById('trophy-v2-global-title');
       if (!section || !grid || !count || !title) return;
 
-      const show = this.activeFilter !== 'chapter';
+      const show = ['all', 'general', 'streak'].includes(this.activeFilter);
       section.hidden = !show;
       if (!show) return;
 
@@ -292,6 +305,21 @@
             <small>${item.unlocked ? 'Completed' : `${item.current} / ${item.target}`}</small>
           </div>
         </details>`).join('') || '<div class="trophy-v2-empty">No achievements in this category yet.</div>';
+    },
+
+    renderExam() {
+      const section = document.getElementById('trophy-v2-exam-section');
+      const container = document.getElementById('trophy-v2-exam-content');
+      if (!section || !container) return;
+      const show = this.activeFilter === 'all' || this.activeFilter === 'exam';
+      section.hidden = !show;
+      if (!show) return;
+
+      if (typeof FinalExamAchievements === 'undefined' || !FinalExamAchievements.installed || typeof FinalExamAchievements.render !== 'function') {
+        container.innerHTML = '<div class="trophy-v2-empty">Final Exam milestone data is not available yet. Existing achievement progress remains unchanged.</div>';
+        return;
+      }
+      FinalExamAchievements.render(container);
     },
 
     renderSubjectTabs(progress = this.progressData()) {
@@ -377,6 +405,7 @@
       this.renderFilters();
       this.renderNext(progress);
       this.renderGlobals(progress);
+      this.renderExam();
       this.renderChapters(progress);
       return true;
     },

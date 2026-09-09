@@ -129,7 +129,7 @@
   top: 8px;
   z-index: 11;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 6px;
   padding: 6px;
   border: 1px solid #e5e7eb;
@@ -305,7 +305,8 @@
 }
 
 .trophy-v2-global-card > summary::-webkit-details-marker,
-.trophy-v2-chapter-row > summary::-webkit-details-marker {
+.trophy-v2-chapter-row > summary::-webkit-details-marker,
+.trophy-v2-exam-milestone > summary::-webkit-details-marker {
   display: none;
 }
 
@@ -356,7 +357,8 @@
 }
 
 .trophy-v2-global-card[open] .trophy-v2-card-chevron,
-.trophy-v2-chapter-row[open] .trophy-v2-card-chevron {
+.trophy-v2-chapter-row[open] .trophy-v2-card-chevron,
+.trophy-v2-exam-milestone[open] .trophy-v2-card-chevron {
   transform: rotate(180deg);
 }
 
@@ -378,6 +380,162 @@
   color: #98a2b3;
   font-size: .64rem;
   font-weight: 750;
+}
+
+.trophy-v2-exam-panel {
+  border-color: #dbeafe;
+  background: linear-gradient(145deg, #f8fbff, #fff 58%);
+}
+
+#trophy-v2-exam-content {
+  display: grid;
+  gap: 13px;
+}
+
+.trophy-v2-exam-global,
+.trophy-v2-exam-subject-card {
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #e1eaf6;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .9);
+}
+
+.trophy-v2-exam-subheading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+
+.trophy-v2-exam-subheading strong,
+.trophy-v2-exam-subheading small {
+  display: block;
+}
+
+.trophy-v2-exam-subheading strong {
+  color: #1e3a5f;
+  font-size: .8rem;
+}
+
+.trophy-v2-exam-subheading small,
+.trophy-v2-exam-subheading > span {
+  color: #64748b;
+  font-size: .64rem;
+  font-weight: 800;
+}
+
+.trophy-v2-exam-subheading small {
+  margin-top: 2px;
+}
+
+.trophy-v2-exam-global-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.trophy-v2-exam-subject-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.trophy-v2-exam-subject-milestones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.trophy-v2-exam-milestone {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e3eaf3;
+  border-radius: 13px;
+  background: #fbfdff;
+}
+
+.trophy-v2-exam-milestone.unlocked {
+  border-color: #b9d8ff;
+  background: #f2f8ff;
+}
+
+.trophy-v2-exam-milestone > summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 7px;
+  min-height: 58px;
+  padding: 9px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.trophy-v2-exam-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: #edf2f7;
+  font-size: .76rem;
+}
+
+.trophy-v2-exam-milestone.unlocked .trophy-v2-exam-icon {
+  background: #dbeafe;
+}
+
+.trophy-v2-exam-copy {
+  min-width: 0;
+}
+
+.trophy-v2-exam-copy strong,
+.trophy-v2-exam-copy small {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.trophy-v2-exam-copy strong {
+  color: #334155;
+  font-size: .72rem;
+  line-height: 1.3;
+}
+
+.trophy-v2-exam-copy small {
+  margin-top: 2px;
+  color: #789;
+  font-size: .59rem;
+  font-weight: 800;
+}
+
+.trophy-v2-exam-milestone.unlocked .trophy-v2-exam-copy small {
+  color: #2563eb;
+}
+
+.trophy-v2-exam-detail {
+  padding: 0 9px 10px;
+  border-top: 1px solid #edf2f7;
+}
+
+.trophy-v2-exam-detail p {
+  margin: 8px 0 7px;
+  color: #64748b;
+  font-size: .64rem;
+  line-height: 1.45;
+}
+
+.trophy-v2-exam-detail small {
+  display: block;
+  margin-top: 5px;
+  color: #789;
+  font-size: .59rem;
+  font-weight: 800;
+}
+
+.trophy-v2-exam-milestone .trophy-v2-progress-track > span {
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
 }
 
 .trophy-v2-subject-tabs {
@@ -589,6 +747,10 @@
   .trophy-v2-global-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .trophy-v2-exam-subject-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 560px) {
@@ -605,8 +767,8 @@
 
   .trophy-v2-filters button {
     min-height: 39px;
-    padding: 6px 3px;
-    font-size: .62rem;
+    padding: 6px 2px;
+    font-size: .58rem;
   }
 
   .trophy-v2-section-heading {
@@ -621,6 +783,14 @@
   .trophy-v2-global-card > summary {
     min-height: 70px;
     padding: 9px;
+  }
+
+  .trophy-v2-exam-subject-milestones {
+    grid-template-columns: 1fr;
+  }
+
+  .trophy-v2-exam-subheading {
+    align-items: flex-start;
   }
 
   .trophy-v2-chapter-row > summary {
@@ -651,6 +821,10 @@
   }
 
   .trophy-v2-global-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trophy-v2-exam-global-grid {
     grid-template-columns: 1fr;
   }
 
