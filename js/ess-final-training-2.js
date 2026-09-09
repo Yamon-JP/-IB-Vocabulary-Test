@@ -70,6 +70,7 @@
         'data/paper2/ess-section-a-final-extra-2-part1.json?v=1',
         'data/paper2/ess-section-a-final-extra-2-part2.json?v=1',
         'data/paper2/ess-section-a-final-extra-2-part3.json?v=1',
+        'data/paper2/ess-section-a-balance-pack-3.json?v=1',
         'data/paper2/ess-section-b-set10-a.json?v=1',
         'data/paper2/ess-section-b-set10-b.json?v=1',
         'data/paper2/ess-section-b-set10-c.json?v=1',
@@ -78,7 +79,7 @@
         'data/paper2/ess-section-b-set11-c.json?v=1'
       ];
       const loaded = await Promise.all(sources.map(source => this.fetchArray(source)));
-      const [caseStudies, p1a, p1b, p1c, sA1, sA2, sA3, ...sectionBParts] = loaded;
+      const [caseStudies, p1a, p1b, p1c, sA1, sA2, sA3, sA4, ...sectionBParts] = loaded;
 
       EssExam.caseStudies = this.mergeUnique(EssExam.caseStudies, caseStudies);
       EssExam.paper1Questions = this.mergeUnique(
@@ -91,7 +92,7 @@
         : q;
       EssExam.paper2SectionAQuestions = this.mergeUnique(
         EssExam.paper2SectionAQuestions,
-        [...sA1, ...sA2, ...sA3]
+        [...sA1, ...sA2, ...sA3, ...sA4]
           .filter(q => q?.subject === 'ESS HL' && q?.assessmentTarget === 'ess2a')
           .map(normalize)
       );
