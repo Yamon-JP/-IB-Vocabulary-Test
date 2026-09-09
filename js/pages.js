@@ -21,6 +21,47 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureEssFinalTraining() {
+    const loadBalance = () => {
+      if (typeof EssFinalTraining2 !== 'undefined') {
+        EssFinalTraining2.start();
+        return;
+      }
+      if (document.getElementById('ess-final-training-2-script')) return;
+
+      const balance = document.createElement('script');
+      balance.id = 'ess-final-training-2-script';
+      balance.async = false;
+      balance.src = 'js/ess-final-training-2.js?v=1';
+      balance.onerror = () => {
+        console.warn('ESS final balance extension could not be loaded. Existing ESS practice remains available.');
+      };
+      document.body.appendChild(balance);
+    };
+
+    if (typeof EssFinalTraining !== 'undefined') {
+      EssFinalTraining.start();
+      loadBalance();
+      return;
+    }
+
+    const existing = document.getElementById('ess-final-training-script');
+    if (existing) {
+      existing.addEventListener('load', loadBalance, { once: true });
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.id = 'ess-final-training-script';
+    script.async = false;
+    script.src = 'js/ess-final-training.js?v=1';
+    script.onload = loadBalance;
+    script.onerror = () => {
+      console.warn('ESS Final Training module could not be loaded. Existing ESS practice remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureEssPaper1FullMock() {
     if (typeof EssPaper1FullMock !== 'undefined') {
       EssPaper1FullMock.install();
@@ -166,7 +207,7 @@ const Pages = {
     script.id = 'ess-section-b-final-japanese-audit-script';
     script.src = 'js/ess-section-b-japanese-final-audit.js?v=1';
     script.onerror = () => {
-      console.warn('ESS Section B final Japanese audit could not be loaded. Existing ESS practice remains available.');
+      console.warn('ESS Section B final Japanese audit layer could not be loaded. Existing ESS practice remains available.');
     };
     document.body.appendChild(script);
   },
@@ -634,6 +675,7 @@ const Pages = {
 
   init() {
     this.ensureEssExamModule();
+    this.ensureEssFinalTraining();
     this.ensureEssPaper1FullMock();
     this.ensureEssPaper2FullMock();
     this.ensureEssSectionBStructured();
