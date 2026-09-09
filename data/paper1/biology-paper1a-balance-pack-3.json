@@ -1,0 +1,575 @@
+[
+  {
+    "id": "BIO-BAL3-P1A-A3-001",
+    "subject": "Biology SL",
+    "chapter": "A3 Organisms",
+    "unit": "A3.1 Diversity of organisms",
+    "primaryChapter": "A3 Organisms",
+    "primaryUnit": "A3.1 Diversity of organisms",
+    "requiredUnits": [
+      "A3.1 Diversity of organisms"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "molecular-distance-phylogeny-interpretation",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "challenging",
+    "stimulus": {
+      "type": "table",
+      "title": "Percentage difference in the same DNA sequence",
+      "description": "The same homologous DNA sequence was compared among four species.",
+      "columns": [
+        "Species pair",
+        "Sequence difference (%)"
+      ],
+      "rows": [
+        [
+          "P–Q",
+          1.8
+        ],
+        [
+          "P–R",
+          7.4
+        ],
+        [
+          "P–S",
+          8.1
+        ],
+        [
+          "Q–R",
+          7.0
+        ],
+        [
+          "Q–S",
+          7.7
+        ],
+        [
+          "R–S",
+          3.2
+        ]
+      ]
+    },
+    "question": "Which relationship is best supported by the data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "P and Q are more closely related to each other than either is to R or S."
+      },
+      {
+        "id": "B",
+        "text": "P is the direct ancestor of Q because their sequences are similar."
+      },
+      {
+        "id": "C",
+        "text": "R and S must be members of the same species because their difference is below 5%."
+      },
+      {
+        "id": "D",
+        "text": "Q and S are the most closely related pair because they have the largest value involving Q."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "The smallest sequence difference is between P and Q, so these two species are inferred to share a more recent common ancestor than the other pairs. Sequence similarity does not establish direct ancestry or, by itself, species identity.",
+    "explanationJa": "塩基配列の差が最も小さいのはPとQなので、この2種は他の組み合わせより最近の共通祖先をもつと推測できます。ただし、配列が似ているだけで直接の祖先・子孫関係や同一種であることまでは証明できません。"
+  },
+  {
+    "id": "BIO-BAL3-P1A-A3-002",
+    "subject": "Biology SL",
+    "chapter": "A3 Organisms",
+    "unit": "A3.1 Diversity of organisms",
+    "primaryChapter": "A3 Organisms",
+    "primaryUnit": "A3.1 Diversity of organisms",
+    "requiredUnits": [
+      "A3.1 Diversity of organisms"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "shared-derived-character-clade-reasoning",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "stimulus": {
+      "type": "table",
+      "title": "Selected characteristics in four taxa",
+      "columns": [
+        "Taxon",
+        "Vertebral column",
+        "Four limbs",
+        "Amniotic egg",
+        "Hair"
+      ],
+      "rows": [
+        [
+          "W",
+          "Yes",
+          "No",
+          "No",
+          "No"
+        ],
+        [
+          "X",
+          "Yes",
+          "Yes",
+          "No",
+          "No"
+        ],
+        [
+          "Y",
+          "Yes",
+          "Yes",
+          "Yes",
+          "No"
+        ],
+        [
+          "Z",
+          "Yes",
+          "Yes",
+          "Yes",
+          "Yes"
+        ]
+      ]
+    },
+    "question": "If these characteristics arose once and were inherited by descendants, which taxon is most closely related to Z?",
+    "options": [
+      {
+        "id": "A",
+        "text": "W, because both have a vertebral column."
+      },
+      {
+        "id": "B",
+        "text": "X, because four limbs are the newest shared characteristic."
+      },
+      {
+        "id": "C",
+        "text": "Y, because Y and Z share the most recently listed derived characteristic before hair."
+      },
+      {
+        "id": "D",
+        "text": "All are equally related because every taxon has at least one shared characteristic."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Y and Z share the derived characteristic of an amniotic egg, while hair distinguishes Z from Y. Under the stated assumption, this supports a more recent common ancestor for Y and Z than for Z with X or W.",
+    "explanationJa": "YとZは羊膜卵というより新しい共有派生形質をもち、毛はZだけを区別しています。形質が一度だけ生じて子孫へ受け継がれたという条件では、ZはXやWよりYと最近の共通祖先をもつと考えられます。"
+  },
+  {
+    "id": "BIO-BAL3-P1A-A4-001",
+    "subject": "Biology SL",
+    "chapter": "A4 Ecosystems",
+    "unit": "A4.1 Evolution and speciation",
+    "primaryChapter": "A4 Ecosystems",
+    "primaryUnit": "A4.1 Evolution and speciation",
+    "requiredUnits": [
+      "A4.1 Evolution and speciation"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "gene-flow-speciation-data-interpretation",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "challenging",
+    "stimulus": {
+      "type": "table",
+      "title": "Divergence between two island insect populations",
+      "columns": [
+        "Generation",
+        "Migrants exchanged per generation",
+        "Difference in allele frequencies (index)"
+      ],
+      "rows": [
+        [
+          0,
+          18,
+          0.04
+        ],
+        [
+          20,
+          12,
+          0.08
+        ],
+        [
+          40,
+          5,
+          0.19
+        ],
+        [
+          60,
+          1,
+          0.37
+        ],
+        [
+          80,
+          0,
+          0.52
+        ]
+      ]
+    },
+    "question": "Which interpretation is best supported by the data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Increasing migration always causes the populations to become more genetically different."
+      },
+      {
+        "id": "B",
+        "text": "Reduced gene flow is associated with increasing genetic divergence between the populations."
+      },
+      {
+        "id": "C",
+        "text": "The data prove that reproductive isolation was complete by generation 20."
+      },
+      {
+        "id": "D",
+        "text": "Allele frequencies cannot change after migration reaches zero."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "As the number of migrants exchanged decreases, the allele-frequency difference increases. This pattern is consistent with reduced gene flow allowing populations to diverge, although the data alone do not prove that complete reproductive isolation has evolved.",
+    "explanationJa": "集団間を移動する個体数が減るにつれて、対立遺伝子頻度の差が大きくなっています。これは遺伝子流動の低下によって集団が分化しやすくなることと一致しますが、このデータだけで完全な生殖的隔離が成立したとは断定できません。"
+  },
+  {
+    "id": "BIO-BAL3-P1A-A4-002",
+    "subject": "Biology SL",
+    "chapter": "A4 Ecosystems",
+    "unit": "A4.1 Evolution and speciation",
+    "primaryChapter": "A4 Ecosystems",
+    "primaryUnit": "A4.1 Evolution and speciation",
+    "requiredUnits": [
+      "A4.1 Evolution and speciation"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "prezygotic-isolation-experiment-interpretation",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "stimulus": {
+      "type": "table",
+      "title": "Mate-choice experiment after geographic separation",
+      "description": "Females from population P were given equal access to males from populations P and Q.",
+      "columns": [
+        "Male population",
+        "Courtship attempts",
+        "Successful matings"
+      ],
+      "rows": [
+        [
+          "P",
+          48,
+          39
+        ],
+        [
+          "Q",
+          51,
+          4
+        ]
+      ]
+    },
+    "question": "Which conclusion is most directly supported?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Population Q cannot produce gametes."
+      },
+      {
+        "id": "B",
+        "text": "All offspring from P × Q matings must be sterile."
+      },
+      {
+        "id": "C",
+        "text": "Geographic separation prevents any further evolutionary change."
+      },
+      {
+        "id": "D",
+        "text": "A prezygotic reproductive barrier may have developed between P and Q."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Courtship attempts are similar, but successful matings are far less frequent with Q males. This supports a mating-related prezygotic barrier. The experiment does not test gamete production or fertility of any offspring that are produced.",
+    "explanationJa": "求愛回数はP雄とQ雄でほぼ同じですが、Q雄との交尾成功は大幅に少なくなっています。これは交尾前の生殖隔離が発達した可能性を支持します。ただし、配偶子形成や生まれた子の繁殖能力まではこの実験では調べていません。"
+  },
+  {
+    "id": "BIO-BAL3-P1A-D4-001",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.1 Natural selection",
+    "primaryChapter": "D4 Ecosystems",
+    "primaryUnit": "D4.1 Natural selection",
+    "requiredUnits": [
+      "D4.1 Natural selection"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "phenotype-survival-selection-calculation",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "challenging",
+    "stimulus": {
+      "type": "table",
+      "title": "Survival of two beetle colour phenotypes",
+      "description": "Equal numbers of light and dark beetles were released onto dark soil.",
+      "columns": [
+        "Phenotype",
+        "Released",
+        "Surviving after 7 days"
+      ],
+      "rows": [
+        [
+          "Light",
+          120,
+          36
+        ],
+        [
+          "Dark",
+          120,
+          78
+        ]
+      ]
+    },
+    "question": "Which statement is best supported by the results?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Dark beetles survived because every individual deliberately changed its colour after release."
+      },
+      {
+        "id": "B",
+        "text": "Light and dark beetles had identical fitness because the same number were released."
+      },
+      {
+        "id": "C",
+        "text": "Dark beetles had a higher survival proportion, so if colour is heritable they may contribute more offspring to the next generation."
+      },
+      {
+        "id": "D",
+        "text": "The results prove that dark colour is dominant."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Survival is 36/120 = 30% for light beetles and 78/120 = 65% for dark beetles. If the colour difference is heritable and affects reproductive success, this differential survival can contribute to natural selection. Dominance is not determined by these data.",
+    "explanationJa": "生存率は明色が36÷120=30%、暗色が78÷120=65%です。体色が遺伝し、この生存差が繁殖成功にもつながるなら、自然選択によって暗色形質が増える可能性があります。このデータから優性・劣性までは判断できません。"
+  },
+  {
+    "id": "BIO-BAL3-P1A-D4-002",
+    "subject": "Biology SL",
+    "chapter": "D4 Ecosystems",
+    "unit": "D4.1 Natural selection",
+    "primaryChapter": "D4 Ecosystems",
+    "primaryUnit": "D4.1 Natural selection",
+    "requiredUnits": [
+      "D4.1 Natural selection"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "selection-response-generation-data",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "stimulus": {
+      "type": "table",
+      "title": "Mean beak depth after a drought",
+      "description": "A bird population feeds mainly on seeds. A drought left a higher proportion of large, hard seeds.",
+      "columns": [
+        "Group",
+        "Mean beak depth (mm)"
+      ],
+      "rows": [
+        [
+          "Population before drought",
+          8.6
+        ],
+        [
+          "Survivors after drought",
+          9.4
+        ],
+        [
+          "Offspring generation",
+          9.2
+        ]
+      ]
+    },
+    "question": "Which explanation best fits the pattern?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Every bird increased the inherited depth of its beak because it needed to open hard seeds."
+      },
+      {
+        "id": "B",
+        "text": "Birds with deeper beaks were more likely to survive, and heritable variation could shift the offspring mean toward deeper beaks."
+      },
+      {
+        "id": "C",
+        "text": "Natural selection predicts that offspring must have exactly the same mean as the original population."
+      },
+      {
+        "id": "D",
+        "text": "The drought removed all genetic variation from the population."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "The survivors have a greater mean beak depth than the pre-drought population, and the offspring mean remains higher than the original mean. If beak depth is heritable, the pattern is consistent with directional selection favoring deeper beaks under the changed food conditions.",
+    "explanationJa": "干ばつ後の生存個体は干ばつ前より平均くちばし深度が大きく、その次世代も元の集団より大きい値を示しています。くちばし深度に遺伝性があるなら、大きく硬い種子が多い環境で深いくちばしが有利になる方向性選択と一致します。"
+  },
+  {
+    "id": "BIO-BAL3-P1A-A4-003",
+    "subject": "Biology SL",
+    "chapter": "A4 Ecosystems",
+    "unit": "A4.2 Conservation of biodiversity",
+    "primaryChapter": "A4 Ecosystems",
+    "primaryUnit": "A4.2 Conservation of biodiversity",
+    "requiredUnits": [
+      "A4.2 Conservation of biodiversity"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "habitat-corridor-before-after-control",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "challenging",
+    "stimulus": {
+      "type": "table",
+      "title": "Use of habitat patches before and after wildlife corridors were added",
+      "columns": [
+        "Patch type",
+        "Species recorded before",
+        "Species recorded 3 years after"
+      ],
+      "rows": [
+        [
+          "Corridor-connected",
+          14,
+          22
+        ],
+        [
+          "Similar unconnected control",
+          15,
+          16
+        ]
+      ]
+    },
+    "question": "Which conclusion is most justified?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The corridor proves that every species in the region increased in population size."
+      },
+      {
+        "id": "B",
+        "text": "The unconnected patch shows that habitat fragmentation has no ecological effects."
+      },
+      {
+        "id": "C",
+        "text": "Species richness must always double whenever a corridor is built."
+      },
+      {
+        "id": "D",
+        "text": "The larger increase in connected patches is consistent with corridors improving movement or colonization, although replication would strengthen the inference."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Species richness increased much more in the connected patch than in the similar unconnected control. This supports a corridor effect on movement or colonization, but a single paired comparison cannot establish a universal effect and does not measure population size of every species.",
+    "explanationJa": "連結された区画では種数が14から22へ増えたのに対し、非連結の対照区画では15から16への小さな増加でした。これは回廊が移動や再定着を助けた可能性を支持しますが、1組の比較だけで普遍的な効果を証明したり、全種の個体数増加を示したりはできません。"
+  },
+  {
+    "id": "BIO-BAL3-P1A-A4-004",
+    "subject": "Biology SL",
+    "chapter": "A4 Ecosystems",
+    "unit": "A4.2 Conservation of biodiversity",
+    "primaryChapter": "A4 Ecosystems",
+    "primaryUnit": "A4.2 Conservation of biodiversity",
+    "requiredUnits": [
+      "A4.2 Conservation of biodiversity"
+    ],
+    "level": "SL",
+    "assessmentObjectives": [
+      "AO2",
+      "AO3"
+    ],
+    "archetype": "bottleneck-genetic-diversity-conservation",
+    "scopeType": "single-unit",
+    "assessmentTarget": "paper1a",
+    "questionType": "multiple-choice",
+    "marks": 1,
+    "difficulty": "standard",
+    "stimulus": {
+      "type": "table",
+      "title": "Genetic diversity in two populations of an endangered mammal",
+      "columns": [
+        "Population",
+        "Individuals",
+        "Mean heterozygosity"
+      ],
+      "rows": [
+        [
+          "X",
+          48,
+          0.18
+        ],
+        [
+          "Y",
+          46,
+          0.41
+        ]
+      ]
+    },
+    "question": "If the two populations live in habitats of similar quality, which conservation concern is most directly suggested by the data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Population X has lower measured genetic diversity and may be more vulnerable to effects of inbreeding or future environmental change."
+      },
+      {
+        "id": "B",
+        "text": "Population X must contain more alleles because its heterozygosity is lower."
+      },
+      {
+        "id": "C",
+        "text": "Population Y cannot experience genetic drift because its heterozygosity is higher."
+      },
+      {
+        "id": "D",
+        "text": "The two populations have identical genetic diversity because their population sizes are similar."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Mean heterozygosity is substantially lower in population X despite similar current population sizes. Lower genetic diversity can increase concern about inbreeding and reduce the range of genetic variants available for future adaptation. The data do not show that drift is absent from Y.",
+    "explanationJa": "現在の個体数はほぼ同じですが、Xの平均ヘテロ接合度はYより大幅に低く、測定された遺伝的多様性が低いことを示します。遺伝的多様性が低い集団では近親交配の影響や将来の環境変化への適応力低下が懸念されます。"
+  }
+]
