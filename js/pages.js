@@ -570,6 +570,26 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureTrainingUIV2() {
+    if (typeof TrainingUIV2 !== 'undefined') {
+      TrainingUIV2.install();
+      return;
+    }
+    if (document.getElementById('training-ui-v2-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'training-ui-v2-script';
+    script.async = false;
+    script.src = 'js/training-ui-v2.js?v=1';
+    script.onload = () => {
+      if (typeof TrainingUIV2 !== 'undefined') TrainingUIV2.install();
+    };
+    script.onerror = () => {
+      console.warn('Training UI v2 could not be loaded. Existing Selection and Practice remain available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensurePaper2ProgressView() {
     if (typeof Paper2ProgressView !== 'undefined') {
       Paper2ProgressView.render();
@@ -645,6 +665,7 @@ const Pages = {
     this.ensureFinalExamProgressV2();
     this.ensureFinalExamAchievements();
     this.ensureTrophyUIV2();
+    this.ensureTrainingUIV2();
     this.show('home');
   }
 };
