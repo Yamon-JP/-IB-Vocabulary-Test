@@ -11,6 +11,16 @@
       { key: 'settings', label: 'Settings', icon: '⚙' }
     ],
 
+    activeFullMock() {
+      return [
+        window.BiologyPaper1FullMock,
+        window.BiologyPaper2FullMock,
+        window.EssPaper1FullMock,
+        window.EssPaper2FullMock,
+        window.MathAISLFullMock
+      ].find(module => Boolean(module?.active)) || null;
+    },
+
     activeKey(page = typeof Pages !== 'undefined' ? Pages.current : 'home') {
       if (page === 'selection' || page === 'practice') return 'train';
       if (page === 'statistics') return 'statistics';
@@ -57,6 +67,13 @@
     },
 
     openTrain() {
+      const activeMock = this.activeFullMock();
+      if (activeMock) {
+        Pages.show('practice');
+        if (typeof App !== 'undefined' && typeof App.updatePracticeHeader === 'function') App.updatePracticeHeader();
+        return;
+      }
+
       if (typeof App !== 'undefined' && App.state?.subject) {
         if (typeof App.backToSelection === 'function') {
           App.backToSelection();

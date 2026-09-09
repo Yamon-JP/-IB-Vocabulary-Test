@@ -13,13 +13,32 @@
       })[subject] || 'general';
     },
 
+    activeFullMock() {
+      const mocks = [
+        ['Biology SL', 'Paper 1 Full Mock', window.BiologyPaper1FullMock],
+        ['Biology SL', 'Paper 2 Full Mock', window.BiologyPaper2FullMock],
+        ['ESS HL', 'Paper 1 Full Mock', window.EssPaper1FullMock],
+        ['ESS HL', 'Paper 2 Full Mock', window.EssPaper2FullMock],
+        ['Math AI SL', 'Full Mock', window.MathAISLFullMock]
+      ];
+      const active = mocks.find(([, , module]) => Boolean(module?.active));
+      if (!active) return null;
+      const [subject, fallbackLabel, module] = active;
+      const label = subject === 'Math AI SL' && module?.paper
+        ? `${module.paper === 'paper2' ? 'Paper 2' : 'Paper 1'} Full Mock`
+        : fallbackLabel;
+      return { subject, label, module };
+    },
+
     practiceLabel(state = {}) {
       if (state.practiceType === 'vocabulary') return 'Vocabulary';
       if (state.practiceType === 'paper1') {
+        if (state.subject === 'English B HL') return 'Paper 1 Writing';
         if (state.subject === 'Biology SL') return state.paper1Section === 'paper1b' ? 'Paper 1B' : 'Paper 1A';
         return 'Paper 1';
       }
       if (state.practiceType === 'paper2') {
+        if (state.subject === 'English B HL') return state.englishBPaper2Mode === 'listening' ? 'Paper 2 Listening' : 'Paper 2 Reading';
         if (state.subject === 'Biology SL') return state.paper2Section === 'paper2b' ? 'Paper 2B' : 'Paper 2A';
         if (state.subject === 'ESS HL') return state.paper2Section === 'ess2b' ? 'Paper 2B' : 'Paper 2A';
         return 'Paper 2';
@@ -130,8 +149,14 @@
 
       document.getElementById('home-continue-button')?.addEventListener('click', () => {
         if (typeof App === 'undefined') return;
+        const activeMock = this.activeFullMock();
+        if (activeMock) {
+          if (typeof Pages !== 'undefined') Pages.show('practice');
+          if (typeof App.updatePracticeHeader === 'function') App.updatePracticeHeader();
+          return;
+        }
         if (App.state?.subject) {
-          App.openPractice();
+          if (typeof App.startPractice === 'function') App.startPractice();
           return;
         }
         subjectSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -158,12 +183,12 @@
       if (count) count.textContent = `${completed} / 3`;
       if (bar) bar.style.width = `${Math.round(completed / 3 * 100)}%`;
       if (state) {
-        state.classList.toggle('secured', completed >= 2);
+        state.classList.toggle('secured', completed === 2);
         state.classList.toggle('complete', completed === 3);
         state.textContent = completed === 3
           ? '✓ Daily set complete'
-          : completed >= 2
-            ? '🔥 Streak secured!'
+          : completed === 2
+            ? '🔥 One mission to go for today’s streak.'
             : completed === 1
               ? 'One complete. Keep going.'
               : 'Start today’s missions';
@@ -177,6 +202,14 @@
       const button = document.getElementById('home-continue-button');
       const state = App.state || {};
       if (!title || !meta || !button) return;
+
+      const activeMock = this.activeFullMock();
+      if (activeMock) {
+        title.textContent = 'Resume Full Mock';
+        meta.textContent = `${activeMock.subject} · ${activeMock.label}`;
+        button.textContent = 'Resume →';
+        return;
+      }
 
       if (!state.subject) {
         title.textContent = 'Choose your first subject';

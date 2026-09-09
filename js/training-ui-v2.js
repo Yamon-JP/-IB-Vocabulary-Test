@@ -35,11 +35,24 @@
     },
 
     isFullMock() {
+      const activeMock = [
+        window.BiologyPaper1FullMock,
+        window.BiologyPaper2FullMock,
+        window.EssPaper1FullMock,
+        window.EssPaper2FullMock,
+        window.MathAISLFullMock
+      ].some(module => Boolean(module?.active));
+      if (activeMock) return true;
+
       const startText = String(this.realStartButton()?.textContent || '').toLowerCase();
       if (/full\s*(mock|paper)|mock\s*exam/.test(startText)) return true;
       return [...document.querySelectorAll('#selection-page button.active')]
         .filter(button => this.isVisible(button))
         .some(button => /full\s*(mock|paper)|mock\s*exam/.test(String(button.textContent || '').toLowerCase()));
+    },
+
+    isExamMode() {
+      return this.isFullMock() || this.state().practiceType !== 'vocabulary';
     },
 
     modeLabel() {
@@ -173,6 +186,34 @@
       return true;
     },
 
+    updatePracticeStatsContext() {
+      const exam = this.isExamMode();
+      const stats = document.querySelector('#practice-page .practice-mini-stats');
+      if (stats) {
+        stats.setAttribute('aria-label', exam ? 'Vocabulary quiz stats shown during exam training' : 'Vocabulary quiz practice stats');
+        const labels = stats.querySelectorAll(':scope > div > span');
+        const text = exam ? ['Quiz Questions', 'Quiz Accuracy', 'Quiz XP'] : ['Questions', 'Accuracy', 'XP'];
+        labels.forEach((label, index) => {
+          if (text[index]) label.textContent = text[index];
+        });
+      }
+
+      const daily = document.getElementById('practice-daily-panel');
+      if (!daily) return;
+      const eyebrow = daily.querySelector('.practice-daily-eyebrow');
+      const reset = daily.querySelector('.practice-daily-reset');
+      const questions = daily.querySelector('#practice-daily-row-questions .practice-daily-row-copy span');
+      const correct = daily.querySelector('#practice-daily-row-correct .practice-daily-row-copy span');
+      const streak = daily.querySelector('#practice-daily-row-streak .practice-daily-row-copy span');
+
+      if (eyebrow) eyebrow.textContent = exam ? 'VOCABULARY QUIZ MISSION' : "TODAY'S MISSION";
+      if (reset) reset.textContent = exam ? 'Quiz only · resets daily' : 'Resets daily';
+      if (questions) questions.textContent = exam ? '⚡ 100 Quiz Questions' : '⚡ 100 Questions';
+      if (correct) correct.textContent = exam ? '🎯 75 Quiz Correct' : '🎯 75 Correct';
+      if (streak) streak.textContent = exam ? '🔥 10 Quiz in a Row' : '🔥 10 in a Row';
+      daily.setAttribute('aria-label', exam ? "Today's vocabulary quiz mission progress" : "Today's daily mission progress");
+    },
+
     renderPractice() {
       const summary = this.ensurePracticeSummary();
       if (!summary) return false;
@@ -187,6 +228,7 @@
         const values = [this.scopeLabel(), coverage].filter(Boolean);
         meta.innerHTML = values.map(value => `<span>${this.escapeHtml(value)}</span>`).join('');
       }
+      this.updatePracticeStatsContext();
       return true;
     },
 
@@ -196,16 +238,14 @@
         this.observer = new MutationObserver(() => this.scheduleRender());
       }
       this.observer.disconnect();
-      ['selection-page', 'practice-page'].forEach(id => {
-        const root = document.getElementById(id);
-        if (!root) return;
-        this.observer.observe(root, {
-          subtree: true,
-          childList: true,
-          characterData: true,
-          attributes: true,
-          attributeFilter: ['class', 'style', 'hidden', 'disabled']
-        });
+      const root = document.getElementById('selection-page');
+      if (!root) return;
+      this.observer.observe(root, {
+        subtree: true,
+        childList: true,
+        characterData: true,
+        attributes: true,
+        attributeFilter: ['class', 'style', 'hidden', 'disabled']
       });
     },
 
@@ -244,7 +284,7 @@
     installEventHandlers() {
       if (this.eventHandlersInstalled) return;
       const handler = event => {
-        if (event.target?.closest?.('#selection-page, #practice-page')) this.scheduleRender();
+        if (event.target?.closest?.('#selection-page')) this.scheduleRender();
       };
       document.addEventListener('click', handler, true);
       document.addEventListener('change', handler, true);
