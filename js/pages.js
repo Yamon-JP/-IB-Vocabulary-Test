@@ -266,6 +266,26 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureNavigationUIV2() {
+    if (typeof NavigationUIV2 !== 'undefined') {
+      NavigationUIV2.install();
+      return;
+    }
+    if (document.getElementById('navigation-ui-v2-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'navigation-ui-v2-script';
+    script.async = false;
+    script.src = 'js/navigation-ui-v2.js?v=1';
+    script.onload = () => {
+      if (typeof NavigationUIV2 !== 'undefined') NavigationUIV2.install();
+    };
+    script.onerror = () => {
+      console.warn('Navigation UI v2 could not be loaded. Existing navigation remains available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureCourseCoverage() {
     if (typeof CourseCoverage !== 'undefined') {
       CourseCoverage.install();
@@ -549,6 +569,7 @@ const Pages = {
     this.ensureEnglishBPaper2Listening();
     this.ensureEnglishBPaper2ListeningVoice();
     this.ensureUIOptimizations();
+    this.ensureNavigationUIV2();
     this.ensureCourseCoverage();
     this.ensureEssCourseCoverage();
     this.ensureMathAISLModules();
