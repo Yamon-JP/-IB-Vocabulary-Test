@@ -56,13 +56,15 @@
       Paper1.paper1bQuestions.forEach(question => this.refineQuestion(question));
       Paper2.allQuestions.forEach(question => this.refineQuestion(question));
 
-      const [paper1Extra, paper2Extra] = await Promise.all([
+      const [paper1Extra, paper2Extra, paper1Balance3] = await Promise.all([
         this.fetchArray('data/math-ai-sl-paper1-final-balance.json?v=1'),
-        this.fetchArray('data/math-ai-sl-paper2-final-balance.json?v=1')
+        this.fetchArray('data/math-ai-sl-paper2-final-balance.json?v=1'),
+        this.fetchArray('data/math-ai-sl-paper1-balance-pack-3.json?v=1')
       ]);
-      if (!paper1Extra.length || !paper2Extra.length) return false;
+      if (!paper1Extra.length || !paper2Extra.length || !paper1Balance3.length) return false;
 
       Paper1.paper1bQuestions = MathAISL.mergeUnique(Paper1.paper1bQuestions, paper1Extra);
+      Paper1.paper1bQuestions = MathAISL.mergeUnique(Paper1.paper1bQuestions, paper1Balance3);
       Paper2.allQuestions = MathAISL.mergeUnique(Paper2.allQuestions, paper2Extra);
       this.loaded = true;
 

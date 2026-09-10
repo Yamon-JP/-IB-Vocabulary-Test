@@ -38,6 +38,15 @@
         const data = await response.json();
         this.data = Array.isArray(data) ? data : [];
 
+        try {
+          const balanceResponse = await fetch('data/english-b/paper1-writing-balance-pack-1.json?v=1');
+          if (!balanceResponse.ok) throw new Error('English B Paper 1 balance data not found');
+          const balanceData = await balanceResponse.json();
+          if (Array.isArray(balanceData)) this.data = [...this.data, ...balanceData];
+        } catch (balanceError) {
+          console.warn('English B Paper 1 balance data could not be loaded. Existing writing practice remains available.', balanceError);
+        }
+
         this.focusedData = [];
         const focusUrls = [1, 2, 3, 4, 5].map(
           chapter => `data/english-b/paper1-writing-focus-ch${chapter}.json?v=1`
