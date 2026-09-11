@@ -709,18 +709,22 @@
 }
 
 /* Compact UI phase 1: keep all progress data, show the most useful items first. */
-#progress-v2-chapter-preview .progress-v2-chapter-row:nth-child(n+4),
-#progress-v2-recent .progress-v2-recent-row:nth-child(n+4) {
+#progress-v2-chapter-preview .progress-v2-chapter-row:nth-child(n+4) {
   display: none;
 }
 
-#progress-v2-subject > .progress-v2-panel:nth-of-type(3) .progress-v2-panel-heading > span {
-  font-size: 0;
+#progress-v2-recent {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 2px 7px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
 }
 
-#progress-v2-subject > .progress-v2-panel:nth-of-type(3) .progress-v2-panel-heading > span::after {
-  content: 'Latest 3 shown';
-  font-size: .72rem;
+#progress-v2-recent .progress-v2-recent-row {
+  flex: 0 0 min(82%, 300px);
+  scroll-snap-align: start;
 }
 
 @media (min-width: 761px) {
@@ -769,5 +773,9 @@
   #progress-v2-section-grid .progress-v2-section-card {
     flex: 0 0 min(72vw, 220px);
     scroll-snap-align: start;
+  }
+
+  #progress-v2-recent .progress-v2-recent-row {
+    flex-basis: min(82vw, 290px);
   }
 }
