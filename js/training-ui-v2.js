@@ -23,6 +23,15 @@
       return String(this.state().subject || 'Choose a subject');
     },
 
+    subjectTheme() {
+      return ({
+        'English B HL': 'english',
+        'Biology SL': 'biology',
+        'ESS HL': 'ess',
+        'Math AI SL': 'math'
+      })[this.subject()] || 'general';
+    },
+
     realStartButton() {
       return document.querySelector('#selection-page .selection-actions .primary-action');
     },
@@ -186,9 +195,14 @@
     renderSelection() {
       const bar = this.ensureSelectionBar();
       if (!bar) return false;
+      const page = document.getElementById('selection-page');
+      const theme = this.subjectTheme();
       const items = bar.querySelector('#training-v2-setup-items');
       const start = bar.querySelector('#training-v2-start');
       const realStart = this.realStartButton();
+
+      bar.dataset.subjectTheme = theme;
+      if (page) page.dataset.subjectTheme = theme;
 
       if (items) {
         items.innerHTML = this.selectionSummary().map(item => `
@@ -235,10 +249,19 @@
     renderPractice() {
       const summary = this.ensurePracticeSummary();
       if (!summary) return false;
+      const page = document.getElementById('practice-page');
+      const theme = this.subjectTheme();
+      const exam = this.isExamMode();
       const subject = summary.querySelector('#training-v2-practice-subject');
       const mode = summary.querySelector('#training-v2-practice-mode');
       const meta = summary.querySelector('#training-v2-practice-meta');
       const coverage = this.coverageInfo();
+
+      summary.dataset.subjectTheme = theme;
+      if (page) {
+        page.dataset.subjectTheme = theme;
+        page.dataset.trainingContext = exam ? 'exam' : 'vocabulary';
+      }
 
       if (subject) subject.textContent = this.subject();
       if (mode) mode.textContent = this.modeLabel();
