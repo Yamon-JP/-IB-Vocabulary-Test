@@ -298,3 +298,145 @@
     padding: 8px;
   }
 }
+
+/* Phase UI-3.1: compact training flow and subject identity. */
+#selection-page.training-ui-v2-ready,
+#practice-page.training-ui-v2-ready {
+  --training-accent: #4f46e5;
+  --training-soft: #eef2ff;
+  --training-border: #c7d2fe;
+}
+
+#selection-page.training-ui-v2-ready[data-subject-theme="english"],
+#practice-page.training-ui-v2-ready[data-subject-theme="english"] {
+  --training-accent: #7c3aed;
+  --training-soft: #f5f3ff;
+  --training-border: #ddd6fe;
+}
+
+#selection-page.training-ui-v2-ready[data-subject-theme="biology"],
+#practice-page.training-ui-v2-ready[data-subject-theme="biology"] {
+  --training-accent: #059669;
+  --training-soft: #ecfdf5;
+  --training-border: #a7f3d0;
+}
+
+#selection-page.training-ui-v2-ready[data-subject-theme="ess"],
+#practice-page.training-ui-v2-ready[data-subject-theme="ess"] {
+  --training-accent: #0891b2;
+  --training-soft: #ecfeff;
+  --training-border: #a5f3fc;
+}
+
+#selection-page.training-ui-v2-ready[data-subject-theme="math"],
+#practice-page.training-ui-v2-ready[data-subject-theme="math"] {
+  --training-accent: #2563eb;
+  --training-soft: #eff6ff;
+  --training-border: #bfdbfe;
+}
+
+#selection-page.training-ui-v2-ready .training-v2-setup-summary {
+  position: sticky;
+  top: 8px;
+  z-index: 18;
+  border-color: var(--training-border);
+  border-left: 4px solid var(--training-accent);
+  background: linear-gradient(135deg, var(--training-soft), rgba(255,255,255,.97) 68%);
+  box-shadow: 0 12px 28px rgba(15,23,42,.09);
+  backdrop-filter: blur(12px);
+}
+
+#selection-page.training-ui-v2-ready .training-v2-setup-item {
+  border-color: color-mix(in srgb, var(--training-accent) 12%, #ebe9f8);
+}
+
+#selection-page.training-ui-v2-ready .training-v2-setup-item:first-child strong {
+  color: var(--training-accent);
+}
+
+#selection-page.training-ui-v2-ready .training-v2-start {
+  border-color: var(--training-accent);
+  background: var(--training-accent);
+  box-shadow: 0 9px 20px color-mix(in srgb, var(--training-accent) 22%, transparent);
+}
+
+#selection-page.training-ui-v2-ready .selection-actions > .primary-action {
+  display: none;
+}
+
+#selection-page.training-ui-v2-ready .selection-actions {
+  justify-content: flex-start;
+}
+
+#selection-page.training-ui-v2-ready .practice-type-card.active,
+#selection-page.training-ui-v2-ready .paper1-section-card.active,
+#selection-page.training-ui-v2-ready .engb-l-mode-card.active {
+  border-color: var(--training-accent);
+  box-shadow: inset 0 0 0 1px var(--training-accent);
+}
+
+#practice-page.training-ui-v2-ready .practice-header {
+  min-height: 42px;
+  margin-bottom: 6px;
+  padding: 6px 8px;
+  justify-content: flex-start;
+}
+
+#practice-page.training-ui-v2-ready .practice-heading-copy {
+  display: none;
+}
+
+#practice-page.training-ui-v2-ready .back-button {
+  min-height: 34px;
+  padding: 6px 10px;
+}
+
+#practice-page.training-ui-v2-ready .training-v2-practice-summary {
+  margin-bottom: 7px;
+  border-color: var(--training-border);
+  border-left: 4px solid var(--training-accent);
+  background: linear-gradient(135deg, var(--training-soft), #fff 72%);
+  box-shadow: 0 8px 20px rgba(15,23,42,.045);
+}
+
+#practice-page.training-ui-v2-ready .training-v2-practice-subject {
+  color: var(--training-accent);
+}
+
+#practice-page.training-ui-v2-ready .training-v2-practice-meta span {
+  border-color: color-mix(in srgb, var(--training-accent) 16%, #e3e0f7);
+  color: color-mix(in srgb, var(--training-accent) 72%, #475467);
+}
+
+#practice-page.training-ui-v2-ready[data-training-context="exam"] .practice-mini-stats {
+  opacity: .84;
+}
+
+@media (max-width: 560px) {
+  #selection-page.training-ui-v2-ready .training-v2-setup-summary {
+    top: 5px;
+    gap: 7px;
+    border-left-width: 3px;
+    box-shadow: 0 8px 22px rgba(15,23,42,.1);
+  }
+
+  #selection-page.training-ui-v2-ready .training-v2-setup-item {
+    padding: 7px 8px;
+  }
+
+  #selection-page.training-ui-v2-ready .training-v2-start {
+    min-height: 40px;
+    padding-block: 8px;
+  }
+
+  #practice-page.training-ui-v2-ready .practice-header {
+    min-height: 38px;
+    padding: 5px 6px;
+  }
+
+  #practice-page.training-ui-v2-ready .training-v2-practice-summary {
+    gap: 6px;
+    padding: 9px 10px;
+    border-left-width: 3px;
+  }
+}
