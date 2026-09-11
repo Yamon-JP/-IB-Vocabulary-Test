@@ -838,3 +838,49 @@
     font-size: .58rem;
   }
 }
+
+/* Compact UI phase 1: ALL becomes an overview; category tabs own the detailed lists. */
+#trophy-v2-filters [data-trophy-filter="all"] {
+  font-size: 0;
+}
+
+#trophy-v2-filters [data-trophy-filter="all"]::after {
+  content: 'OVERVIEW';
+  font-size: .72rem;
+}
+
+#trophy-ui-v2-root:has(#trophy-v2-filters [data-trophy-filter="all"].active) #trophy-v2-global-section,
+#trophy-ui-v2-root:has(#trophy-v2-filters [data-trophy-filter="all"].active) #trophy-v2-exam-section,
+#trophy-ui-v2-root:has(#trophy-v2-filters [data-trophy-filter="all"].active) #trophy-v2-chapter-section {
+  display: none !important;
+}
+
+#trophy-ui-v2-root:has(#trophy-v2-filters [data-trophy-filter="general"].active) .trophy-v2-next-panel,
+#trophy-ui-v2-root:has(#trophy-v2-filters [data-trophy-filter="streak"].active) .trophy-v2-next-panel,
+#trophy-ui-v2-root:has(#trophy-v2-filters [data-trophy-filter="exam"].active) .trophy-v2-next-panel,
+#trophy-ui-v2-root:has(#trophy-v2-filters [data-trophy-filter="chapter"].active) .trophy-v2-next-panel {
+  display: none !important;
+}
+
+#trophy-ui-v2-root:has(#trophy-v2-filters [data-trophy-filter="all"].active) .trophy-v2-hero {
+  gap: 10px;
+}
+
+#trophy-ui-v2-root:has(#trophy-v2-filters [data-trophy-filter="all"].active) .trophy-v2-rank-card {
+  padding-block: 15px;
+}
+
+@media (max-width: 560px) {
+  #trophy-v2-filters [data-trophy-filter="all"]::after {
+    font-size: .56rem;
+  }
+
+  #trophy-ui-v2-root:has(#trophy-v2-filters [data-trophy-filter="all"].active) .trophy-v2-hero-copy p:last-child {
+    display: none;
+  }
+
+  #trophy-ui-v2-root:has(#trophy-v2-filters [data-trophy-filter="all"].active) .trophy-v2-rank-card {
+    gap: 10px;
+    padding: 13px;
+  }
+}
