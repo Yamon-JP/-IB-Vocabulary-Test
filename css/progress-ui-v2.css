@@ -707,3 +707,67 @@
     height: 68px;
   }
 }
+
+/* Compact UI phase 1: keep all progress data, show the most useful items first. */
+#progress-v2-chapter-preview .progress-v2-chapter-row:nth-child(n+4),
+#progress-v2-recent .progress-v2-recent-row:nth-child(n+4) {
+  display: none;
+}
+
+#progress-v2-subject > .progress-v2-panel:nth-of-type(3) .progress-v2-panel-heading > span {
+  font-size: 0;
+}
+
+#progress-v2-subject > .progress-v2-panel:nth-of-type(3) .progress-v2-panel-heading > span::after {
+  content: 'Latest 3 shown';
+  font-size: .72rem;
+}
+
+@media (min-width: 761px) {
+  #progress-v2-subject {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  #progress-v2-subject > .progress-v2-subject-hero {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  #progress-v2-subject > .progress-v2-panel:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  #progress-v2-subject > .progress-v2-panel:nth-of-type(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  #progress-v2-subject > .progress-v2-panel:nth-of-type(2) {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+
+  #progress-v2-subject > .progress-v2-panel:nth-of-type(4) {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}
+
+@media (max-width: 560px) {
+  #progress-v2-section-grid {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin-inline: -2px;
+    padding: 2px 2px 7px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+  }
+
+  #progress-v2-section-grid .progress-v2-section-card {
+    flex: 0 0 min(72vw, 220px);
+    scroll-snap-align: start;
+  }
+}
