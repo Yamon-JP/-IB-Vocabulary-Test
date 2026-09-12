@@ -1,0 +1,265 @@
+[
+  {
+    "id": "ENGB-L-DIV1",
+    "title": "Listening Diversity Mock 1",
+    "totalMarks": 25,
+    "texts": [
+      {
+        "id": "ENGB-L-DIV1-A",
+        "chapter": "Chapter 4",
+        "theme": "Social organization",
+        "title": "Who gets to join the meeting?",
+        "sourceType": "Campus radio panel",
+        "marks": 8,
+        "segments": [
+          {"speaker":"Host","voiceHint":"en-GB","text":"Our student council has been experimenting with meeting times after attendance fell last term. Mina, why did you support moving some meetings from after school to lunchtime?"},
+          {"speaker":"Mina","voiceHint":"en-US","text":"The old four-thirty meeting excluded more people than we realized. Some students had to catch a school bus immediately, and others went straight to part-time jobs. Lunch is not perfect, but at least those students are still on campus."},
+          {"speaker":"Host","voiceHint":"en-GB","text":"Owen, you were less enthusiastic about lunchtime meetings."},
+          {"speaker":"Owen","voiceHint":"en-GB","text":"Yes. Lunch is short and the cafeteria area is noisy. If a discussion is complicated, people rush because they also need time to eat. I suggested rotating the schedule: one lunch meeting, then one after-school meeting, with the main decisions published online."},
+          {"speaker":"Host","voiceHint":"en-GB","text":"Sara, you helped test online voting. Did that solve the access problem?"},
+          {"speaker":"Sara","voiceHint":"en-US","text":"It helped with simple choices, but voting is not the same as discussion. Students can click yes or no without hearing why somebody disagrees. I would keep online voting for straightforward decisions, but publish the agenda two days early so people can send comments before the meeting."},
+          {"speaker":"Mina","voiceHint":"en-US","text":"I like the rotating idea if we review attendance. The goal is not to find one perfect time. It is to notice who repeatedly cannot participate and adjust."}
+        ],
+        "questions": [
+          {
+            "id": "A1",
+            "type": "matching",
+            "marks": 2,
+            "prompt": "Match each speaker to the main concern they emphasize.",
+            "options": [
+              "Access for students with transport or work commitments",
+              "The limits of online voting without discussion",
+              "The cost of running student activities",
+              "The need to cancel all face-to-face meetings"
+            ],
+            "rows": [
+              {"label":"Mina","correctIndex":0},
+              {"label":"Sara","correctIndex":1}
+            ],
+            "explanationJa": "Minaは参加しにくい生徒へのaccess、Saraはonline votingだけではdiscussionを代替できない点を強調しています。"
+          },
+          {
+            "id": "A2",
+            "type": "gap",
+            "marks": 1,
+            "prompt": "Complete the sentence: Some students went straight to part-time ________ after school.",
+            "markscheme": ["jobs"],
+            "explanationJa": "Minaはafter schoolにpart-time jobsへ行く生徒がいると述べています。"
+          },
+          {
+            "id": "A3",
+            "type": "mcq",
+            "marks": 1,
+            "prompt": "What compromise does Owen suggest?",
+            "options": [
+              "Holding every meeting online",
+              "Rotating between lunchtime and after-school meetings",
+              "Allowing only senior students to attend",
+              "Ending student council meetings"
+            ],
+            "correctIndex": 1,
+            "explanationJa": "Owenはlunchとafter-schoolを交互にするrotating scheduleを提案しています。"
+          },
+          {
+            "id": "A4",
+            "type": "short",
+            "marks": 2,
+            "prompt": "Give two disadvantages Owen identifies about lunchtime meetings.",
+            "markscheme": [
+              "Lunch is short, so complicated discussions can feel rushed.",
+              "The cafeteria area is noisy and students also need time to eat."
+            ],
+            "explanationJa": "時間が短いことと、noiseや食事時間との競合が問題です。"
+          },
+          {
+            "id": "A5",
+            "type": "multi",
+            "marks": 2,
+            "prompt": "Choose TWO ideas Sara supports.",
+            "options": [
+              "Using online voting for straightforward decisions",
+              "Publishing the agenda two days before the meeting",
+              "Replacing all discussion with yes/no voting",
+              "Keeping meeting plans secret until the meeting starts",
+              "Removing comments from students who cannot attend"
+            ],
+            "correctIndices": [0,1],
+            "required": 2,
+            "explanationJa": "simple decisionsにはonline votingを使い、agendaは2日前に公開する案です。"
+          }
+        ]
+      },
+      {
+        "id": "ENGB-L-DIV1-B",
+        "chapter": "Chapter 5",
+        "theme": "Sharing the planet",
+        "title": "Repair or replace the school laptop?",
+        "sourceType": "Local news interview",
+        "marks": 8,
+        "segments": [
+          {"speaker":"Reporter","voiceHint":"en-GB","text":"A secondary school has changed the way it replaces student laptops. Instead of automatically replacing a device after four years, technicians now inspect its condition first."},
+          {"speaker":"Technician","voiceHint":"en-US","text":"Age alone tells us very little. A four-year-old laptop may only need a new battery, while a newer machine can have serious damage. We created a checklist covering battery health, keyboard condition, storage and whether the software still receives security updates."},
+          {"speaker":"Teacher","voiceHint":"en-GB","text":"The environmental benefit matters, but reliability matters too. A student should not lose half a lesson because a machine fails repeatedly. We therefore keep loan devices available while a repair is being assessed."},
+          {"speaker":"Reporter","voiceHint":"en-GB","text":"Has the policy saved money?"},
+          {"speaker":"Technician","voiceHint":"en-US","text":"In the first year, repair costs rose because we bought spare batteries and trained staff. But the school purchased thirty percent fewer replacement laptops, so we expect the longer-term cost to fall."},
+          {"speaker":"Student","voiceHint":"en-US","text":"I was worried that repair meant getting an unreliable old computer. Mine received a new battery and keyboard, and it works well. I also liked seeing the repair report because it explained what had actually been changed."},
+          {"speaker":"Teacher","voiceHint":"en-GB","text":"The next step is to publish simple guidance for families. Repair should not become an excuse to keep unsafe or unsupported devices in use. The decision has to be based on evidence, not on replacing everything or keeping everything."}
+        ],
+        "questions": [
+          {
+            "id": "B1",
+            "type": "gap",
+            "marks": 1,
+            "prompt": "The technician says a four-year-old laptop may only need a new ________.",
+            "markscheme": ["battery"],
+            "explanationJa": "古い端末でもbattery交換だけで使える場合があると述べています。"
+          },
+          {
+            "id": "B2",
+            "type": "mcq",
+            "marks": 1,
+            "prompt": "Why does the school keep loan devices available?",
+            "options": [
+              "To replace every repaired laptop permanently",
+              "So students can continue learning while repairs are assessed",
+              "To allow students to take two laptops home",
+              "Because technicians refuse to repair devices"
+            ],
+            "correctIndex": 1,
+            "explanationJa": "repair assessment中にも授業を続けられるようloan devicesを用意しています。"
+          },
+          {
+            "id": "B3",
+            "type": "multi",
+            "marks": 2,
+            "prompt": "Choose TWO items included in the technician's condition checklist.",
+            "options": [
+              "Battery health",
+              "The student's exam grades",
+              "Keyboard condition",
+              "The colour of the laptop case",
+              "The number of social-media accounts"
+            ],
+            "correctIndices": [0,2],
+            "required": 2,
+            "explanationJa": "battery healthとkeyboard conditionがchecklistの具体例です。"
+          },
+          {
+            "id": "B4",
+            "type": "matching",
+            "marks": 2,
+            "prompt": "Match each speaker to the point they emphasize.",
+            "options": [
+              "Reliability during lessons must be protected",
+              "A repair report can make the process more transparent",
+              "Every old device should be kept indefinitely",
+              "Only purchase price should determine replacement"
+            ],
+            "rows": [
+              {"label":"Teacher","correctIndex":0},
+              {"label":"Student","correctIndex":1}
+            ],
+            "explanationJa": "Teacherはlesson中のreliability、Studentはrepair reportによる透明性を評価しています。"
+          },
+          {
+            "id": "B5",
+            "type": "short",
+            "marks": 2,
+            "prompt": "Give two reasons the technician expects the policy to become cheaper in the longer term.",
+            "markscheme": [
+              "The school purchased thirty percent fewer replacement laptops.",
+              "The initial spending on spare parts and staff training is an upfront cost rather than a reason to replace every device."
+            ],
+            "explanationJa": "replacement purchaseが30%減ったことと、初年度の部品・training費は初期投資である点です。"
+          }
+        ]
+      },
+      {
+        "id": "ENGB-L-DIV1-C",
+        "chapter": "Chapter 2",
+        "theme": "Experiences",
+        "title": "The internship that began with listening",
+        "sourceType": "Career podcast panel",
+        "marks": 9,
+        "segments": [
+          {"speaker":"Host","voiceHint":"en-GB","text":"Three students have just finished short community internships. Supervisor Ms Green, what did you ask interns to do on their first day?"},
+          {"speaker":"Green","voiceHint":"en-GB","text":"Mostly observe. Students often arrive wanting to prove themselves immediately. We ask them to spend the first morning watching how the team works, writing down questions and noticing which tasks repeat."},
+          {"speaker":"Nia","voiceHint":"en-US","text":"At first that felt passive. I was placed at a food-distribution centre and wanted to start carrying boxes. But by watching, I noticed volunteers repeatedly stopping to answer the same questions about collection times. I later helped redesign the information board."},
+          {"speaker":"Leo","voiceHint":"en-US","text":"My placement was at a community sports club. I made a mistake because I assumed a quiet afternoon meant there was nothing to do. In fact, staff were preparing equipment for evening sessions. Once I started asking what happened later in the day, the work made much more sense."},
+          {"speaker":"Green","voiceHint":"en-GB","text":"That is exactly why observation matters. It should lead to better questions, not silence for its own sake. By the second day we expect interns to suggest one small improvement, but they should be able to explain what evidence led them to it."},
+          {"speaker":"Nia","voiceHint":"en-US","text":"The experience changed how I think about initiative. Acting quickly can look confident, but sometimes the more useful first step is understanding the system before trying to change it."},
+          {"speaker":"Host","voiceHint":"en-GB","text":"So observation is not the opposite of action; it can make later action more informed."}
+        ],
+        "questions": [
+          {
+            "id": "C1",
+            "type": "mcq",
+            "marks": 1,
+            "prompt": "What does Ms Green ask interns to do during the first morning?",
+            "options": [
+              "Lead the team immediately",
+              "Observe the work, record questions and notice repeated tasks",
+              "Write a final internship report",
+              "Choose a different placement"
+            ],
+            "correctIndex": 1,
+            "explanationJa": "最初の午前はobserveし、questionsとrepeated tasksを記録します。"
+          },
+          {
+            "id": "C2",
+            "type": "matching",
+            "marks": 3,
+            "prompt": "Match each speaker to the lesson or emphasis connected with them.",
+            "options": [
+              "Observation should produce evidence-based questions and improvements",
+              "Watching repeated questions led to redesigning information",
+              "Understanding work requires asking what happens at different times",
+              "Interns should avoid suggesting any changes"
+            ],
+            "rows": [
+              {"label":"Ms Green","correctIndex":0},
+              {"label":"Nia","correctIndex":1},
+              {"label":"Leo","correctIndex":2}
+            ],
+            "explanationJa": "Greenはevidence-based improvement、Niaはrepeated questions、Leoは時間帯全体を理解することを強調します。"
+          },
+          {
+            "id": "C3",
+            "type": "short",
+            "marks": 2,
+            "prompt": "Give two things Nia learned by observing before acting.",
+            "markscheme": [
+              "She noticed volunteers repeatedly answering the same questions about collection times.",
+              "She learned that understanding the system first can lead to a more useful improvement, such as redesigning the information board."
+            ],
+            "explanationJa": "繰り返される質問に気づき、その観察をinformation board改善につなげました。"
+          },
+          {
+            "id": "C4",
+            "type": "gap",
+            "marks": 1,
+            "prompt": "Ms Green says interns should explain what ________ led them to an improvement idea.",
+            "markscheme": ["evidence"],
+            "explanationJa": "improvementの根拠となるevidenceを説明できるべきだと述べています。"
+          },
+          {
+            "id": "C5",
+            "type": "multi",
+            "marks": 2,
+            "prompt": "Choose TWO statements supported by the discussion.",
+            "options": [
+              "Observation can make later action more informed.",
+              "Initiative always means acting immediately.",
+              "Interns are expected to suggest a small improvement after observing.",
+              "Quiet periods always mean there is no work to do.",
+              "Students should never ask staff questions."
+            ],
+            "correctIndices": [0,2],
+            "required": 2,
+            "explanationJa": "observationがlater actionを改善し、観察後にはsmall improvementを提案することが求められます。"
+          }
+        ]
+      }
+    ]
+  }
+]
