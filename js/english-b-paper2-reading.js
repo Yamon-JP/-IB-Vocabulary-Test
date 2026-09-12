@@ -162,6 +162,10 @@
       );
     },
 
+    setKey(set) {
+      return (set?.texts || []).map(text => text?.id || '').filter(Boolean).join('|');
+    },
+
     recentAttempts() {
       return [...ProgressStore.load().attempts]
         .filter(attempt => attempt?.assessmentTarget === 'english-b-paper2-reading')
@@ -170,7 +174,11 @@
 
     getSetWeight(set) {
       const attempts = this.recentAttempts();
-      const exact = attempts.filter(attempt => attempt?.setId === set?.id).slice(0, 3);
+      const contentKey = this.setKey(set);
+      const exact = attempts.filter(attempt => {
+        if (attempt?.setKey) return attempt.setKey === contentKey;
+        return !set?.focused && attempt?.setId === set?.id;
+      }).slice(0, 3);
       let weight = 3;
       if (exact.length) {
         const score = exact.reduce((sum, attempt) => sum + Math.max(0, Number(attempt?.score) || 0), 0);
@@ -427,6 +435,7 @@
         schemaVersion: 1,
         attemptId: `${set.id}-${Date.now()}`,
         setId: set.id,
+        setKey: this.setKey(set),
         subject: 'English B HL',
         assessmentTarget: 'english-b-paper2-reading',
         chapters: (set.texts || []).map(text => text.chapter),
