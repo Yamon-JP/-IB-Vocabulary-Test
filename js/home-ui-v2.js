@@ -118,15 +118,15 @@
       focusSection.className = 'home-focus-section';
       focusSection.innerHTML = `
         <div class="home-section-title">
-          <div><p class="eyebrow">FOCUS NEXT</p><h2>Recommended focus</h2></div>
-          <span>Based on quiz history</span>
+          <div><p class="eyebrow">FOCUS NEXT</p><h2>Recommended Next Practice</h2></div>
+          <span>Final Exam history first · Quiz fallback</span>
         </div>
         <article id="home-focus-card" class="home-focus-card is-empty">
           <div class="home-focus-icon" aria-hidden="true">◎</div>
           <div class="home-focus-copy">
             <span id="home-focus-subject">Build your history</span>
-            <strong id="home-focus-chapter">Complete some practice to reveal your focus area.</strong>
-            <small id="home-focus-reason">Your lowest chapter accuracy will appear here.</small>
+            <strong id="home-focus-chapter">Complete some practice to reveal your next target.</strong>
+            <small id="home-focus-reason">Final Exam weaknesses will be prioritized automatically.</small>
           </div>
           <button type="button" id="home-focus-button" disabled>Practice →</button>
         </article>`;
@@ -165,9 +165,13 @@
 
       document.getElementById('home-focus-button')?.addEventListener('click', () => {
         const button = document.getElementById('home-focus-button');
-        const subject = button?.dataset.subject;
-        if (!subject || typeof App === 'undefined') return;
-        App.selectSubject(subject);
+        if (!button || typeof App === 'undefined') return;
+        if (button.dataset.mode === 'adaptive' && typeof AdaptiveTraining !== 'undefined' && typeof AdaptiveTraining.startRecommended === 'function') {
+          AdaptiveTraining.startRecommended();
+          return;
+        }
+        const subject = button.dataset.subject;
+        if (subject) App.selectSubject(subject);
       });
 
       return true;
@@ -223,14 +227,8 @@
       button.textContent = 'Continue →';
     },
 
-    updateFocus() {
-      const card = document.getElementById('home-focus-card');
-      const subjectEl = document.getElementById('home-focus-subject');
-      const chapterEl = document.getElementById('home-focus-chapter');
-      const reasonEl = document.getElementById('home-focus-reason');
-      const button = document.getElementById('home-focus-button');
-      if (!card || !subjectEl || !chapterEl || !reasonEl || !button || typeof Progress === 'undefined') return;
-
+    quizFocus() {
+      if (typeof Progress === 'undefined') return null;
       const candidates = [];
       Object.entries(Progress.data?.chapterStats || {}).forEach(([subject, chapters]) => {
         Object.entries(chapters || {}).forEach(([chapter, stats]) => {
@@ -241,26 +239,60 @@
         });
       });
       candidates.sort((a, b) => a.accuracy - b.accuracy || b.questions - a.questions || a.chapter.localeCompare(b.chapter));
-      const focus = candidates[0];
+      return candidates[0] || null;
+    },
+
+    updateFocus() {
+      const card = document.getElementById('home-focus-card');
+      const subjectEl = document.getElementById('home-focus-subject');
+      const chapterEl = document.getElementById('home-focus-chapter');
+      const reasonEl = document.getElementById('home-focus-reason');
+      const button = document.getElementById('home-focus-button');
+      if (!card || !subjectEl || !chapterEl || !reasonEl || !button) return;
+
+      const quiz = this.quizFocus();
+      const adaptive = typeof AdaptiveTraining !== 'undefined' && typeof AdaptiveTraining.getRecommendation === 'function'
+        ? AdaptiveTraining.getRecommendation()
+        : null;
+      const useAdaptive = Boolean(adaptive && (adaptive.accuracy !== null || !quiz));
 
       card.className = 'home-focus-card';
-      if (!focus) {
-        card.classList.add('is-empty');
-        card.removeAttribute('data-subject-theme');
-        subjectEl.textContent = 'Build your history';
-        chapterEl.textContent = 'Complete some practice to reveal your focus area.';
-        reasonEl.textContent = 'At least 5 quiz questions in a chapter are used for this recommendation.';
-        button.disabled = true;
-        delete button.dataset.subject;
+      delete button.dataset.mode;
+      delete button.dataset.subject;
+
+      if (useAdaptive) {
+        card.dataset.subjectTheme = this.subjectClass(adaptive.subject);
+        subjectEl.textContent = adaptive.subject;
+        chapterEl.textContent = adaptive.label || adaptive.area || 'Final Exam Practice';
+        const performance = typeof AdaptiveTraining.performance === 'function' ? AdaptiveTraining.performance(adaptive) : '';
+        const reason = typeof AdaptiveTraining.reason === 'function' ? AdaptiveTraining.reason(adaptive) : 'Final Exam performance indicates this is the next area to train.';
+        reasonEl.textContent = performance ? `${reason} ${performance}.` : reason;
+        button.disabled = false;
+        button.dataset.mode = 'adaptive';
+        button.dataset.subject = adaptive.subject;
+        button.textContent = 'Start →';
         return;
       }
 
-      card.dataset.subjectTheme = this.subjectClass(focus.subject);
-      subjectEl.textContent = focus.subject;
-      chapterEl.textContent = focus.chapter;
-      reasonEl.textContent = `${focus.accuracy}% accuracy · ${focus.questions} quiz questions`;
-      button.disabled = false;
-      button.dataset.subject = focus.subject;
+      if (quiz) {
+        card.dataset.subjectTheme = this.subjectClass(quiz.subject);
+        subjectEl.textContent = quiz.subject;
+        chapterEl.textContent = quiz.chapter;
+        reasonEl.textContent = `Quiz fallback · ${quiz.accuracy}% accuracy · ${quiz.questions} questions`;
+        button.disabled = false;
+        button.dataset.mode = 'quiz';
+        button.dataset.subject = quiz.subject;
+        button.textContent = 'Practice →';
+        return;
+      }
+
+      card.classList.add('is-empty');
+      card.removeAttribute('data-subject-theme');
+      subjectEl.textContent = 'Build your history';
+      chapterEl.textContent = 'Complete some practice to reveal your next target.';
+      reasonEl.textContent = 'Final Exam results are prioritized; Quiz history is used as a fallback.';
+      button.disabled = true;
+      button.textContent = 'Practice →';
     },
 
     updateStats() {
