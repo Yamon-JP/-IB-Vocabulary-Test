@@ -343,8 +343,8 @@ const A=window.AdaptiveTraining={
       };
       progress.__adaptiveTrainingWrapped=true;
     };
-    wrap(window.Paper1Progress);
-    wrap(window.Paper2Progress);
+    wrap(typeof Paper1Progress!=='undefined'?Paper1Progress:null);
+    wrap(typeof Paper2Progress!=='undefined'?Paper2Progress:null);
 
     if(typeof CourseCoverage!=='undefined'&&typeof CourseCoverage.setSelected==='function'&&!CourseCoverage.__adaptiveTrainingWrapped){
       const originalSet=CourseCoverage.setSelected;
