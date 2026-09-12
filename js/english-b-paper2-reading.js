@@ -110,7 +110,7 @@
             </div>
           </div>
           <div class="engb-r-instruction">
-            <p><strong>Hybrid marking:</strong> objective items are checked automatically. Short answers and written justifications use markscheme self-checks so valid paraphrases are not rejected by a rigid keyword matcher.</p>
+            <p><strong>Hybrid marking:</strong> objective items are checked automatically. Short answers use markscheme self-checks so valid paraphrases are not rejected by a rigid keyword matcher. For True / False justification, copy the supporting words from the text rather than paraphrasing.</p>
             <p class="muted">Questions and texts remain in English. Japanese support appears only after review.</p>
           </div>
           <div id="engb-r-content"></div>
@@ -208,7 +208,7 @@
       if (question.type === 'mcq' || question.type === 'reference') {
         answer = `<div class="engb-r-options">${(question.options || []).map((option, optionIndex) => `<label><input type="radio" name="engb-r-${key}" value="${optionIndex}"><span>${this.escapeHtml(option)}</span></label>`).join('')}</div>`;
       } else if (question.type === 'truefalse_justify') {
-        answer = `<div class="engb-r-options"><label><input type="radio" name="engb-r-${key}-tf" value="true"><span>True</span></label><label><input type="radio" name="engb-r-${key}-tf" value="false"><span>False</span></label></div><textarea id="engb-r-${key}-text" class="engb-r-input engb-r-textarea" placeholder="Copy or paraphrase the supporting evidence from the text."></textarea>`;
+        answer = `<div class="engb-r-options"><label><input type="radio" name="engb-r-${key}-tf" value="true"><span>True</span></label><label><input type="radio" name="engb-r-${key}-tf" value="false"><span>False</span></label></div><textarea id="engb-r-${key}-text" class="engb-r-input engb-r-textarea" placeholder="Copy the supporting words from the text. Do not paraphrase."></textarea>`;
       } else if (question.type === 'short') {
         answer = `<textarea id="engb-r-${key}-text" class="engb-r-input engb-r-textarea" placeholder="Write a concise answer in English."></textarea>`;
       } else {
