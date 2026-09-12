@@ -1,0 +1,529 @@
+[
+  {
+    "id": "ENGB-L-DIV1",
+    "title": "Listening Diversity Mock 1",
+    "totalMarks": 25,
+    "texts": [
+      {
+        "id": "ENGB-L-DIV1-A",
+        "chapter": "Chapter 4",
+        "theme": "Social organization",
+        "title": "Who gets to join the meeting?",
+        "sourceType": "Campus radio panel",
+        "marks": 8,
+        "segments": [
+          {"speaker":"Host","voiceHint":"en-GB","text":"Our student council has been experimenting with meeting times after attendance fell last term. Mina, why did you support moving some meetings from after school to lunchtime?"},
+          {"speaker":"Mina","voiceHint":"en-US","text":"The old four-thirty meeting excluded more people than we realized. Some students had to catch a school bus immediately, and others went straight to part-time jobs. Lunch is not perfect, but at least those students are still on campus."},
+          {"speaker":"Host","voiceHint":"en-GB","text":"Owen, you were less enthusiastic about lunchtime meetings."},
+          {"speaker":"Owen","voiceHint":"en-GB","text":"Yes. Lunch is short and the cafeteria area is noisy. If a discussion is complicated, people rush because they also need time to eat. I suggested rotating the schedule: one lunch meeting, then one after-school meeting, with the main decisions published online."},
+          {"speaker":"Host","voiceHint":"en-GB","text":"Sara, you helped test online voting. Did that solve the access problem?"},
+          {"speaker":"Sara","voiceHint":"en-US","text":"It helped with simple choices, but voting is not the same as discussion. Students can click yes or no without hearing why somebody disagrees. I would keep online voting for straightforward decisions, but publish the agenda two days early so people can send comments before the meeting."},
+          {"speaker":"Mina","voiceHint":"en-US","text":"I like the rotating idea if we review attendance. The goal is not to find one perfect time. It is to notice who repeatedly cannot participate and adjust."}
+        ],
+        "questions": [
+          {
+            "id": "A1",
+            "type": "matching",
+            "marks": 2,
+            "prompt": "Match each speaker to the main concern they emphasize.",
+            "options": [
+              "Access for students with transport or work commitments",
+              "The limits of online voting without discussion",
+              "The cost of running student activities",
+              "The need to cancel all face-to-face meetings"
+            ],
+            "rows": [
+              {"label":"Mina","correctIndex":0},
+              {"label":"Sara","correctIndex":1}
+            ],
+            "explanationJa": "Minaは参加しにくい生徒へのaccess、Saraはonline votingだけではdiscussionを代替できない点を強調しています。"
+          },
+          {
+            "id": "A2",
+            "type": "gap",
+            "marks": 1,
+            "prompt": "Complete the sentence: Some students went straight to part-time ________ after school.",
+            "markscheme": ["jobs"],
+            "explanationJa": "Minaはafter schoolにpart-time jobsへ行く生徒がいると述べています。"
+          },
+          {
+            "id": "A3",
+            "type": "mcq",
+            "marks": 1,
+            "prompt": "What compromise does Owen suggest?",
+            "options": [
+              "Holding every meeting online",
+              "Rotating between lunchtime and after-school meetings",
+              "Allowing only senior students to attend",
+              "Ending student council meetings"
+            ],
+            "correctIndex": 1,
+            "explanationJa": "Owenはlunchとafter-schoolを交互にするrotating scheduleを提案しています。"
+          },
+          {
+            "id": "A4",
+            "type": "short",
+            "marks": 2,
+            "prompt": "Give two disadvantages Owen identifies about lunchtime meetings.",
+            "markscheme": [
+              "Lunch is short, so complicated discussions can feel rushed.",
+              "The cafeteria area is noisy and students also need time to eat."
+            ],
+            "explanationJa": "時間が短いことと、noiseや食事時間との競合が問題です。"
+          },
+          {
+            "id": "A5",
+            "type": "multi",
+            "marks": 2,
+            "prompt": "Choose TWO ideas Sara supports.",
+            "options": [
+              "Using online voting for straightforward decisions",
+              "Publishing the agenda two days before the meeting",
+              "Replacing all discussion with yes/no voting",
+              "Keeping meeting plans secret until the meeting starts",
+              "Removing comments from students who cannot attend"
+            ],
+            "correctIndices": [0,1],
+            "required": 2,
+            "explanationJa": "simple decisionsにはonline votingを使い、agendaは2日前に公開する案です。"
+          }
+        ]
+      },
+      {
+        "id": "ENGB-L-DIV1-B",
+        "chapter": "Chapter 5",
+        "theme": "Sharing the planet",
+        "title": "Repair or replace the school laptop?",
+        "sourceType": "Local news interview",
+        "marks": 8,
+        "segments": [
+          {"speaker":"Reporter","voiceHint":"en-GB","text":"A secondary school has changed the way it replaces student laptops. Instead of automatically replacing a device after four years, technicians now inspect its condition first."},
+          {"speaker":"Technician","voiceHint":"en-US","text":"Age alone tells us very little. A four-year-old laptop may only need a new battery, while a newer machine can have serious damage. We created a checklist covering battery health, keyboard condition, storage and whether the software still receives security updates."},
+          {"speaker":"Teacher","voiceHint":"en-GB","text":"The environmental benefit matters, but reliability matters too. A student should not lose half a lesson because a machine fails repeatedly. We therefore keep loan devices available while a repair is being assessed."},
+          {"speaker":"Reporter","voiceHint":"en-GB","text":"Has the policy saved money?"},
+          {"speaker":"Technician","voiceHint":"en-US","text":"In the first year, repair costs rose because we bought spare batteries and trained staff. But the school purchased thirty percent fewer replacement laptops, so we expect the longer-term cost to fall."},
+          {"speaker":"Student","voiceHint":"en-US","text":"I was worried that repair meant getting an unreliable old computer. Mine received a new battery and keyboard, and it works well. I also liked seeing the repair report because it explained what had actually been changed."},
+          {"speaker":"Teacher","voiceHint":"en-GB","text":"The next step is to publish simple guidance for families. Repair should not become an excuse to keep unsafe or unsupported devices in use. The decision has to be based on evidence, not on replacing everything or keeping everything."}
+        ],
+        "questions": [
+          {
+            "id": "B1",
+            "type": "gap",
+            "marks": 1,
+            "prompt": "The technician says a four-year-old laptop may only need a new ________.",
+            "markscheme": ["battery"],
+            "explanationJa": "古い端末でもbattery交換だけで使える場合があると述べています。"
+          },
+          {
+            "id": "B2",
+            "type": "mcq",
+            "marks": 1,
+            "prompt": "Why does the school keep loan devices available?",
+            "options": [
+              "To replace every repaired laptop permanently",
+              "So students can continue learning while repairs are assessed",
+              "To allow students to take two laptops home",
+              "Because technicians refuse to repair devices"
+            ],
+            "correctIndex": 1,
+            "explanationJa": "repair assessment中にも授業を続けられるようloan devicesを用意しています。"
+          },
+          {
+            "id": "B3",
+            "type": "multi",
+            "marks": 2,
+            "prompt": "Choose TWO items included in the technician's condition checklist.",
+            "options": [
+              "Battery health",
+              "The student's exam grades",
+              "Keyboard condition",
+              "The colour of the laptop case",
+              "The number of social-media accounts"
+            ],
+            "correctIndices": [0,2],
+            "required": 2,
+            "explanationJa": "battery healthとkeyboard conditionがchecklistの具体例です。"
+          },
+          {
+            "id": "B4",
+            "type": "matching",
+            "marks": 2,
+            "prompt": "Match each speaker to the point they emphasize.",
+            "options": [
+              "Reliability during lessons must be protected",
+              "A repair report can make the process more transparent",
+              "Every old device should be kept indefinitely",
+              "Only purchase price should determine replacement"
+            ],
+            "rows": [
+              {"label":"Teacher","correctIndex":0},
+              {"label":"Student","correctIndex":1}
+            ],
+            "explanationJa": "Teacherはlesson中のreliability、Studentはrepair reportによる透明性を評価しています。"
+          },
+          {
+            "id": "B5",
+            "type": "short",
+            "marks": 2,
+            "prompt": "Give two reasons the technician expects the policy to become cheaper in the longer term.",
+            "markscheme": [
+              "The school purchased thirty percent fewer replacement laptops.",
+              "The initial spending on spare parts and staff training is an upfront cost rather than a reason to replace every device."
+            ],
+            "explanationJa": "replacement purchaseが30%減ったことと、初年度の部品・training費は初期投資である点です。"
+          }
+        ]
+      },
+      {
+        "id": "ENGB-L-DIV1-C",
+        "chapter": "Chapter 2",
+        "theme": "Experiences",
+        "title": "The internship that began with listening",
+        "sourceType": "Career podcast panel",
+        "marks": 9,
+        "segments": [
+          {"speaker":"Host","voiceHint":"en-GB","text":"Three students have just finished short community internships. Supervisor Ms Green, what did you ask interns to do on their first day?"},
+          {"speaker":"Green","voiceHint":"en-GB","text":"Mostly observe. Students often arrive wanting to prove themselves immediately. We ask them to spend the first morning watching how the team works, writing down questions and noticing which tasks repeat."},
+          {"speaker":"Nia","voiceHint":"en-US","text":"At first that felt passive. I was placed at a food-distribution centre and wanted to start carrying boxes. But by watching, I noticed volunteers repeatedly stopping to answer the same questions about collection times. I later helped redesign the information board."},
+          {"speaker":"Leo","voiceHint":"en-US","text":"My placement was at a community sports club. I made a mistake because I assumed a quiet afternoon meant there was nothing to do. In fact, staff were preparing equipment for evening sessions. Once I started asking what happened later in the day, the work made much more sense."},
+          {"speaker":"Green","voiceHint":"en-GB","text":"That is exactly why observation matters. It should lead to better questions, not silence for its own sake. By the second day we expect interns to suggest one small improvement, but they should be able to explain what evidence led them to it."},
+          {"speaker":"Nia","voiceHint":"en-US","text":"The experience changed how I think about initiative. Acting quickly can look confident, but sometimes the more useful first step is understanding the system before trying to change it."},
+          {"speaker":"Host","voiceHint":"en-GB","text":"So observation is not the opposite of action; it can make later action more informed."}
+        ],
+        "questions": [
+          {
+            "id": "C1",
+            "type": "mcq",
+            "marks": 1,
+            "prompt": "What does Ms Green ask interns to do during the first morning?",
+            "options": [
+              "Lead the team immediately",
+              "Observe the work, record questions and notice repeated tasks",
+              "Write a final internship report",
+              "Choose a different placement"
+            ],
+            "correctIndex": 1,
+            "explanationJa": "最初の午前はobserveし、questionsとrepeated tasksを記録します。"
+          },
+          {
+            "id": "C2",
+            "type": "matching",
+            "marks": 3,
+            "prompt": "Match each speaker to the lesson or emphasis connected with them.",
+            "options": [
+              "Observation should produce evidence-based questions and improvements",
+              "Watching repeated questions led to redesigning information",
+              "Understanding work requires asking what happens at different times",
+              "Interns should avoid suggesting any changes"
+            ],
+            "rows": [
+              {"label":"Ms Green","correctIndex":0},
+              {"label":"Nia","correctIndex":1},
+              {"label":"Leo","correctIndex":2}
+            ],
+            "explanationJa": "Greenはevidence-based improvement、Niaはrepeated questions、Leoは時間帯全体を理解することを強調します。"
+          },
+          {
+            "id": "C3",
+            "type": "short",
+            "marks": 2,
+            "prompt": "Give two things Nia learned by observing before acting.",
+            "markscheme": [
+              "She noticed volunteers repeatedly answering the same questions about collection times.",
+              "She learned that understanding the system first can lead to a more useful improvement, such as redesigning the information board."
+            ],
+            "explanationJa": "繰り返される質問に気づき、その観察をinformation board改善につなげました。"
+          },
+          {
+            "id": "C4",
+            "type": "gap",
+            "marks": 1,
+            "prompt": "Ms Green says interns should explain what ________ led them to an improvement idea.",
+            "markscheme": ["evidence"],
+            "explanationJa": "improvementの根拠となるevidenceを説明できるべきだと述べています。"
+          },
+          {
+            "id": "C5",
+            "type": "multi",
+            "marks": 2,
+            "prompt": "Choose TWO statements supported by the discussion.",
+            "options": [
+              "Observation can make later action more informed.",
+              "Initiative always means acting immediately.",
+              "Interns are expected to suggest a small improvement after observing.",
+              "Quiet periods always mean there is no work to do.",
+              "Students should never ask staff questions."
+            ],
+            "correctIndices": [0,2],
+            "required": 2,
+            "explanationJa": "observationがlater actionを改善し、観察後にはsmall improvementを提案することが求められます。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ENGB-L-DIV2",
+    "title": "Listening Diversity Mock 2",
+    "totalMarks": 25,
+    "texts": [
+      {
+        "id": "ENGB-L-DIV2-A",
+        "chapter": "Chapter 1",
+        "theme": "Identities",
+        "title": "The username I decided to keep",
+        "sourceType": "Youth podcast interview",
+        "marks": 8,
+        "segments": [
+          {"speaker":"Host","voiceHint":"en-GB","text":"Today we are talking about online identity with student gamer Alex Romero. Alex, you have used the same username since you were thirteen. Why did you nearly change it?"},
+          {"speaker":"Alex","voiceHint":"en-US","text":"The name sounded childish to me by the time I reached sixth form. I worried that new teammates would judge me before we had even played together, so I created a second account with a more serious name."},
+          {"speaker":"Host","voiceHint":"en-GB","text":"Did the new account solve the problem?"},
+          {"speaker":"Alex","voiceHint":"en-US","text":"Not really. The old username was connected to years of friendships, saved clips and team memories. On the new account I looked more polished, but I also felt as if I had deleted the history that explained how I became the player I am."},
+          {"speaker":"Host","voiceHint":"en-GB","text":"So what did you do?"},
+          {"speaker":"Alex","voiceHint":"en-US","text":"I went back to the original account and changed only the profile description. I now explain the story behind the name instead of pretending I chose it yesterday. That gives people context without forcing me to erase something simply because my younger self created it."},
+          {"speaker":"Host","voiceHint":"en-GB","text":"Would you tell everyone to keep every old username?"},
+          {"speaker":"Alex","voiceHint":"en-US","text":"No. Some names genuinely stop representing a person, and people should be free to change them. My point is that change should be a choice, not an automatic response to feeling embarrassed by an earlier version of yourself."}
+        ],
+        "questions": [
+          {
+            "id": "A1",
+            "type": "multi",
+            "marks": 2,
+            "prompt": "Choose TWO reasons Alex was uncomfortable with the old username.",
+            "options": [
+              "It sounded childish to him.",
+              "He feared new teammates might judge him.",
+              "His account had been deleted by the platform.",
+              "His friends refused to play with him.",
+              "The username contained his home address."
+            ],
+            "correctIndices": [0,1],
+            "required": 2,
+            "explanationJa": "childishに感じたことと、新しいteammatesから先入観を持たれる不安が理由です。"
+          },
+          {
+            "id": "A2",
+            "type": "gap",
+            "marks": 1,
+            "prompt": "Alex says the old account was connected to years of friendships, saved clips and team ________.",
+            "markscheme": ["memories"],
+            "explanationJa": "old accountにはfriendships、saved clips、team memoriesが蓄積していました。"
+          },
+          {
+            "id": "A3",
+            "type": "matching",
+            "marks": 2,
+            "prompt": "Match each account to the idea Alex associates with it.",
+            "options": [
+              "A more polished image but less visible personal history",
+              "A connection to friendships and earlier experiences",
+              "A platform account used only for schoolwork",
+              "An account that other people controlled"
+            ],
+            "rows": [
+              {"label":"New account","correctIndex":0},
+              {"label":"Old account","correctIndex":1}
+            ],
+            "explanationJa": "new accountはpolished image、old accountはfriendshipsやhistoryとのconnectionを表します。"
+          },
+          {
+            "id": "A4",
+            "type": "mcq",
+            "marks": 1,
+            "prompt": "What practical change did Alex make to the original account?",
+            "options": [
+              "He deleted all old clips.",
+              "He changed only the profile description.",
+              "He stopped playing online games.",
+              "He hid the account from all teammates."
+            ],
+            "correctIndex": 1,
+            "explanationJa": "username自体ではなくprofile descriptionだけを変更しました。"
+          },
+          {
+            "id": "A5",
+            "type": "short",
+            "marks": 2,
+            "prompt": "Give two ideas in Alex's final view about changing an online identity.",
+            "markscheme": [
+              "People should be free to change a name that no longer represents them.",
+              "Change should be a deliberate choice rather than an automatic reaction to embarrassment about one's younger self."
+            ],
+            "explanationJa": "changeの自由を認めつつ、過去へのembarrassmentだけで自動的に消す必要はないと考えています。"
+          }
+        ]
+      },
+      {
+        "id": "ENGB-L-DIV2-B",
+        "chapter": "Chapter 3",
+        "theme": "Human ingenuity",
+        "title": "The bus stop that started giving advice",
+        "sourceType": "Technology radio report",
+        "marks": 8,
+        "segments": [
+          {"speaker":"Reporter","voiceHint":"en-GB","text":"A city transport department is testing digital displays at twenty bus stops. Unlike ordinary arrival boards, the screens also suggest alternative routes when a service is delayed."},
+          {"speaker":"Engineer","voiceHint":"en-US","text":"The system combines live bus locations with road information. If one route is badly delayed, the display may suggest walking five minutes to another stop or taking a train for part of the journey. The goal is not to make decisions for passengers but to show realistic options."},
+          {"speaker":"Passenger","voiceHint":"en-GB","text":"I like the extra information, but the first version displayed too much at once. When my bus was late I saw three route suggestions, a map, a service message and an advertisement. I needed one clear next step, not more data."},
+          {"speaker":"Reporter","voiceHint":"en-GB","text":"How did the design team respond?"},
+          {"speaker":"Engineer","voiceHint":"en-US","text":"We simplified the screen. The normal arrival time stays largest. If there is a major disruption, one recommended alternative appears underneath, with a button for more options. We also removed advertising during serious delays."},
+          {"speaker":"Accessibility adviser","voiceHint":"en-US","text":"Information is useful only if people can receive it. The next trial adds stronger contrast, larger text and an audio button. We are also testing whether instructions remain understandable for visitors who do not know local place names well."},
+          {"speaker":"Reporter","voiceHint":"en-GB","text":"So the experiment is becoming less about displaying the maximum amount of information and more about delivering the right information at the right moment."}
+        ],
+        "questions": [
+          {
+            "id": "B1",
+            "type": "matching",
+            "marks": 2,
+            "prompt": "Match each speaker to the main issue they emphasize.",
+            "options": [
+              "Too much information can make a delay harder to manage",
+              "Information must be accessible to different users",
+              "Digital displays should contain more advertising",
+              "Passengers should never be offered alternatives"
+            ],
+            "rows": [
+              {"label":"Passenger","correctIndex":0},
+              {"label":"Accessibility adviser","correctIndex":1}
+            ],
+            "explanationJa": "Passengerはinformation overload、accessibility adviserは利用者ごとのaccessibilityを強調します。"
+          },
+          {
+            "id": "B2",
+            "type": "short",
+            "marks": 2,
+            "prompt": "Give two changes made after feedback on the first version of the display.",
+            "markscheme": [
+              "The screen was simplified so one recommended alternative appears during a major disruption.",
+              "Advertising was removed during serious delays and/or extra options were placed behind a button."
+            ],
+            "explanationJa": "画面をsimplifyし、major disruption時は1つのrecommended alternativeを目立たせ、advertisingも外しました。"
+          },
+          {
+            "id": "B3",
+            "type": "mcq",
+            "marks": 1,
+            "prompt": "What is the engineer's stated goal for the system?",
+            "options": [
+              "To choose every passenger's route automatically",
+              "To show realistic alternatives when disruption occurs",
+              "To replace all bus drivers",
+              "To remove normal arrival information"
+            ],
+            "correctIndex": 1,
+            "explanationJa": "systemが決定するのではなく、realistic optionsを示すことが目的です。"
+          },
+          {
+            "id": "B4",
+            "type": "gap",
+            "marks": 1,
+            "prompt": "The next accessibility trial will use stronger contrast and larger ________.",
+            "markscheme": ["text"],
+            "explanationJa": "stronger contrastとlarger textが追加されます。"
+          },
+          {
+            "id": "B5",
+            "type": "multi",
+            "marks": 2,
+            "prompt": "Choose TWO features mentioned for the next accessibility trial.",
+            "options": [
+              "An audio button",
+              "Testing instructions for visitors unfamiliar with local place names",
+              "More advertisements during delays",
+              "Removing contrast from the screen",
+              "Hiding all arrival times"
+            ],
+            "correctIndices": [0,1],
+            "required": 2,
+            "explanationJa": "audio buttonと、local place namesに不慣れなvisitor向けのunderstandability testが予定されています。"
+          }
+        ]
+      },
+      {
+        "id": "ENGB-L-DIV2-C",
+        "chapter": "Chapter 1",
+        "theme": "Identities",
+        "title": "When the club stopped asking for a single language",
+        "sourceType": "Community radio discussion",
+        "marks": 9,
+        "segments": [
+          {"speaker":"Moderator","voiceHint":"en-GB","text":"A community youth club recently changed its rule that all activities should use English only. Coordinator Priya, why was the rule introduced in the first place?"},
+          {"speaker":"Priya","voiceHint":"en-GB","text":"The intention was inclusion. Staff worried that if small groups used languages others did not understand, some teenagers might feel excluded. English seemed like a shared solution because everyone at the club studied it at school."},
+          {"speaker":"Joon","voiceHint":"en-US","text":"But the rule created a different problem. My cousin had only recently arrived and could understand basic English, but he was much more confident in Korean. I found myself translating quietly even though the rule suggested we should not. He participated more when he could first explain an idea to me in Korean and then we worked out how to share it with the group."},
+          {"speaker":"Amira","voiceHint":"en-GB","text":"I had a similar experience with Arabic. The issue was not whether people used another language for a minute. The issue was whether the conversation eventually opened back up to everyone. Sometimes a short translation between two people actually made wider participation possible."},
+          {"speaker":"Priya","voiceHint":"en-GB","text":"We replaced the English-only rule with a communication rule. People may use any language, but activities involving the whole group need a summary everyone can understand. Staff also ask whether anyone is being left out rather than assuming that one language automatically creates inclusion."},
+          {"speaker":"Moderator","voiceHint":"en-GB","text":"Has the change caused confusion?"},
+          {"speaker":"Priya","voiceHint":"en-GB","text":"Occasionally, yes. It requires more attention from staff. But the goal is not perfect linguistic simplicity. It is meaningful participation, and that sometimes means allowing more than one path into the conversation."}
+        ],
+        "questions": [
+          {
+            "id": "C1",
+            "type": "gap",
+            "marks": 1,
+            "prompt": "Priya says the original English-only rule was intended to promote ________.",
+            "markscheme": ["inclusion"],
+            "explanationJa": "original ruleの意図はinclusionでした。"
+          },
+          {
+            "id": "C2",
+            "type": "matching",
+            "marks": 3,
+            "prompt": "Match each speaker to the idea they emphasize.",
+            "options": [
+              "A familiar language can help a newcomer develop an idea before sharing it",
+              "Short use of another language can support wider participation if the conversation opens again",
+              "A shared summary matters more than enforcing one language at all times",
+              "Only English should be allowed in every activity"
+            ],
+            "rows": [
+              {"label":"Joon","correctIndex":0},
+              {"label":"Amira","correctIndex":1},
+              {"label":"Priya","correctIndex":2}
+            ],
+            "explanationJa": "Joonはnewcomerのconfidence、Amiraはtranslationによるparticipation、Priyaは全員が理解できるsummaryを重視します。"
+          },
+          {
+            "id": "C3",
+            "type": "mcq",
+            "marks": 1,
+            "prompt": "What replaced the English-only rule?",
+            "options": [
+              "A rule banning translation",
+              "A communication rule requiring understandable group summaries",
+              "A rule allowing only Korean and Arabic",
+              "No expectations about communication at all"
+            ],
+            "correctIndex": 1,
+            "explanationJa": "any languageを認めつつ、whole-group activityではeveryone can understand a summaryを求めるcommunication ruleに変わりました。"
+          },
+          {
+            "id": "C4",
+            "type": "short",
+            "marks": 2,
+            "prompt": "Give two reasons the club decided one-language use did not always guarantee inclusion.",
+            "markscheme": [
+              "A newcomer with limited English could participate more confidently by first using a familiar language.",
+              "Brief translation between people could help ideas enter the wider group rather than exclude others."
+            ],
+            "explanationJa": "familiar languageで考えを整理することや、brief translationがむしろwider participationを助ける場合がありました。"
+          },
+          {
+            "id": "C5",
+            "type": "multi",
+            "marks": 2,
+            "prompt": "Choose TWO statements supported by Priya's final comments.",
+            "options": [
+              "The new approach sometimes requires more attention from staff.",
+              "Perfect linguistic simplicity is more important than participation.",
+              "Meaningful participation may require more than one route into a conversation.",
+              "The club has returned to an English-only rule.",
+              "Staff no longer check whether anyone is excluded."
+            ],
+            "correctIndices": [0,2],
+            "required": 2,
+            "explanationJa": "staffのattentionは増えますが、meaningful participationのためには複数のpathを認めることが重要だとしています。"
+          }
+        ]
+      }
+    ]
+  }
+]
