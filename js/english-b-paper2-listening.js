@@ -26,6 +26,7 @@
     reviewed: false,
     attemptSaved: false,
     autoScore: 0,
+    questionResults: [],
     playCounts: {},
     activeTextId: null,
     paused: false,
@@ -184,11 +185,68 @@
       return sets;
     },
 
+    questionKey(text, question, questionIndex) {
+      return `${text?.id || 'text'}:${question?.id || questionIndex + 1}`;
+    },
+
+    setQuestionKeys(set) {
+      return (set?.texts || []).flatMap(text =>
+        (text.questions || []).map((question, questionIndex) => this.questionKey(text, question, questionIndex))
+      );
+    },
+
+    recentAttempts() {
+      return [...ProgressStore.load().attempts]
+        .filter(attempt => attempt?.assessmentTarget === 'english-b-paper2-listening')
+        .sort((a, b) => (Date.parse(b?.createdAt) || 0) - (Date.parse(a?.createdAt) || 0));
+    },
+
+    getSetWeight(set) {
+      const attempts = this.recentAttempts();
+      const exact = attempts.filter(attempt => attempt?.setId === set?.id).slice(0, 3);
+      let weight = 3;
+      if (exact.length) {
+        const score = exact.reduce((sum, attempt) => sum + Math.max(0, Number(attempt?.score) || 0), 0);
+        const maxMarks = exact.reduce((sum, attempt) => sum + Math.max(0, Number(attempt?.maxMarks) || 0), 0);
+        const percentage = maxMarks ? Math.round(score / maxMarks * 100) : null;
+        if (percentage !== null && percentage < 60) weight = 5;
+        else if (percentage !== null && percentage < 80) weight = 3;
+        else if (percentage !== null) weight = 1;
+      }
+
+      const keys = new Set(this.setQuestionKeys(set));
+      const weakKeys = new Set();
+      attempts.slice(0, 10).forEach(attempt => {
+        (Array.isArray(attempt?.questionResults) ? attempt.questionResults : []).forEach(result => {
+          const marks = Number(result?.marks) || 0;
+          const awarded = Number(result?.awarded) || 0;
+          if (keys.has(result?.key) && marks > 0 && awarded < marks) weakKeys.add(result.key);
+        });
+      });
+      return weight + Math.min(4, weakKeys.size);
+    },
+
+    pickWeightedSetIndex(excludeIndex = null) {
+      if (!this.practiceSets.length) return 0;
+      if (this.practiceSets.length === 1) return 0;
+      const candidates = this.practiceSets
+        .map((set, index) => ({ index, weight: this.getSetWeight(set) }))
+        .filter(item => item.index !== excludeIndex);
+      const total = candidates.reduce((sum, item) => sum + Math.max(1, item.weight), 0);
+      let threshold = Math.random() * total;
+      for (const item of candidates) {
+        threshold -= Math.max(1, item.weight);
+        if (threshold < 0) return item.index;
+      }
+      return candidates[candidates.length - 1]?.index ?? 0;
+    },
+
     loadForSelection(chapters = []) {
       this.stopAudio();
       this.practiceSets = this.buildPracticeSets(chapters);
-      this.currentSetIndex = 0;
+      this.currentSetIndex = this.pickWeightedSetIndex();
       this.playCounts = {};
+      this.questionResults = [];
       this.render();
       return this.practiceSets.length;
     },
@@ -206,6 +264,7 @@
       this.reviewed = false;
       this.attemptSaved = false;
       this.autoScore = 0;
+      this.questionResults = [];
       if (!set || !Array.isArray(set.texts) || !set.texts.length) {
         content.innerHTML = '<div class="engb-l-empty">No English B Paper 2 Listening texts are available for this selection.</div>';
         if (scoreArea) scoreArea.innerHTML = '';
@@ -351,44 +410,61 @@
       this.reviewed = true;
       this.attemptSaved = false;
       this.autoScore = 0;
+      this.questionResults = [];
 
       (set.texts || []).forEach((text, textIndex) => {
         (text.questions || []).forEach((question, questionIndex) => {
           const key = `${textIndex}-${questionIndex}`;
+          const stableKey = this.questionKey(text, question, questionIndex);
           const feedback = document.getElementById(`engb-l-feedback-${key}`);
           if (!feedback) return;
           let correct = null;
           let html = '';
           let selfPoints = [];
+          let awarded = 0;
 
           if (question.type === 'mcq') {
             const value = this.getRadio(`engb-l-${key}`);
             correct = value !== '' && Number(value) === Number(question.correctIndex);
-            if (correct) this.autoScore += Number(question.marks || 1);
+            awarded = correct ? Number(question.marks || 1) : 0;
+            this.autoScore += awarded;
             html += `<p><strong>Answer:</strong> ${this.escapeHtml(question.options?.[question.correctIndex] || '')} ${correct ? '✓' : ''}</p>`;
           } else if (question.type === 'multi') {
             const selected = this.getMulti(`engb-l-${key}-multi`);
             const required = Number(question.required || question.correctIndices?.length || 0);
             const correctIndices = Array.isArray(question.correctIndices) ? question.correctIndices.map(Number) : [];
-            let awarded = 0;
-            if (selected.length <= required) awarded = selected.filter(index => correctIndices.includes(index)).length;
-            this.autoScore += Math.min(Number(question.marks || required), awarded);
-            correct = selected.length === required && awarded === required;
+            let rawAwarded = 0;
+            if (selected.length <= required) rawAwarded = selected.filter(index => correctIndices.includes(index)).length;
+            awarded = Math.min(Number(question.marks || required), rawAwarded);
+            this.autoScore += awarded;
+            correct = selected.length === required && rawAwarded === required;
             html += `<p><strong>Correct choices:</strong> ${correctIndices.map(index => this.escapeHtml(question.options?.[index] || '')).join('; ')} ${correct ? '✓' : ''}</p>`;
           } else if (question.type === 'matching') {
             const rows = Array.isArray(question.rows) ? question.rows : [];
             const selected = this.getMatching(key, rows.length);
-            const awarded = rows.reduce((sum, row, rowIndex) => sum + (selected[rowIndex] === Number(row.correctIndex) ? 1 : 0), 0);
+            const rawAwarded = rows.reduce((sum, row, rowIndex) => sum + (selected[rowIndex] === Number(row.correctIndex) ? 1 : 0), 0);
             const maxMarks = Number(question.marks || rows.length);
-            this.autoScore += Math.min(maxMarks, awarded);
-            correct = rows.length > 0 && awarded === rows.length;
+            awarded = Math.min(maxMarks, rawAwarded);
+            this.autoScore += awarded;
+            correct = rows.length > 0 && rawAwarded === rows.length;
             html += `<div class="engb-l-match-key"><strong>Correct matches</strong>${rows.map(row => `<p><span>${this.escapeHtml(row.label)}:</span> ${this.escapeHtml(question.options?.[row.correctIndex] || '')}</p>`).join('')}</div>`;
           } else {
             selfPoints = (question.markscheme || []).map(point => ({ text: point, points: 1 }));
           }
 
+          const result = {
+            key: stableKey,
+            textId: text?.id || null,
+            questionId: question?.id || null,
+            type: question?.type || null,
+            marks: Number(question?.marks || 0),
+            awarded,
+            selfCheck: selfPoints.length > 0
+          };
+          this.questionResults.push(result);
+
           if (selfPoints.length) {
-            html += `<div class="engb-l-self-points"><strong>Markscheme self-check</strong>${selfPoints.map(point => `<label><input type="checkbox" data-engb-l-self-point data-points="${point.points}" onchange="EnglishBPaper2Listening.updateScore()"><span>${this.escapeHtml(point.text)} <small>(${point.points} mark)</small></span></label>`).join('')}</div>`;
+            html += `<div class="engb-l-self-points"><strong>Markscheme self-check</strong>${selfPoints.map(point => `<label><input type="checkbox" data-engb-l-self-point data-question-key="${this.escapeHtml(stableKey)}" data-points="${point.points}" onchange="EnglishBPaper2Listening.updateScore()"><span>${this.escapeHtml(point.text)} <small>(${point.points} mark)</small></span></label>`).join('')}</div>`;
           }
           if (question.explanationJa) html += `<p class="engb-l-feedback-ja" lang="ja"><strong>日本語解説：</strong>${this.escapeHtml(question.explanationJa)}</p>`;
           feedback.className = `engb-l-feedback ${correct === true ? 'correct' : correct === false ? 'incorrect' : ''}`;
@@ -409,6 +485,21 @@
     selfScore() {
       return [...document.querySelectorAll('#english-b-paper2-listening-panel input[data-engb-l-self-point]:checked')]
         .reduce((sum, input) => sum + Number(input.dataset.points || 0), 0);
+    },
+
+    savedQuestionResults() {
+      const selfInputs = [...document.querySelectorAll('#english-b-paper2-listening-panel input[data-engb-l-self-point]')];
+      return this.questionResults.map(result => {
+        let awarded = Number(result.awarded || 0);
+        if (result.selfCheck) {
+          awarded = selfInputs
+            .filter(input => input.dataset.questionKey === result.key && input.checked)
+            .reduce((sum, input) => sum + Number(input.dataset.points || 0), 0);
+        }
+        const marks = Number(result.marks || 0);
+        awarded = marks > 0 ? Math.min(marks, Math.max(0, awarded)) : Math.max(0, awarded);
+        return { ...result, awarded, correct: marks > 0 ? awarded >= marks : null };
+      });
     },
 
     updateScore() {
@@ -453,6 +544,7 @@
         maxMarks,
         percentage: maxMarks ? Math.round((score / maxMarks) * 100) : 0,
         playCounts: { ...this.playCounts },
+        questionResults: this.savedQuestionResults(),
         createdAt: new Date().toISOString()
       };
       ProgressStore.record(attempt);
@@ -463,7 +555,7 @@
     nextSet() {
       if (!this.practiceSets.length) return;
       this.stopAudio();
-      this.currentSetIndex = (this.currentSetIndex + 1) % this.practiceSets.length;
+      this.currentSetIndex = this.pickWeightedSetIndex(this.currentSetIndex);
       this.playCounts = {};
       this.render();
       document.getElementById('english-b-paper2-listening-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
