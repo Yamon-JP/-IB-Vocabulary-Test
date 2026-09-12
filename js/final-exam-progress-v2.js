@@ -182,7 +182,7 @@
       return this.assessmentLabel(attempt?.subject, this.assessment(attempt));
     },
 
-    weakestEnglish() {
+    englishWeakAreas() {
       const subject = 'English B HL';
       const attempts = this.normalAttempts(subject);
       const candidates = [];
@@ -225,7 +225,11 @@
           });
         }
       });
-      return candidates.sort((a, b) => a.percentage - b.percentage || a.attempts - b.attempts)[0] || null;
+      return candidates.sort((a, b) => a.percentage - b.percentage || a.attempts - b.attempts);
+    },
+
+    weakestEnglish() {
+      return this.englishWeakAreas()[0] || null;
     },
 
     weakestGeneral(subject) {
@@ -301,8 +305,18 @@
         .final-readiness-overview-row span,.final-readiness-overview-row small{color:#667085;font-size:.78rem}
         .final-readiness-overview-row strong{font-size:.92rem}
         .final-readiness-overview-empty{color:#667085}
+        .final-readiness-weak-list{grid-column:1/-1}
+        .final-readiness-weak-items{display:grid;gap:8px;margin-top:10px}
+        .final-readiness-weak-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px;border:1px solid #e4e7ec;border-radius:11px;background:#f8fafc}
+        .final-readiness-weak-copy strong{margin:0;font-size:.93rem}
+        .final-readiness-weak-copy small{margin-top:3px}
+        .final-readiness-weak-metric{text-align:right;white-space:nowrap}
+        .final-readiness-weak-metric strong{margin:0;font-size:.9rem}
+        .final-readiness-practice{min-height:36px;padding:7px 11px;border:1px solid #cfd6df;border-radius:9px;background:#fff;font-weight:800;cursor:pointer}
+        .final-readiness-practice:hover{border-color:#98a2b3}
+        .final-readiness-practice:disabled{opacity:.55;cursor:default}
         @media(max-width:900px){.final-readiness-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.final-readiness-overview-row{grid-template-columns:1fr 1fr}.final-readiness-overview-row .final-readiness-weak{grid-column:1/-1}}
-        @media(max-width:560px){.final-readiness-grid{grid-template-columns:1fr}.final-readiness-overview-row{grid-template-columns:1fr}}
+        @media(max-width:560px){.final-readiness-grid{grid-template-columns:1fr}.final-readiness-overview-row{grid-template-columns:1fr}.final-readiness-weak-row{grid-template-columns:1fr auto}.final-readiness-weak-copy{grid-column:1/-1}.final-readiness-weak-metric{text-align:left}}
       `;
       document.head.appendChild(style);
     },
@@ -395,6 +409,31 @@
       const readinessNote = readiness.attempts ? `Latest ${readiness.attempts} normal scored attempt${readiness.attempts === 1 ? '' : 's'} · marks-weighted` : 'No normal scored attempts yet';
       const weakLabel = weak ? `${weak.label} · ${weak.percentage}%` : 'No scored weakness yet';
       const weakNote = weak ? `${weak.attempts} recent scored attempt${weak.attempts === 1 ? '' : 's'} in this area` : 'More saved practice is needed';
+      const adaptiveTargets = typeof AdaptiveTraining !== 'undefined'
+        && AdaptiveTraining.installed
+        && typeof AdaptiveTraining.getRecommendations === 'function'
+        ? AdaptiveTraining.getRecommendations(subject, 3)
+        : [];
+      const weakPanel = adaptiveTargets.length
+        ? `<article class="final-readiness-card final-readiness-weak-list">
+            <span>Top Weak Areas</span>
+            <small>Choose a target to start focused adaptive practice.</small>
+            <div class="final-readiness-weak-items">${adaptiveTargets.map((target, index) => {
+              const accuracy = target.accuracy === null ? 'Baseline' : `${target.accuracy}%`;
+              const attempts = Number(target.attemptCount ?? target.attempts ?? 0);
+              const priority = typeof AdaptiveTraining.priority === 'function' ? AdaptiveTraining.priority(target) : 'Review';
+              return `<div class="final-readiness-weak-row">
+                <div class="final-readiness-weak-copy"><strong>${this.escapeHtml(target.label || target.area || 'Adaptive practice')}</strong><small>${this.escapeHtml(`${priority} priority · ${attempts} saved attempt${attempts === 1 ? '' : 's'}`)}</small></div>
+                <div class="final-readiness-weak-metric"><strong>${this.escapeHtml(accuracy)}</strong><small>Recent</small></div>
+                <button type="button" class="final-readiness-practice" data-adaptive-review="${index}">Practice</button>
+              </div>`;
+            }).join('')}</div>
+          </article>`
+        : `<article class="final-readiness-card final-readiness-weak-list">
+            <span>Weakest Saved Area</span>
+            <strong>${this.escapeHtml(weakLabel)}</strong>
+            <small>${this.escapeHtml(weakNote)}</small>
+          </article>`;
       grid.innerHTML = `
         <article class="final-readiness-card">
           <span>Current Readiness</span>
@@ -416,11 +455,21 @@
           <strong>${tp === null ? '—' : `${this.escapeHtml(tp)} TP`}</strong>
           <small>Subject-specific Training Points today</small>
         </article>
-        <article class="final-readiness-card" style="grid-column:1/-1">
-          <span>Weakest Saved Area</span>
-          <strong>${this.escapeHtml(weakLabel)}</strong>
-          <small>${this.escapeHtml(weakNote)}</small>
-        </article>`;
+        ${weakPanel}`;
+      if (adaptiveTargets.length && typeof AdaptiveTraining !== 'undefined') {
+        grid.querySelectorAll('[data-adaptive-review]').forEach(button => {
+          const target = adaptiveTargets[Number(button.dataset.adaptiveReview)];
+          if (!target) return;
+          button.addEventListener('click', async () => {
+            button.disabled = true;
+            try {
+              await AdaptiveTraining.startRecommended(target);
+            } finally {
+              button.disabled = false;
+            }
+          });
+        });
+      }
     },
 
     render() {
