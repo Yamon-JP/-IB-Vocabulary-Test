@@ -27,6 +27,7 @@
     attemptSaved: false,
     autoScore: 0,
     autoMax: 0,
+    questionResults: [],
 
     async init() {
       this.ensureStyles();
@@ -151,13 +152,70 @@
       return sets;
     },
 
+    questionKey(text, question, questionIndex) {
+      return `${text?.id || 'text'}:${question?.id || questionIndex + 1}`;
+    },
+
+    setQuestionKeys(set) {
+      return (set?.texts || []).flatMap(text =>
+        (text.questions || []).map((question, questionIndex) => this.questionKey(text, question, questionIndex))
+      );
+    },
+
+    recentAttempts() {
+      return [...ProgressStore.load().attempts]
+        .filter(attempt => attempt?.assessmentTarget === 'english-b-paper2-reading')
+        .sort((a, b) => (Date.parse(b?.createdAt) || 0) - (Date.parse(a?.createdAt) || 0));
+    },
+
+    getSetWeight(set) {
+      const attempts = this.recentAttempts();
+      const exact = attempts.filter(attempt => attempt?.setId === set?.id).slice(0, 3);
+      let weight = 3;
+      if (exact.length) {
+        const score = exact.reduce((sum, attempt) => sum + Math.max(0, Number(attempt?.score) || 0), 0);
+        const maxMarks = exact.reduce((sum, attempt) => sum + Math.max(0, Number(attempt?.maxMarks) || 0), 0);
+        const percentage = maxMarks ? Math.round(score / maxMarks * 100) : null;
+        if (percentage !== null && percentage < 60) weight = 5;
+        else if (percentage !== null && percentage < 80) weight = 3;
+        else if (percentage !== null) weight = 1;
+      }
+
+      const keys = new Set(this.setQuestionKeys(set));
+      const weakKeys = new Set();
+      attempts.slice(0, 10).forEach(attempt => {
+        (Array.isArray(attempt?.questionResults) ? attempt.questionResults : []).forEach(result => {
+          const marks = Number(result?.marks) || 0;
+          const awarded = Number(result?.awarded) || 0;
+          if (keys.has(result?.key) && marks > 0 && awarded < marks) weakKeys.add(result.key);
+        });
+      });
+      return weight + Math.min(4, weakKeys.size);
+    },
+
+    pickWeightedSetIndex(excludeIndex = null) {
+      if (!this.practiceSets.length) return 0;
+      if (this.practiceSets.length === 1) return 0;
+      const candidates = this.practiceSets
+        .map((set, index) => ({ index, weight: this.getSetWeight(set) }))
+        .filter(item => item.index !== excludeIndex);
+      const total = candidates.reduce((sum, item) => sum + Math.max(1, item.weight), 0);
+      let threshold = Math.random() * total;
+      for (const item of candidates) {
+        threshold -= Math.max(1, item.weight);
+        if (threshold < 0) return item.index;
+      }
+      return candidates[candidates.length - 1]?.index ?? 0;
+    },
+
     loadForSelection(chapters = []) {
       this.practiceSets = this.buildPracticeSets(chapters);
-      this.currentSetIndex = 0;
+      this.currentSetIndex = this.pickWeightedSetIndex();
       this.reviewed = false;
       this.attemptSaved = false;
       this.autoScore = 0;
       this.autoMax = 0;
+      this.questionResults = [];
       this.render();
       return this.practiceSets.length;
     },
@@ -183,6 +241,7 @@
       this.attemptSaved = false;
       this.autoScore = 0;
       this.autoMax = 0;
+      this.questionResults = [];
       content.innerHTML = set.texts.map((text, textIndex) => this.renderText(text, textIndex)).join('');
       if (scoreArea) scoreArea.innerHTML = '';
     },
@@ -240,12 +299,14 @@
       if (!set) return;
       this.autoScore = 0;
       this.autoMax = 0;
+      this.questionResults = [];
       this.reviewed = true;
       this.attemptSaved = false;
 
       set.texts.forEach((text, textIndex) => {
         (text.questions || []).forEach((question, questionIndex) => {
           const key = `${textIndex}-${questionIndex}`;
+          const stableKey = this.questionKey(text, question, questionIndex);
           const feedback = document.getElementById(`engb-r-feedback-${key}`);
           if (!feedback) return;
           let html = '';
@@ -281,8 +342,19 @@
           }
 
           this.autoScore += autoAwarded;
+          const result = {
+            key: stableKey,
+            textId: text?.id || null,
+            questionId: question?.id || null,
+            type: question?.type || null,
+            marks: Number(question?.marks || 0),
+            awarded: autoAwarded,
+            selfCheck: selfPoints.length > 0
+          };
+          this.questionResults.push(result);
+
           if (selfPoints.length) {
-            html += `<div class="engb-r-self-points"><strong>Markscheme self-check</strong>${selfPoints.map((point, index) => `<label><input type="checkbox" data-engb-r-self-point data-points="${point.points}" onchange="EnglishBPaper2Reading.updateScore()"><span>${this.escapeHtml(point.text)} <small>(${point.points} mark${point.points === 1 ? '' : 's'})</small></span></label>`).join('')}</div>`;
+            html += `<div class="engb-r-self-points"><strong>Markscheme self-check</strong>${selfPoints.map(point => `<label><input type="checkbox" data-engb-r-self-point data-question-key="${this.escapeHtml(stableKey)}" data-points="${point.points}" onchange="EnglishBPaper2Reading.updateScore()"><span>${this.escapeHtml(point.text)} <small>(${point.points} mark${point.points === 1 ? '' : 's'})</small></span></label>`).join('')}</div>`;
           }
           if (question.paragraph) html += `<p><strong>Evidence:</strong> paragraph ${question.paragraph}</p>`;
           if (question.explanationJa) html += `<p class="engb-r-feedback-ja" lang="ja"><strong>日本語解説：</strong>${this.escapeHtml(question.explanationJa)}</p>`;
@@ -297,6 +369,21 @@
     selfScore() {
       return [...document.querySelectorAll('#english-b-paper2-reading-panel input[data-engb-r-self-point]:checked')]
         .reduce((sum, input) => sum + Number(input.dataset.points || 0), 0);
+    },
+
+    savedQuestionResults() {
+      const selfInputs = [...document.querySelectorAll('#english-b-paper2-reading-panel input[data-engb-r-self-point]')];
+      return this.questionResults.map(result => {
+        let awarded = Number(result.awarded || 0);
+        if (result.selfCheck) {
+          awarded = selfInputs
+            .filter(input => input.dataset.questionKey === result.key && input.checked)
+            .reduce((sum, input) => sum + Number(input.dataset.points || 0), 0);
+        }
+        const marks = Number(result.marks || 0);
+        awarded = marks > 0 ? Math.min(marks, Math.max(0, awarded)) : Math.max(0, awarded);
+        return { ...result, awarded, correct: marks > 0 ? awarded >= marks : null };
+      });
     },
 
     updateScore() {
@@ -348,6 +435,7 @@
         percentage: maxMarks ? Math.round((score / maxMarks) * 100) : 0,
         autoScore: this.autoScore,
         selfScore: this.selfScore(),
+        questionResults: this.savedQuestionResults(),
         createdAt: new Date().toISOString()
       };
       ProgressStore.record(attempt);
@@ -357,7 +445,7 @@
 
     nextSet() {
       if (!this.practiceSets.length) return;
-      this.currentSetIndex = (this.currentSetIndex + 1) % this.practiceSets.length;
+      this.currentSetIndex = this.pickWeightedSetIndex(this.currentSetIndex);
       this.render();
       document.getElementById('english-b-paper2-reading-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     },
