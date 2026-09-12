@@ -183,7 +183,8 @@
     },
 
     weakestEnglish() {
-      const attempts = this.normalAttempts('English B HL');
+      const subject = 'English B HL';
+      const attempts = this.normalAttempts(subject);
       const candidates = [];
       const writing = attempts.filter(attempt => this.assessment(attempt) === 'english-b-paper1-writing' && attempt?.scores).slice(0, 5);
       const criteria = [
@@ -191,13 +192,17 @@
         ['Message', 'message', 12],
         ['Conceptual understanding', 'conceptualUnderstanding', 6]
       ];
-      criteria.forEach(([label, key, max]) => {
-        const rows = writing.filter(attempt => Number.isFinite(Number(attempt?.scores?.[key])));
+      criteria.forEach(([area, criterion, max]) => {
+        const rows = writing.filter(attempt => Number.isFinite(Number(attempt?.scores?.[criterion])));
         if (!rows.length) return;
-        const score = rows.reduce((sum, attempt) => sum + Number(attempt.scores[key]), 0);
+        const score = rows.reduce((sum, attempt) => sum + Number(attempt.scores[criterion]), 0);
         const maxMarks = rows.length * max;
         candidates.push({
-          label: `Paper 1 Writing · ${label}`,
+          subject,
+          assessment: 'english-b-paper1-writing',
+          area,
+          criterion,
+          label: `Paper 1 Writing · ${area}`,
           percentage: Math.round(score / maxMarks * 100),
           attempts: rows.length
         });
@@ -208,7 +213,17 @@
       ].forEach(([assessment, label]) => {
         const rows = attempts.filter(attempt => this.assessment(attempt) === assessment).slice(0, 5);
         const summary = this.summarize(rows);
-        if (summary.percentage !== null) candidates.push({ label, percentage: summary.percentage, attempts: summary.attempts });
+        if (summary.percentage !== null) {
+          candidates.push({
+            subject,
+            assessment,
+            area: label,
+            criterion: null,
+            label,
+            percentage: summary.percentage,
+            attempts: summary.attempts
+          });
+        }
       });
       return candidates.sort((a, b) => a.percentage - b.percentage || a.attempts - b.attempts)[0] || null;
     },
@@ -226,6 +241,10 @@
         const recent = this.sortRecent(group.attempts).slice(0, 6);
         const summary = this.summarize(recent);
         return {
+          subject,
+          assessment: group.assessment,
+          area: group.area,
+          criterion: null,
           label: `${this.assessmentLabel(subject, group.assessment)} · ${group.area}`,
           percentage: summary.percentage,
           attempts: summary.attempts
@@ -236,6 +255,18 @@
 
     weakest(subject) {
       return subject === 'English B HL' ? this.weakestEnglish() : this.weakestGeneral(subject);
+    },
+
+    recommendation(subject) {
+      const weak = this.weakest(subject);
+      return weak ? { ...weak, source: 'final-exam' } : null;
+    },
+
+    weakestAcrossSubjects() {
+      return this.subjects
+        .map(subject => this.recommendation(subject))
+        .filter(Boolean)
+        .sort((a, b) => a.percentage - b.percentage || a.attempts - b.attempts)[0] || null;
     },
 
     subjectTP(subject) {
@@ -270,7 +301,7 @@
         .final-readiness-overview-row span,.final-readiness-overview-row small{color:#667085;font-size:.78rem}
         .final-readiness-overview-row strong{font-size:.92rem}
         .final-readiness-overview-empty{color:#667085}
-        @media(max-width:900px){.final-readiness-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.final-readiness-overview-row{grid-template-columns:1fr 1fr}.final-readiness-overview-row .final-readiness-weak{grid-column:1/-1}}
+        @media(max-width:900px){.final-readiness-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.final-readiness-overview-row{grid-template-columns:1fr 1fr}.final-readiness-overview-row .final-readiness-weak{grid-column:1/-1}}
         @media(max-width:560px){.final-readiness-grid{grid-template-columns:1fr}.final-readiness-overview-row{grid-template-columns:1fr}}
       `;
       document.head.appendChild(style);
