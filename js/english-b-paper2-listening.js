@@ -40,7 +40,20 @@
         const response = await fetch('data/english-b/paper2-listening.json?v=1');
         if (!response.ok) throw new Error('English B Paper 2 Listening data not found');
         const data = await response.json();
-        this.data = Array.isArray(data) ? data : [];
+        const baseData = Array.isArray(data) ? data : [];
+        let diversityData = [];
+        try {
+          const diversityResponse = await fetch('data/english-b/paper2-listening-diversity-pack-1.json?v=1');
+          if (diversityResponse.ok) {
+            const diversity = await diversityResponse.json();
+            diversityData = Array.isArray(diversity) ? diversity : [];
+          } else {
+            console.warn('English B Paper 2 Listening diversity pack not found.');
+          }
+        } catch (diversityError) {
+          console.warn('English B Paper 2 Listening diversity pack could not be loaded.', diversityError);
+        }
+        this.data = [...baseData, ...diversityData];
 
         this.focusedData = [];
         const focusUrls = [1, 2, 3, 4, 5].map(
@@ -122,7 +135,7 @@
           </div>
           <div class="engb-l-instruction">
             <p><strong>Training audio:</strong> this module uses your browser's English speech voices to read original IB-style scripts. It is not an official IB recording.</p>
-            <p class="muted">The transcript stays hidden until you check the answers. Objective items are auto-marked; short and gap answers use markscheme self-check so valid paraphrases are not rejected.</p>
+            <p class="muted">The transcript stays hidden until you check the answers. Multiple-choice, true-statement and matching items are auto-marked; short and gap answers use markscheme self-check so valid meaning is not rejected by rigid keyword matching.</p>
           </div>
           <div id="engb-l-content"></div>
           <div class="engb-l-actions">
@@ -231,6 +244,11 @@
         answer = `<div class="engb-l-options">${(question.options || []).map((option, index) => `<label><input type="radio" name="engb-l-${key}" value="${index}"><span>${this.escapeHtml(option)}</span></label>`).join('')}</div>`;
       } else if (question.type === 'multi') {
         answer = `<div class="engb-l-options">${(question.options || []).map((option, index) => `<label><input type="checkbox" name="engb-l-${key}-multi" value="${index}"><span>${this.escapeHtml(option)}</span></label>`).join('')}</div><small class="muted">Choose exactly ${Number(question.required || question.correctIndices?.length || 2)}.</small>`;
+      } else if (question.type === 'matching') {
+        const options = (question.options || []).map((option, index) => `<option value="${index}">${this.escapeHtml(option)}</option>`).join('');
+        answer = `<div class="engb-l-matching"><small class="muted">Choose the best statement for each speaker or item.</small>${(question.rows || []).map((row, rowIndex) => `<label class="engb-l-match-row"><span class="engb-l-match-label">${this.escapeHtml(row.label)}</span><select id="engb-l-${key}-match-${rowIndex}" class="engb-l-match-select"><option value="">Choose a statement</option>${options}</select></label>`).join('')}</div>`;
+      } else if (question.type === 'gap') {
+        answer = `<input id="engb-l-${key}-text" class="engb-l-input engb-l-gap" type="text" placeholder="Complete the gap in English">`;
       } else {
         answer = `<textarea id="engb-l-${key}-text" class="engb-l-input engb-l-textarea" placeholder="Write a concise answer in English."></textarea>`;
       }
@@ -319,6 +337,13 @@
       return [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(input => Number(input.value));
     },
 
+    getMatching(key, rowCount) {
+      return Array.from({ length: Number(rowCount || 0) }, (_, rowIndex) => {
+        const value = document.getElementById(`engb-l-${key}-match-${rowIndex}`)?.value ?? '';
+        return value === '' ? null : Number(value);
+      });
+    },
+
     submit() {
       const set = this.currentSet();
       if (!set) return;
@@ -350,6 +375,14 @@
             this.autoScore += Math.min(Number(question.marks || required), awarded);
             correct = selected.length === required && awarded === required;
             html += `<p><strong>Correct choices:</strong> ${correctIndices.map(index => this.escapeHtml(question.options?.[index] || '')).join('; ')} ${correct ? '✓' : ''}</p>`;
+          } else if (question.type === 'matching') {
+            const rows = Array.isArray(question.rows) ? question.rows : [];
+            const selected = this.getMatching(key, rows.length);
+            const awarded = rows.reduce((sum, row, rowIndex) => sum + (selected[rowIndex] === Number(row.correctIndex) ? 1 : 0), 0);
+            const maxMarks = Number(question.marks || rows.length);
+            this.autoScore += Math.min(maxMarks, awarded);
+            correct = rows.length > 0 && awarded === rows.length;
+            html += `<div class="engb-l-match-key"><strong>Correct matches</strong>${rows.map(row => `<p><span>${this.escapeHtml(row.label)}:</span> ${this.escapeHtml(question.options?.[row.correctIndex] || '')}</p>`).join('')}</div>`;
           } else {
             selfPoints = (question.markscheme || []).map(point => ({ text: point, points: 1 }));
           }
