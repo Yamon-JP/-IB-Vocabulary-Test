@@ -242,6 +242,12 @@
       return candidates[0] || null;
     },
 
+    hasFinalExamHistory() {
+      if (typeof FinalExamProgressV2 === 'undefined' || typeof FinalExamProgressV2.normalAttempts !== 'function') return false;
+      const subjects = Array.isArray(FinalExamProgressV2.subjects) ? FinalExamProgressV2.subjects : [];
+      return subjects.some(subject => FinalExamProgressV2.normalAttempts(subject).length > 0);
+    },
+
     updateFocus() {
       const card = document.getElementById('home-focus-card');
       const subjectEl = document.getElementById('home-focus-subject');
@@ -254,7 +260,7 @@
       const adaptive = typeof AdaptiveTraining !== 'undefined' && typeof AdaptiveTraining.getRecommendation === 'function'
         ? AdaptiveTraining.getRecommendation()
         : null;
-      const useAdaptive = Boolean(adaptive && (adaptive.accuracy !== null || !quiz));
+      const useAdaptive = Boolean(adaptive && (this.hasFinalExamHistory() || !quiz));
 
       card.className = 'home-focus-card';
       delete button.dataset.mode;
