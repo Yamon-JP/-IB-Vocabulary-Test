@@ -132,11 +132,9 @@ const A=window.AdaptiveTraining={
     });
   },
 
-  buildEnglishCandidate(){
-    if(typeof FinalExamProgressV2==='undefined'||typeof FinalExamProgressV2.recommendation!=='function')return null;
-    const weak=FinalExamProgressV2.recommendation('English B HL');
-    if(!weak)return null;
-    return {
+  buildEnglishCandidates(){
+    if(typeof FinalExamProgressV2==='undefined'||typeof FinalExamProgressV2.englishWeakAreas!=='function')return[];
+    return FinalExamProgressV2.englishWeakAreas().map(weak=>({
       ...weak,
       accuracy:weak.percentage,
       attemptCount:weak.attempts,
@@ -144,13 +142,11 @@ const A=window.AdaptiveTraining={
       tier:this.tier(weak.percentage),
       source:'final-exam',
       kind:'english-mode'
-    };
+    }));
   },
 
   buildCandidates(){
-    const candidates=this.buildGeneralCandidates();
-    const english=this.buildEnglishCandidate();
-    if(english)candidates.push(english);
+    const candidates=[...this.buildGeneralCandidates(),...this.buildEnglishCandidates()];
     return candidates.sort((a,b)=>{
       if(a.tier!==b.tier)return a.tier-b.tier;
       const aa=a.accuracy===null?101:a.accuracy;
@@ -162,8 +158,15 @@ const A=window.AdaptiveTraining={
     });
   },
 
+  getRecommendations(subject=null,limit=3){
+    const max=Math.max(1,Number(limit)||3);
+    return this.buildCandidates()
+      .filter(candidate=>!subject||candidate.subject===subject)
+      .slice(0,max);
+  },
+
   getRecommendation(){
-    return this.buildCandidates()[0]||null;
+    return this.getRecommendations(null,1)[0]||null;
   },
 
   reason(rec){
