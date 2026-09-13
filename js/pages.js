@@ -570,6 +570,26 @@ const Pages = {
     document.body.appendChild(script);
   },
 
+  ensureMistakeBank() {
+    if (typeof MistakeBank !== 'undefined') {
+      MistakeBank.install();
+      return;
+    }
+    if (document.getElementById('mistake-bank-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'mistake-bank-script';
+    script.async = false;
+    script.src = 'js/mistake-bank.js?v=1';
+    script.onload = () => {
+      if (typeof MistakeBank !== 'undefined') MistakeBank.install();
+    };
+    script.onerror = () => {
+      console.warn('Mistake Bank could not be loaded. Existing Progress and practice remain available.');
+    };
+    document.body.appendChild(script);
+  },
+
   ensureFinalExamAchievements() {
     if (typeof FinalExamAchievements !== 'undefined') {
       FinalExamAchievements.install();
@@ -705,6 +725,7 @@ const Pages = {
     this.ensureHomeUIV2();
     this.ensureProgressUIV2();
     this.ensureFinalExamProgressV2();
+    this.ensureMistakeBank();
     this.ensureFinalExamAchievements();
     this.ensureTrophyUIV2();
     this.ensureTrainingUIV2();
