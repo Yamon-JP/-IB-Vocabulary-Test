@@ -1,0 +1,11 @@
+name = "ib-master-trainer-ai-instructor"
+main = "ai-instructor-worker.js"
+compatibility_date = "2026-09-13"
+
+[vars]
+ALLOWED_ORIGINS = "https://yamon-jp.github.io"
+OPENAI_MODEL = "gpt-5.6-terra"
+
+# Never place OPENAI_API_KEY in this file.
+# Configure it as a Cloudflare Worker secret:
+# npx wrangler secret put OPENAI_API_KEY --config worker/wrangler.toml
