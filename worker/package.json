@@ -1,0 +1,13 @@
+{
+  "name": "ib-master-trainer-ai-instructor-worker",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "preview": "wrangler versions upload",
+    "check": "wrangler deploy --dry-run --outdir dist"
+  },
+  "devDependencies": {
+    "wrangler": "^4.68.0"
+  }
+}
