@@ -7,6 +7,7 @@
     endpointKey: 'ib_ai_instructor_endpoint',
     progressStoreKey: 'ib_english_b_paper1_progress',
     observer: null,
+    selfMarkPatched: false,
 
     endpoint() {
       const configured = String(window.IB_AI_INSTRUCTOR_ENDPOINT || '').trim();
@@ -65,22 +66,74 @@
       };
     },
 
-    previousGradeSnapshot(attempt) {
-      if (!attempt || attempt.gradingSource !== 'ai-instructor') return null;
-      const scores = attempt.scores || {};
+    compactHistoryItem(item) {
+      const scores = item?.scores || {};
       const language = Number(scores.language);
       const message = Number(scores.message);
       const conceptualUnderstanding = Number(scores.conceptualUnderstanding);
-      const score = Number(attempt.score);
+      const score = Number(item?.score);
       if (![language, message, conceptualUnderstanding, score].every(Number.isFinite)) return null;
       return {
-        gradedAt: attempt.updatedAt || attempt.createdAt || new Date().toISOString(),
+        gradedAt: item?.gradedAt || item?.updatedAt || item?.createdAt || new Date().toISOString(),
         score,
-        maxMarks: Number(attempt.maxMarks) || 30,
-        scores: { language, message, conceptualUnderstanding },
-        aiFeedback: attempt.aiFeedback || null,
-        aiMeta: attempt.aiMeta || null
+        maxMarks: Number(item?.maxMarks) || 30,
+        scores: { language, message, conceptualUnderstanding }
       };
+    },
+
+    previousGradeSnapshot(attempt) {
+      if (!attempt || attempt.gradingSource !== 'ai-instructor') return null;
+      return this.compactHistoryItem({
+        gradedAt: attempt.updatedAt || attempt.createdAt,
+        score: attempt.score,
+        maxMarks: attempt.maxMarks,
+        scores: attempt.scores
+      });
+    },
+
+    compactStoredHistory() {
+      if (typeof Storage === 'undefined') return;
+      const saved = Storage.load(this.progressStoreKey);
+      if (!Array.isArray(saved?.attempts)) return;
+      let changed = false;
+      const attempts = saved.attempts.map(attempt => {
+        if (!Array.isArray(attempt?.aiHistory)) return attempt;
+        const compact = attempt.aiHistory
+          .map(item => this.compactHistoryItem(item))
+          .filter(Boolean)
+          .slice(-10);
+        if (JSON.stringify(compact) === JSON.stringify(attempt.aiHistory)) return attempt;
+        changed = true;
+        return { ...attempt, aiHistory: compact };
+      });
+      if (changed) {
+        Storage.save(this.progressStoreKey, {
+          ...saved,
+          attempts
+        });
+      }
+    },
+
+    tagLatestSelfMark(payload) {
+      if (typeof Storage === 'undefined' || !payload?.task?.id) return;
+      const saved = Storage.load(this.progressStoreKey) || {};
+      const attempts = Array.isArray(saved.attempts) ? [...saved.attempts] : [];
+      if (!attempts.length) return;
+      const lastIndex = attempts.length - 1;
+      const lastAttempt = attempts[lastIndex];
+      if (
+        lastAttempt?.gradingSource === 'ai-instructor'
+        || lastAttempt?.questionId !== payload.task.id
+        || String(lastAttempt?.textType || '') !== String(payload.selectedTextType || '')
+        || Number(lastAttempt?.wordCount) !== Number(payload.wordCount)
+      ) return;
+      const fingerprint = this.answerFingerprint(payload);
+      if (lastAttempt?.answerFingerprint === fingerprint) return;
+      attempts[lastIndex] = { ...lastAttempt, answerFingerprint: fingerprint };
+      Storage.save(this.progressStoreKey, {
+        ...saved,
+        attempts
+      });
     },
 
     saveProgress(grading, payload) {
@@ -115,6 +168,7 @@
           rubricVersion: String(grading.meta?.rubricVersion || 'engb-paper1-v1')
         },
         aiHistory: [],
+        firstGradedAt: now,
         createdAt: now,
         updatedAt: now
       };
@@ -139,7 +193,7 @@
           lastAttempt?.gradingSource !== 'ai-instructor'
           && lastAttempt?.questionId === payload.task.id
           && String(lastAttempt?.textType || '') === String(payload.selectedTextType || '')
-          && Number(lastAttempt?.wordCount) === Number(payload.wordCount)
+          && lastAttempt?.answerFingerprint === fingerprint
         ) {
           replaceIndex = lastIndex;
         }
@@ -148,11 +202,15 @@
       if (replaceIndex >= 0) {
         const previous = attempts[replaceIndex];
         aiAttempt.attemptId = previous.attemptId || aiAttempt.attemptId;
-        aiAttempt.createdAt = previous.createdAt || aiAttempt.createdAt;
-        const history = Array.isArray(previous.aiHistory) ? previous.aiHistory.slice(-9) : [];
-        const previousGrade = this.previousGradeSnapshot(previous);
-        if (previousGrade) history.push(previousGrade);
-        aiAttempt.aiHistory = history.slice(-10);
+        if (previous.gradingSource === 'ai-instructor') {
+          aiAttempt.firstGradedAt = previous.firstGradedAt || previous.createdAt || now;
+          const history = Array.isArray(previous.aiHistory)
+            ? previous.aiHistory.map(item => this.compactHistoryItem(item)).filter(Boolean).slice(-9)
+            : [];
+          const previousGrade = this.previousGradeSnapshot(previous);
+          if (previousGrade) history.push(previousGrade);
+          aiAttempt.aiHistory = history.slice(-10);
+        }
         attempts[replaceIndex] = aiAttempt;
       } else {
         attempts.push(aiAttempt);
@@ -185,6 +243,18 @@
         return result;
       };
 
+      if (!this.selfMarkPatched && typeof EnglishBPaper1.saveSelfMark === 'function') {
+        const originalSaveSelfMark = EnglishBPaper1.saveSelfMark.bind(EnglishBPaper1);
+        EnglishBPaper1.saveSelfMark = (...args) => {
+          const payload = this.buildPayload();
+          const result = originalSaveSelfMark(...args);
+          if (payload && EnglishBPaper1.attemptSaved) this.tagLatestSelfMark(payload);
+          return result;
+        };
+        this.selfMarkPatched = true;
+      }
+
+      this.compactStoredHistory();
       this.installed = true;
       this.mountControls();
       if (this.observer) {
