@@ -588,3 +588,218 @@
 
   ProgressUIV2.boot();
 })();
+
+(() => {
+  if (typeof ProgressUIV2 === 'undefined') return;
+
+  const originalRenderAnalysis = ProgressUIV2.renderAnalysis.bind(ProgressUIV2);
+  const questionTypeLabels = {
+    mcq: 'Multiple choice',
+    reference: 'Reference / inference',
+    completion: 'Completion',
+    find: 'Find in text',
+    truefalse_justify: 'True / False + justification',
+    short: 'Short answer',
+    multi: 'Multiple response',
+    matching: 'Matching',
+    gap: 'Gap fill',
+    'multiple-choice': 'Multiple choice',
+    'data-based': 'Data-based',
+    written: 'Written response'
+  };
+
+  function ensureAnalysisStyles() {
+    if (document.getElementById('progress-v2-subject-analytics-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'progress-v2-subject-analytics-styles';
+    style.textContent = `
+      .progress-v2-analysis-dashboard{display:grid;gap:14px;padding-top:4px}
+      .progress-v2-analysis-section{padding:12px;border:1px solid #e4e7ec;border-radius:13px;background:#fff}
+      .progress-v2-analysis-section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:9px}
+      .progress-v2-analysis-section-head strong{font-size:.92rem}
+      .progress-v2-analysis-section-head small{color:#667085;font-size:.74rem;text-align:right}
+      .progress-v2-analysis-list{display:grid;gap:8px}
+      .progress-v2-analysis-row{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(110px,.9fr) auto;gap:10px;align-items:center;padding:9px 0;border-top:1px solid #f0f2f5}
+      .progress-v2-analysis-row:first-child{border-top:0;padding-top:0}
+      .progress-v2-analysis-copy strong,.progress-v2-analysis-copy small{display:block}
+      .progress-v2-analysis-copy strong{font-size:.86rem}
+      .progress-v2-analysis-copy small{margin-top:2px;color:#667085;font-size:.72rem}
+      .progress-v2-analysis-track{height:7px;border-radius:999px;background:#eef1f5;overflow:hidden}
+      .progress-v2-analysis-track span{display:block;height:100%;border-radius:inherit;background:currentColor;opacity:.7}
+      .progress-v2-analysis-score{text-align:right;white-space:nowrap}
+      .progress-v2-analysis-score strong,.progress-v2-analysis-score small{display:block}
+      .progress-v2-analysis-score strong{font-size:.9rem}
+      .progress-v2-analysis-score small{margin-top:2px;color:#667085;font-size:.68rem}
+      .progress-v2-analysis-empty{margin:0;color:#667085;font-size:.8rem}
+      @media(max-width:600px){
+        .progress-v2-analysis-section-head{display:block}
+        .progress-v2-analysis-section-head small{display:block;margin-top:3px;text-align:left}
+        .progress-v2-analysis-row{grid-template-columns:1fr auto}
+        .progress-v2-analysis-track{grid-column:1/-1;grid-row:2}
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function normalAttempts(subject) {
+    if (typeof FinalExamProgressV2 !== 'undefined' && typeof FinalExamProgressV2.normalAttempts === 'function') {
+      return FinalExamProgressV2.normalAttempts(subject);
+    }
+    return ProgressUIV2.validAttempts(ProgressUIV2.subjectAttempts(subject)).filter(attempt => !attempt?.fullMock);
+  }
+
+  function safeScore(score, maxMarks) {
+    const scoreValue = Number(score);
+    const maxValue = Number(maxMarks);
+    if (!Number.isFinite(scoreValue) || !Number.isFinite(maxValue) || maxValue <= 0) return null;
+    return {
+      score: Math.max(0, Math.min(scoreValue, maxValue)),
+      maxMarks: maxValue
+    };
+  }
+
+  function groupAttemptRows(attempts, selector) {
+    const groups = new Map();
+    attempts.forEach((attempt, index) => {
+      const label = String(selector(attempt) || '').trim();
+      const values = safeScore(attempt?.score, attempt?.maxMarks);
+      if (!label || !values) return;
+      if (!groups.has(label)) groups.set(label, { label, score: 0, maxMarks: 0, attemptIds: new Set() });
+      const group = groups.get(label);
+      group.score += values.score;
+      group.maxMarks += values.maxMarks;
+      group.attemptIds.add(attempt?.attemptId || attempt?.sessionId || attempt?.questionId || attempt?.setId || `${label}-${index}`);
+    });
+    return [...groups.values()].map(group => ({
+      label: group.label,
+      score: group.score,
+      maxMarks: group.maxMarks,
+      attempts: group.attemptIds.size,
+      percentage: group.maxMarks ? Math.round(group.score / group.maxMarks * 100) : null
+    })).sort((a, b) => (a.percentage ?? 101) - (b.percentage ?? 101) || b.maxMarks - a.maxMarks);
+  }
+
+  function englishWritingRows(attempts) {
+    const writing = attempts.filter(attempt => ProgressUIV2.assessment(attempt) === 'english-b-paper1-writing' && attempt?.scores);
+    const criteria = [
+      ['Language', 'language', 12],
+      ['Message', 'message', 12],
+      ['Conceptual Understanding', 'conceptualUnderstanding', 6]
+    ];
+    return criteria.map(([label, key, max]) => {
+      const rows = writing.filter(attempt => Number.isFinite(Number(attempt?.scores?.[key])));
+      const score = rows.reduce((sum, attempt) => sum + Math.max(0, Math.min(Number(attempt.scores[key]), max)), 0);
+      const maxMarks = rows.length * max;
+      return {
+        label,
+        score,
+        maxMarks,
+        attempts: rows.length,
+        percentage: maxMarks ? Math.round(score / maxMarks * 100) : null
+      };
+    }).filter(row => row.maxMarks > 0).sort((a, b) => a.percentage - b.percentage);
+  }
+
+  function englishQuestionTypeRows(attempts, assessment) {
+    const groups = new Map();
+    attempts.filter(attempt => ProgressUIV2.assessment(attempt) === assessment).forEach((attempt, attemptIndex) => {
+      const attemptId = attempt?.attemptId || attempt?.setId || attempt?.createdAt || `attempt-${attemptIndex}`;
+      (Array.isArray(attempt?.questionResults) ? attempt.questionResults : []).forEach(result => {
+        const type = String(result?.type || '').trim();
+        const label = questionTypeLabels[type] || type;
+        const values = safeScore(result?.awarded, result?.marks);
+        if (!label || !values) return;
+        if (!groups.has(label)) groups.set(label, { label, score: 0, maxMarks: 0, samples: 0, attemptIds: new Set() });
+        const group = groups.get(label);
+        group.score += values.score;
+        group.maxMarks += values.maxMarks;
+        group.samples += 1;
+        group.attemptIds.add(attemptId);
+      });
+    });
+    return [...groups.values()].map(group => ({
+      label: group.label,
+      score: group.score,
+      maxMarks: group.maxMarks,
+      attempts: group.attemptIds.size,
+      samples: group.samples,
+      percentage: group.maxMarks ? Math.round(group.score / group.maxMarks * 100) : null
+    })).sort((a, b) => (a.percentage ?? 101) - (b.percentage ?? 101) || b.maxMarks - a.maxMarks);
+  }
+
+  function sectionHtml(title, note, rows) {
+    const visible = rows.slice(0, 8);
+    const content = visible.length
+      ? `<div class="progress-v2-analysis-list">${visible.map(row => {
+          const percentage = row.percentage === null ? null : Math.max(0, Math.min(100, row.percentage));
+          const baseline = Number(row.attempts || 0) < 2;
+          const countText = row.samples
+            ? `${row.samples} question${row.samples === 1 ? '' : 's'} · ${row.attempts} attempt${row.attempts === 1 ? '' : 's'}`
+            : `${row.attempts} attempt${row.attempts === 1 ? '' : 's'} · ${Math.round(row.score * 10) / 10}/${Math.round(row.maxMarks * 10) / 10} marks`;
+          return `<div class="progress-v2-analysis-row">
+            <div class="progress-v2-analysis-copy">
+              <strong>${ProgressUIV2.escapeHtml(row.label)}</strong>
+              <small>${ProgressUIV2.escapeHtml(baseline ? `Building baseline · ${countText}` : countText)}</small>
+            </div>
+            <div class="progress-v2-analysis-track" aria-hidden="true"><span style="width:${percentage ?? 0}%"></span></div>
+            <div class="progress-v2-analysis-score"><strong>${percentage === null ? '—' : `${percentage}%`}</strong><small>${baseline ? 'Baseline' : 'Saved'}</small></div>
+          </div>`;
+        }).join('')}</div>`
+      : '<p class="progress-v2-analysis-empty">Building baseline — no saved scored data for this analysis yet.</p>';
+    return `<section class="progress-v2-analysis-section">
+      <div class="progress-v2-analysis-section-head"><strong>${ProgressUIV2.escapeHtml(title)}</strong><small>${ProgressUIV2.escapeHtml(note)}</small></div>
+      ${content}
+    </section>`;
+  }
+
+  function renderEnglish(attempts) {
+    return [
+      sectionHtml('Paper 1 Writing · Criteria', 'Marks-weighted · lowest score first', englishWritingRows(attempts)),
+      sectionHtml('Paper 2 Reading · Question Types', 'Question-level saved results', englishQuestionTypeRows(attempts, 'english-b-paper2-reading')),
+      sectionHtml('Paper 2 Listening · Question Types', 'Question-level saved results', englishQuestionTypeRows(attempts, 'english-b-paper2-listening'))
+    ].join('');
+  }
+
+  function renderEss(attempts) {
+    return [
+      sectionHtml('Topic / Unit', 'Marks-weighted · lowest score first', groupAttemptRows(attempts, attempt => attempt?.unit || attempt?.chapter || attempt?.topic)),
+      sectionHtml('Command Terms', 'Saved written and data-based responses', groupAttemptRows(attempts, attempt => attempt?.commandTerm)),
+      sectionHtml('Question Type', 'Across saved Final Exam practice', groupAttemptRows(attempts, attempt => questionTypeLabels[attempt?.questionType] || attempt?.questionType))
+    ].join('');
+  }
+
+  function renderMath(attempts) {
+    const paperRows = groupAttemptRows(attempts, attempt => {
+      const assessment = ProgressUIV2.assessment(attempt);
+      return ProgressUIV2.sections('Math AI SL').find(([key]) => key === assessment)?.[1] || assessment;
+    });
+    return [
+      sectionHtml('Topic / Unit', 'Marks-weighted · lowest score first', groupAttemptRows(attempts, attempt => attempt?.unit || attempt?.chapter || attempt?.topic)),
+      sectionHtml('Paper', 'Paper 1 vs Paper 2 saved practice', paperRows),
+      sectionHtml('Question Type / Command Term', 'Uses whichever saved skill label is available', groupAttemptRows(attempts, attempt => attempt?.commandTerm || questionTypeLabels[attempt?.questionType] || attempt?.questionType))
+    ].join('');
+  }
+
+  ProgressUIV2.renderAnalysis = function(subject) {
+    ensureAnalysisStyles();
+    if (subject === 'Biology SL') return originalRenderAnalysis(subject);
+
+    const placeholder = document.getElementById('progress-v2-analysis-placeholder');
+    const slot = document.getElementById('progress-v2-analysis-slot');
+    const biologyPanel = document.getElementById('paper2-progress-panel');
+    if (!placeholder || !slot) return;
+    if (biologyPanel) biologyPanel.style.display = 'none';
+    slot.hidden = true;
+    placeholder.hidden = false;
+
+    const attempts = normalAttempts(subject);
+    let html = '';
+    if (subject === 'English B HL') html = renderEnglish(attempts);
+    if (subject === 'ESS HL') html = renderEss(attempts);
+    if (subject === 'Math AI SL') html = renderMath(attempts);
+
+    placeholder.innerHTML = html
+      ? `<div class="progress-v2-analysis-dashboard">${html}</div>`
+      : `<p class="progress-v2-analysis-empty">Building baseline — no supported saved analysis data yet.</p>`;
+  };
+})();
