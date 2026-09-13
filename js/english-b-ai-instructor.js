@@ -247,6 +247,28 @@
         const originalSaveSelfMark = EnglishBPaper1.saveSelfMark.bind(EnglishBPaper1);
         EnglishBPaper1.saveSelfMark = (...args) => {
           const payload = this.buildPayload();
+          if (payload && typeof Storage !== 'undefined') {
+            const saved = Storage.load(this.progressStoreKey) || {};
+            const attempts = Array.isArray(saved.attempts) ? saved.attempts : [];
+            const fingerprint = this.answerFingerprint(payload);
+            const existing = [...attempts].reverse().find(attempt =>
+              attempt?.questionId === payload.task.id
+              && attempt?.answerFingerprint === fingerprint
+            );
+            if (existing) {
+              EnglishBPaper1.attemptSaved = true;
+              const saveButton = document.getElementById('engb-p1-save');
+              const status = document.getElementById('engb-p1-save-status');
+              if (saveButton) saveButton.disabled = true;
+              if (status) {
+                status.textContent = existing.gradingSource === 'ai-instructor'
+                  ? `This exact response already has an AI score (${Number(existing.score) || 0} / 30) in Progress.`
+                  : `This exact response is already saved (${Number(existing.score) || 0} / 30).`;
+              }
+              return existing;
+            }
+          }
+
           const result = originalSaveSelfMark(...args);
           if (payload && EnglishBPaper1.attemptSaved) this.tagLatestSelfMark(payload);
           return result;
