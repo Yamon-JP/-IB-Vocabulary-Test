@@ -122,10 +122,23 @@
       const score = Number(value.score);
       if (!Number.isInteger(score) || score < 0 || score > max) return null;
       const rationale = String(value.rationale || '').trim();
+      const rationaleJa = String(value.rationaleJa || '').trim();
+      const explanationJa = String(value.explanationJa || '').trim();
       const strengths = Array.isArray(value.strengths) ? value.strengths.map(String).filter(Boolean).slice(0, 3) : [];
+      const strengthsJa = Array.isArray(value.strengthsJa) ? value.strengthsJa.map(String).filter(Boolean).slice(0, 3) : [];
       const improvements = Array.isArray(value.improvements) ? value.improvements.map(String).filter(Boolean).slice(0, 3) : [];
+      const improvementsJa = Array.isArray(value.improvementsJa) ? value.improvementsJa.map(String).filter(Boolean).slice(0, 3) : [];
       if (!rationale) return null;
-      return { score, rationale, strengths, improvements };
+      return {
+        score,
+        rationale,
+        rationaleJa,
+        explanationJa,
+        strengths,
+        strengthsJa,
+        improvements,
+        improvementsJa
+      };
     },
 
     normalizeGrading(payload) {
@@ -139,22 +152,39 @@
       const topImprovements = Array.isArray(grading.topImprovements)
         ? grading.topImprovements.map(String).filter(Boolean).slice(0, 3)
         : [];
+      const topImprovementsJa = Array.isArray(grading.topImprovementsJa)
+        ? grading.topImprovementsJa.map(String).filter(Boolean).slice(0, 3)
+        : [];
       return {
         language,
         message,
         conceptualUnderstanding,
         total: language.score + message.score + conceptualUnderstanding.score,
         topImprovements,
+        topImprovementsJa,
         nextStep: String(grading.nextStep || '').trim(),
+        nextStepJa: String(grading.nextStepJa || '').trim(),
         overallComment: String(grading.overallComment || '').trim(),
+        overallCommentJa: String(grading.overallCommentJa || '').trim(),
         meta: payload?.meta || {}
       };
     },
 
+    bilingualListHtml(title, items, itemsJa) {
+      if (!items.length) return '';
+      return `
+        <div class="engb-ai-list">
+          <strong>${this.escapeHtml(title)}</strong>
+          <ul>${items.map((item, index) => `
+            <li>
+              ${this.escapeHtml(item)}
+              ${itemsJa[index] ? `<div class="muted">🇯🇵 ${this.escapeHtml(itemsJa[index])}</div>` : ''}
+            </li>`).join('')}
+          </ul>
+        </div>`;
+    },
+
     criterionHtml(label, criterion, max) {
-      const list = (title, items) => items.length
-        ? `<div class="engb-ai-list"><strong>${this.escapeHtml(title)}</strong><ul>${items.map(item => `<li>${this.escapeHtml(item)}</li>`).join('')}</ul></div>`
-        : '';
       return `
         <article class="engb-ai-criterion">
           <div class="engb-ai-criterion-head">
@@ -162,8 +192,10 @@
             <span>${criterion.score} / ${max}</span>
           </div>
           <p>${this.escapeHtml(criterion.rationale)}</p>
-          ${list('Strengths', criterion.strengths)}
-          ${list('Improve', criterion.improvements)}
+          ${criterion.rationaleJa ? `<p class="muted"><strong>🇯🇵 日本語訳：</strong>${this.escapeHtml(criterion.rationaleJa)}</p>` : ''}
+          ${criterion.explanationJa ? `<p class="muted"><strong>🇯🇵 簡単解説：</strong>${this.escapeHtml(criterion.explanationJa)}</p>` : ''}
+          ${this.bilingualListHtml('Strengths', criterion.strengths, criterion.strengthsJa)}
+          ${this.bilingualListHtml('Improve', criterion.improvements, criterion.improvementsJa)}
         </article>`;
     },
 
@@ -179,6 +211,7 @@
               <p class="eyebrow">AI INSTRUCTOR</p>
               <h4>English B HL · Paper 1 feedback</h4>
               <p class="muted">Training assessment aligned to the Paper 1 criteria. This is not an official IB grade.</p>
+              <p class="muted">英語の評価の直後に、日本語訳と短い解説を表示します。</p>
             </div>
             <div class="engb-ai-total"><strong>${grading.total}</strong><span>/ 30</span></div>
           </div>
@@ -190,11 +223,25 @@
           <div class="engb-ai-priority">
             <strong>Top 3 Improvements</strong>
             ${grading.topImprovements.length
-              ? `<ol>${grading.topImprovements.map(item => `<li>${this.escapeHtml(item)}</li>`).join('')}</ol>`
+              ? `<ol>${grading.topImprovements.map((item, index) => `
+                <li>
+                  ${this.escapeHtml(item)}
+                  ${grading.topImprovementsJa[index] ? `<div class="muted">🇯🇵 ${this.escapeHtml(grading.topImprovementsJa[index])}</div>` : ''}
+                </li>`).join('')}</ol>`
               : '<p class="muted">No priority list was returned.</p>'}
           </div>
-          ${grading.nextStep ? `<div class="engb-ai-next"><strong>Next step</strong><p>${this.escapeHtml(grading.nextStep)}</p></div>` : ''}
-          ${grading.overallComment ? `<div class="engb-ai-overall"><strong>Instructor comment</strong><p>${this.escapeHtml(grading.overallComment)}</p></div>` : ''}
+          ${grading.nextStep ? `
+            <div class="engb-ai-next">
+              <strong>Next step</strong>
+              <p>${this.escapeHtml(grading.nextStep)}</p>
+              ${grading.nextStepJa ? `<p class="muted"><strong>🇯🇵 日本語訳：</strong>${this.escapeHtml(grading.nextStepJa)}</p>` : ''}
+            </div>` : ''}
+          ${grading.overallComment ? `
+            <div class="engb-ai-overall">
+              <strong>Instructor comment</strong>
+              <p>${this.escapeHtml(grading.overallComment)}</p>
+              ${grading.overallCommentJa ? `<p class="muted"><strong>🇯🇵 日本語訳：</strong>${this.escapeHtml(grading.overallCommentJa)}</p>` : ''}
+            </div>` : ''}
           <div class="engb-ai-meta">Rubric ${this.escapeHtml(rubricVersion)}${model ? ` · ${this.escapeHtml(model)}` : ''} · AI result is not saved to Progress in Phase 7A-1.</div>
         </section>`;
     },
