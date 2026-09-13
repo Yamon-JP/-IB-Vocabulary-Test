@@ -317,10 +317,13 @@
       style.id = 'final-exam-progress-v2-styles';
       style.textContent = `
         .final-readiness-panel{margin-top:16px}
-        .final-readiness-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+        .final-readiness-grid{display:grid;grid-template-columns:1fr;gap:10px}
+        .final-readiness-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
         .final-readiness-card{padding:14px;border:1px solid #e4e7ec;border-radius:14px;background:#fff}
+        .final-readiness-metrics .final-readiness-card{padding:11px 12px}
         .final-readiness-card span,.final-readiness-card small{display:block;color:#667085}
         .final-readiness-card strong{display:block;margin-top:4px;font-size:1.08rem;line-height:1.35}
+        .final-readiness-metrics .final-readiness-card strong{font-size:1rem}
         .final-readiness-card small{margin-top:5px;font-size:.76rem;line-height:1.4}
         .final-readiness-trend[data-status="up"] strong{color:#027a48}
         .final-readiness-trend[data-status="down"] strong{color:#b42318}
@@ -345,8 +348,8 @@
         .final-readiness-practice{min-height:36px;padding:7px 11px;border:1px solid #cfd6df;border-radius:9px;background:#fff;font-weight:800;cursor:pointer}
         .final-readiness-practice:hover{border-color:#98a2b3}
         .final-readiness-practice:disabled{opacity:.55;cursor:default}
-        @media(max-width:900px){.final-readiness-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.final-readiness-overview-row{grid-template-columns:1fr 1fr}.final-readiness-overview-row .final-readiness-weak{grid-column:1/-1}}
-        @media(max-width:560px){.final-readiness-grid{grid-template-columns:1fr}.final-readiness-overview-row{grid-template-columns:1fr}.final-readiness-weak-row{grid-template-columns:1fr auto}.final-readiness-weak-copy{grid-column:1/-1}.final-readiness-weak-metric{text-align:left}}
+        @media(max-width:900px){.final-readiness-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.final-readiness-overview-row{grid-template-columns:1fr 1fr}.final-readiness-overview-row .final-readiness-weak{grid-column:1/-1}}
+        @media(max-width:560px){.final-readiness-metrics{grid-template-columns:1fr}.final-readiness-overview-row{grid-template-columns:1fr}.final-readiness-weak-row{grid-template-columns:1fr auto}.final-readiness-weak-copy{grid-column:1/-1}.final-readiness-weak-metric{text-align:left}}
       `;
       document.head.appendChild(style);
     },
@@ -379,8 +382,8 @@
       panel.className = 'progress-v2-panel final-readiness-panel';
       panel.innerHTML = `
         <div class="progress-v2-panel-heading compact">
-          <div><p class="eyebrow">CURRENT READINESS</p><h3 id="final-readiness-subject-heading">Final Exam snapshot</h3></div>
-          <span>Recent practice is separate from all-time results below</span>
+          <div><p class="eyebrow">ACTION CENTER</p><h3 id="final-readiness-subject-heading">Action Center</h3></div>
+          <span>Choose what to work on next · recent practice stays separate from all-time results</span>
         </div>
         <div id="final-readiness-subject-grid" class="final-readiness-grid"></div>`;
       hero.insertAdjacentElement('afterend', panel);
@@ -430,7 +433,7 @@
       const heading = document.getElementById('final-readiness-subject-heading');
       const grid = document.getElementById('final-readiness-subject-grid');
       if (!grid) return;
-      if (heading) heading.textContent = `${subject} · Final Exam snapshot`;
+      if (heading) heading.textContent = `${subject} · Action Center`;
       const readiness = this.currentReadiness(subject);
       const trend = this.trend(subject);
       const weak = this.weakest(subject);
@@ -446,7 +449,7 @@
         : [];
       const weakPanel = adaptiveTargets.length
         ? `<article class="final-readiness-card final-readiness-weak-list">
-            <span>Top Weak Areas</span>
+            <span>Recommended Practice · Top Weak Areas</span>
             <small>Choose a target to start focused adaptive practice.</small>
             <div class="final-readiness-weak-items">${adaptiveTargets.map((target, index) => {
               const accuracy = target.accuracy === null ? 'Baseline' : `${target.accuracy}%`;
@@ -467,31 +470,33 @@
             }).join('')}</div>
           </article>`
         : `<article class="final-readiness-card final-readiness-weak-list">
-            <span>Weakest Saved Area</span>
+            <span>Recommended Practice</span>
             <strong>${this.escapeHtml(weakLabel)}</strong>
             <small>${this.escapeHtml(weakNote)}</small>
           </article>`;
       grid.innerHTML = `
-        <article class="final-readiness-card">
-          <span>Current Readiness</span>
-          <strong>${this.escapeHtml(readinessLabel)}</strong>
-          <small>${this.escapeHtml(readinessNote)}</small>
-        </article>
-        <article class="final-readiness-card final-readiness-trend" data-status="${this.escapeHtml(trend.status)}">
-          <span>Trend</span>
-          <strong>${this.escapeHtml(`${trend.icon} ${trend.label}`)}</strong>
-          <small>Latest 3 vs previous 3 normal attempts</small>
-        </article>
-        <article class="final-readiness-card">
-          <span>Latest Full Mock</span>
-          <strong>${this.escapeHtml(this.mockLabel(subject))}</strong>
-          <small>Shown separately from normal Practice</small>
-        </article>
-        <article class="final-readiness-card">
-          <span>Today's Training</span>
-          <strong>${tp === null ? '—' : `${this.escapeHtml(tp)} TP`}</strong>
-          <small>Subject-specific Training Points today</small>
-        </article>
+        <div class="final-readiness-metrics">
+          <article class="final-readiness-card">
+            <span>Current Readiness</span>
+            <strong>${this.escapeHtml(readinessLabel)}</strong>
+            <small>${this.escapeHtml(readinessNote)}</small>
+          </article>
+          <article class="final-readiness-card final-readiness-trend" data-status="${this.escapeHtml(trend.status)}">
+            <span>Trend</span>
+            <strong>${this.escapeHtml(`${trend.icon} ${trend.label}`)}</strong>
+            <small>Latest 3 vs previous 3 normal attempts</small>
+          </article>
+          <article class="final-readiness-card">
+            <span>Latest Full Mock</span>
+            <strong>${this.escapeHtml(this.mockLabel(subject))}</strong>
+            <small>Shown separately from normal Practice</small>
+          </article>
+          <article class="final-readiness-card">
+            <span>Today's Training</span>
+            <strong>${tp === null ? '—' : `${this.escapeHtml(tp)} TP`}</strong>
+            <small>Subject-specific Training Points today</small>
+          </article>
+        </div>
         ${weakPanel}`;
       if (adaptiveTargets.length && typeof AdaptiveTraining !== 'undefined') {
         grid.querySelectorAll('[data-adaptive-review]').forEach(button => {
