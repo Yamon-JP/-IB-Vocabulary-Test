@@ -77,6 +77,23 @@
       };
     },
 
+    improvementFromAttempts(attempts) {
+      const recent = this.sortRecent((Array.isArray(attempts) ? attempts : []).filter(attempt => this.validAttempt(attempt)));
+      if (recent.length < 2) return { status: 'baseline', label: 'Building baseline', delta: null, icon: '•', current: null, previous: null };
+      const currentRows = recent.length >= 4 ? recent.slice(0, 2) : recent.slice(0, 1);
+      const previousRows = recent.length >= 4 ? recent.slice(2, 4) : recent.slice(1, 2);
+      const current = this.summarize(currentRows);
+      const previous = this.summarize(previousRows);
+      if (current.percentage === null || previous.percentage === null) {
+        return { status: 'baseline', label: 'Building baseline', delta: null, icon: '•', current: null, previous: null };
+      }
+      const delta = current.percentage - previous.percentage;
+      if (delta >= 3) return { status: 'up', label: `Improving +${delta} pts`, delta, icon: '↑', current: current.percentage, previous: previous.percentage };
+      if (delta <= -3) return { status: 'down', label: `Needs attention ${delta} pts`, delta, icon: '↓', current: current.percentage, previous: previous.percentage };
+      const detail = delta === 0 ? '' : ` ${delta > 0 ? '+' : ''}${delta} pts`;
+      return { status: 'stable', label: `Stable${detail}`, delta, icon: '→', current: current.percentage, previous: previous.percentage };
+    },
+
     currentReadiness(subject) {
       return this.summarize(this.normalAttempts(subject).slice(0, 5));
     },
@@ -197,6 +214,11 @@
         if (!rows.length) return;
         const score = rows.reduce((sum, attempt) => sum + Number(attempt.scores[criterion]), 0);
         const maxMarks = rows.length * max;
+        const criterionAttempts = rows.map(attempt => ({
+          score: Number(attempt.scores[criterion]),
+          maxMarks: max,
+          createdAt: attempt.createdAt
+        }));
         candidates.push({
           subject,
           assessment: 'english-b-paper1-writing',
@@ -204,7 +226,8 @@
           criterion,
           label: `Paper 1 Writing · ${area}`,
           percentage: Math.round(score / maxMarks * 100),
-          attempts: rows.length
+          attempts: rows.length,
+          improvement: this.improvementFromAttempts(criterionAttempts)
         });
       });
       [
@@ -221,7 +244,8 @@
             criterion: null,
             label,
             percentage: summary.percentage,
-            attempts: summary.attempts
+            attempts: summary.attempts,
+            improvement: this.improvementFromAttempts(rows)
           });
         }
       });
@@ -251,7 +275,8 @@
           criterion: null,
           label: `${this.assessmentLabel(subject, group.assessment)} · ${group.area}`,
           percentage: summary.percentage,
-          attempts: summary.attempts
+          attempts: summary.attempts,
+          improvement: this.improvementFromAttempts(group.attempts)
         };
       }).filter(candidate => candidate.percentage !== null);
       return candidates.sort((a, b) => a.percentage - b.percentage || a.attempts - b.attempts)[0] || null;
@@ -310,6 +335,11 @@
         .final-readiness-weak-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px;border:1px solid #e4e7ec;border-radius:11px;background:#f8fafc}
         .final-readiness-weak-copy strong{margin:0;font-size:.93rem}
         .final-readiness-weak-copy small{margin-top:3px}
+        .final-readiness-improvement{font-weight:800}
+        .final-readiness-improvement[data-status="up"]{color:#027a48}
+        .final-readiness-improvement[data-status="down"]{color:#b42318}
+        .final-readiness-improvement[data-status="stable"]{color:#475467}
+        .final-readiness-improvement[data-status="baseline"]{color:#667085}
         .final-readiness-weak-metric{text-align:right;white-space:nowrap}
         .final-readiness-weak-metric strong{margin:0;font-size:.9rem}
         .final-readiness-practice{min-height:36px;padding:7px 11px;border:1px solid #cfd6df;border-radius:9px;background:#fff;font-weight:800;cursor:pointer}
@@ -422,8 +452,15 @@
               const accuracy = target.accuracy === null ? 'Baseline' : `${target.accuracy}%`;
               const attempts = Number(target.attemptCount ?? target.attempts ?? 0);
               const priority = typeof AdaptiveTraining.priority === 'function' ? AdaptiveTraining.priority(target) : 'Review';
+              const improvement = typeof AdaptiveTraining.improvement === 'function'
+                ? AdaptiveTraining.improvement(target)
+                : (target.improvement || { status: 'baseline', label: 'Building baseline', icon: '•' });
               return `<div class="final-readiness-weak-row">
-                <div class="final-readiness-weak-copy"><strong>${this.escapeHtml(target.label || target.area || 'Adaptive practice')}</strong><small>${this.escapeHtml(`${priority} priority · ${attempts} saved attempt${attempts === 1 ? '' : 's'}`)}</small></div>
+                <div class="final-readiness-weak-copy">
+                  <strong>${this.escapeHtml(target.label || target.area || 'Adaptive practice')}</strong>
+                  <small>${this.escapeHtml(`${priority} priority · ${attempts} saved attempt${attempts === 1 ? '' : 's'}`)}</small>
+                  <small class="final-readiness-improvement" data-status="${this.escapeHtml(improvement.status || 'baseline')}">${this.escapeHtml(`${improvement.icon || '•'} ${improvement.label || 'Building baseline'}`)}</small>
+                </div>
                 <div class="final-readiness-weak-metric"><strong>${this.escapeHtml(accuracy)}</strong><small>Recent</small></div>
                 <button type="button" class="final-readiness-practice" data-adaptive-review="${index}">Practice</button>
               </div>`;
