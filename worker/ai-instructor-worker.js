@@ -1,5 +1,5 @@
 const DEFAULT_ORIGIN = 'https://yamon-jp.github.io';
-const DEFAULT_MODEL = 'gpt-5.6-terra';
+const DEFAULT_MODEL = '@cf/google/gemma-4-26b-a4b-it';
 const RUBRIC_VERSION = 'engb-paper1-v1';
 
 function allowedOrigins(env) {
@@ -115,15 +115,36 @@ const gradingSchema = {
   }
 };
 
-function extractOutputText(data) {
-  if (typeof data?.output_text === 'string' && data.output_text.trim()) return data.output_text.trim();
-  const parts = [];
-  for (const item of Array.isArray(data?.output) ? data.output : []) {
-    for (const content of Array.isArray(item?.content) ? item.content : []) {
-      if (typeof content?.text === 'string') parts.push(content.text);
+function parseMaybeJson(value) {
+  if (value && typeof value === 'object') return value;
+  if (typeof value !== 'string') return null;
+  const text = value.trim();
+  if (!text) return null;
+  try {
+    return JSON.parse(text);
+  } catch (_) {
+    const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/i)?.[1]?.trim();
+    if (!fenced) return null;
+    try {
+      return JSON.parse(fenced);
+    } catch (_) {
+      return null;
     }
   }
-  return parts.join('').trim();
+}
+
+function extractStructuredResult(result) {
+  const direct = parseMaybeJson(result?.response);
+  if (direct) return direct;
+
+  const choiceContent = result?.choices?.[0]?.message?.content;
+  const fromChoice = parseMaybeJson(choiceContent);
+  if (fromChoice) return fromChoice;
+
+  const nested = parseMaybeJson(result?.result?.response);
+  if (nested) return nested;
+
+  return parseMaybeJson(result);
 }
 
 function validCriterion(value, max) {
@@ -196,8 +217,8 @@ export default {
       return jsonResponse({ ok: false, error: 'Not found.' }, 404, origin, env);
     }
 
-    if (!env.OPENAI_API_KEY) {
-      return jsonResponse({ ok: false, error: 'AI grading is not configured.' }, 503, origin, env);
+    if (!env.AI || typeof env.AI.run !== 'function') {
+      return jsonResponse({ ok: false, error: 'Workers AI binding is not configured.' }, 503, origin, env);
     }
 
     const contentLength = Number(request.headers.get('Content-Length') || 0);
@@ -217,64 +238,38 @@ export default {
       return jsonResponse({ ok: false, error: 'A response and text type are required.' }, 400, origin, env);
     }
 
-    const model = cleanString(env.OPENAI_MODEL || DEFAULT_MODEL, 100) || DEFAULT_MODEL;
-    const response = await fetch('https://api.openai.com/v1/responses', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${env.OPENAI_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        model,
-        store: false,
-        reasoning: { effort: 'medium' },
-        input: [
-          {
-            role: 'system',
-            content: [{ type: 'input_text', text: systemPrompt() }]
-          },
+    const model = cleanString(env.WORKERS_AI_MODEL || DEFAULT_MODEL, 160) || DEFAULT_MODEL;
+    let result;
+    try {
+      result = await env.AI.run(model, {
+        messages: [
+          { role: 'system', content: systemPrompt() },
           {
             role: 'user',
-            content: [{
-              type: 'input_text',
-              text: JSON.stringify({
-                task: input.task,
-                selectedTextType: input.selectedTextType,
-                wordCount: input.wordCount,
-                studentResponse: input.answer
-              })
-            }]
+            content: JSON.stringify({
+              task: input.task,
+              selectedTextType: input.selectedTextType,
+              wordCount: input.wordCount,
+              studentResponse: input.answer
+            })
           }
         ],
-        text: {
-          verbosity: 'medium',
-          format: {
-            type: 'json_schema',
-            name: 'english_b_paper1_grading',
-            description: 'Structured English B HL Paper 1 training assessment.',
-            strict: true,
-            schema: gradingSchema
-          }
-        }
-      })
-    });
-
-    if (!response.ok) {
-      console.error('OpenAI grading request failed.', response.status, await response.text());
+        response_format: {
+          type: 'json_schema',
+          json_schema: gradingSchema
+        },
+        temperature: 0.2,
+        max_completion_tokens: 2200
+      });
+    } catch (error) {
+      console.error('Workers AI grading request failed.', error);
       return jsonResponse({ ok: false, error: 'AI grading service returned an error.' }, 502, origin, env);
     }
 
-    const data = await response.json();
-    const outputText = extractOutputText(data);
-    let parsed;
-    try {
-      parsed = JSON.parse(outputText);
-    } catch (_) {
-      return jsonResponse({ ok: false, error: 'AI grading result could not be parsed.' }, 502, origin, env);
-    }
-
+    const parsed = extractStructuredResult(result);
     const grading = normalizeGrading(parsed);
     if (!grading) {
+      console.error('Workers AI grading result was invalid.', result);
       return jsonResponse({ ok: false, error: 'AI grading result was invalid.' }, 502, origin, env);
     }
 
@@ -282,7 +277,8 @@ export default {
       ok: true,
       grading,
       meta: {
-        model: data?.model || model,
+        provider: 'cloudflare-workers-ai',
+        model,
         rubricVersion: RUBRIC_VERSION
       }
     }, 200, origin, env);
