@@ -1,4 +1,5 @@
 const DEFAULT_ORIGIN = 'https://yamon-jp.github.io';
+const PREVIEW_ORIGIN = 'https://ib-master-trainer-preview.takashiyamamoto-81.workers.dev';
 const DEFAULT_MODEL = '@cf/google/gemma-4-26b-a4b-it';
 const RUBRIC_VERSION = 'engb-paper1-v1';
 
@@ -155,6 +156,26 @@ function validCriterion(value, max) {
   return true;
 }
 
+function invalidGradingReason(value) {
+  if (!value || typeof value !== 'object') return 'response JSON could not be parsed';
+
+  const criterionReason = (name, criterion, max) => {
+    if (!criterion || typeof criterion !== 'object') return `${name} is missing or not an object`;
+    if (!Number.isInteger(criterion.score) || criterion.score < 0 || criterion.score > max) {
+      return `${name}.score must be an integer from 0 to ${max}`;
+    }
+    if (!cleanString(criterion.rationale, 4000)) return `${name}.rationale is missing`;
+    if (!Array.isArray(criterion.strengths)) return `${name}.strengths must be an array`;
+    if (!Array.isArray(criterion.improvements)) return `${name}.improvements must be an array`;
+    return '';
+  };
+
+  return criterionReason('language', value.language, 12)
+    || criterionReason('message', value.message, 12)
+    || criterionReason('conceptualUnderstanding', value.conceptualUnderstanding, 6)
+    || 'unknown grading structure';
+}
+
 const improvementMetadataPrefix = /^(?:total\s*score|totalscore|total|score|language|message|conceptual\s*understanding|conceptualunderstanding|rubric\s*version|rubricversion|provider|model)\s*[:=]/i;
 
 function normalizeImprovementItem(value) {
@@ -301,6 +322,9 @@ export default {
             })
           }
         ],
+        chat_template_kwargs: {
+          enable_thinking: false
+        },
         response_format: {
           type: 'json_schema',
           json_schema: gradingSchema
@@ -316,8 +340,12 @@ export default {
     const parsed = extractStructuredResult(result);
     const grading = normalizeGrading(parsed);
     if (!grading) {
-      console.error('Workers AI grading result was invalid.', result);
-      return jsonResponse({ ok: false, error: 'AI grading result was invalid.' }, 502, origin, env);
+      const reason = invalidGradingReason(parsed);
+      console.error('Workers AI grading result was invalid.', { reason, result });
+      const message = origin === PREVIEW_ORIGIN
+        ? `AI grading result was invalid: ${reason}`
+        : 'AI grading result was invalid.';
+      return jsonResponse({ ok: false, error: message }, 502, origin, env);
     }
 
     return jsonResponse({
