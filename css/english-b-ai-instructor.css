@@ -1,0 +1,29 @@
+.engb-ai-grade-button{background:#111827;border:1px solid #111827;color:#fff}
+.engb-ai-grade-button:hover{filter:brightness(.96)}
+.engb-ai-grade-button:disabled{cursor:wait;opacity:.65}
+.engb-ai-result{margin-top:16px}
+.engb-ai-message,.engb-ai-panel{border:1px solid #d0d5dd;border-radius:16px;background:#fff;padding:16px}
+.engb-ai-message strong{display:block;margin-bottom:5px}
+.engb-ai-message p{margin:0;color:#475467}
+.engb-ai-message.warning{border-color:#f2c94c;background:#fffdf5}
+.engb-ai-message.error{border-color:#f3a6a6;background:#fff8f8}
+.engb-ai-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}
+.engb-ai-header h4{margin:2px 0 4px;font-size:1.08rem}
+.engb-ai-header p{margin:0}
+.engb-ai-total{display:flex;align-items:baseline;gap:4px;white-space:nowrap;border:1px solid #d0d5dd;border-radius:14px;padding:10px 13px;background:#f8fafc}
+.engb-ai-total strong{font-size:1.5rem;line-height:1}
+.engb-ai-total span{font-size:.82rem;color:#667085}
+.engb-ai-criteria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.engb-ai-criterion{border:1px solid #e4e7ec;border-radius:14px;padding:13px;background:#fbfcfe}
+.engb-ai-criterion-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px}
+.engb-ai-criterion-head span{font-weight:800;white-space:nowrap}
+.engb-ai-criterion>p{margin:0 0 10px;color:#344054;font-size:.88rem;line-height:1.5}
+.engb-ai-list{margin-top:9px}
+.engb-ai-list>strong{font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:#667085}
+.engb-ai-list ul,.engb-ai-priority ol{margin:6px 0 0;padding-left:20px}
+.engb-ai-list li,.engb-ai-priority li{margin:5px 0;line-height:1.45}
+.engb-ai-priority,.engb-ai-next,.engb-ai-overall{margin-top:14px;border-top:1px solid #e4e7ec;padding-top:14px}
+.engb-ai-next p,.engb-ai-overall p{margin:6px 0 0;line-height:1.5;color:#344054}
+.engb-ai-meta{margin-top:14px;color:#667085;font-size:.72rem;line-height:1.4}
+@media(max-width:800px){.engb-ai-criteria{grid-template-columns:1fr}.engb-ai-header{align-items:stretch}.engb-ai-total{align-self:flex-start}}
+@media(max-width:520px){.engb-ai-header{display:block}.engb-ai-total{display:inline-flex;margin-top:12px}.engb-ai-message,.engb-ai-panel{padding:13px}}
