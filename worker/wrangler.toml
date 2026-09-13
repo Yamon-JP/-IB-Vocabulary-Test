@@ -6,7 +6,7 @@ compatibility_date = "2026-09-13"
 binding = "AI"
 
 [vars]
-ALLOWED_ORIGINS = "https://yamon-jp.github.io"
+ALLOWED_ORIGINS = "https://yamon-jp.github.io,https://ib-master-trainer-preview.takashiyamamoto-81.workers.dev"
 WORKERS_AI_MODEL = "@cf/google/gemma-4-26b-a4b-it"
 
 # Workers AI uses the AI binding above; no OpenAI API key is required.
