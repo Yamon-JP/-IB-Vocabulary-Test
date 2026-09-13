@@ -108,10 +108,27 @@
       );
     },
 
+    ensureConsolidationStyles() {
+      if (document.getElementById('progress-ui-v2-consolidation-styles')) return;
+      const style = document.createElement('style');
+      style.id = 'progress-ui-v2-consolidation-styles';
+      style.textContent = `
+        .progress-v2-more-panel{margin-top:16px}
+        .progress-v2-more-details>summary{font-weight:850}
+        .progress-v2-more-stack{display:grid;gap:14px;padding-top:8px}
+        .progress-v2-detail-block{padding-top:14px;border-top:1px solid #e4e7ec}
+        .progress-v2-detail-block:first-child{padding-top:2px;border-top:0}
+        .progress-v2-detail-block>.progress-v2-panel-heading{margin-bottom:10px}
+        .progress-v2-analysis-panel{margin:0}
+      `;
+      document.head.appendChild(style);
+    },
+
     restructure() {
       const page = document.getElementById('statistics-page');
       const heading = page?.querySelector('.page-heading');
       if (!page || !heading) return false;
+      this.ensureConsolidationStyles();
       if (document.getElementById('progress-ui-v2-root')) {
         this.attachLegacyPanels();
         return true;
@@ -173,41 +190,52 @@
 
           <section class="progress-v2-panel">
             <div class="progress-v2-panel-heading compact">
-              <div><p class="eyebrow">PAPERS & SECTIONS</p><h3>Performance</h3></div>
+              <div><p class="eyebrow">PAPER PERFORMANCE</p><h3>Papers & Sections</h3></div>
               <span>Marks-weighted score</span>
             </div>
             <div id="progress-v2-section-grid" class="progress-v2-section-grid"></div>
           </section>
 
-          <section id="progress-v2-chapter-panel" class="progress-v2-panel">
+          <section class="progress-v2-panel progress-v2-more-panel">
             <div class="progress-v2-panel-heading compact">
-              <div><p class="eyebrow">QUIZ / CHAPTER PROGRESS</p><h3 id="progress-v2-chapter-title">Chapter progress</h3></div>
-              <span id="progress-v2-chapter-note">Vocabulary quiz data</span>
+              <div><p class="eyebrow">MORE PROGRESS DETAILS</p><h3>History & Analysis</h3></div>
+              <span>Open when you need deeper detail</span>
             </div>
-            <div id="progress-v2-chapter-preview" class="progress-v2-chapter-list"></div>
-            <details id="progress-v2-chapter-details" class="progress-v2-details compact-details">
-              <summary>View all chapters <span>⌄</span></summary>
-              <div id="progress-v2-chapter-all" class="progress-v2-chapter-list"></div>
-            </details>
-          </section>
+            <details id="progress-v2-more-details" class="progress-v2-details progress-v2-more-details">
+              <summary>Open progress details <span>⌄</span></summary>
+              <div class="progress-v2-more-stack">
+                <section id="progress-v2-chapter-panel" class="progress-v2-detail-block">
+                  <div class="progress-v2-panel-heading compact">
+                    <div><p class="eyebrow">QUIZ / CHAPTER PROGRESS</p><h3 id="progress-v2-chapter-title">Chapter progress</h3></div>
+                    <span id="progress-v2-chapter-note">Vocabulary quiz data</span>
+                  </div>
+                  <div id="progress-v2-chapter-preview" class="progress-v2-chapter-list"></div>
+                  <details id="progress-v2-chapter-details" class="progress-v2-details compact-details">
+                    <summary>View all chapters <span>⌄</span></summary>
+                    <div id="progress-v2-chapter-all" class="progress-v2-chapter-list"></div>
+                  </details>
+                </section>
 
-          <section class="progress-v2-panel">
-            <div class="progress-v2-panel-heading compact">
-              <div><p class="eyebrow">RECENT EXAM TRAINING</p><h3>Latest attempts</h3></div>
-              <span>Latest 5 saved</span>
-            </div>
-            <div id="progress-v2-recent" class="progress-v2-recent-list"></div>
-          </section>
+                <section class="progress-v2-detail-block">
+                  <div class="progress-v2-panel-heading compact">
+                    <div><p class="eyebrow">RECENT EXAM TRAINING</p><h3>Latest attempts</h3></div>
+                    <span>Latest 5 saved</span>
+                  </div>
+                  <div id="progress-v2-recent" class="progress-v2-recent-list"></div>
+                </section>
 
-          <section class="progress-v2-panel progress-v2-analysis-panel">
-            <div class="progress-v2-panel-heading compact">
-              <div><p class="eyebrow">SUBJECT ANALYSIS</p><h3>Detailed Analysis</h3></div>
-              <span>Expandable by subject</span>
-            </div>
-            <details id="progress-v2-analysis-details" class="progress-v2-details">
-              <summary>Open detailed analysis <span>⌄</span></summary>
-              <div id="progress-v2-analysis-placeholder" class="progress-v2-analysis-placeholder"></div>
-              <div id="progress-v2-analysis-slot"></div>
+                <section class="progress-v2-detail-block progress-v2-analysis-panel">
+                  <div class="progress-v2-panel-heading compact">
+                    <div><p class="eyebrow">SUBJECT ANALYSIS</p><h3>Detailed Analysis</h3></div>
+                    <span>Expandable by subject</span>
+                  </div>
+                  <details id="progress-v2-analysis-details" class="progress-v2-details">
+                    <summary>Open detailed analysis <span>⌄</span></summary>
+                    <div id="progress-v2-analysis-placeholder" class="progress-v2-analysis-placeholder"></div>
+                    <div id="progress-v2-analysis-slot"></div>
+                  </details>
+                </section>
+              </div>
             </details>
           </section>
         </section>`;
