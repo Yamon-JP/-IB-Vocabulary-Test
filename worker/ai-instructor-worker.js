@@ -14,7 +14,7 @@ function corsHeaders(origin, env) {
   const allowOrigin = allowed.includes(origin) ? origin : allowed[0] || DEFAULT_ORIGIN;
   return {
     'Access-Control-Allow-Origin': allowOrigin,
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Vary': 'Origin',
     'Cache-Control': 'no-store'
@@ -198,6 +198,26 @@ function systemPrompt() {
   ].join('\n');
 }
 
+function selfTestInput() {
+  return {
+    task: {
+      id: 'SELF-TEST-001',
+      chapter: 'Self-test',
+      theme: 'Experiences',
+      prompt: 'Write an email to your school principal suggesting ways to improve student wellbeing.',
+      requirements: ['Explain one current problem', 'Suggest at least two improvements'],
+      audience: 'School principal',
+      purpose: 'Suggest improvements',
+      register: 'Formal',
+      bestTextType: 'Email',
+      textTypeRationale: 'A formal email is appropriate for addressing the principal directly.'
+    },
+    selectedTextType: 'Email',
+    wordCount: 82,
+    answer: 'Dear Principal, I am writing to suggest some ways to improve student wellbeing at our school. Many students feel stressed because they have too much homework and not enough time to relax. I suggest creating a quiet relaxation room where students can take short breaks. In addition, the school could organize monthly wellbeing activities such as sports, art, or mindfulness sessions. These changes could help students feel healthier and more motivated. Thank you for considering my suggestions. Yours sincerely, Student'
+  };
+}
+
 export default {
   async fetch(request, env) {
     const origin = request.headers.get('Origin') || '';
@@ -213,7 +233,20 @@ export default {
     }
 
     const url = new URL(request.url);
-    if (request.method !== 'POST' || url.pathname !== '/grade/english-b-paper1') {
+    const isHealth = request.method === 'GET' && url.pathname === '/health';
+    const isSelfTest = request.method === 'GET' && url.pathname === '/self-test/english-b-paper1';
+    const isGradeRequest = request.method === 'POST' && url.pathname === '/grade/english-b-paper1';
+
+    if (isHealth) {
+      return jsonResponse({
+        ok: true,
+        service: 'ib-master-trainer-ai-instructor',
+        aiBinding: Boolean(env.AI && typeof env.AI.run === 'function'),
+        model: cleanString(env.WORKERS_AI_MODEL || DEFAULT_MODEL, 160) || DEFAULT_MODEL
+      }, 200, origin, env);
+    }
+
+    if (!isSelfTest && !isGradeRequest) {
       return jsonResponse({ ok: false, error: 'Not found.' }, 404, origin, env);
     }
 
@@ -221,21 +254,26 @@ export default {
       return jsonResponse({ ok: false, error: 'Workers AI binding is not configured.' }, 503, origin, env);
     }
 
-    const contentLength = Number(request.headers.get('Content-Length') || 0);
-    if (contentLength > 30000) {
-      return jsonResponse({ ok: false, error: 'Request is too large.' }, 413, origin, env);
-    }
+    let input;
+    if (isSelfTest) {
+      input = selfTestInput();
+    } else {
+      const contentLength = Number(request.headers.get('Content-Length') || 0);
+      if (contentLength > 30000) {
+        return jsonResponse({ ok: false, error: 'Request is too large.' }, 413, origin, env);
+      }
 
-    let body;
-    try {
-      body = await request.json();
-    } catch (_) {
-      return jsonResponse({ ok: false, error: 'Invalid JSON request.' }, 400, origin, env);
-    }
+      let body;
+      try {
+        body = await request.json();
+      } catch (_) {
+        return jsonResponse({ ok: false, error: 'Invalid JSON request.' }, 400, origin, env);
+      }
 
-    const input = normalizeInput(body);
-    if (!input) {
-      return jsonResponse({ ok: false, error: 'A response and text type are required.' }, 400, origin, env);
+      input = normalizeInput(body);
+      if (!input) {
+        return jsonResponse({ ok: false, error: 'A response and text type are required.' }, 400, origin, env);
+      }
     }
 
     const model = cleanString(env.WORKERS_AI_MODEL || DEFAULT_MODEL, 160) || DEFAULT_MODEL;
@@ -275,6 +313,7 @@ export default {
 
     return jsonResponse({
       ok: true,
+      selfTest: isSelfTest,
       grading,
       meta: {
         provider: 'cloudflare-workers-ai',
