@@ -198,6 +198,96 @@ const A=window.AdaptiveTraining={
     return `${rec.accuracy}% · ${count} recent attempt${count===1?'':'s'}`;
   },
 
+  ensurePracticeWeakStyles(){
+    if(document.getElementById('adaptive-practice-weak-style'))return;
+    const style=document.createElement('style');
+    style.id='adaptive-practice-weak-style';
+    style.textContent=`
+      .adaptive-practice-weak-panel{margin:14px 0 18px;padding:14px;border:1px solid #e4e7ec;border-radius:14px;background:#f8fafc}
+      .adaptive-practice-weak-heading{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:10px}
+      .adaptive-practice-weak-heading strong{display:block;font-size:1rem}
+      .adaptive-practice-weak-heading small{display:block;margin-top:3px;color:#667085}
+      .adaptive-practice-weak-list{display:grid;gap:8px}
+      .adaptive-practice-weak-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px;border:1px solid #e4e7ec;border-radius:11px;background:#fff}
+      .adaptive-practice-weak-copy strong,.adaptive-practice-weak-copy small{display:block}
+      .adaptive-practice-weak-copy strong{font-size:.92rem}
+      .adaptive-practice-weak-copy small{margin-top:3px;color:#667085;font-size:.76rem}
+      .adaptive-practice-weak-trend[data-status="up"]{color:#027a48!important;font-weight:800}
+      .adaptive-practice-weak-trend[data-status="down"]{color:#b42318!important;font-weight:800}
+      .adaptive-practice-weak-trend[data-status="stable"]{color:#475467!important;font-weight:800}
+      .adaptive-practice-weak-metric{text-align:right;white-space:nowrap}
+      .adaptive-practice-weak-metric strong,.adaptive-practice-weak-metric small{display:block}
+      .adaptive-practice-weak-metric small{margin-top:2px;color:#667085;font-size:.72rem}
+      .adaptive-practice-weak-button{min-height:36px;padding:7px 11px;border:1px solid #cfd6df;border-radius:9px;background:#fff;font-weight:800;cursor:pointer}
+      .adaptive-practice-weak-button:hover{border-color:#98a2b3}
+      .adaptive-practice-weak-button:disabled{opacity:.55;cursor:default}
+      .adaptive-practice-weak-empty{margin:0;color:#667085;font-size:.86rem;line-height:1.5}
+      @media(max-width:600px){.adaptive-practice-weak-row{grid-template-columns:1fr auto}.adaptive-practice-weak-copy{grid-column:1/-1}.adaptive-practice-weak-metric{text-align:left}}
+    `;
+    document.head.appendChild(style);
+  },
+
+  ensurePracticeWeakPanel(){
+    this.ensurePracticeWeakStyles();
+    let panel=document.getElementById('adaptive-practice-weak-panel');
+    if(panel)return panel;
+    const selection=document.querySelector('#selection-page .selection-panel');
+    const heading=selection?.querySelector('.selection-heading');
+    if(!selection||!heading)return null;
+    panel=document.createElement('section');
+    panel.id='adaptive-practice-weak-panel';
+    panel.className='adaptive-practice-weak-panel';
+    heading.insertAdjacentElement('afterend',panel);
+    return panel;
+  },
+
+  renderPracticeWeakAreas(){
+    const panel=this.ensurePracticeWeakPanel();
+    if(!panel)return;
+    const subject=App?.state?.subject||null;
+    if(!subject||!this.subjects.includes(subject)){
+      panel.hidden=true;
+      panel.innerHTML='';
+      return;
+    }
+    panel.hidden=false;
+    const targets=this.getRecommendations(subject,3);
+    const heading=`<div class="adaptive-practice-weak-heading"><div><strong>Weakest Areas</strong><small>${this.escape(subject)} · Final Exam history first</small></div><small>Top ${targets.length||0} / 3</small></div>`;
+    if(!targets.length){
+      const note=subject==='English B HL'
+        ?'No saved Final Exam weakness yet. Complete scored Writing, Reading or Listening practice to build this list.'
+        :'No adaptive weak areas are available yet. Complete scored Final Exam practice and confirm Learned Content / Course Coverage.';
+      panel.innerHTML=`${heading}<p class="adaptive-practice-weak-empty">${this.escape(note)}</p>`;
+      return;
+    }
+    panel.innerHTML=`${heading}<div class="adaptive-practice-weak-list">${targets.map((target,index)=>{
+      const accuracy=target.accuracy===null?'Baseline':`${target.accuracy}%`;
+      const attempts=Number(target.attemptCount??target.attempts??0);
+      const trend=this.improvement(target);
+      return `<div class="adaptive-practice-weak-row">
+        <div class="adaptive-practice-weak-copy">
+          <strong>${this.escape(target.label||target.area||'Adaptive practice')}</strong>
+          <small>${this.escape(`${this.priority(target)} priority · ${attempts} saved attempt${attempts===1?'':'s'}`)}</small>
+          <small class="adaptive-practice-weak-trend" data-status="${this.escape(trend.status||'baseline')}">${this.escape(`${trend.icon||'•'} ${trend.label||'Building baseline'}`)}</small>
+        </div>
+        <div class="adaptive-practice-weak-metric"><strong>${this.escape(accuracy)}</strong><small>Recent</small></div>
+        <button type="button" class="adaptive-practice-weak-button" data-adaptive-practice-review="${index}">Practice</button>
+      </div>`;
+    }).join('')}</div>`;
+    panel.querySelectorAll('[data-adaptive-practice-review]').forEach(button=>{
+      const target=targets[Number(button.dataset.adaptivePracticeReview)];
+      if(!target)return;
+      button.addEventListener('click',async()=>{
+        button.disabled=true;
+        try{
+          await this.startRecommended(target);
+        }finally{
+          button.disabled=false;
+        }
+      });
+    });
+  },
+
   removeLegacyCard(){
     document.getElementById('adaptive-training-card')?.remove();
     document.getElementById('adaptive-training-style')?.remove();
@@ -206,6 +296,7 @@ const A=window.AdaptiveTraining={
   render(){
     this.removeLegacyCard();
     this.recommendation=this.getRecommendation();
+    this.renderPracticeWeakAreas();
     if(typeof HomeUIV2!=='undefined'&&typeof HomeUIV2.updateFocus==='function'){
       window.setTimeout(()=>HomeUIV2.updateFocus(),0);
     }
@@ -373,6 +464,7 @@ const A=window.AdaptiveTraining={
       Pages.show=function(page,...args){
         const result=originalShow.call(this,page,...args);
         if(page==='home')setTimeout(()=>A.render(),0);
+        if(page==='selection')setTimeout(()=>A.renderPracticeWeakAreas(),0);
         return result;
       };
       Pages.__adaptiveTrainingWrapped=true;
