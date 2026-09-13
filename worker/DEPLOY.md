@@ -44,3 +44,5 @@ Allowed browser origin is currently:
 ## Phase 7A-1 behavior
 
 AI grading is displayed in the Writing screen but is intentionally not saved to Progress yet. Existing self-marking remains unchanged and available as a fallback.
+
+<!-- Deployment trigger after switching Cloudflare production branch to v1.0-development. -->
