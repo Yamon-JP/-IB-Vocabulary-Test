@@ -1,5 +1,4 @@
 const DEFAULT_ORIGIN = 'https://yamon-jp.github.io';
-const PREVIEW_ORIGIN = 'https://ib-master-trainer-preview.takashiyamamoto-81.workers.dev';
 const DEFAULT_MODEL = '@cf/google/gemma-4-26b-a4b-it';
 const RUBRIC_VERSION = 'engb-paper1-v1';
 
@@ -432,10 +431,7 @@ export default {
     if (!grading) {
       const reason = invalidGradingReason(parsed);
       console.error('Workers AI grading result was invalid.', { reason, result });
-      const message = origin === PREVIEW_ORIGIN
-        ? `AI grading result was invalid: ${reason}`
-        : 'AI grading result was invalid.';
-      return jsonResponse({ ok: false, error: message }, 502, origin, env);
+      return jsonResponse({ ok: false, error: 'AI grading result was invalid.' }, 502, origin, env);
     }
 
     return jsonResponse({
