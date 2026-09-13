@@ -116,9 +116,10 @@
         || typeof Paper2 === 'undefined'
       ) return false;
 
-      const [paper1Extra, sectionAExtra, sectionBExtra] = await Promise.all([
+      const [paper1Extra, sectionAExtra, sectionABalancePack2, sectionBExtra] = await Promise.all([
         this.fetchArray('data/paper1/ess-paper1-final-extra.json?v=2'),
         this.fetchArray('data/paper2/ess-section-a-final-extra.json?v=2'),
+        this.fetchArray('data/paper2/ess-section-a-balance-pack-2.json?v=1'),
         this.fetchArray('data/paper2/ess-section-b-set-9.json?v=2')
       ]);
 
@@ -136,7 +137,7 @@
 
       EssExam.paper2SectionAQuestions = this.mergeUnique(
         EssExam.paper2SectionAQuestions,
-        sectionAExtra.filter(question =>
+        [...sectionAExtra, ...sectionABalancePack2].filter(question =>
           question?.subject === 'ESS HL' && question?.assessmentTarget === 'ess2a'
         ),
         normalizePaper2
