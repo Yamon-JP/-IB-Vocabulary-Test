@@ -5,6 +5,7 @@
     installed: false,
     grading: false,
     endpointKey: 'ib_ai_instructor_endpoint',
+    observer: null,
 
     endpoint() {
       const configured = String(window.IB_AI_INSTRUCTOR_ENDPOINT || '').trim();
@@ -38,6 +39,10 @@
 
       this.installed = true;
       this.mountControls();
+      if (this.observer) {
+        this.observer.disconnect();
+        this.observer = null;
+      }
       return true;
     },
 
@@ -256,14 +261,12 @@
     },
 
     boot() {
-      let attempts = 0;
-      const timer = window.setInterval(() => {
-        attempts += 1;
-        if (this.install() || attempts >= 600) {
-          window.clearInterval(timer);
-          if (!this.installed) console.warn('English B AI Instructor could not attach to Paper 1 Writing.');
-        }
-      }, 100);
+      if (this.install()) return;
+      this.observer = new MutationObserver(() => {
+        this.install();
+      });
+      this.observer.observe(document.documentElement, { childList: true, subtree: true });
+      window.addEventListener('load', () => this.install(), { once: true });
     }
   };
 
