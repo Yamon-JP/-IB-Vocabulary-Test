@@ -27,7 +27,7 @@ const Paper2ProgressView = {
         <div>
           <p class="eyebrow">FINAL EXAM READINESS</p>
           <h3>Biology Final Exam Progress</h3>
-          <p class="muted">Track score and coverage separately across Paper 1A, Paper 1B, Paper 2 · Section A and Paper 2 · Section B.</p>
+          <p class="muted">Track recent score and coverage separately across Paper 1A, Paper 1B, Paper 2 · Section A and Paper 2 · Section B.</p>
         </div>
         <span id="paper2-progress-attempt-badge">0 attempts</span>
       </div>
@@ -50,11 +50,11 @@ const Paper2ProgressView = {
           <strong id="paper2-progress-attempts">0</strong>
         </div>
         <div class="paper2-progress-stat">
-          <span>Marks</span>
-          <strong id="paper2-progress-marks">0 / 0</strong>
+          <span>Latest Score</span>
+          <strong id="paper2-progress-marks">—</strong>
         </div>
         <div class="paper2-progress-stat">
-          <span>Score</span>
+          <span>Recent Average</span>
           <strong id="paper2-progress-percent">—</strong>
         </div>
         <div class="paper2-progress-stat">
@@ -66,7 +66,7 @@ const Paper2ProgressView = {
       <div class="paper2-progress-section">
         <div class="paper2-progress-section-heading">
           <h4>Theme & Unit Performance</h4>
-          <span class="muted">Score is weighted by available marks · Coverage counts unique questions tried</span>
+          <span class="muted">Recent average uses the latest 5 attempts · Coverage counts unique questions tried</span>
         </div>
         <div id="paper2-progress-themes"></div>
       </div>
@@ -263,6 +263,24 @@ const Paper2ProgressView = {
     };
   },
 
+  recentMetrics(attempts, limit = 5) {
+    const recent = [...attempts]
+      .sort((a, b) => (Date.parse(b?.createdAt) || 0) - (Date.parse(a?.createdAt) || 0))
+      .slice(0, limit);
+    const latest = recent[0] || null;
+    const percentages = recent
+      .filter(attempt => Number(attempt?.maxMarks) > 0)
+      .map(attempt => Math.max(0, Math.min(100, Number(attempt.score) / Number(attempt.maxMarks) * 100)));
+    return {
+      attempts: attempts.length,
+      recentAttempts: recent.length,
+      latest,
+      averagePercentage: percentages.length
+        ? Math.round(percentages.reduce((sum, value) => sum + value, 0) / percentages.length)
+        : null
+    };
+  },
+
   coverageStats(questions, attempts) {
     const attemptedIds = new Set(
       attempts
@@ -307,43 +325,55 @@ const Paper2ProgressView = {
       const themeQuestions = Object.values(units).flat();
       const themeIds = new Set(themeQuestions.map(question => question.id));
       const themeAttempts = attempts.filter(attempt => themeIds.has(attempt.questionId));
-      const themeSummary = this.summarizeAttempts(themeAttempts);
+      const themeMetrics = this.recentMetrics(themeAttempts);
       const themeCoverage = this.coverageStats(themeQuestions, themeAttempts);
-      const themeScore = themeSummary.percentage === null ? 'Not attempted' : `${themeSummary.percentage}%`;
+      const themeScore = themeMetrics.averagePercentage === null ? 'Not attempted' : `${themeMetrics.averagePercentage}%`;
+      const themeLatest = themeMetrics.latest
+        ? `${themeMetrics.latest.score} / ${themeMetrics.latest.maxMarks}`
+        : '—';
 
       const unitRows = Object.entries(units)
         .sort(([a], [b]) => a.localeCompare(b, 'en', { numeric: true }))
         .map(([unit, unitQuestions]) => {
           const unitIds = new Set(unitQuestions.map(question => question.id));
           const unitAttempts = themeAttempts.filter(attempt => unitIds.has(attempt.questionId));
-          const unitSummary = this.summarizeAttempts(unitAttempts);
+          const unitMetrics = this.recentMetrics(unitAttempts);
           const unitCoverage = this.coverageStats(unitQuestions, unitAttempts);
-          const scoreLabel = unitSummary.percentage === null ? 'Not attempted' : `${unitSummary.percentage}%`;
-          const marksLabel = unitSummary.maxMarks
-            ? `${unitSummary.score} / ${unitSummary.maxMarks} marks`
+          const scoreLabel = unitMetrics.averagePercentage === null ? 'Not attempted' : `${unitMetrics.averagePercentage}%`;
+          const latestLabel = unitMetrics.latest
+            ? `${unitMetrics.latest.score} / ${unitMetrics.latest.maxMarks}`
+            : '—';
+          const attemptLabel = `${unitMetrics.attempts} attempt${unitMetrics.attempts === 1 ? '' : 's'}`;
+          const performanceLabel = unitMetrics.latest
+            ? `Latest ${latestLabel} · Recent avg ${scoreLabel} · ${attemptLabel}`
             : 'No saved score';
 
           return `
             <div class="final-exam-unit-row">
               <div class="final-exam-unit-copy">
                 <strong>${this.escapeHtml(unit)}</strong>
-                <small>${marksLabel} · ${unitCoverage.tried} / ${unitCoverage.total} questions tried</small>
+                <small>${performanceLabel} · ${unitCoverage.tried} / ${unitCoverage.total} questions tried</small>
               </div>
               <div class="final-exam-unit-metrics">
-                <span class="final-exam-score-pill ${unitSummary.percentage === null ? 'empty' : ''}">${scoreLabel}</span>
+                <span class="final-exam-score-pill ${unitMetrics.averagePercentage === null ? 'empty' : ''}">${scoreLabel}</span>
                 <span class="final-exam-coverage-pill">${unitCoverage.tried}/${unitCoverage.total}</span>
               </div>
             </div>`;
         }).join('');
+
+      const themeAttemptLabel = `${themeMetrics.attempts} attempt${themeMetrics.attempts === 1 ? '' : 's'}`;
+      const themePerformance = themeMetrics.latest
+        ? `Latest ${themeLatest} · Recent avg ${themeScore} · ${themeAttemptLabel}`
+        : 'No saved score';
 
       return `
         <details class="final-exam-theme-card" open>
           <summary>
             <div>
               <strong>Theme ${this.escapeHtml(theme)}: ${this.escapeHtml(themeNames[theme] || '')}</strong>
-              <small>${themeSummary.score} / ${themeSummary.maxMarks} marks · ${themeCoverage.tried} / ${themeCoverage.total} questions tried</small>
+              <small>${themePerformance} · ${themeCoverage.tried} / ${themeCoverage.total} questions tried</small>
             </div>
-            <span class="final-exam-theme-score ${themeSummary.percentage === null ? 'empty' : ''}">${themeScore}</span>
+            <span class="final-exam-theme-score ${themeMetrics.averagePercentage === null ? 'empty' : ''}">${themeScore}</span>
           </summary>
           <div class="final-exam-unit-list">${unitRows}</div>
         </details>`;
@@ -386,7 +416,7 @@ const Paper2ProgressView = {
     const attempts = this.getNormalizedAttempts(catalog);
     const sectionQuestions = catalog.filter(question => question.assessmentTarget === this.activeAssessment);
     const sectionAttempts = attempts.filter(attempt => attempt.assessment === this.activeAssessment);
-    const summary = this.summarizeAttempts(sectionAttempts);
+    const metrics = this.recentMetrics(sectionAttempts);
     const coverage = this.coverageStats(sectionQuestions, sectionAttempts);
 
     document.querySelectorAll('.final-exam-progress-tab').forEach(button => {
@@ -401,10 +431,10 @@ const Paper2ProgressView = {
     const percent = document.getElementById('paper2-progress-percent');
     const coverageElement = document.getElementById('paper2-progress-coverage');
 
-    if (attemptCount) attemptCount.textContent = summary.attempts;
-    if (attemptBadge) attemptBadge.textContent = `${this.assessmentLabel(this.activeAssessment)} · ${summary.attempts} ${summary.attempts === 1 ? 'attempt' : 'attempts'}`;
-    if (marks) marks.textContent = `${summary.score} / ${summary.maxMarks}`;
-    if (percent) percent.textContent = summary.percentage === null ? '—' : `${summary.percentage}%`;
+    if (attemptCount) attemptCount.textContent = metrics.attempts;
+    if (attemptBadge) attemptBadge.textContent = `${this.assessmentLabel(this.activeAssessment)} · ${metrics.attempts} ${metrics.attempts === 1 ? 'attempt' : 'attempts'}`;
+    if (marks) marks.textContent = metrics.latest ? `${metrics.latest.score} / ${metrics.latest.maxMarks}` : '—';
+    if (percent) percent.textContent = metrics.averagePercentage === null ? '—' : `${metrics.averagePercentage}%`;
     if (coverageElement) coverageElement.textContent = `${coverage.tried} / ${coverage.total}`;
 
     this.renderThemes(sectionQuestions, sectionAttempts);
