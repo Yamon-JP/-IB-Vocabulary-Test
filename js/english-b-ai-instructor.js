@@ -239,18 +239,21 @@
         });
         const data = await response.json().catch(() => null);
         if (!response.ok || !data?.ok) {
-          throw new Error(data?.error || `AI grading request failed (${response.status})`);
+          const detail = data?.error || 'Unknown AI grading error.';
+          throw new Error(`HTTP ${response.status} — ${detail}`);
         }
         const grading = this.normalizeGrading(data);
         if (!grading) throw new Error('AI Instructor returned an invalid grading result.');
         this.renderGrading(grading);
       } catch (error) {
         const timedOut = error?.name === 'AbortError';
+        const isPreview = window.location.hostname === 'ib-master-trainer-preview.takashiyamamoto-81.workers.dev';
+        const diagnostic = isPreview && error?.message ? `Diagnostic: ${error.message}` : '';
         this.showMessage(
           'AI grading could not be completed',
           timedOut
             ? 'The grading request timed out. Your answer is still on this page, so you can try again.'
-            : 'The secure AI grading service is unavailable or returned an invalid response. Your existing self-mark remains available.',
+            : diagnostic || 'The secure AI grading service is unavailable or returned an invalid response. Your existing self-mark remains available.',
           'error'
         );
         console.warn('English B AI Instructor request failed.', error);
