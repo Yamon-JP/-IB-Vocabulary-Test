@@ -65,6 +65,24 @@
       };
     },
 
+    previousGradeSnapshot(attempt) {
+      if (!attempt || attempt.gradingSource !== 'ai-instructor') return null;
+      const scores = attempt.scores || {};
+      const language = Number(scores.language);
+      const message = Number(scores.message);
+      const conceptualUnderstanding = Number(scores.conceptualUnderstanding);
+      const score = Number(attempt.score);
+      if (![language, message, conceptualUnderstanding, score].every(Number.isFinite)) return null;
+      return {
+        gradedAt: attempt.updatedAt || attempt.createdAt || new Date().toISOString(),
+        score,
+        maxMarks: Number(attempt.maxMarks) || 30,
+        scores: { language, message, conceptualUnderstanding },
+        aiFeedback: attempt.aiFeedback || null,
+        aiMeta: attempt.aiMeta || null
+      };
+    },
+
     saveProgress(grading, payload) {
       if (typeof Storage === 'undefined' || !payload?.task?.id) return null;
       const saved = Storage.load(this.progressStoreKey) || {};
@@ -96,37 +114,34 @@
           model: String(grading.meta?.model || ''),
           rubricVersion: String(grading.meta?.rubricVersion || 'engb-paper1-v1')
         },
-        createdAt: now
+        aiHistory: [],
+        createdAt: now,
+        updatedAt: now
       };
 
       let replaceIndex = -1;
-      const selfMarkSaved = Boolean(window.EnglishBPaper1?.attemptSaved);
-      if (selfMarkSaved) {
-        for (let index = attempts.length - 1; index >= 0; index -= 1) {
-          const attempt = attempts[index];
-          if (
-            attempt?.questionId === payload.task.id
-            && String(attempt?.textType || '') === String(payload.selectedTextType || '')
-            && Number(attempt?.wordCount) === Number(payload.wordCount)
-            && attempt?.gradingSource !== 'ai-instructor'
-          ) {
-            replaceIndex = index;
-            break;
-          }
+      for (let index = attempts.length - 1; index >= 0; index -= 1) {
+        const attempt = attempts[index];
+        if (
+          attempt?.gradingSource === 'ai-instructor'
+          && attempt?.questionId === payload.task.id
+          && attempt?.answerFingerprint === fingerprint
+        ) {
+          replaceIndex = index;
+          break;
         }
       }
 
-      if (replaceIndex < 0) {
-        for (let index = attempts.length - 1; index >= 0; index -= 1) {
-          const attempt = attempts[index];
-          if (
-            attempt?.gradingSource === 'ai-instructor'
-            && attempt?.questionId === payload.task.id
-            && attempt?.answerFingerprint === fingerprint
-          ) {
-            replaceIndex = index;
-            break;
-          }
+      if (replaceIndex < 0 && Boolean(window.EnglishBPaper1?.attemptSaved) && attempts.length) {
+        const lastIndex = attempts.length - 1;
+        const lastAttempt = attempts[lastIndex];
+        if (
+          lastAttempt?.gradingSource !== 'ai-instructor'
+          && lastAttempt?.questionId === payload.task.id
+          && String(lastAttempt?.textType || '') === String(payload.selectedTextType || '')
+          && Number(lastAttempt?.wordCount) === Number(payload.wordCount)
+        ) {
+          replaceIndex = lastIndex;
         }
       }
 
@@ -134,6 +149,10 @@
         const previous = attempts[replaceIndex];
         aiAttempt.attemptId = previous.attemptId || aiAttempt.attemptId;
         aiAttempt.createdAt = previous.createdAt || aiAttempt.createdAt;
+        const history = Array.isArray(previous.aiHistory) ? previous.aiHistory.slice(-9) : [];
+        const previousGrade = this.previousGradeSnapshot(previous);
+        if (previousGrade) history.push(previousGrade);
+        aiAttempt.aiHistory = history.slice(-10);
         attempts[replaceIndex] = aiAttempt;
       } else {
         attempts.push(aiAttempt);
@@ -328,6 +347,31 @@
         </article>`;
     },
 
+    historyDate(value) {
+      const date = new Date(value || '');
+      if (Number.isNaN(date.getTime())) return 'Previous grading';
+      return date.toLocaleString();
+    },
+
+    historyHtml(savedAttempt) {
+      const history = Array.isArray(savedAttempt?.aiHistory) ? [...savedAttempt.aiHistory].reverse() : [];
+      if (!history.length) return '';
+      return `
+        <div class="engb-ai-priority">
+          <details>
+            <summary><strong>Previous AI Grades (${history.length})</strong></summary>
+            <p class="muted">Re-grades of this exact answer. Final Exam Progress counts only the latest result.</p>
+            <ol>${history.map(item => {
+              const scores = item?.scores || {};
+              return `<li>
+                <strong>${this.escapeHtml(`${Number(item?.score) || 0} / ${Number(item?.maxMarks) || 30}`)}</strong>
+                <div class="muted">${this.escapeHtml(this.historyDate(item?.gradedAt))} · Language ${Number(scores.language) || 0}/12 · Message ${Number(scores.message) || 0}/12 · Conceptual ${Number(scores.conceptualUnderstanding) || 0}/6</div>
+              </li>`;
+            }).join('')}</ol>
+          </details>
+        </div>`;
+    },
+
     renderGrading(grading, savedAttempt = null) {
       const result = document.getElementById('engb-ai-result');
       if (!result) return;
@@ -374,6 +418,7 @@
               <p>${this.escapeHtml(grading.overallComment)}</p>
               ${grading.overallCommentJa ? `<p class="muted"><strong>🇯🇵 日本語訳：</strong>${this.escapeHtml(grading.overallCommentJa)}</p>` : ''}
             </div>` : ''}
+          ${this.historyHtml(savedAttempt)}
           <div class="engb-ai-meta">Rubric ${this.escapeHtml(rubricVersion)}${model ? ` · ${this.escapeHtml(model)}` : ''} · ${this.escapeHtml(progressNote)}</div>
         </section>`;
     },
