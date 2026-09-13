@@ -98,6 +98,40 @@
       return this.summarize(this.normalAttempts(subject).slice(0, 5));
     },
 
+    recentAverage(subject) {
+      const recent = this.normalAttempts(subject).slice(0, 5);
+      if (!recent.length) return null;
+      const percentages = recent
+        .map(attempt => Number(attempt.maxMarks) > 0 ? Math.max(0, Math.min(100, Number(attempt.score) / Number(attempt.maxMarks) * 100)) : NaN)
+        .filter(Number.isFinite);
+      if (!percentages.length) return null;
+      return Math.round(percentages.reduce((sum, value) => sum + value, 0) / percentages.length);
+    },
+
+    refreshSubjectHeadline(subject) {
+      const attempts = this.normalAttempts(subject);
+      const summaryEl = document.getElementById('progress-v2-subject-summary');
+      const scoreEl = document.getElementById('progress-v2-subject-score');
+      const scoreLabel = document.querySelector('#progress-v2-subject-hero .progress-v2-score-ring span');
+      const readiness = this.currentReadiness(subject);
+      const average = this.recentAverage(subject);
+      if (scoreLabel) scoreLabel.textContent = 'Current';
+      if (!attempts.length) {
+        if (summaryEl) summaryEl.textContent = 'No normal scored Final Exam attempts yet.';
+        if (scoreEl) scoreEl.textContent = '—';
+        return;
+      }
+      const latest = attempts[0];
+      const latestScore = Math.max(0, Math.min(Number(latest.score), Number(latest.maxMarks)));
+      const latestLabel = `${latestScore} / ${Number(latest.maxMarks)}`;
+      const averageLabel = average === null ? '—' : `${average}%`;
+      const readinessLabel = readiness.percentage === null ? '—' : `${readiness.percentage}%`;
+      if (summaryEl) {
+        summaryEl.textContent = `Latest Score ${latestLabel} · Recent Average ${averageLabel} · Attempts ${attempts.length} · Current Readiness ${readinessLabel}`;
+      }
+      if (scoreEl) scoreEl.textContent = readinessLabel;
+    },
+
     trend(subject) {
       const recent = this.normalAttempts(subject).slice(0, 6);
       if (recent.length < 6) return { status: 'baseline', label: 'Building baseline', delta: null, icon: '•' };
@@ -430,6 +464,7 @@
 
     renderSubject(subject) {
       this.ensureSubjectPanel();
+      this.refreshSubjectHeadline(subject);
       const heading = document.getElementById('final-readiness-subject-heading');
       const grid = document.getElementById('final-readiness-subject-grid');
       if (!grid) return;
