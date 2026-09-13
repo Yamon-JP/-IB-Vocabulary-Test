@@ -1,10 +1,11 @@
 // English B HL Paper 1 AI Instructor frontend.
-// Adds an isolated AI grading layer without changing existing self-mark or progress storage.
+// Adds AI grading while preserving the existing self-mark workflow.
 (() => {
   const EnglishBAIInstructor = window.EnglishBAIInstructor = {
     installed: false,
     grading: false,
     endpointKey: 'ib_ai_instructor_endpoint',
+    progressStoreKey: 'ib_english_b_paper1_progress',
     observer: null,
 
     endpoint() {
@@ -24,6 +25,134 @@
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#039;');
+    },
+
+    answerFingerprint(payload) {
+      const source = [
+        payload?.task?.id || '',
+        payload?.selectedTextType || '',
+        payload?.answer || ''
+      ].join('|');
+      let hash = 2166136261;
+      for (let index = 0; index < source.length; index += 1) {
+        hash ^= source.charCodeAt(index);
+        hash = Math.imul(hash, 16777619);
+      }
+      return `fnv1a-${(hash >>> 0).toString(16).padStart(8, '0')}`;
+    },
+
+    feedbackSnapshot(grading) {
+      const criterion = value => ({
+        score: value.score,
+        rationale: value.rationale,
+        rationaleJa: value.rationaleJa,
+        explanationJa: value.explanationJa,
+        strengths: [...value.strengths],
+        strengthsJa: [...value.strengthsJa],
+        improvements: [...value.improvements],
+        improvementsJa: [...value.improvementsJa]
+      });
+      return {
+        language: criterion(grading.language),
+        message: criterion(grading.message),
+        conceptualUnderstanding: criterion(grading.conceptualUnderstanding),
+        topImprovements: [...grading.topImprovements],
+        topImprovementsJa: [...grading.topImprovementsJa],
+        nextStep: grading.nextStep,
+        nextStepJa: grading.nextStepJa,
+        overallComment: grading.overallComment,
+        overallCommentJa: grading.overallCommentJa
+      };
+    },
+
+    saveProgress(grading, payload) {
+      if (typeof Storage === 'undefined' || !payload?.task?.id) return null;
+      const saved = Storage.load(this.progressStoreKey) || {};
+      const attempts = Array.isArray(saved.attempts) ? [...saved.attempts] : [];
+      const fingerprint = this.answerFingerprint(payload);
+      const now = new Date().toISOString();
+      const aiAttempt = {
+        schemaVersion: 1,
+        attemptId: `AI-${payload.task.id}-${Date.now()}`,
+        questionId: payload.task.id,
+        subject: 'English B HL',
+        assessmentTarget: 'english-b-paper1-writing',
+        chapter: payload.task.chapter || '',
+        theme: payload.task.theme || '',
+        textType: payload.selectedTextType,
+        wordCount: Number(payload.wordCount) || 0,
+        scores: {
+          language: grading.language.score,
+          message: grading.message.score,
+          conceptualUnderstanding: grading.conceptualUnderstanding.score
+        },
+        score: grading.total,
+        maxMarks: 30,
+        gradingSource: 'ai-instructor',
+        answerFingerprint: fingerprint,
+        aiFeedback: this.feedbackSnapshot(grading),
+        aiMeta: {
+          provider: String(grading.meta?.provider || ''),
+          model: String(grading.meta?.model || ''),
+          rubricVersion: String(grading.meta?.rubricVersion || 'engb-paper1-v1')
+        },
+        createdAt: now
+      };
+
+      let replaceIndex = -1;
+      const selfMarkSaved = Boolean(window.EnglishBPaper1?.attemptSaved);
+      if (selfMarkSaved) {
+        for (let index = attempts.length - 1; index >= 0; index -= 1) {
+          const attempt = attempts[index];
+          if (
+            attempt?.questionId === payload.task.id
+            && String(attempt?.textType || '') === String(payload.selectedTextType || '')
+            && Number(attempt?.wordCount) === Number(payload.wordCount)
+            && attempt?.gradingSource !== 'ai-instructor'
+          ) {
+            replaceIndex = index;
+            break;
+          }
+        }
+      }
+
+      if (replaceIndex < 0) {
+        for (let index = attempts.length - 1; index >= 0; index -= 1) {
+          const attempt = attempts[index];
+          if (
+            attempt?.gradingSource === 'ai-instructor'
+            && attempt?.questionId === payload.task.id
+            && attempt?.answerFingerprint === fingerprint
+          ) {
+            replaceIndex = index;
+            break;
+          }
+        }
+      }
+
+      if (replaceIndex >= 0) {
+        const previous = attempts[replaceIndex];
+        aiAttempt.attemptId = previous.attemptId || aiAttempt.attemptId;
+        aiAttempt.createdAt = previous.createdAt || aiAttempt.createdAt;
+        attempts[replaceIndex] = aiAttempt;
+      } else {
+        attempts.push(aiAttempt);
+      }
+
+      Storage.save(this.progressStoreKey, {
+        schemaVersion: Number(saved.schemaVersion) || 1,
+        attempts
+      });
+
+      if (window.EnglishBPaper1) window.EnglishBPaper1.attemptSaved = true;
+      const selfMarkButton = document.getElementById('engb-p1-save');
+      const selfMarkStatus = document.getElementById('engb-p1-save-status');
+      if (selfMarkButton) selfMarkButton.disabled = true;
+      if (selfMarkStatus) selfMarkStatus.textContent = `${aiAttempt.score} / 30 AI score saved to Progress.`;
+      if (typeof FinalExamProgressV2 !== 'undefined' && typeof FinalExamProgressV2.render === 'function') {
+        FinalExamProgressV2.render();
+      }
+      return aiAttempt;
     },
 
     install() {
@@ -199,11 +328,14 @@
         </article>`;
     },
 
-    renderGrading(grading) {
+    renderGrading(grading, savedAttempt = null) {
       const result = document.getElementById('engb-ai-result');
       if (!result) return;
       const model = String(grading.meta?.model || '').trim();
       const rubricVersion = String(grading.meta?.rubricVersion || 'engb-paper1-v1').trim();
+      const progressNote = savedAttempt
+        ? `AI score saved to Final Exam Progress · ${savedAttempt.score} / 30.`
+        : 'AI score could not be saved to Progress; the grading result is still shown below.';
       result.innerHTML = `
         <section class="engb-ai-panel">
           <div class="engb-ai-header">
@@ -242,7 +374,7 @@
               <p>${this.escapeHtml(grading.overallComment)}</p>
               ${grading.overallCommentJa ? `<p class="muted"><strong>🇯🇵 日本語訳：</strong>${this.escapeHtml(grading.overallCommentJa)}</p>` : ''}
             </div>` : ''}
-          <div class="engb-ai-meta">Rubric ${this.escapeHtml(rubricVersion)}${model ? ` · ${this.escapeHtml(model)}` : ''} · AI result is not saved to Progress in Phase 7A-1.</div>
+          <div class="engb-ai-meta">Rubric ${this.escapeHtml(rubricVersion)}${model ? ` · ${this.escapeHtml(model)}` : ''} · ${this.escapeHtml(progressNote)}</div>
         </section>`;
     },
 
@@ -290,7 +422,8 @@
         }
         const grading = this.normalizeGrading(data);
         if (!grading) throw new Error('AI Instructor returned an invalid grading result.');
-        this.renderGrading(grading);
+        const savedAttempt = this.saveProgress(grading, payload);
+        this.renderGrading(grading, savedAttempt);
       } catch (error) {
         const timedOut = error?.name === 'AbortError';
         this.showMessage(
