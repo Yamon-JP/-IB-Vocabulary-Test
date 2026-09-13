@@ -155,14 +155,43 @@ function validCriterion(value, max) {
   return true;
 }
 
-function validTopImprovements(value) {
-  const items = cleanStringArray(value, 3, 1400);
-  if (items.length !== 3) return false;
+const improvementMetadataPrefix = /^(?:total\s*score|totalscore|total|score|language|message|conceptual\s*understanding|conceptualunderstanding|rubric\s*version|rubricversion|provider|model)\s*[:=]/i;
 
-  const metadataPrefix = /^(?:total\s*score|totalscore|total|score|language|message|conceptual\s*understanding|conceptualunderstanding|rubric\s*version|rubricversion|provider|model)\s*[:=]/i;
-  if (items.some(item => metadataPrefix.test(item))) return false;
+function normalizeImprovementItem(value) {
+  const item = cleanString(value, 1400);
+  if (!item || improvementMetadataPrefix.test(item)) return '';
+  return item;
+}
 
-  return new Set(items.map(item => item.toLowerCase())).size === 3;
+function buildTopImprovements(value, criteria) {
+  const fallbacks = [
+    'Develop key ideas with specific explanation, evidence, or examples so the response fully addresses the task.',
+    'Use a wider range of precise vocabulary and varied sentence structures while maintaining accuracy and clarity.',
+    'Strengthen audience awareness, purpose, register, and text-type conventions throughout the response.'
+  ];
+
+  const candidates = [
+    ...cleanStringArray(value, 6, 1400),
+    ...criteria.message.improvements,
+    ...criteria.language.improvements,
+    ...criteria.conceptualUnderstanding.improvements,
+    ...fallbacks
+  ];
+
+  const result = [];
+  const seen = new Set();
+
+  for (const candidate of candidates) {
+    const item = normalizeImprovementItem(candidate);
+    if (!item) continue;
+    const key = item.toLowerCase().replace(/\s+/g, ' ').trim();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    result.push(item);
+    if (result.length === 3) break;
+  }
+
+  return result;
 }
 
 function normalizeGrading(value) {
@@ -170,7 +199,6 @@ function normalizeGrading(value) {
   if (!validCriterion(value.language, 12)) return null;
   if (!validCriterion(value.message, 12)) return null;
   if (!validCriterion(value.conceptualUnderstanding, 6)) return null;
-  if (!validTopImprovements(value.topImprovements)) return null;
 
   const normalizeCriterion = (criterion, max) => ({
     score: Math.max(0, Math.min(max, Number(criterion.score))),
@@ -182,12 +210,18 @@ function normalizeGrading(value) {
   const language = normalizeCriterion(value.language, 12);
   const message = normalizeCriterion(value.message, 12);
   const conceptualUnderstanding = normalizeCriterion(value.conceptualUnderstanding, 6);
+  const topImprovements = buildTopImprovements(value.topImprovements, {
+    language,
+    message,
+    conceptualUnderstanding
+  });
+
   return {
     language,
     message,
     conceptualUnderstanding,
     total: language.score + message.score + conceptualUnderstanding.score,
-    topImprovements: cleanStringArray(value.topImprovements, 3, 1400),
+    topImprovements,
     nextStep: cleanString(value.nextStep, 2400),
     overallComment: cleanString(value.overallComment, 2400)
   };
