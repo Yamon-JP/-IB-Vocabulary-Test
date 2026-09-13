@@ -1,0 +1,313 @@
+/* IB Master Trainer — UI polish layer
+   Visual-only overrides. Keep this stylesheet loaded last. */
+
+:root {
+  --page-bg: #eef2f7;
+  --surface-soft: #f4f7fb;
+  --border: #d3dbe7;
+  --border-strong: #b9c5d6;
+  --ui-surface: #ffffff;
+  --ui-subtle: #f7f9fc;
+  --ui-interactive: #f2f5fb;
+  --ui-interactive-hover: #eef2ff;
+  --ui-interactive-border: #c7d2e3;
+  --ui-open-border: #aebce0;
+  --ui-open-bg: #f4f5ff;
+  --shadow-sm: 0 5px 16px rgba(30, 41, 59, .07);
+  --shadow-md: 0 16px 36px rgba(30, 41, 59, .11);
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% -10%, rgba(79, 70, 229, .10), transparent 32%),
+    radial-gradient(circle at 92% 3%, rgba(14, 165, 233, .07), transparent 27%),
+    linear-gradient(180deg, #f5f7fb 0%, var(--page-bg) 46%, #e9eef5 100%);
+}
+
+/* Stronger surface hierarchy */
+.progress-panel,
+#flashcard,
+#quiz-area,
+#practice-achievements,
+.selection-panel,
+.subject-section,
+.settings-card,
+.progress-v2-panel,
+.progress-v2-summary-card,
+.progress-v2-section-card,
+.progress-v2-recent-row,
+.progress-v2-analysis-section,
+.paper2-question-card,
+.paper2-feedback-card,
+.chapter-progress-subject,
+.trophy-summary {
+  border-color: var(--ui-interactive-border);
+}
+
+.subject-section,
+.selection-panel,
+#practice-achievements,
+.settings-card,
+.progress-v2-panel {
+  background: var(--ui-surface);
+  box-shadow: 0 10px 28px rgba(30, 41, 59, .075);
+}
+
+.practice-mini-stats > div,
+.progress-v2-summary-card,
+.progress-v2-section-card,
+.progress-v2-recent-row,
+.progress-v2-analysis-section,
+.achievement-card,
+.chapter-option,
+.scope-options label > span,
+.practice-type-card,
+.paper1-section-card {
+  background: var(--ui-subtle);
+}
+
+/* Make clickable cards feel clickable */
+.subject-card,
+.practice-type-card,
+.paper1-section-card,
+.chapter-option,
+.scope-options label > span,
+.progress-v2-performance-row,
+.trophy-subject-tab,
+.quiz-mode-options label > span {
+  border-color: var(--ui-interactive-border);
+  box-shadow: 0 2px 8px rgba(30, 41, 59, .035);
+}
+
+.subject-card:hover,
+.practice-type-card:hover,
+.paper1-section-card:hover,
+.chapter-option:hover,
+.progress-v2-performance-row:hover,
+.trophy-subject-tab:hover,
+.quiz-mode-options label:hover > span {
+  border-color: #aebae0;
+  background: #f8f9ff;
+  box-shadow: 0 7px 18px rgba(79, 70, 229, .08);
+}
+
+.practice-type-card.active,
+.paper1-section-card.active,
+.scope-options label:has(input:checked) > span,
+.chapter-option:has(input:checked),
+.quiz-mode-options label:has(input:checked) > span,
+.trophy-subject-tab.active {
+  border-color: #9388f3;
+  background: #f0efff;
+  box-shadow: inset 0 0 0 1px rgba(79, 70, 229, .10), 0 7px 16px rgba(79, 70, 229, .08);
+}
+
+/* Native dropdowns / form controls */
+#app select,
+#app input[type="text"],
+#app input[type="number"],
+#app textarea {
+  border-color: var(--border-strong);
+  background-color: #fbfcff;
+  box-shadow: inset 0 1px 2px rgba(30, 41, 59, .035);
+}
+
+#app select {
+  min-height: 44px;
+  padding: 9px 36px 9px 12px;
+  border-radius: 12px;
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#app select:hover,
+#app input[type="text"]:hover,
+#app input[type="number"]:hover,
+#app textarea:hover {
+  border-color: #98a7bb;
+}
+
+#app select:focus-visible,
+#app input[type="text"]:focus-visible,
+#app input[type="number"]:focus-visible,
+#app textarea:focus-visible {
+  background: #fff;
+}
+
+/* Expandable / dropdown-like regions */
+#app details {
+  border-radius: 14px;
+}
+
+#app details > summary {
+  transition: background .16s ease, border-color .16s ease, color .16s ease, box-shadow .16s ease;
+}
+
+.progress-v2-details {
+  margin-top: 8px;
+  border: 1px solid var(--ui-interactive-border);
+  border-radius: 14px;
+  background: var(--ui-interactive);
+  overflow: hidden;
+}
+
+.progress-v2-details > summary {
+  min-height: 50px;
+  padding: 12px 14px;
+  border: 0;
+  background: linear-gradient(180deg, #f8faff, #f2f5fb);
+  color: #344054;
+}
+
+.progress-v2-details > summary:hover,
+.progress-v2-details > summary:focus-visible {
+  background: var(--ui-interactive-hover);
+  color: #3730a3;
+}
+
+.progress-v2-details > summary > span:last-child {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #fff;
+  color: #667085;
+  font-size: .95rem;
+  transition: transform .18s ease, background .16s ease, color .16s ease, border-color .16s ease;
+}
+
+.progress-v2-details[open] {
+  border-color: var(--ui-open-border);
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(30, 41, 59, .06);
+}
+
+.progress-v2-details[open] > summary {
+  border-bottom: 1px solid #d9def0;
+  background: var(--ui-open-bg);
+  color: #3730a3;
+}
+
+.progress-v2-details[open] > summary > span:last-child {
+  border-color: #b9b7ec;
+  background: #e9e8ff;
+  color: #4338ca;
+}
+
+.progress-v2-details > :not(summary) {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* Biology / other detailed expandable cards */
+.final-exam-theme-card {
+  border: 1px solid var(--ui-interactive-border);
+  background: #fff;
+  overflow: hidden;
+}
+
+.final-exam-theme-card > summary {
+  padding: 13px 14px;
+  background: #f6f8fc;
+}
+
+.final-exam-theme-card > summary:hover {
+  background: #eef3fb;
+}
+
+.final-exam-theme-card[open] {
+  border-color: var(--ui-open-border);
+  box-shadow: 0 6px 16px rgba(30, 41, 59, .055);
+}
+
+.final-exam-theme-card[open] > summary {
+  background: #edf2ff;
+  border-bottom: 1px solid #d5dced;
+}
+
+/* Progress: stronger separation between levels */
+.progress-v2-tabs {
+  border-color: #cbd5e1;
+  background: rgba(250, 252, 255, .96);
+  box-shadow: 0 9px 24px rgba(30, 41, 59, .08);
+}
+
+.progress-v2-performance-row,
+.progress-v2-recent-row,
+.progress-v2-section-card {
+  border-color: #d8dfea;
+  background: #f8fafc;
+}
+
+.progress-v2-analysis-section {
+  border-color: #d4dce8;
+  background: linear-gradient(180deg, #ffffff, #f9fbfd);
+}
+
+.progress-v2-more-panel {
+  background: linear-gradient(180deg, #fff, #f9fbfe);
+}
+
+/* Buttons: clearer primary/secondary distinction */
+.secondary-action,
+.back-button,
+.audio-button {
+  border-color: #c5cfdd;
+  background: #f7f9fc;
+}
+
+.secondary-action:hover,
+.back-button:hover,
+.audio-button:hover {
+  border-color: #aab7ca;
+  background: #eef2f7;
+}
+
+.primary-action,
+#quiz-actions button:first-child,
+.paper2-actions button:first-child {
+  box-shadow: 0 10px 22px rgba(79, 70, 229, .20);
+}
+
+/* Slightly stronger section labels */
+.eyebrow,
+.prompt-label {
+  color: #667085;
+}
+
+.page-heading h2,
+.section-heading h2,
+.selection-heading h2,
+.progress-v2-panel-heading h3 {
+  color: #172033;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --shadow-sm: 0 4px 12px rgba(30, 41, 59, .065);
+    --shadow-md: 0 11px 26px rgba(30, 41, 59, .09);
+  }
+
+  .progress-v2-details > summary {
+    min-height: 52px;
+    padding: 12px;
+  }
+
+  .progress-v2-details > summary > span:last-child {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+
+  .progress-v2-panel,
+  .selection-panel,
+  .subject-section,
+  #quiz-area,
+  #flashcard {
+    border-color: #cbd5e1;
+  }
+}
