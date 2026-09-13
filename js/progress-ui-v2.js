@@ -658,6 +658,20 @@
     };
   }
 
+  function scorePercentage(score, maxMarks) {
+    const values = safeScore(score, maxMarks);
+    return values ? values.score / values.maxMarks * 100 : null;
+  }
+
+  function averagePercentages(rows) {
+    const percentages = rows
+      .map(row => scorePercentage(row.score, row.maxMarks))
+      .filter(value => Number.isFinite(value));
+    return percentages.length
+      ? Math.round(percentages.reduce((sum, value) => sum + value, 0) / percentages.length)
+      : null;
+  }
+
   function groupAttemptRows(attempts, selector) {
     const groups = new Map();
     attempts.forEach((attempt, index) => {
@@ -687,44 +701,50 @@
       ['Conceptual Understanding', 'conceptualUnderstanding', 6]
     ];
     return criteria.map(([label, key, max]) => {
-      const rows = writing.filter(attempt => Number.isFinite(Number(attempt?.scores?.[key])));
-      const score = rows.reduce((sum, attempt) => sum + Math.max(0, Math.min(Number(attempt.scores[key]), max)), 0);
-      const maxMarks = rows.length * max;
+      const rows = writing
+        .filter(attempt => Number.isFinite(Number(attempt?.scores?.[key])))
+        .slice(0, 5)
+        .map(attempt => ({ score: Math.max(0, Math.min(Number(attempt.scores[key]), max)), maxMarks: max }));
+      if (!rows.length) return null;
       return {
         label,
-        score,
-        maxMarks,
+        latestScore: rows[0].score,
+        latestMaxMarks: rows[0].maxMarks,
         attempts: rows.length,
-        percentage: maxMarks ? Math.round(score / maxMarks * 100) : null
+        percentage: averagePercentages(rows)
       };
-    }).filter(row => row.maxMarks > 0).sort((a, b) => a.percentage - b.percentage);
+    }).filter(Boolean).sort((a, b) => (a.percentage ?? 101) - (b.percentage ?? 101));
   }
 
   function englishQuestionTypeRows(attempts, assessment) {
     const groups = new Map();
     attempts.filter(attempt => ProgressUIV2.assessment(attempt) === assessment).forEach((attempt, attemptIndex) => {
       const attemptId = attempt?.attemptId || attempt?.setId || attempt?.createdAt || `attempt-${attemptIndex}`;
+      const perAttempt = new Map();
       (Array.isArray(attempt?.questionResults) ? attempt.questionResults : []).forEach(result => {
         const type = String(result?.type || '').trim();
         const label = questionTypeLabels[type] || type;
         const values = safeScore(result?.awarded, result?.marks);
         if (!label || !values) return;
-        if (!groups.has(label)) groups.set(label, { label, score: 0, maxMarks: 0, samples: 0, attemptIds: new Set() });
-        const group = groups.get(label);
-        group.score += values.score;
-        group.maxMarks += values.maxMarks;
-        group.samples += 1;
-        group.attemptIds.add(attemptId);
+        if (!perAttempt.has(label)) perAttempt.set(label, { score: 0, maxMarks: 0 });
+        const summary = perAttempt.get(label);
+        summary.score += values.score;
+        summary.maxMarks += values.maxMarks;
+      });
+      perAttempt.forEach((summary, label) => {
+        if (!groups.has(label)) groups.set(label, []);
+        const rows = groups.get(label);
+        if (rows.length >= 5) return;
+        rows.push({ ...summary, attemptId });
       });
     });
-    return [...groups.values()].map(group => ({
-      label: group.label,
-      score: group.score,
-      maxMarks: group.maxMarks,
-      attempts: group.attemptIds.size,
-      samples: group.samples,
-      percentage: group.maxMarks ? Math.round(group.score / group.maxMarks * 100) : null
-    })).sort((a, b) => (a.percentage ?? 101) - (b.percentage ?? 101) || b.maxMarks - a.maxMarks);
+    return [...groups.entries()].map(([label, rows]) => ({
+      label,
+      latestScore: rows[0]?.score ?? null,
+      latestMaxMarks: rows[0]?.maxMarks ?? null,
+      attempts: rows.length,
+      percentage: averagePercentages(rows)
+    })).filter(row => row.attempts > 0).sort((a, b) => (a.percentage ?? 101) - (b.percentage ?? 101));
   }
 
   function sectionHtml(title, note, rows) {
@@ -752,11 +772,39 @@
     </section>`;
   }
 
+  function englishSectionHtml(title, note, rows) {
+    const visible = rows.slice(0, 8);
+    const content = visible.length
+      ? `<div class="progress-v2-analysis-list">${visible.map(row => {
+          const percentage = row.percentage === null ? null : Math.max(0, Math.min(100, row.percentage));
+          const baseline = Number(row.attempts || 0) < 2;
+          const latestScore = Number(row.latestScore);
+          const latestMaxMarks = Number(row.latestMaxMarks);
+          const latestLabel = Number.isFinite(latestScore) && Number.isFinite(latestMaxMarks) && latestMaxMarks > 0
+            ? `${Math.round(latestScore * 10) / 10}/${Math.round(latestMaxMarks * 10) / 10}`
+            : '—';
+          const countText = `Latest ${latestLabel} · Recent avg ${percentage === null ? '—' : `${percentage}%`} · ${row.attempts} attempt${row.attempts === 1 ? '' : 's'}`;
+          return `<div class="progress-v2-analysis-row">
+            <div class="progress-v2-analysis-copy">
+              <strong>${ProgressUIV2.escapeHtml(row.label)}</strong>
+              <small>${ProgressUIV2.escapeHtml(baseline ? `Building baseline · ${countText}` : countText)}</small>
+            </div>
+            <div class="progress-v2-analysis-track" aria-hidden="true"><span style="width:${percentage ?? 0}%"></span></div>
+            <div class="progress-v2-analysis-score"><strong>${percentage === null ? '—' : `${percentage}%`}</strong><small>${baseline ? 'Baseline' : 'Recent avg'}</small></div>
+          </div>`;
+        }).join('')}</div>`
+      : '<p class="progress-v2-analysis-empty">Building baseline — no saved scored data for this analysis yet.</p>';
+    return `<section class="progress-v2-analysis-section">
+      <div class="progress-v2-analysis-section-head"><strong>${ProgressUIV2.escapeHtml(title)}</strong><small>${ProgressUIV2.escapeHtml(note)}</small></div>
+      ${content}
+    </section>`;
+  }
+
   function renderEnglish(attempts) {
     return [
-      sectionHtml('Paper 1 Writing · Criteria', 'Marks-weighted · lowest score first', englishWritingRows(attempts)),
-      sectionHtml('Paper 2 Reading · Question Types', 'Question-level saved results', englishQuestionTypeRows(attempts, 'english-b-paper2-reading')),
-      sectionHtml('Paper 2 Listening · Question Types', 'Question-level saved results', englishQuestionTypeRows(attempts, 'english-b-paper2-listening'))
+      englishSectionHtml('Paper 1 Writing · Criteria', 'Latest score + recent average · latest 5 attempts', englishWritingRows(attempts)),
+      englishSectionHtml('Paper 2 Reading · Question Types', 'Latest score + recent average · latest 5 attempts', englishQuestionTypeRows(attempts, 'english-b-paper2-reading')),
+      englishSectionHtml('Paper 2 Listening · Question Types', 'Latest score + recent average · latest 5 attempts', englishQuestionTypeRows(attempts, 'english-b-paper2-listening'))
     ].join('');
   }
 
