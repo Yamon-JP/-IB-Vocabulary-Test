@@ -67,6 +67,38 @@ function normalizeInput(body) {
   };
 }
 
+const englishText = description => ({
+  type: 'string',
+  description: `${description} Write this field in English only; do not use Japanese.`
+});
+
+const japaneseText = description => ({
+  type: 'string',
+  description: `${description} Write this field in natural Japanese only.`
+});
+
+const englishArray = description => ({
+  type: 'array',
+  description: `${description} Every item must be written in English only; do not use Japanese.`,
+  items: {
+    type: 'string',
+    description: 'English only. Do not use Japanese.'
+  },
+  minItems: 1,
+  maxItems: 3
+});
+
+const japaneseArray = description => ({
+  type: 'array',
+  description: `${description} Every item must be a natural Japanese translation of the English item at the same index.`,
+  items: {
+    type: 'string',
+    description: 'Natural Japanese only.'
+  },
+  minItems: 1,
+  maxItems: 3
+});
+
 const criterionSchema = maxScore => ({
   type: 'object',
   additionalProperties: false,
@@ -82,13 +114,13 @@ const criterionSchema = maxScore => ({
   ],
   properties: {
     score: { type: 'integer', minimum: 0, maximum: maxScore },
-    rationale: { type: 'string' },
-    rationaleJa: { type: 'string' },
-    explanationJa: { type: 'string' },
-    strengths: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 },
-    strengthsJa: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 },
-    improvements: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 },
-    improvementsJa: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 }
+    rationale: englishText('Criterion rationale.'),
+    rationaleJa: japaneseText('Japanese translation of rationale.'),
+    explanationJa: japaneseText('Short student-friendly explanation of why the score was awarded and what to focus on next.'),
+    strengths: englishArray('Strengths in the learner response.'),
+    strengthsJa: japaneseArray('Japanese translations of strengths.'),
+    improvements: englishArray('Concrete improvements the learner should make.'),
+    improvementsJa: japaneseArray('Japanese translations of improvements.')
   }
 });
 
@@ -112,20 +144,28 @@ const gradingSchema = {
     conceptualUnderstanding: criterionSchema(6),
     topImprovements: {
       type: 'array',
-      items: { type: 'string' },
+      description: 'Exactly three distinct priority improvements, written in English only. Do not use Japanese.',
+      items: {
+        type: 'string',
+        description: 'Concrete actionable improvement in English only.'
+      },
       minItems: 3,
       maxItems: 3
     },
     topImprovementsJa: {
       type: 'array',
-      items: { type: 'string' },
+      description: 'Natural Japanese translations of topImprovements in exactly the same order.',
+      items: {
+        type: 'string',
+        description: 'Natural Japanese translation only.'
+      },
       minItems: 3,
       maxItems: 3
     },
-    nextStep: { type: 'string' },
-    nextStepJa: { type: 'string' },
-    overallComment: { type: 'string' },
-    overallCommentJa: { type: 'string' }
+    nextStep: englishText('One practical next step for the learner.'),
+    nextStepJa: japaneseText('Japanese translation of nextStep.'),
+    overallComment: englishText('Concise overall instructor comment.'),
+    overallCommentJa: japaneseText('Japanese translation of overallComment.')
   }
 };
 
@@ -302,13 +342,16 @@ function systemPrompt() {
     'There is no automatic mark penalty solely for being outside 450–600 words, but significant underdevelopment or excessive irrelevance may affect the relevant criterion.',
     'Use the provided task metadata as context. The listed best text type is guidance, not an automatic rule that other text types must fail.',
     'Give concise, actionable feedback for a student preparing for the final exam.',
-    'Keep all original assessment fields in English.',
+    'STRICT LANGUAGE RULE: every field without a Ja suffix must be written in English only. Never write Japanese in rationale, strengths, improvements, topImprovements, nextStep, or overallComment.',
+    'STRICT LANGUAGE RULE: every field with a Ja suffix must be written in natural Japanese only and must translate the matching English field.',
+    'Example: improvements = ["Use more precise transition phrases."] and improvementsJa = ["より正確なつなぎ表現を使いましょう。"]. Never put Japanese text in improvements.',
     'For every rationale, strength, improvement, Top 3 Improvement, next step, and overall comment, also provide a natural Japanese translation in the corresponding Ja field or array.',
     'For each criterion, explanationJa must be a short, student-friendly Japanese explanation of why the score was awarded and what to focus on next. It should explain the assessment, not merely repeat the translation.',
     'Japanese translations must preserve the meaning of the English feedback and must not change the score or add unsupported praise or criticism.',
     'Japanese array items must correspond to the English array items in the same order.',
     'For topImprovements, return exactly three distinct, concrete actions the student should take to improve the response.',
     'Never put scores, totals, criterion labels, JSON keys, provider/model names, rubric metadata, or other structural information inside topImprovements or topImprovementsJa.',
+    'Before returning, verify that every non-Ja text field is English and every Ja field is Japanese.',
     'Return only the requested structured output.'
   ].join('\n');
 }
