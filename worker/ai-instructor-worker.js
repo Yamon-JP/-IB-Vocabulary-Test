@@ -67,52 +67,65 @@ function normalizeInput(body) {
   };
 }
 
+const criterionSchema = maxScore => ({
+  type: 'object',
+  additionalProperties: false,
+  required: [
+    'score',
+    'rationale',
+    'rationaleJa',
+    'explanationJa',
+    'strengths',
+    'strengthsJa',
+    'improvements',
+    'improvementsJa'
+  ],
+  properties: {
+    score: { type: 'integer', minimum: 0, maximum: maxScore },
+    rationale: { type: 'string' },
+    rationaleJa: { type: 'string' },
+    explanationJa: { type: 'string' },
+    strengths: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 },
+    strengthsJa: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 },
+    improvements: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 },
+    improvementsJa: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 }
+  }
+});
+
 const gradingSchema = {
   type: 'object',
   additionalProperties: false,
-  required: ['language', 'message', 'conceptualUnderstanding', 'topImprovements', 'nextStep', 'overallComment'],
+  required: [
+    'language',
+    'message',
+    'conceptualUnderstanding',
+    'topImprovements',
+    'topImprovementsJa',
+    'nextStep',
+    'nextStepJa',
+    'overallComment',
+    'overallCommentJa'
+  ],
   properties: {
-    language: {
-      type: 'object',
-      additionalProperties: false,
-      required: ['score', 'rationale', 'strengths', 'improvements'],
-      properties: {
-        score: { type: 'integer', minimum: 0, maximum: 12 },
-        rationale: { type: 'string' },
-        strengths: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 },
-        improvements: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 }
-      }
-    },
-    message: {
-      type: 'object',
-      additionalProperties: false,
-      required: ['score', 'rationale', 'strengths', 'improvements'],
-      properties: {
-        score: { type: 'integer', minimum: 0, maximum: 12 },
-        rationale: { type: 'string' },
-        strengths: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 },
-        improvements: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 }
-      }
-    },
-    conceptualUnderstanding: {
-      type: 'object',
-      additionalProperties: false,
-      required: ['score', 'rationale', 'strengths', 'improvements'],
-      properties: {
-        score: { type: 'integer', minimum: 0, maximum: 6 },
-        rationale: { type: 'string' },
-        strengths: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 },
-        improvements: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 }
-      }
-    },
+    language: criterionSchema(12),
+    message: criterionSchema(12),
+    conceptualUnderstanding: criterionSchema(6),
     topImprovements: {
       type: 'array',
       items: { type: 'string' },
       minItems: 3,
       maxItems: 3
     },
+    topImprovementsJa: {
+      type: 'array',
+      items: { type: 'string' },
+      minItems: 3,
+      maxItems: 3
+    },
     nextStep: { type: 'string' },
-    overallComment: { type: 'string' }
+    nextStepJa: { type: 'string' },
+    overallComment: { type: 'string' },
+    overallCommentJa: { type: 'string' }
   }
 };
 
@@ -184,18 +197,33 @@ function normalizeImprovementItem(value) {
   return item;
 }
 
-function buildTopImprovements(value, criteria) {
+function bilingualPairs(englishItems, japaneseItems, maxItems = 6, maxLength = 1400) {
+  const en = cleanStringArray(englishItems, maxItems, maxLength);
+  const ja = cleanStringArray(japaneseItems, maxItems, maxLength);
+  return en.map((item, index) => ({ en: item, ja: ja[index] || '' }));
+}
+
+function buildTopImprovements(value, valueJa, criteria) {
   const fallbacks = [
-    'Develop key ideas with specific explanation, evidence, or examples so the response fully addresses the task.',
-    'Use a wider range of precise vocabulary and varied sentence structures while maintaining accuracy and clarity.',
-    'Strengthen audience awareness, purpose, register, and text-type conventions throughout the response.'
+    {
+      en: 'Develop key ideas with specific explanation, evidence, or examples so the response fully addresses the task.',
+      ja: '課題に十分に答えられるよう、重要な考えを具体的な説明・根拠・例で発展させましょう。'
+    },
+    {
+      en: 'Use a wider range of precise vocabulary and varied sentence structures while maintaining accuracy and clarity.',
+      ja: '正確さと分かりやすさを保ちながら、より幅広く適切な語彙と多様な文構造を使いましょう。'
+    },
+    {
+      en: 'Strengthen audience awareness, purpose, register, and text-type conventions throughout the response.',
+      ja: '読み手・目的・文体・テキストタイプの慣習を、文章全体でより明確に意識しましょう。'
+    }
   ];
 
   const candidates = [
-    ...cleanStringArray(value, 6, 1400),
-    ...criteria.message.improvements,
-    ...criteria.language.improvements,
-    ...criteria.conceptualUnderstanding.improvements,
+    ...bilingualPairs(value, valueJa),
+    ...bilingualPairs(criteria.message.improvements, criteria.message.improvementsJa),
+    ...bilingualPairs(criteria.language.improvements, criteria.language.improvementsJa),
+    ...bilingualPairs(criteria.conceptualUnderstanding.improvements, criteria.conceptualUnderstanding.improvementsJa),
     ...fallbacks
   ];
 
@@ -203,16 +231,23 @@ function buildTopImprovements(value, criteria) {
   const seen = new Set();
 
   for (const candidate of candidates) {
-    const item = normalizeImprovementItem(candidate);
-    if (!item) continue;
-    const key = item.toLowerCase().replace(/\s+/g, ' ').trim();
+    const en = normalizeImprovementItem(candidate.en);
+    if (!en) continue;
+    const key = en.toLowerCase().replace(/\s+/g, ' ').trim();
     if (seen.has(key)) continue;
     seen.add(key);
-    result.push(item);
+    result.push({
+      en,
+      ja: cleanString(candidate.ja, 1400)
+        || 'この改善点を意識して、次の答案で具体的に修正してみましょう。'
+    });
     if (result.length === 3) break;
   }
 
-  return result;
+  return {
+    en: result.map(item => item.en),
+    ja: result.map(item => item.ja)
+  };
 }
 
 function normalizeGrading(value) {
@@ -224,14 +259,18 @@ function normalizeGrading(value) {
   const normalizeCriterion = (criterion, max) => ({
     score: Math.max(0, Math.min(max, Number(criterion.score))),
     rationale: cleanString(criterion.rationale, 4000),
+    rationaleJa: cleanString(criterion.rationaleJa, 4000),
+    explanationJa: cleanString(criterion.explanationJa, 2400),
     strengths: cleanStringArray(criterion.strengths, 3, 1200),
-    improvements: cleanStringArray(criterion.improvements, 3, 1200)
+    strengthsJa: cleanStringArray(criterion.strengthsJa, 3, 1200),
+    improvements: cleanStringArray(criterion.improvements, 3, 1200),
+    improvementsJa: cleanStringArray(criterion.improvementsJa, 3, 1200)
   });
 
   const language = normalizeCriterion(value.language, 12);
   const message = normalizeCriterion(value.message, 12);
   const conceptualUnderstanding = normalizeCriterion(value.conceptualUnderstanding, 6);
-  const topImprovements = buildTopImprovements(value.topImprovements, {
+  const topImprovements = buildTopImprovements(value.topImprovements, value.topImprovementsJa, {
     language,
     message,
     conceptualUnderstanding
@@ -242,9 +281,12 @@ function normalizeGrading(value) {
     message,
     conceptualUnderstanding,
     total: language.score + message.score + conceptualUnderstanding.score,
-    topImprovements,
+    topImprovements: topImprovements.en,
+    topImprovementsJa: topImprovements.ja,
     nextStep: cleanString(value.nextStep, 2400),
-    overallComment: cleanString(value.overallComment, 2400)
+    nextStepJa: cleanString(value.nextStepJa, 2400),
+    overallComment: cleanString(value.overallComment, 2400),
+    overallCommentJa: cleanString(value.overallCommentJa, 2400)
   };
 }
 
@@ -260,8 +302,13 @@ function systemPrompt() {
     'There is no automatic mark penalty solely for being outside 450–600 words, but significant underdevelopment or excessive irrelevance may affect the relevant criterion.',
     'Use the provided task metadata as context. The listed best text type is guidance, not an automatic rule that other text types must fail.',
     'Give concise, actionable feedback for a student preparing for the final exam.',
+    'Keep all original assessment fields in English.',
+    'For every rationale, strength, improvement, Top 3 Improvement, next step, and overall comment, also provide a natural Japanese translation in the corresponding Ja field or array.',
+    'For each criterion, explanationJa must be a short, student-friendly Japanese explanation of why the score was awarded and what to focus on next. It should explain the assessment, not merely repeat the translation.',
+    'Japanese translations must preserve the meaning of the English feedback and must not change the score or add unsupported praise or criticism.',
+    'Japanese array items must correspond to the English array items in the same order.',
     'For topImprovements, return exactly three distinct, concrete actions the student should take to improve the response.',
-    'Never put scores, totals, criterion labels, JSON keys, provider/model names, rubric metadata, or other structural information inside topImprovements.',
+    'Never put scores, totals, criterion labels, JSON keys, provider/model names, rubric metadata, or other structural information inside topImprovements or topImprovementsJa.',
     'Return only the requested structured output.'
   ].join('\n');
 }
@@ -330,7 +377,7 @@ export default {
           json_schema: gradingSchema
         },
         temperature: 0.2,
-        max_completion_tokens: 2200
+        max_completion_tokens: 3600
       });
     } catch (error) {
       console.error('Workers AI grading request failed.', error);
