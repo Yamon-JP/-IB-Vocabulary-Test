@@ -84,6 +84,11 @@ const A=window.AdaptiveTraining={
     return 3;
   },
 
+  improvement(rec){
+    if(rec?.improvement?.status)return rec.improvement;
+    return {status:'baseline',label:'Building baseline',delta:null,icon:'•'};
+  },
+
   buildGeneralCandidates(){
     const catalog=this.catalog();
     const groups=new Map();
@@ -117,6 +122,9 @@ const A=window.AdaptiveTraining={
       const score=recent.reduce((sum,attempt)=>sum+(Number(attempt.score)||0),0);
       const max=recent.reduce((sum,attempt)=>sum+(Number(attempt.maxMarks)||0),0);
       const accuracy=max?Math.round(score/max*100):null;
+      const improvement=typeof FinalExamProgressV2.improvementFromAttempts==='function'
+        ?FinalExamProgressV2.improvementFromAttempts(matching)
+        :{status:'baseline',label:'Building baseline',delta:null,icon:'•'};
       return {
         ...group,
         label:`${this.assessmentLabel(group.subject,group.assessment)} · ${group.unit}`,
@@ -126,6 +134,7 @@ const A=window.AdaptiveTraining={
         attempts:matching.length,
         lastAt:matching.length?(Date.parse(matching[0].createdAt)||0):0,
         tier:this.tier(accuracy),
+        improvement,
         source:'final-exam',
         kind:'question-pool'
       };
