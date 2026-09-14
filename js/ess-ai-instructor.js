@@ -315,7 +315,7 @@
       this.setBusy(true);
       this.showMessage('AI Instructor', 'Reviewing your essay across the five ESS training-rubric areas…');
       const controller = new AbortController();
-      const timeout = window.setTimeout(() => controller.abort(), 75000);
+      const timeout = window.setTimeout(() => controller.abort(), 150000);
 
       try {
         const response = await fetch(`${endpoint}/grade/ess-paper2b`, {
