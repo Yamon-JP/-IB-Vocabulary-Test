@@ -6,6 +6,7 @@
     grading: false,
     endpointKey: 'ib_ai_instructor_endpoint',
     observer: null,
+    mountQueued: false,
 
     endpoint() {
       const configured = String(window.IB_AI_INSTRUCTOR_ENDPOINT || '').trim();
@@ -45,11 +46,17 @@
 
       this.installed = true;
       this.mountControls(false);
-      if (this.observer) {
-        this.observer.disconnect();
-        this.observer = null;
-      }
       return true;
+    },
+
+    scheduleMount() {
+      if (this.mountQueued) return;
+      this.mountQueued = true;
+      window.requestAnimationFrame(() => {
+        this.mountQueued = false;
+        this.install();
+        this.mountControls(false);
+      });
     },
 
     mountControls(resetResult = false) {
@@ -94,8 +101,9 @@
       this.grading = Boolean(isBusy);
       const button = document.getElementById('ess-ai-grade-button');
       if (!button) return;
-      button.disabled = this.grading;
-      button.textContent = this.grading ? 'AI Instructor is grading…' : 'Grade with AI Instructor';
+      if (button.disabled !== this.grading) button.disabled = this.grading;
+      const label = this.grading ? 'AI Instructor is grading…' : 'Grade with AI Instructor';
+      if (button.textContent !== label) button.textContent = label;
     },
 
     showMessage(title, message, kind = 'info') {
@@ -337,12 +345,15 @@
     },
 
     boot() {
-      if (this.install()) return;
-      this.observer = new MutationObserver(() => {
-        this.install();
-      });
-      this.observer.observe(document.documentElement, { childList: true, subtree: true });
-      window.addEventListener('load', () => this.install(), { once: true });
+      this.install();
+      this.mountControls(false);
+
+      if (!this.observer) {
+        this.observer = new MutationObserver(() => this.scheduleMount());
+        this.observer.observe(document.documentElement, { childList: true, subtree: true });
+      }
+
+      window.addEventListener('load', () => this.scheduleMount(), { once: true });
     }
   };
 
