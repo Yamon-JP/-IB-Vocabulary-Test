@@ -39,11 +39,11 @@ function countEnglishWords(text) {
   return (String(text || '').match(/[A-Za-z0-9]+(?:[’'-][A-Za-z0-9]+)*/g) || []).length;
 }
 
-function inputQualityIssue(answer) {
+function inputQualityIssue(answer, minWords = 8) {
   const text = String(answer || '');
   const words = text.match(/[A-Za-z0-9]+(?:[’'-][A-Za-z0-9]+)*/g) || [];
   const letterCount = (text.match(/[A-Za-z]/g) || []).length;
-  if (letterCount < 20 || words.length < 8) return 'The response does not contain enough English text to grade reliably.';
+  if (letterCount < 20 || words.length < minWords) return 'The response does not contain enough English text to grade reliably.';
   const normalizedWords = words.map(word => word.toLowerCase());
   if (words.length >= 20 && new Set(normalizedWords).size <= 3) return 'The response does not contain enough varied language to grade reliably.';
   const alphanumeric = text.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
@@ -333,7 +333,7 @@ export default {
     try { body = await request.json(); } catch (_) { return jsonResponse({ ok: false, error: 'Invalid JSON request.' }, 400, origin, env); }
     const input = englishRoute ? normalizeEnglishInput(body) : normalizeEssInput(body);
     if (!input) return jsonResponse({ ok: false, error: englishRoute ? 'A complete task, response, and text type are required.' : 'A complete ESS Section B task and response are required.' }, 400, origin, env);
-    const qualityIssue = inputQualityIssue(input.answer);
+    const qualityIssue = inputQualityIssue(input.answer, essRoute ? 30 : 8);
     if (qualityIssue) return jsonResponse({ ok: false, error: qualityIssue }, 422, origin, env);
 
     const model = cleanString(env.WORKERS_AI_MODEL || DEFAULT_MODEL, 160) || DEFAULT_MODEL;
