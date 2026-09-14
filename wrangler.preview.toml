@@ -4,4 +4,4 @@ compatibility_date = "2026-09-13"
 [assets]
 directory = "."
 
-# Preview deployment trigger for ESS AI Instructor Phase 8A.
+# Preview deployment trigger after Cloudflare Builds connection for ESS AI Instructor Phase 8A.
