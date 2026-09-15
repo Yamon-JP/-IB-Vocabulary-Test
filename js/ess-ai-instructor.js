@@ -1,12 +1,14 @@
 // ESS HL Paper 2 Section B AI Instructor frontend.
-// Phase 8A: AI grading only. Progress storage remains unchanged.
+// Phase 8B-1: AI grading with Progress integration and duplicate prevention.
 (() => {
   const EssAIInstructor = window.EssAIInstructor = {
     installed: false,
     grading: false,
     endpointKey: 'ib_ai_instructor_endpoint',
+    progressStoreKey: 'ib_paper2_progress',
     observer: null,
     mountQueued: false,
+    selfMarkPatched: false,
 
     endpoint() {
       const configured = String(window.IB_AI_INSTRUCTOR_ENDPOINT || '').trim();
@@ -27,6 +29,207 @@
         .replace(/'/g, '&#039;');
     },
 
+    answerFingerprint(payload) {
+      const source = [payload?.task?.id || '', payload?.answer || ''].join('|');
+      let hash = 2166136261;
+      for (let index = 0; index < source.length; index += 1) {
+        hash ^= source.charCodeAt(index);
+        hash = Math.imul(hash, 16777619);
+      }
+      return `fnv1a-${(hash >>> 0).toString(16).padStart(8, '0')}`;
+    },
+
+    feedbackSnapshot(grading) {
+      const criterion = value => ({
+        score: value.score,
+        rationale: value.rationale,
+        rationaleJa: value.rationaleJa,
+        explanationJa: value.explanationJa,
+        strengths: [...value.strengths],
+        strengthsJa: [...value.strengthsJa],
+        improvements: [...value.improvements],
+        improvementsJa: [...value.improvementsJa]
+      });
+      return {
+        knowledgeTerminology: criterion(grading.knowledgeTerminology),
+        applicationExamples: criterion(grading.applicationExamples),
+        analysisSystems: criterion(grading.analysisSystems),
+        evaluationTradeoffs: criterion(grading.evaluationTradeoffs),
+        synthesisJudgement: criterion(grading.synthesisJudgement),
+        topImprovements: [...grading.topImprovements],
+        topImprovementsJa: [...grading.topImprovementsJa],
+        nextStep: grading.nextStep,
+        nextStepJa: grading.nextStepJa,
+        overallComment: grading.overallComment,
+        overallCommentJa: grading.overallCommentJa
+      };
+    },
+
+    compactHistoryItem(item) {
+      const scores = item?.scores || {};
+      const keys = ['knowledgeTerminology', 'applicationExamples', 'analysisSystems', 'evaluationTradeoffs', 'synthesisJudgement'];
+      const normalizedScores = {};
+      for (const key of keys) {
+        const value = Number(scores[key]);
+        if (!Number.isFinite(value)) return null;
+        normalizedScores[key] = value;
+      }
+      const score = Number(item?.score);
+      if (!Number.isFinite(score)) return null;
+      return {
+        gradedAt: item?.gradedAt || item?.updatedAt || item?.createdAt || new Date().toISOString(),
+        score,
+        maxMarks: Number(item?.maxMarks) || 20,
+        scores: normalizedScores
+      };
+    },
+
+    previousGradeSnapshot(attempt) {
+      if (!attempt || attempt.gradingSource !== 'ai-instructor') return null;
+      return this.compactHistoryItem({
+        gradedAt: attempt.updatedAt || attempt.createdAt,
+        score: attempt.score,
+        maxMarks: attempt.maxMarks,
+        scores: attempt.scores
+      });
+    },
+
+    compactStoredHistory() {
+      if (typeof Storage === 'undefined') return;
+      const saved = Storage.load(this.progressStoreKey);
+      if (!Array.isArray(saved?.attempts)) return;
+      let changed = false;
+      const attempts = saved.attempts.map(attempt => {
+        if (!Array.isArray(attempt?.aiHistory)) return attempt;
+        const compact = attempt.aiHistory
+          .map(item => this.compactHistoryItem(item))
+          .filter(Boolean)
+          .slice(-10);
+        if (JSON.stringify(compact) === JSON.stringify(attempt.aiHistory)) return attempt;
+        changed = true;
+        return { ...attempt, aiHistory: compact };
+      });
+      if (changed) Storage.save(this.progressStoreKey, { ...saved, attempts });
+    },
+
+    tagLatestSelfMark(payload) {
+      if (typeof Storage === 'undefined' || !payload?.task?.id) return;
+      const saved = Storage.load(this.progressStoreKey) || {};
+      const attempts = Array.isArray(saved.attempts) ? [...saved.attempts] : [];
+      if (!attempts.length) return;
+      const lastIndex = attempts.length - 1;
+      const lastAttempt = attempts[lastIndex];
+      if (
+        lastAttempt?.gradingSource === 'ai-instructor'
+        || lastAttempt?.questionId !== payload.task.id
+        || lastAttempt?.assessmentTarget !== 'ess2b'
+      ) return;
+      const fingerprint = this.answerFingerprint(payload);
+      if (lastAttempt?.answerFingerprint === fingerprint) return;
+      attempts[lastIndex] = {
+        ...lastAttempt,
+        answerFingerprint: fingerprint,
+        wordCount: Number(payload.wordCount) || 0
+      };
+      Storage.save(this.progressStoreKey, { ...saved, attempts });
+    },
+
+    updateSelfMarkUi(attempt) {
+      if (!attempt) return;
+      document.querySelectorAll('#paper2-feedback input[data-paper2-mark-point]').forEach(input => {
+        input.disabled = true;
+      });
+      const saveButton = document.getElementById('paper2-save-score');
+      const status = document.getElementById('paper2-save-status');
+      if (saveButton) {
+        saveButton.disabled = true;
+        saveButton.textContent = 'AI Score Saved';
+      }
+      if (status) status.textContent = `${Number(attempt.score) || 0} / ${Number(attempt.maxMarks) || 20} AI score saved to Progress.`;
+    },
+
+    saveProgress(grading, payload) {
+      if (typeof Storage === 'undefined' || !payload?.task?.id) return null;
+      const saved = Storage.load(this.progressStoreKey) || {};
+      const attempts = Array.isArray(saved.attempts) ? [...saved.attempts] : [];
+      const fingerprint = this.answerFingerprint(payload);
+      const now = new Date().toISOString();
+      const maxMarks = Number(payload.task.marks) || 20;
+      const scores = {
+        knowledgeTerminology: grading.knowledgeTerminology.score,
+        applicationExamples: grading.applicationExamples.score,
+        analysisSystems: grading.analysisSystems.score,
+        evaluationTradeoffs: grading.evaluationTradeoffs.score,
+        synthesisJudgement: grading.synthesisJudgement.score
+      };
+      const aiAttempt = {
+        schemaVersion: Number(saved.schemaVersion) || 1,
+        attemptId: `AI-${payload.task.id}-${Date.now()}`,
+        questionId: payload.task.id,
+        subject: 'ESS HL',
+        assessmentTarget: 'ess2b',
+        chapter: payload.task.chapter || null,
+        unit: payload.task.unit || null,
+        commandTerm: payload.task.commandTerm || null,
+        questionType: 'written',
+        wordCount: Number(payload.wordCount) || 0,
+        scores,
+        score: grading.total,
+        maxMarks,
+        percentage: maxMarks ? Math.round((grading.total / maxMarks) * 100) : 0,
+        evaluator: { type: 'ai-instructor', version: 1 },
+        gradingSource: 'ai-instructor',
+        answerFingerprint: fingerprint,
+        aiFeedback: this.feedbackSnapshot(grading),
+        aiMeta: {
+          provider: String(grading.meta?.provider || ''),
+          model: String(grading.meta?.model || ''),
+          rubricVersion: String(grading.meta?.rubricVersion || 'ess-paper2b-v1')
+        },
+        aiHistory: [],
+        firstGradedAt: now,
+        createdAt: now,
+        updatedAt: now
+      };
+
+      let replaceIndex = -1;
+      for (let index = attempts.length - 1; index >= 0; index -= 1) {
+        const attempt = attempts[index];
+        if (attempt?.questionId === payload.task.id && attempt?.answerFingerprint === fingerprint) {
+          replaceIndex = index;
+          break;
+        }
+      }
+
+      if (replaceIndex >= 0) {
+        const previous = attempts[replaceIndex];
+        aiAttempt.attemptId = previous.attemptId || aiAttempt.attemptId;
+        if (previous.gradingSource === 'ai-instructor') {
+          aiAttempt.firstGradedAt = previous.firstGradedAt || previous.createdAt || now;
+          const history = Array.isArray(previous.aiHistory)
+            ? previous.aiHistory.map(item => this.compactHistoryItem(item)).filter(Boolean).slice(-9)
+            : [];
+          const previousGrade = this.previousGradeSnapshot(previous);
+          if (previousGrade) history.push(previousGrade);
+          aiAttempt.aiHistory = history.slice(-10);
+        }
+        attempts[replaceIndex] = aiAttempt;
+      } else {
+        attempts.push(aiAttempt);
+      }
+
+      Storage.save(this.progressStoreKey, {
+        schemaVersion: Number(saved.schemaVersion) || 1,
+        attempts
+      });
+
+      this.updateSelfMarkUi(aiAttempt);
+      if (typeof FinalExamProgressV2 !== 'undefined' && typeof FinalExamProgressV2.render === 'function') {
+        FinalExamProgressV2.render();
+      }
+      return aiAttempt;
+    },
+
     isEligible() {
       if (typeof Paper2 === 'undefined' || !Paper2.current) return false;
       if (typeof Paper2.isEssSectionB === 'function') return Boolean(Paper2.isEssSectionB());
@@ -34,9 +237,49 @@
     },
 
     install() {
-      if (this.installed) return true;
       if (typeof Paper2 === 'undefined' || typeof Paper2.render !== 'function') return false;
 
+      if (!this.selfMarkPatched && typeof Paper2.saveSelfMarkAttempt === 'function') {
+        const originalSaveSelfMarkAttempt = Paper2.saveSelfMarkAttempt.bind(Paper2);
+        Paper2.saveSelfMarkAttempt = (...args) => {
+          if (!this.isEligible()) return originalSaveSelfMarkAttempt(...args);
+          const payload = this.buildPayload();
+          if (payload && typeof Storage !== 'undefined') {
+            const saved = Storage.load(this.progressStoreKey) || {};
+            const attempts = Array.isArray(saved.attempts) ? saved.attempts : [];
+            const fingerprint = this.answerFingerprint(payload);
+            const existing = [...attempts].reverse().find(attempt =>
+              attempt?.questionId === payload.task.id
+              && attempt?.answerFingerprint === fingerprint
+            );
+            if (existing) {
+              Paper2.attemptSaved = true;
+              document.querySelectorAll('#paper2-feedback input[data-paper2-mark-point]').forEach(input => {
+                input.disabled = true;
+              });
+              const saveButton = document.getElementById('paper2-save-score');
+              const status = document.getElementById('paper2-save-status');
+              if (saveButton) {
+                saveButton.disabled = true;
+                saveButton.textContent = existing.gradingSource === 'ai-instructor' ? 'AI Score Saved' : 'Score Saved';
+              }
+              if (status) {
+                status.textContent = existing.gradingSource === 'ai-instructor'
+                  ? `This exact response already has an AI score (${Number(existing.score) || 0} / ${Number(existing.maxMarks) || 20}) in Progress.`
+                  : `This exact response is already saved (${Number(existing.score) || 0} / ${Number(existing.maxMarks) || 20}).`;
+              }
+              return existing;
+            }
+          }
+
+          const result = originalSaveSelfMarkAttempt(...args);
+          if (payload && Paper2.attemptSaved) this.tagLatestSelfMark(payload);
+          return result;
+        };
+        this.selfMarkPatched = true;
+      }
+
+      if (this.installed) return true;
       const originalRender = Paper2.render.bind(Paper2);
       Paper2.render = (...args) => {
         const result = originalRender(...args);
@@ -44,6 +287,7 @@
         return result;
       };
 
+      this.compactStoredHistory();
       this.installed = true;
       this.mountControls(false);
       return true;
@@ -241,11 +485,15 @@
         </article>`;
     },
 
-    renderGrading(grading) {
+    renderGrading(grading, savedAttempt = null) {
       const result = document.getElementById('ess-ai-result');
       if (!result) return;
       const model = String(grading.meta?.model || '').trim();
       const rubricVersion = String(grading.meta?.rubricVersion || 'ess-paper2b-v1').trim();
+      const historyCount = Array.isArray(savedAttempt?.aiHistory) ? savedAttempt.aiHistory.length : 0;
+      const progressStatus = savedAttempt
+        ? `AI score saved to Progress${historyCount ? ` · ${historyCount} previous AI grade${historyCount === 1 ? '' : 's'} kept` : ''}.`
+        : 'AI score was not saved to Progress.';
       result.innerHTML = `
         <section class="ess-ai-panel">
           <div class="ess-ai-header">
@@ -286,7 +534,7 @@
               <p>${this.escapeHtml(grading.overallComment)}</p>
               ${grading.overallCommentJa ? `<p class="ess-ai-ja"><strong>🇯🇵 日本語訳：</strong>${this.escapeHtml(grading.overallCommentJa)}</p>` : ''}
             </div>` : ''}
-          <div class="ess-ai-meta">Rubric ${this.escapeHtml(rubricVersion)}${model ? ` · ${this.escapeHtml(model)}` : ''} · Phase 8A training result only; not saved to Progress.</div>
+          <div class="ess-ai-meta">Rubric ${this.escapeHtml(rubricVersion)}${model ? ` · ${this.escapeHtml(model)}` : ''} · Phase 8B training result · ${this.escapeHtml(progressStatus)}</div>
         </section>`;
     },
 
@@ -330,7 +578,8 @@
         }
         const grading = this.normalizeGrading(data);
         if (!grading) throw new Error('AI Instructor returned an invalid ESS grading result.');
-        this.renderGrading(grading);
+        const savedAttempt = this.saveProgress(grading, payload);
+        this.renderGrading(grading, savedAttempt);
       } catch (error) {
         const timedOut = error?.name === 'AbortError';
         const message = timedOut
