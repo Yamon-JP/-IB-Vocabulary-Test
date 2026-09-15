@@ -9,6 +9,7 @@
     observer: null,
     mountQueued: false,
     selfMarkPatched: false,
+    selfMarkClickGuardInstalled: false,
 
     endpoint() {
       const configured = String(window.IB_AI_INSTRUCTOR_ENDPOINT || '').trim();
@@ -134,11 +135,67 @@
       Storage.save(this.progressStoreKey, { ...saved, attempts });
     },
 
+    findSavedAttempt(payload) {
+      if (typeof Storage === 'undefined' || !payload?.task?.id) return null;
+      const saved = Storage.load(this.progressStoreKey) || {};
+      const attempts = Array.isArray(saved.attempts) ? saved.attempts : [];
+      const fingerprint = this.answerFingerprint(payload);
+      return [...attempts].reverse().find(attempt =>
+        attempt?.questionId === payload.task.id
+        && attempt?.answerFingerprint === fingerprint
+      ) || null;
+    },
+
+    showDuplicateSelfMark(existing) {
+      if (!existing || typeof Paper2 === 'undefined') return;
+      Paper2.attemptSaved = true;
+      document.querySelectorAll('#paper2-feedback input[data-paper2-mark-point]').forEach(input => {
+        input.disabled = true;
+      });
+      const markbandSelect = document.getElementById('paper2-markband-score');
+      if (markbandSelect) markbandSelect.disabled = true;
+      const saveButton = document.getElementById('paper2-save-score');
+      const status = document.getElementById('paper2-save-status');
+      if (saveButton) {
+        saveButton.disabled = true;
+        saveButton.textContent = existing.gradingSource === 'ai-instructor' ? 'AI Score Saved' : 'Score Saved';
+      }
+      if (status) {
+        status.textContent = existing.gradingSource === 'ai-instructor'
+          ? `This exact response already has an AI score (${Number(existing.score) || 0} / ${Number(existing.maxMarks) || 20}) in Progress.`
+          : `This exact response is already saved (${Number(existing.score) || 0} / ${Number(existing.maxMarks) || 20}).`;
+      }
+    },
+
+    installSelfMarkClickGuard() {
+      if (this.selfMarkClickGuardInstalled) return;
+      document.addEventListener('click', event => {
+        const button = event.target?.closest?.('#paper2-save-score');
+        if (!button || !this.isEligible()) return;
+        const payload = this.buildPayload();
+        if (!payload) return;
+        const existing = this.findSavedAttempt(payload);
+        if (existing) {
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          this.showDuplicateSelfMark(existing);
+          return;
+        }
+        window.setTimeout(() => {
+          if (typeof Paper2 !== 'undefined' && Paper2.attemptSaved) this.tagLatestSelfMark(payload);
+        }, 0);
+      }, true);
+      this.selfMarkClickGuardInstalled = true;
+    },
+
     updateSelfMarkUi(attempt) {
       if (!attempt) return;
       document.querySelectorAll('#paper2-feedback input[data-paper2-mark-point]').forEach(input => {
         input.disabled = true;
       });
+      const markbandSelect = document.getElementById('paper2-markband-score');
+      if (markbandSelect) markbandSelect.disabled = true;
       const saveButton = document.getElementById('paper2-save-score');
       const status = document.getElementById('paper2-save-status');
       if (saveButton) {
@@ -239,35 +296,17 @@
     install() {
       if (typeof Paper2 === 'undefined' || typeof Paper2.render !== 'function') return false;
 
+      this.installSelfMarkClickGuard();
+
       if (!this.selfMarkPatched && typeof Paper2.saveSelfMarkAttempt === 'function') {
         const originalSaveSelfMarkAttempt = Paper2.saveSelfMarkAttempt.bind(Paper2);
         Paper2.saveSelfMarkAttempt = (...args) => {
           if (!this.isEligible()) return originalSaveSelfMarkAttempt(...args);
           const payload = this.buildPayload();
           if (payload && typeof Storage !== 'undefined') {
-            const saved = Storage.load(this.progressStoreKey) || {};
-            const attempts = Array.isArray(saved.attempts) ? saved.attempts : [];
-            const fingerprint = this.answerFingerprint(payload);
-            const existing = [...attempts].reverse().find(attempt =>
-              attempt?.questionId === payload.task.id
-              && attempt?.answerFingerprint === fingerprint
-            );
+            const existing = this.findSavedAttempt(payload);
             if (existing) {
-              Paper2.attemptSaved = true;
-              document.querySelectorAll('#paper2-feedback input[data-paper2-mark-point]').forEach(input => {
-                input.disabled = true;
-              });
-              const saveButton = document.getElementById('paper2-save-score');
-              const status = document.getElementById('paper2-save-status');
-              if (saveButton) {
-                saveButton.disabled = true;
-                saveButton.textContent = existing.gradingSource === 'ai-instructor' ? 'AI Score Saved' : 'Score Saved';
-              }
-              if (status) {
-                status.textContent = existing.gradingSource === 'ai-instructor'
-                  ? `This exact response already has an AI score (${Number(existing.score) || 0} / ${Number(existing.maxMarks) || 20}) in Progress.`
-                  : `This exact response is already saved (${Number(existing.score) || 0} / ${Number(existing.maxMarks) || 20}).`;
-              }
+              this.showDuplicateSelfMark(existing);
               return existing;
             }
           }
