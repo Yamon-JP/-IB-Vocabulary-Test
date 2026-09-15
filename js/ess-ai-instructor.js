@@ -140,10 +140,13 @@
       const saved = Storage.load(this.progressStoreKey) || {};
       const attempts = Array.isArray(saved.attempts) ? saved.attempts : [];
       const fingerprint = this.answerFingerprint(payload);
-      return [...attempts].reverse().find(attempt =>
+      const matches = attempts.filter(attempt =>
         attempt?.questionId === payload.task.id
         && attempt?.answerFingerprint === fingerprint
-      ) || null;
+      );
+      return [...matches].reverse().find(attempt => attempt?.gradingSource === 'ai-instructor')
+        || matches[matches.length - 1]
+        || null;
     },
 
     showDuplicateSelfMark(existing) {
@@ -249,36 +252,45 @@
         updatedAt: now
       };
 
-      let replaceIndex = -1;
-      for (let index = attempts.length - 1; index >= 0; index -= 1) {
+      const matchingIndexes = [];
+      for (let index = 0; index < attempts.length; index += 1) {
         const attempt = attempts[index];
         if (attempt?.questionId === payload.task.id && attempt?.answerFingerprint === fingerprint) {
-          replaceIndex = index;
-          break;
+          matchingIndexes.push(index);
         }
       }
 
-      if (replaceIndex >= 0) {
-        const previous = attempts[replaceIndex];
-        aiAttempt.attemptId = previous.attemptId || aiAttempt.attemptId;
-        if (previous.gradingSource === 'ai-instructor') {
-          aiAttempt.firstGradedAt = previous.firstGradedAt || previous.createdAt || now;
-          const history = Array.isArray(previous.aiHistory)
-            ? previous.aiHistory.map(item => this.compactHistoryItem(item)).filter(Boolean).slice(-9)
+      if (matchingIndexes.length) {
+        const matchingAttempts = matchingIndexes.map(index => attempts[index]);
+        const previous = [...matchingAttempts].reverse().find(attempt => attempt?.gradingSource === 'ai-instructor')
+          || matchingAttempts[matchingAttempts.length - 1];
+        aiAttempt.attemptId = previous?.attemptId || aiAttempt.attemptId;
+
+        const previousAi = [...matchingAttempts].reverse().find(attempt => attempt?.gradingSource === 'ai-instructor') || null;
+        if (previousAi) {
+          aiAttempt.firstGradedAt = previousAi.firstGradedAt || previousAi.createdAt || now;
+          const history = Array.isArray(previousAi.aiHistory)
+            ? previousAi.aiHistory.map(item => this.compactHistoryItem(item)).filter(Boolean).slice(-9)
             : [];
-          const previousGrade = this.previousGradeSnapshot(previous);
+          const previousGrade = this.previousGradeSnapshot(previousAi);
           if (previousGrade) history.push(previousGrade);
           aiAttempt.aiHistory = history.slice(-10);
         }
-        attempts[replaceIndex] = aiAttempt;
+
+        const matchingIndexSet = new Set(matchingIndexes);
+        const retainedAttempts = attempts.filter((_, index) => !matchingIndexSet.has(index));
+        retainedAttempts.push(aiAttempt);
+        Storage.save(this.progressStoreKey, {
+          schemaVersion: Number(saved.schemaVersion) || 1,
+          attempts: retainedAttempts
+        });
       } else {
         attempts.push(aiAttempt);
+        Storage.save(this.progressStoreKey, {
+          schemaVersion: Number(saved.schemaVersion) || 1,
+          attempts
+        });
       }
-
-      Storage.save(this.progressStoreKey, {
-        schemaVersion: Number(saved.schemaVersion) || 1,
-        attempts
-      });
 
       this.updateSelfMarkUi(aiAttempt);
       if (typeof FinalExamProgressV2 !== 'undefined' && typeof FinalExamProgressV2.render === 'function') {
