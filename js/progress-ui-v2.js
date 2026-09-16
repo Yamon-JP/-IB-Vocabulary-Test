@@ -851,3 +851,131 @@
       : `<p class="progress-v2-analysis-empty">Building baseline — no supported saved analysis data yet.</p>`;
   };
 })();
+
+(() => {
+  if (typeof ProgressUIV2 === 'undefined') return;
+
+  const originalRenderAnalysisWithSubjectAnalytics = ProgressUIV2.renderAnalysis.bind(ProgressUIV2);
+  const essAiCriteria = [
+    ['Knowledge & terminology', 'knowledgeTerminology'],
+    ['Application & relevant examples', 'applicationExamples'],
+    ['Analysis / systems / HL-lens', 'analysisSystems'],
+    ['Evaluation / perspectives / trade-offs', 'evaluationTradeoffs'],
+    ['Synthesis / justified judgement', 'synthesisJudgement']
+  ];
+
+  function ensureEssAiAnalysisStyles() {
+    if (document.getElementById('progress-v2-ess-ai-analysis-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'progress-v2-ess-ai-analysis-styles';
+    style.textContent = `
+      .progress-v2-ess-ai-summary{border-color:#d8e2ee;background:#fbfdff}
+      .progress-v2-ess-ai-overview{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+      .progress-v2-ess-ai-chip{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid #dbe3ec;border-radius:999px;background:#fff;font-size:.72rem;font-weight:800}
+      .progress-v2-ess-ai-scorecard{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center;margin:8px 0 12px;padding:11px;border:1px solid #e4e7ec;border-radius:12px;background:#fff}
+      .progress-v2-ess-ai-score{min-width:82px;text-align:center}
+      .progress-v2-ess-ai-score strong,.progress-v2-ess-ai-score small{display:block}
+      .progress-v2-ess-ai-score strong{font-size:1.25rem}
+      .progress-v2-ess-ai-score small{margin-top:2px;color:#667085;font-size:.68rem}
+      .progress-v2-ess-ai-meta strong,.progress-v2-ess-ai-meta small{display:block}
+      .progress-v2-ess-ai-meta strong{font-size:.82rem}
+      .progress-v2-ess-ai-meta small{margin-top:3px;color:#667085;font-size:.71rem;line-height:1.4}
+      .progress-v2-ess-ai-criteria{display:grid;gap:7px}
+      .progress-v2-ess-ai-row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(90px,.8fr) auto;gap:9px;align-items:center}
+      .progress-v2-ess-ai-row strong{font-size:.78rem}
+      .progress-v2-ess-ai-track{height:6px;border-radius:999px;background:#eef1f5;overflow:hidden}
+      .progress-v2-ess-ai-track span{display:block;height:100%;border-radius:inherit;background:currentColor;opacity:.72}
+      .progress-v2-ess-ai-mark{font-size:.76rem;font-weight:850;white-space:nowrap}
+      @media(max-width:600px){
+        .progress-v2-ess-ai-scorecard{grid-template-columns:1fr}
+        .progress-v2-ess-ai-score{text-align:left}
+        .progress-v2-ess-ai-row{grid-template-columns:1fr auto}
+        .progress-v2-ess-ai-track{grid-column:1/-1;grid-row:2}
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function essPaper2BAttempts() {
+    return ProgressUIV2.validAttempts(ProgressUIV2.subjectAttempts('ESS HL'))
+      .filter(attempt => !attempt?.fullMock && ProgressUIV2.assessment(attempt) === 'ess2b');
+  }
+
+  function attemptTimestamp(attempt) {
+    return Date.parse(attempt?.updatedAt || attempt?.createdAt || 0) || 0;
+  }
+
+  function renderEssAiSummary() {
+    const dashboard = document.querySelector('#progress-v2-analysis-placeholder .progress-v2-analysis-dashboard');
+    if (!dashboard) return;
+    dashboard.querySelector('.progress-v2-ess-ai-summary')?.remove();
+
+    const attempts = essPaper2BAttempts();
+    const aiAttempts = attempts.filter(attempt => attempt?.gradingSource === 'ai-instructor');
+    const selfMarkAttempts = attempts.filter(attempt => attempt?.gradingSource !== 'ai-instructor');
+    const latestAi = [...aiAttempts].sort((a, b) => attemptTimestamp(b) - attemptTimestamp(a))[0] || null;
+    const sourceNote = `Current Paper 2B records · AI Instructor ${aiAttempts.length} · Self-mark ${selfMarkAttempts.length}`;
+
+    let body = `
+      <div class="progress-v2-ess-ai-overview">
+        <span class="progress-v2-ess-ai-chip">AI Instructor ${aiAttempts.length}</span>
+        <span class="progress-v2-ess-ai-chip">Self-mark ${selfMarkAttempts.length}</span>
+      </div>`;
+
+    if (!latestAi) {
+      body += '<p class="progress-v2-analysis-empty">No ESS Paper 2B AI Instructor grade is saved yet. Existing self-mark records remain separate.</p>';
+    } else {
+      const score = Number(latestAi.score);
+      const maxMarks = Number(latestAi.maxMarks) || 20;
+      const historyCount = Array.isArray(latestAi.aiHistory) ? latestAi.aiHistory.length : 0;
+      const date = new Date(latestAi.updatedAt || latestAi.createdAt || 0);
+      const dateLabel = Number.isNaN(date.getTime())
+        ? ''
+        : date.toLocaleDateString('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' });
+      const questionLabel = latestAi.unit || latestAi.chapter || latestAi.questionId || 'ESS Paper 2B';
+      const historyLabel = `${historyCount} previous AI grade${historyCount === 1 ? '' : 's'} kept`;
+      const criteriaHtml = essAiCriteria.map(([label, key]) => {
+        const value = Number(latestAi?.scores?.[key]);
+        const valid = Number.isFinite(value);
+        const bounded = valid ? Math.max(0, Math.min(4, value)) : 0;
+        return `
+          <div class="progress-v2-ess-ai-row">
+            <strong>${ProgressUIV2.escapeHtml(label)}</strong>
+            <div class="progress-v2-ess-ai-track" aria-hidden="true"><span style="width:${bounded / 4 * 100}%"></span></div>
+            <span class="progress-v2-ess-ai-mark">${valid ? `${Math.round(bounded * 10) / 10} / 4` : '— / 4'}</span>
+          </div>`;
+      }).join('');
+
+      body += `
+        <div class="progress-v2-ess-ai-scorecard">
+          <div class="progress-v2-ess-ai-score">
+            <strong>${Number.isFinite(score) ? `${Math.round(score * 10) / 10} / ${maxMarks}` : '—'}</strong>
+            <small>Latest AI score</small>
+          </div>
+          <div class="progress-v2-ess-ai-meta">
+            <strong>${ProgressUIV2.escapeHtml(questionLabel)}</strong>
+            <small>AI Instructor · ${ProgressUIV2.escapeHtml(historyLabel)}${dateLabel ? ` · ${ProgressUIV2.escapeHtml(dateLabel)}` : ''}</small>
+          </div>
+        </div>
+        <div class="progress-v2-ess-ai-criteria">${criteriaHtml}</div>`;
+    }
+
+    dashboard.insertAdjacentHTML('afterbegin', `
+      <section class="progress-v2-analysis-section progress-v2-ess-ai-summary">
+        <div class="progress-v2-analysis-section-head">
+          <strong>ESS Paper 2B · AI Instructor</strong>
+          <small>${ProgressUIV2.escapeHtml(sourceNote)}</small>
+        </div>
+        ${body}
+      </section>`);
+  }
+
+  ProgressUIV2.renderAnalysis = function(subject) {
+    const result = originalRenderAnalysisWithSubjectAnalytics(subject);
+    if (subject === 'ESS HL') {
+      ensureEssAiAnalysisStyles();
+      renderEssAiSummary();
+    }
+    return result;
+  };
+})();
