@@ -1101,3 +1101,126 @@
     return result;
   };
 })();
+
+(() => {
+  if (typeof ProgressUIV2 === 'undefined') return;
+
+  const renderAnalysisWithEssAiFeedback = ProgressUIV2.renderAnalysis.bind(ProgressUIV2);
+  const comparisonCriteria = [
+    ['Knowledge & terminology', 'knowledgeTerminology'],
+    ['Application & relevant examples', 'applicationExamples'],
+    ['Analysis / systems / HL-lens connections', 'analysisSystems'],
+    ['Evaluation / perspectives / trade-offs', 'evaluationTradeoffs'],
+    ['Synthesis / justified judgement', 'synthesisJudgement']
+  ];
+
+  function ensureEssAiComparisonStyles() {
+    if (document.getElementById('progress-v2-ess-ai-comparison-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'progress-v2-ess-ai-comparison-styles';
+    style.textContent = `
+      .progress-v2-ess-ai-comparison{margin-top:12px;border-top:1px solid #e4e7ec;padding-top:10px}
+      .progress-v2-ess-ai-comparison>summary{cursor:pointer;font-size:.8rem;font-weight:850;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px}
+      .progress-v2-ess-ai-comparison>summary::-webkit-details-marker{display:none}
+      .progress-v2-ess-ai-comparison-body{display:grid;gap:8px;padding-top:10px}
+      .progress-v2-ess-ai-comparison-head{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid #eef1f5;font-size:.72rem;color:#667085}
+      .progress-v2-ess-ai-comparison-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid #f4f5f7}
+      .progress-v2-ess-ai-comparison-row:last-child{border-bottom:0}
+      .progress-v2-ess-ai-comparison-row strong{font-size:.76rem}
+      .progress-v2-ess-ai-comparison-value{font-size:.75rem;white-space:nowrap}
+      .progress-v2-ess-ai-comparison-delta{min-width:38px;text-align:right;font-size:.75rem;font-weight:850;white-space:nowrap}
+      .progress-v2-ess-ai-comparison-note{margin:0;color:#667085;font-size:.7rem;line-height:1.4}
+      @media(max-width:600px){
+        .progress-v2-ess-ai-comparison-head{display:none}
+        .progress-v2-ess-ai-comparison-row{grid-template-columns:minmax(0,1fr) auto auto}
+        .progress-v2-ess-ai-comparison-row strong{grid-column:1/-1}
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function latestEssAiAttemptForComparison() {
+    return ProgressUIV2.validAttempts(ProgressUIV2.subjectAttempts('ESS HL'))
+      .filter(attempt => !attempt?.fullMock && ProgressUIV2.assessment(attempt) === 'ess2b' && attempt?.gradingSource === 'ai-instructor')
+      .sort((a, b) => (Date.parse(b?.updatedAt || b?.createdAt || 0) || 0) - (Date.parse(a?.updatedAt || a?.createdAt || 0) || 0))[0] || null;
+  }
+
+  function formatComparisonValue(value, maxMarks) {
+    const number = Number(value);
+    if (!Number.isFinite(number)) return '—';
+    return `${Math.round(number * 10) / 10} / ${maxMarks}`;
+  }
+
+  function formatDelta(current, previous) {
+    const currentValue = Number(current);
+    const previousValue = Number(previous);
+    if (!Number.isFinite(currentValue) || !Number.isFinite(previousValue)) return '—';
+    const delta = Math.round((currentValue - previousValue) * 10) / 10;
+    if (delta > 0) return `+${delta}`;
+    if (delta < 0) return `−${Math.abs(delta)}`;
+    return '0';
+  }
+
+  function renderEssAiComparison() {
+    const summary = document.querySelector('#progress-v2-analysis-placeholder .progress-v2-ess-ai-summary');
+    if (!summary) return;
+    summary.querySelector('.progress-v2-ess-ai-comparison')?.remove();
+
+    const attempt = latestEssAiAttemptForComparison();
+    const history = Array.isArray(attempt?.aiHistory) ? attempt.aiHistory : [];
+    const previous = history[history.length - 1];
+    if (!attempt || !previous) return;
+
+    const currentTotal = Number(attempt.score);
+    const previousTotal = Number(previous.score);
+    if (!Number.isFinite(currentTotal) || !Number.isFinite(previousTotal)) return;
+
+    const previousDate = new Date(previous.gradedAt || 0);
+    const previousDateLabel = Number.isNaN(previousDate.getTime())
+      ? ''
+      : previousDate.toLocaleDateString('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' });
+
+    const rows = comparisonCriteria.map(([label, key]) => {
+      const current = attempt?.scores?.[key];
+      const before = previous?.scores?.[key];
+      return `
+        <div class="progress-v2-ess-ai-comparison-row">
+          <strong>${ProgressUIV2.escapeHtml(label)}</strong>
+          <span class="progress-v2-ess-ai-comparison-value">${ProgressUIV2.escapeHtml(formatComparisonValue(before, 4))}</span>
+          <span class="progress-v2-ess-ai-comparison-value">${ProgressUIV2.escapeHtml(formatComparisonValue(current, 4))}</span>
+          <span class="progress-v2-ess-ai-comparison-delta">${ProgressUIV2.escapeHtml(formatDelta(current, before))}</span>
+        </div>`;
+    }).join('');
+
+    const html = `
+      <details class="progress-v2-ess-ai-comparison">
+        <summary>Compare with previous AI grade <span>${ProgressUIV2.escapeHtml(formatDelta(currentTotal, previousTotal))} total</span></summary>
+        <div class="progress-v2-ess-ai-comparison-body">
+          <div class="progress-v2-ess-ai-comparison-head">
+            <span>Criterion</span><span>Previous</span><span>Latest</span><span>Δ</span>
+          </div>
+          <div class="progress-v2-ess-ai-comparison-row">
+            <strong>Total</strong>
+            <span class="progress-v2-ess-ai-comparison-value">${ProgressUIV2.escapeHtml(formatComparisonValue(previousTotal, Number(previous.maxMarks) || 20))}</span>
+            <span class="progress-v2-ess-ai-comparison-value">${ProgressUIV2.escapeHtml(formatComparisonValue(currentTotal, Number(attempt.maxMarks) || 20))}</span>
+            <span class="progress-v2-ess-ai-comparison-delta">${ProgressUIV2.escapeHtml(formatDelta(currentTotal, previousTotal))}</span>
+          </div>
+          ${rows}
+          <p class="progress-v2-ess-ai-comparison-note">Latest AI grade compared with the immediately previous grade for this same saved response${previousDateLabel ? ` · Previous: ${ProgressUIV2.escapeHtml(previousDateLabel)}` : ''}.</p>
+        </div>
+      </details>`;
+
+    const feedback = summary.querySelector('.progress-v2-ess-ai-feedback');
+    if (feedback) feedback.insertAdjacentHTML('beforebegin', html);
+    else summary.insertAdjacentHTML('beforeend', html);
+  }
+
+  ProgressUIV2.renderAnalysis = function(subject) {
+    const result = renderAnalysisWithEssAiFeedback(subject);
+    if (subject === 'ESS HL') {
+      ensureEssAiComparisonStyles();
+      renderEssAiComparison();
+    }
+    return result;
+  };
+})();
