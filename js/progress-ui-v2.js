@@ -979,3 +979,125 @@
     return result;
   };
 })();
+
+(() => {
+  if (typeof ProgressUIV2 === 'undefined') return;
+
+  const renderAnalysisWithEssAiSummary = ProgressUIV2.renderAnalysis.bind(ProgressUIV2);
+  const feedbackCriteria = [
+    ['Knowledge & terminology', 'knowledgeTerminology'],
+    ['Application & relevant examples', 'applicationExamples'],
+    ['Analysis / systems / HL-lens connections', 'analysisSystems'],
+    ['Evaluation / perspectives / trade-offs', 'evaluationTradeoffs'],
+    ['Synthesis / justified judgement', 'synthesisJudgement']
+  ];
+
+  function ensureEssAiFeedbackStyles() {
+    if (document.getElementById('progress-v2-ess-ai-feedback-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'progress-v2-ess-ai-feedback-styles';
+    style.textContent = `
+      .progress-v2-ess-ai-feedback{margin-top:12px;border-top:1px solid #e4e7ec;padding-top:10px}
+      .progress-v2-ess-ai-feedback>summary{cursor:pointer;font-size:.8rem;font-weight:850;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px}
+      .progress-v2-ess-ai-feedback>summary::-webkit-details-marker{display:none}
+      .progress-v2-ess-ai-feedback-body{display:grid;gap:10px;padding-top:10px}
+      .progress-v2-ess-ai-feedback-card{padding:10px;border:1px solid #e4e7ec;border-radius:11px;background:#fff}
+      .progress-v2-ess-ai-feedback-card>strong{display:block;margin-bottom:5px;font-size:.8rem}
+      .progress-v2-ess-ai-feedback-card p{margin:4px 0;font-size:.76rem;line-height:1.5}
+      .progress-v2-ess-ai-feedback-ja{color:#667085}
+      .progress-v2-ess-ai-feedback-list{margin:0;padding-left:20px}
+      .progress-v2-ess-ai-feedback-list li{margin:7px 0;font-size:.76rem;line-height:1.45}
+      .progress-v2-ess-ai-feedback-criteria{display:grid;gap:8px}
+      .progress-v2-ess-ai-feedback-criterion{padding-top:8px;border-top:1px solid #eef1f5}
+      .progress-v2-ess-ai-feedback-criterion:first-child{padding-top:0;border-top:0}
+      .progress-v2-ess-ai-feedback-criterion strong{display:block;font-size:.77rem}
+      .progress-v2-ess-ai-feedback-criterion p{margin:4px 0;font-size:.74rem;line-height:1.45}
+    `;
+    document.head.appendChild(style);
+  }
+
+  function latestEssAiAttempt() {
+    return ProgressUIV2.validAttempts(ProgressUIV2.subjectAttempts('ESS HL'))
+      .filter(attempt => !attempt?.fullMock && ProgressUIV2.assessment(attempt) === 'ess2b' && attempt?.gradingSource === 'ai-instructor')
+      .sort((a, b) => (Date.parse(b?.updatedAt || b?.createdAt || 0) || 0) - (Date.parse(a?.updatedAt || a?.createdAt || 0) || 0))[0] || null;
+  }
+
+  function bilingualParagraph(title, english, japanese) {
+    if (!english && !japanese) return '';
+    return `
+      <div class="progress-v2-ess-ai-feedback-card">
+        <strong>${ProgressUIV2.escapeHtml(title)}</strong>
+        ${english ? `<p>${ProgressUIV2.escapeHtml(english)}</p>` : ''}
+        ${japanese ? `<p class="progress-v2-ess-ai-feedback-ja">🇯🇵 ${ProgressUIV2.escapeHtml(japanese)}</p>` : ''}
+      </div>`;
+  }
+
+  function renderEssAiFeedback() {
+    const summary = document.querySelector('#progress-v2-analysis-placeholder .progress-v2-ess-ai-summary');
+    if (!summary) return;
+    summary.querySelector('.progress-v2-ess-ai-feedback')?.remove();
+
+    const attempt = latestEssAiAttempt();
+    const feedback = attempt?.aiFeedback;
+    if (!feedback || typeof feedback !== 'object') return;
+
+    const improvements = Array.isArray(feedback.topImprovements) ? feedback.topImprovements : [];
+    const improvementsJa = Array.isArray(feedback.topImprovementsJa) ? feedback.topImprovementsJa : [];
+    const improvementsHtml = improvements.length
+      ? `<div class="progress-v2-ess-ai-feedback-card">
+          <strong>Top 3 Improvements</strong>
+          <ol class="progress-v2-ess-ai-feedback-list">${improvements.slice(0, 3).map((item, index) => `
+            <li>
+              ${ProgressUIV2.escapeHtml(item)}
+              ${improvementsJa[index] ? `<div class="progress-v2-ess-ai-feedback-ja">🇯🇵 ${ProgressUIV2.escapeHtml(improvementsJa[index])}</div>` : ''}
+            </li>`).join('')}</ol>
+        </div>`
+      : '';
+
+    const criteriaHtml = feedbackCriteria.map(([label, key]) => {
+      const criterion = feedback?.[key];
+      if (!criterion || typeof criterion !== 'object') return '';
+      const rationale = String(criterion.rationale || '').trim();
+      const rationaleJa = String(criterion.rationaleJa || '').trim();
+      const explanationJa = String(criterion.explanationJa || '').trim();
+      if (!rationale && !rationaleJa && !explanationJa) return '';
+      return `
+        <div class="progress-v2-ess-ai-feedback-criterion">
+          <strong>${ProgressUIV2.escapeHtml(label)}</strong>
+          ${rationale ? `<p>${ProgressUIV2.escapeHtml(rationale)}</p>` : ''}
+          ${rationaleJa ? `<p class="progress-v2-ess-ai-feedback-ja">🇯🇵 ${ProgressUIV2.escapeHtml(rationaleJa)}</p>` : ''}
+          ${explanationJa ? `<p class="progress-v2-ess-ai-feedback-ja">簡単解説：${ProgressUIV2.escapeHtml(explanationJa)}</p>` : ''}
+        </div>`;
+    }).join('');
+
+    const criterionCard = criteriaHtml
+      ? `<div class="progress-v2-ess-ai-feedback-card">
+          <strong>Criterion feedback</strong>
+          <div class="progress-v2-ess-ai-feedback-criteria">${criteriaHtml}</div>
+        </div>`
+      : '';
+
+    const body = [
+      improvementsHtml,
+      bilingualParagraph('Next step', feedback.nextStep, feedback.nextStepJa),
+      bilingualParagraph('Instructor comment', feedback.overallComment, feedback.overallCommentJa),
+      criterionCard
+    ].filter(Boolean).join('');
+    if (!body) return;
+
+    summary.insertAdjacentHTML('beforeend', `
+      <details class="progress-v2-ess-ai-feedback">
+        <summary>View AI Feedback <span>⌄</span></summary>
+        <div class="progress-v2-ess-ai-feedback-body">${body}</div>
+      </details>`);
+  }
+
+  ProgressUIV2.renderAnalysis = function(subject) {
+    const result = renderAnalysisWithEssAiSummary(subject);
+    if (subject === 'ESS HL') {
+      ensureEssAiFeedbackStyles();
+      renderEssAiFeedback();
+    }
+    return result;
+  };
+})();
