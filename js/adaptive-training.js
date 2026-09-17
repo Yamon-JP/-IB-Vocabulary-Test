@@ -595,3 +595,25 @@ A.boot();
     return originalReason(rec);
   };
 })();
+
+(()=>{
+  if(typeof AdaptiveTraining==='undefined')return;
+  const A=AdaptiveTraining;
+  const originalGetRecommendations=A.getRecommendations.bind(A);
+
+  A.getRecommendations=function(subject=null,limit=3){
+    if(subject!=='ESS HL')return originalGetRecommendations(subject,limit);
+
+    const max=Math.max(1,Number(limit)||3);
+    const candidates=this.buildCandidates().filter(candidate=>candidate.subject==='ESS HL');
+    const ai=candidates.filter(candidate=>candidate.kind==='ess-ai-criterion');
+    if(!ai.length)return candidates.slice(0,max);
+
+    const regular=candidates.filter(candidate=>candidate.kind!=='ess-ai-criterion');
+    const severeAi=ai.filter(candidate=>candidate.tier===0);
+    const aiSlots=Math.min(max,ai.length,severeAi.length>=2?2:1);
+    const selected=[...ai.slice(0,aiSlots),...regular.slice(0,Math.max(0,max-aiSlots))];
+    const order=new Map(candidates.map((candidate,index)=>[candidate,index]));
+    return selected.sort((a,b)=>(order.get(a)??9999)-(order.get(b)??9999));
+  };
+})();
