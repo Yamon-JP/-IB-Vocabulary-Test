@@ -532,3 +532,73 @@
 
   MistakeBank.boot();
 })();
+
+(() => {
+  if (typeof MistakeBank === 'undefined') return;
+  const M = MistakeBank;
+  const originalGenericObservation = M.genericObservation.bind(M);
+  const originalObservations = M.observations.bind(M);
+  const criteria = [
+    ['Knowledge & terminology', 'knowledgeTerminology'],
+    ['Application & relevant examples', 'applicationExamples'],
+    ['Analysis / systems / HL-lens connections', 'analysisSystems'],
+    ['Evaluation / perspectives / trade-offs', 'evaluationTradeoffs'],
+    ['Synthesis / justified judgement', 'synthesisJudgement']
+  ];
+
+  M.isEssAiAttempt = function(attempt) {
+    return attempt?.subject === 'ESS HL'
+      && this.assessment(attempt) === 'ess2b'
+      && attempt?.gradingSource === 'ai-instructor'
+      && attempt?.scores;
+  };
+
+  M.essAiCriterionObservations = function(attempt) {
+    if (!this.isEssAiAttempt(attempt)) return [];
+    const questionId = String(attempt?.questionId || '').trim();
+    if (!questionId) return [];
+    const area = [attempt?.unit, attempt?.chapter, attempt?.topic]
+      .find(value => typeof value === 'string' && value.trim()) || null;
+    const createdAt = attempt?.updatedAt || attempt?.createdAt || '';
+
+    return criteria.map(([label, key]) => {
+      const rawScore = Number(attempt?.scores?.[key]);
+      if (!Number.isFinite(rawScore)) return null;
+      const score = Math.max(0, Math.min(4, rawScore));
+      return {
+        key: `ESS HL|ess2b|${questionId}|ai-criterion|${key}`,
+        subject: 'ESS HL',
+        assessment: 'ess2b',
+        assessmentLabel: this.assessmentLabel('ESS HL', 'ess2b'),
+        questionId,
+        area,
+        score,
+        maxMarks: 4,
+        percentage: Math.round(score / 4 * 100),
+        resolved: score >= 4,
+        detail: `${label} · ${score} / 4`,
+        createdAt,
+        source: 'ai-instructor',
+        kind: 'ess-ai-criterion',
+        criterion: key,
+        criterionLabel: label
+      };
+    }).filter(Boolean);
+  };
+
+  M.genericObservation = function(attempt) {
+    if (this.isEssAiAttempt(attempt)) return null;
+    return originalGenericObservation(attempt);
+  };
+
+  M.observations = function(subject) {
+    const rows = originalObservations(subject);
+    if (subject !== 'ESS HL') return rows;
+
+    this.normalAttempts('ESS HL').forEach(attempt => {
+      rows.push(...this.essAiCriterionObservations(attempt));
+    });
+
+    return rows.sort((a, b) => (Date.parse(b.createdAt) || 0) - (Date.parse(a.createdAt) || 0));
+  };
+})();
