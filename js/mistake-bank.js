@@ -707,3 +707,87 @@
     Paper2.__mistakeBankEssAiFocusWrapped = true;
   }
 })();
+
+(() => {
+  if (typeof MistakeBank === 'undefined') return;
+  const M = MistakeBank;
+  const originalRetryQuestion = M.retryQuestion.bind(M);
+
+  M.isEssPaper2BRetry = function(item) {
+    return item?.subject === 'ESS HL' && item?.assessment === 'ess2b';
+  };
+
+  M.essSelfMarkRetryAttempt = function(item) {
+    if (typeof Storage === 'undefined' || !item?.questionId) return null;
+    const saved = Storage.load('ib_paper2_progress') || {};
+    return (Array.isArray(saved.attempts) ? saved.attempts : [])
+      .filter(attempt => attempt?.subject === 'ESS HL'
+        && attempt?.assessmentTarget === 'ess2b'
+        && attempt?.gradingSource !== 'ai-instructor'
+        && String(attempt?.questionId || '') === String(item.questionId)
+        && Array.isArray(attempt?.criteria))
+      .sort((a, b) => (Date.parse(b?.updatedAt || b?.createdAt || 0) || 0) - (Date.parse(a?.updatedAt || a?.createdAt || 0) || 0))[0] || null;
+  };
+
+  M.renderEssSelfMarkRetryFocus = function(item) {
+    this.clearEssAiRetryFocus();
+    if (!this.isEssPaper2BRetry(item) || item?.kind === 'ess-ai-criterion') return;
+
+    const questionElement = document.getElementById('paper2-question');
+    if (!questionElement) return;
+    this.ensureEssAiRetryFocusStyles();
+
+    const attempt = this.essSelfMarkRetryAttempt(item);
+    const current = typeof Paper2 !== 'undefined'
+      && String(Paper2.current?.id || '') === String(item.questionId || '')
+      ? Paper2.current
+      : null;
+    const markscheme = Array.isArray(current?.markscheme) ? current.markscheme : [];
+    const markschemeJa = Array.isArray(current?.markschemeJa) ? current.markschemeJa : [];
+    const missed = (Array.isArray(attempt?.criteria) ? attempt.criteria : [])
+      .filter(criterion => criterion && criterion.awarded === false)
+      .map(criterion => {
+        const index = Number(criterion.index) - 1;
+        if (!Number.isInteger(index) || index < 0) return null;
+        const ja = String(markschemeJa[index] || '').trim();
+        const en = String(markscheme[index] || '').trim();
+        return ja || en || null;
+      })
+      .filter(Boolean)
+      .slice(0, 2);
+
+    const previousScore = Number.isFinite(Number(attempt?.score))
+      && Number.isFinite(Number(attempt?.maxMarks))
+      ? `${attempt.score} / ${attempt.maxMarks}`
+      : `${item.score ?? '—'} / ${item.maxMarks ?? '—'}`;
+
+    const panel = document.createElement('aside');
+    panel.id = 'mistake-bank-ess-ai-focus';
+    panel.className = 'mistake-bank-ess-ai-focus';
+    panel.innerHTML = `
+      <div class="mistake-bank-ess-ai-focus-head">
+        <div>
+          <strong>Focus: Review missed markscheme points</strong>
+          <p>前回取りこぼした採点ポイントを意識して答案を改善してください。</p>
+        </div>
+        <span class="mistake-bank-ess-ai-focus-score">${this.escape(`Previous self-mark score: ${previousScore}`)}</span>
+      </div>
+      ${missed.length
+        ? `<p><strong>改善ポイント：</strong></p><ul>${missed.map(point => `<li>${this.escape(point)}</li>`).join('')}</ul>`
+        : '<p><strong>改善ポイント：</strong> 前回の未取得markscheme pointを確認し、根拠・具体例・評価を補強して再回答してください。</p>'}
+    `;
+    questionElement.insertAdjacentElement('afterend', panel);
+  };
+
+  M.retryQuestion = async function(item) {
+    const result = await originalRetryQuestion(item);
+    if (!result || !this.isEssPaper2BRetry(item)) return result;
+
+    if (item?.kind === 'ess-ai-criterion') {
+      this.renderEssAiRetryFocus(item);
+    } else {
+      this.renderEssSelfMarkRetryFocus(item);
+    }
+    return result;
+  };
+})();
