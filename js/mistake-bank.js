@@ -791,3 +791,101 @@
     return result;
   };
 })();
+
+(() => {
+  if (typeof MistakeBank === 'undefined') return;
+  const M = MistakeBank;
+  const originalRetryQuestion = M.retryQuestion.bind(M);
+
+  M.activeEssRetry = null;
+
+  M.refreshEssRetrySystems = function() {
+    if (typeof AdaptiveTraining !== 'undefined' && typeof AdaptiveTraining.render === 'function') {
+      window.setTimeout(() => AdaptiveTraining.render(), 0);
+    }
+    window.setTimeout(() => this.render(), 0);
+  };
+
+  M.showEssAiRetryResult = function(item, attempt) {
+    if (!item || item.kind !== 'ess-ai-criterion' || !attempt?.scores) return;
+    const currentRaw = Number(attempt.scores[item.criterion]);
+    const previousRaw = Number(item.score);
+    if (!Number.isFinite(currentRaw)) return;
+
+    const current = Math.max(0, Math.min(4, currentRaw));
+    const previous = Number.isFinite(previousRaw) ? Math.max(0, Math.min(4, previousRaw)) : null;
+
+    this.renderEssAiRetryFocus(item);
+    const panel = document.getElementById('mistake-bank-ess-ai-focus');
+    if (!panel) return;
+
+    const score = panel.querySelector('.mistake-bank-ess-ai-focus-score');
+    if (score) {
+      score.textContent = previous === null
+        ? `Latest AI score: ${current} / 4`
+        : `AI score: ${previous} / 4 → ${current} / 4`;
+    }
+
+    const oldResult = panel.querySelector('[data-mistake-bank-ai-result]');
+    if (oldResult) oldResult.remove();
+
+    let status = '→ Stable · no change';
+    if (current >= 4) {
+      status = '✓ Resolved · criterion reached 4 / 4';
+    } else if (previous !== null && current > previous) {
+      status = `↑ Improving · +${Math.round((current - previous) * 25)} pp`;
+    } else if (previous !== null && current < previous) {
+      status = `↓ Needs attention · ${Math.round((current - previous) * 25)} pp`;
+    }
+
+    const result = document.createElement('p');
+    result.dataset.mistakeBankAiResult = 'true';
+    result.innerHTML = `<strong>${this.escape(status)}</strong>`;
+    panel.appendChild(result);
+
+    item.score = current;
+    item.percentage = Math.round(current / 4 * 100);
+    item.resolved = current >= 4;
+  };
+
+  M.retryQuestion = async function(item) {
+    const result = await originalRetryQuestion(item);
+    if (result && this.isEssPaper2BRetry?.(item)) {
+      this.activeEssRetry = item;
+    } else if (result) {
+      this.activeEssRetry = null;
+    }
+    return result;
+  };
+
+  M.installEssAiRetryRefresh = function() {
+    if (typeof EssAIInstructor === 'undefined'
+      || typeof EssAIInstructor.saveProgress !== 'function'
+      || EssAIInstructor.__mistakeBankRetryRefreshWrapped) return false;
+
+    const originalSaveProgress = EssAIInstructor.saveProgress.bind(EssAIInstructor);
+    EssAIInstructor.saveProgress = function(...args) {
+      const saved = originalSaveProgress(...args);
+      const item = M.activeEssRetry;
+      if (saved
+        && item?.kind === 'ess-ai-criterion'
+        && String(saved.questionId || '') === String(item.questionId || '')) {
+        M.showEssAiRetryResult(item, saved);
+        M.refreshEssRetrySystems();
+      }
+      return saved;
+    };
+    EssAIInstructor.__mistakeBankRetryRefreshWrapped = true;
+    return true;
+  };
+
+  if (!M.installEssAiRetryRefresh()) {
+    let attempts = 0;
+    const timer = window.setInterval(() => {
+      attempts += 1;
+      if (M.installEssAiRetryRefresh() || attempts >= 200) {
+        window.clearInterval(timer);
+      }
+    }, 50);
+  }
+})();
