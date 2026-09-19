@@ -602,3 +602,108 @@
     return rows.sort((a, b) => (Date.parse(b.createdAt) || 0) - (Date.parse(a.createdAt) || 0));
   };
 })();
+
+(() => {
+  if (typeof MistakeBank === 'undefined') return;
+  const M = MistakeBank;
+  const originalRetryQuestion = M.retryQuestion.bind(M);
+
+  M.ensureEssAiRetryFocusStyles = function() {
+    if (document.getElementById('mistake-bank-ess-ai-focus-style')) return;
+    const style = document.createElement('style');
+    style.id = 'mistake-bank-ess-ai-focus-style';
+    style.textContent = `
+      .mistake-bank-ess-ai-focus{margin:12px 0 14px;padding:12px 14px;border:1px solid #d9d6fe;border-radius:12px;background:#f8f7ff}
+      .mistake-bank-ess-ai-focus-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+      .mistake-bank-ess-ai-focus-head strong{display:block;font-size:.9rem}
+      .mistake-bank-ess-ai-focus-score{white-space:nowrap;font-size:.8rem;font-weight:850;color:#4338ca}
+      .mistake-bank-ess-ai-focus p{margin:7px 0 0;color:#475467;font-size:.82rem;line-height:1.5}
+      .mistake-bank-ess-ai-focus ul{margin:7px 0 0;padding-left:20px;color:#344054;font-size:.82rem;line-height:1.5}
+      @media(max-width:600px){.mistake-bank-ess-ai-focus-head{flex-direction:column;gap:4px}}
+    `;
+    document.head.appendChild(style);
+  };
+
+  M.clearEssAiRetryFocus = function() {
+    document.getElementById('mistake-bank-ess-ai-focus')?.remove();
+  };
+
+  M.essAiRetryFeedback = function(item) {
+    if (typeof Storage === 'undefined' || !item?.criterion || !item?.questionId) return null;
+    const saved = Storage.load('ib_paper2_progress') || {};
+    const attempts = (Array.isArray(saved.attempts) ? saved.attempts : [])
+      .filter(attempt => attempt?.subject === 'ESS HL'
+        && attempt?.assessmentTarget === 'ess2b'
+        && attempt?.gradingSource === 'ai-instructor'
+        && String(attempt?.questionId || '') === String(item.questionId)
+        && Number.isFinite(Number(attempt?.scores?.[item.criterion])))
+      .sort((a, b) => (Date.parse(b?.updatedAt || b?.createdAt || 0) || 0) - (Date.parse(a?.updatedAt || a?.createdAt || 0) || 0));
+
+    const attempt = attempts[0];
+    if (!attempt) return null;
+    const feedback = attempt?.aiFeedback?.[item.criterion] || {};
+    return { attempt, feedback };
+  };
+
+  M.renderEssAiRetryFocus = function(item) {
+    this.clearEssAiRetryFocus();
+    if (item?.kind !== 'ess-ai-criterion') return;
+
+    const question = document.getElementById('paper2-question');
+    if (!question) return;
+    this.ensureEssAiRetryFocusStyles();
+
+    const saved = this.essAiRetryFeedback(item);
+    const feedback = saved?.feedback || {};
+    const improvementsJa = (Array.isArray(feedback.improvementsJa) ? feedback.improvementsJa : [])
+      .filter(value => typeof value === 'string' && value.trim())
+      .map(value => value.trim());
+    const improvements = (Array.isArray(feedback.improvements) ? feedback.improvements : [])
+      .filter(value => typeof value === 'string' && value.trim())
+      .map(value => value.trim());
+    const tips = (improvementsJa.length ? improvementsJa : improvements).slice(0, 2);
+    const fallback = String(
+      feedback.explanationJa
+      || feedback.rationaleJa
+      || feedback.rationale
+      || ''
+    ).trim();
+
+    const panel = document.createElement('aside');
+    panel.id = 'mistake-bank-ess-ai-focus';
+    panel.className = 'mistake-bank-ess-ai-focus';
+    panel.innerHTML = `
+      <div class="mistake-bank-ess-ai-focus-head">
+        <div>
+          <strong>${this.escape(`Focus: ${item.criterionLabel || item.criterion}`)}</strong>
+          <p>このcriterionを意識して答案を改善し、再度AI Instructorで採点してください。</p>
+        </div>
+        <span class="mistake-bank-ess-ai-focus-score">${this.escape(`Previous AI score: ${item.score} / 4`)}</span>
+      </div>
+      ${tips.length
+        ? `<p><strong>改善ポイント：</strong></p><ul>${tips.map(tip => `<li>${this.escape(tip)}</li>`).join('')}</ul>`
+        : fallback
+          ? `<p><strong>改善ポイント：</strong> ${this.escape(fallback)}</p>`
+          : '<p>保存済みAI feedbackに具体的な改善ポイントがないため、該当criterionを重点的に見直してください。</p>'}
+    `;
+    question.insertAdjacentElement('afterend', panel);
+  };
+
+  M.retryQuestion = async function(item) {
+    this.clearEssAiRetryFocus();
+    const result = await originalRetryQuestion(item);
+    if (result && item?.kind === 'ess-ai-criterion') {
+      this.renderEssAiRetryFocus(item);
+    }
+    return result;
+  };
+
+  if (typeof Paper2 !== 'undefined' && typeof Paper2.next === 'function' && !Paper2.__mistakeBankEssAiFocusWrapped) {
+    const originalNext = Paper2.next.bind(Paper2);
+    Paper2.next = function(...args) {
+      M.clearEssAiRetryFocus();
+      return originalNext(...args);
+    };
+    Paper2.__mistakeBankEssAiFocusWrapped = true;
+  }
+})();
