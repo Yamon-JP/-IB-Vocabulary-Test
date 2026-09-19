@@ -617,3 +617,46 @@ A.boot();
     return selected.sort((a,b)=>(order.get(a)??9999)-(order.get(b)??9999));
   };
 })();
+
+(()=>{
+  if(typeof AdaptiveTraining==='undefined')return;
+  const A=AdaptiveTraining;
+  const originalBuildEssAiCriterionCandidates=A.buildEssAiCriterionCandidates.bind(A);
+
+  A.essAiCriterionImprovement=function(criterion){
+    if(typeof Storage==='undefined'||!criterion){
+      return {status:'baseline',label:'AI baseline',delta:null,icon:'•'};
+    }
+    const saved=Storage.load('ib_paper2_progress')||{};
+    const attempts=(Array.isArray(saved.attempts)?saved.attempts:[])
+      .filter(attempt=>attempt?.subject==='ESS HL'
+        &&attempt?.assessmentTarget==='ess2b'
+        &&attempt?.gradingSource==='ai-instructor'
+        &&Number.isFinite(Number(attempt?.scores?.[criterion])))
+      .sort((a,b)=>(Date.parse(b?.updatedAt||b?.createdAt||0)||0)-(Date.parse(a?.updatedAt||a?.createdAt||0)||0));
+
+    if(attempts.length<2){
+      return {status:'baseline',label:'AI baseline · need another graded response',delta:null,icon:'•'};
+    }
+
+    const latest=Math.max(0,Math.min(4,Number(attempts[0].scores[criterion])));
+    const previous=Math.max(0,Math.min(4,Number(attempts[1].scores[criterion])));
+    const deltaMarks=latest-previous;
+    const delta=Math.round(deltaMarks*25);
+
+    if(deltaMarks>0){
+      return {status:'up',label:`Improving +${delta} pp`,delta,icon:'↑'};
+    }
+    if(deltaMarks<0){
+      return {status:'down',label:`Needs attention ${delta} pp`,delta,icon:'↓'};
+    }
+    return {status:'stable',label:'Stable · no change',delta:0,icon:'→'};
+  };
+
+  A.buildEssAiCriterionCandidates=function(){
+    return originalBuildEssAiCriterionCandidates().map(candidate=>({
+      ...candidate,
+      improvement:this.essAiCriterionImprovement(candidate.criterion)
+    }));
+  };
+})();
