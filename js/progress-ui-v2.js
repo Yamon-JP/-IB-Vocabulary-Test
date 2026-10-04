@@ -803,3 +803,376 @@
       : `<p class="progress-v2-analysis-empty">Building baseline — no supported saved analysis data yet.</p>`;
   };
 })();
+
+(() => {
+  if (typeof ProgressUIV2 === 'undefined') return;
+
+  const originalRenderAnalysisWithSubjectAnalytics = ProgressUIV2.renderAnalysis.bind(ProgressUIV2);
+  const essAiCriteria = [
+    ['Knowledge & terminology', 'knowledgeTerminology'],
+    ['Application & relevant examples', 'applicationExamples'],
+    ['Analysis / systems / HL-lens', 'analysisSystems'],
+    ['Evaluation / perspectives / trade-offs', 'evaluationTradeoffs'],
+    ['Synthesis / justified judgement', 'synthesisJudgement']
+  ];
+
+  function ensureEssAiAnalysisStyles() {
+    if (document.getElementById('progress-v2-ess-ai-analysis-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'progress-v2-ess-ai-analysis-styles';
+    style.textContent = `
+      .progress-v2-ess-ai-summary{border-color:#d8e2ee;background:#fbfdff}
+      .progress-v2-ess-ai-overview{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+      .progress-v2-ess-ai-chip{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid #dbe3ec;border-radius:999px;background:#fff;font-size:.72rem;font-weight:800}
+      .progress-v2-ess-ai-scorecard{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center;margin:8px 0 12px;padding:11px;border:1px solid #e4e7ec;border-radius:12px;background:#fff}
+      .progress-v2-ess-ai-score{min-width:82px;text-align:center}
+      .progress-v2-ess-ai-score strong,.progress-v2-ess-ai-score small{display:block}
+      .progress-v2-ess-ai-score strong{font-size:1.25rem}
+      .progress-v2-ess-ai-score small{margin-top:2px;color:#667085;font-size:.68rem}
+      .progress-v2-ess-ai-meta strong,.progress-v2-ess-ai-meta small{display:block}
+      .progress-v2-ess-ai-meta strong{font-size:.82rem}
+      .progress-v2-ess-ai-meta small{margin-top:3px;color:#667085;font-size:.71rem;line-height:1.4}
+      .progress-v2-ess-ai-criteria{display:grid;gap:7px}
+      .progress-v2-ess-ai-row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(90px,.8fr) auto;gap:9px;align-items:center}
+      .progress-v2-ess-ai-row strong{font-size:.78rem}
+      .progress-v2-ess-ai-track{height:6px;border-radius:999px;background:#eef1f5;overflow:hidden}
+      .progress-v2-ess-ai-track span{display:block;height:100%;border-radius:inherit;background:currentColor;opacity:.72}
+      .progress-v2-ess-ai-mark{font-size:.76rem;font-weight:850;white-space:nowrap}
+      @media(max-width:600px){
+        .progress-v2-ess-ai-scorecard{grid-template-columns:1fr}
+        .progress-v2-ess-ai-score{text-align:left}
+        .progress-v2-ess-ai-row{grid-template-columns:1fr auto}
+        .progress-v2-ess-ai-track{grid-column:1/-1;grid-row:2}
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function essPaper2BAttempts() {
+    return ProgressUIV2.validAttempts(ProgressUIV2.subjectAttempts('ESS HL'))
+      .filter(attempt => !attempt?.fullMock && ProgressUIV2.assessment(attempt) === 'ess2b');
+  }
+
+  function attemptTimestamp(attempt) {
+    return Date.parse(attempt?.updatedAt || attempt?.createdAt || 0) || 0;
+  }
+
+  function renderEssAiSummary() {
+    const dashboard = document.querySelector('#progress-v2-analysis-placeholder .progress-v2-analysis-dashboard');
+    if (!dashboard) return;
+    dashboard.querySelector('.progress-v2-ess-ai-summary')?.remove();
+
+    const attempts = essPaper2BAttempts();
+    const aiAttempts = attempts.filter(attempt => attempt?.gradingSource === 'ai-instructor');
+    const selfMarkAttempts = attempts.filter(attempt => attempt?.gradingSource !== 'ai-instructor');
+    const latestAi = [...aiAttempts].sort((a, b) => attemptTimestamp(b) - attemptTimestamp(a))[0] || null;
+    const sourceNote = `Current Paper 2B records · AI Instructor ${aiAttempts.length} · Self-mark ${selfMarkAttempts.length}`;
+
+    let body = `
+      <div class="progress-v2-ess-ai-overview">
+        <span class="progress-v2-ess-ai-chip">AI Instructor ${aiAttempts.length}</span>
+        <span class="progress-v2-ess-ai-chip">Self-mark ${selfMarkAttempts.length}</span>
+      </div>`;
+
+    if (!latestAi) {
+      body += '<p class="progress-v2-analysis-empty">No ESS Paper 2B AI Instructor grade is saved yet. Existing self-mark records remain separate.</p>';
+    } else {
+      const score = Number(latestAi.score);
+      const maxMarks = Number(latestAi.maxMarks) || 20;
+      const historyCount = Array.isArray(latestAi.aiHistory) ? latestAi.aiHistory.length : 0;
+      const date = new Date(latestAi.updatedAt || latestAi.createdAt || 0);
+      const dateLabel = Number.isNaN(date.getTime())
+        ? ''
+        : date.toLocaleDateString('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' });
+      const questionLabel = latestAi.unit || latestAi.chapter || latestAi.questionId || 'ESS Paper 2B';
+      const historyLabel = `${historyCount} previous AI grade${historyCount === 1 ? '' : 's'} kept`;
+      const criteriaHtml = essAiCriteria.map(([label, key]) => {
+        const value = Number(latestAi?.scores?.[key]);
+        const valid = Number.isFinite(value);
+        const bounded = valid ? Math.max(0, Math.min(4, value)) : 0;
+        return `
+          <div class="progress-v2-ess-ai-row">
+            <strong>${ProgressUIV2.escapeHtml(label)}</strong>
+            <div class="progress-v2-ess-ai-track" aria-hidden="true"><span style="width:${bounded / 4 * 100}%"></span></div>
+            <span class="progress-v2-ess-ai-mark">${valid ? `${Math.round(bounded * 10) / 10} / 4` : '— / 4'}</span>
+          </div>`;
+      }).join('');
+
+      body += `
+        <div class="progress-v2-ess-ai-scorecard">
+          <div class="progress-v2-ess-ai-score">
+            <strong>${Number.isFinite(score) ? `${Math.round(score * 10) / 10} / ${maxMarks}` : '—'}</strong>
+            <small>Latest AI score</small>
+          </div>
+          <div class="progress-v2-ess-ai-meta">
+            <strong>${ProgressUIV2.escapeHtml(questionLabel)}</strong>
+            <small>AI Instructor · ${ProgressUIV2.escapeHtml(historyLabel)}${dateLabel ? ` · ${ProgressUIV2.escapeHtml(dateLabel)}` : ''}</small>
+          </div>
+        </div>
+        <div class="progress-v2-ess-ai-criteria">${criteriaHtml}</div>`;
+    }
+
+    dashboard.insertAdjacentHTML('afterbegin', `
+      <section class="progress-v2-analysis-section progress-v2-ess-ai-summary">
+        <div class="progress-v2-analysis-section-head">
+          <strong>ESS Paper 2B · AI Instructor</strong>
+          <small>${ProgressUIV2.escapeHtml(sourceNote)}</small>
+        </div>
+        ${body}
+      </section>`);
+  }
+
+  ProgressUIV2.renderAnalysis = function(subject) {
+    const result = originalRenderAnalysisWithSubjectAnalytics(subject);
+    if (subject === 'ESS HL') {
+      ensureEssAiAnalysisStyles();
+      renderEssAiSummary();
+    }
+    return result;
+  };
+})();
+
+(() => {
+  if (typeof ProgressUIV2 === 'undefined') return;
+
+  const renderAnalysisWithEssAiSummary = ProgressUIV2.renderAnalysis.bind(ProgressUIV2);
+  const feedbackCriteria = [
+    ['Knowledge & terminology', 'knowledgeTerminology'],
+    ['Application & relevant examples', 'applicationExamples'],
+    ['Analysis / systems / HL-lens connections', 'analysisSystems'],
+    ['Evaluation / perspectives / trade-offs', 'evaluationTradeoffs'],
+    ['Synthesis / justified judgement', 'synthesisJudgement']
+  ];
+
+  function ensureEssAiFeedbackStyles() {
+    if (document.getElementById('progress-v2-ess-ai-feedback-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'progress-v2-ess-ai-feedback-styles';
+    style.textContent = `
+      .progress-v2-ess-ai-feedback{margin-top:12px;border-top:1px solid #e4e7ec;padding-top:10px}
+      .progress-v2-ess-ai-feedback>summary{cursor:pointer;font-size:.8rem;font-weight:850;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px}
+      .progress-v2-ess-ai-feedback>summary::-webkit-details-marker{display:none}
+      .progress-v2-ess-ai-feedback-body{display:grid;gap:10px;padding-top:10px}
+      .progress-v2-ess-ai-feedback-card{padding:10px;border:1px solid #e4e7ec;border-radius:11px;background:#fff}
+      .progress-v2-ess-ai-feedback-card>strong{display:block;margin-bottom:5px;font-size:.8rem}
+      .progress-v2-ess-ai-feedback-card p{margin:4px 0;font-size:.76rem;line-height:1.5}
+      .progress-v2-ess-ai-feedback-ja{color:#667085}
+      .progress-v2-ess-ai-feedback-list{margin:0;padding-left:20px}
+      .progress-v2-ess-ai-feedback-list li{margin:7px 0;font-size:.76rem;line-height:1.45}
+      .progress-v2-ess-ai-feedback-criteria{display:grid;gap:8px}
+      .progress-v2-ess-ai-feedback-criterion{padding-top:8px;border-top:1px solid #eef1f5}
+      .progress-v2-ess-ai-feedback-criterion:first-child{padding-top:0;border-top:0}
+      .progress-v2-ess-ai-feedback-criterion strong{display:block;font-size:.77rem}
+      .progress-v2-ess-ai-feedback-criterion p{margin:4px 0;font-size:.74rem;line-height:1.45}
+    `;
+    document.head.appendChild(style);
+  }
+
+  function latestEssAiAttempt() {
+    return ProgressUIV2.validAttempts(ProgressUIV2.subjectAttempts('ESS HL'))
+      .filter(attempt => !attempt?.fullMock && ProgressUIV2.assessment(attempt) === 'ess2b' && attempt?.gradingSource === 'ai-instructor')
+      .sort((a, b) => (Date.parse(b?.updatedAt || b?.createdAt || 0) || 0) - (Date.parse(a?.updatedAt || a?.createdAt || 0) || 0))[0] || null;
+  }
+
+  function bilingualParagraph(title, english, japanese) {
+    if (!english && !japanese) return '';
+    return `
+      <div class="progress-v2-ess-ai-feedback-card">
+        <strong>${ProgressUIV2.escapeHtml(title)}</strong>
+        ${english ? `<p>${ProgressUIV2.escapeHtml(english)}</p>` : ''}
+        ${japanese ? `<p class="progress-v2-ess-ai-feedback-ja">🇯🇵 ${ProgressUIV2.escapeHtml(japanese)}</p>` : ''}
+      </div>`;
+  }
+
+  function renderEssAiFeedback() {
+    const summary = document.querySelector('#progress-v2-analysis-placeholder .progress-v2-ess-ai-summary');
+    if (!summary) return;
+    summary.querySelector('.progress-v2-ess-ai-feedback')?.remove();
+
+    const attempt = latestEssAiAttempt();
+    const feedback = attempt?.aiFeedback;
+    if (!feedback || typeof feedback !== 'object') return;
+
+    const improvements = Array.isArray(feedback.topImprovements) ? feedback.topImprovements : [];
+    const improvementsJa = Array.isArray(feedback.topImprovementsJa) ? feedback.topImprovementsJa : [];
+    const improvementsHtml = improvements.length
+      ? `<div class="progress-v2-ess-ai-feedback-card">
+          <strong>Top 3 Improvements</strong>
+          <ol class="progress-v2-ess-ai-feedback-list">${improvements.slice(0, 3).map((item, index) => `
+            <li>
+              ${ProgressUIV2.escapeHtml(item)}
+              ${improvementsJa[index] ? `<div class="progress-v2-ess-ai-feedback-ja">🇯🇵 ${ProgressUIV2.escapeHtml(improvementsJa[index])}</div>` : ''}
+            </li>`).join('')}</ol>
+        </div>`
+      : '';
+
+    const criteriaHtml = feedbackCriteria.map(([label, key]) => {
+      const criterion = feedback?.[key];
+      if (!criterion || typeof criterion !== 'object') return '';
+      const rationale = String(criterion.rationale || '').trim();
+      const rationaleJa = String(criterion.rationaleJa || '').trim();
+      const explanationJa = String(criterion.explanationJa || '').trim();
+      if (!rationale && !rationaleJa && !explanationJa) return '';
+      return `
+        <div class="progress-v2-ess-ai-feedback-criterion">
+          <strong>${ProgressUIV2.escapeHtml(label)}</strong>
+          ${rationale ? `<p>${ProgressUIV2.escapeHtml(rationale)}</p>` : ''}
+          ${rationaleJa ? `<p class="progress-v2-ess-ai-feedback-ja">🇯🇵 ${ProgressUIV2.escapeHtml(rationaleJa)}</p>` : ''}
+          ${explanationJa ? `<p class="progress-v2-ess-ai-feedback-ja">簡単解説：${ProgressUIV2.escapeHtml(explanationJa)}</p>` : ''}
+        </div>`;
+    }).join('');
+
+    const criterionCard = criteriaHtml
+      ? `<div class="progress-v2-ess-ai-feedback-card">
+          <strong>Criterion feedback</strong>
+          <div class="progress-v2-ess-ai-feedback-criteria">${criteriaHtml}</div>
+        </div>`
+      : '';
+
+    const body = [
+      improvementsHtml,
+      bilingualParagraph('Next step', feedback.nextStep, feedback.nextStepJa),
+      bilingualParagraph('Instructor comment', feedback.overallComment, feedback.overallCommentJa),
+      criterionCard
+    ].filter(Boolean).join('');
+    if (!body) return;
+
+    summary.insertAdjacentHTML('beforeend', `
+      <details class="progress-v2-ess-ai-feedback">
+        <summary>View AI Feedback <span>⌄</span></summary>
+        <div class="progress-v2-ess-ai-feedback-body">${body}</div>
+      </details>`);
+  }
+
+  ProgressUIV2.renderAnalysis = function(subject) {
+    const result = renderAnalysisWithEssAiSummary(subject);
+    if (subject === 'ESS HL') {
+      ensureEssAiFeedbackStyles();
+      renderEssAiFeedback();
+    }
+    return result;
+  };
+})();
+
+(() => {
+  if (typeof ProgressUIV2 === 'undefined') return;
+
+  const renderAnalysisWithEssAiFeedback = ProgressUIV2.renderAnalysis.bind(ProgressUIV2);
+  const comparisonCriteria = [
+    ['Knowledge & terminology', 'knowledgeTerminology'],
+    ['Application & relevant examples', 'applicationExamples'],
+    ['Analysis / systems / HL-lens connections', 'analysisSystems'],
+    ['Evaluation / perspectives / trade-offs', 'evaluationTradeoffs'],
+    ['Synthesis / justified judgement', 'synthesisJudgement']
+  ];
+
+  function ensureEssAiComparisonStyles() {
+    if (document.getElementById('progress-v2-ess-ai-comparison-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'progress-v2-ess-ai-comparison-styles';
+    style.textContent = `
+      .progress-v2-ess-ai-comparison{margin-top:12px;border-top:1px solid #e4e7ec;padding-top:10px}
+      .progress-v2-ess-ai-comparison>summary{cursor:pointer;font-size:.8rem;font-weight:850;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px}
+      .progress-v2-ess-ai-comparison>summary::-webkit-details-marker{display:none}
+      .progress-v2-ess-ai-comparison-body{display:grid;gap:8px;padding-top:10px}
+      .progress-v2-ess-ai-comparison-head{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid #eef1f5;font-size:.72rem;color:#667085}
+      .progress-v2-ess-ai-comparison-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid #f4f5f7}
+      .progress-v2-ess-ai-comparison-row:last-child{border-bottom:0}
+      .progress-v2-ess-ai-comparison-row strong{font-size:.76rem}
+      .progress-v2-ess-ai-comparison-value{font-size:.75rem;white-space:nowrap}
+      .progress-v2-ess-ai-comparison-delta{min-width:38px;text-align:right;font-size:.75rem;font-weight:850;white-space:nowrap}
+      .progress-v2-ess-ai-comparison-note{margin:0;color:#667085;font-size:.7rem;line-height:1.4}
+      @media(max-width:600px){
+        .progress-v2-ess-ai-comparison-head{display:none}
+        .progress-v2-ess-ai-comparison-row{grid-template-columns:minmax(0,1fr) auto auto}
+        .progress-v2-ess-ai-comparison-row strong{grid-column:1/-1}
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function latestEssAiAttemptForComparison() {
+    return ProgressUIV2.validAttempts(ProgressUIV2.subjectAttempts('ESS HL'))
+      .filter(attempt => !attempt?.fullMock && ProgressUIV2.assessment(attempt) === 'ess2b' && attempt?.gradingSource === 'ai-instructor')
+      .sort((a, b) => (Date.parse(b?.updatedAt || b?.createdAt || 0) || 0) - (Date.parse(a?.updatedAt || a?.createdAt || 0) || 0))[0] || null;
+  }
+
+  function formatComparisonValue(value, maxMarks) {
+    const number = Number(value);
+    if (!Number.isFinite(number)) return '—';
+    return `${Math.round(number * 10) / 10} / ${maxMarks}`;
+  }
+
+  function formatDelta(current, previous) {
+    const currentValue = Number(current);
+    const previousValue = Number(previous);
+    if (!Number.isFinite(currentValue) || !Number.isFinite(previousValue)) return '—';
+    const delta = Math.round((currentValue - previousValue) * 10) / 10;
+    if (delta > 0) return `+${delta}`;
+    if (delta < 0) return `−${Math.abs(delta)}`;
+    return '0';
+  }
+
+  function renderEssAiComparison() {
+    const summary = document.querySelector('#progress-v2-analysis-placeholder .progress-v2-ess-ai-summary');
+    if (!summary) return;
+    summary.querySelector('.progress-v2-ess-ai-comparison')?.remove();
+
+    const attempt = latestEssAiAttemptForComparison();
+    const history = Array.isArray(attempt?.aiHistory) ? attempt.aiHistory : [];
+    const previous = history[history.length - 1];
+    if (!attempt || !previous) return;
+
+    const currentTotal = Number(attempt.score);
+    const previousTotal = Number(previous.score);
+    if (!Number.isFinite(currentTotal) || !Number.isFinite(previousTotal)) return;
+
+    const previousDate = new Date(previous.gradedAt || 0);
+    const previousDateLabel = Number.isNaN(previousDate.getTime())
+      ? ''
+      : previousDate.toLocaleDateString('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' });
+
+    const rows = comparisonCriteria.map(([label, key]) => {
+      const current = attempt?.scores?.[key];
+      const before = previous?.scores?.[key];
+      return `
+        <div class="progress-v2-ess-ai-comparison-row">
+          <strong>${ProgressUIV2.escapeHtml(label)}</strong>
+          <span class="progress-v2-ess-ai-comparison-value">${ProgressUIV2.escapeHtml(formatComparisonValue(before, 4))}</span>
+          <span class="progress-v2-ess-ai-comparison-value">${ProgressUIV2.escapeHtml(formatComparisonValue(current, 4))}</span>
+          <span class="progress-v2-ess-ai-comparison-delta">${ProgressUIV2.escapeHtml(formatDelta(current, before))}</span>
+        </div>`;
+    }).join('');
+
+    const html = `
+      <details class="progress-v2-ess-ai-comparison">
+        <summary>Compare with previous AI grade <span>${ProgressUIV2.escapeHtml(formatDelta(currentTotal, previousTotal))} total</span></summary>
+        <div class="progress-v2-ess-ai-comparison-body">
+          <div class="progress-v2-ess-ai-comparison-head">
+            <span>Criterion</span><span>Previous</span><span>Latest</span><span>Δ</span>
+          </div>
+          <div class="progress-v2-ess-ai-comparison-row">
+            <strong>Total</strong>
+            <span class="progress-v2-ess-ai-comparison-value">${ProgressUIV2.escapeHtml(formatComparisonValue(previousTotal, Number(previous.maxMarks) || 20))}</span>
+            <span class="progress-v2-ess-ai-comparison-value">${ProgressUIV2.escapeHtml(formatComparisonValue(currentTotal, Number(attempt.maxMarks) || 20))}</span>
+            <span class="progress-v2-ess-ai-comparison-delta">${ProgressUIV2.escapeHtml(formatDelta(currentTotal, previousTotal))}</span>
+          </div>
+          ${rows}
+          <p class="progress-v2-ess-ai-comparison-note">Latest AI grade compared with the immediately previous grade for this same saved response${previousDateLabel ? ` · Previous: ${ProgressUIV2.escapeHtml(previousDateLabel)}` : ''}.</p>
+        </div>
+      </details>`;
+
+    const feedback = summary.querySelector('.progress-v2-ess-ai-feedback');
+    if (feedback) feedback.insertAdjacentHTML('beforebegin', html);
+    else summary.insertAdjacentHTML('beforeend', html);
+  }
+
+  ProgressUIV2.renderAnalysis = function(subject) {
+    const result = renderAnalysisWithEssAiFeedback(subject);
+    if (subject === 'ESS HL') {
+      ensureEssAiComparisonStyles();
+      renderEssAiComparison();
+    }
+    return result;
+  };
+})();
